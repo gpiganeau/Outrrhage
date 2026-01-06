@@ -541,6 +541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
   standards: {fileID: 11400000, guid: 02a68650d5003cc4eb7765fadbfdc47c, type: 2}
+  movementSettings: {fileID: 11400000, guid: 229bf567f81d9814b951bce712626ad8, type: 2}
 --- !u!4 &549707945
 Transform:
   m_ObjectHideFlags: 0
@@ -760,6 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e8f8830f24c624d95173e6719c691a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _rigidbody: {fileID: 0}
 --- !u!1 &1529713924
 GameObject:
   m_ObjectHideFlags: 0

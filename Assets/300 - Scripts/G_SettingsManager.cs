@@ -5,8 +5,10 @@ public class SettingsManager : MonoBehaviour
     public static SettingsManager Instance { get; private set; }
 
     [SerializeField] private Standards standards;
+    [SerializeField] private MovementSettings movementSettings;
 
     public Standards Standards => standards;
+    public MovementSettings MovementSettings => movementSettings;
 
     private void Awake()
     {
