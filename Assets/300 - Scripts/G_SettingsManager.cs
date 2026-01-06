@@ -1,0 +1,23 @@
+using UnityEngine;
+
+public class SettingsManager : MonoBehaviour
+{
+    public static SettingsManager Instance { get; private set; }
+
+    [SerializeField] private Standards standards;
+
+    public Standards Standards => standards;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+}
