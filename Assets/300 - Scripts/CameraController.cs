@@ -18,13 +18,6 @@ public class CameraController : MonoBehaviour
     public Vector3 Forward => transform.forward;
     public Vector3 Right => transform.right;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         targetPosition = target.position - transform.forward * SettingsManager.Instance.CameraSettings.cameraFollowDistance;
