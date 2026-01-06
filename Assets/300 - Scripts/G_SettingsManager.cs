@@ -6,9 +6,11 @@ public class SettingsManager : MonoBehaviour
 
     [SerializeField] private Standards standards;
     [SerializeField] private MovementSettings movementSettings;
+    [SerializeField] private CameraSettings cameraSettings;
 
     public Standards Standards => standards;
     public MovementSettings MovementSettings => movementSettings;
+    public CameraSettings CameraSettings => cameraSettings;
 
     private void Awake()
     {
