@@ -6,8 +6,7 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private InputManager _instance;
-    public InputManager Instance => _instance;
+    public static InputManager Instance { get; private set; }
     [SerializeField] private PlayerInput playerInputComponent;
 
     private Vector2 _leftStickInputVector;
@@ -23,17 +22,21 @@ public class InputManager : MonoBehaviour
     public UnityEvent OnCharacterSlot4;
     public UnityEvent OnCharacterSlot5;
 
-    void Start()
+    void Awake()
     {
-        if(_instance == null)
+        if(Instance == null)
         {
-            _instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
         playerInputComponent.SwitchCurrentActionMap(playerInputComponent.defaultActionMap);
     }
 
@@ -60,6 +63,7 @@ public class InputManager : MonoBehaviour
     void OnMove(InputValue value)
     {
         _leftStickInputVector = value.Get<Vector2>();
+        //Debug.Log("InputManager: OnMove: " + _leftStickInputVector);
     }
 
     void OnSubmit()
