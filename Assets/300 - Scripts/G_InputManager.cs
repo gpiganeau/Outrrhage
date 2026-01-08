@@ -11,16 +11,15 @@ public class InputManager : MonoBehaviour
 
     private Vector2 _leftStickInputVector;
 
-    public UnityEvent<Vector2> OnUINavigation;
-    public UnityEvent OnUISelect;
-    public UnityEvent OnUICancel;
-
-    public UnityEvent<Vector2> OnCharacterMovement;
-    public UnityEvent OnCharacterSlot1;
-    public UnityEvent OnCharacterSlot2;
-    public UnityEvent OnCharacterSlot3;
-    public UnityEvent OnCharacterSlot4;
-    public UnityEvent OnCharacterSlot5;
+    [HideInInspector] public UnityEvent<Vector2> OnUINavigation;
+    [HideInInspector] public UnityEvent OnUISelect;
+    [HideInInspector] public UnityEvent OnUICancel;
+    [HideInInspector] public UnityEvent<Vector2> OnCharacterMovement;
+    [HideInInspector] public UnityEvent OnCharacterSlot1;
+    [HideInInspector] public UnityEvent OnCharacterSlot2;
+    [HideInInspector] public UnityEvent OnCharacterSlot3;
+    [HideInInspector] public UnityEvent OnCharacterSlot4;
+    [HideInInspector] public UnityEvent OnCharacterSlot5;
 
     void Awake()
     {
@@ -40,29 +39,12 @@ public class InputManager : MonoBehaviour
         playerInputComponent.SwitchCurrentActionMap(playerInputComponent.defaultActionMap);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(playerInputComponent.currentActionMap.name == SettingsManager.Instance.Standards.INPUT_CHARACTER_MAP)
-        {
-            if(_leftStickInputVector != Vector2.zero)
-            {
-                OnCharacterMovement?.Invoke(_leftStickInputVector);
-
-            }
-           
-        }
-        else if(playerInputComponent.currentActionMap.name == SettingsManager.Instance.Standards.INPUT_UI_MAP)
-        {
-            OnUINavigation?.Invoke(_leftStickInputVector);
-        }
-    }
-
     #region Message Handlers
 
     void OnMove(InputValue value)
     {
         _leftStickInputVector = value.Get<Vector2>();
+        OnCharacterMovement?.Invoke(_leftStickInputVector);
         //Debug.Log("InputManager: OnMove: " + _leftStickInputVector);
     }
 

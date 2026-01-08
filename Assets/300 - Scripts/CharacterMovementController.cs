@@ -1,28 +1,41 @@
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour
+public class CharacterMovementController : MonoBehaviour
 {
     [SerializeField] CameraController playerCameraController;
     [SerializeField] Rigidbody _rigidbody;
     private Vector2 _inputVector;
+    //the direction the movement wants to take the character in world space
+    private Vector3 _inputMovementVector;
+    //The same vector but shifted by inertia
     private Vector3 _movementVector;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InputManager.Instance.OnCharacterMovement.AddListener(OnInputVectorChange);
+        InputManager.Instance.OnCharacterMovement.AddListener(OnInputVector);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        _inputMovementVector = CharacterInputFromCameraPerspective() * SettingsManager.Instance.MovementSettings.characterSpeed;
+        if(SettingsManager.Instance.MovementSettings.timeToReverse == 0)
+        {
+            _movementVector = _inputMovementVector;
+        }
+        else
+        {
+            _movementVector = Vector3.MoveTowards(_movementVector, _inputMovementVector, 
+                2 * SettingsManager.Instance.MovementSettings.characterSpeed * Time.fixedDeltaTime / SettingsManager.Instance.MovementSettings.timeToReverse);
+        }
+        _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.fixedDeltaTime);
     }
 
-    void OnInputVectorChange(Vector2 newVector)
+    void OnInputVector(Vector2 newVector)
     {
         _inputVector = newVector;
-        //Debug.Log("PlayerMovementController: OnInputVectorChange: " + _inputVector);
+        //Debug.Log("PlayerMovementController: OnInputVector: " + _inputVector);
     }
 
     private Vector3 CharacterInputFromCameraPerspective() {
@@ -38,4 +51,19 @@ public class PlayerMovementController : MonoBehaviour
     //{
     //    Gizmos.DrawRay(transform.position, CharacterInputFromCameraPerspective() * 5);
     //}
+
+    #region Movement Outputs
+
+    public Vector3 GetActualMovement()
+    {
+        return _rigidbody.linearVelocity;
+    }
+
+    public Vector3 GetInputMovementVector()
+    {
+        return _movementVector;
+    }
+
+
+    #endregion
 }

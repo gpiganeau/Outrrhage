@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e254299ce6b2ed4eab25f130ee22848, type: 3}
   m_Name: MovementSettings
   m_EditorClassIdentifier: Assembly-CSharp::MovementSettings
-  characterSpeed: 5
+  characterSpeed: 10
+  timeToReverse: 0
