@@ -9,7 +9,7 @@ public class SkillStrategy : MonoBehaviour
         debugName = skillData.name;
     }
 
-    public virtual void Call(Vector3 position, Vector3 direction)
+    public virtual void Call(MovementController movementController)
     {
         Debug.Log($"Skill {debugName} used");
     }

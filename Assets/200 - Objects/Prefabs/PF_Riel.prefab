@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db4f6a0efe06274fbf6f4275c708bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterComponent
-  characterSettings: {fileID: 11400000, guid: 7677f259d5eb15049b2b7f1d02b9c0f3, type: 2}
+  setupData: {fileID: 11400000, guid: 7677f259d5eb15049b2b7f1d02b9c0f3, type: 2}
   playerCameraController: {fileID: 0}
 --- !u!114 &3223743425678320181
 MonoBehaviour:

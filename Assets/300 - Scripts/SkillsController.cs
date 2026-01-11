@@ -34,7 +34,7 @@ public class SkillsController: MonoBehaviour
     {
         if (strategyIndex >= 0 && strategyIndex < activeSkillStrategies.Count)
         {
-            activeSkillStrategies[strategyIndex].Call(transform.position, movementController.GetFacingDirection());
+            activeSkillStrategies[strategyIndex].Call(movementController);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Collections;
 /// </summary>
 public class CharacterComponent : MonoBehaviour
 {
-	[SerializeField] private CharacterSetupData characterSettings;
+	[SerializeField] private CharacterSetupData setupData;
     [SerializeField] private CameraController playerCameraController;
     private CharacterData characterData;
 	private SkillsController skillsController;
@@ -16,7 +16,7 @@ public class CharacterComponent : MonoBehaviour
     // Use this for initialization
     void Start()
 	{
-		characterData = new CharacterData(characterSettings);
+		characterData = new CharacterData(setupData);
 
         skillsController = GetComponent<SkillsController>();
         skillsController.Initialize(characterData);

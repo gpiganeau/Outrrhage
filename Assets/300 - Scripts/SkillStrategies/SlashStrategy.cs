@@ -1,11 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class SlashStrategy: SkillStrategy
 {
-    public override void Call(Vector3 position, Vector3 direction)
+    public override void Call(MovementController movementController)
     {
-        base.Call(position, direction);
+        base.Call(movementController);
+        movementController.SetImmobilized(true, "SlashAttack");
+        SpawnProjectile();
+        DOVirtual.DelayedCall(0.2f, () =>
+        {
+            movementController.SetImmobilized(false, "SlashAttack");
+        });
+    }
+
+    private void SpawnProjectile()
+    {
 
     }
+
 }
