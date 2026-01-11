@@ -6,4 +6,8 @@ using UnityEngine;
 public class SkillData : ScriptableObject
 {
     public GameObject SkillStrategyPrefab;
+    public GameObject SkillProjectilePrefab;
+    public float Cooldown;
+    public float ProjectileSpeed;
+    public int ProjectileDamage;
 }

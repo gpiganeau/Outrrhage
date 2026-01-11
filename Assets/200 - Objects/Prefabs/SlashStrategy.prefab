@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe8ae810c393904ab88c73678ee4593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlashStrategy
+  projectilePrefab: {fileID: 1658829110093344859, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}

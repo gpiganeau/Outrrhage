@@ -38,20 +38,11 @@ public class MovementController: MonoBehaviour
 
     protected void UpdateMovementVector(Vector3 newMovementVector)
     {
-        if(_movementVector.sqrMagnitude > 0)
+        if(newMovementVector.sqrMagnitude > 0)
         {
             _facingVector = newMovementVector.normalized;
         }
         _movementVector = newMovementVector;
-    }
-
-    /// <summary>
-    /// Will update only the facing direction, is overwritten whenever a movement vector is updated. Use only when the actor is static, such as a turret.
-    /// </summary>
-    /// <param name="newFacingVector"></param>
-    protected void UpdateFacingVector(Vector3 newFacingVector)
-    {
-        _facingVector = newFacingVector.normalized;
     }
 
     #region Modify Movement
