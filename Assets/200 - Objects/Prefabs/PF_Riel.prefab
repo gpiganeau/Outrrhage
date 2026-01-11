@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 5542573463318545790}
   - component: {fileID: 4427671543021624220}
   - component: {fileID: 3098445682183730170}
-  - component: {fileID: 3334819034792895057}
-  - component: {fileID: 198118585296388291}
+  - component: {fileID: 3223743425678320181}
+  - component: {fileID: 4087618700619599534}
   m_Layer: 0
   m_Name: PF_Riel
   m_TagString: Untagged
@@ -158,22 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterComponent
   characterSettings: {fileID: 11400000, guid: 7677f259d5eb15049b2b7f1d02b9c0f3, type: 2}
-  debugSkillData: {fileID: 11400000, guid: e49bfe73b74f96a46be84da6db7b84b9, type: 2}
---- !u!114 &3334819034792895057
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5586269002823455135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38e8f8830f24c624d95173e6719c691a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
   playerCameraController: {fileID: 0}
-  _rigidbody: {fileID: 4427671543021624220}
---- !u!114 &198118585296388291
+--- !u!114 &3223743425678320181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,6 +168,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5586269002823455135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67bfc2d2bbce07645bad1f5efaee4782, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e971f780370b75469c69ff2931e99ed, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackerController
+  m_EditorClassIdentifier: Assembly-CSharp::MovementController
+  _rigidbody: {fileID: 4427671543021624220}
+--- !u!114 &4087618700619599534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5586269002823455135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9602b0a9a2ac1444a80c95b1dae9855f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillsController

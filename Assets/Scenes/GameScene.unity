@@ -724,6 +724,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3098445682183730170, guid: 1e25d763e96277d42b796af7d12e939c, type: 3}
+      propertyPath: playerCameraController
+      value: 
+      objectReference: {fileID: 330585548}
     - target: {fileID: 3334819034792895057, guid: 1e25d763e96277d42b796af7d12e939c, type: 3}
       propertyPath: playerCameraController
       value: 
