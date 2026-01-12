@@ -12,6 +12,7 @@ public class CharacterComponent : MonoBehaviour
     private CharacterData characterData;
 	private SkillsController skillsController;
 	private MovementController movementController;
+    private DamageController damageController;
 
     // Use this for initialization
     void Start()
@@ -19,9 +20,12 @@ public class CharacterComponent : MonoBehaviour
 		characterData = new CharacterData(setupData);
 
         skillsController = GetComponent<SkillsController>();
-        skillsController.Initialize(characterData);
+        skillsController.Initialize(setupData);
         movementController = GetComponent<MovementController>();
-        movementController.Initialize(characterData);
+        movementController.Initialize(setupData);
+        damageController = GetComponent<DamageController>();
+        damageController.Initialize(setupData);
+
 
         InputManager.Instance.OnCharacterMovement.AddListener(OnInputVector);
         InputManager.Instance.OnCharacterSlot1.AddListener(() => skillsController.CallSkillStrategy(0));

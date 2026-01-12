@@ -10,7 +10,7 @@ public class SkillsController: MonoBehaviour
     private List<string> skillsDisabledSources;
 
     //Still have to move the inputs into the CharacterComponent
-    public void Initialize(ActorData actorData)
+    public void Initialize(ActorSetupData actorData)
     {
         movementController = GetComponent<MovementController>();
         skillsDisabledSources = new List<string>();
@@ -24,7 +24,7 @@ public class SkillsController: MonoBehaviour
         }
         activeSkillStrategies = new List<SkillStrategy>();
 
-        foreach (SkillData data in actorData.skillData)
+        foreach (SkillData data in actorData.startingSkillSet)
         {
             SkillStrategy skillStrategy = Instantiate(data.SkillStrategyPrefab, transform).GetComponent<SkillStrategy>();
             skillStrategy.Initialize(this, data);
@@ -42,6 +42,7 @@ public class SkillsController: MonoBehaviour
 
     //We might prefer the player not being able to use lots of skills at once. He is blocked of using other skills when he is using one.
     //Can also be used if stunned or silenced
+    //We might need to buffer inputs for about 0.3s to avoid them being lost when skills are disabled
     public void SetSkillsDisabled(bool value, string source)
     {
         if (value)

@@ -14,7 +14,7 @@ public class MovementController: MonoBehaviour
     private List<string> immobilizationSources;
     private Dictionary<string, float> speedAlterationSources = new Dictionary<string, float>();
 
-    public void Initialize(ActorData data)
+    public void Initialize(ActorSetupData data)
     {
         _baseMovementSpeed = data.movementSpeed;
         immobilizationSources = new List<string>();

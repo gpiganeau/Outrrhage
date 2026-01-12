@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewActorSettings", menuName = "Scriptable Objects/Game/ActorSetupData")]
 public class ActorSetupData: ScriptableObject
 {
     public int maxHealth;
