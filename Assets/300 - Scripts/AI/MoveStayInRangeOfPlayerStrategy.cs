@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 	
-public class MoveStayInRangeOfPlayerStrategy: MonoBehaviour, IMovementStrategyInterface
+public class MoveStayInRangeOfPlayerStrategy: MovementStrategy
 {
     float minDistanceToPlayer;
     float maxDistanceToPlayer;
 
-    public void Initialize(MovementStrategySetupData setupData)
+    public override void Initialize(MovementStrategySetupData setupData)
     {
         MoveStayInRangeOfPlayerSetupData data = setupData as MoveStayInRangeOfPlayerSetupData;
         if (data != null)
@@ -16,7 +16,7 @@ public class MoveStayInRangeOfPlayerStrategy: MonoBehaviour, IMovementStrategyIn
         }
     }
 
-    public Vector3 GetMovementDirection(MovementContext context)
+    public override Vector3 GetMovementDirection(MovementContext context)
     {
         float distanceToPlayer = (context.playerPosition - context.currentLocation).magnitude;
         Vector3 directionToPlayer = (context.playerPosition - context.currentLocation).normalized;

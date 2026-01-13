@@ -38,7 +38,10 @@ public class MovementController: MonoBehaviour
 
     protected void UpdateMovementVector(Vector3 newMovementVector)
     {
-        if(newMovementVector.sqrMagnitude > 0)
+        //If enemy is static, we still want to update facing direction.
+        if(_baseMovementSpeed == 0)
+            _facingVector = _preferedMovementDirection.normalized;
+        if (newMovementVector.sqrMagnitude > 0)
         {
             _facingVector = newMovementVector.normalized;
         }

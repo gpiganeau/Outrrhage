@@ -2,14 +2,14 @@
 using UnityEngine;
 
 
-public class MoveTowardsPlayerStrategy : MonoBehaviour, IMovementStrategyInterface
+public class MoveTowardsPlayerStrategy : MovementStrategy
 {
-    public void Initialize(MovementStrategySetupData setupData)
+    public override void Initialize(MovementStrategySetupData setupData)
     {
         // No initialization needed for this simple strategy
     }
 
-    public Vector3 GetMovementDirection(MovementContext context)
+    public override Vector3 GetMovementDirection(MovementContext context)
     {
         return (context.playerPosition - context.currentLocation).normalized;
     }

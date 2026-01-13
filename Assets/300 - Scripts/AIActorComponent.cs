@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+using System;
 
 public class AIActorComponent: MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class AIActorComponent: MonoBehaviour
     private DamageController damageController;
 
     //AI Attributes
-    private IMovementStrategyInterface movementStrategy;
+    private MovementStrategy _movementStrategy;
 
     [SerializeField] private CharacterComponent debugCharacterComponent;
 
@@ -33,18 +35,19 @@ public class AIActorComponent: MonoBehaviour
         //Initialize AI Strategies
         if (setupData.movementSetupData != null)
         {
-            movementStrategy = Instantiate(setupData.movementSetupData.movementStrategyPrefab, this.transform).GetComponent<IMovementStrategyInterface>();
-            movementStrategy.Initialize(setupData.movementSetupData);
+            Type type = setupData.movementSetupData.movementStrategyScript.GetType();
+            _movementStrategy = gameObject.AddComponent(type) as MovementStrategy;
+            _movementStrategy.Initialize(setupData.movementSetupData);
         }
     }
 
     // Update is called once per frame
     void Update()
 	{
-        if(movementStrategy != null)
+        if(_movementStrategy != null)
         {
             MovementContext context = new MovementContext(this.transform.position, debugCharacterComponent.transform.position);
-            Vector3 movementDirection = movementStrategy.GetMovementDirection(context);
+            Vector3 movementDirection = _movementStrategy.GetMovementDirection(context);
             movementController.SetMovementDirection(movementDirection);
         }
     }

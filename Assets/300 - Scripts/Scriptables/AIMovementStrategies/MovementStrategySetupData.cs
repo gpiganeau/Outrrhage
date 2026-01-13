@@ -3,5 +3,5 @@ using System.Collections;
 
 public class MovementStrategySetupData: ScriptableObject
 {
-	public GameObject movementStrategyPrefab;
+	public MovementStrategy movementStrategyScript;
 }
