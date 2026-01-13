@@ -9,19 +9,17 @@ public class SkillStrategy : MonoBehaviour
     protected SkillsController parentController;
     private string debugName;
     [SerializeField] protected Projectile projectilePrefab;
-    private float cooldownTime;
     protected bool isInCooldown = false;
     protected List<Projectile> activeProjectiles;
 
-    protected ProjectileData projectileData;
+    protected SkillData _storedSkillData;
 
     public virtual void Initialize(SkillsController parent, SkillData skillData)
     {
         parentController = parent;
         debugName = skillData.name;
-        cooldownTime = skillData.Cooldown;
-        projectileData = new ProjectileData(skillData.ProjectileSpeed, skillData.ProjectileDamage);
         activeProjectiles = new List<Projectile>();
+        _storedSkillData = skillData;
     }
 
     public virtual void Call(MovementController movementController)
@@ -30,11 +28,10 @@ public class SkillStrategy : MonoBehaviour
         Debug.Log($"Skill {debugName} used");
     }
 
-    protected void SpawnProjectile(Vector3 position)
+    protected void SpawnProjectile(ProjectileData data)
     {
         Projectile newProjectile = Instantiate(projectilePrefab.gameObject).GetComponent<Projectile>();
-        newProjectile.Initialize(projectileData);
-        newProjectile.transform.position = position;
+        newProjectile.Initialize(data);
         activeProjectiles.Add(newProjectile);
         newProjectile.onProjectileRemoval.AddListener(RemoveProjectile);
     }
@@ -55,6 +52,6 @@ public class SkillStrategy : MonoBehaviour
     public void PutInCooldown()
     {
         isInCooldown = true;
-        DOVirtual.DelayedCall(cooldownTime, () => isInCooldown = false);
+        DOVirtual.DelayedCall(_storedSkillData.Cooldown, () => isInCooldown = false);
     }
 }

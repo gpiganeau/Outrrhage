@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006bce24beec7824d9edeb2547c5af6b, type: 3}
   m_Name: NewMoveStayInRangeOfPlayerSetupData
   m_EditorClassIdentifier: Assembly-CSharp::MoveStayInRangeOfPlayerSetupData
-  movementStrategyPrefab: {fileID: 1287077490974178920, guid: 234de1d9ec52d1b4580aa37494312610, type: 3}
+  movementStrategyScript: {fileID: 3969683080146463090, guid: 234de1d9ec52d1b4580aa37494312610, type: 3}
   minDistanceFromPlayer: 5
   maxDistanceFromPlayer: 10

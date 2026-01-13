@@ -16,6 +16,7 @@ public class MovementController: MonoBehaviour
 
     public void Initialize(ActorSetupData data)
     {
+        _facingVector = Vector3.forward;
         _baseMovementSpeed = data.movementSpeed;
         immobilizationSources = new List<string>();
         speedAlterationSources = new Dictionary<string, float>();
