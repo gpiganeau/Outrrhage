@@ -2,6 +2,7 @@
 using System.Collections;
 using NUnit.Framework;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class MovementController: MonoBehaviour
 {
@@ -48,6 +49,20 @@ public class MovementController: MonoBehaviour
         }
         _movementVector = newMovementVector;
     }
+
+    #region Movement Effects
+
+    public void Dash(Vector3 direction, float dashDistance, float dashDuration/*, bool ignoreCollisions*/)
+    {
+        SetImmobilized(true, "Dash");
+        Vector3 dashVector = direction.normalized * dashDistance;
+        _rigidbody.DOMove(_rigidbody.position + dashVector, dashDuration).SetEase(Ease.OutQuad).OnComplete(() =>
+        {
+            SetImmobilized(false, "Dash");
+        });
+    }
+
+    #endregion
 
     #region Modify Movement
 
