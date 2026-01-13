@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5541818431457463337}
   - component: {fileID: 4709752220214148378}
   - component: {fileID: 7956668515908212603}
-  - component: {fileID: 1658829110093344859}
+  - component: {fileID: 6039323525665302458}
   m_Layer: 0
   m_Name: PF_Slash_Proj
   m_TagString: Untagged
@@ -113,7 +113,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1658829110093344859
+--- !u!114 &6039323525665302458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,9 +122,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8024854797782737839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52b3782d561c62c4f8287cbe29ce87b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 68e3ac94d66e88744be026e697fd21b4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Projectile
+  m_EditorClassIdentifier: Assembly-CSharp::StaticProjectile
   onProjectileRemoval:
     m_PersistentCalls:
       m_Calls: []
