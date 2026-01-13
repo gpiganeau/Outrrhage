@@ -9,7 +9,6 @@ public class CharacterComponent : MonoBehaviour
 {
 	[SerializeField] private CharacterSetupData setupData;
     [SerializeField] private CameraController playerCameraController;
-    private CharacterData characterData;
 	private SkillsController skillsController;
 	private MovementController movementController;
     private DamageController damageController;
@@ -17,8 +16,6 @@ public class CharacterComponent : MonoBehaviour
     // Use this for initialization
     void Start()
 	{
-		characterData = new CharacterData(setupData);
-
         skillsController = GetComponent<SkillsController>();
         skillsController.Initialize(setupData);
         movementController = GetComponent<MovementController>();

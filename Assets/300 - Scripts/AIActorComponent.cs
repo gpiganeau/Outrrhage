@@ -6,7 +6,6 @@ using System;
 public class AIActorComponent: MonoBehaviour
 {
     [SerializeField] private AIActorSetupData setupData;
-    private ActorData actorData;
     private SkillsController skillsController;
     private MovementController movementController;
     private DamageController damageController;
@@ -23,8 +22,6 @@ public class AIActorComponent: MonoBehaviour
     // Use this for initialization
     void Start()
 	{
-        actorData = new ActorData(setupData);
-
         skillsController = GetComponent<SkillsController>();
         skillsController.Initialize(setupData);
         movementController = GetComponent<MovementController>();
