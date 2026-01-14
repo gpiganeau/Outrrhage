@@ -12,8 +12,8 @@ public class DamageController: MonoBehaviour
     private MovementController _movementController;
 	[SerializeField] private bool _usesFixedForward = false;
 
-    [HideInInspector] public UnityEvent OnDamaged;
-    [HideInInspector] public UnityEvent OnHealed;
+    [HideInInspector] public UnityEvent<int, int> OnDamaged;
+    [HideInInspector] public UnityEvent<int, int> OnHealed;
     [HideInInspector] public UnityEvent OnBlocked;
     [HideInInspector] public UnityEvent OnDied;
 
@@ -29,7 +29,13 @@ public class DamageController: MonoBehaviour
         }
     }
 
-	public void UpdateBlockedZones(bool[] newBlockedZones)
+	public void Initialize(int maxHealth)
+	{
+		_maxHealth = maxHealth;
+		_currentHealth = _maxHealth;
+    }
+
+    public void UpdateBlockedZones(bool[] newBlockedZones)
 	{
 		_blockedZones = newBlockedZones;
     }
@@ -42,7 +48,7 @@ public class DamageController: MonoBehaviour
         else
 		{
 			_currentHealth -= amount;
-            OnDamaged?.Invoke();
+            OnDamaged?.Invoke(_currentHealth, _maxHealth);
 			if (_currentHealth <= 0)
 				OnDied?.Invoke();
         }
@@ -53,7 +59,7 @@ public class DamageController: MonoBehaviour
 		_currentHealth += amount;
 		if (_currentHealth > _maxHealth)
 			_currentHealth = _maxHealth;
-		OnHealed?.Invoke();
+		OnHealed?.Invoke(_currentHealth, _maxHealth);
     }
 
 

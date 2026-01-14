@@ -6,6 +6,7 @@ using System;
 public class AIActorComponent: MonoBehaviour
 {
     [SerializeField] private AIActorSetupData setupData;
+    [SerializeField] private HealthBarDisplay healthBarDisplay;
     private SkillsController skillsController;
     private MovementController movementController;
     private DamageController damageController;
@@ -29,6 +30,9 @@ public class AIActorComponent: MonoBehaviour
         damageController = GetComponent<DamageController>();
         damageController.Initialize(setupData);
 
+        healthBarDisplay.Initialize(damageController);
+        damageController.OnDied.AddListener(OnDeath);
+
         //Initialize AI Strategies
         if (setupData.movementSetupData != null)
         {
@@ -47,5 +51,10 @@ public class AIActorComponent: MonoBehaviour
             Vector3 movementDirection = _movementStrategy.GetMovementDirection(context);
             movementController.SetMovementDirection(movementDirection);
         }
+    }
+
+    private void OnDeath() 
+    {
+        Destroy(this.gameObject);
     }
 }

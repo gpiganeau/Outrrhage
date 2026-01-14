@@ -5,12 +5,23 @@ using UnityEngine.Events;
 
 public class StaticProjectile: Projectile
 {
+    private int _damage = 1;
     public override void Initialize(ProjectileData data)
     {
         transform.position = data.startingPosition;
         Vector3 originToProj = transform.position - data.origin;
         transform.forward = originToProj.normalized;
-        DOVirtual.DelayedCall(1, DestroyProjectile);
+        _damage = data.Damage;
+        DOVirtual.DelayedCall(0.2f, DestroyProjectile);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        DamageController damageController = other.GetComponent<DamageController>();
+        if(damageController != null)
+        {
+            damageController.Damage(_damage, transform.position);
+        }
     }
 
     //The stuff that will make the projectile go and move 
@@ -22,5 +33,5 @@ public class StaticProjectile: Projectile
 
     //Le projectile gère les collisions et les dégats qu'il inflige
     //L'idée c'est qu'il soit fire and forget
-    
+
 }

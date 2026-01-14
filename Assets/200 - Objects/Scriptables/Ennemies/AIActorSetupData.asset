@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90b4f106e0d7ce4b87b7cc28ea5675c, type: 3}
   m_Name: AIActorSetupData
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
-  maxHealth: 1
-  movementSpeed: 2
+  maxHealth: 5
+  movementSpeed: 0
   startingSkillSet: []
-  movementSetupData: {fileID: 11400000, guid: d0d84f30d70b6fc4ab103d3f3edc06d8, type: 2}
+  movementSetupData: {fileID: 11400000, guid: 334c90e1c6753444ca12ceff40eea6ea, type: 2}
