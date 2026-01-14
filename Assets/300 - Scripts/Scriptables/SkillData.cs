@@ -11,6 +11,7 @@ public class SkillData : ScriptableObject
     public float ProjectileSpeed;
     public int ProjectileDamage;
     [Space]
+    public bool ignoreCollisions;
     public float movementDistance;
     public float movementDuration;
 }

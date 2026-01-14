@@ -3,6 +3,7 @@ using System.Collections;
 using NUnit.Framework;
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEngine.AI;
 
 public class MovementController: MonoBehaviour
 {
@@ -52,14 +53,55 @@ public class MovementController: MonoBehaviour
 
     #region Movement Effects
 
-    public void Dash(Vector3 direction, float dashDistance, float dashDuration/*, bool ignoreCollisions*/)
+    public void Dash(Vector3 direction, float dashDistance, float dashDuration, bool ignoreCollisions)
     {
         SetImmobilized(true, "Dash");
         Vector3 dashVector = direction.normalized * dashDistance;
-        _rigidbody.DOMove(_rigidbody.position + dashVector, dashDuration).SetEase(Ease.OutQuad).OnComplete(() =>
+        float timeScale = 1f;
+        if(!ignoreCollisions){
+            RaycastHit hit;
+            if (Physics.Raycast(_rigidbody.position, dashVector, out hit, dashDistance))
+            {
+                timeScale = hit.distance / dashDistance;
+                dashVector = direction.normalized * (hit.distance - 0.5f);
+            }
+            _rigidbody.DOMove(_rigidbody.position + dashVector, dashDuration * timeScale).SetEase(Ease.OutQuad).OnComplete(() =>
+            {
+                SetImmobilized(false, "Dash");
+            });
+        }
+        else
         {
-            SetImmobilized(false, "Dash");
-        });
+            Vector3 destination = _rigidbody.position + dashVector;
+            if(NavMesh.SamplePosition(destination, out NavMeshHit sampleHit, 0.5f, NavMesh.AllAreas))
+                destination = sampleHit.position;
+            else
+                destination = ComputeFurthestPointAlongLine(_rigidbody.position, destination, 0.5f);
+            
+            dashVector = destination - _rigidbody.position;
+            _rigidbody.detectCollisions = false;
+            _rigidbody.DOMove(_rigidbody.position + dashVector, dashDuration).SetEase(Ease.OutQuad).OnComplete(() =>
+            {
+                _rigidbody.detectCollisions = true;
+                SetImmobilized(false, "Dash");
+            });
+        }
+    }
+
+    private Vector3 ComputeFurthestPointAlongLine(Vector3 origin, Vector3 finalPosition, float radius)
+    {
+        float distance = Vector3.Distance(origin, finalPosition);
+        Vector3 line = finalPosition - origin;
+        while (distance > 0)
+        {
+            Vector3 checkPoint = origin + line.normalized * distance;
+            if (NavMesh.SamplePosition(checkPoint, out NavMeshHit hit, radius, NavMesh.AllAreas))
+            {
+                return hit.position;
+            }
+            distance -= radius;
+        }
+        return origin;
     }
 
     #endregion

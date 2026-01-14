@@ -20,7 +20,7 @@ public class DashStrategy: SkillStrategy
             Debug.LogError("MovementController is null.");
             return;
         }
-        movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration);
+        movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
         // Implement dash logic here
         Debug.Log("Executing Dash Skill");
         PutInCooldown();

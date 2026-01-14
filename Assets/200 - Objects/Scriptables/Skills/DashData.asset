@@ -17,5 +17,6 @@ MonoBehaviour:
   Cooldown: 2
   ProjectileSpeed: 0
   ProjectileDamage: 0
-  movementDistance: 5
+  ignoreCollisions: 1
+  movementDistance: 7
   movementDuration: 0.15
