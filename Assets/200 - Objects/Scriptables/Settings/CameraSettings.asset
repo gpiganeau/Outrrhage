@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraSettings
   cameraLinearFollowSpeed: 5
   cameraGeometricFollowSpeed: 0.85
-  cameraFollowDistance: 10
+  cameraFollowDistance: 15
   cameraFOV: 60
