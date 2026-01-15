@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: SlashData
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: db52d200652817c4b818f62e30a9830a, type: 3}
+  SkillProjectilePrefab: {fileID: 0}
+  Cooldown: 0.5
+  ProjectileSpeed: 0
+  ProjectileDamage: 1
+  ignoreCollisions: 0
+  movementDistance: 0
+  movementDuration: 0
