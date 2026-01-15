@@ -25,6 +25,8 @@ public class BloodwaveStrategy: SkillStrategy
                 origin = movementController.transform.position,
                 Damage = _storedSkillData.ProjectileDamage
             };
+
+			projectileData.startingPosition += new Vector3(0, 1f, 0f); // Vertical Offset
 			projectiles[i] = projectileData;
         }
         // Implement bloodwave logic here

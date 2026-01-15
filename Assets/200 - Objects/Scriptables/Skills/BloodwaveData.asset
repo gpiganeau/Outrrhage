@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: d16200095b148d74c90084f808df11e8, type: 3}
   SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 83b0d9a89238ffd49a66bcbaf8f25964, type: 3}
-  Cooldown: 0
-  ProjectileSpeed: 0
+  Cooldown: 1
+  ProjectileSpeed: 1
   ProjectileDamage: 1
   numberOfProjectiles: 8
   ignoreCollisions: 0
