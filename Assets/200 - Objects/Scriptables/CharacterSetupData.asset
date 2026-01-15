@@ -17,5 +17,6 @@ MonoBehaviour:
   startingSkillSet:
   - {fileID: 11400000, guid: efa91794510c88f40b147e97aba739db, type: 2}
   - {fileID: 11400000, guid: e64051fa1f58f2f4ab28e249d2dc0d84, type: 2}
+  - {fileID: 11400000, guid: 942c9df7ef2ba8341bff539bf511d9eb, type: 2}
   - {fileID: 11400000, guid: e49bfe73b74f96a46be84da6db7b84b9, type: 2}
   maxBlood: 10

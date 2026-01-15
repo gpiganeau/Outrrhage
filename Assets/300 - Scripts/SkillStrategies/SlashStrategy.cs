@@ -7,13 +7,14 @@ public class SlashStrategy: SkillStrategy
 {
     public override void Call(MovementController movementController)
     {
+        if (isInCooldown) return;
+
         ProjectileData projectileData = new ProjectileData() { 
             startingPosition = movementController.transform.position + 1.5f * movementController.GetFacingDirection(), 
             origin = movementController.transform.position,
             Damage = _storedSkillData.ProjectileDamage
         };
 
-        if (isInCooldown) return;
         base.Call(movementController);
         movementController.SetImmobilized(true, "SlashAttack");
         parentController.SetSkillsDisabled(true, "SlashAttack");
