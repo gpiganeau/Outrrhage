@@ -20,7 +20,6 @@ public class AIActorComponent: MonoBehaviour
     //Will use a movement strategy to coordinate movement and a skills strategy to use skills
     //This will allow to define an enemy's behavior by a set of skills and 2 strategies
 
-    // Use this for initialization
     void Start()
 	{
         skillsController = GetComponent<SkillsController>();
@@ -42,7 +41,6 @@ public class AIActorComponent: MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
 	{
         if(_movementStrategy != null)

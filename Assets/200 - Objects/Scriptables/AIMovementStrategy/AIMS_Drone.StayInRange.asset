@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: AIMS_Drone.StayInRange
   m_EditorClassIdentifier: Assembly-CSharp::MoveStayInRangeOfPlayerSetupData
   movementStrategyScript: {fileID: 3969683080146463090, guid: 234de1d9ec52d1b4580aa37494312610, type: 3}
-  minDistanceFromPlayer: 5
-  maxDistanceFromPlayer: 8
+  minDistanceFromPlayer: 2
+  maxDistanceFromPlayer: 10
+  lookAtTarget: 0

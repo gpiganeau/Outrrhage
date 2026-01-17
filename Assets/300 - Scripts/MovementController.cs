@@ -37,6 +37,7 @@ public class MovementController: MonoBehaviour
         
         UpdateMovementVector(_preferedMovementDirection  * _baseMovementSpeed * ComputeAlteredSpeed());
         _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.fixedDeltaTime);
+        transform.LookAt(transform.position + _movementVector);
     }
 
     protected void UpdateMovementVector(Vector3 newMovementVector)
