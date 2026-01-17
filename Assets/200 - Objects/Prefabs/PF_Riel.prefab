@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb98369e3f7910b4d84da32731f3630f, type: 2}
+  - {fileID: 2100000, guid: f80ee4c83d66b194dbe2ac93afc0db03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,7 +156,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb98369e3f7910b4d84da32731f3630f, type: 2}
+  - {fileID: 2100000, guid: f80ee4c83d66b194dbe2ac93afc0db03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -246,7 +246,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb98369e3f7910b4d84da32731f3630f, type: 2}
+  - {fileID: 2100000, guid: f80ee4c83d66b194dbe2ac93afc0db03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -336,7 +336,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb98369e3f7910b4d84da32731f3630f, type: 2}
+  - {fileID: 2100000, guid: f80ee4c83d66b194dbe2ac93afc0db03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -584,7 +584,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 68d9464d0cd4fbf48a81abf378167c7f, type: 2}
+  - {fileID: 2100000, guid: 47a3ec4beb21caa428cef5203860a57a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -671,7 +671,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fb7c52c1e54880042b4459272b804b65, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: f80ee4c83d66b194dbe2ac93afc0db03, type: 2}
+      objectReference: {fileID: 2100000, guid: 637a33e4c2945654e99c89aed7e003f1, type: 2}
     - target: {fileID: 919132149155446097, guid: fb7c52c1e54880042b4459272b804b65, type: 3}
       propertyPath: m_Name
       value: horn (1)
@@ -749,7 +749,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: fb7c52c1e54880042b4459272b804b65, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: f80ee4c83d66b194dbe2ac93afc0db03, type: 2}
+      objectReference: {fileID: 2100000, guid: 637a33e4c2945654e99c89aed7e003f1, type: 2}
     - target: {fileID: 919132149155446097, guid: fb7c52c1e54880042b4459272b804b65, type: 3}
       propertyPath: m_Name
       value: horn
