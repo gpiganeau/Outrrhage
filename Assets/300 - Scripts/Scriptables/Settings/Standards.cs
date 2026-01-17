@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Standards", menuName = "Scriptable Objects/Standards")]
+[CreateAssetMenu(fileName = "Standards", menuName = "Scriptable Objects/Settings/Standards")]
 public class Standards : ScriptableObject
 {
     public string INPUT_CHARACTER_MAP;

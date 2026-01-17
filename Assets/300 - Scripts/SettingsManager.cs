@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SettingsManager : MonoBehaviour
@@ -7,10 +8,12 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private Standards standards;
     [SerializeField] private CameraSettings cameraSettings;
     [SerializeField] private GameplaySettings gameplaySettings;
+    [SerializeField] private VisualSettings visualSettings;
 
     public Standards Standards => standards;
     public CameraSettings CameraSettings => cameraSettings;
     public GameplaySettings GameplaySettings => gameplaySettings;
+    public VisualSettings VisualSettings => visualSettings;
 
     private void Awake()
     {

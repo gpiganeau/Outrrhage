@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CameraSettings", menuName = "Scriptable Objects/CameraSettings")]
+[CreateAssetMenu(fileName = "CameraSettings", menuName = "Scriptable Objects/Settings/CameraSettings")]
 public class CameraSettings : ScriptableObject
 {
     public float cameraLinearFollowSpeed;

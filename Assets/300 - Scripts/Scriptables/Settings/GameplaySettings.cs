@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "GameplaySettings", menuName = "Scriptable Objects/GameplaySettings")]
+[CreateAssetMenu(fileName = "GameplaySettings", menuName = "Scriptable Objects/Settings/GameplaySettings")]
 public class GameplaySettings : ScriptableObject
 {
     public float baseStaticTimeOnSkillUse;
