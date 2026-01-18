@@ -3,25 +3,25 @@
 ## Menu
 - [README](../README.md)
 
-# Sprints je sais pas quoi ?
+## Goals 0.1
 cube / sphere / graf avec des primitives, focus sur le lighting / outlining / cellshading, lights, primitives, VFX
 Box + Cell Shader + Outline ! + Post processing + 2D/3D Props test = First Look
 
-# Tasks
-- Riel Sphere : Ok
-- Enemy Template : ok
-- Drone v1 : Streagy de drone avec l'esquive a tester / Faire Asset 
-- Camion : ok
+## Refs / Links / Sources 
+[Grass Shader Doc, 16:16](https://www.youtube.com/watch?v=IjfBlUtJF_0)
+[VFX Main Shader](https://www.youtube.com/watch?v=Qmgh9702vak)
+
+## Tasks
+- Test Build Web Gl :  wip
+- Drone v1 : Graph, Attack, FX, SFX...
 - Grass Shader : wip
 - Forest Spawner v1 : wip
 - LD v1 : wip
-- Cinemachine : meh
-- Post process v1 + Light ambiant v1 : ok
+- Cinemachine : ?
 - Ambiance Sonore v1 : birds
-- Skybox v1 : ok
 - Icon de Skills
 - Dronne Switch straegy when low hp
-- Palette Settings  : ok
+- Palette Settings  : ok, wip, use it
 
 ## Notes
 - Avec notre angle de camera on ne voit jamais le ciel
