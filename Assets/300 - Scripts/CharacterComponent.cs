@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 
@@ -31,12 +31,6 @@ public class CharacterComponent : MonoBehaviour
         InputManager.Instance.OnCharacterSlot4.AddListener(() => skillsController.CallSkillStrategy(3));
         InputManager.Instance.OnCharacterSlot5.AddListener(() => skillsController.CallSkillStrategy(4));
     }
-
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
 
     #region Input Handling
 
