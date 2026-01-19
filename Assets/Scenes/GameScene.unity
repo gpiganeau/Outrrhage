@@ -815,7 +815,7 @@ MonoBehaviour:
   standards: {fileID: 11400000, guid: 02a68650d5003cc4eb7765fadbfdc47c, type: 2}
   cameraSettings: {fileID: 11400000, guid: 4fdaa4a867640d3458a493b25c2ff154, type: 2}
   gameplaySettings: {fileID: 11400000, guid: 801398dababc9ce4b9952a67c5e2e53a, type: 2}
-  visualSettings: {fileID: 0}
+  visualSettings: {fileID: 11400000, guid: 69da8658fd1b39b43805e11cbe355872, type: 2}
 --- !u!1 &619242527
 GameObject:
   m_ObjectHideFlags: 0
