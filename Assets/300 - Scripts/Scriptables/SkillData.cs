@@ -12,7 +12,9 @@ public class SkillData : ScriptableObject
     public float Cooldown;
     public float ProjectileSpeed;
     public int ProjectileDamage;
+    public float ProjectileLifetime;
     public int numberOfProjectiles;
+    public SkillshotProjectile.TravelMode TravelMode = SkillshotProjectile.TravelMode.Idle;
     [Space]
     public bool ignoreCollisions;
     public float movementDistance;

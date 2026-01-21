@@ -12,7 +12,7 @@ public class StaticProjectile: Projectile
         Vector3 originToProj = transform.position - data.origin;
         transform.forward = originToProj.normalized;
         _damage = data.Damage;
-        DOVirtual.DelayedCall(0.2f, DestroyProjectile);
+        DOVirtual.DelayedCall(data.Lifetime, DestroyProjectile);
     }
 
     private void OnTriggerEnter(Collider other)

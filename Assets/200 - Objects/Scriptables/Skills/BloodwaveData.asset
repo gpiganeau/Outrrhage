@@ -16,9 +16,11 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 83b0d9a89238ffd49a66bcbaf8f25964, type: 3}
   Name: Bloodwave
   Cooldown: 1
-  ProjectileSpeed: 1
+  ProjectileSpeed: 12
   ProjectileDamage: 1
-  numberOfProjectiles: 8
+  ProjectileLifetime: 1
+  numberOfProjectiles: 16
+  TravelMode: 0
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0

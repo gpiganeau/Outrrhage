@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaa685a38970ee4fbbbfd3c62cac941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BloodwaveStrategy
-  projectilePrefab: {fileID: 6039323525665302458, guid: 83b0d9a89238ffd49a66bcbaf8f25964, type: 3}
+  projectilePrefab: {fileID: -9074484718186526137, guid: 83b0d9a89238ffd49a66bcbaf8f25964, type: 3}

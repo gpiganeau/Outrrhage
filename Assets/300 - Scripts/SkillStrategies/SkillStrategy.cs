@@ -29,12 +29,13 @@ public class SkillStrategy : MonoBehaviour
         Debug.Log($"Skill {debugName} used");
     }
 
-    protected void SpawnProjectile(ProjectileData data)
+    protected Projectile SpawnProjectile(ProjectileData data)
     {
         Projectile newProjectile = Instantiate(projectilePrefab.gameObject).GetComponent<Projectile>();
         newProjectile.Initialize(data);
         activeProjectiles.Add(newProjectile);
         newProjectile.onProjectileRemoval.AddListener(RemoveProjectile);
+        return newProjectile;
     }
 
     private void RemoveProjectile(Projectile projectile)
