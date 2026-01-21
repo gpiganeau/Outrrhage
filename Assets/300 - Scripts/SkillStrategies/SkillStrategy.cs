@@ -13,6 +13,7 @@ public class SkillStrategy : MonoBehaviour
     protected List<Projectile> activeProjectiles;
 
     protected SkillData _storedSkillData;
+    public SkillData SkillData => _storedSkillData;
 
     public virtual void Initialize(SkillsController parent, SkillData skillData)
     {

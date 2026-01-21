@@ -13,3 +13,13 @@ MonoBehaviour:
   m_Name: SkillStub
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 6aa119f476c828843bfb6c70bc2da9f8, type: 3}
+  SkillProjectilePrefab: {fileID: 0}
+  Name: SKILLSTUB
+  Cooldown: 0
+  ProjectileSpeed: 0
+  ProjectileDamage: 0
+  numberOfProjectiles: 0
+  ignoreCollisions: 0
+  movementDistance: 0
+  movementDuration: 0
+  Icon: {fileID: 21300000, guid: 8ce5ab41ecb07b942a1042a85f585feb, type: 3}

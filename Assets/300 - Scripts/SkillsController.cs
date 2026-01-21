@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,11 @@ public class SkillsController: MonoBehaviour
     private List<SkillStrategy> activeSkillStrategies;
     private MovementController movementController;
     private List<string> skillsDisabledSources;
+
+
+    // -- Events --
+    public event Action<List<SkillStrategy>> OnSkillsInitialized; // -- Hmmm, should be riel only ?
+
 
     //Still have to move the inputs into the CharacterComponent
     public void Initialize(ActorSetupData actorData)
@@ -30,6 +36,8 @@ public class SkillsController: MonoBehaviour
             skillStrategy.Initialize(this, data);
             activeSkillStrategies.Add(skillStrategy);
         }
+
+        OnSkillsInitialized?.Invoke(activeSkillStrategies);
     }
 
     public void CallSkillStrategy(int strategyIndex)

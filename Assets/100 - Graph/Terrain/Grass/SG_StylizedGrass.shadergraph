@@ -3705,8 +3705,8 @@
     "m_ObjectId": "9cfa2d1bbfae446f88752c17d1f003cd",
     "m_Title": "Terrain Color Blending",
     "m_Position": {
-        "x": -2262.000244140625,
-        "y": 179.00003051757813
+        "x": -2262.0,
+        "y": 179.0
     }
 }
 
@@ -5058,8 +5058,8 @@
     "m_ObjectId": "e944420ce4bf465794165bb7f6de63e9",
     "m_Title": "Height Blend",
     "m_Position": {
-        "x": -1360.9996337890625,
-        "y": 699.0000610351563
+        "x": -1361.0,
+        "y": 699.0
     }
 }
 

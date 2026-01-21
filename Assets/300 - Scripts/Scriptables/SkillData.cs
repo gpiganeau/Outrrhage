@@ -7,6 +7,8 @@ public class SkillData : ScriptableObject
 {
     public GameObject SkillStrategyPrefab;
     public GameObject SkillProjectilePrefab;
+
+    public string Name;
     public float Cooldown;
     public float ProjectileSpeed;
     public int ProjectileDamage;
@@ -15,4 +17,7 @@ public class SkillData : ScriptableObject
     public bool ignoreCollisions;
     public float movementDistance;
     public float movementDuration;
+
+    [Header ("Visuals")]
+    public Sprite Icon;
 }
