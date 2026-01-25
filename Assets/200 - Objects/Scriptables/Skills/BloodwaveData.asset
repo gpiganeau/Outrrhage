@@ -19,7 +19,7 @@ MonoBehaviour:
   ProjectileSpeed: 12
   ProjectileDamage: 1
   ProjectileLifetime: 1
-  numberOfProjectiles: 16
+  numberOfProjectiles: 8
   TravelMode: 0
   ignoreCollisions: 0
   movementDistance: 0
