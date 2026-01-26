@@ -27,12 +27,12 @@ public class SkillStrategy : MonoBehaviour
     {
         if(isInCooldown)
         {
-            //Debug.Log("Skill is in cooldown.");
+            //Logger.Combat("Skill is in cooldown.");
             return false;
         }
         if (movementController == null)
         {
-            Debug.LogError("MovementController is null.");
+            Logger.LogError(Logger.LogCategory.Combat, "MovementController is null.");
             return false;
         }
 
