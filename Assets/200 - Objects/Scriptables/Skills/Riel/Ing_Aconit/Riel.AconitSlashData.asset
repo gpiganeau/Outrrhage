@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8576b5616d5a5b43bc5ebe672411004, type: 3}
-  m_Name: Riel.BloodwaveData
+  m_Name: Riel.AconitSlashData
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  SkillStrategyPrefab: {fileID: 7434445806588342944, guid: d16200095b148d74c90084f808df11e8, type: 3}
-  SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 83b0d9a89238ffd49a66bcbaf8f25964, type: 3}
-  Name: Vague de sang
-  Cooldown: 1
-  ProjectileSpeed: 12
+  SkillStrategyPrefab: {fileID: 7434445806588342944, guid: db52d200652817c4b818f62e30a9830a, type: 3}
+  SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
+  Name: Griffe florale
+  Cooldown: 0.5
+  ProjectileSpeed: 0
   ProjectileDamage: 1
-  ProjectileLifetime: 1
-  numberOfProjectiles: 8
-  TravelMode: 0
+  ProjectileLifetime: 0.2
+  numberOfProjectiles: 1
+  TravelMode: 3
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
-  Icon: {fileID: 21300000, guid: 74c78f39f17de524db329f8dc0e2e035, type: 3}
+  Icon: {fileID: 21300000, guid: f62115592573c0041a9c95142e185b8a, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: db52d200652817c4b818f62e30a9830a, type: 3}
   SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
-  Name: Blood Slash
+  Name: Aspiration
   Cooldown: 0.5
   ProjectileSpeed: 0
   ProjectileDamage: 1

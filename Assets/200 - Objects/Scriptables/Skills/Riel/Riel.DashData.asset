@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 91c398b7b1a0e734db87987a9d916672, type: 3}
   SkillProjectilePrefab: {fileID: 0}
-  Name: Blood Dash
+  Name: Pas rapide
   Cooldown: 2
   ProjectileSpeed: 0
   ProjectileDamage: 0
