@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8576b5616d5a5b43bc5ebe672411004, type: 3}
-  m_Name: DashData
+  m_Name: Riel.DashData
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 91c398b7b1a0e734db87987a9d916672, type: 3}
   SkillProjectilePrefab: {fileID: 0}
@@ -24,4 +24,4 @@ MonoBehaviour:
   ignoreCollisions: 1
   movementDistance: 7
   movementDuration: 0.15
-  Icon: {fileID: 21300000, guid: 980d473a8e53ecc418af4b7b16cf225d, type: 3}
+  Icon: {fileID: 21300000, guid: c4474a0bd3f754244b6cffea969c6a6c, type: 3}
