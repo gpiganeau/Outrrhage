@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8576b5616d5a5b43bc5ebe672411004, type: 3}
+  m_Name: Drone.ProjectileSkillData
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 09a67b95eb179514a8944ed695d9352c, type: 3}
+  SkillProjectilePrefab: {fileID: 8024854797782737839, guid: c8e92f2eeb681794c8b18bfd46190812, type: 3}
+  Name: 'Drone Bullet '
+  Cooldown: 1
+  ProjectileSpeed: 10
+  ProjectileDamage: 1
+  ProjectileLifetime: 8
+  numberOfProjectiles: 1
+  TravelMode: 0
+  ignoreCollisions: 0
+  movementDistance: 0
+  movementDuration: 0
+  Icon: {fileID: 21300000, guid: f8178563b844b8c40adba96714c17b3b, type: 3}

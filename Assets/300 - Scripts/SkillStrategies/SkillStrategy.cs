@@ -8,7 +8,6 @@ public class SkillStrategy : MonoBehaviour
 {
     protected SkillsController parentController;
     private string debugName;
-    [SerializeField] protected Projectile projectilePrefab;
     protected bool isInCooldown = false;
     protected List<Projectile> activeProjectiles;
 
@@ -31,7 +30,7 @@ public class SkillStrategy : MonoBehaviour
 
     protected Projectile SpawnProjectile(ProjectileData data)
     {
-        Projectile newProjectile = Instantiate(projectilePrefab.gameObject).GetComponent<Projectile>();
+        Projectile newProjectile = Instantiate(_storedSkillData.SkillProjectilePrefab.gameObject).GetComponent<Projectile>();
         newProjectile.Initialize(data);
         activeProjectiles.Add(newProjectile);
         newProjectile.onProjectileRemoval.AddListener(RemoveProjectile);
