@@ -12,6 +12,10 @@ public class SkillBar : MonoBehaviour
     public void Init(List<SkillStrategy> strategies)
     {
         // -- Clear before init in case of multiples / skill changing
+        foreach (Transform c in transform)
+        {
+            Destroy(c.gameObject);
+        }
 
         foreach(var s in strategies)
         {
