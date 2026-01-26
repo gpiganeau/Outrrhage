@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
   Name: Aspiration
   Cooldown: 0.5
+  BloodCost: 0
   ProjectileSpeed: 0
   ProjectileDamage: 1
   ProjectileLifetime: 0.2

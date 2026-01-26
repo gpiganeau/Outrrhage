@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 83b0d9a89238ffd49a66bcbaf8f25964, type: 3}
   Name: Vague de sang
   Cooldown: 1
+  BloodCost: 1
   ProjectileSpeed: 12
   ProjectileDamage: 1
   ProjectileLifetime: 1

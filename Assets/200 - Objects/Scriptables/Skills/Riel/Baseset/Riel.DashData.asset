@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 0}
   Name: Pas rapide
   Cooldown: 2
+  BloodCost: 1
   ProjectileSpeed: 0
   ProjectileDamage: 0
   ProjectileLifetime: 0
