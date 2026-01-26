@@ -118,7 +118,7 @@ public class MovementController: MonoBehaviour
             if(immobilizationSources.Contains(source))
                 immobilizationSources.Remove(source);
             else
-                Debug.LogWarning($"Tried to remove immobilization source {source} which was not present.");
+                Logger.LogWarning(Logger.LogCategory.Core, $"Tried to remove immobilization source {source} which was not present.");
         }
     }
 

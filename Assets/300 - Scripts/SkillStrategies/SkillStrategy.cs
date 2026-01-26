@@ -37,16 +37,15 @@ public class SkillStrategy : MonoBehaviour
         }
 
         Blood b = CharacterComponent.Blood;
-        Debug.Log($"CURRENT BLOOD : {b.Amount} and {b.Maximum}");
 
         if (_storedSkillData.IsRielSpecificSkill && b.Amount < _storedSkillData.BloodCost){
             
-            Debug.LogError("Can't Perform Skill: no more blood");
+            Logger.LogError(Logger.LogCategory.Combat, "Can't Perform Skill: no more blood");
             return false; // Todo : Feedback
         }
 
         b.Consume(_storedSkillData.BloodCost);
-        Debug.Log($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}. Blood Remaining : {b.Amount}");
+        Logger.Combat($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}. Blood Remaining : {b.Amount}");
 
         return true;
     }
@@ -69,7 +68,7 @@ public class SkillStrategy : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Tried to remove a projectile that is no longer in the active list.");
+            Logger.LogWarning(Logger.LogCategory.Combat, "Tried to remove a projectile that is no longer in the active list.");
         }
     }
 

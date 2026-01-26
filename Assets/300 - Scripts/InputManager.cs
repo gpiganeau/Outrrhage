@@ -45,7 +45,7 @@ public class InputManager : MonoBehaviour
     {
         _leftStickInputVector = value.Get<Vector2>();
         OnCharacterMovement?.Invoke(_leftStickInputVector);
-        //Debug.Log("InputManager: OnMove: " + _leftStickInputVector);
+        //Logger.Core("InputManager: OnMove: " + _leftStickInputVector);
     }
 
     void OnSubmit()

@@ -24,7 +24,7 @@ public class DamageController: MonoBehaviour
 		_movementController = GetComponent<MovementController>();
 		if(!_usesFixedForward && _movementController == null)
 		{
-			Debug.LogError("DamageController requires a MovementController component if not using fixed forward.");
+			Logger.LogError(Logger.LogCategory.Combat, "DamageController requires a MovementController component if not using fixed forward.");
 			_usesFixedForward = true;
         }
     }

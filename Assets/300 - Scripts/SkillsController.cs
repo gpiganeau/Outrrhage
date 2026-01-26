@@ -71,7 +71,7 @@ public class SkillsController: MonoBehaviour
             if(skillsDisabledSources.Contains(source))
                 skillsDisabledSources.Remove(source);
             else
-                Debug.LogWarning($"Tried to enable skills from source {source} which was not disabling them.");
+                Logger.LogWarning(Logger.LogCategory.Combat, $"Tried to enable skills from source {source} which was not disabling them.");
         }
     }
 }

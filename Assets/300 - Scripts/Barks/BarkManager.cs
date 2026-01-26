@@ -45,7 +45,7 @@ public class BarkManager : MonoBehaviour
             _currentBark =  bark;
             _source.clip = _currentBark.Clip;
             _source.Play();
-            Debug.Log(_currentBark.Text);
+            Logger.Narration(_currentBark.Text);
     }
 }
 

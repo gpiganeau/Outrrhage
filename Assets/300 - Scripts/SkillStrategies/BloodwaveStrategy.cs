@@ -9,12 +9,12 @@ public class BloodwaveStrategy: SkillStrategy
 	{
 		if(isInCooldown)
 		{
-			//Debug.Log("Skill is in cooldown.");
+			//Logger.Combat("Skill is in cooldown.");
 			return false;
 		}
 		if (movementController == null)
 		{
-			Debug.LogError("MovementController is null.");
+			Logger.LogError(Logger.LogCategory.Core, "MovementController is null");
 			return false;
 		}
 		ProjectileData[] projectiles = new ProjectileData[_storedSkillData.numberOfProjectiles];

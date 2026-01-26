@@ -27,7 +27,7 @@ public class CharacterComponent : MonoBehaviour
 
         _blood = new Blood(setupData.maxBlood);
         Blood = _blood;
-        
+
         InputManager.Instance.OnCharacterMovement.AddListener(OnInputVector);
         InputManager.Instance.OnCharacterSlot1.AddListener(() => skillsController.CallSkillStrategy(0));
         InputManager.Instance.OnCharacterSlot2.AddListener(() => skillsController.CallSkillStrategy(1));
@@ -41,7 +41,6 @@ public class CharacterComponent : MonoBehaviour
     void OnInputVector(Vector2 newVector)
     {
         movementController.SetMovementDirection(CharacterInputFromCameraPerspective(newVector));
-        //Debug.Log("PlayerMovementController: OnInputVector: " + newVector);
     }
 
     #endregion
