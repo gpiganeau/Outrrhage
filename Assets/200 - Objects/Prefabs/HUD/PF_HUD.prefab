@@ -650,6 +650,7 @@ MonoBehaviour:
   _skillsController: {fileID: 0}
   damageController: {fileID: 0}
   _rielHealth: {fileID: 5827697001962006126}
+  _rielBlood: {fileID: 3164304469144699770}
 --- !u!1 &5774391534186687215
 GameObject:
   m_ObjectHideFlags: 0

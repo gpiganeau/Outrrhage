@@ -5,17 +5,16 @@ using DG.Tweening;
 
 public class DroneProjectileStrategy: SkillStrategy
 {
-	public override void Call(MovementController movementController)
+	public override bool Call(MovementController movementController)
 	{
 		if(isInCooldown)
 		{
-			Debug.Log("Skill is in cooldown.");
-			return;
+			return false;
 		}
 		if (movementController == null)
 		{
 			Debug.LogError("MovementController is null.");
-			return;
+			return false;
 		}
 
 		ProjectileData projectileData = new ProjectileData()
@@ -34,7 +33,8 @@ public class DroneProjectileStrategy: SkillStrategy
 		var p = SpawnProjectile(projectileData) as SkillshotProjectile;
 		p.SetTravelMode(_storedSkillData.TravelMode);
 
-        //Debug.Log("Executing Bloodwave Skill");
 		PutInCooldown();
-    }
+	
+		return true;
+	}
 }

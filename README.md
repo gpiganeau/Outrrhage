@@ -7,7 +7,6 @@ But it can change, maybe if the project is public / in portfolio need !
 ## Menu
 - [Sly Notes and Tasks](./docs/sly.md)
 
-
 ## Create a new Skill
 1. Need/Locate/Create a Skills Controller with Setup Data
 2. Call Skill with [x] appropriate index  
@@ -17,6 +16,9 @@ But it can change, maybe if the project is public / in portfolio need !
 6. Create Skill Data
 7. Add to Character / Entity who's in need  
 
+## Create New Move / Attack Strategy
+
 ## Known Bugs
 - Riel innacurate rotation when colliding; need to set her looking forward toward inputs
 - Movement Controller Look At is pretty bad (broke the drone)
+- Most entity can self damages themselves (Riel run into bloodwave and paf)

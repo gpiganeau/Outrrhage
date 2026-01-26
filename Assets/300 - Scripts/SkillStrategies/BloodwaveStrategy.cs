@@ -5,17 +5,17 @@ using DG.Tweening;
 
 public class BloodwaveStrategy: SkillStrategy
 {
-	public override void Call(MovementController movementController)
+	public override bool Call(MovementController movementController)
 	{
 		if(isInCooldown)
 		{
-			Debug.Log("Skill is in cooldown.");
-			return;
+			//Debug.Log("Skill is in cooldown.");
+			return false;
 		}
 		if (movementController == null)
 		{
 			Debug.LogError("MovementController is null.");
-			return;
+			return false;
 		}
 		ProjectileData[] projectiles = new ProjectileData[_storedSkillData.numberOfProjectiles];
 		for (int i = 0; i < _storedSkillData.numberOfProjectiles; i++)
@@ -39,7 +39,7 @@ public class BloodwaveStrategy: SkillStrategy
         	DOVirtual.DelayedCall(projectileData.Lifetime * 0.5f, () => p.SetTravelMode(SkillshotProjectile.TravelMode.TowardCaster));
         }
 
-        Debug.Log("Executing Bloodwave Skill");
 		PutInCooldown();
+		return true;
     }
 }

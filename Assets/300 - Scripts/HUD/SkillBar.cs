@@ -22,8 +22,12 @@ public class SkillBar : MonoBehaviour
             // -- Setup Slots
             SkillSlot slot = Instantiate(_slotPrefab, this.transform);
             slot.Init(s);
-            // -- Register Event/Callback like, when the skill is triggered, enter cooldown...?
-            // -- Todo 
+            _slots.Add(slot);
         }
+    }
+
+    public void SetInCooldown(int slot)
+    {
+        _slots[slot].TriggerCooldown();
     }
 }

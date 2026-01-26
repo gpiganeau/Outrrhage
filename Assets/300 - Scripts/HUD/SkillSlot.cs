@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,5 +17,12 @@ public class SkillSlot : MonoBehaviour
         _icon.sprite = _skillData.Icon;
         _skillName.text = _skillData.Name;
         _skillCD.text = _skillData.Cooldown.ToString();
+    }
+
+    public void TriggerCooldown()
+    {
+        _icon.DOFade(0, 0);
+        float halfCD = _skillData.Cooldown * 0.5f;
+        DOVirtual.DelayedCall(halfCD, () => _icon.DOFade(1, halfCD));
     }
 }

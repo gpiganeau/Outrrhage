@@ -12,7 +12,8 @@ public class SkillsController: MonoBehaviour
 
 
     // -- Events --
-    public event Action<List<SkillStrategy>> OnSkillsInitialized; // -- Hmmm, should be riel only ?
+    public event Action<List<SkillStrategy>> OnSkillsInitialized; 
+    public event Action<SkillStrategy, int> OnSkillExecuted; // -- Skill, Slot
 
 
     //Still have to move the inputs into the CharacterComponent
@@ -44,7 +45,12 @@ public class SkillsController: MonoBehaviour
     {
         if (strategyIndex >= 0 && strategyIndex < activeSkillStrategies.Count)
         {
-            activeSkillStrategies[strategyIndex].Call(movementController);
+            var skill = activeSkillStrategies[strategyIndex];
+            
+            if (skill.Call(movementController))
+            {
+                OnSkillExecuted?.Invoke(skill, strategyIndex);
+            }
         }
     }
 

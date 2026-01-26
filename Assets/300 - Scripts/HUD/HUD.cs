@@ -1,21 +1,28 @@
 using System.Collections.Generic;
-using System.IO.Compression;
 using TMPro;
 using UnityEngine;
 
+/// <summary>
+/// One and only HUD Instance, static. Work mostly by binding itself to Controllers Events.
+/// </summary>
 public class HUD : MonoBehaviour
 {
+    #region Fields
+    HUD Instance;
+
     [Header("References")]
     [SerializeField] SkillBar _skillBar;
+
+    [Header("Controllers")]
     [SerializeField] SkillsController _skillsController;
     [SerializeField] DamageController damageController;
 
     [Header("Debug")]
     public TMP_Text _rielHealth;
     public TMP_Text _rielBlood;
+    #endregion
 
-    HUD Instance;
-
+    #region Unity Callbacks
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -23,7 +30,11 @@ public class HUD : MonoBehaviour
     }
     void OnEnable()
     {
-        if (_skillsController != null) _skillsController.OnSkillsInitialized += OnSkillsChanged;
+        if (_skillsController != null){
+            _skillsController.OnSkillsInitialized += OnSkillsChanged;
+            _skillsController.OnSkillExecuted += OnSkillExecuted;
+
+        }
         if (damageController != null) {
             damageController.OnDamaged.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
             damageController.OnHealed.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
@@ -32,23 +43,24 @@ public class HUD : MonoBehaviour
 
     void OnDisable()
     {
-        if (_skillsController != null) _skillsController.OnSkillsInitialized -= OnSkillsChanged;
+        if (_skillsController != null){
+            _skillsController.OnSkillsInitialized -= OnSkillsChanged;
+            _skillsController.OnSkillExecuted -= OnSkillExecuted;
+        }
+
         if (damageController != null) {
             damageController.OnDamaged.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
             damageController.OnHealed.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
         }
     }
 
+    #endregion
 
-    public void Initalize()
-    {
-    }
-
+    #region Callbacks
     private void OnSkillsChanged(List<SkillStrategy> strategies)
     {
         _skillBar.Init(strategies);
     }
-
 
     private void OnHealthChanged(float currentHealth, float maxHealth)
 	{
@@ -56,8 +68,11 @@ public class HUD : MonoBehaviour
         _rielHealth.text = $"Riel Health : {currentHealth} / {maxHealth} ({healthPercentage}%)";
     }
 
-    private void OnSkillExecuted()
+    private void OnSkillExecuted(SkillStrategy skill, int slot)
     {
-        _rielBlood.text = $"Riel Blood : ";
-    }
+        Blood b = CharacterComponent.Blood;
+        _rielBlood.text = $"Riel Blood : {b.Amount}/{b.Maximum}";
+        _skillBar.SetInCooldown(slot);
+    } 
+    #endregion
 }

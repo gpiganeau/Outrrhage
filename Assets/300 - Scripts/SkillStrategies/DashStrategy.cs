@@ -8,21 +8,11 @@ public class DashStrategy: SkillStrategy
         base.Initialize(parent, skillData);
     }
 
-	public override void Call(MovementController movementController)
+	public override bool Call(MovementController movementController)
 	{
-        if(isInCooldown)
-        {
-            Debug.Log("Skill is in cooldown.");
-            return;
-        }
-        if (movementController == null)
-        {
-            Debug.LogError("MovementController is null.");
-            return;
-        }
+        if (!base.Call(movementController)) return false;
         movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
-        // Implement dash logic here
-        Debug.Log("Executing Dash Skill");
         PutInCooldown();
+        return true;
     }
 }

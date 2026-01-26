@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SkillStrategy : MonoBehaviour
@@ -22,14 +23,32 @@ public class SkillStrategy : MonoBehaviour
         _storedSkillData = skillData;
     }
 
-    public virtual void Call(MovementController movementController)
+    public virtual bool Call(MovementController movementController)
     {
-        if (isInCooldown) return;
+        if(isInCooldown)
+        {
+            //Debug.Log("Skill is in cooldown.");
+            return false;
+        }
+        if (movementController == null)
+        {
+            Debug.LogError("MovementController is null.");
+            return false;
+        }
 
         Blood b = CharacterComponent.Blood;
-        if (_storedSkillData.IsRielSpecificSkill && b.Amount < _storedSkillData.BloodCost) return; // Todo : Feedback
+        Debug.Log($"CURRENT BLOOD : {b.Amount} and {b.Maximum}");
+
+        if (_storedSkillData.IsRielSpecificSkill && b.Amount < _storedSkillData.BloodCost){
+            
+            Debug.LogError("Can't Perform Skill: no more blood");
+            return false; // Todo : Feedback
+        }
+
         b.Consume(_storedSkillData.BloodCost);
-        Debug.Log($"Skill {debugName} used");
+        Debug.Log($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}. Blood Remaining : {b.Amount}");
+
+        return true;
     }
 
     protected Projectile SpawnProjectile(ProjectileData data)

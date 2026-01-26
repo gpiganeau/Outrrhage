@@ -5,9 +5,9 @@ using UnityEngine.UIElements;
 
 public class SlashStrategy: SkillStrategy
 {
-    public override void Call(MovementController movementController)
+    public override bool Call(MovementController movementController)
     {
-        if (isInCooldown) return;
+        if (isInCooldown) return false;
 
         ProjectileData projectileData = new ProjectileData() { 
             startingPosition = movementController.transform.position + 1.5f * movementController.GetFacingDirection(), 
@@ -30,6 +30,7 @@ public class SlashStrategy: SkillStrategy
             movementController.SetImmobilized(false, "SlashAttack");
         });
         PutInCooldown();
+        return true;
     }
 
 }
