@@ -45,7 +45,7 @@ public class AIActorComponent: MonoBehaviour
         {
             Type type = setupData.attackSetupData.attackStrategyScript.GetType();
             _attackStrategy = gameObject.AddComponent(type) as AttackStrategy;
-            _attackStrategy.Initialize(setupData.attackSetupData);
+            _attackStrategy.Initialize(setupData.attackSetupData, skillsController);
         }
     }
 
@@ -60,7 +60,7 @@ public class AIActorComponent: MonoBehaviour
 
         if (_attackStrategy != null)
         {
-            //skillsController.CallSkillStrategy(0);
+            _attackStrategy.Tick();
         }
     }
 

@@ -3,6 +3,8 @@ using System.Collections;
 
 public abstract class AttackStrategy : MonoBehaviour
 {
-	public abstract void Initialize(AttackStrategySetupData setupData);
+	protected SkillsController _controller;
+	public abstract void Initialize(AttackStrategySetupData setupData, SkillsController controller);
 	public abstract void Execute();
+	public abstract void Tick();
 }

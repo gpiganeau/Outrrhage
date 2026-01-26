@@ -48,6 +48,11 @@ public class SkillsController: MonoBehaviour
         }
     }
 
+    public void CallRandomSkill()
+    {
+        CallSkillStrategy(UnityEngine.Random.Range(0, activeSkillStrategies.Count));
+    }
+
     //We might prefer the player not being able to use lots of skills at once. He is blocked of using other skills when he is using one.
     //Can also be used if stunned or silenced
     //We might need to buffer inputs for about 0.3s to avoid them being lost when skills are disabled
