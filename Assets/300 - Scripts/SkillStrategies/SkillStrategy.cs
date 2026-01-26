@@ -25,6 +25,10 @@ public class SkillStrategy : MonoBehaviour
     public virtual void Call(MovementController movementController)
     {
         if (isInCooldown) return;
+
+        Blood b = CharacterComponent.Blood;
+        if (_storedSkillData.IsRielSpecificSkill && b.Amount < _storedSkillData.BloodCost) return; // Todo : Feedback
+        b.Consume(_storedSkillData.BloodCost);
         Debug.Log($"Skill {debugName} used");
     }
 

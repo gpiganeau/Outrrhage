@@ -12,6 +12,7 @@ public class HUD : MonoBehaviour
 
     [Header("Debug")]
     public TMP_Text _rielHealth;
+    public TMP_Text _rielBlood;
 
     HUD Instance;
 
@@ -53,5 +54,10 @@ public class HUD : MonoBehaviour
 	{
 		float healthPercentage = currentHealth / maxHealth * 100;
         _rielHealth.text = $"Riel Health : {currentHealth} / {maxHealth} ({healthPercentage}%)";
+    }
+
+    private void OnSkillExecuted()
+    {
+        _rielBlood.text = $"Riel Blood : ";
     }
 }
