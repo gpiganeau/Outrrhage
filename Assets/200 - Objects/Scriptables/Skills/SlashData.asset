@@ -18,7 +18,7 @@ MonoBehaviour:
   Cooldown: 0.5
   ProjectileSpeed: 0
   ProjectileDamage: 1
-  ProjectileLifetime: 1
+  ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
   ignoreCollisions: 0
