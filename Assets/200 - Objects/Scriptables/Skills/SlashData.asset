@@ -24,4 +24,4 @@ MonoBehaviour:
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
-  Icon: {fileID: 21300000, guid: 8ce5ab41ecb07b942a1042a85f585feb, type: 3}
+  Icon: {fileID: 21300000, guid: f8b5cc3619f869d41b47132355be145f, type: 3}

@@ -18,8 +18,10 @@ MonoBehaviour:
   Cooldown: 0
   ProjectileSpeed: 0
   ProjectileDamage: 0
+  ProjectileLifetime: 0
   numberOfProjectiles: 0
+  TravelMode: 3
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
-  Icon: {fileID: 21300000, guid: 8ce5ab41ecb07b942a1042a85f585feb, type: 3}
+  Icon: {fileID: 21300000, guid: f8178563b844b8c40adba96714c17b3b, type: 3}
