@@ -24,4 +24,6 @@ MonoBehaviour:
   ignoreCollisions: 0
   movementDistance: 3.5
   movementDuration: 0
+  IsRielSpecificSkill: 1
+  BloodCost: 1
   Icon: {fileID: 21300000, guid: f62115592573c0041a9c95142e185b8a, type: 3}

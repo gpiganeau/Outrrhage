@@ -16,7 +16,6 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
   Name: Soin
   Cooldown: 0.5
-  BloodCost: 1
   ProjectileSpeed: 0
   ProjectileDamage: 1
   ProjectileLifetime: 0.2
@@ -25,4 +24,6 @@ MonoBehaviour:
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
+  IsRielSpecificSkill: 1
+  BloodCost: 1
   Icon: {fileID: 21300000, guid: a15fa89f4d6f3e04581e7b2cf5ac475d, type: 3}

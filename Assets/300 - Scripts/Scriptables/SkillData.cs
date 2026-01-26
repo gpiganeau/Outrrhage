@@ -10,7 +10,6 @@ public class SkillData : ScriptableObject
 
     public string Name;
     public float Cooldown;
-    public int BloodCost;
     public float ProjectileSpeed;
     public int ProjectileDamage;
     public float ProjectileLifetime;
@@ -20,6 +19,10 @@ public class SkillData : ScriptableObject
     public bool ignoreCollisions;
     public float movementDistance;
     public float movementDuration;
+
+    [Header("Riel")]
+    public bool IsRielSpecificSkill = false;
+    public int BloodCost = 0;
 
     [Header ("Visuals")]
     public Sprite Icon;
