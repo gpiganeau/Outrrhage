@@ -6,4 +6,5 @@ using UnityEngine;
 public class AIActorSetupData : ActorSetupData
 {
     public MovementStrategySetupData movementSetupData;
+    public AttackStrategySetupData attackSetupData;
 }
