@@ -6,7 +6,7 @@ public class DamageController: MonoBehaviour
 {
     //Techniquement un vase devrait pouvoir marcher avec seulement les valeurs par défaut, sans besoin d'initialisation
     private int _maxHealth = 1;
-	private int _currentHealth = 1;
+	[SerializeField] private int _currentHealth = 1;
 
 	private bool[] _blockedZones = new bool[8]; //From front left clockwise, each zone covers 45 degrees
     private MovementController _movementController;

@@ -23,6 +23,7 @@ public class CharacterComponent : MonoBehaviour
         damageController = GetComponent<DamageController>();
         damageController.Initialize(setupData);
 
+        damageController.OnDied.AddListener(GameManager.Instance.ReloadCurrentScene);
 
         InputManager.Instance.OnCharacterMovement.AddListener(OnInputVector);
         InputManager.Instance.OnCharacterSlot1.AddListener(() => skillsController.CallSkillStrategy(0));
