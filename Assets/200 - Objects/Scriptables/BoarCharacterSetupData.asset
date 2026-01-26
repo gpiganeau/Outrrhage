@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b67d6788e14a6a4d954e74569ec71cb, type: 3}
+  m_Name: BoarCharacterSetupData
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterSettings
+  maxHealth: 10
+  movementSpeed: 10
+  startingSkillSet:
+  - {fileID: 11400000, guid: 929291161abd93640b9dab46ccaa462c, type: 2}
+  - {fileID: 11400000, guid: 6f1604795edf24947a0af3f0a2298c37, type: 2}
+  - {fileID: 11400000, guid: 014425db0aabd984a81f5e58ab43de06, type: 2}
+  - {fileID: 11400000, guid: e49bfe73b74f96a46be84da6db7b84b9, type: 2}
+  maxBlood: 10
