@@ -7,15 +7,7 @@ public class DroneProjectileStrategy: SkillStrategy
 {
 	public override bool Call(MovementController movementController)
 	{
-		if(isInCooldown)
-		{
-			return false;
-		}
-		if (movementController == null)
-		{
-			Debug.LogError("MovementController is null.");
-			return false;
-		}
+        if (!base.Call(movementController)) return false;
 
 		ProjectileData projectileData = new ProjectileData()
 		{

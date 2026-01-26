@@ -7,7 +7,7 @@ public class SlashStrategy: SkillStrategy
 {
     public override bool Call(MovementController movementController)
     {
-        if (isInCooldown) return false;
+        if (!base.Call(movementController)) return false;
 
         ProjectileData projectileData = new ProjectileData() { 
             startingPosition = movementController.transform.position + 1.5f * movementController.GetFacingDirection(), 
@@ -32,5 +32,4 @@ public class SlashStrategy: SkillStrategy
         PutInCooldown();
         return true;
     }
-
 }

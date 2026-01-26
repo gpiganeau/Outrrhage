@@ -11,6 +11,7 @@ public class DashStrategy: SkillStrategy
 	public override bool Call(MovementController movementController)
 	{
         if (!base.Call(movementController)) return false;
+        
         movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
         PutInCooldown();
         return true;
