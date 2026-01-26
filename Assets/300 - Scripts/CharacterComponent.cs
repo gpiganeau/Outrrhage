@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-
 
 /// <summary>
 /// Pilots other components, specifically translates inputs into I/O for attached controllers
@@ -13,7 +11,6 @@ public class CharacterComponent : MonoBehaviour
 	private MovementController movementController;
     private DamageController damageController;
 
-    // Use this for initialization
     void Start()
 	{
         skillsController = GetComponent<SkillsController>();
