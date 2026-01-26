@@ -13,6 +13,7 @@ public class AIActorComponent: MonoBehaviour
 
     //AI Attributes
     private MovementStrategy _movementStrategy;
+    private AttackStrategy _attackStrategy;
 
     [SerializeField] private CharacterComponent debugCharacterComponent;
 
@@ -39,6 +40,13 @@ public class AIActorComponent: MonoBehaviour
             _movementStrategy = gameObject.AddComponent(type) as MovementStrategy;
             _movementStrategy.Initialize(setupData.movementSetupData);
         }
+
+        if (setupData.attackSetupData != null)
+        {
+            Type type = setupData.attackSetupData.attackStrategyScript.GetType();
+            _attackStrategy = gameObject.AddComponent(type) as AttackStrategy;
+            _attackStrategy.Initialize(setupData.attackSetupData);
+        }
     }
 
     void Update()
@@ -48,6 +56,11 @@ public class AIActorComponent: MonoBehaviour
             MovementContext context = new MovementContext(this.transform.position, debugCharacterComponent.transform.position);
             Vector3 movementDirection = _movementStrategy.GetMovementDirection(context);
             movementController.SetMovementDirection(movementDirection);
+        }
+
+        if (_attackStrategy != null)
+        {
+            //skillsController.CallSkillStrategy(0);
         }
     }
 
