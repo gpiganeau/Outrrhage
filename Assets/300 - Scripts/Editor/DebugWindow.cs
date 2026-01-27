@@ -34,6 +34,16 @@ public class DebugWindow : EditorWindow
         {
             CharacterComponent.Blood.Regain(1000);
         });
+
+        AddAction("Fake Vacuum Trigger", () => {
+            var riel = GameManager.Instance.Riel;
+            var drops = GameObject.FindObjectsByType<BloodDrop>(FindObjectsSortMode.None);
+
+            foreach (BloodDrop d in drops)
+            {
+                d.Attract(riel.gameObject);
+            }
+        });
     }
 
 
