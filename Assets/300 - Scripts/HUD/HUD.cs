@@ -70,6 +70,7 @@ public class HUD : MonoBehaviour
 
     private void OnSkillExecuted(SkillStrategy skill, int slot)
     {
+        // -- Todo : Actually we should have events on Blood, and register blood change somewhere.
         Blood b = CharacterComponent.Blood;
         _rielBlood.text = $"Riel Blood : {b.Amount}/{b.Maximum}";
         _skillBar.SetInCooldown(slot);

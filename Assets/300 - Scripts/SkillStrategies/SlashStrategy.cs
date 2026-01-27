@@ -16,7 +16,6 @@ public class SlashStrategy: SkillStrategy
             Lifetime = _storedSkillData.ProjectileLifetime
         };
 
-        base.Call(movementController);
         movementController.SetImmobilized(true, "SlashAttack");
         parentController.SetSkillsDisabled(true, "SlashAttack");
         SpawnProjectile(projectileData);
