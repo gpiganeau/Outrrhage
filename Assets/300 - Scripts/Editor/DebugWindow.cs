@@ -11,7 +11,7 @@ public class DebugWindow : EditorWindow
     [MenuItem("Tools/Debug Window")]
     public static void ShowWindow()
     {
-        GetWindow<DebugWindow>("Debug");
+        GetWindow<DebugWindow>("Cheat Window");
     }
 
     private void OnEnable()
@@ -28,6 +28,11 @@ public class DebugWindow : EditorWindow
         AddAction("Restart Level", () => 
         {
             GameManager.Instance.ReloadCurrentScene();
+        });
+
+        AddAction("Get Max Blood", () => 
+        {
+            CharacterComponent.Blood.Regain(1000);
         });
     }
 

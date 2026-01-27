@@ -14,14 +14,14 @@ public class Blood
     public int Consume(int amount)
     {
         _currentAmount -= amount;
-        Mathf.Clamp(_currentAmount, 0, _maxAmount);
+        _currentAmount = Mathf.Clamp(_currentAmount, 0, _maxAmount);
         return _currentAmount;
     }
 
     public int Regain(int amount)
     {
         _currentAmount += amount;
-        Mathf.Clamp(_currentAmount, 0, _maxAmount);
+        _currentAmount = Mathf.Clamp(_currentAmount, 0, _maxAmount);
         return _currentAmount;
     }
 
