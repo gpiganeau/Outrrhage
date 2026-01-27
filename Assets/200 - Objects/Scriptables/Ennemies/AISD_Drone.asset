@@ -15,7 +15,7 @@ MonoBehaviour:
   maxHealth: 2
   movementSpeed: 10
   startingSkillSet:
-  - {fileID: 11400000, guid: e64051fa1f58f2f4ab28e249d2dc0d84, type: 2}
+  - {fileID: 11400000, guid: 243ce453a8f2a4044acea19c7c578eaf, type: 2}
   - {fileID: 11400000, guid: 2846bf02646939b428980f4989db1f13, type: 2}
   movementSetupData: {fileID: 11400000, guid: 80d616b8c09f2af48b5d6724c96d54fe, type: 2}
   attackSetupData: {fileID: 11400000, guid: a03256482c7ecce41af198d531478044, type: 2}
