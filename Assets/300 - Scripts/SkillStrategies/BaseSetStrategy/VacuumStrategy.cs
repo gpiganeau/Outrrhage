@@ -6,9 +6,11 @@ public class VacuumStrategy: SkillStrategy
     {
         if (!base.Call(movementController)) return false;
 
-        movementController.SetImmobilized(true, "Vacuum");
-        parentController.SetSkillsDisabled(true, "Vacuum");
+        const string strategyTag = "Vacuum";
+        movementController.SetImmobilized(true, strategyTag);
+        parentController.SetSkillsDisabled(true, strategyTag);
 
+        // -- Vacuum Implementation -- //
         var riel = GameManager.Instance.Riel;
         var drops = FindObjectsByType<BloodDrop>(UnityEngine.FindObjectsSortMode.None);
 
@@ -16,15 +18,17 @@ public class VacuumStrategy: SkillStrategy
         {
             d.Attract(riel.gameObject);
         }
-        
+        // -------------------------- 
+
         DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
         {
-            parentController.SetSkillsDisabled(false, "Vacuum");
+            parentController.SetSkillsDisabled(false, strategyTag);
         });
         DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseStaticTimeOnSkillUse, () =>
         {
-            movementController.SetImmobilized(false, "Vacuum");
+            movementController.SetImmobilized(false, strategyTag);
         });
+
         PutInCooldown();
         return true;
     }
