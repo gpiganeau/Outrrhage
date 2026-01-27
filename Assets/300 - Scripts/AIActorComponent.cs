@@ -66,6 +66,11 @@ public class AIActorComponent: MonoBehaviour
 
     private void OnDeath() 
     {
+        if (setupData.LootOnDeath)
+        {
+            var loot = setupData._itemsLootsOnDeath[UnityEngine.Random.Range(0, setupData._itemsLootsOnDeath.Count)];
+            Instantiate(loot, transform.position, Quaternion.identity);
+        }
         Destroy(this.gameObject);
     }
 }
