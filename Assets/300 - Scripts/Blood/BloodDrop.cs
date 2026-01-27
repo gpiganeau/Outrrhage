@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class BloodDrop : MonoBehaviour
@@ -8,11 +9,13 @@ public class BloodDrop : MonoBehaviour
     void Start()
     {
         _blood.Initialize();
+
     }
 
-    public void Attract()
+    public void Attract(GameObject target)
     {
         // -- Spline Movement toward Riel, Trigger on Vacuum ?
+        transform.DOMove(target.transform.position, 2f).OnComplete( () => Destroy(this.gameObject));
     }
 
     void OnTriggerEnter(Collider other)
