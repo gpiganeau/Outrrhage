@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,4 +7,5 @@ public class AIActorSetupData : ActorSetupData
 {
     public MovementStrategySetupData movementSetupData;
     public AttackStrategySetupData attackSetupData;
+
 }

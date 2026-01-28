@@ -11,7 +11,7 @@ public class CharacterComponent : MonoBehaviour
 	private MovementController movementController;
     private DamageController damageController;
 
-    [SerializeField] private Blood _blood;
+    [SerializeField] private Blood blood;
     public static Blood Blood;
 
     void Start()
@@ -25,8 +25,8 @@ public class CharacterComponent : MonoBehaviour
 
         damageController.OnDied.AddListener(GameManager.Instance.ReloadCurrentScene);
 
-        _blood = new Blood(setupData.maxBlood);
-        Blood = _blood;
+        blood = new Blood(setupData.maxBlood);
+        Blood = blood;
 
         InputManager.Instance.OnCharacterMovement.AddListener(OnInputVector);
         InputManager.Instance.OnCharacterSlot1.AddListener(() => skillsController.CallSkillStrategy(0));

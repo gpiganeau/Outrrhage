@@ -8,6 +8,7 @@ public class ActorSetupData: ScriptableObject
     public float movementSpeed;
     public List<SkillData> startingSkillSet;
 
+    public Team team = Team.Neutral;
 
     [Header("Death and Loot")]
     public bool LootOnDeath = false;

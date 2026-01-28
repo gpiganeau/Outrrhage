@@ -45,7 +45,7 @@ public class SkillsController: MonoBehaviour
     {
         if (strategyIndex >= 0 && strategyIndex < activeSkillStrategies.Count)
         {
-            var skill = activeSkillStrategies[strategyIndex];
+            SkillStrategy skill = activeSkillStrategies[strategyIndex];
             
             if (skill.Call(movementController))
             {

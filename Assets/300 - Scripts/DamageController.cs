@@ -7,6 +7,7 @@ public class DamageController: MonoBehaviour
     //Techniquement un vase devrait pouvoir marcher avec seulement les valeurs par défaut, sans besoin d'initialisation
     private int _maxHealth = 1;
 	[SerializeField] private int _currentHealth = 1;
+	[SerializeField] private Team _team = Team.Neutral;
 
 	private bool[] _blockedZones = new bool[8]; //From front left clockwise, each zone covers 45 degrees
     private MovementController _movementController;
@@ -22,6 +23,8 @@ public class DamageController: MonoBehaviour
 		_maxHealth = data.maxHealth;
 		_currentHealth = _maxHealth;
 		_movementController = GetComponent<MovementController>();
+		_team = data.team;
+		
 		if(!_usesFixedForward && _movementController == null)
 		{
 			Logger.LogError(Logger.LogCategory.Combat, "DamageController requires a MovementController component if not using fixed forward.");
