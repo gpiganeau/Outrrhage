@@ -26,4 +26,4 @@ MonoBehaviour:
   movementDuration: 0
   IsRielSpecificSkill: 1
   BloodCost: 1
-  Icon: {fileID: 21300000, guid: 74c78f39f17de524db329f8dc0e2e035, type: 3}
+  Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
