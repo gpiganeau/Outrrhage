@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b67d6788e14a6a4d954e74569ec71cb, type: 3}
-  m_Name: CharacterSetupData
+  m_Name: BoarRielCharacterSetupData
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSettings
+  Name: Riel the Boar
   maxHealth: 10
   movementSpeed: 10
+  team: 1
   startingSkillSet:
-  - {fileID: 11400000, guid: efa91794510c88f40b147e97aba739db, type: 2}
-  - {fileID: 11400000, guid: e64051fa1f58f2f4ab28e249d2dc0d84, type: 2}
-  - {fileID: 11400000, guid: 942c9df7ef2ba8341bff539bf511d9eb, type: 2}
-  - {fileID: 11400000, guid: bc63b31181805ae48860d47e77aaa420, type: 2}
-  - {fileID: 11400000, guid: ee2ffb5eead2e3a419e1dc68951ce498, type: 2}
+  - {fileID: 11400000, guid: 929291161abd93640b9dab46ccaa462c, type: 2}
+  - {fileID: 11400000, guid: 6f1604795edf24947a0af3f0a2298c37, type: 2}
+  - {fileID: 11400000, guid: 014425db0aabd984a81f5e58ab43de06, type: 2}
+  LootOnDeath: 0
+  _itemsLootsOnDeath: []
   maxBlood: 10

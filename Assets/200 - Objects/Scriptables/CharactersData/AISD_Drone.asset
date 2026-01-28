@@ -17,6 +17,7 @@ MonoBehaviour:
   startingSkillSet:
   - {fileID: 11400000, guid: 243ce453a8f2a4044acea19c7c578eaf, type: 2}
   - {fileID: 11400000, guid: 2846bf02646939b428980f4989db1f13, type: 2}
+  team: 2
   LootOnDeath: 1
   _itemsLootsOnDeath:
   - {fileID: 5115976658195506498, guid: 4c627e869fdc5114a9fa3b680d12b4e5, type: 3}

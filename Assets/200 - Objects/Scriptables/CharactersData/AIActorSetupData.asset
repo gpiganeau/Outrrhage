@@ -15,4 +15,8 @@ MonoBehaviour:
   maxHealth: 5
   movementSpeed: 0
   startingSkillSet: []
+  team: 2
+  LootOnDeath: 0
+  _itemsLootsOnDeath: []
   movementSetupData: {fileID: 11400000, guid: 334c90e1c6753444ca12ceff40eea6ea, type: 2}
+  attackSetupData: {fileID: 0}

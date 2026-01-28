@@ -10,7 +10,7 @@ public class SlashStrategy: SkillStrategy
         if (!base.Call(movementController)) return false;
 
         ProjectileData projectileData = new ProjectileData() { 
-            startingPosition = movementController.transform.position + 1.5f * movementController.GetFacingDirection(), 
+            startingPosition = movementController.transform.position + 2f * movementController.GetFacingDirection(), 
             origin = movementController.transform.position,
             Damage = _storedSkillData.ProjectileDamage,
             Lifetime = _storedSkillData.ProjectileLifetime
