@@ -18,7 +18,9 @@ public class DamageController: MonoBehaviour
     [HideInInspector] public UnityEvent OnBlocked;
     [HideInInspector] public UnityEvent OnDied;
 
-	public void Initialize(ActorSetupData data)
+	AnimController animController;
+
+	public void Initialize(ActorSetupData data, AnimController animController = null)
 	{
 		_maxHealth = data.maxHealth;
 		_currentHealth = _maxHealth;
@@ -30,12 +32,16 @@ public class DamageController: MonoBehaviour
 			Logger.LogError(Logger.LogCategory.Combat, "DamageController requires a MovementController component if not using fixed forward.");
 			_usesFixedForward = true;
         }
+
+		this.animController = animController;
     }
 
 	public void Initialize(int maxHealth)
 	{
 		_maxHealth = maxHealth;
 		_currentHealth = _maxHealth;
+
+		animController = GetComponent<AnimController>();
     }
 
     public void UpdateBlockedZones(bool[] newBlockedZones)
@@ -54,6 +60,8 @@ public class DamageController: MonoBehaviour
             OnDamaged?.Invoke(_currentHealth, _maxHealth);
 			if (_currentHealth <= 0)
 				OnDied?.Invoke();
+			else
+				animController?.Hit();
         }
     }
 

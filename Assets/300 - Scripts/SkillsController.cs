@@ -10,16 +10,20 @@ public class SkillsController: MonoBehaviour
     private MovementController movementController;
     private List<string> skillsDisabledSources;
 
-
     // -- Events --
     public event Action<List<SkillStrategy>> OnSkillsInitialized; 
     public event Action<SkillStrategy, int> OnSkillExecuted; // -- Skill, Slot
 
+	private AnimController animController;
+
 
     //Still have to move the inputs into the CharacterComponent
-    public void Initialize(ActorSetupData actorData)
+    public void Initialize(ActorSetupData actorData, AnimController animController = null)
     {
+        // -- References Injection
         movementController = GetComponent<MovementController>();
+        this.animController = animController;
+
         skillsDisabledSources = new List<string>();
         //delete old objects if they exist
         if (activeSkillStrategies != null)
@@ -50,6 +54,16 @@ public class SkillsController: MonoBehaviour
             if (skill.Call(movementController))
             {
                 OnSkillExecuted?.Invoke(skill, strategyIndex);
+
+                // --  Check Skill Anim Mode ?
+                if (UnityEngine.Random.Range(0f, 1f) > 0.5f)
+                {
+                    animController?.Attack();
+                } else
+                {
+                    animController?.Cast();
+                }
+
             }
         }
     }

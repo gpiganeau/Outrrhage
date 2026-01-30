@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5da0ea7d8827914a9aef1ec0c10637f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageController
+  _currentHealth: 1
+  _team: 0
   _usesFixedForward: 0
   OnDamaged:
     m_PersistentCalls:

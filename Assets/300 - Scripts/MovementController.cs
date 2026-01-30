@@ -16,13 +16,17 @@ public class MovementController: MonoBehaviour
     private List<string> immobilizationSources;
     private Dictionary<string, float> speedAlterationSources = new Dictionary<string, float>();
 
-    public void Initialize(ActorSetupData data)
+	AnimController animController;
+
+    public void Initialize(ActorSetupData data, AnimController animController = null)
     {
         _facingVector = Vector3.forward;
         _baseMovementSpeed = data.movementSpeed;
         immobilizationSources = new List<string>();
         speedAlterationSources = new Dictionary<string, float>();
         speedAlterationSources["base"] = 1f;
+
+        this.animController =animController;
     }
 
     public void SetMovementDirection(Vector3 direction)
@@ -37,7 +41,15 @@ public class MovementController: MonoBehaviour
         
         UpdateMovementVector(_preferedMovementDirection  * _baseMovementSpeed * ComputeAlteredSpeed());
         _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.fixedDeltaTime);
-        transform.LookAt(transform.position + _movementVector);
+        
+
+        // -- Look Toward Movement
+        if (_movementVector.magnitude > 0)
+        {
+            transform.rotation = Quaternion.LookRotation(_movementVector);
+        }
+        
+        animController?.SetSpeed(_movementVector.magnitude > 0 ? 1 : 0);
     }
 
     protected void UpdateMovementVector(Vector3 newMovementVector)
@@ -144,6 +156,11 @@ public class MovementController: MonoBehaviour
     public Vector3 GetActualMovement()
     {
         return _movementVector;
+    }
+
+    public bool IsMoving()
+    {
+        return _movementVector.magnitude > 0;
     }
 
     public Vector3 GetFacingDirection()

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 /// <summary>
@@ -10,23 +11,34 @@ public class CharacterComponent : MonoBehaviour
 	private SkillsController skillsController;
 	private MovementController movementController;
     private DamageController damageController;
+    private AnimController animController;
 
     [SerializeField] private Blood blood;
     public static Blood Blood;
 
     void Start()
 	{
-        skillsController = GetComponent<SkillsController>();
-        skillsController.Initialize(setupData);
-        movementController = GetComponent<MovementController>();
-        movementController.Initialize(setupData);
-        damageController = GetComponent<DamageController>();
-        damageController.Initialize(setupData);
-
-        damageController.OnDied.AddListener(GameManager.Instance.ReloadCurrentScene);
-
+        // -- Initialize Blood Singleton for CharacterComponent.Blood() -- YES I ASSUME THIS WILL BE A SOLO GAME FOREVER 
         blood = new Blood(setupData.maxBlood);
         Blood = blood;
+
+        // -- Setup Components
+        animController = GetComponent<AnimController>();
+        animController?.Initialize(setupData);
+        skillsController = GetComponent<SkillsController>();
+        skillsController.Initialize(setupData, animController);
+        movementController = GetComponent<MovementController>();
+        movementController.Initialize(setupData, animController);
+        damageController = GetComponent<DamageController>();
+        damageController.Initialize(setupData, animController);
+
+
+        // -- Setup Callback & Listeners
+        damageController.OnDied.AddListener(() =>
+        {
+            animController.Die();   
+            DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
+        });
 
         InputManager.Instance.OnCharacterMovement.AddListener(OnInputVector);
         InputManager.Instance.OnCharacterSlot1.AddListener(() => skillsController.CallSkillStrategy(0));

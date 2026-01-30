@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using DG.Tweening;
 using UnityEngine;
 
@@ -18,8 +18,7 @@ public class VacuumStrategy: SkillStrategy
         var p = Instantiate(_storedSkillData.SkillProjectilePrefab, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
 
         var r = _storedSkillData.Radius;
-        //rangeSphere.transform.localScale = new Vector3(r,r,r);
-        rangeSphere.GetComponent<ParticleSystem>();
+        p.transform.localScale = new Vector3(r,r,r);
         Collider[] colliders = Physics.OverlapSphere(riel.transform.position, r);
 
         foreach (Collider c in colliders)

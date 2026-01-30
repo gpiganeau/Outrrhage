@@ -140,3 +140,17 @@ public static class GameObjectExtensions
         }
     }
 }
+
+public static class AnimatorExtensions
+{
+    public static float GetClipLength(this Animator animator, string clipName)
+    {
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
+        {
+            if (clip.name.Contains(clipName))
+                return clip.length;
+        }
+        return 0f;
+    }
+}
