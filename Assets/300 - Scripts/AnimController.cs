@@ -27,6 +27,19 @@ public class AnimController: MonoBehaviour
         animator.SetFloat("Speed", speed);
     }
 
+    public void Trigger (string key, bool ignoreLock = false)
+    {
+        if (ignoreLock)
+        {
+            animator.SetTrigger(key);
+            return;
+        } 
+
+        if (locked) return;
+        animator.SetTrigger(key);
+    }
+
+
 
     public void Attack()
     {

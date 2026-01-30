@@ -54,16 +54,7 @@ public class SkillsController: MonoBehaviour
             if (skill.Call(movementController))
             {
                 OnSkillExecuted?.Invoke(skill, strategyIndex);
-
-                // --  Check Skill Anim Mode ?
-                if (UnityEngine.Random.Range(0f, 1f) > 0.5f)
-                {
-                    animController?.Attack();
-                } else
-                {
-                    animController?.Cast();
-                }
-
+                animController?.Trigger(skill.SkillData.AnimationKey);
             }
         }
     }

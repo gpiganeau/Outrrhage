@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 0}
   Name: Pas rapide
   Cooldown: 2
+  Radius: 0
   ProjectileSpeed: 0
   ProjectileDamage: 0
   ProjectileLifetime: 0
@@ -27,3 +28,4 @@ MonoBehaviour:
   IsRielSpecificSkill: 1
   BloodCost: 1
   Icon: {fileID: -1266197463, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
+  AnimationKey: Slash
