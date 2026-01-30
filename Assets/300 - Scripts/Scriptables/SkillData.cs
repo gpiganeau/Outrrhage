@@ -10,6 +10,7 @@ public class SkillData : ScriptableObject
 
     public string Name;
     public float Cooldown;
+    [Range (0, 32)] public float Radius = 0;
     public float ProjectileSpeed;
     public int ProjectileDamage;
     public float ProjectileLifetime;

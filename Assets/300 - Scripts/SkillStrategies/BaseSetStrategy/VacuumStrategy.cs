@@ -1,4 +1,6 @@
-﻿using DG.Tweening;
+﻿using System.Runtime.InteropServices;
+using DG.Tweening;
+using UnityEngine;
 
 public class VacuumStrategy: SkillStrategy
 {
@@ -13,10 +15,16 @@ public class VacuumStrategy: SkillStrategy
         // -- Vacuum Implementation -- //
         var riel = GameManager.Instance.Riel;
         var drops = FindObjectsByType<BloodDrop>(UnityEngine.FindObjectsSortMode.None);
+        var p = Instantiate(_storedSkillData.SkillProjectilePrefab, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
 
-        foreach (BloodDrop d in drops)
+        var r = _storedSkillData.Radius;
+        //rangeSphere.transform.localScale = new Vector3(r,r,r);
+        rangeSphere.GetComponent<ParticleSystem>();
+        Collider[] colliders = Physics.OverlapSphere(riel.transform.position, r);
+
+        foreach (Collider c in colliders)
         {
-            d.Attract(riel.gameObject);
+            if (c.TryGetComponent<BloodDrop>(out var drop)) drop.Attract(riel.gameObject);
         }
         // -------------------------- 
 
