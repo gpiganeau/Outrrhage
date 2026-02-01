@@ -111,14 +111,14 @@ Material:
     - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Cull: 2
+    - _Cull: 0
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _DstBlendAlpha: 10
     - _Edge: 1.58
-    - _Edge2: -1.66
+    - _Edge2: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -133,7 +133,7 @@ Material:
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.2
+    - _Speed: 0.05
     - _SrcBlend: 5
     - _SrcBlendAlpha: 1
     - _Surface: 1
@@ -144,7 +144,7 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 0.8867924, g: 0.07947663, b: 0.07947663, a: 0.43137255}
-    - _BloodColor: {r: 7.396225, g: 0, b: 0, a: 1}
+    - _BloodColor: {r: 14.79245, g: 0, b: 0, a: 1}
     - _Color: {r: 0.8867924, g: 0.0794766, b: 0.0794766, a: 0.43137255}
     - _EmissionColor: {r: 1, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
