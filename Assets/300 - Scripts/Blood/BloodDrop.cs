@@ -62,7 +62,6 @@ public class BloodDrop : MonoBehaviour
         if (other.TryGetComponent<CharacterComponent>(out var riel))
         {
             CharacterComponent.Blood.Regain(_blood.Amount);
-            
             attractTween?.Kill();
             Destroy(gameObject);
         }

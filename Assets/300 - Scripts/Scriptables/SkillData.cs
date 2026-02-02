@@ -28,4 +28,6 @@ public class SkillData : ScriptableObject
     [Header ("Visuals")]
     public Sprite Icon;
     public string AnimationKey = "Slash";
+
+
 }

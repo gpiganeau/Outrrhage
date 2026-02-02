@@ -20,5 +20,4 @@ But it can change, maybe if the project is public / in portfolio need !
 
 ## Known Bugs
 - Riel innacurate rotation when colliding; need to set her looking forward toward inputs
-- Movement Controller Look At is pretty bad (broke the drone)
 - Most entity can self damages themselves (Riel run into bloodwave and paf)
