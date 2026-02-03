@@ -25,6 +25,7 @@ public class SkillStrategy : MonoBehaviour
 
         // -- VFX Controller
         GameObject obj = new GameObject($"{skillData.Name}_VFXController");
+        obj.transform.parent = this.transform;
         _vfxController = obj.AddComponent<SkillVFXController>();
         _vfxController.Initialize(skillData);
     }

@@ -36,9 +36,11 @@ public class GameManager : MonoBehaviour
             RespawnPoint spawnPoint = _currentLevel.GetSpawnPoint();
             var riel = Instantiate(_rielPrefab, spawnPoint.transform.position, Quaternion.identity) as CharacterComponent;
             Riel = riel;
-            riel.PlayerCameraController = _cameraController;
             _cameraController.SetTarget(Riel.transform);
+            _cameraController.transform.position = spawnPoint.transform.position + new Vector3(0, 100, 0);
+            riel.PlayerCameraController = _cameraController;
         });
+
         spawnSeq.Play();
     }
 
