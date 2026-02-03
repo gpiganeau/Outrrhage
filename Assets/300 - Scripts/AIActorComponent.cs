@@ -47,10 +47,19 @@ public class AIActorComponent: MonoBehaviour
             _attackStrategy = gameObject.AddComponent(type) as AttackStrategy;
             _attackStrategy.Initialize(setupData.attackSetupData, skillsController);
         }
+
     }
 
     void Update()
 	{
+        // -- Pour esquiver la ref Serializer : @TODO : Enemy Maanger ?
+        if (debugCharacterComponent == null)
+        {
+            debugCharacterComponent = GameManager.Instance.Riel;
+
+            if (debugCharacterComponent == null) return;
+        } 
+        
         if(_movementStrategy != null)
         {
             MovementContext context = new MovementContext(this.transform.position, debugCharacterComponent.transform.position);

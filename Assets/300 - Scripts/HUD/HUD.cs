@@ -12,10 +12,8 @@ public class HUD : MonoBehaviour
 
     [Header("References")]
     [SerializeField] SkillBar _skillBar;
-
-    [Header("Controllers")]
-    [SerializeField] SkillsController _skillsController;
-    [SerializeField] DamageController _damageController;
+    private SkillsController _skillsController;
+    private DamageController _damageController;
 
     [Header("Debug")]
     public TMP_Text _rielHealth;
