@@ -30,8 +30,12 @@ public class CameraController : MonoBehaviour
         transform.rotation = Quaternion.Euler(SettingsManager.Instance.CameraSettings.cameraAngleVert, SettingsManager.Instance.CameraSettings.cameraAngleSide, 0);
     }
 
+    public void SetTarget(Transform newTarget) => target = newTarget;
+
     void Update()
     {
+        if (target == null) return; // -- Get une target 
+
         targetPosition = target.position - transform.forward * SettingsManager.Instance.CameraSettings.cameraFollowDistance;
         switch (followMode)
         {
@@ -39,10 +43,11 @@ public class CameraController : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, SettingsManager.Instance.CameraSettings.cameraLinearFollowSpeed * Time.deltaTime);
                 break;
             case TargetFollowMode.Geometric:
+
                 Vector3 futureMovement = (targetPosition - transform.position) * Mathf.Clamp01(SettingsManager.Instance.CameraSettings.cameraGeometricFollowSpeed);
                 if (futureMovement.sqrMagnitude > 0.05f)
                 {
-                    transform.position += futureMovement * futureMovement.magnitude * Time.deltaTime;
+                    transform.position += futureMovement * Time.deltaTime;
                 }
                 break;
         }

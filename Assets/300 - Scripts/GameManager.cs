@@ -1,12 +1,23 @@
+using DG.Tweening;
+using Unity.Mathematics;
 using UnityEngine;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public CharacterComponent Riel;
+    [HideInInspector] public CharacterComponent Riel;
+
+    [Header("Core Prefabs References")]
+    public CharacterComponent _rielPrefab;
+    public Level _startLevelPrefab;
+
+    [Header("Managers References")]
+    [SerializeField] CameraController _cameraController;
+
+    [Header("Readonly References for Debug")]
+    public Level _currentLevel;
 
     public void Awake()
     {
@@ -15,7 +26,22 @@ public class GameManager : MonoBehaviour
     }
 
     public void Start(){
-        Riel = FindFirstObjectByType<CharacterComponent>();
+
+        Sequence spawnSeq = DOTween.Sequence();
+        
+        spawnSeq.AppendCallback( () => _currentLevel = Instantiate(_startLevelPrefab, Vector3.zero, Quaternion.identity));
+        spawnSeq.AppendInterval(0.5F);
+        spawnSeq.AppendCallback( () =>
+        {
+            RespawnPoint spawnPoint = _currentLevel.GetSpawnPoint();
+            var riel = Instantiate(_rielPrefab, spawnPoint.transform.position, Quaternion.identity) as CharacterComponent;
+            Riel = riel;
+            _cameraController.SetTarget(Riel.transform);
+            _cameraController.transform.position = spawnPoint.transform.position + new Vector3(0, 100, 0);
+            riel.PlayerCameraController = _cameraController;
+        });
+
+        spawnSeq.Play();
     }
 
     public void ReloadCurrentScene()
