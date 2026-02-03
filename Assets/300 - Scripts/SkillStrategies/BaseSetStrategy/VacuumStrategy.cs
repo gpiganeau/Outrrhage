@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class VacuumStrategy: SkillStrategy
 {
-    public override bool Call(MovementController movementController)
+    public override bool Call(MovementController movementController, Team team)
     {
-        if (!base.Call(movementController)) return false;
+        if (!base.Call(movementController, team)) return false;
 
         const string strategyTag = "Vacuum";
         movementController.SetImmobilized(true, strategyTag);

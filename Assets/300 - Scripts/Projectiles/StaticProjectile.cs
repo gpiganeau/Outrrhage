@@ -8,6 +8,7 @@ public class StaticProjectile: Projectile
     private int _damage = 1;
     public override void Initialize(ProjectileData data)
     {
+        _data = data;
         transform.position = data.startingPosition;
         Vector3 originToProj = transform.position - data.origin;
         transform.forward = originToProj.normalized;
@@ -20,7 +21,7 @@ public class StaticProjectile: Projectile
         DamageController damageController = other.GetComponent<DamageController>();
         if(damageController != null)
         {
-            damageController.Damage(_damage, transform.position);
+            damageController.Damage(_damage, transform.position, _data.Team);
         }
     }
 

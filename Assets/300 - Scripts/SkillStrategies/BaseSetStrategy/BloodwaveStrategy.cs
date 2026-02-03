@@ -5,9 +5,9 @@ using DG.Tweening;
 
 public class BloodwaveStrategy: SkillStrategy
 {
-	public override bool Call(MovementController movementController)
+	public override bool Call(MovementController movementController, Team team)
 	{
-        if (!base.Call(movementController)) return false;
+        if (!base.Call(movementController, team)) return false;
 
 		ProjectileData[] projectiles = new ProjectileData[_storedSkillData.numberOfProjectiles];
 		for (int i = 0; i < _storedSkillData.numberOfProjectiles; i++)
@@ -19,7 +19,8 @@ public class BloodwaveStrategy: SkillStrategy
                 Damage = _storedSkillData.ProjectileDamage,
 				Lifetime = _storedSkillData.ProjectileLifetime,
 				Speed = _storedSkillData.ProjectileSpeed,
-				Target = new Vector3(Random.Range(-20, 20) , 0, Random.Range(-20, 20))
+				Target = new Vector3(Random.Range(-20, 20) , 0, Random.Range(-20, 20)),
+				Team = team,
             };
 
 			projectileData.startingPosition += new Vector3(0, 1f, 0f); // Vertical Offset

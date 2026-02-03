@@ -1,1 +1,1 @@
-public enum Team { Neutral, Ally, Ennemy }
+public enum Team { Neutral, Ally, Enemy }

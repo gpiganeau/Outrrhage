@@ -8,9 +8,9 @@ public class DashStrategy: SkillStrategy
         base.Initialize(parent, skillData);
     }
 
-	public override bool Call(MovementController movementController)
+	public override bool Call(MovementController movementController, Team team)
 	{
-        if (!base.Call(movementController)) return false;
+        if (!base.Call(movementController, team)) return false;
         
         movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
         PutInCooldown();

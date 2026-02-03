@@ -49,20 +49,27 @@ public class DamageController: MonoBehaviour
 		_blockedZones = newBlockedZones;
     }
 
-	public void Damage(int amount, Vector3 origin)
+	public bool Damage(int amount, Vector3 origin, Team team)
 	{
 		bool blocked = IsBlockedFromDirection(origin);
+		bool canBeDamagedByTeam = CanBeDamagedByTeam(team);
 		if (blocked)
-			OnBlocked?.Invoke();
-        else
+		{
+            OnBlocked?.Invoke(); 
+			return false;
+        }
+		else if (!canBeDamagedByTeam)
+			return false;
+		else
 		{
 			_currentHealth -= amount;
-            OnDamaged?.Invoke(_currentHealth, _maxHealth);
+			OnDamaged?.Invoke(_currentHealth, _maxHealth);
 			if (_currentHealth <= 0)
 				OnDied?.Invoke();
 			else
 				animController?.Hit();
-        }
+			return true;
+		}
     }
 
 	public void Heal(int amount)
@@ -88,4 +95,9 @@ public class DamageController: MonoBehaviour
         }
 		return false;
     }
+
+	private bool CanBeDamagedByTeam(Team team)
+	{
+		return _team != team;
+	}
 }

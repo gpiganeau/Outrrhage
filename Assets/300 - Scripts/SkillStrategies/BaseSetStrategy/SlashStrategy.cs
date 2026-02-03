@@ -5,15 +5,17 @@ using UnityEngine.UIElements;
 
 public class SlashStrategy: SkillStrategy
 {
-    public override bool Call(MovementController movementController)
+    public override bool Call(MovementController movementController, Team team)
     {
-        if (!base.Call(movementController)) return false;
+        if (!base.Call(movementController, team)) return false;
 
-        ProjectileData projectileData = new ProjectileData() { 
-            startingPosition = movementController.transform.position + 2f * movementController.GetFacingDirection(), 
+        ProjectileData projectileData = new ProjectileData()
+        {
+            startingPosition = movementController.transform.position + 2f * movementController.GetFacingDirection(),
             origin = movementController.transform.position,
             Damage = _storedSkillData.ProjectileDamage,
-            Lifetime = _storedSkillData.ProjectileLifetime
+            Lifetime = _storedSkillData.ProjectileLifetime,
+            Team = team,
         };
 
         movementController.SetImmobilized(true, "SlashAttack");

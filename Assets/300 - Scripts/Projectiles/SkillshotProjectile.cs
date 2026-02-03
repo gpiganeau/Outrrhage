@@ -49,8 +49,10 @@ public class SkillshotProjectile: Projectile
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out DamageController dc)){
-            dc.Damage(_damage, transform.position);
-            DestroyProjectile();
+            if(dc.Damage(_damage, transform.position, _data.Team))
+            {
+                DestroyProjectile();
+            }
         }
     }
 }
