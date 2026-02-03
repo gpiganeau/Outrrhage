@@ -7,6 +7,7 @@ public class SkillSlot : MonoBehaviour
 {
     [SerializeField] private SkillData _skillData;
     [SerializeField] private Image _icon;
+    [SerializeField] private Image _cdRotor;
     [SerializeField] private TMP_Text _skillName;
     [SerializeField] private TMP_Text _skillCD;
 
@@ -21,8 +22,7 @@ public class SkillSlot : MonoBehaviour
 
     public void TriggerCooldown()
     {
-        _icon.DOFade(0, 0);
-        float halfCD = _skillData.Cooldown * 0.5f;
-        DOVirtual.DelayedCall(halfCD, () => _icon.DOFade(1, halfCD));
+        _cdRotor.fillAmount = 1;
+        _cdRotor.DOFillAmount(0, _skillData.Cooldown);
     }
 }
