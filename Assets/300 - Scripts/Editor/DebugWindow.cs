@@ -38,6 +38,11 @@ public class DebugWindow : EditorWindow
         AddAction("Kill Riel", () => {
             GameManager.Instance.Riel.GetComponent<DamageController>().Damage(1000,  GameManager.Instance.Riel.transform.position);
         });
+        
+        AddAction("Toggle HUD", () => {
+            var canvas = FindAnyObjectByType<HUD>().GetComponent<Canvas>();
+            canvas.enabled = !canvas.enabled;
+        });
     }
 
 

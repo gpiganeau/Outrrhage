@@ -27,6 +27,9 @@ public class HUD : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(this.gameObject);
+
+        // -- Activate HUD so we can hide it in scene while working and still play correctly.
+        GetComponent<Canvas>().enabled = true;
     }
     void OnEnable()
     {
