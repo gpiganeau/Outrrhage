@@ -8,14 +8,14 @@ using UnityEngine;
 public class HUD : MonoBehaviour
 {
     #region Fields
-    HUD Instance;
+    public static HUD Instance;
 
     [Header("References")]
     [SerializeField] SkillBar _skillBar;
 
     [Header("Controllers")]
     [SerializeField] SkillsController _skillsController;
-    [SerializeField] DamageController damageController;
+    [SerializeField] DamageController _damageController;
 
     [Header("Debug")]
     public TMP_Text _rielHealth;
@@ -31,6 +31,22 @@ public class HUD : MonoBehaviour
         // -- Activate HUD so we can hide it in scene while working and still play correctly.
         GetComponent<Canvas>().enabled = true;
     }
+
+    public void Initialize(SkillsController sc, DamageController dc)
+    {
+        _skillsController = sc;
+        _damageController = dc;
+
+        if (_skillsController != null){
+            _skillsController.OnSkillsInitialized += OnSkillsChanged;
+            _skillsController.OnSkillExecuted += OnSkillExecuted;
+
+        }
+        if (_damageController != null) {
+            _damageController.OnDamaged.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
+            _damageController.OnHealed.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
+        }  
+    }
     void OnEnable()
     {
         if (_skillsController != null){
@@ -38,9 +54,9 @@ public class HUD : MonoBehaviour
             _skillsController.OnSkillExecuted += OnSkillExecuted;
 
         }
-        if (damageController != null) {
-            damageController.OnDamaged.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
-            damageController.OnHealed.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
+        if (_damageController != null) {
+            _damageController.OnDamaged.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
+            _damageController.OnHealed.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
         }        
     }
 
@@ -51,9 +67,9 @@ public class HUD : MonoBehaviour
             _skillsController.OnSkillExecuted -= OnSkillExecuted;
         }
 
-        if (damageController != null) {
-            damageController.OnDamaged.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
-            damageController.OnHealed.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
+        if (_damageController != null) {
+            _damageController.OnDamaged.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
+            _damageController.OnHealed.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
         }
     }
 

@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
             _cameraController.SetTarget(Riel.transform);
             _cameraController.transform.position = spawnPoint.transform.position + new Vector3(0, 100, 0);
             riel.PlayerCameraController = _cameraController;
+
+            HUD.Instance.Initialize(riel.SkillsController, riel.DammageController);
         });
 
         spawnSeq.Play();

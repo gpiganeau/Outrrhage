@@ -16,7 +16,9 @@ public class CharacterComponent : MonoBehaviour
     public static Blood Blood;
 
     public CameraController PlayerCameraController { get; set; }
-
+    public SkillsController SkillsController => skillsController;
+    public DamageController DammageController => damageController;
+    
     void Start()
 	{
         // -- Initialize Blood Singleton for CharacterComponent.Blood() -- YES I ASSUME THIS WILL BE A SOLO GAME FOREVER 
