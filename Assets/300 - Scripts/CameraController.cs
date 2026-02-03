@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] private TargetFollowMode followMode;
     [SerializeField] private Camera _self;
     [SerializeField] private Transform target;
+    [SerializeField] private bool forceRefresh = false;
 
     private Vector3 targetPosition;
 
@@ -25,6 +26,8 @@ public class CameraController : MonoBehaviour
             _self = GetComponent<Camera>();
         }
         _self.fieldOfView = SettingsManager.Instance.CameraSettings.cameraFOV;
+        Quaternion startRotation = transform.rotation;
+        transform.rotation = Quaternion.Euler(SettingsManager.Instance.CameraSettings.cameraAngleVert, SettingsManager.Instance.CameraSettings.cameraAngleSide, 0);
     }
 
     void Update()
@@ -42,6 +45,12 @@ public class CameraController : MonoBehaviour
                     transform.position += futureMovement * futureMovement.magnitude * Time.deltaTime;
                 }
                 break;
+        }
+        if (forceRefresh)
+        {
+            _self.fieldOfView = SettingsManager.Instance.CameraSettings.cameraFOV;
+            Quaternion startRotation = transform.rotation;
+            transform.rotation = Quaternion.Euler(SettingsManager.Instance.CameraSettings.cameraAngleVert, SettingsManager.Instance.CameraSettings.cameraAngleSide, 0);
         }
     }
 }
