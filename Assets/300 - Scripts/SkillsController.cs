@@ -15,6 +15,7 @@ public class SkillsController: MonoBehaviour
     public event Action<SkillStrategy, int> OnSkillExecuted; // -- Skill, Slot
 
 	private AnimController animController;
+    [SerializeField] private Team _team = Team.Neutral;
 
 
     //Still have to move the inputs into the CharacterComponent
@@ -23,6 +24,7 @@ public class SkillsController: MonoBehaviour
         // -- References Injection
         movementController = GetComponent<MovementController>();
         this.animController = animController;
+        _team = actorData.team;
 
         skillsDisabledSources = new List<string>();
         //delete old objects if they exist
@@ -51,7 +53,7 @@ public class SkillsController: MonoBehaviour
         {
             SkillStrategy skill = activeSkillStrategies[strategyIndex];
             
-            if (skill.Call(movementController))
+            if (skill.Call(movementController, _team))
             {
                 OnSkillExecuted?.Invoke(skill, strategyIndex);
                 animController?.Trigger(skill.SkillData.AnimationKey);

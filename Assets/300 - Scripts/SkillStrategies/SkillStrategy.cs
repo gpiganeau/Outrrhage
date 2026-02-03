@@ -23,7 +23,7 @@ public class SkillStrategy : MonoBehaviour
         _storedSkillData = skillData;
     }
 
-    public virtual bool Call(MovementController movementController)
+    public virtual bool Call(MovementController movementController, Team team)
     {
         if(isInCooldown)
         {

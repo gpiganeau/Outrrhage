@@ -5,6 +5,7 @@ public class ProjectileData
 {
     public float Speed;
     public int Damage;
+    public Team Team = Team.Neutral;
 
     public float Lifetime = 0.2f; // -- Default, else we get some bug like instant destructed projectile.
     public Vector3 origin;
