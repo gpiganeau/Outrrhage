@@ -30,8 +30,12 @@ public class CameraController : MonoBehaviour
         transform.rotation = Quaternion.Euler(SettingsManager.Instance.CameraSettings.cameraAngleVert, SettingsManager.Instance.CameraSettings.cameraAngleSide, 0);
     }
 
+    public void SetTarget(Transform newTarget) => target = newTarget;
+
     void Update()
     {
+        if (target == null) return;
+
         targetPosition = target.position - transform.forward * SettingsManager.Instance.CameraSettings.cameraFollowDistance;
         switch (followMode)
         {

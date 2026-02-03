@@ -7,7 +7,6 @@ using UnityEngine;
 public class CharacterComponent : MonoBehaviour
 {
 	[SerializeField] private CharacterSetupData setupData;
-    [SerializeField] private CameraController playerCameraController;
 	private SkillsController skillsController;
 	private MovementController movementController;
     private DamageController damageController;
@@ -15,6 +14,8 @@ public class CharacterComponent : MonoBehaviour
 
     [SerializeField] private Blood blood;
     public static Blood Blood;
+
+    public CameraController PlayerCameraController { get; set; }
 
     void Start()
 	{
@@ -63,7 +64,7 @@ public class CharacterComponent : MonoBehaviour
     {
         Vector3 rValue;
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
-        Vector3 cameraVect = inputVector.x * playerCameraController.Right + inputVector.y * playerCameraController.Up;
+        Vector3 cameraVect = inputVector.x * PlayerCameraController.Right + inputVector.y * PlayerCameraController.Up;
         cameraVect.Normalize();
         rValue = Vector3.ProjectOnPlane(cameraVect, groundPlane.normal);
         return rValue;
