@@ -5,9 +5,12 @@ using UnityEngine.UIElements;
 
 public class SlashStrategy: SkillStrategy
 {
+    private bool hasHitATarget = false;
     public override bool Call(MovementController movementController, Team team)
     {
         if (!base.Call(movementController, team)) return false;
+
+        hasHitATarget = false;
 
         ProjectileData projectileData = new ProjectileData()
         {
@@ -22,6 +25,7 @@ public class SlashStrategy: SkillStrategy
         parentController.SetSkillsDisabled(true, "SlashAttack");
         SpawnProjectile(projectileData);
 
+        DOVirtual.DelayedCall(_storedSkillData.ProjectileLifetime, PostLifetimeEffects);
         DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
         {
             parentController.SetSkillsDisabled(false, "SlashAttack");
@@ -32,5 +36,18 @@ public class SlashStrategy: SkillStrategy
         });
         PutInCooldown();
         return true;
+    }
+
+    protected override void OnProjectileHit(Projectile projectile)
+    {
+        hasHitATarget = true;
+    }
+
+    private void PostLifetimeEffects()
+    {
+        if (!hasHitATarget)
+        {
+            //Spawn bloodlet
+        }
     }
 }

@@ -51,6 +51,7 @@ public class SkillshotProjectile: Projectile
         if (other.TryGetComponent(out DamageController dc)){
             if(dc.Damage(_damage, transform.position, _data.Team))
             {
+                onProjectileHit?.Invoke(this);
                 DestroyProjectile();
             }
         }

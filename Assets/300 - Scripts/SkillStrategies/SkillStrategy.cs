@@ -60,6 +60,7 @@ public class SkillStrategy : MonoBehaviour
     {
         Projectile newProjectile = Instantiate(_storedSkillData.SkillProjectilePrefab.gameObject).GetComponent<Projectile>();
         newProjectile.Initialize(data);
+        newProjectile.onProjectileHit.AddListener(OnProjectileHit);
         activeProjectiles.Add(newProjectile);
         newProjectile.onProjectileRemoval.AddListener(RemoveProjectile);
         return newProjectile;
@@ -82,6 +83,11 @@ public class SkillStrategy : MonoBehaviour
     {
         isInCooldown = true;
         DOVirtual.DelayedCall(_storedSkillData.Cooldown, () => isInCooldown = false);
+    }
+
+    virtual protected void OnProjectileHit(Projectile projectile)
+    {
+
     }
 
     #region VFX Controller Calls
