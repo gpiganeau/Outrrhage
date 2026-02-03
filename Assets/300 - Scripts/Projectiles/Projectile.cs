@@ -12,6 +12,7 @@ public abstract class Projectile: MonoBehaviour
 
     protected void DestroyProjectile()
     {
+        DOTween.Clear();
         onProjectileRemoval?.Invoke(this);
     }
 }
