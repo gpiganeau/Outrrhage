@@ -5,18 +5,22 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "NewSkillData", menuName = "Scriptable Objects/Game/SkillData")]
 public class SkillData : ScriptableObject
 {
+
+    [Header("Core Settings")]
     public GameObject SkillStrategyPrefab;
     public GameObject SkillProjectilePrefab;
-
     public string Name;
     public float Cooldown;
+
+    [Header("Projectile Settings")]
     [Range (0, 32)] public float Radius = 0;
     public float ProjectileSpeed;
     public int ProjectileDamage;
     public float ProjectileLifetime;
     public int numberOfProjectiles;
     public SkillshotProjectile.TravelMode TravelMode = SkillshotProjectile.TravelMode.Idle;
-    [Space]
+
+    [Header("Movement")]
     public bool ignoreCollisions;
     public float movementDistance;
     public float movementDuration;
@@ -28,6 +32,5 @@ public class SkillData : ScriptableObject
     [Header ("Visuals")]
     public Sprite Icon;
     public string AnimationKey = "Slash";
-
-
+    public SkillVFXData vfxData;
 }

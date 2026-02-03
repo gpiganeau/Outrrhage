@@ -13,6 +13,7 @@ public class SkillStrategy : MonoBehaviour
     protected List<Projectile> activeProjectiles;
 
     protected SkillData _storedSkillData;
+    protected SkillVFXController _vfxController;
     public SkillData SkillData => _storedSkillData;
 
     public virtual void Initialize(SkillsController parent, SkillData skillData)
@@ -21,6 +22,11 @@ public class SkillStrategy : MonoBehaviour
         debugName = skillData.name;
         activeProjectiles = new List<Projectile>();
         _storedSkillData = skillData;
+
+        // -- VFX Controller
+        GameObject obj = new GameObject($"{skillData.Name}_VFXController");
+        _vfxController = obj.AddComponent<SkillVFXController>();
+        _vfxController.Initialize(skillData);
     }
 
     public virtual bool Call(MovementController movementController, Team team)
@@ -77,4 +83,16 @@ public class SkillStrategy : MonoBehaviour
         isInCooldown = true;
         DOVirtual.DelayedCall(_storedSkillData.Cooldown, () => isInCooldown = false);
     }
+
+    #region VFX Controller Calls
+    protected void OnProjectileHit(Vector3 position, Vector3 normal)
+    {
+        _vfxController.PlayImpactVFX(position, normal);
+    }
+    
+    protected void OnEnemyHit(Vector3 position)
+    {
+        _vfxController.PlayHitVFX(position, _storedSkillData.ProjectileDamage);
+    }
+    #endregion
 }
