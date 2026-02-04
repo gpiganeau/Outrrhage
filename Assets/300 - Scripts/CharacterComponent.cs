@@ -36,7 +36,7 @@ public class CharacterComponent : MonoBehaviour
 
 
         // -- Setup Callback & Listeners
-        damageController.OnDamaged.AddListener((currentHealth, maxHealth) => Juicer.I.PlayerDamaged());
+        damageController.OnDamaged.AddListener((currentHealth, maxHealth) => Juicer.I.PlayerDamaged(this.gameObject));
         damageController.OnDied.AddListener(() =>
         {
             if (isDead) return;

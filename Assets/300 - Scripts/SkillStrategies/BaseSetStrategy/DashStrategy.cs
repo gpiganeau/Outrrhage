@@ -13,6 +13,7 @@ public class DashStrategy: SkillStrategy
         if (!base.Call(movementController, team)) return false;
         
         movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
+        if (team == Team.Ally) Juicer.I.SlowMotion(0.4f, _storedSkillData.movementDuration); // -- Only Riel Slow Motion
         PutInCooldown();
         return true;
     }

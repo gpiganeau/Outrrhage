@@ -29,6 +29,7 @@ public class AIActorComponent: MonoBehaviour
 
         healthBarDisplay.Initialize(damageController);
         damageController.OnDied.AddListener(OnDeath);
+        damageController.OnDied.AddListener(OnDamaged);
 
         //Initialize AI Strategies
         if (setupData.movementSetupData != null)
@@ -68,6 +69,11 @@ public class AIActorComponent: MonoBehaviour
         {
             _attackStrategy.Tick();
         }
+    }
+
+    private void OnDamaged()
+    {
+        Juicer.I.HitImpact(0.3f, this.gameObject);
     }
 
     private void OnDeath() 

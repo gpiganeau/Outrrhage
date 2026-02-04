@@ -76,7 +76,7 @@ public class Juicer : MonoBehaviour
     }
     
     /// <summary>Flash de couleur (mort, hit, etc.)</summary>
-    public void ColorFlash(Color color, float duration = 0.2f)
+    public void ColorFlashPostProcess(Color color, float duration = 0.2f)
     {
         if (colorAdjustments == null) return;
         
@@ -91,7 +91,7 @@ public class Juicer : MonoBehaviour
     
     #region SCREEN SHAKE
     
-    /// <summary>Shake simple de la caméra</summary>
+    /// <summary>Simple Shake</summary>
     public void ShakeCamera(float intensity = 0.3f, float duration = 0.3f)
     {
         if (mainCamera == null) return;
@@ -102,7 +102,7 @@ public class Juicer : MonoBehaviour
             .OnComplete(() => mainCamera.transform.localPosition = originalCameraPosition);
     }
     
-    /// <summary>Shake avec rotation pour plus d'impact</summary>
+    /// <summary>Shake avec rotation, marche bien pour la death</summary>
     public void ShakeCameraWithRotation(float positionIntensity = 0.3f, float rotationIntensity = 2f, float duration = 0.3f)
     {
         if (mainCamera == null) return;
@@ -134,7 +134,7 @@ public class Juicer : MonoBehaviour
             .SetId("TimeControl");
     }
     
-    /// <summary>Freeze frame sur un actor spécifique (via Animator)</summary>
+    /// <summary>Freeze frame sur un actor spécifique (via Animator), à tester</summary>
     public void FreezeActor(Animator animator, float duration = 0.1f)
     {
         if (animator == null) return;
@@ -190,30 +190,115 @@ public class Juicer : MonoBehaviour
     #region COMBOS (Effets combinés populaires)
     
     /// <summary>Effet complet de hit/impact</summary>
-    public void HitImpact(float intensity = 0.3f)
+    public void HitImpact(float intensity = 0.3f, GameObject entity = null)
     {
         ShakeCamera(intensity, 0.15f);
         PulseChromaticAberration(0.5f, 0.2f);
         FreezeFrame(0.02f);
+
+        if (entity != null) {
+            EntityDamageFlash(entity);
+            SquashAndStretch(entity.transform, new Vector3(0.5f, 0.5f, 0.5f));
+        }
     }
     
     /// <summary>Effet de mort dramatique</summary>
     public void DeathEffect()
     {
         ShakeCameraWithRotation(0.5f, 3f, 0.5f);
-        ColorFlash(Color.red, 1f);
+        ColorFlashPostProcess(Color.red, 1f);
         SlowMotion(0.2f, 0.8f);
         PulseVignette(0.6f, 0.5f);
     }
     
     /// <summary>Effet de dégâts sur le joueur</summary>
-    public void PlayerDamaged()
+    public void PlayerDamaged(GameObject player)
     {
         PulseVignette(0.5f, 0.3f);
         ShakeCamera(0.2f, 0.2f);
-        ColorFlash(new Color(1f, 0.3f, 0.3f), 0.15f);
+        ColorFlashPostProcess(new Color(1f, 0.3f, 0.3f), 0.15f);
+        EntityDamageFlash(player);
     }
     
+    #endregion
+
+    #region ENTITY EFFECTS
+
+    /// <summary>Squash & Stretch sur une entité (bounce, impact, jump)</summary>
+    public void SquashAndStretch(Transform entity, Vector3 squashScale, float duration = 0.2f, Ease ease = Ease.OutBack)
+    {
+        if (entity == null) return;
+        
+        Vector3 originalScale = entity.localScale;
+        
+        entity.DOKill(); // Kill les tweens précédents sur cette entité
+        
+        DOTween.Sequence()
+            .Append(entity.DOScale(squashScale, duration * 0.5f).SetEase(ease))
+            .Append(entity.DOScale(originalScale, duration * 0.5f).SetEase(ease));
+    }
+
+    /// <summary>Squash & Stretch preset - Impact au sol</summary>
+    public void SquashImpact(Transform entity, float intensity = 0.3f, float duration = 0.2f)
+    {
+        Vector3 squash = new Vector3(1f + intensity, 1f - intensity, 1f + intensity);
+        SquashAndStretch(entity, squash, duration, Ease.OutElastic);
+    }
+
+    /// <summary>Squash & Stretch preset - Jump/Anticipation</summary>
+    public void SquashJump(Transform entity, float intensity = 0.2f, float duration = 0.15f)
+    {
+        Vector3 squash = new Vector3(1f - intensity, 1f + intensity, 1f - intensity);
+        SquashAndStretch(entity, squash, duration, Ease.InOutQuad);
+    }
+
+    /// <summary>Color Flash sur une entité (nécessite SpriteRenderer ou Material)</summary>
+    public void EntityColorFlash(GameObject entity, Color flashColor, float duration = 0.2f)
+    {
+        if (entity == null) return;
+          
+        Renderer renderer = entity.GetComponentInChildren<Renderer>();
+        if (renderer != null && renderer.material != null)
+        {
+            Color originalColor = renderer.material.color;
+            renderer.material.DOKill();
+            
+            DOTween.Sequence()
+                .Append(renderer.material.DOColor(flashColor, duration * 0.3f))
+                .Append(renderer.material.DOColor(originalColor, duration * 0.7f));
+            return;
+        }
+    }
+
+    /// <summary>Color Flash preset - Dégâts (rouge)</summary>
+    public void EntityDamageFlash(GameObject entity, float duration = 0.15f)
+    {
+        EntityColorFlash(entity, Color.red, duration);
+    }
+
+    /// <summary>Color Flash preset - Heal (vert)</summary>
+    public void EntityHealFlash(GameObject entity, float duration = 0.2f)
+    {
+        EntityColorFlash(entity, Color.green, duration);
+    }
+
+    /// <summary>Color Flash preset - Invincibilité (blanc)</summary>
+    public void EntityInvincibleFlash(GameObject entity, float duration = 0.1f, int loops = 3)
+    {
+        if (entity == null) return;
+        
+        SpriteRenderer spriteRenderer = entity.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            Color originalColor = spriteRenderer.color;
+            spriteRenderer.DOKill();
+            
+            spriteRenderer.DOColor(Color.white, duration)
+                .SetLoops(loops * 2, LoopType.Yoyo)
+                .OnComplete(() => spriteRenderer.color = originalColor);
+        }
+    }
+
     #endregion
     
     private void OnDestroy()

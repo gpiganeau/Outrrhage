@@ -45,7 +45,7 @@ public class SlashStrategy: SkillStrategy
     {
         base.OnProjectileHit(projectile);
         hasHitATarget = true;
-        Juicer.I.HitImpact();
+
     }
 
     private void PostLifetimeEffects()

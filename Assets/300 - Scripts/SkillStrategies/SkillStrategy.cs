@@ -48,12 +48,12 @@ public class SkillStrategy : MonoBehaviour
 
         if (_storedSkillData.IsRielSpecificSkill && b.Amount < _storedSkillData.BloodCost){
             
-            Logger.LogError(Logger.LogCategory.Combat, "Can't Perform Skill: no more blood");
+            //Logger.LogError(Logger.LogCategory.Combat, "Can't Perform Skill: no more blood");
             return false; // Todo : Feedback
         }
 
         b.Consume(_storedSkillData.BloodCost);
-        Logger.Combat($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}. Blood Remaining : {b.Amount}");
+        //Logger.Combat($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}. Blood Remaining : {b.Amount}");
 
         return true;
     }
