@@ -19,15 +19,9 @@ public class SlashStrategy: SkillStrategy
         movementController.SetImmobilized(true, "SlashAttack");
         parentController.SetSkillsDisabled(true, "SlashAttack");
 
-        //Vector3 dashTarget = movementController.transform.position + movementController.GetFacingDirection() * 1.5f;
+        Vector3 dashTarget = movementController.transform.position + movementController.GetFacingDirection() * 1.5f;
         //movementController.transform.DOMove(dashTarget, 0.15f).SetEase(Ease.OutQuad);
-
-        // Dash court et rapide (agressif)
-        //movementController.transform.DOMove(dashTarget, 0.1f).SetEase(Ease.OutCubic);
-        
-        // Dash long (lunge attack)
-        Vector3 dashTarget = movementController.transform.position + movementController.GetFacingDirection() * 2.5f;
-        movementController.transform.DOMove(dashTarget, 0.2f).SetEase(Ease.OutQuad).OnComplete(() =>
+        movementController.transform.DOMove(dashTarget, 0.1f).SetEase(Ease.OutCubic).OnComplete(() =>
         {
             ProjectileData projectileData = new ProjectileData()
         {

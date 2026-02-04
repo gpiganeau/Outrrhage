@@ -4,9 +4,12 @@ public class AIActorComponent: MonoBehaviour
 {
     [SerializeField] private AIActorSetupData setupData;
     [SerializeField] private HealthBarDisplay healthBarDisplay;
+    [SerializeField] private MeshRenderer mainRenderer;
+
     private SkillsController skillsController;
     private MovementController movementController;
     private DamageController damageController;
+
 
     //AI Attributes
     private MovementStrategy _movementStrategy;
@@ -29,7 +32,7 @@ public class AIActorComponent: MonoBehaviour
 
         healthBarDisplay.Initialize(damageController);
         damageController.OnDied.AddListener(OnDeath);
-        damageController.OnDied.AddListener(OnDamaged);
+        damageController.OnDamaged.AddListener(OnDamaged);
 
         //Initialize AI Strategies
         if (setupData.movementSetupData != null)
@@ -71,9 +74,9 @@ public class AIActorComponent: MonoBehaviour
         }
     }
 
-    private void OnDamaged()
+    private void OnDamaged(int a, int b)
     {
-        Juicer.I.HitImpact(0.3f, this.gameObject);
+        Juicer.I.EnemyDamagedImpact(0.3f, mainRenderer);
     }
 
     private void OnDeath() 

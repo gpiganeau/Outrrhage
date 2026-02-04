@@ -187,22 +187,32 @@ public class Juicer : MonoBehaviour
     
     #endregion
     
-    #region COMBOS (Effets combinés populaires)
+    #region Damage & Death
     
-    /// <summary>Effet complet de hit/impact</summary>
-    public void HitImpact(float intensity = 0.3f, GameObject entity = null)
+    /// <summary>Effet générique de hit sur les AI Actor Components</summary>
+    public void EnemyDamagedImpact(float intensity = 0.3f, MeshRenderer renderer = null)
     {
         ShakeCamera(intensity, 0.15f);
         PulseChromaticAberration(0.5f, 0.2f);
         FreezeFrame(0.02f);
 
-        if (entity != null) {
-            EntityDamageFlash(entity);
-            SquashAndStretch(entity.transform, new Vector3(0.5f, 0.5f, 0.5f));
+        if (renderer != null) {
+            EntityDamageFlash(renderer, intensity);
+            //SquashAndStretch(renderer.transform, new Vector3(0.75f, 1.5f, 0.75f), intensity);
+            SquashVertical(renderer.transform, 0.5f, 0.2f);
         }
     }
+
+    /// <summary>Effet de dégâts sur le joueur</summary>
+    public void PlayerDamagedImpact(MeshRenderer playerRenderer)
+    {
+        PulseVignette(0.5f, 0.3f);
+        ShakeCamera(0.2f, 0.2f);
+        ColorFlashPostProcess(new Color(1f, 0.3f, 0.3f), 0.15f);
+        EntityDamageFlash(playerRenderer);
+    }
     
-    /// <summary>Effet de mort dramatique</summary>
+    /// <summary>Effet de mort sur Riel</summary>
     public void DeathEffect()
     {
         ShakeCameraWithRotation(0.5f, 3f, 0.5f);
@@ -211,21 +221,12 @@ public class Juicer : MonoBehaviour
         PulseVignette(0.6f, 0.5f);
     }
     
-    /// <summary>Effet de dégâts sur le joueur</summary>
-    public void PlayerDamaged(GameObject player)
-    {
-        PulseVignette(0.5f, 0.3f);
-        ShakeCamera(0.2f, 0.2f);
-        ColorFlashPostProcess(new Color(1f, 0.3f, 0.3f), 0.15f);
-        EntityDamageFlash(player);
-    }
-    
     #endregion
 
     #region ENTITY EFFECTS
 
     /// <summary>Squash & Stretch sur une entité (bounce, impact, jump)</summary>
-    public void SquashAndStretch(Transform entity, Vector3 squashScale, float duration = 0.2f, Ease ease = Ease.OutBack)
+    private void SquashAndStretch(Transform entity, Vector3 squashScale, float duration = 0.2f, Ease ease = Ease.OutBack)
     {
         if (entity == null) return;
         
@@ -239,26 +240,25 @@ public class Juicer : MonoBehaviour
     }
 
     /// <summary>Squash & Stretch preset - Impact au sol</summary>
-    public void SquashImpact(Transform entity, float intensity = 0.3f, float duration = 0.2f)
+    private void SquashHorizontal(Transform entity, float intensity = 0.3f, float duration = 0.2f)
     {
         Vector3 squash = new Vector3(1f + intensity, 1f - intensity, 1f + intensity);
         SquashAndStretch(entity, squash, duration, Ease.OutElastic);
     }
 
     /// <summary>Squash & Stretch preset - Jump/Anticipation</summary>
-    public void SquashJump(Transform entity, float intensity = 0.2f, float duration = 0.15f)
+    private void SquashVertical(Transform entity, float intensity = 0.2f, float duration = 0.15f)
     {
         Vector3 squash = new Vector3(1f - intensity, 1f + intensity, 1f - intensity);
         SquashAndStretch(entity, squash, duration, Ease.InOutQuad);
     }
 
-    /// <summary>Color Flash sur une entité (nécessite SpriteRenderer ou Material)</summary>
-    public void EntityColorFlash(GameObject entity, Color flashColor, float duration = 0.2f)
+    /// <summary>Color Flash sur une entité</summary>
+    public void EntityColorFlash(MeshRenderer renderer, Color flashColor, float duration = 0.2f)
     {
-        if (entity == null) return;
+        if (renderer== null) return;
           
-        Renderer renderer = entity.GetComponentInChildren<Renderer>();
-        if (renderer != null && renderer.material != null)
+        if (renderer.material != null)
         {
             Color originalColor = renderer.material.color;
             renderer.material.DOKill();
@@ -271,34 +271,16 @@ public class Juicer : MonoBehaviour
     }
 
     /// <summary>Color Flash preset - Dégâts (rouge)</summary>
-    public void EntityDamageFlash(GameObject entity, float duration = 0.15f)
+    public void EntityDamageFlash(MeshRenderer renderer, float duration = 0.15f)
     {
-        EntityColorFlash(entity, Color.red, duration);
+        EntityColorFlash(renderer, Color.red, duration);
     }
 
     /// <summary>Color Flash preset - Heal (vert)</summary>
-    public void EntityHealFlash(GameObject entity, float duration = 0.2f)
+    public void EntityHealFlash(MeshRenderer renderer, float duration = 0.2f)
     {
-        EntityColorFlash(entity, Color.green, duration);
+        EntityColorFlash(renderer, Color.green, duration);
     }
-
-    /// <summary>Color Flash preset - Invincibilité (blanc)</summary>
-    public void EntityInvincibleFlash(GameObject entity, float duration = 0.1f, int loops = 3)
-    {
-        if (entity == null) return;
-        
-        SpriteRenderer spriteRenderer = entity.GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-        {
-            Color originalColor = spriteRenderer.color;
-            spriteRenderer.DOKill();
-            
-            spriteRenderer.DOColor(Color.white, duration)
-                .SetLoops(loops * 2, LoopType.Yoyo)
-                .OnComplete(() => spriteRenderer.color = originalColor);
-        }
-    }
-
     #endregion
     
     private void OnDestroy()

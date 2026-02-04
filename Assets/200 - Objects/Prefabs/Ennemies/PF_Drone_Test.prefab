@@ -170,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AIActorComponent
   setupData: {fileID: 11400000, guid: 3679f7b88f75b7b4797073659923decd, type: 2}
   healthBarDisplay: {fileID: 972804402810355544}
+  mainRenderer: {fileID: 3395009048738354437}
   debugCharacterComponent: {fileID: 0}
 --- !u!114 &6070419940132246083
 MonoBehaviour:
