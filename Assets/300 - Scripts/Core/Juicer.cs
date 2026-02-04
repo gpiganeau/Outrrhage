@@ -154,35 +154,22 @@ public class Juicer : MonoBehaviour
         DOTween.Kill("TimeControl");
         
         DOTween.Sequence()
-            .Append(DOTween.To(() => Time.timeScale, x => Time.timeScale = x, slowFactor, 0.1f).SetEase(Ease.OutQuad))
+            .AppendCallback(() => SetTimeScale(slowFactor))
             .AppendInterval(duration)
-            .Append(DOTween.To(() => Time.timeScale, x => Time.timeScale = x, originalTimeScale, 0.3f).SetEase(Ease.InQuad))
-            .SetUpdate(true)
+            .AppendCallback(() => ResetTimeScale())
             .SetId("TimeControl");
     }
     
     /// <summary>Set directement le time scale</summary>
-    public void SetTimeScale(float scale, float transitionDuration = 0.2f)
+    public void SetTimeScale(float scale)
     {
-        DOTween.Kill("TimeControl");
-        
-        if (transitionDuration > 0)
-        {
-            DOTween.To(() => Time.timeScale, x => Time.timeScale = x, scale, transitionDuration)
-                .SetEase(Ease.InOutQuad)
-                .SetUpdate(true)
-                .SetId("TimeControl");
-        }
-        else
-        {
-            Time.timeScale = scale;
-        }
+        Time.timeScale = scale;
     }
     
     /// <summary>Reset le time scale à la normale</summary>
-    public void ResetTimeScale(float transitionDuration = 0.2f)
+    public void ResetTimeScale()
     {
-        SetTimeScale(originalTimeScale, transitionDuration);
+        SetTimeScale(1.0F);
     }
     
     #endregion
