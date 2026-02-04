@@ -18,6 +18,8 @@ public class CharacterComponent : MonoBehaviour
     public CameraController PlayerCameraController { get; set; }
     public SkillsController SkillsController => skillsController;
     public DamageController DammageController => damageController;
+
+    private bool isDead = false;
     
     void Start()
 	{
@@ -39,6 +41,11 @@ public class CharacterComponent : MonoBehaviour
         // -- Setup Callback & Listeners
         damageController.OnDied.AddListener(() =>
         {
+            if (isDead) return;
+            skillsController.enabled = false;
+            movementController.enabled = false;
+            damageController.enabled = false;
+            isDead = true;
             animController.Die();   
             DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
         });
