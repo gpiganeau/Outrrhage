@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90b4f106e0d7ce4b87b7cc28ea5675c, type: 3}
   m_Name: AIActorSetupData
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
+  Name: 
   maxHealth: 5
   movementSpeed: 0
-  startingSkillSet: []
   team: 2
-  LootOnDeath: 0
+  startingSkillSet: []
+  LootOnDeath: 1
   _itemsLootsOnDeath: []
+  LootBloodOnDeath: 1
+  BaseBloodDrop: 2
+  BloodPrefab: {fileID: 0}
   movementSetupData: {fileID: 11400000, guid: 334c90e1c6753444ca12ceff40eea6ea, type: 2}
   attackSetupData: {fileID: 0}

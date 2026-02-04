@@ -1,7 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
-using Unity.VisualScripting;
-using System;
 
 public class AIActorComponent: MonoBehaviour
 {
@@ -36,14 +33,14 @@ public class AIActorComponent: MonoBehaviour
         //Initialize AI Strategies
         if (setupData.movementSetupData != null)
         {
-            Type type = setupData.movementSetupData.movementStrategyScript.GetType();
+            System.Type type = setupData.movementSetupData.movementStrategyScript.GetType();
             _movementStrategy = gameObject.AddComponent(type) as MovementStrategy;
             _movementStrategy.Initialize(setupData.movementSetupData);
         }
 
         if (setupData.attackSetupData != null)
         {
-            Type type = setupData.attackSetupData.attackStrategyScript.GetType();
+            System.Type type = setupData.attackSetupData.attackStrategyScript.GetType();
             _attackStrategy = gameObject.AddComponent(type) as AttackStrategy;
             _attackStrategy.Initialize(setupData.attackSetupData, skillsController);
         }
@@ -75,11 +72,23 @@ public class AIActorComponent: MonoBehaviour
 
     private void OnDeath() 
     {
-        if (setupData.LootOnDeath)
+        if (setupData.LootOnDeath && setupData._itemsLootsOnDeath.Count > 0)
         {
-
             var loot = setupData._itemsLootsOnDeath.Random();
             Instantiate(loot, transform.position, Quaternion.identity);
+        }
+
+        if (setupData.LootBloodOnDeath)
+        {
+            // -- Later : Base + Stacked @ Todo
+            int dropAmount = setupData.BaseBloodDrop;
+            for (int i = 0; i < dropAmount; i++)
+            {
+                var vec = Random.insideUnitCircle;
+                Vector3 offset = new Vector3(vec.x, 0.5f, vec.y);
+                var pos = transform.position + offset;
+                Instantiate(setupData.BloodPrefab, pos, Quaternion.identity);
+            }
         }
         Destroy(this.gameObject);
     }

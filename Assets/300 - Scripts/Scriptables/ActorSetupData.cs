@@ -16,5 +16,8 @@ public class ActorSetupData: ScriptableObject
     [Header("Death and Loot")]
     public bool LootOnDeath = false;
     public List<GameObject> _itemsLootsOnDeath;
+    public bool LootBloodOnDeath = true;
+    public int BaseBloodDrop = 1;
+    public GameObject BloodPrefab;
 }
 
