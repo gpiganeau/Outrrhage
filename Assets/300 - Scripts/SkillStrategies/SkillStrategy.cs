@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -88,18 +89,7 @@ public class SkillStrategy : MonoBehaviour
 
     virtual protected void OnProjectileHit(Projectile projectile)
     {
-
+        _vfxController.PlayHitVFX(projectile.transform.position, _storedSkillData.ProjectileDamage);
     }
 
-    #region VFX Controller Calls
-    protected void OnProjectileHit(Vector3 position, Vector3 normal)
-    {
-        _vfxController.PlayImpactVFX(position, normal);
-    }
-    
-    protected void OnEnemyHit(Vector3 position)
-    {
-        _vfxController.PlayHitVFX(position, _storedSkillData.ProjectileDamage);
-    }
-    #endregion
 }

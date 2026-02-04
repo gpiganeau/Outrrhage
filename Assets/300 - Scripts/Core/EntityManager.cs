@@ -34,7 +34,7 @@ public class EntityManager : MonoBehaviour
         spawnSequence = DOTween.Sequence();
         spawnSequence.AppendInterval(spawnInterval);
         spawnSequence.AppendCallback(SpawnEnemyAtRandomPosAutoSpawn);
-        spawnSequence.SetLoops(-1); // -1 = infinite loops
+        spawnSequence.SetLoops(-1); 
     }
 
     private void SpawnEnemyAtRandomPosAutoSpawn()
@@ -45,9 +45,9 @@ public class EntityManager : MonoBehaviour
 
     Vector3 GetRandomPosAroundRiel()
     {
-        Vector2 randomDirection = Random.insideUnitCircle.normalized;
         float randomDistance = Random.Range(spawnRangeMin, spawnRangeMax);
-        return Riel.transform.position + new Vector3(randomDirection.x, .5f, randomDirection.y) * randomDistance;
+        Vector2 randomDirection = Random.insideUnitCircle.normalized * randomDistance;
+        return Riel.transform.position + new Vector3(randomDirection.x, .5f, randomDirection.y);
     }
 
     private void OnDestroy()

@@ -43,14 +43,13 @@ public class SlashStrategy: SkillStrategy
 
     protected override void OnProjectileHit(Projectile projectile)
     {
+        base.OnProjectileHit(projectile);
         hasHitATarget = true;
+        Juicer.I.HitImpact();
     }
 
     private void PostLifetimeEffects()
     {
-
-        Logger.Combat($"Post Lifetime {_storedSkillData.Name}. Has hit target : {hasHitATarget}");
-
         if (!hasHitATarget)
         {
             //Spawn bloodlet

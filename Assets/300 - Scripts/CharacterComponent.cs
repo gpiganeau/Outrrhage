@@ -36,9 +36,11 @@ public class CharacterComponent : MonoBehaviour
 
 
         // -- Setup Callback & Listeners
+        damageController.OnDamaged.AddListener((currentHealth, maxHealth) => Juicer.I.PlayerDamaged());
         damageController.OnDied.AddListener(() =>
         {
             if (isDead) return;
+            Juicer.I.DeathEffect();
             skillsController.enabled = false;
             movementController.enabled = false;
             damageController.enabled = false;   
