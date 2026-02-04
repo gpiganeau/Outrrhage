@@ -16,9 +16,6 @@ public class CharacterComponent : MonoBehaviour
     public static Blood Blood;
 
     public CameraController PlayerCameraController { get; set; }
-    public SkillsController SkillsController => skillsController;
-    public DamageController DammageController => damageController;
-
     private bool isDead = false;
     
     void Start()
@@ -44,7 +41,7 @@ public class CharacterComponent : MonoBehaviour
             if (isDead) return;
             skillsController.enabled = false;
             movementController.enabled = false;
-            damageController.enabled = false;
+            damageController.enabled = false;   
             isDead = true;
             animController.Die();   
             DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
@@ -56,6 +53,8 @@ public class CharacterComponent : MonoBehaviour
         InputManager.Instance.OnCharacterSlot3.AddListener(() => skillsController.CallSkillStrategy(2));
         InputManager.Instance.OnCharacterSlot4.AddListener(() => skillsController.CallSkillStrategy(3));
         InputManager.Instance.OnCharacterSlot5.AddListener(() => skillsController.CallSkillStrategy(4));
+
+        HUD.Instance.Initialize(skillsController, damageController);
     }
 
     #region Input Handling

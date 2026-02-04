@@ -43,7 +43,11 @@ public class HUD : MonoBehaviour
         if (_damageController != null) {
             _damageController.OnDamaged.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
             _damageController.OnHealed.AddListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
-        }  
+        } 
+
+        // -- Force Refresh Due to Actual Initialization Races
+        OnSkillsChanged(sc.ActiveSkillStrategies);
+
     }
     void OnEnable()
     {

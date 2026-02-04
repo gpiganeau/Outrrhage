@@ -7,6 +7,7 @@ using UnityEngine;
 public class SkillsController: MonoBehaviour
 {
     private List<SkillStrategy> activeSkillStrategies;
+    public List<SkillStrategy> ActiveSkillStrategies => activeSkillStrategies;
     private MovementController movementController;
     private List<string> skillsDisabledSources;
 
