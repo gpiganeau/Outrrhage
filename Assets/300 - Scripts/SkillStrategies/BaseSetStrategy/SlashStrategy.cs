@@ -1,16 +1,19 @@
-﻿using DG.Tweening;
-using System.Collections;
+using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class SlashStrategy: SkillStrategy
 {
     private bool hasHitATarget = false;
+    public BloodDrop bloopDropPrefab;
+
+    MovementController cachedController;
+
     public override bool Call(MovementController movementController, Team team)
     {
         if (!base.Call(movementController, team)) return false;
 
         hasHitATarget = false;
+        cachedController = movementController;
 
         ProjectileData projectileData = new ProjectileData()
         {
@@ -45,9 +48,16 @@ public class SlashStrategy: SkillStrategy
 
     private void PostLifetimeEffects()
     {
+
+        Logger.Combat($"Post Lifetime {_storedSkillData.Name}. Has hit target : {hasHitATarget}");
+
         if (!hasHitATarget)
         {
             //Spawn bloodlet
+            var pos = cachedController.transform.position;
+            pos -= cachedController.transform.forward * 2.5f;
+            pos = pos.WithY(1);
+            Instantiate(bloopDropPrefab, pos, Quaternion.identity);
         }
     }
 }

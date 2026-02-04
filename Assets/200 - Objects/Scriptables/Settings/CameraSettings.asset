@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 820600b34cb39c44a87dcac8ac496267, type: 3}
   m_Name: CameraSettings
   m_EditorClassIdentifier: Assembly-CSharp::CameraSettings
-  cameraLinearFollowSpeed: 5
-  cameraGeometricFollowSpeed: 0.85
+  cameraLinearFollowSpeed: 10
+  cameraGeometricFollowSpeed: 1
   cameraFollowDistance: 15
-  cameraAngleVert: 60
-  cameraAngleSide: 58.2
+  cameraAngleVert: 19.2
+  cameraAngleSide: 9.6
   cameraFOV: 60
