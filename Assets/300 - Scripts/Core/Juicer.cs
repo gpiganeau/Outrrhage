@@ -181,7 +181,7 @@ public class Juicer : MonoBehaviour
     {
         ShakeCamera(intensity, 0.15f);
         PulseChromaticAberration(0.5f, 0.2f);
-        FreezeFrame(0.02f);
+        FreezeFrame(0.05f);
 
         if (renderer != null) {
             EntityDamageFlash(renderer, intensity);

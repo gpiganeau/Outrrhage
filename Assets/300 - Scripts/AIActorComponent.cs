@@ -109,6 +109,10 @@ public class AIActorComponent: MonoBehaviour
                 Instantiate(setupData.BloodPrefab, pos, Quaternion.identity);
             }
         }
+
+        // -- Check if last enemy Alive ? Or From  Enemy Data (Boss, Elite...)
+        Juicer.I.SlowMotion(0.25f, 0.1f);
+
         Destroy(this.gameObject);
     }
 }
