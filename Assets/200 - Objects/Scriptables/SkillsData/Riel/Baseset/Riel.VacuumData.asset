@@ -16,7 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 9e48941107c92e84ca96b669bc06c3d8, type: 3}
   Name: Aspiration
   Cooldown: 0.5
-  Radius: 5
+  Radius: 3
   ProjectileSpeed: 0
   ProjectileDamage: 1
   ProjectileLifetime: 0.2
@@ -29,3 +29,20 @@ MonoBehaviour:
   BloodCost: 0
   Icon: {fileID: -148265703, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Cast
+  vfxData:
+    castVFXPrefab: {fileID: 0}
+    castVFXOffset: {x: 0, y: 0, z: 0}
+    attachCastVFXToCharacter: 1
+    castVFXDuration: 1
+    projectileTrailVFXPrefab: {fileID: 0}
+    projectileImpactVFXPrefab: {fileID: 0}
+    scaleProjectileVFXWithRadius: 0
+    areaIndicatorVFXPrefab: {fileID: 1242025809196778001, guid: 466a0d19051550b48932d6bf4ac82316, type: 3}
+    scaleAreaVFXWithRadius: 1
+    areaVFXColor: {r: 1, g: 0, b: 0, a: 1}
+    hitVFXPrefab: {fileID: 0}
+    scaleHitVFXWithDamage: 0
+    hitVFXLifetime: 2
+    castSound: {fileID: 0}
+    projectileSound: {fileID: 0}
+    impactSound: {fileID: 0}

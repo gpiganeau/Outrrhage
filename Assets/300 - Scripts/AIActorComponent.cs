@@ -5,6 +5,7 @@ public class AIActorComponent: MonoBehaviour
     [SerializeField] private AIActorSetupData setupData;
     [SerializeField] private HealthBarDisplay healthBarDisplay;
     [SerializeField] private MeshRenderer mainRenderer;
+    [SerializeField] private BloodStack bloodStack;
 
     private SkillsController skillsController;
     private MovementController movementController;
@@ -89,8 +90,7 @@ public class AIActorComponent: MonoBehaviour
 
         if (setupData.LootBloodOnDeath)
         {
-            // -- Later : Base + Stacked @ Todo
-            int dropAmount = setupData.BaseBloodDrop;
+            int dropAmount = setupData.BaseBloodDrop + bloodStack.GetStackedValue();
             for (int i = 0; i < dropAmount; i++)
             {
                 var vec = Random.insideUnitCircle;
