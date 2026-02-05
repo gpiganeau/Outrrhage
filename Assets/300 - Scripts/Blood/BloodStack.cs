@@ -22,6 +22,9 @@ public class BloodStack : MonoBehaviour
         data = setupData;
         blood.InitializeEmpty(data.maxBloodStack);
         display.Initialize(this);
+
+        // -- Get the base blood stack in
+        Increase(data.BaseBloodDrop);
     }
 
     public void Increase(int amount)

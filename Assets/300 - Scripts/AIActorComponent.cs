@@ -41,7 +41,6 @@ public class AIActorComponent: MonoBehaviour
         // -- World UI
         healthBarDisplay.Initialize(damageController);
         bloodStack.Initialize(setupData);
-        bloodStack.Increase(setupData.BaseBloodDrop);
 
         //Initialize AI Strategies
         if (setupData.movementSetupData != null)
@@ -99,7 +98,7 @@ public class AIActorComponent: MonoBehaviour
 
         if (setupData.LootBloodOnDeath)
         {
-            int dropAmount = setupData.BaseBloodDrop + bloodStack.GetStackedValue();
+            int dropAmount = bloodStack.GetStackedValue();
             for (int i = 0; i < dropAmount; i++)
             {
                 var vec = Random.insideUnitCircle;
