@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 22, y: 22}
+  m_SizeDelta: {x: 26, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3133290369619182679
 CanvasRenderer:
@@ -88,5 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8dd21c55d3a614ba8982262224e90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BloodSlot
-  HiddenColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 0.5019608}
+  HiddenColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 0.2509804}
   ShowColor: {r: 1, g: 1, b: 1, a: 1}

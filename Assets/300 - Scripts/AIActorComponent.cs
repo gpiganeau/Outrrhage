@@ -41,6 +41,7 @@ public class AIActorComponent: MonoBehaviour
         // -- World UI
         healthBarDisplay.Initialize(damageController);
         bloodStack.Initialize(setupData);
+        bloodStack.Increase(setupData.BaseBloodDrop);
 
         //Initialize AI Strategies
         if (setupData.movementSetupData != null)

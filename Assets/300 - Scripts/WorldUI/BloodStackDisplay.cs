@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using DG.Tweening;
 public class BloodStackDisplay: MonoBehaviour
 {
 	// -- Todo : Show Max Slot with grey value / Empty version  ?
@@ -18,46 +19,48 @@ public class BloodStackDisplay: MonoBehaviour
 
 		for (int i = 0; i < _stack.MaxBlood; i++)
 		{
-			AddSlot();
+			CreateSlot();
 		}
     }
 
 	public void Sync(int amount)
 	{
-		int index = 0;
-		foreach (var s in _slots)
-		{
-			if (index < amount)
-			{
-				s.Show();
-			} else
-			{
-				s.Show();
-			}
-
-			index++;
-		}
+        for (int i = 0; i < _slots.Count; i++)
+        {
+            if (i < amount)
+                _slots[i].Show();
+        }
 	}
 
-	private void AddSlot()
+	private void CreateSlot()
 	{
-		BloodSlot slot = Instantiate(_bloodSlotPrefab, transform);
-		_slots.Add(slot);
-		slot.Show();
+		_slots.Add(Instantiate(_bloodSlotPrefab, transform));
 	}
 
 	private void RemoveSlot()
 	{
-		
+		if (_slots.Count == 0) return;
+        
+        BloodSlot lastSlot = _slots[_slots.Count - 1];
+        _slots.RemoveAt(_slots.Count - 1);
+        
+        lastSlot.transform.DOScale(0f, 0.2f).OnComplete(() => Destroy(lastSlot.gameObject));
 	}
 
 	private void RemoveSlots(int amount)
 	{
-		
+		for (int i = 0; i < amount; i++)
+        {
+            RemoveSlot();
+        }
 	}
 
 	private void ClearSlots()
 	{
-		transform.Clear();
+		foreach (var slot in _slots)
+        {
+            if (slot != null) Destroy(slot.gameObject);
+        }
+        _slots.Clear();
 	}
 }

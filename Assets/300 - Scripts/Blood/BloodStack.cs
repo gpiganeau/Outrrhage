@@ -20,7 +20,7 @@ public class BloodStack : MonoBehaviour
     public void Initialize(AIActorSetupData setupData)
     {
         data = setupData;
-        blood.InitializeEmpty(setupData.maxBloodStack);
+        blood.InitializeEmpty(data.maxBloodStack);
         display.Initialize(this);
     }
 
