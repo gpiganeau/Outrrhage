@@ -24,16 +24,23 @@ public class AIActorComponent: MonoBehaviour
 
     void Start()
 	{
+        // -- Skill Controller
         skillsController = GetComponent<SkillsController>();
         skillsController.Initialize(setupData);
+
+        // -- Movement Controller
         movementController = GetComponent<MovementController>();
         movementController.Initialize(setupData);
+        
+        // -- Damage Controller
         damageController = GetComponent<DamageController>();
         damageController.Initialize(setupData);
-
-        healthBarDisplay.Initialize(damageController);
         damageController.OnDied.AddListener(OnDeath);
         damageController.OnDamaged.AddListener(OnDamaged);
+
+        // -- World UI
+        healthBarDisplay.Initialize(damageController);
+        bloodStack.Initialize(setupData);
 
         //Initialize AI Strategies
         if (setupData.movementSetupData != null)
@@ -78,6 +85,7 @@ public class AIActorComponent: MonoBehaviour
     private void OnDamaged(int a, int b)
     {
         Juicer.I.EnemyDamagedImpact(0.3f, mainRenderer);
+        bloodStack.Increase(1);
     }
 
     private void OnDeath() 

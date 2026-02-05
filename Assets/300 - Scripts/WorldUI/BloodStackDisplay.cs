@@ -1,25 +1,63 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 public class BloodStackDisplay: MonoBehaviour
 {
-	private Slider _healthBarSlider;
-    public void Initialize(DamageController damageController)
+	// -- Todo : Show Max Slot with grey value / Empty version  ?
+
+	[SerializeField] private BloodSlot _bloodSlotPrefab;
+	private BloodStack _stack;
+	private List<BloodSlot> _slots;
+
+
+    public void Initialize(BloodStack stack)
 	{
-		damageController.OnDamaged.AddListener((currentHealth, maxHealth) => OnDamaged(currentHealth, maxHealth));
-        damageController.OnHealed.AddListener((currentHealth, maxHealth) => OnHealed(currentHealth, maxHealth));
-		_healthBarSlider = GetComponentInChildren<Slider>();
+		_slots = new ();
+		_stack = stack;
+
+		for (int i = 0; i < _stack.MaxBlood; i++)
+		{
+			AddSlot();
+		}
     }
 
-	private void OnDamaged(float currentHealth, float maxHealth)
+	public void Sync(int amount)
 	{
-		float healthPercentage = currentHealth / maxHealth;
-		_healthBarSlider.value = healthPercentage;
-    }
+		int index = 0;
+		foreach (var s in _slots)
+		{
+			if (index < amount)
+			{
+				s.Show();
+			} else
+			{
+				s.Show();
+			}
 
-	private void OnHealed(float currentHealth, float maxHealth)
+			index++;
+		}
+	}
+
+	private void AddSlot()
 	{
-		float healthPercentage = currentHealth / maxHealth;
-		_healthBarSlider.value = healthPercentage;
-    }
+		BloodSlot slot = Instantiate(_bloodSlotPrefab, transform);
+		_slots.Add(slot);
+		slot.Show();
+	}
+
+	private void RemoveSlot()
+	{
+		
+	}
+
+	private void RemoveSlots(int amount)
+	{
+		
+	}
+
+	private void ClearSlots()
+	{
+		transform.Clear();
+	}
 }

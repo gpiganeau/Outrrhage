@@ -8,6 +8,7 @@ public class ActorSetupData: ScriptableObject
     public string Name;
     public int maxHealth;
     public float movementSpeed;
+    public int maxBloodStack = 10;
 
     [Header("Combat")]
     public Team team = Team.Neutral;

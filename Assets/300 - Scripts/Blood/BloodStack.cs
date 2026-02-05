@@ -7,14 +7,26 @@ public class BloodStack : MonoBehaviour
     [SerializeField] private Blood blood; 
     [SerializeField] private BloodStackDisplay display;
 
+    private ActorSetupData data;
+
     public int GetStackedValue () => blood.Amount;
+    public int MaxBlood => blood.Maximum;
 
     void Start()
     {
-        blood = new Blood(0); // -- Init Empty.
-        
-        //display.Initialize();
+        if (display == null) GetComponentInChildren<BloodStackDisplay>();
     }
 
-    // todo : Events
+    public void Initialize(AIActorSetupData setupData)
+    {
+        data = setupData;
+        blood.InitializeEmpty(setupData.maxBloodStack);
+        display.Initialize(this);
+    }
+
+    public void Increase(int amount)
+    {
+        int currentStack = blood.Regain(amount);
+        display.Sync(currentStack);
+    }
 }

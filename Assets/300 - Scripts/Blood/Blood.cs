@@ -36,6 +36,12 @@ public class Blood
         _currentAmount = Max;
     }
 
+    public void InitializeEmpty(int Max)
+    {
+        SetMaxAmount(Max);
+        _currentAmount = 0;
+    }
+
     public void Initialize()
     {
         Initialize(_maxAmount);
