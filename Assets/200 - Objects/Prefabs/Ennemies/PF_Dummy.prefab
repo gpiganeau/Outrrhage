@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 1980237756555460546}
   - component: {fileID: 8858889036896057815}
   - component: {fileID: 652837461547567209}
+  - component: {fileID: 5772122689360182890}
   m_Layer: 7
   m_Name: PF_Dummy
   m_TagString: Untagged
@@ -171,6 +172,7 @@ MonoBehaviour:
   setupData: {fileID: 11400000, guid: c4c1853b029e0014da857793d28bd6d3, type: 2}
   healthBarDisplay: {fileID: 2670832011255838123}
   mainRenderer: {fileID: 9160288620097129920}
+  bloodStack: {fileID: 5772122689360182890}
   debugCharacterComponent: {fileID: 0}
 --- !u!114 &5934422638521437142
 MonoBehaviour:
@@ -248,6 +250,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5772122689360182890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535562303386714921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64abe4dc4e61b0243ba2505c6e571e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BloodStack
+  blood:
+    _currentAmount: 0
+    _maxAmount: 0
+  display: {fileID: 0}
 --- !u!1001 &2482616728372760577
 PrefabInstance:
   m_ObjectHideFlags: 0

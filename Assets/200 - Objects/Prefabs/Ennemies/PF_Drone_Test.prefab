@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 411220605865608896}
   - component: {fileID: 9214113346471418679}
   - component: {fileID: 4702767116431961023}
+  - component: {fileID: -2140529323661154788}
   m_Layer: 7
   m_Name: PF_Drone_Test
   m_TagString: Untagged
@@ -171,6 +172,7 @@ MonoBehaviour:
   setupData: {fileID: 11400000, guid: 3679f7b88f75b7b4797073659923decd, type: 2}
   healthBarDisplay: {fileID: 972804402810355544}
   mainRenderer: {fileID: 3395009048738354437}
+  bloodStack: {fileID: -2140529323661154788}
   debugCharacterComponent: {fileID: 0}
 --- !u!114 &6070419940132246083
 MonoBehaviour:
@@ -248,6 +250,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-2140529323661154788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018517998506684508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64abe4dc4e61b0243ba2505c6e571e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BloodStack
+  blood:
+    _currentAmount: 0
+    _maxAmount: 0
+  display: {fileID: 0}
 --- !u!1 &4406070917620365164
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,7 +11,11 @@ public class HealStrategy: SkillStrategy
         parentController.SetSkillsDisabled(true, strategyTag);
 
         // -- Heal Implementation -- //
-        var riel = GameManager.Instance.Riel;
+        if (movementController.TryGetComponent<DamageController>(out var dc))
+        {
+            dc.Heal(_storedSkillData.ProjectileDamage); // Use Damage for Heal Amount... - Also maybe we should spawna  projectile, that trigger with ourselve ? Idk.
+            Juicer.I.EntityHealFlash(null); // -- Need a way to pass correctly all types of Renderer [Manager ?] @TODO
+        }
         // -------------------------- 
 
         DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
