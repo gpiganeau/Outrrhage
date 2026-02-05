@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: 
   maxHealth: 5
   movementSpeed: 0
+  maxBloodStack: 10
   team: 2
   startingSkillSet: []
   LootOnDeath: 1
@@ -22,5 +23,6 @@ MonoBehaviour:
   LootBloodOnDeath: 1
   BaseBloodDrop: 2
   BloodPrefab: {fileID: 0}
+  BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   movementSetupData: {fileID: 11400000, guid: 334c90e1c6753444ca12ceff40eea6ea, type: 2}
   attackSetupData: {fileID: 0}

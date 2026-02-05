@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class ActorSetupData: ScriptableObject
 {
@@ -20,5 +21,8 @@ public class ActorSetupData: ScriptableObject
     public bool LootBloodOnDeath = true;
     public int BaseBloodDrop = 1;
     public GameObject BloodPrefab;
+
+    [Header("Common Visuals")]
+    public GameObject BloodSplasherPrefab;
 }
 

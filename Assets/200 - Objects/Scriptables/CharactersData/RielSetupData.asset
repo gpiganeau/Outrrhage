@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: Riel
   maxHealth: 10
   movementSpeed: 10
+  maxBloodStack: 10
   team: 1
   startingSkillSet:
   - {fileID: 11400000, guid: efa91794510c88f40b147e97aba739db, type: 2}
@@ -24,4 +25,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee2ffb5eead2e3a419e1dc68951ce498, type: 2}
   LootOnDeath: 0
   _itemsLootsOnDeath: []
+  LootBloodOnDeath: 1
+  BaseBloodDrop: 1
+  BloodPrefab: {fileID: 0}
+  BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   maxBlood: 10

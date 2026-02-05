@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.VFX;
 
 public class AIActorComponent: MonoBehaviour
 {
@@ -86,6 +87,7 @@ public class AIActorComponent: MonoBehaviour
     {
         Juicer.I.EnemyDamagedImpact(0.3f, mainRenderer);
         bloodStack.Increase(1);
+        var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponent<VisualEffect>(); 
     }
 
     private void OnDeath() 

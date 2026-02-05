@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.VFX;
 
 /// <summary>
 /// Pilots other components, specifically translates inputs into I/O for attached controllers
@@ -14,7 +15,6 @@ public class CharacterComponent : MonoBehaviour
 
     [SerializeField] private Blood blood;
     public static Blood Blood;
-
     public CameraController PlayerCameraController { get; set; }
     private bool isDead = false;
     
@@ -36,18 +36,8 @@ public class CharacterComponent : MonoBehaviour
 
 
         // -- Setup Callback & Listeners
-        damageController.OnDamaged.AddListener((currentHealth, maxHealth) => Juicer.I.PlayerDamagedImpact(null));
-        damageController.OnDied.AddListener(() =>
-        {
-            if (isDead) return;
-            Juicer.I.DeathEffect();
-            skillsController.enabled = false;
-            movementController.enabled = false;
-            damageController.enabled = false;   
-            isDead = true;
-            animController.Die();   
-            DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
-        });
+        damageController.OnDamaged.AddListener((currentHealth, maxHealth) => OnDamaged(currentHealth, maxHealth));
+        damageController.OnDied.AddListener(() => OnDeath());
 
         InputManager.Instance.OnCharacterMovement.AddListener(OnInputVector);
         InputManager.Instance.OnCharacterSlot1.AddListener(() => skillsController.CallSkillStrategy(0));
@@ -58,6 +48,26 @@ public class CharacterComponent : MonoBehaviour
 
         HUD.Instance.Initialize(skillsController, damageController);
     }
+
+    #region Listeners & Callback
+    private void OnDamaged(int currentHealth, int maxHealth)
+    {
+        Juicer.I.PlayerDamagedImpact(null);
+        var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponent<VisualEffect>(); 
+    }
+
+    private void OnDeath()
+    {
+          if (isDead) return;
+            Juicer.I.DeathEffect();
+            skillsController.enabled = false;
+            movementController.enabled = false;
+            damageController.enabled = false;   
+            isDead = true;
+            animController.Die();   
+            DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
+    }
+    #endregion
 
     #region Input Handling
 

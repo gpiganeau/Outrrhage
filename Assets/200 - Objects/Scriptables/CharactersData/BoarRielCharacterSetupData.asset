@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: Riel the Boar
   maxHealth: 10
   movementSpeed: 10
+  maxBloodStack: 10
   team: 1
   startingSkillSet:
   - {fileID: 11400000, guid: 929291161abd93640b9dab46ccaa462c, type: 2}
@@ -22,4 +23,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 014425db0aabd984a81f5e58ab43de06, type: 2}
   LootOnDeath: 0
   _itemsLootsOnDeath: []
+  LootBloodOnDeath: 1
+  BaseBloodDrop: 1
+  BloodPrefab: {fileID: 0}
+  BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   maxBlood: 10
