@@ -25,4 +25,20 @@ public class SkillSlot : MonoBehaviour
         _cdRotor.fillAmount = 1;
         _cdRotor.DOFillAmount(0, _skillData.Cooldown);
     }
+
+    public void SetAvailable(bool value)
+    {
+        if(value)
+        {
+            _icon.color = Color.white;
+            _skillName.color = Color.white;
+            _skillCD.color = Color.white;
+        }
+        else
+        {
+            _icon.color = Color.gray;
+            _skillName.color = Color.gray;
+            _skillCD.color = Color.gray;
+        }
+    }
 }

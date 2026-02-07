@@ -10,6 +10,7 @@ public class SkillsController: MonoBehaviour
     public List<SkillStrategy> ActiveSkillStrategies => activeSkillStrategies;
     private MovementController movementController;
     private List<string> skillsDisabledSources;
+    private List<ISkillConstrainer> constraints;
 
     // -- Events --
     public event Action<List<SkillStrategy>> OnSkillsInitialized; 
@@ -22,6 +23,7 @@ public class SkillsController: MonoBehaviour
     //Still have to move the inputs into the CharacterComponent
     public void Initialize(ActorSetupData actorData, AnimController animController = null)
     {
+        constraints = new List<ISkillConstrainer>();
         // -- References Injection
         movementController = GetComponent<MovementController>();
         this.animController = animController;
@@ -46,6 +48,11 @@ public class SkillsController: MonoBehaviour
         }
 
         OnSkillsInitialized?.Invoke(activeSkillStrategies);
+    }
+
+    public void AddConstrainer(ISkillConstrainer constrainer)
+    {
+        constraints.Add(constrainer);
     }
 
     public void CallSkillStrategy(int strategyIndex)
@@ -81,5 +88,18 @@ public class SkillsController: MonoBehaviour
             else
                 Logger.LogWarning(Logger.LogCategory.Combat, $"Tried to enable skills from source {source} which was not disabling them.");
         }
+    }
+
+    public bool CheckSkillAvailability(int index)
+    {
+        if (skillsDisabledSources.Count > 0) return false;
+        foreach (ISkillConstrainer constrainer in constraints) { 
+            if (!constrainer.CanUseSkill(activeSkillStrategies[index].SkillData, movementController))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
