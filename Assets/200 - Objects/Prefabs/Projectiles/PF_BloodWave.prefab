@@ -445,7 +445,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -498,7 +498,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -551,8 +551,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
+      minMaxState: 3
+      scalar: 6.283185
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4782,7 +4782,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb98369e3f7910b4d84da32731f3630f, type: 2}
+  - {fileID: 2100000, guid: 365b91ebb7b2f8448a3442c306a95acf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4887,6 +4887,9 @@ MonoBehaviour:
   onProjectileRemoval:
     m_PersistentCalls:
       m_Calls: []
+  onProjectileHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!33 &8874095568993291873
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4920,7 +4923,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb98369e3f7910b4d84da32731f3630f, type: 2}
+  - {fileID: 2100000, guid: 365b91ebb7b2f8448a3442c306a95acf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
