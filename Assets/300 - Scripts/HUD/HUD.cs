@@ -75,6 +75,13 @@ public class HUD : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (_skillsController != null && _skillBar != null) {
+            _skillBar.UpdateAvailability(_skillsController);
+        }
+    }
+
     #endregion
 
     #region Callbacks

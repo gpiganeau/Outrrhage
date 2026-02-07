@@ -30,4 +30,13 @@ public class SkillBar : MonoBehaviour
     {
         _slots[slot].TriggerCooldown();
     }
+
+    public void UpdateAvailability(SkillsController controller)
+    {
+        for(int i = 0; i < _slots.Count; i++)
+        {
+            _slots[i].SetAvailable(controller.CheckSkillAvailability(i));
+        }
+    }
+
 }

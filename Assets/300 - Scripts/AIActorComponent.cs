@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.VFX;
 
-public class AIActorComponent: MonoBehaviour
+public class AIActorComponent: MonoBehaviour, ISkillConstrainer
 {
     [SerializeField] private AIActorSetupData setupData;
     [SerializeField] private HealthBarDisplay healthBarDisplay;
@@ -28,6 +28,7 @@ public class AIActorComponent: MonoBehaviour
         // -- Skill Controller
         skillsController = GetComponent<SkillsController>();
         skillsController.Initialize(setupData);
+        skillsController.AddConstrainer(this);
 
         // -- Movement Controller
         movementController = GetComponent<MovementController>();
@@ -114,5 +115,10 @@ public class AIActorComponent: MonoBehaviour
         Juicer.I.SlowMotion(0.5f, 0.1f);
 
         Destroy(this.gameObject);
+    }
+
+    public bool CanUseSkill(SkillData skillData, MovementController movementController)
+    {
+        return true;
     }
 }

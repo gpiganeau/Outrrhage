@@ -5,7 +5,7 @@ using UnityEngine.VFX;
 /// <summary>
 /// Pilots other components, specifically translates inputs into I/O for attached controllers
 /// </summary>
-public class CharacterComponent : MonoBehaviour
+public class CharacterComponent : MonoBehaviour, ISkillConstrainer
 {
 	[SerializeField] private CharacterSetupData setupData;
 	private SkillsController skillsController;
@@ -29,6 +29,7 @@ public class CharacterComponent : MonoBehaviour
         animController?.Initialize(setupData);
         skillsController = GetComponent<SkillsController>();
         skillsController.Initialize(setupData, animController);
+        skillsController.AddConstrainer(this);
         movementController = GetComponent<MovementController>();
         movementController.Initialize(setupData, animController);
         damageController = GetComponent<DamageController>();
@@ -88,6 +89,15 @@ public class CharacterComponent : MonoBehaviour
         cameraVect.Normalize();
         rValue = Vector3.ProjectOnPlane(cameraVect, groundPlane.normal);
         return rValue;
+    }
+
+    #endregion
+
+    #region SkillConstrainer
+
+    public bool CanUseSkill(SkillData skillData, MovementController movementController)
+    {
+        return skillData.BloodCost <= Blood.Amount;
     }
 
     #endregion
