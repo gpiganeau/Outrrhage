@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using DG.Tweening;
-public class BloodStackDisplay: MonoBehaviour
+public class BloodStackDisplay: BillboardWorldUI
 {
 	// -- Todo : Show Max Slot with grey value / Empty version  ?
 

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -18,6 +19,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Readonly References for Debug")]
     public Level _currentLevel;
+
+    public UnityEvent OnGameStart;
+    public CameraController CameraController => _cameraController;
 
     public void Awake()
     {
@@ -40,6 +44,7 @@ public class GameManager : MonoBehaviour
             _cameraController.transform.position = spawnPoint.transform.position + new Vector3(0, 100, 0);
             riel.PlayerCameraController = _cameraController;
             EntityManager.Instance.Riel = riel;
+            OnGameStart.Invoke();
 
         });
         spawnSeq.Play();
