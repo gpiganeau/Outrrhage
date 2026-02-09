@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 421126299978346496}
   - component: {fileID: 3879525784364444886}
+  - component: {fileID: 2528786897922404296}
   m_Layer: 0
   m_Name: PF_SkillDataPreviewer
   m_TagString: Untagged
@@ -45,3 +46,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillDataPreviewer
   skillData: {fileID: 11400000, guid: bc63b31181805ae48860d47e77aaa420, type: 2}
+--- !u!114 &2528786897922404296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525435406841864680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642921057f3b8ff44aadad98b343c941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillVFXController

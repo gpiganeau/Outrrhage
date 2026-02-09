@@ -67,6 +67,15 @@ public class DebugWindow : EditorWindow
         AddAction($"Toggle Invincibility - Actual :{dc.IsInvincible}", () => {
             dc.IsInvincible = !dc.IsInvincible;
         });
+
+
+        AddAction("Preview Full Skill FX", () => {
+            var previewer = FindFirstObjectByType<SkillDataPreviewer>();
+            if (previewer != null)
+            {
+                previewer.PreviewSkill(riel.transform.position);
+            }
+        });
     }
 
 

@@ -12,9 +12,9 @@ public class SkillVFXController : MonoBehaviour
     }
     
     // === CASTING VFX ===
-    public void PlayCastVFX(Transform caster)
+    public GameObject PlayCastVFX(Transform caster)
     {
-        if (skillData.vfxData.castVFXPrefab == null) return;
+        if (skillData.vfxData.castVFXPrefab == null) return null;
         
         Vector3 spawnPos = caster.position + skillData.vfxData.castVFXOffset;
         currentCastVFX = Instantiate(skillData.vfxData.castVFXPrefab, spawnPos, Quaternion.identity);
@@ -31,12 +31,14 @@ public class SkillVFXController : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(skillData.vfxData.castSound, spawnPos);
         }
+
+        return currentCastVFX;
     }
     
     // === AREA INDICATOR VFX ===
-    public void ShowAreaIndicator(Vector3 position, Vector3 direction)
+    public GameObject ShowAreaIndicator(Vector3 position, Vector3 direction)
     {
-        if (skillData.vfxData.areaIndicatorVFXPrefab == null) return;
+        if (skillData.vfxData.areaIndicatorVFXPrefab == null) return null;
         
         currentAreaVFX = Instantiate(skillData.vfxData.areaIndicatorVFXPrefab, position, 
                                       Quaternion.LookRotation(direction));
@@ -51,8 +53,10 @@ public class SkillVFXController : MonoBehaviour
         var renderer = currentAreaVFX.GetComponent<Renderer>();
         if (renderer != null)
         {
-            renderer.material.color = skillData.vfxData.areaVFXColor;
+            renderer.sharedMaterial.color = skillData.vfxData.areaVFXColor;
         }
+
+        return currentAreaVFX;
     }
     
     public void HideAreaIndicator()
@@ -88,9 +92,9 @@ public class SkillVFXController : MonoBehaviour
     }
     
     // === IMPACT VFX ===
-    public void PlayImpactVFX(Vector3 position, Vector3 normal)
+    public GameObject PlayImpactVFX(Vector3 position, Vector3 normal)
     {
-        if (skillData.vfxData.projectileImpactVFXPrefab == null) return;
+        if (skillData.vfxData.projectileImpactVFXPrefab == null) return null;
         
         Quaternion rotation = Quaternion.LookRotation(normal);
         GameObject impactVFX = Instantiate(skillData.vfxData.projectileImpactVFXPrefab, 
@@ -103,6 +107,8 @@ public class SkillVFXController : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(skillData.vfxData.impactSound, position);
         }
+
+        return impactVFX;
     }
     
     // === HIT VFX (sur l'ennemi) ===

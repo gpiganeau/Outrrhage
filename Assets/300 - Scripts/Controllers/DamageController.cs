@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
+using NUnit.Framework;
 
 public class DamageController: MonoBehaviour
 {
@@ -57,6 +58,8 @@ public class DamageController: MonoBehaviour
 
 	public bool Damage(int amount, Vector3 origin, Team team)
 	{
+		if (IsInvincible) return false;
+
 		bool blocked = IsBlockedFromDirection(origin);
 		bool canBeDamagedByTeam = CanBeDamagedByTeam(team);
 		if (blocked)
