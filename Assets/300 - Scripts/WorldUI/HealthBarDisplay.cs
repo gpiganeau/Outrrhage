@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-public class HealthBarDisplay: MonoBehaviour
+public class HealthBarDisplay: BillboardWorldUI
 {
 	private Slider _healthBarSlider;
     public void Initialize(DamageController damageController)
