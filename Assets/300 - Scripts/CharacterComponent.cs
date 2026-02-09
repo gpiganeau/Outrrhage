@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -5,7 +6,7 @@ using UnityEngine.VFX;
 /// <summary>
 /// Pilots other components, specifically translates inputs into I/O for attached controllers
 /// </summary>
-public class CharacterComponent : MonoBehaviour, ISkillConstrainer
+public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 {
 	[SerializeField] private CharacterSetupData setupData;
 	private SkillsController skillsController;
@@ -53,7 +54,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer
     #region Listeners & Callback
     private void OnDamaged(int currentHealth, int maxHealth)
     {
-        Juicer.I.PlayerDamagedImpact(null);
+        Juicer.I.PlayerDamagedImpact(GetRenderers());
         var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponent<VisualEffect>(); 
     }
 
@@ -98,6 +99,15 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer
     public bool CanUseSkill(SkillData skillData, MovementController movementController)
     {
         return skillData.BloodCost <= Blood.Amount;
+    }
+
+    #endregion
+
+    #region IJUicable
+
+    public List<Renderer> GetRenderers()
+    {
+        return animController.Renderers;
     }
 
     #endregion

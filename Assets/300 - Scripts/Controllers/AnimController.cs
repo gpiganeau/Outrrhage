@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -10,6 +11,8 @@ public class AnimController: MonoBehaviour
 
     bool locked = false;
 
+    public List<Renderer> Renderers;
+
     public void Initialize(ActorSetupData data)
     {
         this.data = data;
@@ -19,6 +22,8 @@ public class AnimController: MonoBehaviour
         }
 
         locked = false;
+
+        Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
     }
 
     public void SetSpeed(float speed)

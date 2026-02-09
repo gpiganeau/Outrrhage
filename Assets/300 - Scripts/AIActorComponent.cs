@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.VFX;
 
-public class AIActorComponent: MonoBehaviour, ISkillConstrainer
+public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
 {
     [SerializeField] private AIActorSetupData setupData;
     [SerializeField] private HealthBarDisplay healthBarDisplay;
@@ -86,7 +87,7 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer
 
     private void OnDamaged(int a, int b)
     {
-        Juicer.I.EnemyDamagedImpact(0.3f, mainRenderer);
+        Juicer.I.EnemyDamagedImpact(0.3f, GetRenderers());
         //Todo @Gregoire : On est sur 1 magique, mais faudrait que ça varie en fonction du spell
         bloodStack.Increase(1);
         var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponent<VisualEffect>(); 
@@ -122,8 +123,15 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer
         Destroy(this.gameObject);
     }
 
+#region Interfaces
     public bool CanUseSkill(SkillData skillData, MovementController movementController)
     {
         return true;
     }
+
+    public List<Renderer> GetRenderers()
+    {
+        return new List<Renderer>() { mainRenderer };
+    }
+#endregion
 }
