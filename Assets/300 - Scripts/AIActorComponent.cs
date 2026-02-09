@@ -6,7 +6,6 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
 {
     [SerializeField] private AIActorSetupData setupData;
     [SerializeField] private HealthBarDisplay healthBarDisplay;
-    [SerializeField] private MeshRenderer mainRenderer;
     [SerializeField] private BloodStack bloodStack;
 
     private SkillsController skillsController;
@@ -19,6 +18,8 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
     private AttackStrategy _attackStrategy;
 
     [SerializeField] private CharacterComponent debugCharacterComponent;
+
+    private List<Renderer> Renderers;
 
 
     //Will use a movement strategy to coordinate movement and a skills strategy to use skills
@@ -59,6 +60,8 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
             _attackStrategy = gameObject.AddComponent(type) as AttackStrategy;
             _attackStrategy.Initialize(setupData.attackSetupData, skillsController);
         }
+
+        Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
 
     }
 
@@ -131,7 +134,7 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
 
     public List<Renderer> GetRenderers()
     {
-        return new List<Renderer>() { mainRenderer };
+        return Renderers;
     }
 #endregion
 }
