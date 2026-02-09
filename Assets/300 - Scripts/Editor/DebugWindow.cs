@@ -68,6 +68,11 @@ public class DebugWindow : EditorWindow
             dc.IsInvincible = !dc.IsInvincible;
         });
 
+        AddAction($"Toggle Juicer", () => {
+            if (Application.isPlaying == false) return;
+            SettingsManager.Instance.VisualSettings.EnableJuicer = !SettingsManager.Instance.VisualSettings.EnableJuicer;
+        });
+
 
 // -- Editor Actions -- (Non Play Mode)
 

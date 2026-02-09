@@ -16,11 +16,10 @@ public class VacuumStrategy: SkillStrategy
         var drops = FindObjectsByType<BloodDrop>(UnityEngine.FindObjectsSortMode.None);
         
         // -- VFX
-        var p = Instantiate(_storedSkillData.SkillProjectilePrefab, transform.position.WithY(0.5f), Quaternion.identity).GetComponent<ParticleSystem>();
+        var p = Instantiate(_storedSkillData.SkillProjectilePrefab, transform.position.WithY(0.5f), Quaternion.identity);
+        p.transform.SetParent(movementController.transform);
         _vfxController.ShowAreaIndicator(movementController.transform.position.WithY(0.5f), Vector3.up);
         var r = _storedSkillData.Radius;
-        var d = r * 2;
-        p.transform.localScale = new Vector3(d, d, d);
 
         // -- Gameplay
         Collider[] colliders = Physics.OverlapSphere(riel.transform.position, r);
