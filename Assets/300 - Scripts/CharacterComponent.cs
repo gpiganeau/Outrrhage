@@ -54,7 +54,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     #region Listeners & Callback
     private void OnDamaged(int currentHealth, int maxHealth)
     {
-        Juicer.I.PlayerDamagedImpact(null);
+        Juicer.I.PlayerDamagedImpact(GetRenderers());
         var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponent<VisualEffect>(); 
     }
 

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using DG.Tweening;
+using System.Collections.Generic;
 
 public class Juicer : MonoBehaviour
 {
@@ -229,32 +230,33 @@ public class Juicer : MonoBehaviour
     }
 
     /// <summary>Color Flash sur une entité</summary>
-    private void EntityColorFlash(MeshRenderer renderer, Color flashColor, float duration = 0.2f)
+    private void EntityColorFlash(List<Renderer> renderers, Color flashColor, float duration = 0.2f)
     {
-        if (renderer == null) return;
-          
-        if (renderer.material != null)
+        if (renderers.Count == 0) return;
+
+        foreach (var renderer in renderers)
         {
+            if (renderer.material == null) continue;
+            
             Color originalColor = renderer.material.color;
             renderer.material.DOKill();
             
             DOTween.Sequence()
                 .Append(renderer.material.DOColor(flashColor, duration * 0.3f))
                 .Append(renderer.material.DOColor(originalColor, duration * 0.7f));
-            return;
         }
     }
 
     /// <summary>Color Flash preset - Dégâts (rouge)</summary>
-    private void EntityDamageFlash(MeshRenderer renderer, float duration = 0.15f)
+    private void EntityDamageFlash(List<Renderer> renderers, float duration = 0.15f)
     {
-        EntityColorFlash(renderer, Color.red, duration);
+        EntityColorFlash(renderers, Color.red, duration);
     }
 
     /// <summary>Color Flash preset - Heal (vert)</summary>
-    private void EntityHealFlash(MeshRenderer renderer, float duration = 0.2f)
+    private void EntityHealFlash(List<Renderer> renderers, float duration = 0.2f)
     {
-        EntityColorFlash(renderer, Color.green, duration);
+        EntityColorFlash(renderers, Color.green, duration);
     }
     #endregion
     #endregion
@@ -264,7 +266,7 @@ public class Juicer : MonoBehaviour
     #region Damage & Death
     
     /// <summary>Effet générique de hit sur les AI Actor Components</summary>
-    public void EnemyDamagedImpact(float intensity = 0.3f, MeshRenderer renderer = null)
+    public void EnemyDamagedImpact(float intensity = 0.3f, List<Renderer> renderers = null)
     {
 
         if (!IsJuiceEnabled()) return;
@@ -273,30 +275,34 @@ public class Juicer : MonoBehaviour
         PulseChromaticAberration(0.5f, 0.2f);
         FreezeFrame(0.05f);
 
-        if (renderer != null) {
-            EntityDamageFlash(renderer, intensity);
+        if (renderers.Count > 0) {
+            EntityDamageFlash(renderers, intensity);
             //SquashAndStretch(renderer.transform, new Vector3(0.75f, 1.5f, 0.75f), intensity);
-            SquashVertical(renderer.transform, 0.5f, 0.2f);
+
+            foreach (var renderer in renderers)
+            {
+                SquashVertical(renderer.transform, 0.5f, 0.2f);
+            }
         }
     }
 
     /// <summary>Effet de dégâts sur le joueur</summary>
-    public void PlayerDamagedImpact(MeshRenderer playerRenderer)
+    public void PlayerDamagedImpact(List<Renderer> playerRenderers)
     {
         if (!IsJuiceEnabled()) return;
 
         PulseVignette(0.5f, 0.3f);
         ShakeCamera(0.2f, 0.2f);
         ColorFlashPostProcess(new Color(1f, 0.3f, 0.3f), 0.15f);
-        EntityDamageFlash(playerRenderer);
+        EntityDamageFlash(playerRenderers);
     }
 
-    public void PlayerHealedEffect(MeshRenderer renderer)
+    public void PlayerHealedEffect(List<Renderer> playerRenderers)
     {
         if (!IsJuiceEnabled()) return;
 
         ColorFlashPostProcess(new Color(0.3f, 1f, 0.3f), 0.15f);
-        EntityHealFlash(renderer);
+        EntityHealFlash(playerRenderers);
     }
     
     /// <summary>Effet de mort sur Riel</summary>

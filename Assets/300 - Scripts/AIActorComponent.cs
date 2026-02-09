@@ -87,7 +87,7 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
 
     private void OnDamaged(int a, int b)
     {
-        Juicer.I.EnemyDamagedImpact(0.3f, mainRenderer);
+        Juicer.I.EnemyDamagedImpact(0.3f, GetRenderers());
         //Todo @Gregoire : On est sur 1 magique, mais faudrait que ça varie en fonction du spell
         bloodStack.Increase(1);
         var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponent<VisualEffect>(); 
