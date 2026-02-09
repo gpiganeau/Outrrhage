@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -5,7 +6,7 @@ using UnityEngine.VFX;
 /// <summary>
 /// Pilots other components, specifically translates inputs into I/O for attached controllers
 /// </summary>
-public class CharacterComponent : MonoBehaviour, ISkillConstrainer
+public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 {
 	[SerializeField] private CharacterSetupData setupData;
 	private SkillsController skillsController;
@@ -98,6 +99,15 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer
     public bool CanUseSkill(SkillData skillData, MovementController movementController)
     {
         return skillData.BloodCost <= Blood.Amount;
+    }
+
+    #endregion
+
+    #region IJUicable
+
+    public List<Renderer> GetRenderers()
+    {
+        return animController.Renderers;
     }
 
     #endregion
