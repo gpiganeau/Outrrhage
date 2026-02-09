@@ -11,7 +11,7 @@ public class EntityManager : MonoBehaviour
 
 
     [Header("Spawn Settings")]
-    public AIActorComponent enemyPrefab;              
+    public List<AIActorComponent> enemyPrefabs;              
     public float spawnInterval = 2f;                
     public float spawnRangeMin = 5f;           
     public float spawnRangeMax = 10f;          
@@ -45,7 +45,9 @@ public class EntityManager : MonoBehaviour
     private void SpawnEnemyAtRandomPosAutoSpawn()
     {
         if (!AutoSpawn) return;
-        Bots.Add(Instantiate(enemyPrefab, GetRandomPosAroundRiel(), Quaternion.identity));
+
+        var newBot = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], GetRandomPosAroundRiel(), Quaternion.identity);
+        Bots.Add(newBot);
     }
 
     Vector3 GetRandomPosAroundRiel()
