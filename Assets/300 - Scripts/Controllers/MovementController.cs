@@ -18,6 +18,8 @@ public class MovementController: MonoBehaviour
 
 	AnimController animController;
 
+    public Vector3 Velocity =>  _preferedMovementDirection * _baseMovementSpeed * ComputeSpeedAlteration();  
+
     public void Initialize(ActorSetupData data, AnimController animController = null)
     {
         _facingVector = Vector3.forward;
@@ -39,7 +41,7 @@ public class MovementController: MonoBehaviour
         if(immobilizationSources.Count > 0)       
             return;
         
-        UpdateMovementVector(_preferedMovementDirection  * _baseMovementSpeed * ComputeAlteredSpeed());
+        UpdateMovementVector(_preferedMovementDirection  * _baseMovementSpeed * ComputeSpeedAlteration());
         _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.fixedDeltaTime);
         
 
@@ -139,7 +141,7 @@ public class MovementController: MonoBehaviour
         speedAlterationSources[source] = alteration;
     }
 
-    public float ComputeAlteredSpeed()
+    public float ComputeSpeedAlteration()
     {
         float finalAlteration = 1;
         foreach(float alteration in speedAlterationSources.Values)
