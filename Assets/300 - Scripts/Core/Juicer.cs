@@ -131,7 +131,8 @@ public class Juicer : MonoBehaviour
         Time.timeScale = 0f;
         DOVirtual.DelayedCall(duration, () => Time.timeScale = originalTimeScale, false)
             .SetUpdate(true) // Important: utilise unscaled time
-            .SetId("TimeControl");
+            .SetId("TimeControl")
+            .onKill += () => Time.timeScale = originalTimeScale; // Assure que le time scale est reset même si le tween est tué prématurément
     }
     
     /// <summary>Freeze frame sur un actor spécifique (via Animator), à tester</summary>

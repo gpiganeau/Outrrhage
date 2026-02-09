@@ -25,42 +25,28 @@ public class DebugWindow : EditorWindow
     {
         actions.Clear();
 
-        CharacterComponent riel;
-        DamageController dc;
-
-        if (GameManager.Instance != null)
-        {
-            riel = GameManager.Instance.Riel;
-            
-        } else
-        {
-            riel = FindFirstObjectByType<CharacterComponent>();
-
-            if (riel == null)
-            {
-                Logger.LogError(Logger.LogCategory.Core, "Riel not found in the scene. Debug actions will not work.");
-                return;
-            }
-        }
-
-        dc = riel.GetComponent<DamageController>();
-
         AddAction("Restart Level", () => 
         {
+            if (Application.isPlaying == false) return;
             GameManager.Instance.ReloadCurrentScene();
         });
 
         AddAction("Get Max Blood", () => 
         {
+            if (Application.isPlaying == false) return;
             CharacterComponent.Blood.Regain(1000);
         });
 
         AddAction("Kill Riel", () => {
-            dc.Damage(1000,  riel.transform.position, Team.Neutral);
+            if (Application.isPlaying == false) return;
+            var riel = GameManager.Instance.Riel;
+            var rielDC = riel.GetComponent<DamageController>();
+            rielDC.Damage(1000,  riel.transform.position, Team.Neutral);
         });
 
         AddAction("Kill Enemy & Stop Spawn", () =>
         {
+            if (Application.isPlaying == false) return;
             var entityManager = FindFirstObjectByType<EntityManager>();
 
             entityManager.StopInfiniteSpawning();
@@ -69,26 +55,32 @@ public class DebugWindow : EditorWindow
             {
                 if (bot != null)
                 {
-                    var botDC = bot.GetComponent<DamageController>();
-                    if (botDC != null)
-                    {
-                        botDC.Damage(1000, bot.transform.position, Team.Neutral);
-                    }
+                    bot.ForceKill();
                 }
             }
         });
         
-        AddAction("Toggle HUD", () => {
-            var canvas = FindAnyObjectByType<HUD>().GetComponent<Canvas>();
-            canvas.enabled = !canvas.enabled;
-        });
 
-        AddAction($"Toggle Invincibility - Actual :{dc.IsInvincible}", () => {
+        AddAction($"Toggle Invincibility", () => {
+            if (Application.isPlaying == false) return;
+            var riel = GameManager.Instance.Riel;
+            var dc = riel.GetComponent<DamageController>();
             dc.IsInvincible = !dc.IsInvincible;
         });
 
 
+// -- Editor Actions -- (Non Play Mode)
+
+        AddAction("Toggle HUD", () => {
+            if (Application.isPlaying == true) return;
+            var canvas = FindAnyObjectByType<HUD>().GetComponent<Canvas>();
+            canvas.enabled = !canvas.enabled;
+        });
+
         AddAction("Preview Full Skill FX", () => {
+            if (Application.isPlaying == true) return;
+
+            var riel = GameManager.Instance.Riel;
             var previewer = FindFirstObjectByType<SkillDataPreviewer>();
             if (previewer != null)
             {
