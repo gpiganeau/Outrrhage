@@ -6,6 +6,12 @@ public class DamageController: MonoBehaviour
 {
     //Techniquement un vase devrait pouvoir marcher avec seulement les valeurs par défaut, sans besoin d'initialisation
     private int _maxHealth = 1;
+	private bool _isInvincible = false;
+	public bool IsInvincible
+	{
+		get => _isInvincible;
+		set => _isInvincible = value;
+	}
 	[SerializeField] private int _currentHealth = 1;
 	[SerializeField] private Team _team = Team.Neutral;
 

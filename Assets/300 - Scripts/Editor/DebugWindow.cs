@@ -25,6 +25,26 @@ public class DebugWindow : EditorWindow
     {
         actions.Clear();
 
+        CharacterComponent riel;
+        DamageController dc;
+
+        if (GameManager.Instance != null)
+        {
+            riel = GameManager.Instance.Riel;
+            
+        } else
+        {
+            riel = FindFirstObjectByType<CharacterComponent>();
+
+            if (riel == null)
+            {
+                Logger.LogError(Logger.LogCategory.Core, "Riel not found in the scene. Debug actions will not work.");
+                return;
+            }
+        }
+
+        dc = riel.GetComponent<DamageController>();
+
         AddAction("Restart Level", () => 
         {
             GameManager.Instance.ReloadCurrentScene();
@@ -36,12 +56,16 @@ public class DebugWindow : EditorWindow
         });
 
         AddAction("Kill Riel", () => {
-            GameManager.Instance.Riel.GetComponent<DamageController>().Damage(1000,  GameManager.Instance.Riel.transform.position, Team.Neutral);
+            dc.Damage(1000,  riel.transform.position, Team.Neutral);
         });
         
         AddAction("Toggle HUD", () => {
             var canvas = FindAnyObjectByType<HUD>().GetComponent<Canvas>();
             canvas.enabled = !canvas.enabled;
+        });
+
+        AddAction($"Toggle Invincibility - Actual :{dc.IsInvincible}", () => {
+            dc.IsInvincible = !dc.IsInvincible;
         });
     }
 
