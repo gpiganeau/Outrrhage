@@ -60,7 +60,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer
     private void OnDeath()
     {
           if (isDead) return;
-            Juicer.I.DeathEffect();
+            Juicer.I.PlayerDeathEffect();
             skillsController.enabled = false;
             movementController.enabled = false;
             damageController.enabled = false;   

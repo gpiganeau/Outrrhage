@@ -117,7 +117,7 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer
         }
 
         // -- Check if last enemy Alive ? Or From  Enemy Data (Boss, Elite...) or % Chance of procing this ?
-        Juicer.I.SlowMotion(0.5f, 0.1f);
+        Juicer.I.EnemyDeathEffect();
 
         Destroy(this.gameObject);
     }

@@ -5,7 +5,9 @@ using DG.Tweening;
 
 public class Juicer : MonoBehaviour
 {
+    #region Singleton & References
     public static Juicer I;
+    private VisualSettings settings;
     
     [Header("Post Process")]
     public Volume globalVolume;
@@ -19,6 +21,10 @@ public class Juicer : MonoBehaviour
     
     [Header("Time Control")]
     private float originalTimeScale = 1f;
+    
+    #endregion
+    
+    #region Unity Callbacks
     
     private void Awake()
     {
@@ -39,11 +45,28 @@ public class Juicer : MonoBehaviour
             globalVolume.profile.TryGet(out colorAdjustments);
         }
     }
-    
+
+    void Start()
+    {
+        settings = SettingsManager.Instance.VisualSettings;
+    }
+
+    private void OnDestroy()
+    {
+        // Reset time scale au cas où
+        Time.timeScale = 1f;
+        DOTween.Kill("TimeControl");
+    }
+
+    #endregion
+
+    #region Private, Internal Juice Methods (Post Process, Screen Shake, Time Control, Entity Effects)
+    private bool IsJuiceEnabled() => settings.EnableJuicer;
+
     #region POST PROCESS
-    
+
     /// <summary>Pulse la vignette (ex: quand le joueur prend des dégâts)</summary>
-    public void PulseVignette(float intensity = 0.5f, float duration = 0.3f)
+    private void PulseVignette(float intensity = 0.5f, float duration = 0.3f)
     {
         if (vignette == null) return;
         
@@ -54,7 +77,7 @@ public class Juicer : MonoBehaviour
     }
     
     /// <summary>Set l'intensité de la vignette</summary>
-    public void SetVignetteIntensity(float intensity, float duration = 0f)
+    private void SetVignetteIntensity(float intensity, float duration = 0f)
     {
         if (vignette == null) return;
         
@@ -65,7 +88,7 @@ public class Juicer : MonoBehaviour
     }
     
     /// <summary>Pulse l'aberration chromatique (impact visuel)</summary>
-    public void PulseChromaticAberration(float intensity = 0.8f, float duration = 0.2f)
+    private void PulseChromaticAberration(float intensity = 0.8f, float duration = 0.2f)
     {
         if (chromaticAberration == null) return;
         
@@ -76,7 +99,7 @@ public class Juicer : MonoBehaviour
     }
     
     /// <summary>Flash de couleur (mort, hit, etc.)</summary>
-    public void ColorFlashPostProcess(Color color, float duration = 0.2f)
+    private void ColorFlashPostProcess(Color color, float duration = 0.2f)
     {
         if (colorAdjustments == null) return;
         
@@ -92,7 +115,7 @@ public class Juicer : MonoBehaviour
     #region SCREEN SHAKE
     
     /// <summary>Simple Shake</summary>
-    public void ShakeCamera(float intensity = 0.3f, float duration = 0.3f)
+    private void ShakeCamera(float intensity = 0.3f, float duration = 0.3f)
     {
         if (mainCamera == null) return;
         
@@ -103,7 +126,7 @@ public class Juicer : MonoBehaviour
     }
     
     /// <summary>Shake avec rotation, marche bien pour la death</summary>
-    public void ShakeCameraWithRotation(float positionIntensity = 0.3f, float rotationIntensity = 2f, float duration = 0.3f)
+    private void ShakeCameraWithRotation(float positionIntensity = 0.3f, float rotationIntensity = 2f, float duration = 0.3f)
     {
         if (mainCamera == null) return;
         
@@ -125,7 +148,7 @@ public class Juicer : MonoBehaviour
     #region FREEZE FRAME
     
     /// <summary>Freeze frame (arrêt total du temps)</summary>
-    public void FreezeFrame(float duration = 0.1f)
+    private void FreezeFrame(float duration = 0.1f)
     {
         DOTween.Kill("TimeControl");
         Time.timeScale = 0f;
@@ -136,7 +159,7 @@ public class Juicer : MonoBehaviour
     }
     
     /// <summary>Freeze frame sur un actor spécifique (via Animator), à tester</summary>
-    public void FreezeActor(Animator animator, float duration = 0.1f)
+    private void FreezeActor(Animator animator, float duration = 0.1f)
     {
         if (animator == null) return;
         
@@ -150,7 +173,7 @@ public class Juicer : MonoBehaviour
     #region TIME CONTROL
     
     /// <summary>Slow motion temporaire</summary>
-    public void SlowMotion(float slowFactor = 0.3f, float duration = 1f)
+    private void SlowMotion(float slowFactor = 0.3f, float duration = 1f)
     {
         DOTween.Kill("TimeControl");
         
@@ -162,61 +185,19 @@ public class Juicer : MonoBehaviour
     }
     
     /// <summary>Set directement le time scale</summary>
-    public void SetTimeScale(float scale)
+    private void SetTimeScale(float scale)
     {
         Time.timeScale = scale;
     }
     
     /// <summary>Reset le time scale à la normale</summary>
-    public void ResetTimeScale()
+    private void ResetTimeScale()
     {
         SetTimeScale(1.0F);
     }
     
     #endregion
     
-    #region Damage & Death
-    
-    /// <summary>Effet générique de hit sur les AI Actor Components</summary>
-    public void EnemyDamagedImpact(float intensity = 0.3f, MeshRenderer renderer = null)
-    {
-        ShakeCamera(intensity, 0.15f);
-        PulseChromaticAberration(0.5f, 0.2f);
-        FreezeFrame(0.05f);
-
-        if (renderer != null) {
-            EntityDamageFlash(renderer, intensity);
-            //SquashAndStretch(renderer.transform, new Vector3(0.75f, 1.5f, 0.75f), intensity);
-            SquashVertical(renderer.transform, 0.5f, 0.2f);
-        }
-    }
-
-    /// <summary>Effet de dégâts sur le joueur</summary>
-    public void PlayerDamagedImpact(MeshRenderer playerRenderer)
-    {
-        PulseVignette(0.5f, 0.3f);
-        ShakeCamera(0.2f, 0.2f);
-        ColorFlashPostProcess(new Color(1f, 0.3f, 0.3f), 0.15f);
-        EntityDamageFlash(playerRenderer);
-    }
-
-    public void PlayerHealedEffect()
-    {
-        ColorFlashPostProcess(new Color(0.3f, 1f, 0.3f), 0.15f);
-        EntityHealFlash(null);
-    }
-    
-    /// <summary>Effet de mort sur Riel</summary>
-    public void DeathEffect()
-    {
-        ShakeCameraWithRotation(0.5f, 3f, 0.5f);
-        ColorFlashPostProcess(Color.red, 1f);
-        SlowMotion(0.2f, 0.8f);
-        PulseVignette(0.6f, 0.5f);
-    }
-    
-    #endregion
-
     #region ENTITY EFFECTS
 
     /// <summary>Squash & Stretch sur une entité (bounce, impact, jump)</summary>
@@ -248,9 +229,9 @@ public class Juicer : MonoBehaviour
     }
 
     /// <summary>Color Flash sur une entité</summary>
-    public void EntityColorFlash(MeshRenderer renderer, Color flashColor, float duration = 0.2f)
+    private void EntityColorFlash(MeshRenderer renderer, Color flashColor, float duration = 0.2f)
     {
-        if (renderer== null) return;
+        if (renderer == null) return;
           
         if (renderer.material != null)
         {
@@ -265,22 +246,77 @@ public class Juicer : MonoBehaviour
     }
 
     /// <summary>Color Flash preset - Dégâts (rouge)</summary>
-    public void EntityDamageFlash(MeshRenderer renderer, float duration = 0.15f)
+    private void EntityDamageFlash(MeshRenderer renderer, float duration = 0.15f)
     {
         EntityColorFlash(renderer, Color.red, duration);
     }
 
     /// <summary>Color Flash preset - Heal (vert)</summary>
-    public void EntityHealFlash(MeshRenderer renderer, float duration = 0.2f)
+    private void EntityHealFlash(MeshRenderer renderer, float duration = 0.2f)
     {
         EntityColorFlash(renderer, Color.green, duration);
     }
     #endregion
+    #endregion
     
-    private void OnDestroy()
+    #region Public API
+    
+    #region Damage & Death
+    
+    /// <summary>Effet générique de hit sur les AI Actor Components</summary>
+    public void EnemyDamagedImpact(float intensity = 0.3f, MeshRenderer renderer = null)
     {
-        // Reset time scale au cas où
-        Time.timeScale = 1f;
-        DOTween.Kill("TimeControl");
+
+        if (!IsJuiceEnabled()) return;
+        
+        ShakeCamera(intensity, 0.15f);
+        PulseChromaticAberration(0.5f, 0.2f);
+        FreezeFrame(0.05f);
+
+        if (renderer != null) {
+            EntityDamageFlash(renderer, intensity);
+            //SquashAndStretch(renderer.transform, new Vector3(0.75f, 1.5f, 0.75f), intensity);
+            SquashVertical(renderer.transform, 0.5f, 0.2f);
+        }
     }
+
+    /// <summary>Effet de dégâts sur le joueur</summary>
+    public void PlayerDamagedImpact(MeshRenderer playerRenderer)
+    {
+        if (!IsJuiceEnabled()) return;
+
+        PulseVignette(0.5f, 0.3f);
+        ShakeCamera(0.2f, 0.2f);
+        ColorFlashPostProcess(new Color(1f, 0.3f, 0.3f), 0.15f);
+        EntityDamageFlash(playerRenderer);
+    }
+
+    public void PlayerHealedEffect(MeshRenderer renderer)
+    {
+        if (!IsJuiceEnabled()) return;
+
+        ColorFlashPostProcess(new Color(0.3f, 1f, 0.3f), 0.15f);
+        EntityHealFlash(renderer);
+    }
+    
+    /// <summary>Effet de mort sur Riel</summary>
+    public void PlayerDeathEffect()
+    {
+        if (!IsJuiceEnabled()) return;
+
+        ShakeCameraWithRotation(0.5f, 3f, 0.5f);
+        ColorFlashPostProcess(Color.red, 1f);
+        SlowMotion(0.2f, 0.8f);
+        PulseVignette(0.6f, 0.5f);
+    }
+
+    public void EnemyDeathEffect()
+    {
+        if (!IsJuiceEnabled()) return;
+
+        SlowMotion(0.5f, 0.1f);
+    }
+    
+    #endregion
+    #endregion
 }

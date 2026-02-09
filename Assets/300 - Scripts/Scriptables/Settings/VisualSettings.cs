@@ -3,6 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Visual Settings", menuName = "Scriptable Objects/Settings/Visuals Settings")]
 public class VisualSettings : ScriptableObject
 {
+    public bool EnableJuicer = true;
+
     [SerializeField] ColorPalette _bloodPalette, _techPalette, _naturePalette, _cityPalette;
     public ColorPalette BloodPalette => _bloodPalette;
     public ColorPalette TechPalette => _techPalette;
