@@ -58,6 +58,25 @@ public class DebugWindow : EditorWindow
         AddAction("Kill Riel", () => {
             dc.Damage(1000,  riel.transform.position, Team.Neutral);
         });
+
+        AddAction("Kill Enemy & Stop Spawn", () =>
+        {
+            var entityManager = FindFirstObjectByType<EntityManager>();
+
+            entityManager.StopInfiniteSpawning();
+
+            foreach (var bot in entityManager.Bots)
+            {
+                if (bot != null)
+                {
+                    var botDC = bot.GetComponent<DamageController>();
+                    if (botDC != null)
+                    {
+                        botDC.Damage(1000, bot.transform.position, Team.Neutral);
+                    }
+                }
+            }
+        });
         
         AddAction("Toggle HUD", () => {
             var canvas = FindAnyObjectByType<HUD>().GetComponent<Canvas>();

@@ -37,6 +37,11 @@ public class EntityManager : MonoBehaviour
         spawnSequence.SetLoops(-1); 
     }
 
+    public void StopInfiniteSpawning()
+    {
+        spawnSequence?.Kill();
+    }
+
     private void SpawnEnemyAtRandomPosAutoSpawn()
     {
         if (!AutoSpawn) return;
