@@ -10,7 +10,9 @@ public class EntityManager : MonoBehaviour
     public List<AIActorComponent> Bots = new();
 
 
+
     [Header("Spawn Settings")]
+    public GameObject SpawnFXPrefab;
     public List<AIActorComponent> enemyPrefabs;              
     public float spawnInterval = 2f;                
     public float spawnRangeMin = 5f;           
@@ -45,9 +47,20 @@ public class EntityManager : MonoBehaviour
     private void SpawnEnemyAtRandomPosAutoSpawn()
     {
         if (!AutoSpawn) return;
+        var actor  = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
+        var pos = GetRandomPosAroundRiel();
 
-        var newBot = Instantiate(enemyPrefabs[Random.Range(0, enemyPrefabs.Count)], GetRandomPosAroundRiel(), Quaternion.identity);
-        Bots.Add(newBot);
+        // -- Sequence for spawn FX and Enemy Spawn
+        var seq = DOTween.Sequence();
+        seq.AppendCallback(() =>
+        {
+            var fx = Instantiate(SpawnFXPrefab, pos, Quaternion.identity);
+        });
+        seq.AppendInterval(1f); 
+        seq.AppendCallback(() =>{
+             var newBot = Instantiate(actor, pos, Quaternion.identity);
+             Bots.Add(newBot);
+        });
     }
 
     Vector3 GetRandomPosAroundRiel()

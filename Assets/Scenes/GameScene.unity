@@ -200,6 +200,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3064940305099015597, guid: 113f912f4791ee84bba7288091a2815f, type: 3}
     - target: {fileID: 1538628881019090955, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: SpawnFXPrefab
+      value: 
+      objectReference: {fileID: 6862081939587630824, guid: a5c692c20671ec043bc558abf0886ebd, type: 3}
+    - target: {fileID: 1538628881019090955, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
       propertyPath: spawnInterval
       value: 5
       objectReference: {fileID: 0}
