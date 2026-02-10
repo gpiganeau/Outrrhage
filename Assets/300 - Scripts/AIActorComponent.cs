@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -20,6 +21,8 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
     [SerializeField] private CharacterComponent debugCharacterComponent;
 
     private List<Renderer> Renderers;
+    private AnimController animController;
+
 
 
     //Will use a movement strategy to coordinate movement and a skills strategy to use skills
@@ -27,20 +30,27 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
 
     void Start()
 	{
+
+       // -- AnimController
+        animController = GetComponent<AnimController>();
+        animController?.Initialize(setupData);
+
         // -- Skill Controller
         skillsController = GetComponent<SkillsController>();
-        skillsController.Initialize(setupData);
+        skillsController.Initialize(setupData, animController);
         skillsController.AddConstrainer(this);
 
         // -- Movement Controller
         movementController = GetComponent<MovementController>();
-        movementController.Initialize(setupData);
+        movementController.Initialize(setupData, animController);
         
         // -- Damage Controller
         damageController = GetComponent<DamageController>();
-        damageController.Initialize(setupData);
+        damageController.Initialize(setupData, animController);
         damageController.OnDied.AddListener(OnDeath);
         damageController.OnDamaged.AddListener(OnDamaged);
+
+ 
 
         // -- World UI
         healthBarDisplay.Initialize(damageController);
@@ -124,7 +134,17 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
         // -- Check if last enemy Alive ? Or From  Enemy Data (Boss, Elite...) or % Chance of procing this ?
         Juicer.I.EnemyDeathEffect();
 
-        Destroy(this.gameObject);
+
+        if (animController != null)
+        {
+            animController.Die();   
+            DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => Destroy(this.gameObject));
+        } else
+        {
+            Destroy(this.gameObject);
+        }
+
+
     }
 
 #region Interfaces
