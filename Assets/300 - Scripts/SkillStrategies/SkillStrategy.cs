@@ -51,6 +51,12 @@ public class SkillStrategy : MonoBehaviour
         return true;
     }
 
+    public virtual void Release(MovementController movementController, Team team)
+    {
+        Debug.Log($"Released skill {debugName}");
+        // For chargeable skills, we might want to do something when the player releases the button
+    }
+
     protected Projectile SpawnProjectile(ProjectileData data)
     {
         Projectile newProjectile = Instantiate(_storedSkillData.SkillProjectilePrefab.gameObject).GetComponent<Projectile>();

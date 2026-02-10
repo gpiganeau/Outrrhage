@@ -16,10 +16,15 @@ public class InputManager : MonoBehaviour
     [HideInInspector] public UnityEvent OnUICancel;
     [HideInInspector] public UnityEvent<Vector2> OnCharacterMovement;
     [HideInInspector] public UnityEvent OnCharacterSlot1;
+    [HideInInspector] public UnityEvent OnCharacterSlot1Released;
     [HideInInspector] public UnityEvent OnCharacterSlot2;
+    [HideInInspector] public UnityEvent OnCharacterSlot2Released;
     [HideInInspector] public UnityEvent OnCharacterSlot3;
+    [HideInInspector] public UnityEvent OnCharacterSlot3Released;
     [HideInInspector] public UnityEvent OnCharacterSlot4;
+    [HideInInspector] public UnityEvent OnCharacterSlot4Released;
     [HideInInspector] public UnityEvent OnCharacterSlot5;
+    [HideInInspector] public UnityEvent OnCharacterSlot5Released;
 
     void Awake()
     {
@@ -41,51 +46,103 @@ public class InputManager : MonoBehaviour
 
     #region Message Handlers
 
-    void OnMove(InputValue value)
+    public void OnMove(InputAction.CallbackContext obj)
     {
-        _leftStickInputVector = value.Get<Vector2>();
-        OnCharacterMovement?.Invoke(_leftStickInputVector);
-        //Logger.Core("InputManager: OnMove: " + _leftStickInputVector);
+        if (obj.performed)
+        {
+            _leftStickInputVector = obj.ReadValue<Vector2>();
+            OnCharacterMovement?.Invoke(_leftStickInputVector);
+            //Logger.Core("InputManager: OnMove: " + _leftStickInputVector);
+        }
     }
 
-    void OnSubmit()
+    public void OnSubmit(InputAction.CallbackContext obj)
     {
-        if(playerInputComponent.currentActionMap.name == SettingsManager.Instance.Standards.INPUT_UI_MAP)
+        if(obj.performed && playerInputComponent.currentActionMap.name == SettingsManager.Instance.Standards.INPUT_UI_MAP)
         {
             OnUISelect?.Invoke();
         }
     }
 
-    void OnCancel()
+    public void OnCancel(InputAction.CallbackContext obj)
     {
-        OnUICancel?.Invoke();
+        if(obj.performed && playerInputComponent.currentActionMap.name == SettingsManager.Instance.Standards.INPUT_UI_MAP)
+            OnUICancel?.Invoke();
     }
 
-    void OnSlot1()
+    bool slot1Pressed;
+    public void OnSlot1(InputAction.CallbackContext obj)
     {
-        
-        OnCharacterSlot1?.Invoke();
-        
+        if(!slot1Pressed && obj.phase == InputActionPhase.Started)
+        {
+            slot1Pressed = true;
+            OnCharacterSlot1?.Invoke();
+        }
+        else if(slot1Pressed && obj.phase == InputActionPhase.Canceled)
+        {
+            slot1Pressed = false;
+            OnCharacterSlot1Released?.Invoke();
+        }
     }
 
-    void OnSlot2()
+    bool slot2Pressed;
+    public void OnSlot2(InputAction.CallbackContext obj)
     {
-        OnCharacterSlot2?.Invoke();
+        if(!slot2Pressed && obj.phase == InputActionPhase.Started)
+        {
+            slot2Pressed = true;
+            OnCharacterSlot2?.Invoke();
+        }
+        else if(slot2Pressed && obj.phase == InputActionPhase.Canceled)
+        {
+            slot2Pressed = false;
+            OnCharacterSlot2Released?.Invoke();
+        }
     }
 
-    void OnSlot3()
+    bool slot3Pressed;
+    public void OnSlot3(InputAction.CallbackContext obj)
     {
-        OnCharacterSlot3?.Invoke();
+        if(!slot3Pressed && obj.phase == InputActionPhase.Started)
+        {
+            slot3Pressed = true;
+            OnCharacterSlot3?.Invoke();
+        }
+        else if(slot3Pressed && obj.phase == InputActionPhase.Canceled)
+        {
+            slot3Pressed = false;
+            OnCharacterSlot3Released?.Invoke();
+        }
+    }
+    
+    bool slot4Pressed;
+    public void OnSlot4(InputAction.CallbackContext obj)
+    {
+        if(!slot4Pressed && obj.phase == InputActionPhase.Started)
+        {
+            slot4Pressed = true;
+            OnCharacterSlot4?.Invoke();
+        }
+        else if(slot4Pressed && obj.phase == InputActionPhase.Canceled)
+        {
+            slot4Pressed = false;
+            OnCharacterSlot4Released?.Invoke();
+        }
     }
 
-    void OnSlot4()
+    bool slot5Pressed;
+    public void OnSlot5(InputAction.CallbackContext obj)
     {
-        OnCharacterSlot4?.Invoke();
-    }
-
-    void OnSlot5()
-    {
-        OnCharacterSlot5?.Invoke();
+        if(!slot5Pressed && obj.phase == InputActionPhase.Started)
+        {
+            slot5Pressed = true;
+            OnCharacterSlot5?.Invoke();
+        }
+        else if(slot5Pressed && obj.phase == InputActionPhase.Canceled)
+        {
+            slot5Pressed = false;
+            OnCharacterSlot5Released?.Invoke();
+        }
     }
 
     #endregion

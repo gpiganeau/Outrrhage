@@ -48,6 +48,12 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
         InputManager.Instance.OnCharacterSlot4.AddListener(() => skillsController.CallSkillStrategy(3));
         InputManager.Instance.OnCharacterSlot5.AddListener(() => skillsController.CallSkillStrategy(4));
 
+        InputManager.Instance.OnCharacterSlot1Released.AddListener(() => skillsController.CallSkillStrategyReleased(0));
+        InputManager.Instance.OnCharacterSlot2Released.AddListener(() => skillsController.CallSkillStrategyReleased(1));
+        InputManager.Instance.OnCharacterSlot3Released.AddListener(() => skillsController.CallSkillStrategyReleased(2));
+        InputManager.Instance.OnCharacterSlot4Released.AddListener(() => skillsController.CallSkillStrategyReleased(3));
+        InputManager.Instance.OnCharacterSlot5Released.AddListener(() => skillsController.CallSkillStrategyReleased(4));
+
         HUD.Instance.Initialize(skillsController, damageController);
     }
 

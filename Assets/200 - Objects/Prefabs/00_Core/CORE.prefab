@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EntityManager
   Riel: {fileID: 0}
   Bots: []
-  enemyPrefab: {fileID: 3064940305099015597, guid: 113f912f4791ee84bba7288091a2815f, type: 3}
+  enemyPrefabs: []
   spawnInterval: 2
   spawnRangeMin: 5
   spawnRangeMax: 10
@@ -191,16 +191,31 @@ MonoBehaviour:
   OnCharacterSlot1:
     m_PersistentCalls:
       m_Calls: []
+  OnCharacterSlot1Released:
+    m_PersistentCalls:
+      m_Calls: []
   OnCharacterSlot2:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterSlot2Released:
     m_PersistentCalls:
       m_Calls: []
   OnCharacterSlot3:
     m_PersistentCalls:
       m_Calls: []
+  OnCharacterSlot3Released:
+    m_PersistentCalls:
+      m_Calls: []
   OnCharacterSlot4:
     m_PersistentCalls:
       m_Calls: []
+  OnCharacterSlot4Released:
+    m_PersistentCalls:
+      m_Calls: []
   OnCharacterSlot5:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCharacterSlot5Released:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &5718787518491153470
@@ -216,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
   m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
