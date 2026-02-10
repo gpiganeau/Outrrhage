@@ -54,13 +54,19 @@ VisualEffect:
       - m_Value: 16
         m_Name: Rate
         m_Overridden: 1
+      - m_Value: 1.5
+        m_Name: MinVelocity
+        m_Overridden: 1
+      - m_Value: 4
+        m_Name: MaxVelocity
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 3, y: 3, z: 8}
+      - m_Value: {x: 2, y: 0, z: 2}
         m_Name: BloodVelocity
-        m_Overridden: 0
+        m_Overridden: 1
     m_Vector4f:
       m_Array: []
     m_Uint:

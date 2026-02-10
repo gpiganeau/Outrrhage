@@ -28,7 +28,7 @@ public class MovementController: MonoBehaviour
         speedAlterationSources = new Dictionary<string, float>();
         speedAlterationSources["base"] = 1f;
 
-        this.animController =animController;
+        this.animController = animController;
     }
 
     public void SetMovementDirection(Vector3 direction)

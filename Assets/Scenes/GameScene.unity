@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1314478059537847997, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: _startLevelPrefab
+      value: 
+      objectReference: {fileID: 6459453780394568696, guid: 8d7b757f0c09e4c419b1f1f8fe5265ed, type: 3}
     - target: {fileID: 1351508187787524001, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -223,6 +227,18 @@ PrefabInstance:
       propertyPath: spawnRangeMin
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1538628881019090955, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: enemyPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538628881019090955, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'enemyPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 3064940305099015597, guid: 113f912f4791ee84bba7288091a2815f, type: 3}
+    - target: {fileID: 1538628881019090955, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'enemyPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3064940305099015597, guid: 15fb97f868544b54e9d28aa4fd908309, type: 3}
     - target: {fileID: 2001893644058897996, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
