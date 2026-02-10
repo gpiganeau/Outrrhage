@@ -69,6 +69,15 @@ public class SkillsController: MonoBehaviour
         }
     }
 
+    public void CallSkillStrategyReleased(int strategyIndex)
+    {
+        if (strategyIndex >= 0 && strategyIndex < activeSkillStrategies.Count)
+        {
+            SkillStrategy skill = activeSkillStrategies[strategyIndex];
+            skill.Release(movementController, _team);
+        }
+    }
+
     public void CallRandomSkill()
     {
         CallSkillStrategy(UnityEngine.Random.Range(0, activeSkillStrategies.Count));

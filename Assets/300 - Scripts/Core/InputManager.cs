@@ -46,35 +46,39 @@ public class InputManager : MonoBehaviour
 
     #region Message Handlers
 
-    void OnMove(InputValue value)
+    public void OnMove(InputAction.CallbackContext obj)
     {
-        _leftStickInputVector = value.Get<Vector2>();
-        OnCharacterMovement?.Invoke(_leftStickInputVector);
-        //Logger.Core("InputManager: OnMove: " + _leftStickInputVector);
+        if (obj.performed)
+        {
+            _leftStickInputVector = obj.ReadValue<Vector2>();
+            OnCharacterMovement?.Invoke(_leftStickInputVector);
+            //Logger.Core("InputManager: OnMove: " + _leftStickInputVector);
+        }
     }
 
-    void OnSubmit(InputValue value)
+    public void OnSubmit(InputAction.CallbackContext obj)
     {
-        if(playerInputComponent.currentActionMap.name == SettingsManager.Instance.Standards.INPUT_UI_MAP)
+        if(obj.performed && playerInputComponent.currentActionMap.name == SettingsManager.Instance.Standards.INPUT_UI_MAP)
         {
             OnUISelect?.Invoke();
         }
     }
 
-    void OnCancel(InputValue value)
+    public void OnCancel(InputAction.CallbackContext obj)
     {
-        OnUICancel?.Invoke();
+        if(obj.performed && playerInputComponent.currentActionMap.name == SettingsManager.Instance.Standards.INPUT_UI_MAP)
+            OnUICancel?.Invoke();
     }
 
     bool slot1Pressed;
-    void OnSlot1(InputValue value)
+    public void OnSlot1(InputAction.CallbackContext obj)
     {
-        if(value.isPressed && !slot1Pressed)
+        if(!slot1Pressed && obj.phase == InputActionPhase.Started)
         {
             slot1Pressed = true;
             OnCharacterSlot1?.Invoke();
         }
-        else if(!value.isPressed)
+        else if(slot1Pressed && obj.phase == InputActionPhase.Canceled)
         {
             slot1Pressed = false;
             OnCharacterSlot1Released?.Invoke();
@@ -82,14 +86,14 @@ public class InputManager : MonoBehaviour
     }
 
     bool slot2Pressed;
-    void OnSlot2(InputValue value)
+    public void OnSlot2(InputAction.CallbackContext obj)
     {
-        if(value.isPressed && !slot2Pressed)
+        if(!slot2Pressed && obj.phase == InputActionPhase.Started)
         {
             slot2Pressed = true;
             OnCharacterSlot2?.Invoke();
         }
-        else if(!value.isPressed)
+        else if(slot2Pressed && obj.phase == InputActionPhase.Canceled)
         {
             slot2Pressed = false;
             OnCharacterSlot2Released?.Invoke();
@@ -97,14 +101,14 @@ public class InputManager : MonoBehaviour
     }
 
     bool slot3Pressed;
-    void OnSlot3(InputValue value)
+    public void OnSlot3(InputAction.CallbackContext obj)
     {
-        if(value.isPressed && !slot3Pressed)
+        if(!slot3Pressed && obj.phase == InputActionPhase.Started)
         {
             slot3Pressed = true;
             OnCharacterSlot3?.Invoke();
         }
-        else if(!value.isPressed)
+        else if(slot3Pressed && obj.phase == InputActionPhase.Canceled)
         {
             slot3Pressed = false;
             OnCharacterSlot3Released?.Invoke();
@@ -112,14 +116,14 @@ public class InputManager : MonoBehaviour
     }
     
     bool slot4Pressed;
-    void OnSlot4(InputValue value)
+    public void OnSlot4(InputAction.CallbackContext obj)
     {
-        if(value.isPressed && !slot4Pressed)
+        if(!slot4Pressed && obj.phase == InputActionPhase.Started)
         {
             slot4Pressed = true;
             OnCharacterSlot4?.Invoke();
         }
-        else if(!value.isPressed)
+        else if(slot4Pressed && obj.phase == InputActionPhase.Canceled)
         {
             slot4Pressed = false;
             OnCharacterSlot4Released?.Invoke();
@@ -127,14 +131,14 @@ public class InputManager : MonoBehaviour
     }
 
     bool slot5Pressed;
-    void OnSlot5(InputValue value)
+    public void OnSlot5(InputAction.CallbackContext obj)
     {
-        if(value.isPressed && !slot5Pressed)
+        if(!slot5Pressed && obj.phase == InputActionPhase.Started)
         {
             slot5Pressed = true;
             OnCharacterSlot5?.Invoke();
         }
-        else if(!value.isPressed)
+        else if(slot5Pressed && obj.phase == InputActionPhase.Canceled)
         {
             slot5Pressed = false;
             OnCharacterSlot5Released?.Invoke();
