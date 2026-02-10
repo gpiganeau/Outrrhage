@@ -36,4 +36,10 @@ public class MoveStayInRangeOfPlayerStrategy: MovementStrategy
             return Vector3.zero;
         }
     }
+
+    public override Vector3 GetFacingDirection(MovementContext context)
+    {
+        // Always face the player
+        return (context.playerPosition - context.currentLocation).normalized;
+    }
 }

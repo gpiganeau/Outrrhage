@@ -89,7 +89,9 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
         {
             MovementContext context = new MovementContext(this.transform.position, debugCharacterComponent.transform.position);
             Vector3 movementDirection = _movementStrategy.GetMovementDirection(context);
+            Vector3 facingDirection = _movementStrategy.GetFacingDirection(context);
             movementController.SetMovementDirection(movementDirection);
+            movementController.SetFacingDirection(facingDirection);
         }
 
         if (_attackStrategy != null)

@@ -156,7 +156,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &3064940305099015597
 MonoBehaviour:
@@ -172,7 +172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AIActorComponent
   setupData: {fileID: 11400000, guid: 3679f7b88f75b7b4797073659923decd, type: 2}
   healthBarDisplay: {fileID: 972804402810355544}
-  mainRenderer: {fileID: 3395009048738354437}
   bloodStack: {fileID: -2140529323661154788}
   debugCharacterComponent: {fileID: 0}
 --- !u!114 &6070419940132246083

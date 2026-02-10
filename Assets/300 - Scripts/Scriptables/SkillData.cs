@@ -12,6 +12,10 @@ public class SkillData : ScriptableObject
     public string Name;
     public float Cooldown;
 
+    [Header("Hold and Release")]
+    public bool IsHold;
+    public float HoldDuration;
+
     [Header("Projectile Settings")]
     [Range (0, 32)] public float Radius = 0;
     public float ProjectileSpeed;

@@ -53,7 +53,6 @@ public class SkillStrategy : MonoBehaviour
 
     public virtual void Release(MovementController movementController, Team team)
     {
-        Debug.Log($"Released skill {debugName}");
         // For chargeable skills, we might want to do something when the player releases the button
     }
 

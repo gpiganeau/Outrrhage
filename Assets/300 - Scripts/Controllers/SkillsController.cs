@@ -71,11 +71,10 @@ public class SkillsController: MonoBehaviour
 
     public void CallSkillStrategyReleased(int strategyIndex)
     {
-        if (strategyIndex >= 0 && strategyIndex < activeSkillStrategies.Count)
-        {
-            SkillStrategy skill = activeSkillStrategies[strategyIndex];
-            skill.Release(movementController, _team);
-        }
+        if (!(strategyIndex >= 0 && strategyIndex < activeSkillStrategies.Count)) return;
+        SkillStrategy skill = activeSkillStrategies[strategyIndex];
+        if (!skill.SkillData.IsHold) return;
+        skill.Release(movementController, _team);
     }
 
     public void CallRandomSkill()

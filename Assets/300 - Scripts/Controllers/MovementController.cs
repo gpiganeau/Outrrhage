@@ -36,6 +36,12 @@ public class MovementController: MonoBehaviour
         _preferedMovementDirection = direction.normalized;
     }
 
+    public void SetFacingDirection(Vector3 direction)
+    {
+        if (direction.sqrMagnitude > 0)
+            _facingVector = direction.normalized;
+    }
+
     private void FixedUpdate()
     {
         if(immobilizationSources.Count > 0)       
@@ -43,7 +49,8 @@ public class MovementController: MonoBehaviour
         
         UpdateMovementVector(_preferedMovementDirection  * _baseMovementSpeed * ComputeSpeedAlteration());
         _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.fixedDeltaTime);
-        
+        if(_movementVector.sqrMagnitude == 0 && _facingVector.sqrMagnitude > 0)
+            _rigidbody.MoveRotation(Quaternion.LookRotation(_facingVector));
 
         // -- Look Toward Movement
         if (_movementVector.magnitude > 0)

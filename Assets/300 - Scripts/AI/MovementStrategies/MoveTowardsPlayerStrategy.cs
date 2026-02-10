@@ -13,4 +13,10 @@ public class MoveTowardsPlayerStrategy : MovementStrategy
     {
         return (context.playerPosition - context.currentLocation).normalized;
     }
+
+    public override Vector3 GetFacingDirection(MovementContext context)
+    {
+        // Always face the player
+        return (context.playerPosition - context.currentLocation).normalized;
+    }
 }
