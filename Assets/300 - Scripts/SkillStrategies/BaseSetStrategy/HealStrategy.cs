@@ -14,7 +14,6 @@ public class HealStrategy: SkillStrategy
         if (movementController.TryGetComponent<DamageController>(out var dc))
         {
             dc.Heal(_storedSkillData.ProjectileDamage); // Use Damage for Heal Amount... - Also maybe we should spawna  projectile, that trigger with ourselve ? Idk.
-            Juicer.I.PlayerHealedEffect(null); // -- Need a way to pass correctly all types of Renderer [Manager ?] @TODO
         }
         // -------------------------- 
 

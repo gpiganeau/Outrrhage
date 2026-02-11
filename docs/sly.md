@@ -11,6 +11,11 @@ Box + Cell Shader + Outline ! + Post processing + 2D/3D Props test = First Look
 [Grass Shader Doc, 16:16](https://www.youtube.com/watch?v=IjfBlUtJF_0)
 [VFX Main Shader](https://www.youtube.com/watch?v=Qmgh9702vak)
 
+
+## Now
+- Debug Map (Clear Ground, Dummy, ...)
+- Test Camera
+
 ## Tasks
 - Grass Shader : wip
 - Palette Settings  : ok, wip, use it
