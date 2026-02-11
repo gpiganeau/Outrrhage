@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8576b5616d5a5b43bc5ebe672411004, type: 3}
+  m_Name: Riel.BloodExplosion
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  SkillStrategyPrefab: {fileID: 7434445806588342944, guid: be96c4564e8a0804baba6a9d70cbbe1d, type: 3}
+  SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
+  Name: Blood Explosion
+  Cooldown: 3
+  IsHold: 1
+  HoldDuration: 2
+  Radius: 8
+  ProjectileSpeed: 0
+  ProjectileDamage: 2
+  ProjectileLifetime: 0.2
+  numberOfProjectiles: 1
+  TravelMode: 3
+  AimAssistRatio: 0
+  ignoreCollisions: 0
+  movementDistance: 0
+  movementDuration: 0
+  IsRielSpecificSkill: 1
+  BloodCost: 3
+  Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
+  AnimationKey: Slash
+  vfxData:
+    castVFXPrefab: {fileID: 0}
+    castVFXOffset: {x: 0, y: 0, z: 0}
+    attachCastVFXToCharacter: 1
+    projectileTrailVFXPrefab: {fileID: 0}
+    projectileImpactVFXPrefab: {fileID: 0}
+    areaIndicatorVFXPrefab: {fileID: 0}
+    hitVFXPrefab: {fileID: 4993486111714875449, guid: 914b859b3d6d7124e8cdbb17523d291f, type: 3}
+    castSound: {fileID: 0}
+    projectileSound: {fileID: 0}
+    impactSound: {fileID: 0}
