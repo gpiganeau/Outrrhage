@@ -13,15 +13,16 @@ Box + Cell Shader + Outline ! + Post processing + 2D/3D Props test = First Look
 
 
 ## Now
-- Debug Map (Clear Ground, Dummy, ...)
-- Test Camera
+- Pass Graph Terrain T_T
+  - Pass Lighting
+  -  Pass Enviro
+  - Pass Terain
+- Implémenter les skills Assasinite & Blood Explosion (Scriptable Data & Projectile)
 
 ## Tasks
 - Grass Shader : wip
 - Palette Settings  : ok, wip, use it
-- Pass Lighting
-- Pass Enviro
-- Pass Terain
+
 
 ## Notes
 - Refs : CodeDeer Visual DA
