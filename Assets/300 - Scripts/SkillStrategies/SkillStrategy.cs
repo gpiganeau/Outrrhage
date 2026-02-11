@@ -2,7 +2,6 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -85,9 +84,105 @@ public class SkillStrategy : MonoBehaviour
         DOVirtual.DelayedCall(_storedSkillData.Cooldown, () => isInCooldown = false);
     }
 
-    virtual protected void OnProjectileHit(Projectile projectile)
+    protected virtual void OnProjectileHit(Projectile projectile)
     {
         _vfxController.PlayHitVFX(projectile.transform.position, _storedSkillData.ProjectileDamage);
     }
 
+    public virtual int CustomDamageCalculation(DamageController target, int baseDamage, Projectile projectile)
+    {
+        throw new System.NotImplementedException("CustomDamageCalculation is not implemented for this skill.");
+    }
+
+    public bool UseAimAssist(ref Vector3 aimDirection, float aimAssistRatio, Team myTeam)
+    {
+        Vector3 originalAimDir = aimDirection;
+        aimAssistRatio = Mathf.Clamp01(aimAssistRatio);
+        Collider[] results = Physics.OverlapSphere(transform.position, _storedSkillData.Radius);
+        List<DamageController> potentialTargets = new List<DamageController>();
+
+        foreach(Collider collider in results)
+        {
+            if (collider.TryGetComponent(out DamageController targetDamageController))
+            {
+                Vector3 targetDirection = targetDamageController.transform.position - transform.position;
+                if (Mathf.Abs(Quaternion.FromToRotation(aimDirection, targetDirection).eulerAngles.y) / 180 <= aimAssistRatio)
+                {
+                    potentialTargets.Add(targetDamageController);
+                }
+            }
+        }
+
+        if(potentialTargets.Count == 0)
+        {
+            return false;
+        }
+
+        potentialTargets.Sort((a, b) => 
+        {
+            Vector3 aDirection = a.transform.position - transform.position;
+            Vector3 bDirection = b.transform.position - transform.position;
+            float aAngle = Mathf.Abs(Quaternion.FromToRotation(originalAimDir, aDirection).eulerAngles.y);
+            float bAngle = Mathf.Abs(Quaternion.FromToRotation(originalAimDir, bDirection).eulerAngles.y);
+            return aAngle.CompareTo(bAngle);
+        });
+
+
+        List<DamageController> validAllyTargets = new List<DamageController>();
+        List<DamageController> validEnemyTargets = new List<DamageController>();
+        List<DamageController> validNeutralTargets = new List<DamageController>();
+
+        foreach(DamageController target in potentialTargets)
+        {
+            if(target.Team == Team.Ally)
+            {
+                validAllyTargets.Add(target);
+            }
+            else if(target.Team == Team.Enemy)
+            {
+                validEnemyTargets.Add(target);
+            }
+            else if(target.Team == Team.Neutral)
+            {
+                validNeutralTargets.Add(target);
+            }
+        }
+
+        switch (myTeam)
+        {
+            case Team.Ally:
+                if(validEnemyTargets.Count > 0)
+                {
+                    aimDirection = (validEnemyTargets[0].transform.position - transform.position).normalized;
+                    return true;
+                }
+                else if (validNeutralTargets.Count > 0)
+                {
+                    aimDirection = (validNeutralTargets[0].transform.position - transform.position).normalized;
+                    return true;
+                }
+                break;
+            case Team.Enemy:
+                if(validAllyTargets.Count > 0)
+                {
+                    aimDirection = (validAllyTargets[0].transform.position - transform.position).normalized;
+                    return true;
+                }
+                if (validNeutralTargets.Count > 0)
+                {
+                    aimDirection = (validNeutralTargets[0].transform.position - transform.position).normalized;
+                    return true;
+                }
+                break;
+            case Team.Neutral:
+                if(potentialTargets.Count > 0)
+                {
+                    aimDirection = (potentialTargets[0].transform.position - transform.position).normalized;
+                    return true;
+                }
+                break;
+        }
+
+        return false;
+    }
 }
