@@ -16,12 +16,15 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
   Name: Griffe de sang
   Cooldown: 0.5
-  Radius: 0
+  IsHold: 0
+  HoldDuration: 0
+  Radius: 10
   ProjectileSpeed: 0
   ProjectileDamage: 1
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
+  AimAssistRatio: 1
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0

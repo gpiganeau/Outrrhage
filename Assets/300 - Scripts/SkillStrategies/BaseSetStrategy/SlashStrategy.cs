@@ -14,18 +14,20 @@ public class SlashStrategy: SkillStrategy
 
         hasHitATarget = false;
         cachedController = movementController;
-
+        Vector3 firingDirection = movementController.GetFacingDirection();
 
         movementController.SetImmobilized(true, "SlashAttack");
         parentController.SetSkillsDisabled(true, "SlashAttack");
 
-        Vector3 dashTarget = movementController.transform.position + movementController.GetFacingDirection() * 1.5f;
+        UseAimAssist(ref firingDirection, _storedSkillData.AimAssistRatio, team);
+
+        Vector3 dashTarget = movementController.transform.position + firingDirection * 1.5f;
         //movementController.transform.DOMove(dashTarget, 0.15f).SetEase(Ease.OutQuad);
         movementController.transform.DOMove(dashTarget, 0.1f).SetEase(Ease.OutCubic).OnComplete(() =>
         {
             ProjectileData projectileData = new ProjectileData()
         {
-            startingPosition = movementController.transform.position + 2f * movementController.GetFacingDirection(),
+            startingPosition = movementController.transform.position + 2f * firingDirection,
             origin = movementController.transform.position,
             Damage = _storedSkillData.ProjectileDamage,
             Lifetime = _storedSkillData.ProjectileLifetime,
