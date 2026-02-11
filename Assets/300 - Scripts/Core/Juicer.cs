@@ -232,7 +232,7 @@ public class Juicer : MonoBehaviour
     /// <summary>Color Flash sur une entité</summary>
     private void EntityColorFlash(List<Renderer> renderers, Color flashColor, float duration = 0.2f)
     {
-        if (renderers.Count == 0) return;
+        if (renderers == null || renderers.Count == 0) return;
 
         foreach (var renderer in renderers)
         {

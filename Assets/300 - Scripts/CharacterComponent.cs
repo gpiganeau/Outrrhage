@@ -18,6 +18,9 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     public static Blood Blood;
     public CameraController PlayerCameraController { get; set; }
     private bool isDead = false;
+
+    private List<Renderer> Renderers;
+
     
     void Start()
 	{
@@ -55,6 +58,8 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
         InputManager.Instance.OnCharacterSlot5Released.AddListener(() => skillsController.CallSkillStrategyReleased(4));
 
         HUD.Instance.Initialize(skillsController, damageController);
+
+        Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
     }
 
     #region Listeners & Callback
@@ -114,7 +119,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
     public List<Renderer> GetRenderers()
     {
-        return animController.Renderers;
+        return Renderers;
     }
 
     #endregion
