@@ -232,7 +232,7 @@ public class Juicer : MonoBehaviour
     /// <summary>Color Flash sur une entité</summary>
     private void EntityColorFlash(List<Renderer> renderers, Color flashColor, float duration = 0.2f)
     {
-        if (renderers.Count == 0) return;
+        if (renderers == null || renderers.Count == 0) return;
 
         foreach (var renderer in renderers)
         {
@@ -303,6 +303,13 @@ public class Juicer : MonoBehaviour
 
         ColorFlashPostProcess(new Color(0.3f, 1f, 0.3f), 0.15f);
         EntityHealFlash(playerRenderers);
+    }
+
+    public void EnnemyHealedEffect(List<Renderer> renderers)
+    {
+        if (!IsJuiceEnabled()) return;
+
+        EntityHealFlash(renderers);
     }
     
     /// <summary>Effet de mort sur Riel</summary>

@@ -11,7 +11,6 @@ public class AnimController: MonoBehaviour
 
     bool locked = false;
 
-    public List<Renderer> Renderers;
 
     public void Initialize(ActorSetupData data)
     {
@@ -22,8 +21,6 @@ public class AnimController: MonoBehaviour
         }
 
         locked = false;
-
-        Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
     }
 
     public void SetSpeed(float speed)

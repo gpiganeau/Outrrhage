@@ -18,6 +18,9 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     public static Blood Blood;
     public CameraController PlayerCameraController { get; set; }
     private bool isDead = false;
+
+    private List<Renderer> Renderers;
+
     
     void Start()
 	{
@@ -39,6 +42,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
         // -- Setup Callback & Listeners
         damageController.OnDamaged.AddListener((currentHealth, maxHealth) => OnDamaged(currentHealth, maxHealth));
+        damageController.OnHealed.AddListener((currentHealth, maxHealth) => OnHealed(currentHealth, maxHealth));
         damageController.OnDied.AddListener(() => OnDeath());
 
         InputManager.Instance.OnCharacterMovement.AddListener(OnInputVector);
@@ -55,6 +59,8 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
         InputManager.Instance.OnCharacterSlot5Released.AddListener(() => skillsController.CallSkillStrategyReleased(4));
 
         HUD.Instance.Initialize(skillsController, damageController);
+
+        Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
     }
 
     #region Listeners & Callback
@@ -63,6 +69,11 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
         Juicer.I.PlayerDamagedImpact(GetRenderers());
         var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponentInChildren<VisualEffect>(); 
         fx.Play();
+    }
+
+    private void OnHealed(int currentHealth, int maxHealth)
+    {
+        Juicer.I.PlayerHealedEffect(GetRenderers());
     }
 
     private void OnDeath()
@@ -114,7 +125,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
     public List<Renderer> GetRenderers()
     {
-        return animController.Renderers;
+        return Renderers;
     }
 
     #endregion

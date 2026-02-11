@@ -23,8 +23,6 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
     private List<Renderer> Renderers;
     private AnimController animController;
 
-
-
     //Will use a movement strategy to coordinate movement and a skills strategy to use skills
     //This will allow to define an enemy's behavior by a set of skills and 2 strategies
 
@@ -49,8 +47,7 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
         damageController.Initialize(setupData, animController);
         damageController.OnDied.AddListener(OnDeath);
         damageController.OnDamaged.AddListener(OnDamaged);
-
- 
+        damageController.OnHealed.AddListener(OnHealed);
 
         // -- World UI
         healthBarDisplay.Initialize(damageController);
@@ -98,6 +95,11 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
         {
             _attackStrategy.Tick();
         }
+    }
+
+    private void OnHealed(int a, int b)
+    {
+        Juicer.I.EnnemyHealedEffect(GetRenderers());
     }
 
     private void OnDamaged(int a, int b)

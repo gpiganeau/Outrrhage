@@ -123,7 +123,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.23435, y: 0, z: 0.20477}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9183605439295694353}
@@ -156,7 +156,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &3576385719733564438
 MonoBehaviour:
@@ -172,7 +172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AIActorComponent
   setupData: {fileID: 11400000, guid: c4c1853b029e0014da857793d28bd6d3, type: 2}
   healthBarDisplay: {fileID: 2670832011255838123}
-  mainRenderer: {fileID: 9160288620097129920}
   bloodStack: {fileID: 5772122689360182890}
   debugCharacterComponent: {fileID: 0}
 --- !u!114 &5934422638521437142
