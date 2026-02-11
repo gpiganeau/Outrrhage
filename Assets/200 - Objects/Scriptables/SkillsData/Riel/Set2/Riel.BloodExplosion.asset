@@ -17,7 +17,7 @@ MonoBehaviour:
   Name: Blood Explosion
   Cooldown: 3
   IsHold: 1
-  HoldDuration: 2
+  HoldDuration: 1
   Radius: 8
   ProjectileSpeed: 0
   ProjectileDamage: 2
