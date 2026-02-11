@@ -304,6 +304,13 @@ public class Juicer : MonoBehaviour
         ColorFlashPostProcess(new Color(0.3f, 1f, 0.3f), 0.15f);
         EntityHealFlash(playerRenderers);
     }
+
+    public void EnnemyHealedEffect(List<Renderer> renderers)
+    {
+        if (!IsJuiceEnabled()) return;
+
+        EntityHealFlash(renderers);
+    }
     
     /// <summary>Effet de mort sur Riel</summary>
     public void PlayerDeathEffect()

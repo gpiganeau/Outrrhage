@@ -13,12 +13,10 @@ Box + Cell Shader + Outline ! + Post processing + 2D/3D Props test = First Look
 
 ## Tasks
 - Grass Shader : wip
-- Dronne Switch straegy when low hp
 - Palette Settings  : ok, wip, use it
+- Pass Lighting
+- Pass Enviro
+- Pass Terain
 
 ## Notes
-- Avec notre angle de camera on ne voit jamais le ciel
-- Terrain Elevation or full Flat ?
-- Grass Shader : Blend distance, pluie possible, ... ?
-- Refs :Rapell la ref visuelle du mec quifait des tutos / pixel art / auto aim & stuff ...
 - Refs : CodeDeer Visual DA
