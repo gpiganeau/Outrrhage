@@ -24,8 +24,6 @@ public class SkillVFXController : MonoBehaviour
             currentCastVFX.transform.SetParent(caster);
         }
         
-        Destroy(currentCastVFX, skillData.vfxData.castVFXDuration);
-        
         // Sound
         if (skillData.vfxData.castSound != null)
         {
@@ -42,20 +40,7 @@ public class SkillVFXController : MonoBehaviour
         
         currentAreaVFX = Instantiate(skillData.vfxData.areaIndicatorVFXPrefab, position, 
                                       Quaternion.LookRotation(direction));
-        
-        if (skillData.vfxData.scaleAreaVFXWithRadius)
-        {
-            float scale = skillData.Radius * 2f; // Diamètre
-            currentAreaVFX.transform.localScale = new Vector3(scale, 1f, scale);
-        }
-        
-        // Coloration
-        var renderer = currentAreaVFX.GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            renderer.sharedMaterial.color = skillData.vfxData.areaVFXColor;
-        }
-
+            
         return currentAreaVFX;
     }
     
@@ -74,12 +59,7 @@ public class SkillVFXController : MonoBehaviour
         
         GameObject trailVFX = Instantiate(skillData.vfxData.projectileTrailVFXPrefab, 
                                           projectile.transform);
-        
-        if (skillData.vfxData.scaleProjectileVFXWithRadius)
-        {
-            trailVFX.transform.localScale = Vector3.one * skillData.Radius;
-        }
-        
+                
         // Sound
         if (skillData.vfxData.projectileSound != null)
         {
@@ -99,9 +79,7 @@ public class SkillVFXController : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(normal);
         GameObject impactVFX = Instantiate(skillData.vfxData.projectileImpactVFXPrefab, 
                                            position, rotation);
-        
-        Destroy(impactVFX, 3f);
-        
+                
         // Sound
         if (skillData.vfxData.impactSound != null)
         {
@@ -115,16 +93,6 @@ public class SkillVFXController : MonoBehaviour
     public void PlayHitVFX(Vector3 position, int damage)
     {
         if (skillData.vfxData.hitVFXPrefab == null) return;
-        
-        GameObject hitVFX = Instantiate(skillData.vfxData.hitVFXPrefab, position, 
-                                        Quaternion.identity);
-        
-        if (skillData.vfxData.scaleHitVFXWithDamage)
-        {
-            float scale = 1f + (damage / 100f); // Exemple de scaling
-            hitVFX.transform.localScale = Vector3.one * scale;
-        }
-        
-        Destroy(hitVFX, skillData.vfxData.hitVFXLifetime);
-    }
+        Instantiate(skillData.vfxData.hitVFXPrefab, position, Quaternion.identity);
+  }
 }
