@@ -61,7 +61,7 @@ class Assassinate : SkillStrategy
             {
                 amountHealed = Mathf.CeilToInt(bloodAmount * bloodToHealRatio);
             }
-            return baseDamage + 1 + bloodAmount; 
+            return damage; 
         }
         else
         {
