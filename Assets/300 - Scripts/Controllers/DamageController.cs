@@ -15,8 +15,10 @@ public class DamageController: MonoBehaviour
 	}
 	[SerializeField] private int _currentHealth = 1;
 	[SerializeField] private Team _team = Team.Neutral;
+	public Team Team => _team;
+	public int CurrentHealth => _currentHealth;
 
-	private bool[] _blockedZones = new bool[8]; //From front left clockwise, each zone covers 45 degrees
+    private bool[] _blockedZones = new bool[8]; //From front left clockwise, each zone covers 45 degrees
     private MovementController _movementController;
 	[SerializeField] private bool _usesFixedForward = false;
 

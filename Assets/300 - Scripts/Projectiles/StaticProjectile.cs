@@ -21,6 +21,11 @@ public class StaticProjectile: Projectile
         DamageController damageController = other.GetComponent<DamageController>();
         if(damageController != null)
         {
+            if (_data.useCustomDamageCalculation)
+            {
+                _damage = _data.attackStrategy.CustomDamageCalculation(damageController, _damage, this);
+            }
+            
             damageController.Damage(_damage, transform.position, _data.Team);
             onProjectileHit?.Invoke(this);
         }

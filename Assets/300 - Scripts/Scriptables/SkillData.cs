@@ -23,6 +23,7 @@ public class SkillData : ScriptableObject
     public float ProjectileLifetime;
     public int numberOfProjectiles;
     public SkillshotProjectile.TravelMode TravelMode = SkillshotProjectile.TravelMode.Idle;
+    [Range(0, 1)] public float AimAssistRatio = 0;
 
     [Header("Movement")]
     public bool ignoreCollisions;
