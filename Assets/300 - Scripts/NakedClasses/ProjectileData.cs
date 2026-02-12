@@ -6,6 +6,7 @@ public class ProjectileData
     public SkillStrategy attackStrategy;
     public float Speed;
     public int Damage;
+    public float Range;
     public bool useCustomDamageCalculation = false;
     public Team Team = Team.Neutral;
 

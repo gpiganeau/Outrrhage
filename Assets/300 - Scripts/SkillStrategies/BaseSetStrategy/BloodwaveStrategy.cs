@@ -16,8 +16,9 @@ public class BloodwaveStrategy: SkillStrategy
             {
                 startingPosition = movementController.transform.position + 1.5f * (Quaternion.AngleAxis(i * (360f / _storedSkillData.numberOfProjectiles), Vector3.up) * movementController.GetFacingDirection()),
                 origin = movementController.transform.position,
-                Damage = _storedSkillData.ProjectileDamage,
-				Lifetime = _storedSkillData.ProjectileLifetime,
+                Damage = _storedSkillData.ProjectileDamage[0],
+				Range = _storedSkillData.ProjectileRange,
+                Lifetime = 2 * _storedSkillData.ProjectileRange / _storedSkillData.ProjectileSpeed,
 				Speed = _storedSkillData.ProjectileSpeed,
 				Target = new Vector3(Random.Range(-20, 20) , 0, Random.Range(-20, 20)),
 				Team = team,
@@ -27,7 +28,7 @@ public class BloodwaveStrategy: SkillStrategy
 			projectiles[i] = projectileData;
 
 			// -- Blood Wave Logic -- 
-			var p = SpawnProjectile(projectileData) as SkillshotProjectile;
+			var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
 			p.SetTravelMode(_storedSkillData.TravelMode);
         	DOVirtual.DelayedCall(projectileData.Lifetime * 0.5f, () => p.SetTravelMode(SkillshotProjectile.TravelMode.TowardCaster));
         }

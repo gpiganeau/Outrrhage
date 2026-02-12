@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 using DG.Tweening;
-using System.Data.Common;
 
 public class SkillshotProjectile: Projectile
 {
 
-    public enum TravelMode { AwayFromCaster, TowardCaster, TowardTarget, Idle }
-    TravelMode _travelMode = TravelMode.Idle;
+    public enum TravelMode { AwayFromCaster, TowardCaster, TowardTarget }
+    TravelMode _travelMode = TravelMode.AwayFromCaster;
     public void SetTravelMode (TravelMode mode) => _travelMode = mode;
 
-    private int _damage = 1;
-    private Vector3 target;
+    protected int _damage = 1;
+    protected Vector3 target;
 
     public override void Initialize(ProjectileData data)
     {
@@ -40,10 +39,7 @@ public class SkillshotProjectile: Projectile
                 var dir = (target - _data.startingPosition).normalized;
                 transform.position += dir * Time.deltaTime * _data.Speed;
                 break;
-            case TravelMode.Idle:
-                break;
         }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -51,7 +47,7 @@ public class SkillshotProjectile: Projectile
         if (other.TryGetComponent(out DamageController dc)){
             if(dc.Damage(_damage, transform.position, _data.Team))
             {
-                onProjectileHit?.Invoke(this);
+                onProjectileHit?.Invoke(this, dc);
                 DestroyProjectile();
             }
         }

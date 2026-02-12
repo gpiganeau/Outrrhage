@@ -16,12 +16,16 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 0}
   Name: Soin
   Cooldown: 0.5
+  IsHold: 0
+  HoldDuration: 0
   Radius: 0
+  ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 1
+  ProjectileDamage: 01000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
+  AimAssistRatio: 0
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
@@ -29,3 +33,14 @@ MonoBehaviour:
   BloodCost: 1
   Icon: {fileID: -1543649394, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Cast
+  vfxData:
+    castVFXPrefab: {fileID: 0}
+    castVFXOffset: {x: 0, y: 0, z: 0}
+    attachCastVFXToCharacter: 1
+    projectileTrailVFXPrefab: {fileID: 0}
+    projectileImpactVFXPrefab: {fileID: 0}
+    areaIndicatorVFXPrefab: {fileID: 0}
+    hitVFXPrefab: {fileID: 0}
+    castSound: {fileID: 0}
+    projectileSound: {fileID: 0}
+    impactSound: {fileID: 0}

@@ -26,26 +26,26 @@ public class SlashStrategy: SkillStrategy
         movementController.transform.DOMove(dashTarget, 0.1f).SetEase(Ease.OutCubic).OnComplete(() =>
         {
             ProjectileData projectileData = new ProjectileData()
-        {
-            startingPosition = movementController.transform.position + 2f * firingDirection,
-            origin = movementController.transform.position,
-            Damage = _storedSkillData.ProjectileDamage,
-            Lifetime = _storedSkillData.ProjectileLifetime,
-            Team = team,
-        };
+            {
+                startingPosition = movementController.transform.position + 2f * firingDirection,
+                origin = movementController.transform.position,
+                Damage = _storedSkillData.ProjectileDamage[0],
+                Lifetime = _storedSkillData.ProjectileLifetime,
+                Team = team,
+            };
 
-        SpawnProjectile(projectileData);
+            SpawnProjectile(projectileData, 0);
 
-        DOVirtual.DelayedCall(_storedSkillData.ProjectileLifetime, PostLifetimeEffects);
-        DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
-        {
-            parentController.SetSkillsDisabled(false, "SlashAttack");
-        });
-        DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseStaticTimeOnSkillUse, () =>
-        {
-            movementController.SetImmobilized(false, "SlashAttack");
-        });
-        PutInCooldown();
+            DOVirtual.DelayedCall(_storedSkillData.ProjectileLifetime, PostLifetimeEffects);
+            DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
+            {
+                parentController.SetSkillsDisabled(false, "SlashAttack");
+            });
+            DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseStaticTimeOnSkillUse, () =>
+            {
+                movementController.SetImmobilized(false, "SlashAttack");
+            });
+            PutInCooldown();
         });
 
 
@@ -54,11 +54,10 @@ public class SlashStrategy: SkillStrategy
 
     }
 
-    protected override void OnProjectileHit(Projectile projectile)
+    protected override void OnProjectileHit(Projectile projectile, DamageController damageController)
     {
-        base.OnProjectileHit(projectile);
+        base.OnProjectileHit(projectile, damageController);
         hasHitATarget = true;
-
     }
 
     private void PostLifetimeEffects()

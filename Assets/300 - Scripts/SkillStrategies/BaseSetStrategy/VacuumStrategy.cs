@@ -16,7 +16,7 @@ public class VacuumStrategy: SkillStrategy
         var drops = FindObjectsByType<BloodDrop>(UnityEngine.FindObjectsSortMode.None);
         
         // -- VFX
-        var p = Instantiate(_storedSkillData.SkillProjectilePrefab, transform.position.WithY(0.5f), Quaternion.identity);
+        var p = Instantiate(_storedSkillData.SkillProjectilePrefab[0], transform.position.WithY(0.5f), Quaternion.identity);
         p.transform.SetParent(movementController.transform);
         _vfxController.ShowAreaIndicator(movementController.transform.position.WithY(0.5f), Vector3.up);
         var r = _storedSkillData.Radius;

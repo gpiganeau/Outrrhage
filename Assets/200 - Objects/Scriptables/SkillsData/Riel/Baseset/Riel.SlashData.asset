@@ -19,8 +19,9 @@ MonoBehaviour:
   IsHold: 0
   HoldDuration: 0
   Radius: 10
+  ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 1
+  ProjectileDamage: 01000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
@@ -36,16 +37,10 @@ MonoBehaviour:
     castVFXPrefab: {fileID: 0}
     castVFXOffset: {x: 0, y: 0, z: 0}
     attachCastVFXToCharacter: 1
-    castVFXDuration: 1
     projectileTrailVFXPrefab: {fileID: 0}
     projectileImpactVFXPrefab: {fileID: 0}
-    scaleProjectileVFXWithRadius: 0
     areaIndicatorVFXPrefab: {fileID: 0}
-    scaleAreaVFXWithRadius: 1
-    areaVFXColor: {r: 1, g: 1, b: 1, a: 1}
     hitVFXPrefab: {fileID: 4993486111714875449, guid: 914b859b3d6d7124e8cdbb17523d291f, type: 3}
-    scaleHitVFXWithDamage: 0
-    hitVFXLifetime: 2
     castSound: {fileID: 0}
     projectileSound: {fileID: 0}
     impactSound: {fileID: 0}

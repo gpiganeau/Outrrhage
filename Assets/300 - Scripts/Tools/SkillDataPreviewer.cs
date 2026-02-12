@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class SkillDataPreviewer : MonoBehaviour
@@ -29,10 +30,12 @@ public class SkillDataPreviewer : MonoBehaviour
         }
 
         var holderPreview = Instantiate(new GameObject("SkillPreviewHolder"), position, Quaternion.identity);
-        holderPreview.transform.SetParent(transform);  
+        holderPreview.transform.SetParent(transform);
 
         // Skill Projectile
-        var prefab = skillData.SkillProjectilePrefab;
+        GameObject prefab = null;
+        if(skillData.SkillProjectilePrefab.Length > 0) 
+            prefab = skillData.SkillProjectilePrefab[0];
         if (prefab != null)
         {
             var instance = Instantiate(prefab, position, Quaternion.identity);

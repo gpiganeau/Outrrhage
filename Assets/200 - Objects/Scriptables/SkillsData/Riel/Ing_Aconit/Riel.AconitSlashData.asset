@@ -16,14 +16,31 @@ MonoBehaviour:
   SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
   Name: Griffe florale
   Cooldown: 0.5
+  IsHold: 0
+  HoldDuration: 0
+  Radius: 0
+  ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 1
+  ProjectileDamage: 01000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
+  AimAssistRatio: 0
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 1
   BloodCost: 1
   Icon: {fileID: 21300000, guid: f62115592573c0041a9c95142e185b8a, type: 3}
+  AnimationKey: Slash
+  vfxData:
+    castVFXPrefab: {fileID: 0}
+    castVFXOffset: {x: 0, y: 0, z: 0}
+    attachCastVFXToCharacter: 1
+    projectileTrailVFXPrefab: {fileID: 0}
+    projectileImpactVFXPrefab: {fileID: 0}
+    areaIndicatorVFXPrefab: {fileID: 0}
+    hitVFXPrefab: {fileID: 0}
+    castSound: {fileID: 0}
+    projectileSound: {fileID: 0}
+    impactSound: {fileID: 0}

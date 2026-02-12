@@ -43,11 +43,11 @@ class BloodExplosion : SkillStrategy
             {
                 startingPosition = drop.transform.position,
                 origin = drop.transform.position,
-                Damage = _storedSkillData.ProjectileDamage,
+                Damage = _storedSkillData.ProjectileDamage[0],
                 Lifetime = _storedSkillData.ProjectileLifetime,
                 Team = storedTeam,
             };
-            SpawnProjectile(projectileData);
+            SpawnProjectile(projectileData, 0);
             Destroy(drop.gameObject);
         }
     }

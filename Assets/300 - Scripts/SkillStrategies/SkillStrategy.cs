@@ -55,9 +55,9 @@ public class SkillStrategy : MonoBehaviour
         // For chargeable skills, we might want to do something when the player releases the button
     }
 
-    protected Projectile SpawnProjectile(ProjectileData data)
+    protected Projectile SpawnProjectile(ProjectileData data, int projectileIndex)
     {
-        Projectile newProjectile = Instantiate(_storedSkillData.SkillProjectilePrefab.gameObject).GetComponent<Projectile>();
+        Projectile newProjectile = Instantiate(_storedSkillData.SkillProjectilePrefab[projectileIndex].gameObject).GetComponent<Projectile>();
         newProjectile.Initialize(data);
         newProjectile.onProjectileHit.AddListener(OnProjectileHit);
         activeProjectiles.Add(newProjectile);
@@ -84,9 +84,9 @@ public class SkillStrategy : MonoBehaviour
         DOVirtual.DelayedCall(_storedSkillData.Cooldown, () => isInCooldown = false);
     }
 
-    protected virtual void OnProjectileHit(Projectile projectile)
+    protected virtual void OnProjectileHit(Projectile projectile, DamageController damageController)
     {
-        _vfxController.PlayHitVFX(projectile.transform.position, _storedSkillData.ProjectileDamage);
+        _vfxController.PlayHitVFX(projectile.transform.position, _storedSkillData.ProjectileDamage[0]);
     }
 
     public virtual int CustomDamageCalculation(DamageController target, int baseDamage, Projectile projectile)

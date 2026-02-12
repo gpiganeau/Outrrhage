@@ -107,7 +107,7 @@ public class DamageController: MonoBehaviour
 		return false;
     }
 
-	private bool CanBeDamagedByTeam(Team team)
+	public bool CanBeDamagedByTeam(Team team)
 	{
 		return _team != team;
 	}

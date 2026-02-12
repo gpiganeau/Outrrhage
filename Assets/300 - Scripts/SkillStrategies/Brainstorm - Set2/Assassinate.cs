@@ -25,7 +25,7 @@ class Assassinate : SkillStrategy
         ProjectileData projectileData = new ProjectileData
         {
             attackStrategy = this,
-            Damage = _storedSkillData.ProjectileDamage,
+            Damage = _storedSkillData.ProjectileDamage[0],
             useCustomDamageCalculation = true,
             Team = team,
             Lifetime = _storedSkillData.ProjectileLifetime,
@@ -33,7 +33,7 @@ class Assassinate : SkillStrategy
             startingPosition = movementController.transform.position,
         };
 
-        Projectile projectile = SpawnProjectile(projectileData);
+        Projectile projectile = SpawnProjectile(projectileData, 0);
 
         DOVirtual.DelayedCall(_storedSkillData.ProjectileLifetime, PostLifetimeEffects);
         PutInCooldown();
@@ -44,11 +44,6 @@ class Assassinate : SkillStrategy
     public override void Release(MovementController movementController, Team team)
     {
         base.Release(movementController, team);
-    }
-
-    protected override void OnProjectileHit(Projectile projectile)
-    {
-        base.OnProjectileHit(projectile);
     }
 
     public override int CustomDamageCalculation(DamageController target, int baseDamage, Projectile projectile)

@@ -13,7 +13,7 @@ public class DroneProjectileStrategy: SkillStrategy
 		{
 			startingPosition = movementController.transform.position + 1.5f * movementController.GetFacingDirection(),
 			origin = movementController.transform.position,
-			Damage = _storedSkillData.ProjectileDamage,
+			Damage = _storedSkillData.ProjectileDamage[0],
 			Lifetime = _storedSkillData.ProjectileLifetime,
 			Speed = _storedSkillData.ProjectileSpeed,
 			Team = team,
@@ -23,7 +23,7 @@ public class DroneProjectileStrategy: SkillStrategy
 
 		projectileData.startingPosition += new Vector3(0, 1f, 0f); // Vertical Offset
 
-		var p = SpawnProjectile(projectileData) as SkillshotProjectile;
+		var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
 		p.SetTravelMode(_storedSkillData.TravelMode);
 
 		PutInCooldown();

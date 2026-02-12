@@ -27,7 +27,7 @@ public class StaticProjectile: Projectile
             }
             
             damageController.Damage(_damage, transform.position, _data.Team);
-            onProjectileHit?.Invoke(this);
+            onProjectileHit?.Invoke(this, damageController);
         }
     }
 

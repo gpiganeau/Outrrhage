@@ -6,9 +6,11 @@ using Unity.Properties;
 
 public abstract class Projectile: MonoBehaviour
 {
-    protected ProjectileData _data;
+    
+    protected ProjectileData _data; 
+    public Team Team => _data.Team;
     [HideInInspector] public UnityEvent<Projectile> onProjectileRemoval;
-    [HideInInspector] public UnityEvent<Projectile> onProjectileHit;
+    [HideInInspector] public UnityEvent<Projectile, DamageController> onProjectileHit;
     public abstract void Initialize(ProjectileData data);
 	
 
