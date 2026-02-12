@@ -4,7 +4,7 @@ using UnityEngine;
 class Assassinate : SkillStrategy
 {
     int amountHealed = 0;
-    float bloodToHealRatio = 0.5f;
+    float bloodToHealRatio = 1;
 
     public override bool Call(MovementController movementController, Team team)
     {

@@ -313,7 +313,7 @@ TerrainCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_TerrainData: {fileID: 15600000, guid: fc8172dd489656e439b7cae5b95a0f37, type: 2}
@@ -348,7 +348,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: cb299c8cc23ca0546aec906ea1a7bb02, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 5f5c6780685b9644580297762e64d072, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1459059204807141207
 GameObject:
@@ -1733,7 +1733,7 @@ Transform:
   m_GameObject: {fileID: 7359083969874858974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 180.29, y: 1.03, z: 65.7}
+  m_LocalPosition: {x: 180.29, y: 0, z: 65.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

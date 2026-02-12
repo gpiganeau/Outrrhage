@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Riel.DashData
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 91c398b7b1a0e734db87987a9d916672, type: 3}
-  SkillProjectilePrefab: {fileID: 0}
+  SkillProjectilePrefab:
+  - {fileID: 0}
   Name: Pas rapide
-  Cooldown: 2
+  Cooldown: 5
   IsHold: 0
   HoldDuration: 0
   Radius: 0
@@ -31,6 +32,7 @@ MonoBehaviour:
   movementDuration: 0.15
   IsRielSpecificSkill: 1
   BloodCost: 1
+  BloodStackingAmount: 1
   Icon: {fileID: -1266197463, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
   vfxData:

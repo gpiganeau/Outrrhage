@@ -15,6 +15,7 @@ public class SkillStrategy : MonoBehaviour
     protected SkillData _storedSkillData;
     protected SkillVFXController _vfxController;
     public SkillData SkillData => _storedSkillData;
+    public bool IsInCooldown => isInCooldown;
 
     public virtual void Initialize(SkillsController parent, SkillData skillData)
     {

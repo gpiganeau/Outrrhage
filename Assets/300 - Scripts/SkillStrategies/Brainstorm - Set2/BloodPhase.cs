@@ -4,5 +4,6 @@ using System.Text;
 
 class BloodPhase : SkillStrategy
 {
+
 }
 

@@ -23,7 +23,7 @@ public class SkillSlot : MonoBehaviour
     public void TriggerCooldown()
     {
         _cdRotor.fillAmount = 1;
-        _cdRotor.DOFillAmount(0, _skillData.Cooldown);
+        _cdRotor.DOFillAmount(0, _skillData.Cooldown).SetEase(Ease.Linear);
     }
 
     public void SetAvailable(bool value)

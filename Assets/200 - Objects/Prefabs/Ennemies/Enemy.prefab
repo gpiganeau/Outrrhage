@@ -214,7 +214,7 @@ Transform:
   m_GameObject: {fileID: 4401762288587055170}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.85, y: 1, z: -2.38}
+  m_LocalPosition: {x: -2.85, y: 0, z: -2.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -342,7 +342,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AIActorComponent
   setupData: {fileID: 11400000, guid: 85cb6dfeb407262428fbb22ee6f3c469, type: 2}
   healthBarDisplay: {fileID: 9189401761145994645}
-  mainRenderer: {fileID: 0}
   bloodStack: {fileID: -5928517978749765758}
   debugCharacterComponent: {fileID: 0}
 --- !u!114 &528864720967023323

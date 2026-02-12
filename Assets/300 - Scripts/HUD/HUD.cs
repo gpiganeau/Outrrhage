@@ -101,7 +101,8 @@ public class HUD : MonoBehaviour
         // -- Todo : Actually we should have events on Blood, and register blood change somewhere.
         Blood b = CharacterComponent.Blood;
         _rielBlood.text = $"Riel Blood : {b.Amount}/{b.Maximum}";
-        _skillBar.SetInCooldown(slot);
+        if(skill.IsInCooldown)
+            _skillBar.SetInCooldown(slot);
     } 
     #endregion
 }
