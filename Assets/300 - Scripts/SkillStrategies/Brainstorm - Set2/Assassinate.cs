@@ -1,7 +1,4 @@
 ﻿using DG.Tweening;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 
 class Assassinate : SkillStrategy
@@ -30,7 +27,7 @@ class Assassinate : SkillStrategy
             Team = team,
             Lifetime = _storedSkillData.ProjectileLifetime,
             origin = movementController.transform.position,
-            startingPosition = movementController.transform.position,
+            startingPosition = movementController.transform.position + firingDirection.normalized * 1.5f
         };
 
         Projectile projectile = SpawnProjectile(projectileData, 0);
@@ -48,6 +45,18 @@ class Assassinate : SkillStrategy
 
     public override int CustomDamageCalculation(DamageController target, int baseDamage, Projectile projectile)
     {
+        if (target == null)
+        {
+            Logger.LogError(Logger.LogCategory.Combat, "DamageController target is null in CustomDamageCalculation.");
+            return baseDamage;
+        }
+
+        if (target.GetComponent<BloodStack>() == null)
+        {
+            Logger.LogError(Logger.LogCategory.Combat, "Target does not have a BloodStack component for CustomDamageCalculation.");
+            return baseDamage;
+        }
+
         int bloodAmount = target.GetComponent<BloodStack>().GetStackedValue();
         if (bloodAmount > 0) 
         {
