@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Drone.ProjectileSkillData
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 09a67b95eb179514a8944ed695d9352c, type: 3}
-  SkillProjectilePrefab: {fileID: 8024854797782737839, guid: c8e92f2eeb681794c8b18bfd46190812, type: 3}
+  SkillProjectilePrefab:
+  - {fileID: 8024854797782737839, guid: c8e92f2eeb681794c8b18bfd46190812, type: 3}
   Name: 'Drone Bullet '
   Cooldown: 1
   IsHold: 0
   HoldDuration: 0
   Radius: 0
-  ProjectileRange: 0
+  ProjectileRange: 30
   ProjectileSpeed: 10
   ProjectileDamage: 01000000
   ProjectileLifetime: 8

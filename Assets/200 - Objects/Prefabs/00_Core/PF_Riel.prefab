@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db4f6a0efe06274fbf6f4275c708bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterComponent
-  setupData: {fileID: 11400000, guid: 7677f259d5eb15049b2b7f1d02b9c0f3, type: 2}
+  setupData: {fileID: 11400000, guid: 9ca2299c1742d7549b726a99a35cf7b4, type: 2}
   blood:
     _currentAmount: 0
     _maxAmount: 0
@@ -193,7 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c1c5389751f924281cb0ca885e3608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimController
-  Renderers: []
 --- !u!1 &6854461387729133482
 GameObject:
   m_ObjectHideFlags: 0

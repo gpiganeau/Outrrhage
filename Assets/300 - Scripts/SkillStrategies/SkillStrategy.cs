@@ -45,7 +45,7 @@ public class SkillStrategy : MonoBehaviour
 
         CharacterComponent.Blood.Consume(_storedSkillData.BloodCost);
       
-        //Logger.Combat($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}. Blood Remaining : {b.Amount}");
+        Logger.Combat($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}");
 
         return true;
     }
@@ -98,7 +98,7 @@ public class SkillStrategy : MonoBehaviour
     {
         Vector3 originalAimDir = aimDirection;
         aimAssistRatio = Mathf.Clamp01(aimAssistRatio);
-        Collider[] results = Physics.OverlapSphere(transform.position, _storedSkillData.Radius);
+        Collider[] results = Physics.OverlapSphere(transform.position, Mathf.Max(_storedSkillData.Radius, _storedSkillData.ProjectileRange));
         List<DamageController> potentialTargets = new List<DamageController>();
 
         foreach(Collider collider in results)
@@ -184,5 +184,13 @@ public class SkillStrategy : MonoBehaviour
         }
 
         return false;
+    }
+
+    protected void StackBlood(Projectile projectile, DamageController damageController)
+    {
+        if (damageController.GetComponent<BloodStack>() != null)
+        {
+            damageController.GetComponent<BloodStack>().Increase(projectile.Data.BloodStackingAmount);
+        }
     }
 }

@@ -8,7 +8,7 @@ public abstract class Projectile: MonoBehaviour
 {
     
     protected ProjectileData _data; 
-    public Team Team => _data.Team;
+    public ProjectileData Data => _data;
     [HideInInspector] public UnityEvent<Projectile> onProjectileRemoval;
     [HideInInspector] public UnityEvent<Projectile, DamageController> onProjectileHit;
     public abstract void Initialize(ProjectileData data);

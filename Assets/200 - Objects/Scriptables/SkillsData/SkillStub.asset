@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SkillStub
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 6aa119f476c828843bfb6c70bc2da9f8, type: 3}
-  SkillProjectilePrefab: {fileID: 0}
+  SkillProjectilePrefab: []
   Name: SKILLSTUB
   Cooldown: 0
   IsHold: 0

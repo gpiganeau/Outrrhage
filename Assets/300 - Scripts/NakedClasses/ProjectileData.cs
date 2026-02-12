@@ -10,6 +10,8 @@ public class ProjectileData
     public bool useCustomDamageCalculation = false;
     public Team Team = Team.Neutral;
 
+    public int BloodStackingAmount;
+
     public float Lifetime = 0.2f; // -- Default, else we get some bug like instant destructed projectile.
     public Vector3 origin;
     public Vector3 startingPosition;

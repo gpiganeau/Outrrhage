@@ -6,11 +6,6 @@ class Assassinate : SkillStrategy
     int amountHealed = 0;
     float bloodToHealRatio = 0.5f;
 
-    public override void Initialize(SkillsController parent, SkillData skillData)
-    {
-        base.Initialize(parent, skillData);
-    }
-
     public override bool Call(MovementController movementController, Team team)
     {
         if (!base.Call(movementController, team))
@@ -27,7 +22,8 @@ class Assassinate : SkillStrategy
             Team = team,
             Lifetime = _storedSkillData.ProjectileLifetime,
             origin = movementController.transform.position,
-            startingPosition = movementController.transform.position + firingDirection.normalized * 1.5f
+            startingPosition = movementController.transform.position + firingDirection.normalized * 1.5f,
+            BloodStackingAmount = _storedSkillData.BloodStackingAmount,
         };
 
         Projectile projectile = SpawnProjectile(projectileData, 0);
@@ -36,11 +32,6 @@ class Assassinate : SkillStrategy
         PutInCooldown();
     
         return true;
-    }
-
-    public override void Release(MovementController movementController, Team team)
-    {
-        base.Release(movementController, team);
     }
 
     public override int CustomDamageCalculation(DamageController target, int baseDamage, Projectile projectile)

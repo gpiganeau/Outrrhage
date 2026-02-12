@@ -31,6 +31,7 @@ public class SlashStrategy: SkillStrategy
                 origin = movementController.transform.position,
                 Damage = _storedSkillData.ProjectileDamage[0],
                 Lifetime = _storedSkillData.ProjectileLifetime,
+                BloodStackingAmount = _storedSkillData.BloodStackingAmount,
                 Team = team,
             };
 
@@ -57,6 +58,7 @@ public class SlashStrategy: SkillStrategy
     protected override void OnProjectileHit(Projectile projectile, DamageController damageController)
     {
         base.OnProjectileHit(projectile, damageController);
+        StackBlood(projectile, damageController);
         hasHitATarget = true;
     }
 

@@ -35,6 +35,9 @@ public class SkillData : ScriptableObject
     public bool IsRielSpecificSkill = false;
     public int BloodCost = 0;
 
+    [Header("Blood Stacking")]
+    public int BloodStackingAmount = 1;
+
     [Header ("Visuals")]
     public Sprite Icon;
     public string AnimationKey = "Slash";

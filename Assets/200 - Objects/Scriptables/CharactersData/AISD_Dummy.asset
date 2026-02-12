@@ -21,7 +21,7 @@ MonoBehaviour:
   LootOnDeath: 0
   _itemsLootsOnDeath: []
   LootBloodOnDeath: 1
-  BaseBloodDrop: 100
+  BaseBloodDrop: 0
   BloodPrefab: {fileID: 5115976658195506498, guid: 4c627e869fdc5114a9fa3b680d12b4e5, type: 3}
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   movementSetupData: {fileID: 0}

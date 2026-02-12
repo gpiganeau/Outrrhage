@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Riel.BloodExplosion
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: be96c4564e8a0804baba6a9d70cbbe1d, type: 3}
-  SkillProjectilePrefab: {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
+  SkillProjectilePrefab:
+  - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Blood Explosion
   Cooldown: 3
   IsHold: 1
-  HoldDuration: 1
+  HoldDuration: 0.7
   Radius: 8
+  ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 2
+  ProjectileDamage: 01000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
@@ -30,6 +32,7 @@ MonoBehaviour:
   movementDuration: 0
   IsRielSpecificSkill: 1
   BloodCost: 0
+  BloodStackingAmount: 0
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
   vfxData:

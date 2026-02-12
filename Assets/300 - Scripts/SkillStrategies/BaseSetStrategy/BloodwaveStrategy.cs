@@ -20,7 +20,8 @@ public class BloodwaveStrategy: SkillStrategy
 				Range = _storedSkillData.ProjectileRange,
                 Lifetime = 2 * _storedSkillData.ProjectileRange / _storedSkillData.ProjectileSpeed,
 				Speed = _storedSkillData.ProjectileSpeed,
-				Target = new Vector3(Random.Range(-20, 20) , 0, Random.Range(-20, 20)),
+				BloodStackingAmount = _storedSkillData.BloodStackingAmount,
+                Target = new Vector3(Random.Range(-20, 20) , 0, Random.Range(-20, 20)),
 				Team = team,
             };
 
@@ -30,10 +31,17 @@ public class BloodwaveStrategy: SkillStrategy
 			// -- Blood Wave Logic -- 
 			var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
 			p.SetTravelMode(_storedSkillData.TravelMode);
+			p.onProjectileHit.AddListener(StackBlood);
         	DOVirtual.DelayedCall(projectileData.Lifetime * 0.5f, () => p.SetTravelMode(SkillshotProjectile.TravelMode.TowardCaster));
         }
 
 		PutInCooldown();
 		return true;
+    }
+
+    protected override void OnProjectileHit(Projectile projectile, DamageController damageController)
+    {
+        base.OnProjectileHit(projectile, damageController);
+		StackBlood(projectile, damageController);
     }
 }

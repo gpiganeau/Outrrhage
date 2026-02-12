@@ -44,6 +44,7 @@ class BloodExplosion : SkillStrategy
                 Damage = _storedSkillData.ProjectileDamage[0],
                 Lifetime = _storedSkillData.ProjectileLifetime,
                 Team = storedTeam,
+                BloodStackingAmount = _storedSkillData.BloodStackingAmount,
             };
             SpawnProjectile(projectileData, 0);
             Destroy(drop.gameObject);
