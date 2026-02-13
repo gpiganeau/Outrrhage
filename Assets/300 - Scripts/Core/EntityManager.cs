@@ -24,7 +24,7 @@ public class EntityManager : MonoBehaviour
     public float spawnRangeMin = 5f;           
     public float spawnRangeMax = 10f;          
     private Sequence spawnSequence;
-    public bool AutoSpawn = true;
+    public bool AutoSpawn = false;
 
     private void Awake()
     {
@@ -71,9 +71,14 @@ public class EntityManager : MonoBehaviour
 
     Vector3 GetRandomPosAroundRiel()
     {
-        float randomDistance = Random.Range(spawnRangeMin, spawnRangeMax);
+        return GetRandomPosAroundPoint(Riel.transform.position, spawnRangeMin, spawnRangeMax);
+    }
+
+    Vector3 GetRandomPosAroundPoint(Vector3 point, float minRange, float maxRange)
+    {
+        float randomDistance = Random.Range(minRange, maxRange);
         Vector2 randomDirection = Random.insideUnitCircle.normalized * randomDistance;
-        return Riel.transform.position + new Vector3(randomDirection.x, .5f, randomDirection.y);
+        return point + new Vector3(randomDirection.x, .5f, randomDirection.y);
     }
 
     private void OnDestroy()
@@ -83,7 +88,24 @@ public class EntityManager : MonoBehaviour
 
     internal void SpawnEntities(EntityType type, int count, Vector3 position, float spawnRadius)
     {
-        
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 spawnPos = GetRandomPosAroundPoint(position, spawnRadius * 0.5f, spawnRadius);
+
+            GameObject prefabToSpawn = type switch
+            {
+                EntityType.Humanoid => enemyPrefabs[0].gameObject,
+                EntityType.Drones => enemyPrefabs[1].gameObject,
+                EntityType.Hybrid => enemyPrefabs[Random.Range(0, enemyPrefabs.Count)].gameObject,
+                _ => null
+            };
+
+            if (prefabToSpawn != null)
+            {
+                var newBot = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity).GetComponent<AIActorComponent>();
+                Bots.Add(newBot);
+            }
+        }
     }
 }
 
