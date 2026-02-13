@@ -47,6 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DesignerChaos
   _eventDescription: 
   _gizmoColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  _spawnGizoColor: {r: 1, g: 0, b: 0, a: 1}
+  _eventRadius: 1
+  _spawnRadius: 1
   ChaosEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -69,5 +72,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}

@@ -75,5 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8becc7a89855ae4e9e12cb537211854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarkTrigger
+  _eventDescription: 
+  _gizmoColor: {r: 0.9913965, g: 1, b: 0.10849059, a: 1}
   _bark: {fileID: 11400000, guid: 956d2bd22c0782348b89b83364cf2201, type: 2}
   _radius: 5.61
