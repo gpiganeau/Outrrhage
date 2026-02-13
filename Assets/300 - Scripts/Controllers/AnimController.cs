@@ -1,16 +1,11 @@
-﻿using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class AnimController: MonoBehaviour
 {
     private Animator animator;
-
     ActorSetupData data;
-
     bool locked = false;
-
 
     public void Initialize(ActorSetupData data)
     {

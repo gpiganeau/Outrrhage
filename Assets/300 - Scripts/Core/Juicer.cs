@@ -63,6 +63,7 @@ public class Juicer : MonoBehaviour
 
     #region Private, Internal Juice Methods (Post Process, Screen Shake, Time Control, Entity Effects)
     private bool IsJuiceEnabled() => settings.EnableJuicer;
+    private HashSet<Renderer> _affectedRenderers = new ();
 
     #region POST PROCESS
 
@@ -236,14 +237,17 @@ public class Juicer : MonoBehaviour
 
         foreach (var renderer in renderers)
         {
-            if (renderer.material == null) continue;
+            // -- Check for hashset to prevent multiple flashes on the same renderer at the same time --
+            if (_affectedRenderers.Contains(renderer)) continue; 
+            _affectedRenderers.Add(renderer);
             
-            Color originalColor = renderer.material.color;
+            Color originalColor = renderer.sharedMaterial.color;
             renderer.material.DOKill();
             
             DOTween.Sequence()
                 .Append(renderer.material.DOColor(flashColor, duration * 0.3f))
-                .Append(renderer.material.DOColor(originalColor, duration * 0.7f));
+                .Append(renderer.material.DOColor(originalColor, duration * 0.7f))
+                .OnComplete(() => _affectedRenderers.Remove(renderer));
         }
     }
 

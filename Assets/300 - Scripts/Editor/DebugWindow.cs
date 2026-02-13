@@ -68,6 +68,11 @@ public class DebugWindow : EditorWindow
             dc.IsInvincible = !dc.IsInvincible;
         });
 
+        AddAction($"Toggle Slow Motion", () => {
+            if (Application.isPlaying == false) return;
+            Time.timeScale = Time.timeScale > 0.5f ? 0.2f : 1f;
+        });
+
         AddAction($"Toggle Juicer", () => {
             if (Application.isPlaying == false) return;
             SettingsManager.Instance.VisualSettings.EnableJuicer = !SettingsManager.Instance.VisualSettings.EnableJuicer;
