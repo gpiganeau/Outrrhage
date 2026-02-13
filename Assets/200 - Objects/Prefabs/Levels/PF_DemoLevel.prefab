@@ -8295,6 +8295,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
+      propertyPath: _bark
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ede14428fd77964b9f89cf115d59e89, type: 2}
+    - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _eventDescription
       value: "\"Il y a un probl\xE8me.\""
       objectReference: {fileID: 0}
@@ -12281,6 +12285,10 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
+      propertyPath: _bark
+      value: 
+      objectReference: {fileID: 11400000, guid: 0ecf6ab72a0aa50419166b3b93ccb4ce, type: 2}
+    - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _radius
       value: 14
       objectReference: {fileID: 0}
@@ -12904,6 +12912,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
+      propertyPath: _bark
+      value: 
+      objectReference: {fileID: 11400000, guid: b24cf8e9f61dcad4bb7b0cf6f0752c36, type: 2}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _radius
       value: 6
@@ -14211,6 +14223,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
+      propertyPath: _bark
+      value: 
+      objectReference: {fileID: 11400000, guid: c223b7e02f1afa244b47e78143c42ceb, type: 2}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _eventDescription
       value: '"Qu''est-ce que..."'
@@ -18719,7 +18735,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1637926804358513760, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: m_Name
-      value: PF_BarkTrigger
+      value: PF_BarkTrigger_9
       objectReference: {fileID: 0}
     - target: {fileID: 2377489822445928581, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18765,6 +18781,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
+      propertyPath: _bark
+      value: 
+      objectReference: {fileID: 11400000, guid: 39bfab507ed0d1346a9d7e7bd3e5a394, type: 2}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _radius
       value: 6
@@ -28297,6 +28317,10 @@ PrefabInstance:
       value: 13.7
       objectReference: {fileID: 0}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
+      propertyPath: _bark
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f0a43cd77851b44a96320053276a2fc, type: 2}
+    - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _radius
       value: 13.7
       objectReference: {fileID: 0}
@@ -29941,6 +29965,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
+      propertyPath: _bark
+      value: 
+      objectReference: {fileID: 11400000, guid: c9bb5f0322b416945b17a0644e9b8790, type: 2}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _radius
       value: 15
@@ -33803,6 +33831,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 9.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
+      propertyPath: _bark
+      value: 
+      objectReference: {fileID: 11400000, guid: c197432e187d3004c973b673a4d03b44, type: 2}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _radius
       value: 9.2
