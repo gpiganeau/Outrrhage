@@ -9,6 +9,12 @@ public class EntityManager : MonoBehaviour
     public CharacterComponent Riel;             // -- Set by Game Manager
     public List<AIActorComponent> Bots = new();
 
+    public enum EntityType
+    {
+        Humanoid,
+        Drones,
+        Hybrid
+    }
 
 
     [Header("Spawn Settings")]
@@ -73,6 +79,11 @@ public class EntityManager : MonoBehaviour
     private void OnDestroy()
     {
         spawnSequence?.Kill();
+    }
+
+    internal void SpawnEntities(EntityType type, int count, Vector3 position, float spawnRadius)
+    {
+        
     }
 }
 

@@ -28,9 +28,8 @@ public class CameraController : MonoBehaviour
         {
             _self = GetComponent<Camera>();
         }
-        _self.fieldOfView = SettingsManager.Instance.CameraSettings.cameraFOV;
-        Quaternion startRotation = transform.rotation;
-        transform.rotation = Quaternion.Euler(SettingsManager.Instance.CameraSettings.cameraAngleVert, SettingsManager.Instance.CameraSettings.cameraAngleSide, 0);
+
+        ResetCameraSettings();
     }
 
     public void SetTarget(Transform newTarget)
@@ -42,6 +41,18 @@ public class CameraController : MonoBehaviour
         }
         else
             usePrediction = false;
+    }
+
+    public void SetCameraSettings(CameraSettings cameraSettings)
+    {
+        _self.fieldOfView = cameraSettings.cameraFOV;
+        transform.rotation = Quaternion.Euler(cameraSettings.cameraAngleVert, cameraSettings.cameraAngleSide, 0);
+    }
+
+    public void ResetCameraSettings()
+    {
+        _self.fieldOfView = SettingsManager.Instance.CameraSettings.cameraFOV;
+        transform.rotation = Quaternion.Euler(SettingsManager.Instance.CameraSettings.cameraAngleVert, SettingsManager.Instance.CameraSettings.cameraAngleSide, 0);
     }
 
     void Update()
@@ -70,9 +81,7 @@ public class CameraController : MonoBehaviour
         }
         if (forceRefresh)
         {
-            _self.fieldOfView = SettingsManager.Instance.CameraSettings.cameraFOV;
-            Quaternion startRotation = transform.rotation;
-            transform.rotation = Quaternion.Euler(SettingsManager.Instance.CameraSettings.cameraAngleVert, SettingsManager.Instance.CameraSettings.cameraAngleSide, 0);
+           ResetCameraSettings();
         }
     }
 }
