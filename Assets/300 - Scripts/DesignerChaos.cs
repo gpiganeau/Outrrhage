@@ -9,6 +9,7 @@ public class ChaosStep
     public string stepName;
     [Range(0f, 10f)] public float delay;
     public UnityEvent stepEvent;
+    public bool logEvent;
 }
 
 
@@ -59,6 +60,10 @@ public class DesignerChaos: MonoBehaviour
             }
             
             step.stepEvent?.Invoke();
+            if (step.logEvent)
+            {
+                Logger.Log(Logger.LogCategory.Core, $"[DesignerChaos] Step Triggered: {step.stepName}");
+            }
         }
     }
     
