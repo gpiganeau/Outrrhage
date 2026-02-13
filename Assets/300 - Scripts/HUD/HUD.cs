@@ -79,12 +79,19 @@ public class HUD : MonoBehaviour
 
     public void Hide()
     {
-        _canvasGroup.DOFade(0, 0.5f).OnComplete(() => _canvasGroup.interactable = false);
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
+        _canvasGroup.DOFade(0, 0.5f).OnComplete(() => {
+        gameObject.SetActive(false);
+        });
     }
-
+    
     public void Show()
     {
+        gameObject.SetActive(true);
+        _canvasGroup.blocksRaycasts = true;
         _canvasGroup.interactable = true;
+        _canvasGroup.alpha = 0;
         _canvasGroup.DOFade(1, 0.5f);
     }
 

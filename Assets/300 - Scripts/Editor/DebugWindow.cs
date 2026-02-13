@@ -82,8 +82,17 @@ public class DebugWindow : EditorWindow
 // -- Editor Actions -- (Non Play Mode)
 
         AddAction("Toggle HUD", () => {
-            if (Application.isPlaying == true) return;
-            HUD.Instance.ToggleVisibility();
+            if (Application.isPlaying == true)
+            {
+                HUD.Instance.ToggleVisibility();
+            } else
+            {
+                var hud = FindFirstObjectByType<HUD>();
+                if (hud != null)
+                {
+                    hud.GetComponent<Canvas>().enabled = !hud.GetComponent<Canvas>().enabled;
+                }
+            }
         });
 
         AddAction("Preview Full Skill FX", () => {
