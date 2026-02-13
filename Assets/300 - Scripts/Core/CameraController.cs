@@ -22,6 +22,8 @@ public class CameraController : MonoBehaviour
     public Vector3 Forward => transform.forward;
     public Vector3 Right => transform.right;
 
+    private CameraSettings defaultSettings;
+
     private void Start()
     {
         if (_self == null)
@@ -29,6 +31,7 @@ public class CameraController : MonoBehaviour
             _self = GetComponent<Camera>();
         }
 
+        defaultSettings = SettingsManager.Instance.CameraSettings;
         ResetCameraSettings();
     }
 
@@ -45,11 +48,13 @@ public class CameraController : MonoBehaviour
 
     public void SetCameraSettings(CameraSettings cameraSettings)
     {
+        SettingsManager.Instance.SetCameraSettings(cameraSettings);
         _self.fieldOfView = cameraSettings.cameraFOV;
         transform.rotation = Quaternion.Euler(cameraSettings.cameraAngleVert, cameraSettings.cameraAngleSide, 0);
     }
     public void ResetCameraSettings()
     {
+        SettingsManager.Instance.SetCameraSettings(defaultSettings);
         _self.fieldOfView = SettingsManager.Instance.CameraSettings.cameraFOV;
         transform.rotation = Quaternion.Euler(SettingsManager.Instance.CameraSettings.cameraAngleVert, SettingsManager.Instance.CameraSettings.cameraAngleSide, 0);
     }

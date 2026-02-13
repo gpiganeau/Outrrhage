@@ -15,6 +15,11 @@ public class SettingsManager : MonoBehaviour
     public GameplaySettings GameplaySettings => gameplaySettings;
     public VisualSettings VisualSettings => visualSettings;
 
+    public void SetCameraSettings(CameraSettings newSettings)
+    {
+        cameraSettings = newSettings;
+    }
+
     private void Awake()
     {
         if (Instance == null)

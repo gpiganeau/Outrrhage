@@ -17,6 +17,7 @@ public class ChaosStep
 public class DesignerChaos: MonoBehaviour
 {
     [TextArea] public string _eventDescription;
+    public bool triggerOnce = true;
     [Header("Settings")]
     public Color _gizmoColor = Color.yellow;
     public Color _spawnGizoColor = Color.red;
@@ -36,9 +37,17 @@ public class DesignerChaos: MonoBehaviour
     private SphereCollider _collider;
     private bool _hasTriggered = false;
 
+    private void Start ()
+    {
+        _collider = GetComponent<SphereCollider>();
+        _collider.isTrigger = true;
+        _collider.radius = _eventRadius;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (_hasTriggered) return;
+
         _hasTriggered = true;
         
         if (useSequence && ChaosSequence.Count > 0)
@@ -59,12 +68,19 @@ public class DesignerChaos: MonoBehaviour
             {
                 yield return new WaitForSeconds(step.delay);
             }
-            
-            step.stepEvent?.Invoke();
+
             if (step.logEvent)
             {
                 Logger.Log(Logger.LogCategory.Core, $"[DesignerChaos] Step Triggered: {step.stepName}");
             }
+            
+            step.stepEvent?.Invoke();
+
+        }
+
+        if (triggerOnce == false)
+        {
+            _hasTriggered = false;
         }
     }
     
