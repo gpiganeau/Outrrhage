@@ -9,6 +9,6 @@ public class CameraSettings : ScriptableObject
     public float cameraFollowDistance;
     [Range(1, 5)] public float cameraPredictionRatio;
     [Range(0, 90)] public float cameraAngleVert;
-    [Range(-90, 90)] public float cameraAngleSide;
+    [Range(-180, 180)] public float cameraAngleSide;
     public float cameraFOV;
 }
