@@ -117,4 +117,14 @@ public class DesignerChaos: MonoBehaviour
         HUD.Instance.Show();
     }
 
+    public void ZZ_DisablePlayerControl()
+    {
+        GameManager.Instance.Riel.DisableControls();
+    }
+
+    public void ZZ_EnablePlayerControl()
+    {
+        GameManager.Instance.Riel.DisableControls();
+    }
+
 }
