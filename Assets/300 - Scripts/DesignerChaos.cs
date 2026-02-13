@@ -22,6 +22,8 @@ public class DesignerChaos: MonoBehaviour
     [Range(1, 16)] public float _eventRadius;
     [Range(1, 32)] public float _spawnRadius;
 
+    public Transform _spawnPointCenter;
+
     [Header("Sequence")]
     public bool useSequence = false;
     public List<ChaosStep> ChaosSequence = new List<ChaosStep>();
@@ -74,17 +76,17 @@ public class DesignerChaos: MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _collider.radius);
 
         Gizmos.color = _spawnGizoColor;
-        Gizmos.DrawWireSphere(transform.position, _spawnRadius);
+        Gizmos.DrawWireSphere(_spawnPointCenter.position, _spawnRadius);
     }
 
     public void ZZ_SpawnDrones(int count)
     {
-        EntityManager.Instance.SpawnEntities(EntityManager.EntityType.Drones, count, transform.position, _spawnRadius);
+        EntityManager.Instance.SpawnEntities(EntityManager.EntityType.Drones, count, _spawnPointCenter.position, _spawnRadius);
     }
 
     public void ZZ_SpawnHumans(int count)
     {
-        EntityManager.Instance.SpawnEntities(EntityManager.EntityType.Humanoid, count, transform.position, _spawnRadius);
+        EntityManager.Instance.SpawnEntities(EntityManager.EntityType.Humanoid, count, _spawnPointCenter.position, _spawnRadius);
     }
 
     public void ZZ_ChangeCameraSetting(CameraSettings cameraSettings)
