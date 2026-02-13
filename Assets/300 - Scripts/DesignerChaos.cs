@@ -77,27 +77,27 @@ public class DesignerChaos: MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _spawnRadius);
     }
 
-    public void SpawnDrones(int count)
+    public void ZZ_SpawnDrones(int count)
     {
         EntityManager.Instance.SpawnEntities(EntityManager.EntityType.Drones, count, transform.position, _spawnRadius);
     }
 
-    public void SpawnHumans(int count)
+    public void ZZ_SpawnHumans(int count)
     {
         EntityManager.Instance.SpawnEntities(EntityManager.EntityType.Humanoid, count, transform.position, _spawnRadius);
     }
 
-    public void ChangeCameraSetting(CameraSettings cameraSettings)
+    public void ZZ_ChangeCameraSetting(CameraSettings cameraSettings)
     {
         GameManager.Instance.CameraController.SetCameraSettings(cameraSettings);
     }
 
-    public void ResetCameraSetting()
+    public void ZZ_ResetCameraSetting()
     {
         GameManager.Instance.CameraController.ResetCameraSettings();
     }
 
-    public void KillAllEnemies()
+    public void ZZ_KillAllEnemies()
     {
         foreach (var bot in EntityManager.Instance.Bots)
         {

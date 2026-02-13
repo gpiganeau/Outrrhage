@@ -48,7 +48,6 @@ public class CameraController : MonoBehaviour
         _self.fieldOfView = cameraSettings.cameraFOV;
         transform.rotation = Quaternion.Euler(cameraSettings.cameraAngleVert, cameraSettings.cameraAngleSide, 0);
     }
-
     public void ResetCameraSettings()
     {
         _self.fieldOfView = SettingsManager.Instance.CameraSettings.cameraFOV;
