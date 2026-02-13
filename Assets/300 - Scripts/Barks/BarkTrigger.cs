@@ -4,6 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class BarkTrigger : MonoBehaviour
 {
+
+    [TextArea] public string _eventDescription;
+    [Header("Settings")]
+    public Color _gizmoColor = Color.aliceBlue;
+
     [SerializeField] Bark _bark;
 
     SphereCollider _collider;
