@@ -7,7 +7,7 @@ public class BarkTrigger : MonoBehaviour
     [SerializeField] Bark _bark;
 
     SphereCollider _collider;
-    [SerializeField, Range(2f, 10f)] float _radius = 3.0f;
+    [SerializeField, Range(2f, 32f)] float _radius = 3.0f;
 
 
     void Start()
