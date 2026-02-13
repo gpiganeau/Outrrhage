@@ -49,34 +49,41 @@ public class CameraController : MonoBehaviour
     public void SetCameraSettings(CameraSettings cameraSettings)
     {
         SettingsManager.Instance.SetCameraSettings(cameraSettings);
-        _self.fieldOfView = cameraSettings.cameraFOV;
-        transform.rotation = Quaternion.Euler(cameraSettings.cameraAngleVert, cameraSettings.cameraAngleSide, 0);
+        RecalculateFOVAndRotation();
     }
     public void ResetCameraSettings()
     {
         SettingsManager.Instance.SetCameraSettings(defaultSettings);
-        _self.fieldOfView = SettingsManager.Instance.CameraSettings.cameraFOV;
-        transform.rotation = Quaternion.Euler(SettingsManager.Instance.CameraSettings.cameraAngleVert, SettingsManager.Instance.CameraSettings.cameraAngleSide, 0);
+        RecalculateFOVAndRotation();
+    }
+
+    private void RecalculateFOVAndRotation()
+    {
+        var settings = SettingsManager.Instance.CameraSettings;
+        _self.fieldOfView = settings.cameraFOV;
+        transform.rotation = Quaternion.Euler(settings.cameraAngleVert, settings.cameraAngleSide, 0);
     }
 
     void Update()
     {
-        if (target == null) return; // -- Get une target 
+        if (target == null) return;
 
-        targetPosition = target.position - transform.forward * SettingsManager.Instance.CameraSettings.cameraFollowDistance;
+        var settings = SettingsManager.Instance.CameraSettings;
+
+        targetPosition = target.position - transform.forward * settings.cameraFollowDistance;
         if(usePrediction)
         {
             targetPosition += targetMovementController.Velocity 
-                * SettingsManager.Instance.CameraSettings.cameraPredictionRatio;
+                * settings.cameraPredictionRatio;
         }
         switch (followMode)
         {
             case TargetFollowMode.Linear:
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, SettingsManager.Instance.CameraSettings.cameraLinearFollowSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, settings.cameraLinearFollowSpeed * Time.deltaTime);
                 break;
             case TargetFollowMode.Geometric:
 
-                Vector3 futureMovement = (targetPosition - transform.position) * Mathf.Clamp01(SettingsManager.Instance.CameraSettings.cameraGeometricFollowSpeed);
+                Vector3 futureMovement = (targetPosition - transform.position) * Mathf.Clamp01(settings.cameraGeometricFollowSpeed);
                 if (futureMovement.sqrMagnitude > 0.05f)
                 {
                     transform.position += futureMovement * Time.deltaTime;
@@ -85,7 +92,7 @@ public class CameraController : MonoBehaviour
         }
         if (forceRefresh)
         {
-           ResetCameraSettings();
+           RecalculateFOVAndRotation();
         }
     }
 }
