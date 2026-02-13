@@ -9,7 +9,7 @@ public class ChaosStep
     public string stepName;
     [Range(0f, 10f)] public float delay;
     public UnityEvent stepEvent;
-    public bool logEvent;
+    public bool logEvent = true;
 }
 
 
@@ -31,6 +31,7 @@ public class DesignerChaos: MonoBehaviour
     
     [Header("Single Event (if not using sequence)")]
     public UnityEvent ChaosSingleEvent;
+    public bool logEvent = true;
     
     private SphereCollider _collider;
     private bool _hasTriggered = false;
