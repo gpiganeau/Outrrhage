@@ -107,4 +107,14 @@ public class DesignerChaos: MonoBehaviour
         }
     }
 
+    public void ZZ_HideHUD()
+    {
+        HUD.Instance.Hide();
+    }
+
+    public void ZZ_ShowHUD()
+    {
+        HUD.Instance.Show();
+    }
+
 }

@@ -542,6 +542,7 @@ GameObject:
   - component: {fileID: 4640897587391432232}
   - component: {fileID: 1583374448615304039}
   - component: {fileID: 8827782875320652542}
+  - component: {fileID: 6745548944051885219}
   m_Layer: 5
   m_Name: PF_HUD
   m_TagString: Untagged
@@ -646,11 +647,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5f9f363afce774bbaf1934e359fbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HUD
+  _canvasGroup: {fileID: 6745548944051885219}
   _skillBar: {fileID: 132005696695333491}
-  _skillsController: {fileID: 0}
-  damageController: {fileID: 0}
   _rielHealth: {fileID: 5827697001962006126}
   _rielBlood: {fileID: 3164304469144699770}
+--- !u!225 &6745548944051885219
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4365217749327001922}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5774391534186687215
 GameObject:
   m_ObjectHideFlags: 0

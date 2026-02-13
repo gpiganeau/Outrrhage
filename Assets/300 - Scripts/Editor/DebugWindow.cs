@@ -83,8 +83,7 @@ public class DebugWindow : EditorWindow
 
         AddAction("Toggle HUD", () => {
             if (Application.isPlaying == true) return;
-            var canvas = FindAnyObjectByType<HUD>().GetComponent<Canvas>();
-            canvas.enabled = !canvas.enabled;
+            HUD.Instance.ToggleVisibility();
         });
 
         AddAction("Preview Full Skill FX", () => {

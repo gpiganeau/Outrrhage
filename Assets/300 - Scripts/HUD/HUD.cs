@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class HUD : MonoBehaviour
     public static HUD Instance;
 
     [Header("References")]
+    [SerializeField] CanvasGroup _canvasGroup;
     [SerializeField] SkillBar _skillBar;
     private SkillsController _skillsController;
     private DamageController _damageController;
@@ -73,6 +75,23 @@ public class HUD : MonoBehaviour
             _damageController.OnDamaged.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
             _damageController.OnHealed.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
         }
+    }
+
+    public void Hide()
+    {
+        _canvasGroup.DOFade(0, 0.5f).OnComplete(() => _canvasGroup.interactable = false);
+    }
+
+    public void Show()
+    {
+        _canvasGroup.interactable = true;
+        _canvasGroup.DOFade(1, 0.5f);
+    }
+
+    public void ToggleVisibility()
+    {
+        if (_canvasGroup.alpha > 0.5f) Hide();
+        else Show();
     }
 
     private void Update()
