@@ -17,10 +17,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     [SerializeField] private Blood blood;
     public static Blood Blood;
     public CameraController PlayerCameraController { get; set; }
-    private bool isDead = false;
-
     private List<Renderer> Renderers;
-
     
     void Start()
 	{
@@ -78,14 +75,15 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
     private void OnDeath()
     {
-          if (isDead) return;
-            Juicer.I.PlayerDeathEffect();
-            skillsController.enabled = false;
-            movementController.enabled = false;
-            damageController.enabled = false;   
-            isDead = true;
-            animController.Die();   
-            DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
+        if (damageController.IsDead) return;
+        damageController.IsDead = true;
+        Juicer.I.PlayerDeathEffect();
+        // Stop Updates
+        skillsController.enabled = false; 
+        movementController.enabled = false;
+        damageController.enabled = false;   
+        animController.Die();   
+        DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
     }
     #endregion
 

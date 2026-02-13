@@ -13,6 +13,13 @@ public class DamageController: MonoBehaviour
 		get => _isInvincible;
 		set => _isInvincible = value;
 	}
+	private bool _isDead = false;
+	public bool IsDead
+	{
+		get => _isDead;
+		set => _isDead = value;
+	}
+
 	[SerializeField] private int _currentHealth = 1;
 	[SerializeField] private Team _team = Team.Neutral;
 	public Team Team => _team;

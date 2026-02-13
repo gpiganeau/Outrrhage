@@ -23,6 +23,8 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
     private List<Renderer> Renderers;
     private AnimController animController;
 
+    private Rigidbody _rigidbody;
+    private Collider _collider;
     //Will use a movement strategy to coordinate movement and a skills strategy to use skills
     //This will allow to define an enemy's behavior by a set of skills and 2 strategies
 
@@ -70,10 +72,15 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
 
         Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
 
+        _rigidbody = GetComponent<Rigidbody>();
+        _collider = GetComponent<Collider>();
+
     }
 
     void Update()
 	{
+        if (damageController.IsDead) return;
+
         // -- Pour esquiver la ref Serializer : @TODO : Enemy Maanger ?
         if (debugCharacterComponent == null)
         {
@@ -115,6 +122,8 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
     }
     private void OnDeath() 
     {
+        damageController.IsDead = true;
+
         if (setupData.LootOnDeath && setupData._itemsLootsOnDeath.Count > 0)
         {
             var loot = setupData._itemsLootsOnDeath.Random();
@@ -136,17 +145,21 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
         // -- Check if last enemy Alive ? Or From  Enemy Data (Boss, Elite...) or % Chance of procing this ?
         Juicer.I.EnemyDeathEffect();
 
-
         if (animController != null)
         {
+            // -- Disable Controllers & Collisions for better death animation
+            if (_rigidbody != null) _rigidbody.isKinematic = true;
+            if (_collider != null)  _collider.enabled = false;
+            skillsController.enabled = false;
+            movementController.enabled = false;
+            damageController.enabled = false;   
+            
             animController.Die();   
             DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => Destroy(this.gameObject));
         } else
         {
             Destroy(this.gameObject);
         }
-
-
     }
 
 #region Interfaces
