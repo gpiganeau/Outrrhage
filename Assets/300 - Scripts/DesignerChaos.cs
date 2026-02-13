@@ -1,5 +1,16 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+
+[System.Serializable]
+public class ChaosStep
+{
+    public string stepName;
+    [Range(0f, 10f)] public float delay;
+    public UnityEvent stepEvent;
+}
+
 
 [RequireComponent(typeof(SphereCollider))]
 public class DesignerChaos: MonoBehaviour
@@ -11,14 +22,44 @@ public class DesignerChaos: MonoBehaviour
     [Range(1, 16)] public float _eventRadius;
     [Range(1, 32)] public float _spawnRadius;
 
-    [Header("Event")]
-    public UnityEvent ChaosEvent;
-
+    [Header("Sequence")]
+    public bool useSequence = false;
+    public List<ChaosStep> ChaosSequence = new List<ChaosStep>();
+    
+    [Header("Single Event (if not using sequence)")]
+    public UnityEvent ChaosSingleEvent;
+    
     private SphereCollider _collider;
+    private bool _hasTriggered = false;
+
     void OnTriggerEnter(Collider other)
     {
-        ChaosEvent?.Invoke();
+        if (_hasTriggered) return;
+        _hasTriggered = true;
+        
+        if (useSequence && ChaosSequence.Count > 0)
+        {
+            StartCoroutine(PlaySequence());
+        }
+        else
+        {
+            ChaosSingleEvent?.Invoke();
+        }
     }
+     
+    IEnumerator PlaySequence()
+    {
+        foreach (var step in ChaosSequence)
+        {
+            if (step.delay > 0)
+            {
+                yield return new WaitForSeconds(step.delay);
+            }
+            
+            step.stepEvent?.Invoke();
+        }
+    }
+    
 
     void OnValidate()
     {
@@ -54,6 +95,14 @@ public class DesignerChaos: MonoBehaviour
     public void ResetCameraSetting()
     {
         GameManager.Instance.CameraController.ResetCameraSettings();
+    }
+
+    public void KillAllEnemies()
+    {
+        foreach (var bot in EntityManager.Instance.Bots)
+        {
+            bot.ForceKill();
+        }
     }
 
 }
