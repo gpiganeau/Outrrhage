@@ -129,7 +129,7 @@ public class DesignerChaos: MonoBehaviour
 
     public void ZZ_EnablePlayerControl()
     {
-        GameManager.Instance.Riel.DisableControls();
+        GameManager.Instance.Riel.EnableControls();
     }
 
 }
