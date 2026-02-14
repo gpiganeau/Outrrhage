@@ -3698,7 +3698,7 @@ Transform:
   m_GameObject: {fileID: 7359083969874858974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 215.2, y: 0, z: 233.2}
+  m_LocalPosition: {x: 150.5, y: 0, z: 144.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9084,7 +9084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[0].delay
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[1].delay

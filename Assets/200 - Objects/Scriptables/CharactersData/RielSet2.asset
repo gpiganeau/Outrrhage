@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RielSet2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSettings
   Name: Riel
-  maxHealth: 50
+  maxHealth: 15
   movementSpeed: 10
   maxBloodStack: 10
   team: 1

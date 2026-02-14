@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: cda8450286776894db0fb5a7e0ba1e94, type: 3}
   SkillProjectilePrefab:
-  - {fileID: 8024854797782737839, guid: c8e92f2eeb681794c8b18bfd46190812, type: 3}
+  - {fileID: 8024854797782737839, guid: 2fe5385023a7f064297bec3f1dd53c06, type: 3}
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Blood Spikes
   Cooldown: 1
@@ -27,7 +27,7 @@ MonoBehaviour:
   ProjectileLifetime: 3
   numberOfProjectiles: 1
   TravelMode: 2
-  AimAssistRatio: 0.3
+  AimAssistRatio: 0.6
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0

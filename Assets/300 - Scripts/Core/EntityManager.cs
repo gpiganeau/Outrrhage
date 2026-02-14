@@ -56,17 +56,24 @@ public class EntityManager : MonoBehaviour
         var actor  = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
         var pos = GetRandomPosAroundRiel();
 
+        SpawnEnemy(actor, pos);
+    }
+
+    private void SpawnEnemy(AIActorComponent actor, Vector3 position)
+    {
         // -- Sequence for spawn FX and Enemy Spawn
         var seq = DOTween.Sequence();
         seq.AppendCallback(() =>
         {
-            var fx = Instantiate(SpawnFXPrefab, pos, Quaternion.identity);
+            var fx = Instantiate(SpawnFXPrefab, position, Quaternion.identity);
         });
         seq.AppendInterval(1f); 
         seq.AppendCallback(() =>{
-             var newBot = Instantiate(actor, pos, Quaternion.identity);
+             var newBot = Instantiate(actor, position, Quaternion.identity);
              Bots.Add(newBot);
         });
+        var newBot = Instantiate(actor, position, Quaternion.identity);
+        Bots.Add(newBot);
     }
 
     Vector3 GetRandomPosAroundRiel()
@@ -92,19 +99,20 @@ public class EntityManager : MonoBehaviour
         {
             Vector3 spawnPos = GetRandomPosAroundPoint(position, spawnRadius * 0.5f, spawnRadius);
 
-            GameObject prefabToSpawn = type switch
+            AIActorComponent prefabToSpawn = type switch
             {
-                EntityType.Drones => enemyPrefabs[0].gameObject,
-                EntityType.Humanoid => enemyPrefabs[1].gameObject,
-                EntityType.Hybrid => enemyPrefabs[Random.Range(0, enemyPrefabs.Count)].gameObject,
+                EntityType.Drones => enemyPrefabs[0],
+                EntityType.Humanoid => enemyPrefabs[1],
+                EntityType.Hybrid => null, // -- Hybrid not implemented yet
                 _ => null
             };
 
             if (prefabToSpawn != null)
             {
-                var newBot = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity).GetComponent<AIActorComponent>();
-                Bots.Add(newBot);
+                SpawnEnemy(prefabToSpawn, spawnPos);
             }
+
+            // -- Add delay ?
         }
     }
 }

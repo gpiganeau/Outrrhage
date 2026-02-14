@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 8011020529142904054}
   - component: {fileID: 819941815064272808}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7686602587149388651
 Transform:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -498,7 +498,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 0
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -551,8 +551,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotation:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 6.283185
+      minMaxState: 0
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4782,7 +4782,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 365b91ebb7b2f8448a3442c306a95acf, type: 2}
+  - {fileID: 2100000, guid: c257ca1c428148244a291392db1302e7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4848,9 +4848,9 @@ GameObject:
   - component: {fileID: -9074484718186526137}
   - component: {fileID: 8874095568993291873}
   - component: {fileID: 4063306155761817961}
-  - component: {fileID: 6374828384884390076}
+  - component: {fileID: 2667987215630934665}
   m_Layer: 0
-  m_Name: PF_BloodWave
+  m_Name: PF_BloodSpikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4897,7 +4897,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8024854797782737839}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 47215680732254411, guid: 00e835cbe7415bf4194c234be899e321, type: 3}
 --- !u!23 &4063306155761817961
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4923,7 +4923,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 365b91ebb7b2f8448a3442c306a95acf, type: 2}
+  - {fileID: 2100000, guid: eb98369e3f7910b4d84da32731f3630f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4947,8 +4947,8 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6374828384884390076
-SphereCollider:
+--- !u!136 &2667987215630934665
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4965,6 +4965,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.75
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.61
+  m_Height: 2.37
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: -0.36}

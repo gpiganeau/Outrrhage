@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
   Name: Drone XK-PS2
   maxHealth: 3
-  movementSpeed: 10
+  movementSpeed: 7.5
   maxBloodStack: 10
   team: 2
   startingSkillSet:
