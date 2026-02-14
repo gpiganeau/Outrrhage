@@ -94,8 +94,8 @@ public class EntityManager : MonoBehaviour
 
             GameObject prefabToSpawn = type switch
             {
-                EntityType.Humanoid => enemyPrefabs[0].gameObject,
-                EntityType.Drones => enemyPrefabs[1].gameObject,
+                EntityType.Drones => enemyPrefabs[0].gameObject,
+                EntityType.Humanoid => enemyPrefabs[1].gameObject,
                 EntityType.Hybrid => enemyPrefabs[Random.Range(0, enemyPrefabs.Count)].gameObject,
                 _ => null
             };
