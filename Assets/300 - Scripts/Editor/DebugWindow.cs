@@ -106,6 +106,11 @@ public class DebugWindow : EditorWindow
                 previewer.PreviewSkill(riel.transform.position);
             }
         });
+
+        AddAction("Toggle Skill Selector Menu", () => {
+            if (Application.isPlaying != true) return;
+            SkillSelector.Instance.ToggleMenu();
+         });
     }
 
 

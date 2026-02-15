@@ -15,10 +15,13 @@ public class SkillsController: MonoBehaviour
     // -- Events --
     public event Action<List<SkillStrategy>> OnSkillsInitialized; 
     public event Action<SkillStrategy, int> OnSkillExecuted; // -- Skill, Slot
+    public event Action<List<SkillStrategy>> OnSkillsChanged;
 
 	private AnimController animController;
     [SerializeField] private Team _team = Team.Neutral;
 
+    [SerializeField] private int _maxSkillSlots = 5; // -- 5 for Riel
+    public int MaxSkillSlots => _maxSkillSlots;
 
     //Still have to move the inputs into the CharacterComponent
     public void Initialize(ActorSetupData actorData, AnimController animController = null)
@@ -110,4 +113,90 @@ public class SkillsController: MonoBehaviour
 
         return true;
     }
+
+    #region In Game Modification ?
+    /// <summary>
+    /// Ajoute une nouvelle skill dans le premier slot vide disponible
+    /// </summary>
+    public bool AddSkill(SkillData skillData)
+    {
+        if (activeSkillStrategies.Count >= _maxSkillSlots)
+        {
+            Debug.LogWarning("Cannot add skill: max slots reached");
+            return false;
+        }
+        
+        InstantiateSkillStrategy(skillData);
+        OnSkillsChanged?.Invoke(activeSkillStrategies);
+        return true;
+    }
+    
+    /// <summary>
+    /// Retire une skill d'un slot spécifique
+    /// </summary>
+    public void RemoveSkill(int slotIndex)
+    {
+        if (slotIndex >= 0 && slotIndex < activeSkillStrategies.Count)
+        {
+            Destroy(activeSkillStrategies[slotIndex].gameObject);
+            activeSkillStrategies.RemoveAt(slotIndex);
+            OnSkillsChanged?.Invoke(activeSkillStrategies);
+        }
+    }
+    
+    /// <summary>
+    /// Remplace une skill existante par une nouvelle
+    /// </summary>
+    public void ReplaceSkill(int slotIndex, SkillData newSkillData)
+    {
+        if (slotIndex >= 0 && slotIndex < activeSkillStrategies.Count)
+        {
+            // Destroy l'ancienne
+            Destroy(activeSkillStrategies[slotIndex].gameObject);
+            
+            // Crée la nouvelle
+            SkillStrategy newStrategy = InstantiateSkillStrategy(newSkillData);
+            
+            // Replace dans la liste
+            activeSkillStrategies[slotIndex] = newStrategy;
+            OnSkillsChanged?.Invoke(activeSkillStrategies);
+        }
+    }
+    
+    /// <summary>
+    /// Swap deux skills entre elles
+    /// </summary>
+    public void SwapSkills(int slotA, int slotB)
+    {
+        if (slotA >= 0 && slotA < activeSkillStrategies.Count && 
+            slotB >= 0 && slotB < activeSkillStrategies.Count)
+        {
+            var temp = activeSkillStrategies[slotA];
+            activeSkillStrategies[slotA] = activeSkillStrategies[slotB];
+            activeSkillStrategies[slotB] = temp;
+            OnSkillsChanged?.Invoke(activeSkillStrategies);
+        }
+    }
+    
+    /// <summary>
+    /// Récupère la SkillData d'un slot spécifique
+    /// </summary>
+    public SkillData GetSkillData(int slotIndex)
+    {
+        if (slotIndex >= 0 && slotIndex < activeSkillStrategies.Count)
+        {
+            return activeSkillStrategies[slotIndex].SkillData;
+        }
+        return null;
+    }
+    
+    
+    private SkillStrategy InstantiateSkillStrategy(SkillData data)
+    {
+        SkillStrategy skillStrategy = Instantiate(data.SkillStrategyPrefab, transform).GetComponent<SkillStrategy>();
+        skillStrategy.Initialize(this, data);
+        activeSkillStrategies.Add(skillStrategy);
+        return skillStrategy;
+    }
+    #endregion
 }
