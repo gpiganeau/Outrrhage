@@ -1,0 +1,6940 @@
+fileFormatVersion: 2
+guid: cfd98a747e55457489e7161429e68d78
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 728
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a4d1e1bb76f86459973d28ab51bd28
+      internalID: 708656649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 713
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81c9980bc77ae64c98f3e873bb6cefc
+      internalID: -1540425513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 728
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 405606f85a1a7ba4485764ed3650344f
+      internalID: 1566813286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_3
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 713
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f287dfeac87cab54c8be7c1f0f758025
+      internalID: -1337869165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 704
+        width: 640
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69f101ce4c99284789c120e6d7b66c0
+      internalID: 1615998975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_5
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 656
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40232fa4fc40a04aa965080cfcd3cc6
+      internalID: 956809670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_6
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 656
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8459b0e00665049469be094afa84f880
+      internalID: 350540041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_7
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 681
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ccb6607411fd624fb99c50c96228200
+      internalID: -548843645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_8
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 656
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8183f9398844bb4c9843373f486337c
+      internalID: -1298903671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_9
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 681
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb04e77a82dc1c746965a4530eba9767
+      internalID: -315516224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_10
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 656
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9647b6c018d6854aacefa0fb83b9b0f
+      internalID: -1854240222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 681
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f11be5bf8e50f64b8d82c33eaddc8e9
+      internalID: -1587542489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_12
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 656
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6dd53acc9a81a8429ea5522b62b67e7
+      internalID: -570627508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_13
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 681
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdd6061a15d2194481de920e5401bfc
+      internalID: -1576064570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_14
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 656
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8910667be2ed3c43bc5708903eb025c
+      internalID: 1932013726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_15
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 656
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14535d39b303f7b4aba702c4dc60cefb
+      internalID: 663618873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_16
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 678
+        width: 48
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2018f5157debbff4fb65249864c8f207
+      internalID: -451212776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_17
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 677
+        width: 26
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21aad2efe26b10d43a5ae2019c28bc4c
+      internalID: 1807116066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_18
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 656
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff27b096b6bd01459bafcbb9efeffee
+      internalID: 980053522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_19
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 656
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33a52075748b7f40b529d544687ca1c
+      internalID: 625611787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_20
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 656
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2fb9b75d977e5c45995598dd3b77730
+      internalID: 1986349856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_21
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 667
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab63c4b8835896e44b7280aa88665464
+      internalID: 11113078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_22
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 656
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6544308e6bc6b9d43949e4c15426ee25
+      internalID: -1623332006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_23
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 662
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64014eed8b03904794bbc1ca22020fc
+      internalID: 1771551752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_24
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 653
+        width: 16
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b249acd416f88894f8c8451aaa972a1f
+      internalID: 674063247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_25
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 662
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c17bc6182fa7d24aa47366ad4f7c4be
+      internalID: 1758759546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_26
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 656
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee4db6c9eca67442a091fbbb7bbdb27
+      internalID: -1264694870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_27
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 653
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1e2d4a6d3f71b4eb08757fbbb5c6cd
+      internalID: -818893103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_28
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 664
+        width: 50
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b6a96d395f9047459891a851dc18e96
+      internalID: 1344346125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_29
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 662
+        width: 28
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b19b03a1561dc3479a7d5d5e2be8009
+      internalID: 1839189177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_30
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 664
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3975618ccc4f7408d8bfcbc7852ac3
+      internalID: 1375947575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_31
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 664
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 593918515f6c5a244b0f559a0918cf44
+      internalID: -827685072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_32
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 656
+        width: 40
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787e1ec0572ae5149996a7ebad91e914
+      internalID: -1459012391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_33
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 590
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5681da2f78dbe4c9a410ac00c3f04c
+      internalID: -1590203251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_34
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 590
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9977a71cd284a44cbfa5f7b12682bf6
+      internalID: 1122627608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_35
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 584
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e78a063ff1d4564dae0a40460f9a926
+      internalID: 1280125509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_36
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 619
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33686a46b737434e9bf63365eca7259
+      internalID: -2119465703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_37
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 619
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e51808ccacf3cd4dba75e75d86da081
+      internalID: -1712960906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_38
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 619
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2bb5e1ac6a30c74eaa968169baf8f64
+      internalID: 312418224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_39
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 619
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ae743f16c420745a0732c65dc16e05
+      internalID: 1283167080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_40
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75429ab7b9724a14f9e0c10a7b6c8a66
+      internalID: -783616428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_41
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09db76808a52de42bc8d3246fb9b054
+      internalID: 1504015373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_42
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a335d7b07725c84694f4eda556e1613
+      internalID: -1264824443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_43
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 584
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a82a5aba29feba4cb457f9726181d27
+      internalID: 1701320501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_44
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 592
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98a1353e01c18243a950e63f4b61f3e
+      internalID: -197610391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_45
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 584
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62df1d3df3ecb1244a29f31e7a66fc3f
+      internalID: 974432066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_46
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 584
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc974e76ecae854c940650cf8c7aaee
+      internalID: 242746019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_47
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 584
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d616d3475ac404cb7a2c198ec0b876
+      internalID: 209092755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_48
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 584
+        width: 48
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3178e781c6bb94aa2fda66d341d61c
+      internalID: 1048371198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_49
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 528
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f19b9aee26e4648bd22782141d134e
+      internalID: -1231249369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_50
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 528
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29e63b63a84e684b8a0d11025220808
+      internalID: -1461066503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_51
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 539
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2864f7189eea349a2928dcaf5bfdec
+      internalID: 1455844308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_52
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 528
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78ceb768295745428e6ea4791310c64
+      internalID: 1260647815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_53
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 534
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09883e481a044f345868abb9829e0d46
+      internalID: 239033840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_54
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 525
+        width: 16
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9814ada77a2bbeb4aa181495a49beb6b
+      internalID: -2045566902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_55
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 534
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a695dfc4863454c8cacf3b2f34c283
+      internalID: 471420428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_56
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 528
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2a351fac92d174d8a3f2364addd47d
+      internalID: 2108679153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_57
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 536
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e37b5be14f74c4995d09c5c0d2e54b
+      internalID: -2110264754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_58
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 536
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e959bcab30658254cbeebc1820a13baa
+      internalID: -37356325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_59
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 554
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a56b03472bca2498437f4cd48ef6d2
+      internalID: 2101741952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_60
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 520
+        width: 20
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2eb5bdbc687f54f8be38f1b4c07650
+      internalID: 1043815282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_61
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 554
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1583a22757810c459fc4cfe2aeed300
+      internalID: -2065897147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_62
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 526
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9825988df75df5d44bd93f0d4007ec8e
+      internalID: 1058990778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_63
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 526
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c8061bbb508b54e9d67cc25ca0e824
+      internalID: 1318774116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_64
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 554
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42825180c4f87254781e2e8d5a29235d
+      internalID: 99336470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_65
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 520
+        width: 20
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d4baf2b5a440f4ca9c690b85e842e7
+      internalID: 282496074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_66
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 554
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b89a5cfa5b8524a8a93d97d4c5000d
+      internalID: 1251904985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_67
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 550
+        width: 40
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72cab0e010b0aec42921d184f30d7740
+      internalID: -1571940833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_68
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 550
+        width: 40
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a94e050707ccceb4d90378ea1f503bf0
+      internalID: 628574730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_69
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 520
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209f0ec8efbf2b748a4133f2b97bc85d
+      internalID: 1816448663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_70
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 536
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf81504a8477764bb61f064ac1ff183
+      internalID: 1655125615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_71
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 521
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44663d35d5db0104fac5caa098000a3a
+      internalID: -1068174725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_72
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 521
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22fb576b44b4f4243a55ae11aa1a0524
+      internalID: -708568405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_73
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 527
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fff3b3fd4f915bc4ab0468c703acf9fa
+      internalID: -915000611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_74
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 524
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02b4519a707377e43b9244323536af9c
+      internalID: 392585467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_75
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 536
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db8ff79a5197904281d3655a655001b
+      internalID: -763963657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_76
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 527
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd2cda09c746f54188a8476216f609b
+      internalID: -295421751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_77
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 524
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847fd10130682ea4988715490b779a54
+      internalID: -925090338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_78
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 536
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554551308d11eea4e8088f013727843a
+      internalID: 85647308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_79
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26904a6bb598e314aa2425e66e949036
+      internalID: 942140221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_80
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b4562dfb144e4b4bae72ac84d08e1af
+      internalID: -281236842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_81
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98d614a47cd65d74895a0f1c144ff6e6
+      internalID: -1025475797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_82
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaff70d06203e314093cdd5f84bea90c
+      internalID: -1614656612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_83
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53b62587e9a7f3544a3814a630cfed84
+      internalID: 1818599832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_84
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0035761795eb4439e555333116335c
+      internalID: -351833617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_85
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6d9bb67bfdda5428289b878c3cf5a1
+      internalID: -1263924354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_86
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8d926c926866d1479287330491291d0
+      internalID: -1829261917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_87
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e3e336e6f98114993baffc04638dc1
+      internalID: 1474092459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_88
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 492
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd0af3780f89ae4e9d7746cde724e5b
+      internalID: -1137592142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_89
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 464
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f9c17e805ddf2d48a76c43ceff42529
+      internalID: 1655317602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_90
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 464
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73762cfbe10de404aabbe33220ee4fc4
+      internalID: 1397078205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_91
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 464
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d67b78d43036784eac0b70af06c71a0
+      internalID: -1522620084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_92
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 489
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6c3eabb30ee18e45bf148d6c12a5599
+      internalID: 1593435689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_93
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 464
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89902fed4b1725b41b63c72a363e23ea
+      internalID: -974902870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_94
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 489
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aba4415ab12b1274585d0b6d8d588864
+      internalID: -443895096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_95
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 464
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efc3819ac9ad87488163d1abb0cc202
+      internalID: -1086180911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_96
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 489
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc52767b8c4daf64facd1308180639de
+      internalID: -378261458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_97
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 464
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e269833e418aa4d8f49e8827c2bf04
+      internalID: 242634390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_98
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 489
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8416b9cbe5346e4a94286d0df2de826
+      internalID: 1086784151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_99
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 464
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d875b780eba8be49a2c0524e05dbb0f
+      internalID: 1571703501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_100
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 464
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee914067331f999469c9454c9e981b91
+      internalID: -1443909918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_101
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 486
+        width: 48
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc8f290f0443184fb1c1bb90349a256
+      internalID: 1566801439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_102
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 464
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f70f174d8217be4eaabe5fd11f0bcbd
+      internalID: -1781910348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_103
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 458
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af305c9cdfc55984489beb6fb1aa702c
+      internalID: -1489371712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_104
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 458
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938fd00c17545be429ae6086109db918
+      internalID: 1366229919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_105
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 461
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01aa396672161aa439176e99399a57ba
+      internalID: 567715627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_106
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 472
+        width: 50
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3831ba769ac270449b24d22fcac16539
+      internalID: 1675448687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_107
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 485
+        width: 28
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd5b08a36adf6d46b298a1e5f4c8ad8
+      internalID: -2091136968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_108
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 472
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03dddbb297d8a2a4fa96ac2712d22f3c
+      internalID: -999849805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_109
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 464
+        width: 48
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d60034b98814c43bac5078673074c0
+      internalID: 1251814370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_110
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 470
+        width: 28
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5d279bb43e37c4992a413b910eb5fb
+      internalID: -1431918955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_111
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 396
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38678dbbf31783f49887facd91180338
+      internalID: 963859044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_112
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 394
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9841d087f15ab74488f529f470662c4d
+      internalID: -1203289371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_113
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 392
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18f4da8828c08ba44951da60c4ee50df
+      internalID: -132193881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_114
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 396
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f46cc4b2cee75e408d5b4121606f537
+      internalID: -1070530051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_115
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 396
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab802bb3064bfd4fb040069805bc331
+      internalID: -975782691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_116
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 392
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b06c5bd1fa9669419c9fc5901ed8613
+      internalID: 2124885433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_117
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 424
+        width: 42
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c15f7c944e770354ea370992c11c5750
+      internalID: -2132494446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_118
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 424
+        width: 42
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38df657bf4764f0479dd7196c6aefe79
+      internalID: 977453247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_119
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf5c533784fd3348afd89fa0c4f670a
+      internalID: -125133020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_120
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3d1bad97363594c98092bcbeeaf989
+      internalID: 268432276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_121
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e165418c2dea66c41b2c58aacd966487
+      internalID: 948045869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_122
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf2cc8071cd86c43a5f6841950bf063
+      internalID: -899284923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_123
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78deb3e90e4f56f4aaa3b10092002e1b
+      internalID: -2085655304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_124
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceab9cb966271534abc68c04fa3fe0bb
+      internalID: 1839412199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_125
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571cf147656e0274383eb13bab435d1d
+      internalID: -1515805918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_126
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d7c0d292b8aac4a8850815375f2b03
+      internalID: 1963575339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_127
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25d3fd287b2acb48917b0c96ac7b3fd
+      internalID: -167334054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_128
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 424
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 463ea447fcac17941b150b64fa89dcd9
+      internalID: -1086123527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_129
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73e385cc59092843999589a20de71b7
+      internalID: -17079101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_130
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b97ca22b38527c24b97df165a61ccd2f
+      internalID: -702863711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_131
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 428
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d7c02fbef2e6049b28822d4515753b
+      internalID: -1784717523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_132
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933e05552f8a1e2459219b8192b814d5
+      internalID: -808850801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_133
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b4a096ae8dfd3846b511e224dc63275
+      internalID: 1697725018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_134
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669ec9a50a1e1f44dbfa1171b0c44a10
+      internalID: 1119150212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_135
+      rect:
+        serializedVersion: 2
+        x: 714
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c550e07231ef81b408d9bff15feb2de8
+      internalID: -312781982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_136
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac4d257e83786b45a606f97f47d94ca
+      internalID: -418951371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_137
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 428
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b070fe6aa13b4499592c39855621fd
+      internalID: -1718531658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_138
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb2ac7efd33f394883cf6a71ffabfb0
+      internalID: -1294624702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_139
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6936a2aaa0782b94982935d755bd9eb0
+      internalID: 1612913788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_140
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 428
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c81531cd3cedfd142a326814e0949fcd
+      internalID: -1255948237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_141
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 398
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5cb45a76ece68f41af42085d4fdec31
+      internalID: 1056180217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_142
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 398
+        width: 33
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd92fc38231be8e418f0eb355166fa4f
+      internalID: -585039154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_143
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 398
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf559bd02f54b74db16bfb2a2d52e2b
+      internalID: -630356869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_144
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 398
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4612fd35606e4a94787d34e5df2b3359
+      internalID: 1676649972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_145
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 394
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb3aab9ca0124f3468b5ebef5ad83fee
+      internalID: -336167667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_146
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 394
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cfc99b067b9ef545b1f22c3c5c7f3df
+      internalID: -798745610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_147
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 328
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0368c87f4f8bc744c8d42082f954228f
+      internalID: -2086779321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_148
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 328
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3550521a713ca5a4283cee1d5b87d3ff
+      internalID: -688070513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_149
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 330
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcec5d9da557c0c458382c7a4cc363bc
+      internalID: 1953785920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_150
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 332
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac99586e130e2a4ba19194cb3ce1660
+      internalID: -1455373117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_151
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 332
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22e454a9080860f4b8ce40c19496204b
+      internalID: 101519340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_152
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 330
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7a8199685b54f4fa4c60b0220ff221
+      internalID: -2105060238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_153
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 328
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d9da689d5eec9f42b2c892ab39f0fd2
+      internalID: -1987848277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_154
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 332
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e7d94aac84ac44f8fe8ccab029d4d1
+      internalID: -843842833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_155
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 332
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc714c7f849cffc41b8cbd38283cd668
+      internalID: 1694008046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_156
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 328
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f890a279d0544642a53f4179764f692
+      internalID: -1378705081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_157
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 330
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a153ca878967ec4ea58909e3f7333a7
+      internalID: -1584365709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_158
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 332
+        width: 48
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec3c4b063e03d440bc18edbbb913218
+      internalID: -1166223272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_159
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 264
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711952f1bff646b43ae387ceabc470dc
+      internalID: -848064979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_160
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 308
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 918c0579cbd1f2d4aaf3d07364c155df
+      internalID: -1715233787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_161
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 264
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 072adf6a587ee2a468d8d4667dac4bd3
+      internalID: -1946606564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_162
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 308
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1e5a3643c484f47ad63ec348b7d519
+      internalID: 108230550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_163
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 264
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a3a5830fd07b84f89f7be14a720e1e
+      internalID: 1561516892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_164
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 264
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1bdfad583d190b49823160ccddb4ee2
+      internalID: -1431497944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_165
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 301
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27fd3cde5ef9df44bb423fd6655b4ce
+      internalID: -1312040706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_166
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 264
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191fd2bdea371c542907c02b98d17892
+      internalID: -944073720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_167
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 264
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d2db78b6bf4f049b8d6cf3ae072168
+      internalID: 104958327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_168
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 306
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0226e69f99425347879882524c48776
+      internalID: 226766633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_169
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 264
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0249ad61fbcf3214e80973daa2f56b19
+      internalID: -501171373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_170
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 264
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f97a8ef80fb7d64d868d26c6ffb39d0
+      internalID: 511591550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_171
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 308
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20ae8e5d8b822849b058f23a4d789e0
+      internalID: -140288605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_172
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 264
+        width: 48
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552871e9abb9df04a9b8aa45f55cba23
+      internalID: -1195341778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_173
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 308
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4efc68e4ca22c443ac266e63b2bd261
+      internalID: 1759501137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_174
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 302
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6de80c43d476646bf4a5c82c8c796f
+      internalID: -1056187960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_175
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 302
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c82a95b58937f479f2916ed4cb46db
+      internalID: -1520224116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_176
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 286
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47fd02329ff5b948b928460b7d53927
+      internalID: -1055434406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_177
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 283
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f022d1ea2e3ba0d4fb3b1ce644b99b62
+      internalID: 1505018030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_178
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 286
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c272b621d7f925d49b5638da7054e4d3
+      internalID: 982869475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_179
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 286
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d581049c5fc307b45acaecdf3ce43d03
+      internalID: 809324774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_180
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 286
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fa16045f8cb6441a405b6b645dc02b
+      internalID: 287760458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_181
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 264
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261002b4a3a82ec4f81e9d95ac24e48f
+      internalID: -686538167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_182
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 264
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b76e91a492d10a44b615bb1435304cf
+      internalID: 1412019727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_183
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 264
+        width: 46
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fe796f9b2681cf45839b8e1a918d10b
+      internalID: -284595717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_184
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 228
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76af4a697bad29b4a917371da29f7bbd
+      internalID: 932405348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_185
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 228
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 510795edfb428534d8017a714a2a4eeb
+      internalID: -729354181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_186
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 228
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ffdb5a44a9bb78458f30e2e5de5b5db
+      internalID: -1580401410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_187
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 228
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc195db86a2b064496774cc5ae9588d
+      internalID: -1434230608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_188
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 228
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed3bfc2849a331048bcefc418fc7b0a7
+      internalID: -1310969582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_189
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 228
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1481d13e8b06d29499de3c978945d253
+      internalID: -1781745840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_190
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 200
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f9f4120fbfd6d49adc041fc29508f6
+      internalID: -549944513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_191
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 200
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b424a05d8fd366e4a8d8ae0a3ffb79a1
+      internalID: 2018633790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_192
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 237
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7527f1ad81004274298e811aab040b30
+      internalID: 1218841531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_193
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 200
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77ec4b8cdacb954fac5ae8004b26408
+      internalID: -1798172344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_194
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 200
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0a40e58e4e10f4099dae192ce0805a
+      internalID: -348747253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_195
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 242
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabe59eb03551374a8067c40f66ce0e8
+      internalID: 1279607692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_196
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 200
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a23f68e99a31d45be3da875ab5edc5
+      internalID: -1740757621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_197
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 216
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb01dcbc8176ca4e957f0bcec416c60
+      internalID: 1875455380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_198
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 216
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7442d18d56ba6b24ea36dd7ca61b2b31
+      internalID: -196787134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_199
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 216
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a66d7e200e0f8468e4b8e03be94457
+      internalID: -1031868243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_200
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 216
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1d3b44466fc1a41a25f8b99d52c4b3
+      internalID: 1746854428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_201
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 216
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03f80239831c8b24882e39032e31415f
+      internalID: 852546882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_202
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 216
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5227810bb39f3a746b91486a4daaf0e2
+      internalID: 723362048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_203
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 216
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55485ddda137904ea2d896e8b5f5bdc
+      internalID: -162727188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_204
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 216
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852d22a4a6c358e49a6a8d60d6066145
+      internalID: 184062602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_205
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 216
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 230e98dfd467617448afc55b6da0697d
+      internalID: 1005834181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_206
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 216
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13dc06bd25f25ca478786d36147458f4
+      internalID: -567119403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_207
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 216
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a1c76dd597a62469cde9740d6739ba
+      internalID: 638610985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_208
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 216
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5302c8d4afb5b24180ce2c2f573cedd
+      internalID: 2108391392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_209
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 222
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b03d683ecc1d63429e749305fc912af
+      internalID: 1043644482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_210
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 219
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d42ab2bea89f8148a028736cf67b35e
+      internalID: 700406724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_211
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 222
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2acf845136882ae4180cdd9e0f60f378
+      internalID: -832785596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_212
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 222
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ec90c2561e0884cbf021814e686d9b
+      internalID: 1751807210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_213
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 222
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3234dfb31c2068e4db62a93eda033879
+      internalID: 315528954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_214
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 200
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7aecbce46fbc94bb3cfd82cd5f95b1
+      internalID: 1093789498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_215
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 200
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0eb969938a3f340a1308928b074bec
+      internalID: -834293950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_216
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 200
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a9dcac22972224abf881cffa0b5d55
+      internalID: -49000279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_217
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 200
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 999418448ebf09a41aa224df3af8826e
+      internalID: -783685269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_218
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 200
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd25d512eba56e04e932e412562db9ce
+      internalID: -105681678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_219
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 200
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 742ad619d6f5dc343aad8ac6a77a01d8
+      internalID: 839305283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_220
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 200
+        width: 46
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9334dafbe275d38409092cad2e19035d
+      internalID: -1106770895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_221
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 136
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb627cbd5d31bfd49840bdaae63d401c
+      internalID: 1167576385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_222
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 136
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea39e7d17ba87a4e97675d2355eb36d
+      internalID: -2110534002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_223
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 136
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b42f3949dac01348ae00114a3f4b920
+      internalID: 26901467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_224
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 152
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56cf90744cc7de54aa0ba46da5942042
+      internalID: 1330948181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_225
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 164
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc42bba1bc4cb9a4a9c44ea7a035ad18
+      internalID: -1024281174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_226
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 152
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c1031adc450e9e409347cd24ad5a208
+      internalID: -1753719156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_227
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 152
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d280211eb0d9cbd4d8490f909a37c98b
+      internalID: -637952702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_228
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 164
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10509c98586eace4a87866f95ab90389
+      internalID: -815234337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_229
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 152
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf321cebe56c9847ad93b5fa329e627
+      internalID: -589123936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_230
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 152
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81e13e2a216bcb4c9aef732dafd26cb
+      internalID: 1093180532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_231
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 164
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86371d469a8736e48ae526257d7ab2a2
+      internalID: 916234966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_232
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 152
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7371843563482134999d17cfaf195ec3
+      internalID: -606040390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_233
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 152
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4c5d325d886c74dac6e8c3cb94f5dc
+      internalID: 1743892225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_234
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 164
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38f8418a50e4314c84f7aacc86ff906
+      internalID: 727651589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_235
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 152
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1605136aaa8261d4c8cac1747c8680e8
+      internalID: 295131500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_236
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 152
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa898e320858d646af88dcd200abedb
+      internalID: 720371755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_237
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 164
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf2de020cf1c39d49818e12b36560a67
+      internalID: 418420597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_238
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 152
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb4d43882e46514ba69e81e9422d56d
+      internalID: -859348760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_239
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 152
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05bb1fb792781d24c907abb0b87021b7
+      internalID: -1647525458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_240
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 164
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6dc76e4c923ad47b2fe704b5d5da62
+      internalID: -1331109974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_241
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 152
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b2e4d583e92e343b303ccde61c08b1
+      internalID: -1105440178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_242
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 152
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483c860caa7e4854bbc3ac905f1a0158
+      internalID: -1837075092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_243
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 164
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc372f6f3f5a4784bbe9b8d5ab6a5231
+      internalID: 2068121713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_244
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 152
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cd24a7870fba046ae77e135672927d
+      internalID: -2012222969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_245
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 152
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f89a70e802770143a357df1ad0dd591
+      internalID: 895081834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_246
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 164
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b795214d234a23842a2843c5b8f288a9
+      internalID: -1476553852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_247
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 152
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e2439b79e49af41aa8ab057b7b9c57
+      internalID: 1204344150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_248
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 152
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39b4954ad9cb964f81ac68a9f707d74
+      internalID: 1402734878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_249
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 164
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63e9dec01f07bd42b1eba48497dc1b1
+      internalID: 935340002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_250
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 152
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23480ce6a29cefb4dad83a9ca28e5c15
+      internalID: -2079077501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_251
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 136
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9beb00ce9370644fa9c005424f9b3ec
+      internalID: -508056776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_252
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 136
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b09df1f3f1ed64a8a63c2d81e7f280
+      internalID: 1005737393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_253
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 136
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c6559b1aa3f28b478095fb5bd8b60a9
+      internalID: 1636013968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_254
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 136
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0022a8034e5ab354fb416a3334711983
+      internalID: 1475360236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_255
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 136
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3098747e7cab44a88d5e1a69780e65
+      internalID: 947245604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_256
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 136
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39de8a6043cebc43a682602624f7849
+      internalID: 1164665139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_257
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 136
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cecd0ce9d0f97544399aa2c350c87907
+      internalID: -1385552557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_258
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 136
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce03ebecb0defc9458ba44ce241171e1
+      internalID: -1785970316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_259
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 136
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f388f1d67e1ac94286cef1148571ad8
+      internalID: 1503228952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_260
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01909d4339b6d648b6b580d4816cabe
+      internalID: -32289300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_261
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df43fcd0041ed004db38bbb09bb31832
+      internalID: 377744801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_262
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffae09a0b79dd6e42bfb967f5f7dd960
+      internalID: -1987722521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_263
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856b4706887aa3d4caa7a9461bd8eb14
+      internalID: 2045828445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_264
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c250de3508001845bb488c7571754d4
+      internalID: 1372610589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_265
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ef96c4c377d8d47b59b0372ad4a038
+      internalID: -426134803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_266
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f42d37045a5fa40b7f395377594912
+      internalID: 245633601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_267
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbafe6bbcef02249820fe3c3fd9c94d
+      internalID: -1360471028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_268
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9253d675febd5b441a5a3865e2dee557
+      internalID: 1124136409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_269
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ed546441807d14b8b9642ebbe5c675
+      internalID: -1578942558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_270
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6181946dcb2a5d849864be2c9d7bdd0f
+      internalID: -663498418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_271
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 72
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fed4fdc5c183084dba988b28025a761
+      internalID: -1941791812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_272
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 18
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c42e8c91c97a2840a7cf9a6695414c3
+      internalID: 2094301771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_273
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 18
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc5b3dffba91e54db149c5968a62f15
+      internalID: -111041256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_274
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 18
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a630d4783bdd5bc4090b24e92823bd23
+      internalID: 521745963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_275
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 18
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd881d7b71c896499642df022b023b3
+      internalID: 1326567281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_276
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 16
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdbceb8ea6eb05e45b84dcdcbe6ca140
+      internalID: -492598625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_277
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ee40606fdefc6499a5f73627355f63
+      internalID: -1041912427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_278
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c4cbdee7e3b97429f5a34757348bb5
+      internalID: -2091581115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_279
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e083d65cf5f3814b93fc3a73fdf532a
+      internalID: -1348177335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_280
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af220e590ece06143bb203a3df77d38a
+      internalID: -111423560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_281
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd2eb47828da79499fe3c4e35444bb5
+      internalID: -1909987084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_282
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d2971742404fb4c95a821c8d6cb071
+      internalID: -601462784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_283
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ba97ab4636e0640bce3065ce18a1a4
+      internalID: -1814778386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_284
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9055fa5ee0cf8444ac16fe817c72dd1
+      internalID: 704625396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_285
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3439cd7e8fd1374da36c4603e9c3596
+      internalID: 273014579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_286
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8a2a26bfcc63c44aec95a3064de9d4
+      internalID: -4874955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_287
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627ceb62c6aa0e54eb8177f5466ffbb9
+      internalID: -1073644112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_288
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 40
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be70e8d206c15d047907c6b4b3cd9ebe
+      internalID: 1658325759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_289
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 8
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5d7857ebbeadf43a57ef4c332d24a8
+      internalID: -1462703313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_290
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 8
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b270cfb455e8b940883a676f7b9b828
+      internalID: 648918054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_291
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 8
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3a16fd094a7d54a8472d063a247e26
+      internalID: -1242994486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_292
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 8
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb4a8d5a679eb34e89c390e615044da
+      internalID: 1738800382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_293
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 8
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e510a0a7b48ef354c846e34298aa38a1
+      internalID: -1513623576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_294
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 14
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8750bd0c099bd44bf7b571a8e32ce4
+      internalID: 1352864055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation-series_sheet_default_295
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 14
+        width: 32
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ad1c6eeb3bdbb4ba6f659c3c1c5d8c
+      internalID: 580970238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3ce00d80df36a3c4fa3ec0f2aee88600
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      playstation-series_sheet_default_0: 708656649
+      playstation-series_sheet_default_1: -1540425513
+      playstation-series_sheet_default_10: -1854240222
+      playstation-series_sheet_default_100: -1443909918
+      playstation-series_sheet_default_101: 1566801439
+      playstation-series_sheet_default_102: -1781910348
+      playstation-series_sheet_default_103: -1489371712
+      playstation-series_sheet_default_104: 1366229919
+      playstation-series_sheet_default_105: 567715627
+      playstation-series_sheet_default_106: 1675448687
+      playstation-series_sheet_default_107: -2091136968
+      playstation-series_sheet_default_108: -999849805
+      playstation-series_sheet_default_109: 1251814370
+      playstation-series_sheet_default_11: -1587542489
+      playstation-series_sheet_default_110: -1431918955
+      playstation-series_sheet_default_111: 963859044
+      playstation-series_sheet_default_112: -1203289371
+      playstation-series_sheet_default_113: -132193881
+      playstation-series_sheet_default_114: -1070530051
+      playstation-series_sheet_default_115: -975782691
+      playstation-series_sheet_default_116: 2124885433
+      playstation-series_sheet_default_117: -2132494446
+      playstation-series_sheet_default_118: 977453247
+      playstation-series_sheet_default_119: -125133020
+      playstation-series_sheet_default_12: -570627508
+      playstation-series_sheet_default_120: 268432276
+      playstation-series_sheet_default_121: 948045869
+      playstation-series_sheet_default_122: -899284923
+      playstation-series_sheet_default_123: -2085655304
+      playstation-series_sheet_default_124: 1839412199
+      playstation-series_sheet_default_125: -1515805918
+      playstation-series_sheet_default_126: 1963575339
+      playstation-series_sheet_default_127: -167334054
+      playstation-series_sheet_default_128: -1086123527
+      playstation-series_sheet_default_129: -17079101
+      playstation-series_sheet_default_13: -1576064570
+      playstation-series_sheet_default_130: -702863711
+      playstation-series_sheet_default_131: -1784717523
+      playstation-series_sheet_default_132: -808850801
+      playstation-series_sheet_default_133: 1697725018
+      playstation-series_sheet_default_134: 1119150212
+      playstation-series_sheet_default_135: -312781982
+      playstation-series_sheet_default_136: -418951371
+      playstation-series_sheet_default_137: -1718531658
+      playstation-series_sheet_default_138: -1294624702
+      playstation-series_sheet_default_139: 1612913788
+      playstation-series_sheet_default_14: 1932013726
+      playstation-series_sheet_default_140: -1255948237
+      playstation-series_sheet_default_141: 1056180217
+      playstation-series_sheet_default_142: -585039154
+      playstation-series_sheet_default_143: -630356869
+      playstation-series_sheet_default_144: 1676649972
+      playstation-series_sheet_default_145: -336167667
+      playstation-series_sheet_default_146: -798745610
+      playstation-series_sheet_default_147: -2086779321
+      playstation-series_sheet_default_148: -688070513
+      playstation-series_sheet_default_149: 1953785920
+      playstation-series_sheet_default_15: 663618873
+      playstation-series_sheet_default_150: -1455373117
+      playstation-series_sheet_default_151: 101519340
+      playstation-series_sheet_default_152: -2105060238
+      playstation-series_sheet_default_153: -1987848277
+      playstation-series_sheet_default_154: -843842833
+      playstation-series_sheet_default_155: 1694008046
+      playstation-series_sheet_default_156: -1378705081
+      playstation-series_sheet_default_157: -1584365709
+      playstation-series_sheet_default_158: -1166223272
+      playstation-series_sheet_default_159: -848064979
+      playstation-series_sheet_default_16: -451212776
+      playstation-series_sheet_default_160: -1715233787
+      playstation-series_sheet_default_161: -1946606564
+      playstation-series_sheet_default_162: 108230550
+      playstation-series_sheet_default_163: 1561516892
+      playstation-series_sheet_default_164: -1431497944
+      playstation-series_sheet_default_165: -1312040706
+      playstation-series_sheet_default_166: -944073720
+      playstation-series_sheet_default_167: 104958327
+      playstation-series_sheet_default_168: 226766633
+      playstation-series_sheet_default_169: -501171373
+      playstation-series_sheet_default_17: 1807116066
+      playstation-series_sheet_default_170: 511591550
+      playstation-series_sheet_default_171: -140288605
+      playstation-series_sheet_default_172: -1195341778
+      playstation-series_sheet_default_173: 1759501137
+      playstation-series_sheet_default_174: -1056187960
+      playstation-series_sheet_default_175: -1520224116
+      playstation-series_sheet_default_176: -1055434406
+      playstation-series_sheet_default_177: 1505018030
+      playstation-series_sheet_default_178: 982869475
+      playstation-series_sheet_default_179: 809324774
+      playstation-series_sheet_default_18: 980053522
+      playstation-series_sheet_default_180: 287760458
+      playstation-series_sheet_default_181: -686538167
+      playstation-series_sheet_default_182: 1412019727
+      playstation-series_sheet_default_183: -284595717
+      playstation-series_sheet_default_184: 932405348
+      playstation-series_sheet_default_185: -729354181
+      playstation-series_sheet_default_186: -1580401410
+      playstation-series_sheet_default_187: -1434230608
+      playstation-series_sheet_default_188: -1310969582
+      playstation-series_sheet_default_189: -1781745840
+      playstation-series_sheet_default_19: 625611787
+      playstation-series_sheet_default_190: -549944513
+      playstation-series_sheet_default_191: 2018633790
+      playstation-series_sheet_default_192: 1218841531
+      playstation-series_sheet_default_193: -1798172344
+      playstation-series_sheet_default_194: -348747253
+      playstation-series_sheet_default_195: 1279607692
+      playstation-series_sheet_default_196: -1740757621
+      playstation-series_sheet_default_197: 1875455380
+      playstation-series_sheet_default_198: -196787134
+      playstation-series_sheet_default_199: -1031868243
+      playstation-series_sheet_default_2: 1566813286
+      playstation-series_sheet_default_20: 1986349856
+      playstation-series_sheet_default_200: 1746854428
+      playstation-series_sheet_default_201: 852546882
+      playstation-series_sheet_default_202: 723362048
+      playstation-series_sheet_default_203: -162727188
+      playstation-series_sheet_default_204: 184062602
+      playstation-series_sheet_default_205: 1005834181
+      playstation-series_sheet_default_206: -567119403
+      playstation-series_sheet_default_207: 638610985
+      playstation-series_sheet_default_208: 2108391392
+      playstation-series_sheet_default_209: 1043644482
+      playstation-series_sheet_default_21: 11113078
+      playstation-series_sheet_default_210: 700406724
+      playstation-series_sheet_default_211: -832785596
+      playstation-series_sheet_default_212: 1751807210
+      playstation-series_sheet_default_213: 315528954
+      playstation-series_sheet_default_214: 1093789498
+      playstation-series_sheet_default_215: -834293950
+      playstation-series_sheet_default_216: -49000279
+      playstation-series_sheet_default_217: -783685269
+      playstation-series_sheet_default_218: -105681678
+      playstation-series_sheet_default_219: 839305283
+      playstation-series_sheet_default_22: -1623332006
+      playstation-series_sheet_default_220: -1106770895
+      playstation-series_sheet_default_221: 1167576385
+      playstation-series_sheet_default_222: -2110534002
+      playstation-series_sheet_default_223: 26901467
+      playstation-series_sheet_default_224: 1330948181
+      playstation-series_sheet_default_225: -1024281174
+      playstation-series_sheet_default_226: -1753719156
+      playstation-series_sheet_default_227: -637952702
+      playstation-series_sheet_default_228: -815234337
+      playstation-series_sheet_default_229: -589123936
+      playstation-series_sheet_default_23: 1771551752
+      playstation-series_sheet_default_230: 1093180532
+      playstation-series_sheet_default_231: 916234966
+      playstation-series_sheet_default_232: -606040390
+      playstation-series_sheet_default_233: 1743892225
+      playstation-series_sheet_default_234: 727651589
+      playstation-series_sheet_default_235: 295131500
+      playstation-series_sheet_default_236: 720371755
+      playstation-series_sheet_default_237: 418420597
+      playstation-series_sheet_default_238: -859348760
+      playstation-series_sheet_default_239: -1647525458
+      playstation-series_sheet_default_24: 674063247
+      playstation-series_sheet_default_240: -1331109974
+      playstation-series_sheet_default_241: -1105440178
+      playstation-series_sheet_default_242: -1837075092
+      playstation-series_sheet_default_243: 2068121713
+      playstation-series_sheet_default_244: -2012222969
+      playstation-series_sheet_default_245: 895081834
+      playstation-series_sheet_default_246: -1476553852
+      playstation-series_sheet_default_247: 1204344150
+      playstation-series_sheet_default_248: 1402734878
+      playstation-series_sheet_default_249: 935340002
+      playstation-series_sheet_default_25: 1758759546
+      playstation-series_sheet_default_250: -2079077501
+      playstation-series_sheet_default_251: -508056776
+      playstation-series_sheet_default_252: 1005737393
+      playstation-series_sheet_default_253: 1636013968
+      playstation-series_sheet_default_254: 1475360236
+      playstation-series_sheet_default_255: 947245604
+      playstation-series_sheet_default_256: 1164665139
+      playstation-series_sheet_default_257: -1385552557
+      playstation-series_sheet_default_258: -1785970316
+      playstation-series_sheet_default_259: 1503228952
+      playstation-series_sheet_default_26: -1264694870
+      playstation-series_sheet_default_260: -32289300
+      playstation-series_sheet_default_261: 377744801
+      playstation-series_sheet_default_262: -1987722521
+      playstation-series_sheet_default_263: 2045828445
+      playstation-series_sheet_default_264: 1372610589
+      playstation-series_sheet_default_265: -426134803
+      playstation-series_sheet_default_266: 245633601
+      playstation-series_sheet_default_267: -1360471028
+      playstation-series_sheet_default_268: 1124136409
+      playstation-series_sheet_default_269: -1578942558
+      playstation-series_sheet_default_27: -818893103
+      playstation-series_sheet_default_270: -663498418
+      playstation-series_sheet_default_271: -1941791812
+      playstation-series_sheet_default_272: 2094301771
+      playstation-series_sheet_default_273: -111041256
+      playstation-series_sheet_default_274: 521745963
+      playstation-series_sheet_default_275: 1326567281
+      playstation-series_sheet_default_276: -492598625
+      playstation-series_sheet_default_277: -1041912427
+      playstation-series_sheet_default_278: -2091581115
+      playstation-series_sheet_default_279: -1348177335
+      playstation-series_sheet_default_28: 1344346125
+      playstation-series_sheet_default_280: -111423560
+      playstation-series_sheet_default_281: -1909987084
+      playstation-series_sheet_default_282: -601462784
+      playstation-series_sheet_default_283: -1814778386
+      playstation-series_sheet_default_284: 704625396
+      playstation-series_sheet_default_285: 273014579
+      playstation-series_sheet_default_286: -4874955
+      playstation-series_sheet_default_287: -1073644112
+      playstation-series_sheet_default_288: 1658325759
+      playstation-series_sheet_default_289: -1462703313
+      playstation-series_sheet_default_29: 1839189177
+      playstation-series_sheet_default_290: 648918054
+      playstation-series_sheet_default_291: -1242994486
+      playstation-series_sheet_default_292: 1738800382
+      playstation-series_sheet_default_293: -1513623576
+      playstation-series_sheet_default_294: 1352864055
+      playstation-series_sheet_default_295: 580970238
+      playstation-series_sheet_default_3: -1337869165
+      playstation-series_sheet_default_30: 1375947575
+      playstation-series_sheet_default_31: -827685072
+      playstation-series_sheet_default_32: -1459012391
+      playstation-series_sheet_default_33: -1590203251
+      playstation-series_sheet_default_34: 1122627608
+      playstation-series_sheet_default_35: 1280125509
+      playstation-series_sheet_default_36: -2119465703
+      playstation-series_sheet_default_37: -1712960906
+      playstation-series_sheet_default_38: 312418224
+      playstation-series_sheet_default_39: 1283167080
+      playstation-series_sheet_default_4: 1615998975
+      playstation-series_sheet_default_40: -783616428
+      playstation-series_sheet_default_41: 1504015373
+      playstation-series_sheet_default_42: -1264824443
+      playstation-series_sheet_default_43: 1701320501
+      playstation-series_sheet_default_44: -197610391
+      playstation-series_sheet_default_45: 974432066
+      playstation-series_sheet_default_46: 242746019
+      playstation-series_sheet_default_47: 209092755
+      playstation-series_sheet_default_48: 1048371198
+      playstation-series_sheet_default_49: -1231249369
+      playstation-series_sheet_default_5: 956809670
+      playstation-series_sheet_default_50: -1461066503
+      playstation-series_sheet_default_51: 1455844308
+      playstation-series_sheet_default_52: 1260647815
+      playstation-series_sheet_default_53: 239033840
+      playstation-series_sheet_default_54: -2045566902
+      playstation-series_sheet_default_55: 471420428
+      playstation-series_sheet_default_56: 2108679153
+      playstation-series_sheet_default_57: -2110264754
+      playstation-series_sheet_default_58: -37356325
+      playstation-series_sheet_default_59: 2101741952
+      playstation-series_sheet_default_6: 350540041
+      playstation-series_sheet_default_60: 1043815282
+      playstation-series_sheet_default_61: -2065897147
+      playstation-series_sheet_default_62: 1058990778
+      playstation-series_sheet_default_63: 1318774116
+      playstation-series_sheet_default_64: 99336470
+      playstation-series_sheet_default_65: 282496074
+      playstation-series_sheet_default_66: 1251904985
+      playstation-series_sheet_default_67: -1571940833
+      playstation-series_sheet_default_68: 628574730
+      playstation-series_sheet_default_69: 1816448663
+      playstation-series_sheet_default_7: -548843645
+      playstation-series_sheet_default_70: 1655125615
+      playstation-series_sheet_default_71: -1068174725
+      playstation-series_sheet_default_72: -708568405
+      playstation-series_sheet_default_73: -915000611
+      playstation-series_sheet_default_74: 392585467
+      playstation-series_sheet_default_75: -763963657
+      playstation-series_sheet_default_76: -295421751
+      playstation-series_sheet_default_77: -925090338
+      playstation-series_sheet_default_78: 85647308
+      playstation-series_sheet_default_79: 942140221
+      playstation-series_sheet_default_8: -1298903671
+      playstation-series_sheet_default_80: -281236842
+      playstation-series_sheet_default_81: -1025475797
+      playstation-series_sheet_default_82: -1614656612
+      playstation-series_sheet_default_83: 1818599832
+      playstation-series_sheet_default_84: -351833617
+      playstation-series_sheet_default_85: -1263924354
+      playstation-series_sheet_default_86: -1829261917
+      playstation-series_sheet_default_87: 1474092459
+      playstation-series_sheet_default_88: -1137592142
+      playstation-series_sheet_default_89: 1655317602
+      playstation-series_sheet_default_9: -315516224
+      playstation-series_sheet_default_90: 1397078205
+      playstation-series_sheet_default_91: -1522620084
+      playstation-series_sheet_default_92: 1593435689
+      playstation-series_sheet_default_93: -974902870
+      playstation-series_sheet_default_94: -443895096
+      playstation-series_sheet_default_95: -1086180911
+      playstation-series_sheet_default_96: -378261458
+      playstation-series_sheet_default_97: 242634390
+      playstation-series_sheet_default_98: 1086784151
+      playstation-series_sheet_default_99: 1571703501
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
