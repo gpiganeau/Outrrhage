@@ -32,4 +32,10 @@ public class BloodStack : MonoBehaviour
         int currentStack = blood.Regain(amount);
         display.Sync(currentStack);
     }
+
+    public void ConsumeStack(int amount)
+    {
+        int currentStack = blood.Consume(amount);
+        display.Sync(currentStack);
+    }
 }

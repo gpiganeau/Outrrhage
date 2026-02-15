@@ -48,7 +48,8 @@ class Assassinate : SkillStrategy
             return baseDamage;
         }
 
-        int bloodAmount = target.GetComponent<BloodStack>().GetStackedValue();
+        var stack = target.GetComponent<BloodStack>();
+        int bloodAmount = stack.GetStackedValue();
         if (bloodAmount > 0) 
         {
             int damage = baseDamage + 1 + bloodAmount;
@@ -56,6 +57,9 @@ class Assassinate : SkillStrategy
             {
                 amountHealed = Mathf.CeilToInt(bloodAmount * bloodToHealRatio);
             }
+
+            stack.ConsumeStack(bloodAmount);
+
             return damage; 
         }
         else
