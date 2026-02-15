@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
@@ -17,6 +18,11 @@ public class HUD : MonoBehaviour
     private SkillsController _skillsController;
     private DamageController _damageController;
 
+    [Header("Resources Gauges")]
+    [SerializeField] ResourceGauge _healthGauge;
+    [SerializeField] ResourceGauge _bloodGauge;
+    [SerializeField] ResourceGauge _rageGauge;
+
     [Header("Debug")]
     public TMP_Text _rielHealth;
     public TMP_Text _rielBlood;
@@ -31,7 +37,6 @@ public class HUD : MonoBehaviour
         // -- Activate HUD so we can hide it in scene while working and still play correctly.
         GetComponent<Canvas>().enabled = true;
     }
-
     public void Initialize(SkillsController sc, DamageController dc)
     {
         _skillsController = sc;
@@ -49,7 +54,7 @@ public class HUD : MonoBehaviour
 
         // -- Force Refresh Due to Actual Initialization Races
         OnSkillsChanged(sc.ActiveSkillStrategies);
-
+        CharacterComponent.Blood.OnBloodChanged.AddListener((currentBlood, maxBlood) => OnBloodChanged(currentBlood, maxBlood));
     }
     void OnEnable()
     {
@@ -75,6 +80,7 @@ public class HUD : MonoBehaviour
             _damageController.OnDamaged.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
             _damageController.OnHealed.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
         }
+        
     }
 
     public void Hide()
@@ -120,13 +126,18 @@ public class HUD : MonoBehaviour
 	{
 		float healthPercentage = currentHealth / maxHealth * 100;
         _rielHealth.text = $"Riel Health : {currentHealth} / {maxHealth} ({healthPercentage}%)";
+        _healthGauge.UpdateGauge(currentHealth, maxHealth);
+
+    }
+
+    private void OnBloodChanged(float currentBlood, float maxBlood)
+    {
+        _bloodGauge.UpdateGauge(currentBlood, maxBlood);
+        _rielBlood.text = $"Riel Blood : {currentBlood}/{maxBlood}";
     }
 
     private void OnSkillExecuted(SkillStrategy skill, int slot)
     {
-        // -- Todo : Actually we should have events on Blood, and register blood change somewhere.
-        Blood b = CharacterComponent.Blood;
-        _rielBlood.text = $"Riel Blood : {b.Amount}/{b.Maximum}";
         if(skill.IsInCooldown)
             _skillBar.SetInCooldown(slot);
     } 

@@ -31,7 +31,7 @@ MonoBehaviour:
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 1
-  BloodCost: 0
+  BloodCost: 2
   BloodStackingAmount: 0
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash

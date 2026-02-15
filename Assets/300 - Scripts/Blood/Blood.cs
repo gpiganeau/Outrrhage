@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class Blood
@@ -11,10 +12,13 @@ public class Blood
 
     public void SetMaxAmount(int newMaxAmount) => _maxAmount = newMaxAmount;
 
+    public UnityEvent<int, int> OnBloodChanged = new UnityEvent<int, int>();
+
     public int Consume(int amount)
     {
         _currentAmount -= amount;
         _currentAmount = Mathf.Clamp(_currentAmount, 0, _maxAmount);
+        OnBloodChanged?.Invoke(_currentAmount, _maxAmount);
         return _currentAmount;
     }
 
@@ -22,6 +26,7 @@ public class Blood
     {
         _currentAmount += amount;
         _currentAmount = Mathf.Clamp(_currentAmount, 0, _maxAmount);
+        OnBloodChanged?.Invoke(_currentAmount, _maxAmount);
         return _currentAmount;
     }
 
@@ -34,12 +39,14 @@ public class Blood
     {
         this.SetMaxAmount(Max);
         _currentAmount = Max;
+        OnBloodChanged?.Invoke(_currentAmount, _maxAmount);
     }
 
     public void InitializeEmpty(int Max)
     {
         SetMaxAmount(Max);
         _currentAmount = 0;
+        OnBloodChanged?.Invoke(_currentAmount, _maxAmount);
     }
 
     public void Initialize()
