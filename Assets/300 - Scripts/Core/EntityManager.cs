@@ -93,26 +93,61 @@ public class EntityManager : MonoBehaviour
         spawnSequence?.Kill();
     }
 
+
     internal void SpawnEntities(EntityType type, int count, Vector3 position, float spawnRadius)
     {
+        Sequence spawnSequence = DOTween.Sequence();
+
+        var s = SettingsManager.Instance.GameplaySettings;
+        float delayBetweenSpawns = s.spawnerTimeBetweenSpawns;
+
+         // -- Sort potential spawn positions by angle to player, to make sure the first spawned enemies are the ones in front of the playe
+        List<Vector3> potentialSpawnPositions = new List<Vector3>();
         for (int i = 0; i < count; i++)
         {
             Vector3 spawnPos = GetRandomPosAroundPoint(position, spawnRadius * 0.5f, spawnRadius);
+            potentialSpawnPositions.Add(spawnPos);
+        }
 
-            AIActorComponent prefabToSpawn = type switch
-            {
-                EntityType.Drones => enemyPrefabs[0],
-                EntityType.Humanoid => enemyPrefabs[1],
-                EntityType.Hybrid => null, // -- Hybrid not implemented yet
-                _ => null
-            };
+         Vector3 originalAimDir = (Riel.transform.position - position).normalized;
 
-            if (prefabToSpawn != null)
+         potentialSpawnPositions.Sort((a, b) => 
+        {
+            Vector3 aDirection = a - position;
+            Vector3 bDirection = b - position;
+            float aAngle = Mathf.Abs(Quaternion.FromToRotation(originalAimDir, aDirection).eulerAngles.y);
+            float bAngle = Mathf.Abs(Quaternion.FromToRotation(originalAimDir, bDirection).eulerAngles.y);
+            return aAngle.CompareTo(bAngle);
+        });
+
+        
+        for (int i = 0; i < count; i++)
+        {   
+            spawnSequence.AppendCallback(() =>
             {
-                SpawnEnemy(prefabToSpawn, spawnPos);
+                Vector3 spawnPos = GetRandomPosAroundPoint(position, spawnRadius * 0.5f, spawnRadius);
+                //Vector3 spawnPos = potentialSpawnPositions[i];
+
+                Logger.Combat($"Spawning {type} at {spawnPos}");
+                
+                AIActorComponent prefabToSpawn = type switch
+                {
+                    EntityType.Drones => enemyPrefabs[0],
+                    EntityType.Humanoid => enemyPrefabs[1],
+                    EntityType.Hybrid => null,
+                    _ => null
+                };
+                
+                if (prefabToSpawn != null)
+                {
+                    SpawnEnemy(prefabToSpawn, spawnPos);
+                }
+            });
+            
+            if (i < count - 1 && delayBetweenSpawns > 0f)
+            {
+                spawnSequence.AppendInterval(delayBetweenSpawns);
             }
-
-            // -- Add delay ?
         }
     }
 }

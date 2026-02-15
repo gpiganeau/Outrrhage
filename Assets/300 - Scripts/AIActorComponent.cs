@@ -60,7 +60,9 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
         {
             System.Type type = setupData.movementSetupData.movementStrategyScript.GetType();
             _movementStrategy = gameObject.AddComponent(type) as MovementStrategy;
-            _movementStrategy.Initialize(setupData.movementSetupData);
+
+            // -- Delayed call to let player react to spawn
+            DOVirtual.DelayedCall(setupData.TimeBeforeBrainActivation, () => _movementStrategy.Initialize(setupData.movementSetupData)); // -- Delayed Call to
         }
 
         if (setupData.attackSetupData != null)
