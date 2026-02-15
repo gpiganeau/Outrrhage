@@ -64,7 +64,7 @@ public class SkillSelectionUIManager : MonoBehaviour
         
         Time.timeScale = 0f; // Pause
         
-        RefreshUI();
+       // RefreshUI();
     }
     
     public void CloseMenu()
@@ -78,9 +78,11 @@ public class SkillSelectionUIManager : MonoBehaviour
             {
                 _menuPanel.SetActive(false);
                 Time.timeScale = 1f; // Unpause
+                HUD.Instance.Refresh();
             });
         
         DeselectSlot();
+
     }
     
     private void RefreshUI()

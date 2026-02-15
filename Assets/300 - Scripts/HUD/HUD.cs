@@ -53,7 +53,7 @@ public class HUD : MonoBehaviour
         } 
 
         // -- Force Refresh Due to Actual Initialization Races
-        OnSkillsChanged(sc.ActiveSkillStrategies);
+        Refresh();
         CharacterComponent.Blood.OnBloodChanged.AddListener((currentBlood, maxBlood) => OnBloodChanged(currentBlood, maxBlood));
     }
     void OnEnable()
@@ -101,6 +101,10 @@ public class HUD : MonoBehaviour
         _canvasGroup.DOFade(1, 0.5f);
     }
 
+    public void Refresh()
+    {
+        OnSkillsChanged(_skillsController.ActiveSkillStrategies);
+    }
     public void ToggleVisibility()
     {
         if (_canvasGroup.alpha > 0.5f) Hide();

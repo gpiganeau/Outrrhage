@@ -47,6 +47,8 @@ public class SkillSlot : MonoBehaviour
 
     public void SetAvailable(bool value)
     {
+        if (_icon == null) return;
+
         if(value)
         {
             _icon.color = Color.white;

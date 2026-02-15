@@ -17,7 +17,9 @@ public class SkillSelector : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
+
     
     public void OpenMenuForPlayer(SkillsController playerSkillsController)
     {
