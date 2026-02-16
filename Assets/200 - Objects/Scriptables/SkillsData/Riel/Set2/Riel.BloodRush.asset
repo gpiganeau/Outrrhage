@@ -15,7 +15,7 @@ MonoBehaviour:
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 686ec9966f661b24f93562e22b3a58a2, type: 3}
   SkillProjectilePrefab:
   - {fileID: 0}
-  Name: Execution
+  Name: Blood Rush
   Description: Todo
   Cooldown: 1
   IsHold: 0
