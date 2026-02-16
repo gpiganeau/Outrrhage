@@ -32462,7 +32462,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.size
-      value: 4
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
+      propertyPath: ChaosSequence.Array.data[1].delay
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[2].delay
@@ -32486,7 +32490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[1].stepName
-      value: Disable
+      value: Move camera
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[2].logEvent
@@ -32514,7 +32518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[2].stepEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[3].stepEvent.m_PersistentCalls.m_Calls.Array.size
@@ -32526,11 +32530,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[1].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[2].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[3].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -32574,11 +32578,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[1].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ZZ_DisablePlayerControl
+      value: ZZ_ChangeCameraSetting
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[2].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ZZ_EnablePlayerControl
+      value: ZZ_ChangeCameraSetting
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[3].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -32605,6 +32609,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 660c953a1b72b0045b8a17e8a3061d15, type: 2}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
+      propertyPath: ChaosSequence.Array.data[1].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: a044e44a476750c4a8c34e9cdfb7aee5, type: 2}
+    - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
+      propertyPath: ChaosSequence.Array.data[2].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: a044e44a476750c4a8c34e9cdfb7aee5, type: 2}
+    - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[3].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: a044e44a476750c4a8c34e9cdfb7aee5, type: 2}
@@ -32614,11 +32626,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[1].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: CameraSettings, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[2].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: CameraSettings, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7392633507576667129, guid: e5ab92f3ec4aa744b8f7f135d8943b4a, type: 3}
       propertyPath: ChaosSequence.Array.data[3].stepEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
