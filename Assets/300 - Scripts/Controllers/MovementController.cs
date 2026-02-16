@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
-using NUnit.Framework;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine.AI;
 
-public class MovementController: MonoBehaviour
+public class MovementController: MonoBehaviour, IAnimatable
 {
     [SerializeField] private Rigidbody _rigidbody;
     private Vector3 _preferedMovementDirection;
@@ -177,5 +175,9 @@ public class MovementController: MonoBehaviour
         return _facingVector;
     }
 
+    #endregion
+
+    #region  Animatable Implementation
+    public AnimController AnimController => animController;
     #endregion
 }

@@ -28,6 +28,9 @@ public class BloodwaveStrategy: SkillStrategy
 			projectileData.startingPosition += new Vector3(0, 1f, 0f); // Vertical Offset
 			projectiles[i] = projectileData;
 
+			// -- Animation
+			movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
+
 			// -- Blood Wave Logic -- 
 			var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
 			p.SetTravelMode(_storedSkillData.TravelMode);

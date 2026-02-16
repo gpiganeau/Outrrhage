@@ -68,7 +68,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
         Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
 
-        //SkillSelector.Instance.OpenMenuForPlayer(skillsController);
+        //   SkillSelector.Instance.OpenMenuForPlayer(skillsController);
     }
 
     public void EnableControls()

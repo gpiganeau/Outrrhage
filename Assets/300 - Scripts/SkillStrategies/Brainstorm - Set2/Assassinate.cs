@@ -27,6 +27,8 @@ class Assassinate : SkillStrategy
         };
 
         Projectile projectile = SpawnProjectile(projectileData, 0);
+		movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
+
 
         DOVirtual.DelayedCall(_storedSkillData.ProjectileLifetime, PostLifetimeEffects);
         PutInCooldown();

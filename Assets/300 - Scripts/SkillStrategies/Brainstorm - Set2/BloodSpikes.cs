@@ -21,7 +21,6 @@ class BloodSpikes : SkillStrategy
             case 1: SpikeSkillShot(firingDirection, movementController, team); break; 
             case 2: ExplodingSkillShot(firingDirection, movementController, team); break;
         } 
-        currentSpike = (currentSpike + 1) % 3; 
         return true;
     }
 
@@ -51,8 +50,17 @@ class BloodSpikes : SkillStrategy
 
         projectileData.startingPosition += new Vector3(0, 0.5f, 0f); // Vertical Offset
 
-        var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
-        p.SetTravelMode(_storedSkillData.TravelMode);
+
+        var Seq = DOTween.Sequence();
+        Seq.AppendCallback(() => movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[currentSpike]));
+        Seq.AppendInterval(0.25f);
+        Seq.AppendCallback(() => {
+             var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
+             p.SetTravelMode(_storedSkillData.TravelMode);
+            currentSpike = (currentSpike + 1) % 3; 
+
+        });
+
     }
 
     private void ExplodingSkillShot(Vector3 firingDirection, MovementController movementController, Team team)
@@ -81,11 +89,17 @@ class BloodSpikes : SkillStrategy
 
         projectileData.startingPosition += new Vector3(0, 0.5f, 0f); // Vertical Offset
 
-        var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
-        p.onProjectileHit.AddListener(Explosion);
-        p.SetTravelMode(_storedSkillData.TravelMode);
+        var Seq = DOTween.Sequence();
+        Seq.AppendCallback(() => movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[currentSpike]));
+        Seq.AppendInterval(0.85f);
+        Seq.AppendCallback(() => {
+            var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
+            p.onProjectileHit.AddListener(Explosion);
+            p.SetTravelMode(_storedSkillData.TravelMode);
+            currentSpike = (currentSpike + 1) % 3; 
+            PutInCooldown();
+        });
 
-        PutInCooldown();
     }
 
     private void Explosion(Projectile projectile, DamageController damageController)

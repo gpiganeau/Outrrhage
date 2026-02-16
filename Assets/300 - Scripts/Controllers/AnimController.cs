@@ -36,22 +36,6 @@ public class AnimController: MonoBehaviour
         animator.SetTrigger(key);
     }
 
-
-
-    public void Attack()
-    {
-        if (locked) return;
-
-        animator.SetTrigger("Slash");
-    }
-
-    public void Cast()
-    {
-        if (locked) return;
-
-        animator.SetTrigger("Cast");
-    }
-
     public void Hit()
     {
         if (locked) return;

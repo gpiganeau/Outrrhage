@@ -67,7 +67,6 @@ public class SkillsController: MonoBehaviour
             if (skill.Call(movementController, _team))
             {
                 OnSkillExecuted?.Invoke(skill, strategyIndex);
-                animController?.Trigger(skill.SkillData.AnimationKey);
             }
         }
     }

@@ -13,6 +13,7 @@ public class HealStrategy: SkillStrategy
         // -- Heal Implementation -- //
         if (movementController.TryGetComponent<DamageController>(out var dc))
         {
+			movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
             dc.Heal(_storedSkillData.ProjectileDamage[0]); // Use Damage for Heal Amount... - Also maybe we should spawna  projectile, that trigger with ourselve ? Idk.
         }
         // -------------------------- 

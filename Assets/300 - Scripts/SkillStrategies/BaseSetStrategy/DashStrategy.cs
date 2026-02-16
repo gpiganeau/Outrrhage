@@ -12,6 +12,7 @@ public class DashStrategy: SkillStrategy
 	{
         if (!base.Call(movementController, team)) return false;
         
+		movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
         movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
         PutInCooldown();
         return true;

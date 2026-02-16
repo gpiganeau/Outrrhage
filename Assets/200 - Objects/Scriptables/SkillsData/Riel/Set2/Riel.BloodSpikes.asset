@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 2fe5385023a7f064297bec3f1dd53c06, type: 3}
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Blood Spikes
+  Description: 
   Cooldown: 1
   IsHold: 0
   HoldDuration: 0
@@ -36,6 +37,10 @@ MonoBehaviour:
   BloodStackingAmount: 1
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
+  AnimationsKeys:
+  - ComboA
+  - ComboB
+  - ComboC
   vfxData:
     castVFXPrefab: {fileID: 0}
     castVFXOffset: {x: 0, y: 0, z: 0}
