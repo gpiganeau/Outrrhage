@@ -121,7 +121,7 @@ public class SkillsController: MonoBehaviour
     {
         if (activeSkillStrategies.Count >= _maxSkillSlots)
         {
-            Debug.LogWarning("Cannot add skill: max slots reached");
+            Logger.LogWarning(Logger.LogCategory.Combat, "Cannot add skill: max slots reached");
             return false;
         }
         
@@ -130,19 +130,7 @@ public class SkillsController: MonoBehaviour
         return true;
     }
     
-    /// <summary>
-    /// Retire une skill d'un slot spécifique
-    /// </summary>
-    public void RemoveSkill(int slotIndex)
-    {
-        if (slotIndex >= 0 && slotIndex < activeSkillStrategies.Count)
-        {
-            Destroy(activeSkillStrategies[slotIndex].gameObject);
-            activeSkillStrategies.RemoveAt(slotIndex);
-            OnSkillsChanged?.Invoke(activeSkillStrategies);
-        }
-    }
-    
+   
     /// <summary>
     /// Remplace une skill existante par une nouvelle
     /// </summary>

@@ -3,8 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
-public class SkillSlotUI : MonoBehaviour
+public class SkillSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("References")]
     [SerializeField] private Image _iconImage;
@@ -24,6 +25,7 @@ public class SkillSlotUI : MonoBehaviour
     private bool _isEmpty;
     
     public event Action<int, SkillData, bool> OnSlotClicked; // slotIndex, skillData, isEmpty
+    public event Action<int, SkillData, bool> OnSlotHovered; // hovered
     
     void Awake()
     {
@@ -88,13 +90,22 @@ public class SkillSlotUI : MonoBehaviour
     private void HandleClick()
     {
         OnSlotClicked?.Invoke(_slotIndex, _skillData, _isEmpty);
-        
-        // Petit feedback visuel
         transform.DOPunchScale(Vector3.one * 0.1f, 0.2f);
     }
     
     void OnDestroy()
     {
         _button?.onClick.RemoveListener(HandleClick);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        OnSlotHovered?.Invoke(_slotIndex, _skillData, true);
+    }
+
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        OnSlotHovered?.Invoke(_slotIndex, _skillData, false);
     }
 }

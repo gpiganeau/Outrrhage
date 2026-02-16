@@ -6,6 +6,7 @@ using DG.Tweening;
 
 public class SkillSelectionUIManager : MonoBehaviour
 {
+    #region Fields
     [Header("References")]
     [SerializeField] private SkillsController _targetSkillsController;
     [SerializeField] private SkillDatabase _skillDatabase;
@@ -19,6 +20,7 @@ public class SkillSelectionUIManager : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private Button _closeButton;
     [SerializeField] private TMP_Text _instructionsText;
+    [SerializeField] private TMP_Text _descriptionText;
     
     [Header("Animation")]
     [SerializeField] private float _animDuration = 0.3f;
@@ -28,7 +30,8 @@ public class SkillSelectionUIManager : MonoBehaviour
     private List<SkillSlotUI> _currentSkillSlots = new List<SkillSlotUI>();
     private int _selectedSlotIndex = -1;
     private bool _isOpen = false;
-    
+    #endregion
+    #region Core Setup
     void Start()
     {
         _closeButton?.onClick.AddListener(CloseMenu);
@@ -64,7 +67,7 @@ public class SkillSelectionUIManager : MonoBehaviour
         
         Time.timeScale = 0f; // Pause
         
-       // RefreshUI();
+        RefreshUI();
     }
     
     public void CloseMenu()
@@ -85,6 +88,7 @@ public class SkillSelectionUIManager : MonoBehaviour
 
     }
     
+    #endregion
     private void RefreshUI()
     {
         // Clear existing slots
@@ -114,6 +118,7 @@ public class SkillSelectionUIManager : MonoBehaviour
             }
             
             slotUI.OnSlotClicked += OnCurrentSkillSlotClicked;
+            slotUI.OnSlotHovered += OnSlotHovered;
             _currentSkillSlots.Add(slotUI);
         }
         
@@ -124,28 +129,43 @@ public class SkillSelectionUIManager : MonoBehaviour
             SkillSlotUI slotUI = slotObj.GetComponent<SkillSlotUI>();
             slotUI.SetSkill(skillData, -1); // -1 = available skill
             slotUI.OnSlotClicked += OnAvailableSkillClicked;
+            slotUI.OnSlotHovered += OnSlotHovered;
+        
+
         }
         
         UpdateInstructions();
     }
+
+    void OnSlotHovered(int slotIndex, SkillData skill, bool isHovering)
+    {
+        if (isHovering)
+        {
+            _descriptionText.text = skill != null ? skill.Description : "";
+        }
+        else
+        {
+            _descriptionText.text = "";
+        }
+    }
+
     
     private void OnCurrentSkillSlotClicked(int slotIndex, SkillData skill, bool isEmpty)
     {
+
+        Logger.Core("Slot index " + slotIndex + " clicked. Skill: " + (skill != null ? skill.Name : "Empty") + ", IsEmpty: " + isEmpty);
         if (_selectedSlotIndex == -1)
         {
-            // Première sélection
             _selectedSlotIndex = slotIndex;
             _currentSkillSlots[slotIndex].SetHighlight(true);
-            UpdateInstructions();
+            UpdateInstructions(skill);
         }
         else if (_selectedSlotIndex == slotIndex)
         {
-            // Deselect
             DeselectSlot();
         }
         else
         {
-            // Swap entre deux slots current
             _targetSkillsController.SwapSkills(_selectedSlotIndex, slotIndex);
             DeselectSlot();
             RefreshUI();
@@ -198,7 +218,7 @@ public class SkillSelectionUIManager : MonoBehaviour
         UpdateInstructions();
     }
     
-    private void UpdateInstructions()
+    private void UpdateInstructions(SkillData selectedSkill = null)
     {
         if (_instructionsText == null) return;
         

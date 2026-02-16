@@ -16,7 +16,8 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Blood Explosion
-  Description: 
+  Description: "Maintenez la touche associ\xE9e pour faire exploser les orbes de
+    sang au sol!"
   Cooldown: 3
   IsHold: 1
   HoldDuration: 0.7

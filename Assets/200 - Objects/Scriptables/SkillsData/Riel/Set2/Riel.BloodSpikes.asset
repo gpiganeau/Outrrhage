@@ -17,7 +17,7 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 2fe5385023a7f064297bec3f1dd53c06, type: 3}
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Blood Spikes
-  Description: 
+  Description: Tuez vos ennemis en rythme !
   Cooldown: 1
   IsHold: 0
   HoldDuration: 0
