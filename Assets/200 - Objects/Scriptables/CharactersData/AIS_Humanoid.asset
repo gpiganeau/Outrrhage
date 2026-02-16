@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90b4f106e0d7ce4b87b7cc28ea5675c, type: 3}
   m_Name: AIS_Humanoid
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
-  Name: I'm not a bot
-  maxHealth: 10
+  Name: Soldat du Chaos
+  maxHealth: 8
   movementSpeed: 5
   maxBloodStack: 8
   team: 2
@@ -27,3 +27,4 @@ MonoBehaviour:
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   movementSetupData: {fileID: 11400000, guid: 334c90e1c6753444ca12ceff40eea6ea, type: 2}
   attackSetupData: {fileID: 11400000, guid: a03256482c7ecce41af198d531478044, type: 2}
+  TimeBeforeBrainActivation: 0.5

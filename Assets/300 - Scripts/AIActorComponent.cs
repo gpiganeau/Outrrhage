@@ -147,6 +147,10 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
         // -- Check if last enemy Alive ? Or From  Enemy Data (Boss, Elite...) or % Chance of procing this ?
         Juicer.I.EnemyDeathEffect();
 
+        // -- Hides HUD
+        healthBarDisplay.gameObject.SetActive(false);
+        bloodStack.gameObject.SetActive(false);
+
         if (animController != null)
         {
             // -- Disable Controllers & Collisions for better death animation
