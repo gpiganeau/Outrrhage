@@ -21,7 +21,16 @@ class BloodExplosion : SkillStrategy
             ExecuteExplosion();
             parentController.SetSkillsDisabled(false, "SlashAttack");
             movementController.SetImmobilized(false, "SlashAttack");
-        });        
+        });
+
+        movementController.StartAimingMode(new PreviewData
+        {
+            shapeType = ShapeType.Area,
+            deployType = DeployType.Free,
+            radius = _storedSkillData.Radius,
+            range = _storedSkillData.ProjectileRange,
+            timeToDeploy = _storedSkillData.HoldDuration,
+        });
 
         return true;
     }

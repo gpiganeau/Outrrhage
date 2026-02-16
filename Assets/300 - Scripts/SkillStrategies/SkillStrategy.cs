@@ -53,6 +53,7 @@ public class SkillStrategy : MonoBehaviour
 
     public virtual void Release(MovementController movementController, Team team)
     {
+        movementController.StopAimingMode();
         // For chargeable skills, we might want to do something when the player releases the button
     }
 

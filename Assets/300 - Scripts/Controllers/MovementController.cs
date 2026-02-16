@@ -13,6 +13,9 @@ public class MovementController: MonoBehaviour
     private Vector3 _facingVector;
     private float _baseMovementSpeed;
 
+    private bool _isAiming;
+    private AimPreviewController _cachedAimPreviewController;
+
     private List<string> immobilizationSources;
     private Dictionary<string, float> speedAlterationSources = new Dictionary<string, float>();
 
@@ -34,6 +37,10 @@ public class MovementController: MonoBehaviour
     public void SetMovementDirection(Vector3 direction)
     {
         _preferedMovementDirection = direction.normalized;
+        if (_isAiming && _cachedAimPreviewController != null)
+        {
+           _cachedAimPreviewController.UpdatePreviewMovement(_preferedMovementDirection);
+        }
     }
 
     public void SetFacingDirection(Vector3 direction)
@@ -46,7 +53,14 @@ public class MovementController: MonoBehaviour
     {
         if(immobilizationSources.Count > 0)       
             return;
-        
+
+        if(_isAiming)
+        {
+            UpdateMovementVector(Vector3.zero);
+            _rigidbody.MoveRotation(Quaternion.LookRotation(_facingVector));
+            return;
+        }
+
         UpdateMovementVector(_preferedMovementDirection  * _baseMovementSpeed * ComputeSpeedAlteration());
         _rigidbody.MovePosition(_rigidbody.position + _movementVector * Time.fixedDeltaTime);
         if(_movementVector.sqrMagnitude == 0 && _facingVector.sqrMagnitude > 0)
@@ -72,6 +86,36 @@ public class MovementController: MonoBehaviour
         }
         _movementVector = newMovementVector;
     }
+
+    #region Immobilize for aim or channel
+
+    public void StartAimingMode(PreviewData data)
+    {
+        _isAiming = true;
+        if(_cachedAimPreviewController != null)
+        {
+            _cachedAimPreviewController.StartPreview(data);
+        }
+        else
+        {
+            _cachedAimPreviewController = GetComponentInChildren<AimPreviewController>();
+            if(_cachedAimPreviewController != null)
+            {
+                _cachedAimPreviewController.StartPreview(data);
+            }
+        }
+    }
+
+    public void StopAimingMode()
+    {
+        _isAiming = false;
+        if(_cachedAimPreviewController != null)
+        {
+            _cachedAimPreviewController.HidePreview();
+        }
+    }
+
+    #endregion
 
     #region Movement Effects
 

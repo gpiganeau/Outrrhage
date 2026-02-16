@@ -1,0 +1,39 @@
+﻿using UnityEngine;
+using System.Collections;
+using System;
+
+public class AimPreviewController: MonoBehaviour
+{
+    [SerializeField] private float _cursorSpeed = 30f;
+    [SerializeField] private PreviewCursor _cursor;
+
+    bool _isPreviewing;
+    Vector3 _previewMovement;
+    
+
+    internal void StartPreview(PreviewData data)
+    {
+        _isPreviewing = true;
+        _cursor.Initialize(transform.position, data);
+        _cursor.transform.position = transform.position;
+    }
+
+    internal void HidePreview()
+    {
+        _cursor.Hide();
+        _isPreviewing = false;
+    }
+
+    public void UpdatePreviewMovement(Vector3 movement)
+    {
+        _previewMovement = movement;
+    }
+
+    private void FixedUpdate()
+    {
+        if(_isPreviewing && _previewMovement != Vector3.zero)
+        {
+            _cursor.transform.position += _previewMovement.normalized * _cursorSpeed * Time.fixedDeltaTime;
+        }
+    }
+}
