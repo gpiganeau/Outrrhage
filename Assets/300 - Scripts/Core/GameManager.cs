@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
         spawnSeq.Play();
     }
 
+
+
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

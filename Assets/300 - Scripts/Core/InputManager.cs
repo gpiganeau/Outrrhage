@@ -1,15 +1,29 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.DualShock;
+using UnityEngine.InputSystem.XInput;
 
 public class InputManager : MonoBehaviour
 {
+    [Serializable]
+    public class SlotInputSprites
+    {
+        public Sprite keyboardSprite;
+        public Sprite ps5Sprite;
+        public Sprite xboxSprite;
+        public Sprite genericGamepadSprite;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public static InputManager Instance { get; private set; }
     [SerializeField] private PlayerInput playerInputComponent;
 
     private Vector2 _leftStickInputVector;
+
+    #region Input Events
 
     [HideInInspector] public UnityEvent<Vector2> OnUINavigation;
     [HideInInspector] public UnityEvent OnUISelect;
@@ -25,7 +39,13 @@ public class InputManager : MonoBehaviour
     [HideInInspector] public UnityEvent OnCharacterSlot4Released;
     [HideInInspector] public UnityEvent OnCharacterSlot5;
     [HideInInspector] public UnityEvent OnCharacterSlot5Released;
+    #endregion
 
+    [SerializeField] private SlotInputSprites[] _slotInputSprites;
+    [HideInInspector] public UnityEvent<InputDevice> OnDeviceChanged;
+    private InputDevice _currentDevice;
+
+    #region Core Setup & Inputs Change Handling
     void Awake()
     {
         if(Instance == null)
@@ -42,7 +62,64 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         playerInputComponent.SwitchCurrentActionMap(playerInputComponent.defaultActionMap);
+        UpdateCurrentDevice();
+        InputSystem.onActionChange += OnActionChange;
     }
+
+    void OnDestroy()
+    {
+        InputSystem.onActionChange -= OnActionChange;
+    }
+
+    private void OnActionChange(object obj, InputActionChange change)
+    {
+        if (change == InputActionChange.ActionPerformed)
+        {
+            UpdateCurrentDevice();
+        }
+    }
+
+    private void UpdateCurrentDevice()
+    {
+        var devices = playerInputComponent.devices;
+        if (devices.Count > 0)
+        {
+            var newDevice = devices[0];
+            if (newDevice != _currentDevice)
+            {
+                _currentDevice = newDevice;
+                OnDeviceChanged?.Invoke(_currentDevice);
+            }
+        }
+    }
+
+    #endregion
+
+    #region Utility
+
+    public Sprite GetSlotInputSprite(int slotIndex)
+    {
+        if (slotIndex < 0 || slotIndex >= _slotInputSprites.Length)
+        {
+            Debug.LogWarning("Requested slot index is out of range: " + slotIndex);
+            return null;
+        }
+
+        var sprites = _slotInputSprites[slotIndex];
+        
+        if (_currentDevice is Keyboard)
+            return sprites.keyboardSprite;
+        else if (_currentDevice is DualShockGamepad)
+            return sprites.ps5Sprite;
+        else if (_currentDevice is XInputController)
+            return sprites.xboxSprite;
+        else if (_currentDevice is Gamepad)
+            return sprites.genericGamepadSprite;
+        
+        return sprites.keyboardSprite;
+    }
+
+    #endregion
 
     #region Message Handlers
 
@@ -52,7 +129,6 @@ public class InputManager : MonoBehaviour
         {
             _leftStickInputVector = obj.ReadValue<Vector2>();
             OnCharacterMovement?.Invoke(_leftStickInputVector);
-            //Logger.Core("InputManager: OnMove: " + _leftStickInputVector);
         }
     }
 

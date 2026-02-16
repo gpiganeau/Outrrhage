@@ -17,12 +17,14 @@ public class SkillBar : MonoBehaviour
             Destroy(c.gameObject);
         }
 
+        int index  = 0 ;
         foreach(var s in strategies)
         {
             // -- Setup Slots
             SkillSlot slot = Instantiate(_slotPrefab, this.transform);
-            slot.Init(s);
+            slot.Init(s, index);
             _slots.Add(slot);
+            index++;
         }
     }
 

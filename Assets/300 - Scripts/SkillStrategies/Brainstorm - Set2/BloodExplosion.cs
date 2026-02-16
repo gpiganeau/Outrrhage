@@ -13,6 +13,8 @@ class BloodExplosion : SkillStrategy
         storedTeam = team;
         movementController.SetImmobilized(true, "SlashAttack");
         parentController.SetSkillsDisabled(true, "SlashAttack");
+		movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[0]);
+
 
         channelSequence = DOTween.Sequence();
         channelSequence.AppendInterval(_storedSkillData.HoldDuration);
@@ -21,7 +23,8 @@ class BloodExplosion : SkillStrategy
             ExecuteExplosion();
             parentController.SetSkillsDisabled(false, "SlashAttack");
             movementController.SetImmobilized(false, "SlashAttack");
-        });
+		    movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[1]);
+        });        
 
         movementController.StartAimingMode(new PreviewData
         {

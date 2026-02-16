@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 9e48941107c92e84ca96b669bc06c3d8, type: 3}
   Name: Aspiration
+  Description: 'Aspirez du sang '
   Cooldown: 0.5
   IsHold: 0
   HoldDuration: 0
@@ -32,8 +33,10 @@ MonoBehaviour:
   movementDuration: 0
   IsRielSpecificSkill: 1
   BloodCost: 0
+  BloodStackingAmount: 1
   Icon: {fileID: -148265703, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Cast
+  AnimationsKeys: []
   vfxData:
     castVFXPrefab: {fileID: 0}
     castVFXOffset: {x: 0, y: 0, z: 0}

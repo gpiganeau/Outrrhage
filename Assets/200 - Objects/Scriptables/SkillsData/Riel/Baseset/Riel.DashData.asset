@@ -16,7 +16,8 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 0}
   Name: Pas rapide
-  Cooldown: 5
+  Description: Dash a l'arrache !
+  Cooldown: 2
   IsHold: 0
   HoldDuration: 0
   Radius: 0
@@ -35,6 +36,7 @@ MonoBehaviour:
   BloodStackingAmount: 1
   Icon: {fileID: -1266197463, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
+  AnimationsKeys: []
   vfxData:
     castVFXPrefab: {fileID: 0}
     castVFXOffset: {x: 0, y: 0, z: 0}

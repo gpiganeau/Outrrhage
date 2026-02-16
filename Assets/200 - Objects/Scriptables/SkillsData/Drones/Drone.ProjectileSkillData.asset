@@ -21,7 +21,7 @@ MonoBehaviour:
   HoldDuration: 0
   Radius: 0
   ProjectileRange: 30
-  ProjectileSpeed: 10
+  ProjectileSpeed: 5
   ProjectileDamage: 01000000
   ProjectileLifetime: 8
   numberOfProjectiles: 1
@@ -32,6 +32,7 @@ MonoBehaviour:
   movementDuration: 0
   IsRielSpecificSkill: 0
   BloodCost: 0
+  BloodStackingAmount: 1
   Icon: {fileID: 21300000, guid: f8178563b844b8c40adba96714c17b3b, type: 3}
   AnimationKey: Slash
   vfxData:

@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -11,9 +13,15 @@ public class HUD : MonoBehaviour
     public static HUD Instance;
 
     [Header("References")]
+    [SerializeField] CanvasGroup _canvasGroup;
     [SerializeField] SkillBar _skillBar;
     private SkillsController _skillsController;
     private DamageController _damageController;
+
+    [Header("Resources Gauges")]
+    [SerializeField] ResourceGauge _healthGauge;
+    [SerializeField] ResourceGauge _bloodGauge;
+    [SerializeField] ResourceGauge _rageGauge;
 
     [Header("Debug")]
     public TMP_Text _rielHealth;
@@ -29,7 +37,6 @@ public class HUD : MonoBehaviour
         // -- Activate HUD so we can hide it in scene while working and still play correctly.
         GetComponent<Canvas>().enabled = true;
     }
-
     public void Initialize(SkillsController sc, DamageController dc)
     {
         _skillsController = sc;
@@ -46,8 +53,8 @@ public class HUD : MonoBehaviour
         } 
 
         // -- Force Refresh Due to Actual Initialization Races
-        OnSkillsChanged(sc.ActiveSkillStrategies);
-
+        Refresh();
+        CharacterComponent.Blood.OnBloodChanged.AddListener((currentBlood, maxBlood) => OnBloodChanged(currentBlood, maxBlood));
     }
     void OnEnable()
     {
@@ -73,6 +80,35 @@ public class HUD : MonoBehaviour
             _damageController.OnDamaged.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
             _damageController.OnHealed.RemoveListener((currentHealth, maxHealth) => OnHealthChanged(currentHealth, maxHealth));
         }
+        
+    }
+
+    public void Hide()
+    {
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
+        _canvasGroup.DOFade(0, 0.5f).OnComplete(() => {
+        gameObject.SetActive(false);
+        });
+    }
+    
+    public void Show()
+    {
+        gameObject.SetActive(true);
+        _canvasGroup.blocksRaycasts = true;
+        _canvasGroup.interactable = true;
+        _canvasGroup.alpha = 0;
+        _canvasGroup.DOFade(1, 0.5f);
+    }
+
+    public void Refresh()
+    {
+        OnSkillsChanged(_skillsController.ActiveSkillStrategies);
+    }
+    public void ToggleVisibility()
+    {
+        if (_canvasGroup.alpha > 0.5f) Hide();
+        else Show();
     }
 
     private void Update()
@@ -94,13 +130,18 @@ public class HUD : MonoBehaviour
 	{
 		float healthPercentage = currentHealth / maxHealth * 100;
         _rielHealth.text = $"Riel Health : {currentHealth} / {maxHealth} ({healthPercentage}%)";
+        _healthGauge.UpdateGauge(currentHealth, maxHealth);
+
+    }
+
+    private void OnBloodChanged(float currentBlood, float maxBlood)
+    {
+        _bloodGauge.UpdateGauge(currentBlood, maxBlood);
+        _rielBlood.text = $"Riel Blood : {currentBlood}/{maxBlood}";
     }
 
     private void OnSkillExecuted(SkillStrategy skill, int slot)
     {
-        // -- Todo : Actually we should have events on Blood, and register blood change somewhere.
-        Blood b = CharacterComponent.Blood;
-        _rielBlood.text = $"Riel Blood : {b.Amount}/{b.Maximum}";
         if(skill.IsInCooldown)
             _skillBar.SetInCooldown(slot);
     } 

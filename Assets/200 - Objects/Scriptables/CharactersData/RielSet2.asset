@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RielSet2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSettings
   Name: Riel
-  maxHealth: 50
+  maxHealth: 15
   movementSpeed: 10
   maxBloodStack: 10
   team: 1
@@ -29,4 +29,4 @@ MonoBehaviour:
   BaseBloodDrop: 0
   BloodPrefab: {fileID: 0}
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
-  maxBlood: 100
+  maxBlood: 20

@@ -15,7 +15,8 @@ MonoBehaviour:
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: fd4821e81316bcd42905837098402599, type: 3}
   SkillProjectilePrefab:
   - {fileID: 0}
-  Name: Execution
+  Name: Blood Phase
+  Description: Todo
   Cooldown: 1
   IsHold: 0
   HoldDuration: 0
@@ -32,8 +33,10 @@ MonoBehaviour:
   movementDuration: 0
   IsRielSpecificSkill: 1
   BloodCost: 0
+  BloodStackingAmount: 1
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
+  AnimationsKeys: []
   vfxData:
     castVFXPrefab: {fileID: 0}
     castVFXOffset: {x: 0, y: 0, z: 0}

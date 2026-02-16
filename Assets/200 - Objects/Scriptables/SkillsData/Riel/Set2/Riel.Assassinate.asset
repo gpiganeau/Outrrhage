@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 44f8975e6a62c0541b8e56653c2ee3f9, type: 3}
   Name: Execution
+  Description: "+ de stack; + de d\xE9gats ! Heal en cas de kill !"
   Cooldown: 4
   IsHold: 1
   HoldDuration: 0
@@ -31,10 +32,11 @@ MonoBehaviour:
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 1
-  BloodCost: 0
+  BloodCost: 3
   BloodStackingAmount: 0
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
+  AnimationsKeys: []
   vfxData:
     castVFXPrefab: {fileID: 0}
     castVFXOffset: {x: 0, y: 0, z: 0}

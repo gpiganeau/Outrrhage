@@ -15,6 +15,9 @@ public class VacuumStrategy: SkillStrategy
         var riel = GameManager.Instance.Riel;
         var drops = FindObjectsByType<BloodDrop>(UnityEngine.FindObjectsSortMode.None);
         
+        // -- Animation
+		movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
+
         // -- VFX
         var p = Instantiate(_storedSkillData.SkillProjectilePrefab[0], transform.position.WithY(0.5f), Quaternion.identity);
         p.transform.SetParent(movementController.transform);

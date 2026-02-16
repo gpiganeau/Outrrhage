@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -10,6 +11,7 @@ public class SkillData : ScriptableObject
     public GameObject SkillStrategyPrefab;
     public GameObject[] SkillProjectilePrefab;
     public string Name;
+    [TextArea] public string Description;
     public float Cooldown;
 
     [Header("Hold and Release")]
@@ -41,5 +43,6 @@ public class SkillData : ScriptableObject
     [Header ("Visuals")]
     public Sprite Icon;
     public string AnimationKey = "Slash";
+    [Tooltip("Use in cases of multiples moves")] public string[] AnimationsKeys;
     public SkillVFXData vfxData;
 }

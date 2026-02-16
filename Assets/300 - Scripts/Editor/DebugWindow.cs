@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using System;
@@ -68,6 +69,11 @@ public class DebugWindow : EditorWindow
             dc.IsInvincible = !dc.IsInvincible;
         });
 
+        AddAction($"Toggle Slow Motion", () => {
+            if (Application.isPlaying == false) return;
+            Time.timeScale = Time.timeScale > 0.5f ? 0.2f : 1f;
+        });
+
         AddAction($"Toggle Juicer", () => {
             if (Application.isPlaying == false) return;
             SettingsManager.Instance.VisualSettings.EnableJuicer = !SettingsManager.Instance.VisualSettings.EnableJuicer;
@@ -77,9 +83,17 @@ public class DebugWindow : EditorWindow
 // -- Editor Actions -- (Non Play Mode)
 
         AddAction("Toggle HUD", () => {
-            if (Application.isPlaying == true) return;
-            var canvas = FindAnyObjectByType<HUD>().GetComponent<Canvas>();
-            canvas.enabled = !canvas.enabled;
+            if (Application.isPlaying == true)
+            {
+                HUD.Instance.ToggleVisibility();
+            } else
+            {
+                var hud = FindFirstObjectByType<HUD>();
+                if (hud != null)
+                {
+                    hud.GetComponent<Canvas>().enabled = !hud.GetComponent<Canvas>().enabled;
+                }
+            }
         });
 
         AddAction("Preview Full Skill FX", () => {
@@ -92,6 +106,11 @@ public class DebugWindow : EditorWindow
                 previewer.PreviewSkill(riel.transform.position);
             }
         });
+
+        AddAction("Toggle Skill Selector Menu", () => {
+            if (Application.isPlaying != true) return;
+            SkillSelector.Instance.ToggleMenu();
+         });
     }
 
 
@@ -121,3 +140,5 @@ public class DebugWindow : EditorWindow
         public Action callback;
     }
 }
+
+#endif

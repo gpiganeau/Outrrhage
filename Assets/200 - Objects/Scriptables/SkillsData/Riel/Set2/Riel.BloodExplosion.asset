@@ -16,6 +16,8 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Blood Explosion
+  Description: "Maintenez la touche associ\xE9e pour faire exploser les orbes de
+    sang au sol!"
   Cooldown: 3
   IsHold: 1
   HoldDuration: 0.7
@@ -31,10 +33,13 @@ MonoBehaviour:
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 1
-  BloodCost: 0
+  BloodCost: 2
   BloodStackingAmount: 0
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
+  AnimationsKeys:
+  - Cast
+  - Slash
   vfxData:
     castVFXPrefab: {fileID: 0}
     castVFXOffset: {x: 0, y: 0, z: 0}

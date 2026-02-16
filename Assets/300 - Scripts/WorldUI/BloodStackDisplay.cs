@@ -29,6 +29,8 @@ public class BloodStackDisplay: BillboardWorldUI
         {
             if (i < amount)
                 _slots[i].Show();
+			else
+				_slots[i].Hide();
         }
 	}
 

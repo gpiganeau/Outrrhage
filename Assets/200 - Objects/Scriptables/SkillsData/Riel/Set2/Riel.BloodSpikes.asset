@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: cda8450286776894db0fb5a7e0ba1e94, type: 3}
   SkillProjectilePrefab:
-  - {fileID: 8024854797782737839, guid: c8e92f2eeb681794c8b18bfd46190812, type: 3}
+  - {fileID: 8024854797782737839, guid: 2fe5385023a7f064297bec3f1dd53c06, type: 3}
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Blood Spikes
+  Description: Tuez vos ennemis en rythme !
   Cooldown: 1
   IsHold: 0
   HoldDuration: 0
@@ -27,15 +28,19 @@ MonoBehaviour:
   ProjectileLifetime: 3
   numberOfProjectiles: 1
   TravelMode: 2
-  AimAssistRatio: 0.3
+  AimAssistRatio: 0.6
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 1
-  BloodCost: 0
+  BloodCost: 1
   BloodStackingAmount: 1
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
+  AnimationsKeys:
+  - ComboA
+  - ComboB
+  - ComboC
   vfxData:
     castVFXPrefab: {fileID: 0}
     castVFXOffset: {x: 0, y: 0, z: 0}

@@ -36,6 +36,8 @@ public class SlashStrategy: SkillStrategy
             };
 
             SpawnProjectile(projectileData, 0);
+			movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
+
 
             DOVirtual.DelayedCall(_storedSkillData.ProjectileLifetime, PostLifetimeEffects);
             DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>

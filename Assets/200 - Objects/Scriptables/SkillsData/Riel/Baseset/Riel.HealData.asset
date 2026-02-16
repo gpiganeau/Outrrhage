@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Riel.HealData
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: f7403dd4b9e634b44815716b63783ecd, type: 3}
-  SkillProjectilePrefab: {fileID: 0}
+  SkillProjectilePrefab:
+  - {fileID: 0}
   Name: Soin
-  Cooldown: 0.5
+  Description: Soin feel good
+  Cooldown: 1
   IsHold: 0
   HoldDuration: 0
   Radius: 0
@@ -31,8 +33,10 @@ MonoBehaviour:
   movementDuration: 0
   IsRielSpecificSkill: 1
   BloodCost: 1
+  BloodStackingAmount: 1
   Icon: {fileID: -1543649394, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Cast
+  AnimationsKeys: []
   vfxData:
     castVFXPrefab: {fileID: 0}
     castVFXOffset: {x: 0, y: 0, z: 0}

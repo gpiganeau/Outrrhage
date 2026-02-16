@@ -17,9 +17,11 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     [SerializeField] private Blood blood;
     public static Blood Blood;
     public CameraController PlayerCameraController { get; set; }
-    private bool isDead = false;
-
     private List<Renderer> Renderers;
+
+    private  UnityEngine.Events.UnityAction<Vector2>  onMovementAction;
+    private UnityEngine.Events.UnityAction onSlot1Action, onSlot2Action, onSlot3Action, onSlot4Action, onSlot5Action;
+    private UnityEngine.Events.UnityAction onSlot1ReleasedAction, onSlot2ReleasedAction, onSlot3ReleasedAction, onSlot4ReleasedAction, onSlot5ReleasedAction;
 
     
     void Start()
@@ -45,22 +47,66 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
         damageController.OnHealed.AddListener((currentHealth, maxHealth) => OnHealed(currentHealth, maxHealth));
         damageController.OnDied.AddListener(() => OnDeath());
 
-        InputManager.Instance.OnCharacterMovement.AddListener(OnInputVector);
-        InputManager.Instance.OnCharacterSlot1.AddListener(() => skillsController.CallSkillStrategy(0));
-        InputManager.Instance.OnCharacterSlot2.AddListener(() => skillsController.CallSkillStrategy(1));
-        InputManager.Instance.OnCharacterSlot3.AddListener(() => skillsController.CallSkillStrategy(2));
-        InputManager.Instance.OnCharacterSlot4.AddListener(() => skillsController.CallSkillStrategy(3));
-        InputManager.Instance.OnCharacterSlot5.AddListener(() => skillsController.CallSkillStrategy(4));
-
-        InputManager.Instance.OnCharacterSlot1Released.AddListener(() => skillsController.CallSkillStrategyReleased(0));
-        InputManager.Instance.OnCharacterSlot2Released.AddListener(() => skillsController.CallSkillStrategyReleased(1));
-        InputManager.Instance.OnCharacterSlot3Released.AddListener(() => skillsController.CallSkillStrategyReleased(2));
-        InputManager.Instance.OnCharacterSlot4Released.AddListener(() => skillsController.CallSkillStrategyReleased(3));
-        InputManager.Instance.OnCharacterSlot5Released.AddListener(() => skillsController.CallSkillStrategyReleased(4));
+        // -- Inputs Settings, only once
+        onMovementAction = OnInputVector;
+        onSlot1Action = () => skillsController.CallSkillStrategy(0);
+        onSlot2Action = () => skillsController.CallSkillStrategy(1);
+        onSlot3Action = () => skillsController.CallSkillStrategy(2);
+        onSlot4Action = () => skillsController.CallSkillStrategy(3);
+        onSlot5Action = () => skillsController.CallSkillStrategy(4);
+        
+        onSlot1ReleasedAction = () => skillsController.CallSkillStrategyReleased(0);
+        onSlot2ReleasedAction = () => skillsController.CallSkillStrategyReleased(1);
+        onSlot3ReleasedAction = () => skillsController.CallSkillStrategyReleased(2);
+        onSlot4ReleasedAction = () => skillsController.CallSkillStrategyReleased(3);
+        onSlot5ReleasedAction = () => skillsController.CallSkillStrategyReleased(4);
+    
+        // Subscribe
+        EnableControls();
 
         HUD.Instance.Initialize(skillsController, damageController);
 
         Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
+
+        //   SkillSelector.Instance.OpenMenuForPlayer(skillsController);
+    }
+
+    public void EnableControls()
+    {
+        InputManager.Instance.OnCharacterMovement.AddListener(onMovementAction);
+        InputManager.Instance.OnCharacterSlot1.AddListener(onSlot1Action);
+        InputManager.Instance.OnCharacterSlot2.AddListener(onSlot2Action);
+        InputManager.Instance.OnCharacterSlot3.AddListener(onSlot3Action);
+        InputManager.Instance.OnCharacterSlot4.AddListener(onSlot4Action);
+        InputManager.Instance.OnCharacterSlot5.AddListener(onSlot5Action);
+        
+        InputManager.Instance.OnCharacterSlot1Released.AddListener(onSlot1ReleasedAction);
+        InputManager.Instance.OnCharacterSlot2Released.AddListener(onSlot2ReleasedAction);
+        InputManager.Instance.OnCharacterSlot3Released.AddListener(onSlot3ReleasedAction);
+        InputManager.Instance.OnCharacterSlot4Released.AddListener(onSlot4ReleasedAction);
+        InputManager.Instance.OnCharacterSlot5Released.AddListener(onSlot5ReleasedAction);
+        
+        if(skillsController != null) skillsController.enabled = true;
+        if(movementController != null) movementController.enabled = true;
+    }
+
+    public void DisableControls()
+    {
+        InputManager.Instance.OnCharacterMovement.RemoveListener(onMovementAction);
+        InputManager.Instance.OnCharacterSlot1.RemoveListener(onSlot1Action);
+        InputManager.Instance.OnCharacterSlot2.RemoveListener(onSlot2Action);
+        InputManager.Instance.OnCharacterSlot3.RemoveListener(onSlot3Action);
+        InputManager.Instance.OnCharacterSlot4.RemoveListener(onSlot4Action);
+        InputManager.Instance.OnCharacterSlot5.RemoveListener(onSlot5Action);
+        
+        InputManager.Instance.OnCharacterSlot1Released.RemoveListener(onSlot1ReleasedAction);
+        InputManager.Instance.OnCharacterSlot2Released.RemoveListener(onSlot2ReleasedAction);
+        InputManager.Instance.OnCharacterSlot3Released.RemoveListener(onSlot3ReleasedAction);
+        InputManager.Instance.OnCharacterSlot4Released.RemoveListener(onSlot4ReleasedAction);
+        InputManager.Instance.OnCharacterSlot5Released.RemoveListener(onSlot5ReleasedAction);
+        
+        if(skillsController != null) skillsController.enabled = false;
+        if(movementController != null) movementController.enabled = false;
     }
 
     #region Listeners & Callback
@@ -78,14 +124,12 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
     private void OnDeath()
     {
-          if (isDead) return;
-            Juicer.I.PlayerDeathEffect();
-            skillsController.enabled = false;
-            movementController.enabled = false;
-            damageController.enabled = false;   
-            isDead = true;
-            animController.Die();   
-            DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
+        if (damageController.IsDead) return;
+        damageController.IsDead = true;
+        DisableControls();  
+        Juicer.I.PlayerDeathEffect();
+        animController.Die();   
+        DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
     }
     #endregion
 

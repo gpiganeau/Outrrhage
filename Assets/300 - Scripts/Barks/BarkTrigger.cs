@@ -4,10 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class BarkTrigger : MonoBehaviour
 {
+
+    [TextArea] public string _eventDescription;
+    [Header("Settings")]
+    public Color _gizmoColor = Color.aliceBlue;
+
     [SerializeField] Bark _bark;
 
     SphereCollider _collider;
-    [SerializeField, Range(2f, 10f)] float _radius = 3.0f;
+    [SerializeField, Range(2f, 32f)] float _radius = 3.0f;
 
 
     void Start()
