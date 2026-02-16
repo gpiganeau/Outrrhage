@@ -16,6 +16,6 @@ MonoBehaviour:
   cameraGeometricFollowSpeed: 0.85
   cameraFollowDistance: 39
   cameraPredictionRatio: 1
-  cameraAngleVert: 21
-  cameraAngleSide: -130
+  cameraAngleVert: 20
+  cameraAngleSide: 12
   cameraFOV: 20
