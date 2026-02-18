@@ -7,6 +7,8 @@ public class AIActorSetupData : ActorSetupData
     public MovementStrategySetupData movementSetupData;
     public AttackStrategySetupData attackSetupData;
 
+    public EntityType entityType;
+
     public float TimeBeforeBrainActivation = 0.5f; // -- Time before the AI starts acting, to let player react to spawn
 
 }

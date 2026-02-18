@@ -21,6 +21,8 @@ public class GameRoom : MonoBehaviour
     public UnityEvent OnRoomStart;
     public UnityEvent OnRoomComplete;
 
+    bool _isCompleted = false;
+
     void Awake()
     {
         if (_spawnPoint == null) _spawnPoint = GetComponentInChildren<RespawnPoint>();
@@ -50,6 +52,18 @@ public class GameRoom : MonoBehaviour
             step.stepEvent?.Invoke();
 
         }
+
+        _isCompleted = true;
+
+    }
+
+    public bool QueryRoomEnd()
+    {
+        if (!_isCompleted) return false;
+        if (EntityManager.Instance.Bots.Count > 0) return false;
+        OnRoomComplete?.Invoke();
+        return true;
+
     }
 
     #region Room Controls

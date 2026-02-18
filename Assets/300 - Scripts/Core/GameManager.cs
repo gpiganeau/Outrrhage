@@ -88,6 +88,13 @@ public class GameManager : MonoBehaviour
         spawnSeq.Play();
     }
 
+    public void CheckForRoomEnd()
+    {
+       if (_currentRoom.QueryRoomEnd())
+        {
+            // -- Todo : Next Room Logic.
+        }
+    }
 
 
     public void ReloadCurrentScene()

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public enum EntityType
@@ -29,6 +30,9 @@ public class EntityManager : MonoBehaviour
     private Sequence spawnSequence;
     public bool AutoSpawn = false;
 
+    public UnityEvent<EntityType> OnEnemyDied;
+    public UnityEvent<EntityType> OnEnemySpawned;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -38,6 +42,20 @@ public class EntityManager : MonoBehaviour
     void Start()
     {
         StartInfiniteSpawning();
+    }
+
+    public void NotifyDeath(AIActorComponent bot)
+    {
+        Bots.Remove(bot);
+        if (OnEnemyDied != null)
+        {
+            OnEnemyDied?.Invoke(bot.EntityType);
+        }
+
+        if (GameManager.Instance.CurrentGameMode == GameManager.GameMode.Rooms)
+        {
+            GameManager.Instance.CheckForRoomEnd();
+        }   
     }
 
     private void StartInfiniteSpawning()

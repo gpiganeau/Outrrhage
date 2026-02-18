@@ -13,6 +13,7 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
     private MovementController movementController;
     private DamageController damageController;
 
+    public EntityType EntityType => setupData.entityType;
 
     //AI Attributes
     private MovementStrategy _movementStrategy;
@@ -125,6 +126,8 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
     private void OnDeath() 
     {
         damageController.IsDead = true;
+
+        EntityManager.Instance.NotifyDeath(this);
 
         if (setupData.LootOnDeath && setupData._itemsLootsOnDeath.Count > 0)
         {
