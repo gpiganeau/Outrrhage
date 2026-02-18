@@ -2,6 +2,14 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
+
+public enum EntityType
+{
+    Humanoid,
+    Drones,
+    Hybrid
+}
+
 public class EntityManager : MonoBehaviour
 {
     public static EntityManager Instance;
@@ -9,12 +17,7 @@ public class EntityManager : MonoBehaviour
     public CharacterComponent Riel;             // -- Set by Game Manager
     public List<AIActorComponent> Bots = new();
 
-    public enum EntityType
-    {
-        Humanoid,
-        Drones,
-        Hybrid
-    }
+
 
 
     [Header("Spawn Settings")]
@@ -72,8 +75,6 @@ public class EntityManager : MonoBehaviour
              var newBot = Instantiate(actor, position, Quaternion.identity);
              Bots.Add(newBot);
         });
-        var newBot = Instantiate(actor, position, Quaternion.identity);
-        Bots.Add(newBot);
     }
 
     Vector3 GetRandomPosAroundRiel()

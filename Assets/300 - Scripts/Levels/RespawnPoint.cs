@@ -11,6 +11,9 @@ public class RespawnPoint : MonoBehaviour
     [SerializeField] private float _safeRadius = 5f;
     private SphereCollider _collider;
     private ParticleSystem _particleSystem;
+
+    [SerializeField] private bool _safeZone = false;
+
     private void Awake()
     {
         _collider = GetComponent<SphereCollider>();
@@ -19,6 +22,9 @@ public class RespawnPoint : MonoBehaviour
     }
     public void OnTriggerStay(Collider other)
     {
+
+        if (!_safeZone) return;
+        
         if (other.TryGetComponent<CharacterComponent>(out var character))
         {
             CharacterComponent.Blood.Regain(100);

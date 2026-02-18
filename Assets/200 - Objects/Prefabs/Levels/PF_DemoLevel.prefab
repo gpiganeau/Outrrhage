@@ -13360,6 +13360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RespawnPoint
   respawnType: 0
   _safeRadius: 10
+  _safeZone: 0
 --- !u!198 &3543540291647781037
 ParticleSystem:
   m_ObjectHideFlags: 0

@@ -103,12 +103,12 @@ public class DesignerChaos: MonoBehaviour
 
     public void ZZ_SpawnDrones(int count)
     {
-        EntityManager.Instance.SpawnEntities(EntityManager.EntityType.Drones, count, _spawnPointCenter.position, _spawnRadius);
+        EntityManager.Instance.SpawnEntities(EntityType.Drones, count, _spawnPointCenter.position, _spawnRadius);
     }
 
     public void ZZ_SpawnHumans(int count)
     {
-        EntityManager.Instance.SpawnEntities(EntityManager.EntityType.Humanoid, count, _spawnPointCenter.position, _spawnRadius);
+        EntityManager.Instance.SpawnEntities(EntityType.Humanoid, count, _spawnPointCenter.position, _spawnRadius);
     }
 
     public void ZZ_ChangeCameraSetting(CameraSettings cameraSettings)
