@@ -235,6 +235,7 @@ Transform:
   - {fileID: 2701224519873407154}
   - {fileID: 5736451491955649945}
   - {fileID: 1842855357099311297}
+  - {fileID: 4534283859958084862}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &2423938045356911430
@@ -271,7 +272,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameRoom
   _roomName: TestRoom
-  _roomDescription: 
+  _roomDescription: Test room for room system
+  _spawnableElements:
+  - {fileID: 5115976658195506498, guid: 4c627e869fdc5114a9fa3b680d12b4e5, type: 3}
+  - {fileID: 8370369180632926951, guid: 00a3709cf64fe7b4e953075cd8563f19, type: 3}
+  - {fileID: 1068742415333035195, guid: d66f97fc426123146b18e601e09e6372, type: 3}
+  - {fileID: 8370369180632926951, guid: 3654e04fb46d083479387cb010f76ac0, type: 3}
   _spawnPoint: {fileID: 0}
   RoomSequence:
   - stepName: Spawn Drones
@@ -359,6 +365,7 @@ MonoBehaviour:
           m_CallState: 2
     logEvent: 1
   _spawnPointHolder: {fileID: 5736451491955649945}
+  _cellsElementHolder: {fileID: 0}
   OnRoomStart:
     m_PersistentCalls:
       m_Calls: []
@@ -377,6 +384,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _spawnChancePercentage: 5
 --- !u!1 &4683484610182855325
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +804,37 @@ Transform:
   - {fileID: 6150702959960098325}
   - {fileID: 6962354614297465612}
   - {fileID: 4642069079019915979}
+  m_Father: {fileID: 5799528397384455023}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8830910701371034675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4534283859958084862}
+  m_Layer: 0
+  m_Name: CellsElement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4534283859958084862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8830910701371034675}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 5799528397384455023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6533882426711528487

@@ -6,8 +6,11 @@ using UnityEngine.Events;
 public class GameRoom : MonoBehaviour
 {
 
+
+    [Header("Room Settings")]
     [SerializeField] string _roomName;
     [TextArea] public string _roomDescription;
+    [SerializeField] List<GameObject> _spawnableElements = new List<GameObject>();
 
     public string GetRoomName() => _roomName;
 
@@ -17,11 +20,20 @@ public class GameRoom : MonoBehaviour
     public List<ChaosStep> RoomSequence = new List<ChaosStep>();
 
     [SerializeField] Transform _spawnPointHolder;
+    [SerializeField] Transform _cellsElementHolder;
 
     public UnityEvent OnRoomStart;
     public UnityEvent OnRoomComplete;
 
+    [Header("Cells")]
+    [SerializeField] private List<RoomCell> _cells = new List<RoomCell>();
+    private Vector2 _dimensions = new Vector2(32, 32);
+    public Vector2 Dimensions => _dimensions;
+    [Range(0, 100)] public float _spawnChancePercentage = 10;
+
     bool _isCompleted = false;
+
+    private int HalfX, HalfY;
 
     void Awake()
     {
@@ -30,7 +42,40 @@ public class GameRoom : MonoBehaviour
 
     void Start()
     {
+        
+        HalfX = (int)Dimensions.x / 2;
+        HalfY = (int)Dimensions.y / 2;
+
+        OnRoomStart.AddListener(GenerateLevel);
+
         StartCoroutine(RoomSeq());
+    }
+
+
+// -- Todo : MultiLayering (Obstacles, GPE, Props, Collectibles, Decorations, etc...)
+    private void GenerateLevel()
+    {
+        for (int x = -HalfX; x < HalfX; x++)
+        {
+            for (int y = -HalfY; y < HalfY; y++)
+            {
+    
+                RoomCell roomCell = new RoomCell(x, y, null);
+                _cells.Add(roomCell);
+
+                // -- 10% chance to spawn an element in the cell
+                if (Random.value < _spawnChancePercentage / 100f)
+                {
+                    Vector3 spawnPosition = new Vector3(x + 0.5f, 0.5f, y + 0.5f);;
+                    GameObject element = Instantiate(_spawnableElements.Random(), spawnPosition, Quaternion.identity);
+                    element.transform.position = spawnPosition;
+                    element.transform.SetParent(_cellsElementHolder);
+                    roomCell.OwnedElement = element;
+                }
+
+            
+            }
+        }
     }
 
     IEnumerator RoomSeq()

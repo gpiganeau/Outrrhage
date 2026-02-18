@@ -28,4 +28,5 @@ MonoBehaviour:
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   movementSetupData: {fileID: 11400000, guid: 80d616b8c09f2af48b5d6724c96d54fe, type: 2}
   attackSetupData: {fileID: 11400000, guid: a03256482c7ecce41af198d531478044, type: 2}
+  entityType: 1
   TimeBeforeBrainActivation: 0.5

@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 727764900232871049, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: cameraSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: b46591d044c43444592a67e686b023af, type: 2}
     - target: {fileID: 1314478059537847997, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
       propertyPath: _roomsList.Array.size
       value: 1
@@ -693,6 +697,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542473708143020439, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653407126792835698, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653407126792835698, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653407126792835698, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653407126792835698, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7269675629953135990, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
