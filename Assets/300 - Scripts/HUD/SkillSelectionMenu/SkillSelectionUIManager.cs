@@ -99,6 +99,8 @@ public class SkillSelectionUIManager : MonoBehaviour
         
         _currentSkillSlots.Clear();
         
+        List<SkillData> newSkills = new();
+
         // === CURRENT SKILLS (joueur) ===
         var currentSkills = _targetSkillsController.ActiveSkillStrategies;
         int maxSlots = _targetSkillsController.MaxSkillSlots;
@@ -111,6 +113,7 @@ public class SkillSelectionUIManager : MonoBehaviour
             if (i < currentSkills.Count)
             {
                 slotUI.SetSkill(currentSkills[i].SkillData, i, true);
+                newSkills.Add(currentSkills[i].SkillData);
             }
             else
             {
@@ -135,6 +138,8 @@ public class SkillSelectionUIManager : MonoBehaviour
         }
         
         UpdateInstructions();
+
+        _targetSkillsController.SetActiveSkillStrategies(newSkills);
     }
 
     void OnSlotHovered(int slotIndex, SkillData skill, bool isHovering)

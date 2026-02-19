@@ -43,7 +43,12 @@ public class SkillsController: MonoBehaviour
         }
         activeSkillStrategies = new List<SkillStrategy>();
 
-        foreach (SkillData data in actorData.startingSkillSet)
+        SetActiveSkillStrategies(actorData.startingSkillSet);
+    }
+
+    public void SetActiveSkillStrategies(List<SkillData> skillDatas)
+    {
+        foreach (SkillData data in skillDatas)
         {
             SkillStrategy skillStrategy = Instantiate(data.SkillStrategyPrefab, transform).GetComponent<SkillStrategy>();
             skillStrategy.Initialize(this, data);
@@ -105,7 +110,18 @@ public class SkillsController: MonoBehaviour
     public bool CheckSkillAvailability(int index)
     {
         if (skillsDisabledSources.Count > 0) return false;
+
+        if (index >= MaxSkillSlots)
+        {
+            return false;
+        }
+
+// -- Error spam here on "Toggle Skill Selector Menu"...
         foreach (ISkillConstrainer constrainer in constraints) { 
+
+            if (activeSkillStrategies[index] == null) return false;
+            if (activeSkillStrategies[index].SkillData == null) return false;
+
             if (!constrainer.CanUseSkill(activeSkillStrategies[index].SkillData, movementController))
             {
                 return false;
