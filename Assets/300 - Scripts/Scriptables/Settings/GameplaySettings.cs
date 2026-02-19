@@ -7,4 +7,5 @@ public class GameplaySettings : ScriptableObject
     public float baseMinTimeBetweenSkills;
 
     public float spawnerTimeBetweenSpawns = 0.5f;
+    internal float DeathTimeBeforeReload = 3f;
 }

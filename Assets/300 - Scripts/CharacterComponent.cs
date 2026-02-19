@@ -129,7 +129,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
         DisableControls();  
         Juicer.I.PlayerDeathEffect();
         animController.Die();   
-        DOVirtual.DelayedCall(animController.ClipLength("Dying"), () => GameManager.Instance.ReloadCurrentScene());
+        DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.DeathTimeBeforeReload, () => GameManager.Instance.ReloadCurrentScene());
     }
     #endregion
 
