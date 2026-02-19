@@ -5,6 +5,8 @@ public class BloodDrop : MonoBehaviour
 {
     [SerializeField] Blood _blood;
     private Tween attractTween;
+
+    [SerializeField] private int HealAmount = 1;
     
     void Start()
     {
@@ -61,7 +63,14 @@ public class BloodDrop : MonoBehaviour
     {
         if (other.TryGetComponent<CharacterComponent>(out var riel))
         {
-            CharacterComponent.Blood.Regain(_blood.Amount);
+            var blood = CharacterComponent.Blood;
+            if (blood.IsFull)
+            {
+                riel.GetComponent<DamageController>().Heal(HealAmount);
+            } else
+            {
+                CharacterComponent.Blood.Regain(_blood.Amount);
+            }
             attractTween?.Kill();
             Destroy(gameObject);
         }

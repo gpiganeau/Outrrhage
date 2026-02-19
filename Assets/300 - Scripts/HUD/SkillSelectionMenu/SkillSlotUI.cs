@@ -10,6 +10,7 @@ public class SkillSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [Header("References")]
     [SerializeField] private Image _iconImage;
     [SerializeField] private Image _backgroundImage;
+    [SerializeField] private Image _inputPromptImage;
     [SerializeField] private TMP_Text _nameText;
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _highlightObject;
@@ -33,7 +34,7 @@ public class SkillSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         SetHighlight(false);
     }
     
-    public void SetSkill(SkillData skill, int slotIndex)
+    public void SetSkill(SkillData skill, int slotIndex, bool setInputPrompt = false)
     {
         _skillData = skill;
         _slotIndex = slotIndex;
@@ -53,7 +54,17 @@ public class SkillSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         
         if (_emptyStateObject != null)
             _emptyStateObject.SetActive(false);
+
+        if (setInputPrompt)
+        {
+            _inputPromptImage.sprite = InputManager.Instance.GetSlotInputSprite(slotIndex);
+            _inputPromptImage.enabled = true;
+        } else
+        {
+            _inputPromptImage.enabled = false;
+        }
     }
+
     
     public void SetEmpty(int slotIndex)
     {

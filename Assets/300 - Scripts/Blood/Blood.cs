@@ -14,6 +14,8 @@ public class Blood
 
     public UnityEvent<int, int> OnBloodChanged = new UnityEvent<int, int>();
 
+    public bool IsFull => Amount == Maximum;
+
     public int Consume(int amount)
     {
         _currentAmount -= amount;

@@ -110,7 +110,7 @@ public class SkillSelectionUIManager : MonoBehaviour
             
             if (i < currentSkills.Count)
             {
-                slotUI.SetSkill(currentSkills[i].SkillData, i);
+                slotUI.SetSkill(currentSkills[i].SkillData, i, true);
             }
             else
             {
