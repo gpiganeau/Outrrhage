@@ -131,7 +131,6 @@ public class HUD : MonoBehaviour
 		float healthPercentage = currentHealth / maxHealth * 100;
         _rielHealth.text = $"Riel Health : {currentHealth} / {maxHealth} ({healthPercentage}%)";
         _healthGauge.UpdateGauge(currentHealth, maxHealth);
-
     }
 
     private void OnBloodChanged(float currentBlood, float maxBlood)

@@ -26,7 +26,10 @@ public class ResourceGauge : MonoBehaviour
             
             float targetFillAmount = current / max;
             _currentTween = _fillImage.DOFillAmount(targetFillAmount, _tweenDuration)
-                .SetEase(_tweenEase);
+                .SetEase(_tweenEase)
+                .OnComplete(() => {
+                    _fillImage.transform.DOPunchScale(Vector3.one * 0.1f, 0.1f, 2, 0.25f);
+            });
         }
         
         if (_resourceText != null) 

@@ -254,13 +254,13 @@ public class Juicer : MonoBehaviour
     /// <summary>Color Flash preset - Dégâts (rouge)</summary>
     private void EntityDamageFlash(List<Renderer> renderers, float duration = 0.15f)
     {
-        EntityColorFlash(renderers, Color.red, duration);
+        EntityColorFlash(renderers, settings.PlayerDamagedColor, duration);
     }
 
     /// <summary>Color Flash preset - Heal (vert)</summary>
     private void EntityHealFlash(List<Renderer> renderers, float duration = 0.2f)
     {
-        EntityColorFlash(renderers, Color.green, duration);
+        EntityColorFlash(renderers, settings.PlayerHealColor, duration);
     }
     #endregion
     #endregion
@@ -305,7 +305,7 @@ public class Juicer : MonoBehaviour
     {
         if (!IsJuiceEnabled()) return;
 
-        ColorFlashPostProcess(new Color(0.3f, 1f, 0.3f), 0.15f);
+        ColorFlashPostProcess(settings.PlayerHealColor, 0.25f);
         EntityHealFlash(playerRenderers);
     }
 
@@ -322,7 +322,7 @@ public class Juicer : MonoBehaviour
         if (!IsJuiceEnabled()) return;
 
         ShakeCameraWithRotation(0.5f, 3f, 0.5f);
-        ColorFlashPostProcess(Color.red, 1f);
+        ColorFlashPostProcess(settings.PlayerDamagedColor, 1f);
         SlowMotion(0.2f, 0.8f);
         PulseVignette(0.6f, 0.5f);
     }
