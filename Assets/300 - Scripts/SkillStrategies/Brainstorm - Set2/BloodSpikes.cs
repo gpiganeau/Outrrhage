@@ -53,7 +53,7 @@ class BloodSpikes : SkillStrategy
 
         var Seq = DOTween.Sequence();
         Seq.AppendCallback(() => movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[currentSpike]));
-        Seq.AppendInterval(0.25f);
+        Seq.AppendInterval(0.125f);
         Seq.AppendCallback(() => {
              var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
              p.SetTravelMode(_storedSkillData.TravelMode);
@@ -91,7 +91,7 @@ class BloodSpikes : SkillStrategy
 
         var Seq = DOTween.Sequence();
         Seq.AppendCallback(() => movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[currentSpike]));
-        Seq.AppendInterval(0.85f);
+        Seq.AppendInterval(0.85f * 0.5f);
         Seq.AppendCallback(() => {
             var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
             p.onProjectileHit.AddListener(Explosion);
