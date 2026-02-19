@@ -5,12 +5,11 @@ using UnityEngine.Events;
 
 public class GameRoom : MonoBehaviour
 {
-
-
     [Header("Room Settings")]
     [SerializeField] string _roomName;
     [TextArea] public string _roomDescription;
     [SerializeField] List<GameObject> _spawnableElements = new List<GameObject>();
+    [SerializeField, Range (-2f, 2f)] float _floorLevelOffset = 1f;
 
     public string GetRoomName() => _roomName;
 
@@ -51,8 +50,21 @@ public class GameRoom : MonoBehaviour
         StartCoroutine(RoomSeq());
     }
 
+    public void RegenerateLevel()
+    {
+        // -- Cleanup
+        foreach (RoomCell c in _cells)
+        {
+            if (c.IsEmpty) continue;
+            Destroy(c.OwnedElement);
+        }
+
+        GenerateLevel();
+    }
+
 
 // -- Todo : MultiLayering (Obstacles, GPE, Props, Collectibles, Decorations, etc...)
+// -- Todo : Delay routine for srtylisation 
     private void GenerateLevel()
     {
         for (int x = -HalfX; x < HalfX; x++)
@@ -66,7 +78,7 @@ public class GameRoom : MonoBehaviour
                 // -- 10% chance to spawn an element in the cell
                 if (Random.value < _spawnChancePercentage / 100f)
                 {
-                    Vector3 spawnPosition = new Vector3(x + 0.5f, 0.5f, y + 0.5f);;
+                    Vector3 spawnPosition = new Vector3(x + 0.5f, _floorLevelOffset, y + 0.5f);;
                     GameObject element = Instantiate(_spawnableElements.Random(), spawnPosition, Quaternion.identity);
                     element.transform.position = spawnPosition;
                     element.transform.SetParent(_cellsElementHolder);
@@ -128,6 +140,7 @@ public class GameRoom : MonoBehaviour
         for (int i = 0; i < count; i++)
         {   
             Vector3 randomPos = _spawnPointHolder.GetChild(Random.Range(0, _spawnPointHolder.childCount)).position;
+            randomPos.y = 1f;
             EntityManager.Instance.SpawnEntities(type, 1, randomPos, 0);
         }
     }

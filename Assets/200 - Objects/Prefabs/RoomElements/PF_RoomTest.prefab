@@ -278,6 +278,7 @@ MonoBehaviour:
   - {fileID: 8370369180632926951, guid: 00a3709cf64fe7b4e953075cd8563f19, type: 3}
   - {fileID: 1068742415333035195, guid: d66f97fc426123146b18e601e09e6372, type: 3}
   - {fileID: 8370369180632926951, guid: 3654e04fb46d083479387cb010f76ac0, type: 3}
+  _floorLevelOffset: 0.5
   _spawnPoint: {fileID: 0}
   RoomSequence:
   - stepName: Spawn Drones

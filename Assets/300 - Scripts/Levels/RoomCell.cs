@@ -10,7 +10,7 @@ public class RoomCell
         OwnedElement = element;
     }
 
-    public bool IsEmpty() => OwnedElement == null;
+    public bool IsEmpty => OwnedElement == null;
 
     private Vector2Int _coords;
     public Vector2Int Coords
