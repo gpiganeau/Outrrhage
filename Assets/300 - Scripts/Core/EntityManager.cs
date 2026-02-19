@@ -8,7 +8,7 @@ public enum EntityType
 {
     Humanoid,
     Drones,
-    Hybrid
+    Bull
 }
 
 public class EntityManager : MonoBehaviour
@@ -153,7 +153,7 @@ public class EntityManager : MonoBehaviour
                 {
                     EntityType.Drones => enemyPrefabs[0],
                     EntityType.Humanoid => enemyPrefabs[1],
-                    EntityType.Hybrid => null,
+                    EntityType.Bull => enemyPrefabs[2],
                     _ => null
                 };
                 
