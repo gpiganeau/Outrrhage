@@ -44,3 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3278ad59578e55246ae1a76d4ee857bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeDashStrategy
+  bloopDropPrefab: {fileID: 3305830449605877580, guid: 4c627e869fdc5114a9fa3b680d12b4e5, type: 3}

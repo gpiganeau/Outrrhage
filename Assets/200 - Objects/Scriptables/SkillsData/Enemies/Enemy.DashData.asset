@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8576b5616d5a5b43bc5ebe672411004, type: 3}
-  m_Name: Enemy.DashData 1
+  m_Name: Enemy.DashData
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 91c398b7b1a0e734db87987a9d916672, type: 3}
+  SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 3e97a4efd2626e94089a8a514115ce2c, type: 3}
   SkillProjectilePrefab:
-  - {fileID: 0}
-  Name: Approche Sonique
+  - {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
+  Name: Charge
   Description: Une attaque de melee, l'ennemi dash sur Riel pour la blesser en la
     touchant
   Cooldown: 2
