@@ -19,8 +19,6 @@ public class EntityManager : MonoBehaviour
     public List<AIActorComponent> Bots = new();
 
 
-
-
     [Header("Spawn Settings")]
     public GameObject SpawnFXPrefab;
     public List<AIActorComponent> enemyPrefabs;              
@@ -82,6 +80,8 @@ public class EntityManager : MonoBehaviour
 
     private void SpawnEnemy(AIActorComponent actor, Vector3 position)
     {
+        if (GameManager.GameOver) return;
+
         // -- Sequence for spawn FX and Enemy Spawn
         var seq = DOTween.Sequence();
         seq.AppendCallback(() =>
@@ -110,6 +110,15 @@ public class EntityManager : MonoBehaviour
     private void OnDestroy()
     {
         spawnSequence?.Kill();
+    }
+
+    public void FullClearRoom()
+    {
+        // -- reverse loop because we change entity
+        for (int i = Bots.Count -1; i >= 0; i--)
+        {
+            Bots[i].ForceKill();
+        }
     }
 
 

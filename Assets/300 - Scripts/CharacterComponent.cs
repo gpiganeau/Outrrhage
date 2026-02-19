@@ -125,11 +125,14 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     private void OnDeath()
     {
         if (damageController.IsDead) return;
+        var settings = SettingsManager.Instance.GameplaySettings;
+
         damageController.IsDead = true;
         DisableControls();  
         Juicer.I.PlayerDeathEffect();
         animController.Die();   
-        DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.DeathTimeBeforeReload, () => GameManager.Instance.ReloadCurrentScene());
+        if (settings.ClearRoomOnDeath) EntityManager.Instance.FullClearRoom();
+        DOVirtual.DelayedCall(settings.DeathTimeBeforeReload, () => GameManager.Instance.ReloadCurrentScene());
     }
     #endregion
 

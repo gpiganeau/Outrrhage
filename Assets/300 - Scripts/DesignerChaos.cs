@@ -123,10 +123,7 @@ public class DesignerChaos: MonoBehaviour
 
     public void ZZ_KillAllEnemies()
     {
-        foreach (var bot in EntityManager.Instance.Bots)
-        {
-            bot.ForceKill();
-        }
+        EntityManager.Instance.FullClearRoom();
     }
 
     public void ZZ_HideHUD()

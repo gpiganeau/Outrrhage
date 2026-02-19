@@ -7,5 +7,8 @@ public class GameplaySettings : ScriptableObject
     public float baseMinTimeBetweenSkills;
 
     public float spawnerTimeBetweenSpawns = 0.5f;
-    internal float DeathTimeBeforeReload = 3f;
+
+    [Header("Game Over")]
+    public float DeathTimeBeforeReload = 3f;
+    public bool ClearRoomOnDeath = true;
 }

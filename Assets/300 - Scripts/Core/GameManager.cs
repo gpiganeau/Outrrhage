@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     public UnityEvent OnGameStart;
     public CameraController CameraController => _cameraController;
 
+    private static bool _gameOver = false;
+    public static bool GameOver { get => _gameOver; set => _gameOver = value;}
+
     public void Awake()
     {
         if (Instance == null) Instance = this;
