@@ -18,4 +18,4 @@ MonoBehaviour:
   cameraPredictionRatio: 1
   cameraAngleVert: 45
   cameraAngleSide: 45
-  cameraFOV: 30
+  cameraFOV: 25
