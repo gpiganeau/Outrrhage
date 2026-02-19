@@ -28,7 +28,7 @@ public class GameRoom : MonoBehaviour
     [SerializeField] private List<RoomCell> _cells = new List<RoomCell>();
     private Vector2 _dimensions = new Vector2(32, 32);
     public Vector2 Dimensions => _dimensions;
-    [Range(0, 100)] public float _spawnChancePercentage = 10;
+    [Range(0, 100)] public float _spawnChancePercentage = 2;
 
     bool _isCompleted = false;
 

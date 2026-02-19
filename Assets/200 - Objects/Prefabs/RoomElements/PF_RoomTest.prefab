@@ -385,7 +385,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _spawnChancePercentage: 5
+  _spawnChancePercentage: 2
 --- !u!1 &4683484610182855325
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5736451491955649945}
   m_Layer: 0
-  m_Name: SpawnPointHolder
+  m_Name: EnenmySpawnPointHolder
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -448,7 +448,7 @@ Transform:
   m_GameObject: {fileID: 5172198975343858153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: c8251892e2ae946458b49149104cbb11, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0f568620cf75cbb44a5ec14df47f4abc, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &6327270242465127976
 GameObject:
