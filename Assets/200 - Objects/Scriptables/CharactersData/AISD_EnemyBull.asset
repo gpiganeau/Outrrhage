@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d90b4f106e0d7ce4b87b7cc28ea5675c, type: 3}
-  m_Name: AISD_Humanoid
+  m_Name: AISD_EnemyBull
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
   Name: Eclot Corrompu
-  maxHealth: 8
-  movementSpeed: 5
-  maxBloodStack: 8
+  maxHealth: 15
+  movementSpeed: 0.5
+  maxBloodStack: 10
   team: 2
   startingSkillSet:
-  - {fileID: 11400000, guid: 2846bf02646939b428980f4989db1f13, type: 2}
+  - {fileID: 11400000, guid: 4b5de37cdf1370e49b3e92f0f659078c, type: 2}
   LootOnDeath: 0
   _itemsLootsOnDeath: []
   LootBloodOnDeath: 1
@@ -27,5 +27,5 @@ MonoBehaviour:
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   movementSetupData: {fileID: 11400000, guid: 334c90e1c6753444ca12ceff40eea6ea, type: 2}
   attackSetupData: {fileID: 11400000, guid: a03256482c7ecce41af198d531478044, type: 2}
-  entityType: 0
-  TimeBeforeBrainActivation: 0.5
+  entityType: 2
+  TimeBeforeBrainActivation: 0.51
