@@ -27,7 +27,7 @@ public class SkillVFXController : MonoBehaviour
         // Sound
         if (skillData.vfxData.castSound != null)
         {
-            AudioSource.PlayClipAtPoint(skillData.vfxData.castSound, spawnPos);
+            AudioManager.Instance.PlayClipAtPoint(skillData.vfxData.castSound, spawnPos, SoundGroup.SFX);
         }
 
         return currentCastVFX;
@@ -83,7 +83,7 @@ public class SkillVFXController : MonoBehaviour
         // Sound
         if (skillData.vfxData.impactSound != null)
         {
-            AudioSource.PlayClipAtPoint(skillData.vfxData.impactSound, position);
+            AudioManager.Instance.PlayClipAtPoint(skillData.vfxData.impactSound, position, SoundGroup.SFX);
         }
 
         return impactVFX;

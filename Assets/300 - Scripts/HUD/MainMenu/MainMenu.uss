@@ -1,0 +1,556 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   MainMenu.uss  —  EGGRAGE
+   100% Unity 6 UI Toolkit compatible
+   NO: custom properties, text-shadow, translate, background-image gradients
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mm-root {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(6, 5, 10);
+    overflow: hidden;
+}
+
+.vignette {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 80px;
+    border-color: rgba(0, 0, 0, 0.55);
+}
+
+/* ── SCREENS ─────────────────────────────────────────────────────────────── */
+.mm-screen {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.mm-screen--overlay {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(4, 4, 8, 0.85);
+}
+
+/* ── MAIN SCREEN ─────────────────────────────────────────────────────────── */
+.main__left {
+    width: 480px;
+    padding: 64px 56px;
+    justify-content: center;
+    flex-direction: column;
+    border-right-width: 1px;
+    border-right-color: rgba(45, 42, 65, 1);
+    background-color: rgba(8, 7, 14, 0.7);
+}
+
+.main__eyebrow {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: rgb(70, 55, 20);
+    margin-bottom: 16px;
+}
+
+.main__title-wrap {
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.main__title {
+    font-size: 80px;
+    -unity-font-style: bold;
+}
+
+.main__title--egg {
+    color: rgb(220, 180, 80);
+}
+
+.main__title--rage {
+    color: rgb(210, 60, 45);
+    margin-left: 6px;
+}
+
+.title--hidden {
+    opacity: 0;
+    margin-left: -30px;
+}
+
+.title--visible {
+    opacity: 1;
+    margin-left: 0;
+    transition-property: opacity, margin-left;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+}
+
+.main__tagline {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: rgb(130, 122, 105);
+    margin-bottom: 52px;
+    -unity-font-style: italic;
+}
+
+.main__nav {
+    flex-direction: column;
+    margin-bottom: 48px;
+}
+
+.main-btn {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    border-left-width: 2px;
+    border-left-color: rgba(0, 0, 0, 0);
+    padding: 13px 20px;
+    color: rgb(130, 122, 105);
+    font-size: 15px;
+    letter-spacing: 3px;
+    -unity-text-align: middle-left;
+    margin-bottom: 4px;
+    transition-property: color, border-left-color, padding-left;
+    transition-duration: 0.15s;
+}
+
+.main-btn:hover {
+    color: rgb(220, 180, 80);
+    border-left-color: rgb(220, 180, 80);
+    padding-left: 30px;
+}
+
+.main-btn--primary {
+    color: rgb(220, 180, 80);
+    border-left-color: rgb(140, 110, 45);
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+    background-color: rgba(220, 180, 80, 0.1);
+}
+
+.main-btn--primary:hover {
+    background-color: rgba(220, 180, 80, 0.22);
+    border-left-color: rgb(220, 180, 80);
+}
+
+.main-btn--quit {
+    color: rgb(65, 60, 50);
+    margin-top: 12px;
+}
+
+.main-btn--quit:hover {
+    color: rgb(210, 60, 45);
+    border-left-color: rgb(130, 38, 28);
+}
+
+.main__version {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgb(65, 60, 50);
+}
+
+.main__right {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.egg-deco {
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 260px;
+}
+
+.egg-deco__emoji {
+    font-size: 90px;
+    position: absolute;
+    -unity-text-align: middle-center;
+}
+
+.egg-deco__ring {
+    position: absolute;
+    border-radius: 50%;
+    border-width: 1px;
+}
+
+.egg-deco__ring--1 {
+    width: 140px;
+    height: 140px;
+    border-color: rgba(220, 180, 80, 0.25);
+}
+
+.egg-deco__ring--2 {
+    width: 190px;
+    height: 190px;
+    border-color: rgba(220, 180, 80, 0.12);
+}
+
+.egg-deco__ring--3 {
+    width: 250px;
+    height: 250px;
+    border-color: rgba(220, 180, 80, 0.06);
+}
+
+/* ── SETTINGS ────────────────────────────────────────────────────────────── */
+.settings__card {
+    width: 820px;
+    max-height: 90%;
+    background-color: rgba(12, 11, 20, 0.97);
+    border-width: 1px;
+    border-color: rgba(45, 42, 65, 1);
+    border-radius: 2px;
+    flex-direction: column;
+}
+
+.settings__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(45, 42, 65, 1);
+}
+
+.settings__eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: rgb(70, 55, 20);
+}
+
+.settings__category {
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: rgb(220, 180, 80);
+    margin-top: 2px;
+}
+
+.settings__body {
+    flex-direction: row;
+    flex-grow: 1;
+    min-height: 380px;
+}
+
+.settings__sidebar {
+    width: 160px;
+    border-right-width: 1px;
+    border-right-color: rgba(45, 42, 65, 1);
+    padding: 12px 0;
+    flex-direction: column;
+}
+
+.tab-btn {
+    padding: 10px 18px;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    border-left-width: 2px;
+    border-left-color: rgba(0, 0, 0, 0);
+    color: rgb(65, 60, 50);
+    font-size: 13px;
+    letter-spacing: 1px;
+    -unity-text-align: middle-left;
+    transition-property: color, border-left-color;
+    transition-duration: 0.12s;
+}
+
+.tab-btn:hover {
+    color: rgb(130, 122, 105);
+    border-left-color: rgb(70, 55, 20);
+}
+
+.tab-btn.tab--active {
+    color: rgb(220, 180, 80);
+    border-left-color: rgb(220, 180, 80);
+    background-color: rgba(220, 180, 80, 0.07);
+}
+
+.settings__content {
+    flex-grow: 1;
+    padding: 4px 28px 20px 28px;
+}
+
+.panel {
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.field-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(30, 28, 48, 1);
+}
+
+.field-label {
+    color: rgb(130, 122, 105);
+    font-size: 13px;
+    flex-grow: 1;
+}
+
+.field-slider {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.field-slider > .unity-base-slider__tracker {
+    background-color: rgba(40, 38, 60, 1);
+    height: 4px;
+    border-radius: 2px;
+    border-width: 0;
+}
+
+.field-slider > .unity-base-slider__dragger {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: rgb(220, 180, 80);
+    border-width: 0;
+    margin-top: -5px;
+}
+
+.field-toggle {
+    flex-shrink: 0;
+}
+
+.field-toggle > .unity-toggle__input {
+    flex-direction: row-reverse;
+}
+
+.field-toggle > .unity-toggle__input > .unity-toggle__checkmark {
+    width: 40px;
+    height: 22px;
+    border-radius: 11px;
+    background-color: rgba(40, 38, 60, 1);
+    border-width: 1px;
+    border-color: rgba(45, 42, 65, 1);
+    background-image: none;
+}
+
+.field-toggle:checked > .unity-toggle__input > .unity-toggle__checkmark {
+    background-color: rgb(70, 55, 20);
+    border-color: rgb(140, 110, 45);
+}
+
+.field-dropdown {
+    width: 160px;
+    flex-shrink: 0;
+    background-color: rgba(14, 13, 24, 1);
+    border-width: 1px;
+    border-color: rgba(45, 42, 65, 1);
+    border-radius: 2px;
+    color: rgb(215, 205, 185);
+    font-size: 13px;
+}
+
+.field-dropdown > .unity-popup-field__input {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    padding: 4px 10px;
+}
+
+.settings__footer {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 14px 28px;
+    border-top-width: 1px;
+    border-top-color: rgba(45, 42, 65, 1);
+}
+
+/* ── TEAM ────────────────────────────────────────────────────────────────── */
+.team__card {
+    width: 860px;
+    background-color: rgba(12, 11, 20, 0.97);
+    border-width: 1px;
+    border-color: rgba(45, 42, 65, 1);
+    border-radius: 2px;
+    flex-direction: column;
+    padding-bottom: 32px;
+}
+
+.team__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(45, 42, 65, 1);
+    margin-bottom: 8px;
+}
+
+.team__grid {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 32px 40px;
+    flex-grow: 1;
+}
+
+.member-card {
+    width: 220px;
+    align-items: center;
+    padding: 28px 20px;
+    border-width: 1px;
+    border-color: rgba(45, 42, 65, 1);
+    border-radius: 2px;
+    background-color: rgba(10, 9, 18, 0.8);
+    transition-property: border-color, background-color;
+    transition-duration: 0.2s;
+}
+
+.member-card:hover {
+    border-color: rgb(140, 110, 45);
+    background-color: rgba(220, 180, 80, 0.05);
+}
+
+.member-card--center {
+    margin-top: -18px;
+    border-color: rgb(140, 110, 45);
+    background-color: rgba(220, 180, 80, 0.06);
+}
+
+.member-card__avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 36px;
+    background-color: rgba(30, 28, 50, 1);
+    border-width: 1px;
+    border-color: rgba(45, 42, 65, 1);
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.member-card__avatar--gold {
+    border-color: rgb(140, 110, 45);
+    background-color: rgba(220, 180, 80, 0.1);
+}
+
+.member-card__icon {
+    font-size: 32px;
+    -unity-text-align: middle-center;
+}
+
+.member-card__name {
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: rgb(220, 180, 80);
+    -unity-text-align: middle-center;
+    margin-bottom: 6px;
+}
+
+.member-card__role {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgb(70, 55, 20);
+    -unity-text-align: middle-center;
+    margin-bottom: 14px;
+}
+
+.member-card__quote {
+    font-size: 11px;
+    color: rgb(65, 60, 50);
+    -unity-text-align: middle-center;
+    -unity-font-style: italic;
+    white-space: normal;
+}
+
+.team__footer-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgb(65, 60, 50);
+    -unity-text-align: middle-center;
+    margin-top: 8px;
+}
+
+/* ── CONFIRM ─────────────────────────────────────────────────────────────── */
+.confirm__card {
+    width: 360px;
+    padding: 44px 52px;
+    background-color: rgba(12, 11, 20, 0.97);
+    border-width: 1px;
+    border-color: rgba(80, 55, 25, 1);
+    border-radius: 2px;
+    align-items: center;
+}
+
+.confirm__egg {
+    font-size: 42px;
+    -unity-text-align: middle-center;
+    margin-bottom: 16px;
+}
+
+.confirm__title {
+    font-size: 24px;
+    color: rgb(220, 180, 80);
+    letter-spacing: 1px;
+    -unity-text-align: middle-center;
+    margin-bottom: 10px;
+}
+
+.confirm__sub {
+    font-size: 12px;
+    color: rgb(70, 55, 20);
+    -unity-text-align: middle-center;
+    margin-bottom: 32px;
+}
+
+.confirm__buttons {
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* ── BOUTONS PARTAGÉS ────────────────────────────────────────────────────── */
+.btn-ghost {
+    padding: 7px 18px;
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 1px;
+    border-color: rgba(45, 42, 65, 1);
+    border-radius: 2px;
+    color: rgb(65, 60, 50);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-right: 10px;
+    transition-property: color, border-color;
+    transition-duration: 0.15s;
+}
+
+.btn-ghost:hover {
+    border-color: rgb(70, 55, 20);
+    color: rgb(130, 122, 105);
+}
+
+.btn-primary {
+    padding: 7px 18px;
+    background-color: rgba(220, 180, 80, 0.12);
+    border-width: 1px;
+    border-color: rgb(140, 110, 45);
+    border-radius: 2px;
+    color: rgb(220, 180, 80);
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+}
+
+.btn-primary:hover {
+    background-color: rgba(220, 180, 80, 0.22);
+}
+
+.btn-danger {
+    padding: 7px 18px;
+    background-color: rgba(210, 60, 45, 0.12);
+    border-width: 1px;
+    border-color: rgb(130, 38, 28);
+    border-radius: 2px;
+    color: rgb(210, 60, 45);
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+}
+
+.btn-danger:hover {
+    background-color: rgba(210, 60, 45, 0.25);
+}

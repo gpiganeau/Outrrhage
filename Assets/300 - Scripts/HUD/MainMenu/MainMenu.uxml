@@ -1,0 +1,204 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="root" class="mm-root">
+        <ui:VisualElement name="scanlines" picking-mode="Ignore" class="scanlines"/>
+        <ui:VisualElement name="vignette" picking-mode="Ignore" class="vignette"/>
+        <ui:VisualElement name="screen-main" class="mm-screen">
+            <ui:VisualElement class="main__left">
+                <ui:Label text="— PROTOTYPE —" class="main__eyebrow"/>
+                <ui:VisualElement class="main__title-wrap">
+                    <ui:Label name="main-title" text="EGG" class="main__title main__title--egg"/>
+                    <ui:Label text="RAGE" class="main__title main__title--rage"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="main__nav">
+                    <ui:Button name="btn-play" text="JOUER" class="main-btn main-btn--primary"/>
+                    <ui:Button name="btn-settings" text="PARAMÈTRES" class="main-btn"/>
+                    <ui:Button name="btn-team" text="L&apos;ÉQUIPE" class="main-btn"/>
+                    <ui:Button name="btn-quit" text="QUITTER" class="main-btn main-btn--quit"/>
+                </ui:VisualElement>
+                <ui:Label text="v0.1.0 — build 2025" class="main__version"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="main__right">
+                <ui:VisualElement class="egg-deco">
+                    <ui:Label text="🥚" class="egg-deco__emoji"/>
+                    <ui:VisualElement class="egg-deco__ring egg-deco__ring--1"/>
+                    <ui:VisualElement class="egg-deco__ring egg-deco__ring--2"/>
+                    <ui:VisualElement class="egg-deco__ring egg-deco__ring--3"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-settings" class="mm-screen mm-screen--overlay">
+            <ui:VisualElement class="settings__card">
+                <ui:VisualElement class="settings__header">
+                    <ui:VisualElement>
+                        <ui:Label text="Settings Manager" class="settings__eyebrow"/>
+                        <ui:Label name="settings-category-label" text="Gameplay" class="settings__category"/>
+                    </ui:VisualElement>
+                    <ui:Button name="btn-back-settings" text="← Retour" class="btn-ghost"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="settings__body">
+                    <ui:VisualElement class="settings__sidebar">
+                        <ui:Button name="tab-camera" text="🎥  Camera" class="tab-btn"/>
+                        <ui:Button name="tab-gameplay" text="🎮  Gameplay" class="tab-btn"/>
+                        <ui:Button name="tab-visual" text="🖼  Visual" class="tab-btn"/>
+                        <ui:Button name="tab-audio" text="🔊  Audio" class="tab-btn"/>
+                    </ui:VisualElement>
+                    <ui:ScrollView vertical-scroller-visibility="Auto" class="settings__content">
+                        <ui:VisualElement name="panel-camera" class="panel">
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Field of View" class="field-label"/>
+                                <ui:Slider name="cam-fov" low-value="60" high-value="120" value="75" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Mouse Sensitivity" class="field-label"/>
+                                <ui:Slider name="cam-sensitivity" low-value="0.1" high-value="5" value="1.5" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Invert Y Axis" class="field-label"/>
+                                <ui:Toggle name="cam-invert-y" value="false" class="field-toggle"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Camera Smoothing" class="field-label"/>
+                                <ui:Slider name="cam-smoothing" low-value="0" high-value="1" value="0.3" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Shake Intensity" class="field-label"/>
+                                <ui:Slider name="cam-shake" low-value="0" high-value="2" value="1" class="field-slider"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="panel-gameplay" class="panel">
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Static Time On Skill Use" class="field-label"/>
+                                <ui:Slider name="gp-skill-static-time" low-value="0" high-value="2" value="0.3" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Min Time Between Skills" class="field-label"/>
+                                <ui:Slider name="gp-skill-min-delay" low-value="0" high-value="3" value="0.5" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Spawner Delay (s)" class="field-label"/>
+                                <ui:Slider name="gp-spawner-delay" low-value="0.1" high-value="5" value="0.5" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Death Delay Before Reload" class="field-label"/>
+                                <ui:Slider name="gp-death-reload-delay" low-value="0" high-value="10" value="3" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Clear Room On Death" class="field-label"/>
+                                <ui:Toggle name="gp-clear-on-death" value="true" class="field-toggle"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="panel-visual" class="panel">
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Resolution" class="field-label"/>
+                                <ui:DropdownField name="vis-resolution" choices="1280x720,1920x1080,2560x1440,3840x2160" value="1920x1080" class="field-dropdown"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Quality" class="field-label"/>
+                                <ui:DropdownField name="vis-quality" choices="Low,Medium,High,Ultra" value="High" class="field-dropdown"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Anti-Aliasing" class="field-label"/>
+                                <ui:DropdownField name="vis-aa" choices="None,FXAA,TAA,MSAA x4" value="TAA" class="field-dropdown"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Shadow Quality" class="field-label"/>
+                                <ui:DropdownField name="vis-shadow" choices="Off,Low,Medium,High" value="High" class="field-dropdown"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="VSync" class="field-label"/>
+                                <ui:Toggle name="vis-vsync" value="true" class="field-toggle"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Motion Blur" class="field-label"/>
+                                <ui:Toggle name="vis-motionblur" value="false" class="field-toggle"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Brightness" class="field-label"/>
+                                <ui:Slider name="vis-brightness" low-value="0.5" high-value="2" value="1" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Gamma" class="field-label"/>
+                                <ui:Slider name="vis-gamma" low-value="0.5" high-value="2" value="1" class="field-slider"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        <ui:VisualElement name="panel-audio" class="panel">
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Master Volume" class="field-label"/>
+                                <ui:Slider name="aud-master" low-value="0" high-value="1" value="1" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Music Volume" class="field-label"/>
+                                <ui:Slider name="aud-music" low-value="0" high-value="1" value="0.8" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="SFX Volume" class="field-label"/>
+                                <ui:Slider name="aud-sfx" low-value="0" high-value="1" value="0.9" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Ambient Volume" class="field-label"/>
+                                <ui:Slider name="aud-ambient" low-value="0" high-value="1" value="0.6" class="field-slider"/>
+                            </ui:VisualElement>
+                            <ui:VisualElement class="field-row">
+                                <ui:Label text="Mute When Unfocused" class="field-label"/>
+                                <ui:Toggle name="aud-mute-unfocused" value="true" class="field-toggle"/>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:ScrollView>
+                </ui:VisualElement>
+                <ui:VisualElement class="settings__footer">
+                    <ui:Button name="btn-reset" text="Réinitialiser" class="btn-ghost"/>
+                    <ui:Button name="btn-apply" text="Appliquer" class="btn-primary"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-team" class="mm-screen mm-screen--overlay">
+            <ui:VisualElement class="team__card">
+                <ui:VisualElement class="team__header">
+                    <ui:VisualElement>
+                        <ui:Label text="— EGGRAGE —" class="settings__eyebrow"/>
+                        <ui:Label text="L&apos;Équipe" class="settings__category"/>
+                    </ui:VisualElement>
+                    <ui:Button name="btn-back-team" text="← Retour" class="btn-ghost"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="team__grid">
+                    <ui:VisualElement class="member-card">
+                        <ui:VisualElement class="member-card__avatar">
+                            <ui:Label text="👤" class="member-card__icon"/>
+                        </ui:VisualElement>
+                        <ui:Label text="Membre 01" class="member-card__name"/>
+                        <ui:Label text="Placeholder" class="member-card__role"/>
+                        <ui:Label text="&quot;Citation inspirante ici.&quot;" class="member-card__quote"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="member-card member-card--center">
+                        <ui:VisualElement class="member-card__avatar member-card__avatar--gold">
+                            <ui:Label text="🥚" class="member-card__icon"/>
+                        </ui:VisualElement>
+                        <ui:Label text="Membre 02" class="member-card__name"/>
+                        <ui:Label text="Placeholder" class="member-card__role"/>
+                        <ui:Label text="&quot;Citation inspirante ici.&quot;" class="member-card__quote"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="member-card">
+                        <ui:VisualElement class="member-card__avatar">
+                            <ui:Label text="👤" class="member-card__icon"/>
+                        </ui:VisualElement>
+                        <ui:Label text="Membre 03" class="member-card__name"/>
+                        <ui:Label text="Placeholder" class="member-card__role"/>
+                        <ui:Label text="&quot;Citation inspirante ici.&quot;" class="member-card__quote"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Label text="Fait avec 🔥 et trop peu de sommeil" class="team__footer-label"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="screen-confirm" class="mm-screen mm-screen--overlay">
+            <ui:VisualElement class="confirm__card">
+                <ui:Label text="🥚" class="confirm__egg"/>
+                <ui:Label name="confirm-title" text="Quitter Eggrage ?" class="confirm__title"/>
+                <ui:Label name="confirm-sub" text="Toute progression sera perdue." class="confirm__sub"/>
+                <ui:VisualElement class="confirm__buttons">
+                    <ui:Button name="btn-confirm-cancel" text="Annuler" class="btn-ghost"/>
+                    <ui:Button name="btn-confirm-ok" text="Quitter" class="btn-danger"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
