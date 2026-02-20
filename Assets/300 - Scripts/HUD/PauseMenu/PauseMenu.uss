@@ -1,0 +1,367 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   PauseMenu.uss  –  Dark / Fantasy tone
+   Compatible with Unity 6 UI Toolkit
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Variables (Custom Properties) ──────────────────────────────────────── */
+.root {
+    --color-bg:        rgba(8,8,16,0.94);
+    --color-surface:   rgba(14,14,26,0.98);
+    --color-border:    rgba(50,50,70,1);
+    --color-border-hi: rgba(200,169,110,0.25);
+
+    --color-gold:      rgb(200,169,110);
+    --color-gold-dim:  rgb(120,100,60);
+    --color-gold-dark: rgb(70,58,35);
+
+    --color-text:      rgb(220,205,175);
+    --color-text-dim:  rgb(130,120,100);
+    --color-text-mute: rgb(70,65,55);
+
+    --color-danger:    rgb(180,70,70);
+    --color-danger-bg: rgba(180,70,70,0.12);
+
+    --radius:    2px;
+    --radius-sm: 2px;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SHARED: SCREEN WRAPPER
+   ═══════════════════════════════════════════════════════════════════════════ */
+.screen {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(5,5,12,0.88);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PAUSE SCREEN
+   ═══════════════════════════════════════════════════════════════════════════ */
+.pause__inner {
+    align-items: center;
+}
+
+.pause__eyebrow {
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--color-gold-dark);
+    -unity-font-style: normal;
+    margin-bottom: 8px;
+}
+
+.pause__title {
+    font-size: 52px;
+    color: var(--color-gold);
+    letter-spacing: 10px;
+    -unity-font-style: normal;
+    margin-bottom: 40px;
+}
+
+.pause__buttons {
+    align-items: center;
+    width: 260px;
+}
+
+.pause-btn {
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 12px 0;
+
+    background-color: rgba(0,0,0,0);
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--color-border);
+
+    color: var(--color-text-dim);
+    font-size: 16px;
+    letter-spacing: 3px;
+    -unity-text-align: middle-center;
+    -unity-font-style: normal;
+
+    transition-property: color, border-bottom-color;
+    transition-duration: 0.15s;
+}
+.pause-btn:hover {
+    color: var(--color-gold);
+    border-bottom-color: var(--color-gold-dim);
+}
+
+.pause-btn--danger {
+    color: var(--color-text-mute);
+}
+.pause-btn--danger:hover {
+    color: var(--color-danger);
+    border-bottom-color: var(--color-danger);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SETTINGS SCREEN
+   ═══════════════════════════════════════════════════════════════════════════ */
+.settings__card {
+    width: 820px;
+    max-height: 90%;
+
+    background-color: var(--color-surface);
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-radius: var(--radius);
+
+    flex-direction: column;
+}
+
+/* Header */
+.settings__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 28px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--color-border);
+}
+
+.settings__eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--color-gold-dark);
+}
+
+.settings__category {
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--color-gold);
+    margin-top: 2px;
+}
+
+/* Body */
+.settings__body {
+    flex-direction: row;
+    flex-grow: 1;
+    min-height: 380px;
+}
+
+/* Sidebar */
+.settings__sidebar {
+    width: 160px;
+    border-right-width: 1px;
+    border-right-color: var(--color-border);
+    padding: 12px 0;
+    flex-direction: column;
+}
+
+.tab-btn {
+    padding: 10px 18px;
+    background-color: rgba(0,0,0,0);
+    border-width: 0;
+    border-left-width: 2px;
+    border-left-color: rgba(0,0,0,0);
+
+    color: var(--color-text-mute);
+    font-size: 13px;
+    letter-spacing: 1px;
+    -unity-text-align: middle-left;
+
+    transition-property: color, border-left-color;
+    transition-duration: 0.12s;
+}
+.tab-btn:hover {
+    color: var(--color-text-dim);
+    border-left-color: var(--color-gold-dark);
+}
+.tab-btn.tab--active {
+    color: var(--color-gold);
+    border-left-color: var(--color-gold);
+    background-color: rgba(200,169,110,0.07);
+}
+
+/* Content area */
+.settings__content {
+    flex-grow: 1;
+    padding: 4px 28px 20px 28px;
+}
+
+/* Panel */
+.panel {
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Field row */
+.field-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 0;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(30,30,50,1);
+}
+
+.field-label {
+    color: var(--color-text-dim);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    flex-grow: 1;
+}
+
+/* Slider */
+.field-slider {
+    width: 200px;
+    flex-shrink: 0;
+}
+.field-slider > .unity-base-slider__tracker {
+    background-color: rgba(40,40,60,1);
+    height: 4px;
+    border-radius: 2px;
+    border-width: 0;
+}
+.field-slider > .unity-base-slider__dragger {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: var(--color-gold);
+    border-width: 0;
+    margin-top: -5px;
+}
+.field-slider > .unity-base-slider__drag-container > .unity-base-slider__tracker {
+    background-color: var(--color-gold-dim);
+}
+
+/* Toggle */
+.field-toggle {
+    flex-shrink: 0;
+}
+.field-toggle > .unity-toggle__input {
+    flex-direction: row-reverse;
+}
+.field-toggle > .unity-toggle__input > .unity-toggle__checkmark {
+    width: 40px;
+    height: 22px;
+    border-radius: 11px;
+    background-color: rgba(40,40,60,1);
+    border-width: 1px;
+    border-color: var(--color-border);
+    -unity-background-scale-mode: scale-to-fit;
+    background-image: none;
+}
+.field-toggle:checked > .unity-toggle__input > .unity-toggle__checkmark {
+    background-color: var(--color-gold-dark);
+    border-color: var(--color-gold-dim);
+}
+
+/* Dropdown */
+.field-dropdown {
+    width: 160px;
+    flex-shrink: 0;
+    background-color: rgba(18,18,30,1);
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text);
+    font-size: 13px;
+}
+.field-dropdown > .unity-popup-field__input {
+    background-color: rgba(0,0,0,0);
+    border-width: 0;
+    padding: 4px 10px;
+}
+.field-dropdown > .unity-popup-field__input > .unity-base-popup-field__arrow {
+    color: var(--color-gold-dim);
+}
+
+/* Footer */
+.settings__footer {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 14px 28px;
+    border-top-width: 1px;
+    border-top-color: var(--color-border);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONFIRM DIALOG
+   ═══════════════════════════════════════════════════════════════════════════ */
+.confirm__card {
+    width: 380px;
+    padding: 48px 52px;
+    background-color: var(--color-surface);
+    border-width: 1px;
+    border-color: rgba(60,50,30,1);
+    border-radius: var(--radius);
+    align-items: center;
+}
+
+.confirm__title {
+    font-size: 26px;
+    color: var(--color-gold);
+    letter-spacing: 1px;
+    -unity-text-align: middle-center;
+    margin-bottom: 10px;
+}
+
+.confirm__sub {
+    font-size: 13px;
+    color: var(--color-gold-dark);
+    letter-spacing: 0.5px;
+    -unity-text-align: middle-center;
+    margin-bottom: 36px;
+}
+
+.confirm__buttons {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SHARED BUTTONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+.btn-ghost {
+    padding: 7px 18px;
+    background-color: rgba(0,0,0,0);
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-mute);
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-right: 10px;
+}
+.btn-ghost:hover {
+    border-color: var(--color-gold-dark);
+    color: var(--color-text-dim);
+}
+
+.btn-primary {
+    padding: 7px 18px;
+    background-color: rgba(200,169,110,0.12);
+    border-width: 1px;
+    border-color: var(--color-gold-dim);
+    border-radius: var(--radius-sm);
+    color: var(--color-gold);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.btn-primary:hover {
+    background-color: rgba(200,169,110,0.22);
+}
+
+.btn-danger {
+    padding: 7px 18px;
+    background-color: var(--color-danger-bg);
+    border-width: 1px;
+    border-color: var(--color-danger);
+    border-radius: var(--radius-sm);
+    color: var(--color-danger);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+.btn-danger:hover {
+    background-color: rgba(180,70,70,0.25);
+}

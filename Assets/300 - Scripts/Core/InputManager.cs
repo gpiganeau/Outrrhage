@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public static InputManager Instance { get; private set; }
     [SerializeField] private PlayerInput playerInputComponent;
+    public PlayerInput PlayerInputComponent => playerInputComponent;
 
     private Vector2 _leftStickInputVector;
 
@@ -39,6 +40,9 @@ public class InputManager : MonoBehaviour
     [HideInInspector] public UnityEvent OnCharacterSlot4Released;
     [HideInInspector] public UnityEvent OnCharacterSlot5;
     [HideInInspector] public UnityEvent OnCharacterSlot5Released;
+
+    // -- UI
+    [HideInInspector] public UnityEvent OnPauseEvent;
     #endregion
 
     [SerializeField] private SlotInputSprites[] _slotInputSprites;
@@ -218,6 +222,14 @@ public class InputManager : MonoBehaviour
         {
             slot5Pressed = false;
             OnCharacterSlot5Released?.Invoke();
+        }
+    }
+
+    public void OnPause(InputAction.CallbackContext obj)
+    {   
+        if (obj.performed)
+        {
+            OnPauseEvent?.Invoke();
         }
     }
 

@@ -71,6 +71,12 @@ public class DebugWindow : EditorWindow
             Time.timeScale = Time.timeScale > 0.5f ? 0.2f : 1f;
         });
 
+        AddAction($"Toggle Menu", () => {
+            if (Application.isPlaying == false) return;
+            FindFirstObjectByType<PauseMenuController>().TogglePause();
+        });
+
+
         AddAction($"Toggle Juicer", () => {
             if (Application.isPlaying == false) return;
             SettingsManager.Instance.VisualSettings.EnableJuicer = !SettingsManager.Instance.VisualSettings.EnableJuicer;
