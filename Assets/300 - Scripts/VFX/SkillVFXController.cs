@@ -14,15 +14,8 @@ public class SkillVFXController : MonoBehaviour
     // === CASTING VFX ===
     public GameObject PlayCastVFX(Transform caster)
     {
-        if (skillData.vfxData.castVFXPrefab == null) return null;
-        
+
         Vector3 spawnPos = caster.position + skillData.vfxData.castVFXOffset;
-        currentCastVFX = Instantiate(skillData.vfxData.castVFXPrefab, spawnPos, Quaternion.identity);
-        
-        if (skillData.vfxData.attachCastVFXToCharacter)
-        {
-            currentCastVFX.transform.SetParent(caster);
-        }
         
         // Sound
         if (skillData.vfxData.castSound != null)
@@ -30,6 +23,15 @@ public class SkillVFXController : MonoBehaviour
             AudioManager.Instance.PlayClipAtPoint(skillData.vfxData.castSound, spawnPos, SoundGroup.SFX);
         }
 
+        if (skillData.vfxData.castVFXPrefab == null) return null;
+        
+        currentCastVFX = Instantiate(skillData.vfxData.castVFXPrefab, spawnPos, Quaternion.identity);
+        
+        if (skillData.vfxData.attachCastVFXToCharacter)
+        {
+            currentCastVFX.transform.SetParent(caster);
+        }
+        
         return currentCastVFX;
     }
     

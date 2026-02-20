@@ -24,6 +24,7 @@ public class DroneProjectileStrategy: SkillStrategy
 		projectileData.startingPosition += new Vector3(0, 1f, 0f); // Vertical Offset
 		movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
 
+		_vfxController.PlayCastVFX(movementController.transform);
 
 		var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
 		p.SetTravelMode(_storedSkillData.TravelMode);

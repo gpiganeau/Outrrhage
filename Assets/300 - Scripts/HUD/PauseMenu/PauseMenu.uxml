@@ -1,199 +1,151 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
-
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:VisualElement name="root" class="root">
-
-        <!-- ══════════════════════════════════════════════════════════════ -->
-        <!--  SCREEN — PAUSE                                                -->
-        <!-- ══════════════════════════════════════════════════════════════ -->
         <ui:VisualElement name="screen-pause" class="screen screen--pause">
-
             <ui:VisualElement class="pause__inner">
-                <ui:Label text="— EN PAUSE —" class="pause__eyebrow" />
-                <ui:Label text="PAUSE"         class="pause__title"   />
-
+                <ui:Label text="— EN PAUSE —" class="pause__eyebrow"/>
+                <ui:Label text="PAUSE" class="pause__title"/>
                 <ui:VisualElement class="pause__buttons">
-                    <ui:Button name="btn-resume"   text="Reprendre"          class="pause-btn" />
-                    <ui:Button name="btn-settings" text="Paramètres"         class="pause-btn" />
-                    <ui:Button name="btn-mainmenu" text="Menu Principal"     class="pause-btn pause-btn--danger" />
-                    <ui:Button name="btn-quit"     text="Quitter le jeu"     class="pause-btn pause-btn--danger" />
+                    <ui:Button name="btn-resume" text="Reprendre" class="pause-btn"/>
+                    <ui:Button name="btn-settings" text="Paramètres" class="pause-btn"/>
+                    <ui:Button name="btn-mainmenu" text="Menu Principal" class="pause-btn pause-btn--danger"/>
+                    <ui:Button name="btn-quit" text="Quitter le jeu" class="pause-btn pause-btn--danger"/>
                 </ui:VisualElement>
             </ui:VisualElement>
-
         </ui:VisualElement>
-
-
-        <!-- ══════════════════════════════════════════════════════════════ -->
-        <!--  SCREEN — SETTINGS                                             -->
-        <!-- ══════════════════════════════════════════════════════════════ -->
         <ui:VisualElement name="screen-settings" class="screen screen--settings">
-
             <ui:VisualElement class="settings__card">
-
-                <!-- Header -->
                 <ui:VisualElement class="settings__header">
                     <ui:VisualElement>
-                        <ui:Label text="Settings Manager" class="settings__eyebrow" />
-                        <ui:Label name="settings-category-label" text="Gameplay" class="settings__category" />
+                        <ui:Label text="Settings Manager" class="settings__eyebrow"/>
+                        <ui:Label name="settings-category-label" text="Gameplay" class="settings__category"/>
                     </ui:VisualElement>
-                    <ui:Button name="btn-back-settings" text="← Retour" class="btn-ghost" />
+                    <ui:Button name="btn-back-settings" text="← Retour" class="btn-ghost"/>
                 </ui:VisualElement>
-
-                <!-- Body: sidebar + content -->
                 <ui:VisualElement class="settings__body">
-
-                    <!-- Sidebar -->
                     <ui:VisualElement class="settings__sidebar">
-                        <ui:Button name="tab-camera"   text="🎥  Camera"   class="tab-btn" />
-                        <ui:Button name="tab-gameplay" text="🎮  Gameplay" class="tab-btn" />
-                        <ui:Button name="tab-visual"   text="🖼  Visual"   class="tab-btn" />
-                        <ui:Button name="tab-audio"    text="🔊  Audio"    class="tab-btn" />
+                        <ui:Button name="tab-camera" text="🎥  Camera" class="tab-btn"/>
+                        <ui:Button name="tab-gameplay" text="🎮  Gameplay" class="tab-btn"/>
+                        <ui:Button name="tab-visual" text="🖼  Visual" class="tab-btn"/>
+                        <ui:Button name="tab-audio" text="🔊  Audio" class="tab-btn"/>
                     </ui:VisualElement>
-
-                    <!-- Panels -->
-                    <ui:ScrollView class="settings__content" vertical-scroller-visibility="Auto">
-
-                        <!-- ── CAMERA ── -->
+                    <ui:ScrollView vertical-scroller-visibility="Auto" class="settings__content">
                         <ui:VisualElement name="panel-camera" class="panel">
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Field of View"      class="field-label" />
-                                <ui:Slider name="cam-fov"         low-value="60"  high-value="120" value="75"  class="field-slider" />
+                                <ui:Label text="Field of View" class="field-label"/>
+                                <ui:Slider name="cam-fov" low-value="10" high-value="120" value="75" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Mouse Sensitivity"  class="field-label" />
-                                <ui:Slider name="cam-sensitivity" low-value="0.1" high-value="5"   value="1.5" class="field-slider" />
+                                <ui:Label text="Mouse Sensitivity" class="field-label"/>
+                                <ui:Slider name="cam-sensitivity" low-value="0.1" high-value="5" value="1.5" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Invert Y Axis"      class="field-label" />
-                                <ui:Toggle name="cam-invert-y"    value="false"                               class="field-toggle" />
+                                <ui:Label text="Invert Y Axis" class="field-label"/>
+                                <ui:Toggle name="cam-invert-y" value="false" class="field-toggle"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Camera Smoothing"   class="field-label" />
-                                <ui:Slider name="cam-smoothing"   low-value="0"   high-value="1"   value="0.3" class="field-slider" />
+                                <ui:Label text="Camera Smoothing" class="field-label"/>
+                                <ui:Slider name="cam-smoothing" low-value="0" high-value="1" value="0.3" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Shake Intensity"    class="field-label" />
-                                <ui:Slider name="cam-shake"       low-value="0"   high-value="2"   value="1"   class="field-slider" />
+                                <ui:Label text="Shake Intensity" class="field-label"/>
+                                <ui:Slider name="cam-shake" low-value="0" high-value="2" value="1" class="field-slider"/>
                             </ui:VisualElement>
                         </ui:VisualElement>
-
-                        <!-- ── GAMEPLAY ── -->
                         <ui:VisualElement name="panel-gameplay" class="panel">
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Static Time On Skill Use"   class="field-label" />
-                                <ui:Slider name="gp-skill-static-time"  low-value="0" high-value="2"  value="0.3" class="field-slider" />
+                                <ui:Label text="Static Time On Skill Use" class="field-label"/>
+                                <ui:Slider name="gp-skill-static-time" low-value="0" high-value="2" value="0.3" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Min Time Between Skills"     class="field-label" />
-                                <ui:Slider name="gp-skill-min-delay"    low-value="0" high-value="3"  value="0.5" class="field-slider" />
+                                <ui:Label text="Min Time Between Skills" class="field-label"/>
+                                <ui:Slider name="gp-skill-min-delay" low-value="0" high-value="3" value="0.5" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Spawner Delay (s)"           class="field-label" />
-                                <ui:Slider name="gp-spawner-delay"      low-value="0.1" high-value="5" value="0.5" class="field-slider" />
+                                <ui:Label text="Spawner Delay (s)" class="field-label"/>
+                                <ui:Slider name="gp-spawner-delay" low-value="0.1" high-value="5" value="0.5" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Death Delay Before Reload"   class="field-label" />
-                                <ui:Slider name="gp-death-reload-delay" low-value="0" high-value="10" value="3"   class="field-slider" />
+                                <ui:Label text="Death Delay Before Reload" class="field-label"/>
+                                <ui:Slider name="gp-death-reload-delay" low-value="0" high-value="10" value="3" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Clear Room On Death"         class="field-label" />
-                                <ui:Toggle name="gp-clear-on-death"     value="true"                              class="field-toggle" />
+                                <ui:Label text="Clear Room On Death" class="field-label"/>
+                                <ui:Toggle name="gp-clear-on-death" value="true" class="field-toggle"/>
                             </ui:VisualElement>
                         </ui:VisualElement>
-
-                        <!-- ── VISUAL ── -->
                         <ui:VisualElement name="panel-visual" class="panel">
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Resolution"   class="field-label" />
-                                <ui:DropdownField name="vis-resolution" class="field-dropdown"
-                                    choices="1280x720,1920x1080,2560x1440,3840x2160" value="1920x1080" />
+                                <ui:Label text="Resolution" class="field-label"/>
+                                <ui:DropdownField name="vis-resolution" choices="1280x720,1920x1080,2560x1440,3840x2160" value="1920x1080" class="field-dropdown"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Quality"      class="field-label" />
-                                <ui:DropdownField name="vis-quality" class="field-dropdown"
-                                    choices="Low,Medium,High,Ultra" value="High" />
+                                <ui:Label text="Quality" class="field-label"/>
+                                <ui:DropdownField name="vis-quality" choices="Low,Medium,High,Ultra" value="High" class="field-dropdown"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Anti-Aliasing" class="field-label" />
-                                <ui:DropdownField name="vis-aa" class="field-dropdown"
-                                    choices="None,FXAA,TAA,MSAA x4" value="TAA" />
+                                <ui:Label text="Anti-Aliasing" class="field-label"/>
+                                <ui:DropdownField name="vis-aa" choices="None,FXAA,TAA,MSAA x4" value="TAA" class="field-dropdown"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Shadow Quality" class="field-label" />
-                                <ui:DropdownField name="vis-shadow" class="field-dropdown"
-                                    choices="Off,Low,Medium,High" value="High" />
+                                <ui:Label text="Shadow Quality" class="field-label"/>
+                                <ui:DropdownField name="vis-shadow" choices="Off,Low,Medium,High" value="High" class="field-dropdown"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="VSync"         class="field-label" />
-                                <ui:Toggle name="vis-vsync"    value="true"  class="field-toggle" />
+                                <ui:Label text="VSync" class="field-label"/>
+                                <ui:Toggle name="vis-vsync" value="true" class="field-toggle"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Motion Blur"   class="field-label" />
-                                <ui:Toggle name="vis-motionblur" value="false" class="field-toggle" />
+                                <ui:Label text="Motion Blur" class="field-label"/>
+                                <ui:Toggle name="vis-motionblur" value="false" class="field-toggle"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Brightness"    class="field-label" />
-                                <ui:Slider name="vis-brightness" low-value="0.5" high-value="2" value="1" class="field-slider" />
+                                <ui:Label text="Brightness" class="field-label"/>
+                                <ui:Slider name="vis-brightness" low-value="0.5" high-value="2" value="1" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Gamma"         class="field-label" />
-                                <ui:Slider name="vis-gamma"    low-value="0.5" high-value="2" value="1"   class="field-slider" />
+                                <ui:Label text="Gamma" class="field-label"/>
+                                <ui:Slider name="vis-gamma" low-value="0.5" high-value="2" value="1" class="field-slider"/>
                             </ui:VisualElement>
                         </ui:VisualElement>
-
-                        <!-- ── AUDIO ── -->
                         <ui:VisualElement name="panel-audio" class="panel">
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Master Volume"   class="field-label" />
-                                <ui:Slider name="aud-master"  low-value="0" high-value="1" value="1"   class="field-slider" />
+                                <ui:Label text="Master Volume" class="field-label"/>
+                                <ui:Slider name="aud-master" low-value="0" high-value="1" value="1" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Music Volume"    class="field-label" />
-                                <ui:Slider name="aud-music"   low-value="0" high-value="1" value="0.8" class="field-slider" />
+                                <ui:Label text="Music Volume" class="field-label"/>
+                                <ui:Slider name="aud-music" low-value="0" high-value="1" value="0.8" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="SFX Volume"      class="field-label" />
-                                <ui:Slider name="aud-sfx"     low-value="0" high-value="1" value="0.9" class="field-slider" />
+                                <ui:Label text="SFX Volume" class="field-label"/>
+                                <ui:Slider name="aud-sfx" low-value="0" high-value="1" value="0.9" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Ambient Volume"  class="field-label" />
-                                <ui:Slider name="aud-ambient" low-value="0" high-value="1" value="0.6" class="field-slider" />
+                                <ui:Label text="Ambient Volume" class="field-label"/>
+                                <ui:Slider name="aud-ambient" low-value="0" high-value="1" value="0.6" class="field-slider"/>
                             </ui:VisualElement>
                             <ui:VisualElement class="field-row">
-                                <ui:Label text="Mute When Unfocused" class="field-label" />
-                                <ui:Toggle name="aud-mute-unfocused" value="true" class="field-toggle" />
+                                <ui:Label text="Mute When Unfocused" class="field-label"/>
+                                <ui:Toggle name="aud-mute-unfocused" value="true" class="field-toggle"/>
                             </ui:VisualElement>
                         </ui:VisualElement>
-
                     </ui:ScrollView>
                 </ui:VisualElement>
-
-                <!-- Footer -->
                 <ui:VisualElement class="settings__footer">
-                    <ui:Button name="btn-reset" text="Réinitialiser" class="btn-ghost"    />
-                    <ui:Button name="btn-apply" text="Appliquer"     class="btn-primary"  />
+                    <ui:Button name="btn-reset" text="Réinitialiser" class="btn-ghost"/>
+                    <ui:Button name="btn-apply" text="Appliquer" class="btn-primary"/>
                 </ui:VisualElement>
-
             </ui:VisualElement>
         </ui:VisualElement>
-
-
-        <!-- ══════════════════════════════════════════════════════════════ -->
-        <!--  SCREEN — CONFIRM DIALOG                                       -->
-        <!-- ══════════════════════════════════════════════════════════════ -->
         <ui:VisualElement name="screen-confirm" class="screen screen--confirm">
-
             <ui:VisualElement class="confirm__card">
-                <ui:Label name="confirm-title" text="Quitter le jeu ?"               class="confirm__title" />
-                <ui:Label name="confirm-sub"   text="Toute progression sera perdue." class="confirm__sub"   />
-
+                <ui:Label name="confirm-title" text="Quitter le jeu ?" class="confirm__title"/>
+                <ui:Label name="confirm-sub" text="Toute progression sera perdue." class="confirm__sub"/>
                 <ui:VisualElement class="confirm__buttons">
-                    <ui:Button name="btn-confirm-cancel" text="Annuler"    class="btn-ghost"   />
-                    <ui:Button name="btn-confirm-ok"     text="Confirmer"  class="btn-danger"  />
+                    <ui:Button name="btn-confirm-cancel" text="Annuler" class="btn-ghost"/>
+                    <ui:Button name="btn-confirm-ok" text="Confirmer" class="btn-danger"/>
                 </ui:VisualElement>
             </ui:VisualElement>
-
         </ui:VisualElement>
-
     </ui:VisualElement>
-
 </ui:UXML>

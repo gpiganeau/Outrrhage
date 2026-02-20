@@ -200,6 +200,7 @@ MonoBehaviour:
   - {fileID: 3064940305099015597, guid: 113f912f4791ee84bba7288091a2815f, type: 3}
   - {fileID: 3064940305099015597, guid: 15fb97f868544b54e9d28aa4fd908309, type: 3}
   - {fileID: 3064940305099015597, guid: 72e53e084c5e6764a9429e75684437cc, type: 3}
+  - {fileID: 2474350776460943824, guid: e42fd21a588dfbd42b0394df0f260993, type: 3}
   spawnInterval: 5
   spawnRangeMin: 3
   spawnRangeMax: 8
@@ -210,6 +211,50 @@ MonoBehaviour:
   OnEnemySpawned:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2663890441807851989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8294590740810850450}
+  - component: {fileID: 7136854929060756307}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8294590740810850450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2663890441807851989}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2386842270770891958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7136854929060756307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2663890441807851989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c005801b4347b4c8b3d0fefc891ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
 --- !u!1 &5424039192922156025
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +643,7 @@ Transform:
   - {fileID: 5946302167070884450}
   - {fileID: 7605205599646358681}
   - {fileID: 4204356821329593324}
+  - {fileID: 8294590740810850450}
   m_Father: {fileID: 3574302140441405706}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7447430995764534174
