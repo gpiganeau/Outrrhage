@@ -176,6 +176,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 727764900232871049, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: audioSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 343fe03a715b99a468bd61d307ba6d27, type: 2}
+    - target: {fileID: 727764900232871049, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
       propertyPath: cameraSettings
       value: 
       objectReference: {fileID: 11400000, guid: b46591d044c43444592a67e686b023af, type: 2}

@@ -9,11 +9,13 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private CameraSettings cameraSettings;
     [SerializeField] private GameplaySettings gameplaySettings;
     [SerializeField] private VisualSettings visualSettings;
+    [SerializeField] private AudioSettings audioSettings;
 
     public Standards Standards => standards;
     public CameraSettings CameraSettings => cameraSettings;
     public GameplaySettings GameplaySettings => gameplaySettings;
     public VisualSettings VisualSettings => visualSettings;
+    public AudioSettings AudioSettings => audioSettings;
 
     public void SetCameraSettings(CameraSettings newSettings)
     {
