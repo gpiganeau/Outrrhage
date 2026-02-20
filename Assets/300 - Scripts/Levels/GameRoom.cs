@@ -135,9 +135,14 @@ public class GameRoom : MonoBehaviour
         SpawnEnemies(EntityType.Humanoid, count);
     }
 
-    public void ZZ_SpawnHybrid(int count)
+    public void ZZ_SpawnBull(int count)
     {
         SpawnEnemies(EntityType.Bull, count);
+    }
+
+    public void ZZ_SpawnTourelle(int count)
+    {
+        SpawnEnemies(EntityType.Tourelle, count);
     }
 
     private void SpawnEnemies(EntityType type, int count)
