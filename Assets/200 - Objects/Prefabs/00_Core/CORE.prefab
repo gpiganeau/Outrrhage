@@ -129,10 +129,17 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 3064940305099015597, guid: 113f912f4791ee84bba7288091a2815f, type: 3}
   - {fileID: 3064940305099015597, guid: 15fb97f868544b54e9d28aa4fd908309, type: 3}
+  - {fileID: 3064940305099015597, guid: 72e53e084c5e6764a9429e75684437cc, type: 3}
   spawnInterval: 5
   spawnRangeMin: 3
   spawnRangeMax: 8
   AutoSpawn: 0
+  OnEnemyDied:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnemySpawned:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5424039192922156025
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,9 +719,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SettingsManager
   standards: {fileID: 11400000, guid: 02a68650d5003cc4eb7765fadbfdc47c, type: 2}
-  cameraSettings: {fileID: 11400000, guid: 4fdaa4a867640d3458a493b25c2ff154, type: 2}
+  cameraSettings: {fileID: 11400000, guid: b46591d044c43444592a67e686b023af, type: 2}
   gameplaySettings: {fileID: 11400000, guid: 801398dababc9ce4b9952a67c5e2e53a, type: 2}
   visualSettings: {fileID: 11400000, guid: 69da8658fd1b39b43805e11cbe355872, type: 2}
+  audioSettings: {fileID: 11400000, guid: 343fe03a715b99a468bd61d307ba6d27, type: 2}
 --- !u!1 &8996505605210043510
 GameObject:
   m_ObjectHideFlags: 0
@@ -781,9 +789,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6459453780394568696, guid: 8d7b757f0c09e4c419b1f1f8fe5265ed, type: 3}
     - target: {fileID: 2013209625601621908, guid: 3560dd5ad9c64b841bbd5a64fd08fb52, type: 3}
+      propertyPath: _roomsList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013209625601621908, guid: 3560dd5ad9c64b841bbd5a64fd08fb52, type: 3}
       propertyPath: _cameraControllerPrefab
       value: 
       objectReference: {fileID: 628088981967923302, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
+    - target: {fileID: 2013209625601621908, guid: 3560dd5ad9c64b841bbd5a64fd08fb52, type: 3}
+      propertyPath: '_roomsList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
     - target: {fileID: 5924661452206212939, guid: 3560dd5ad9c64b841bbd5a64fd08fb52, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -887,8 +903,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5802968213718458444, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802968213718458444, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
       propertyPath: field of view
       value: 60.000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802968213718458444, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802968213718458444, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802968213718458444, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8460703357153358234, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
       propertyPath: m_Name

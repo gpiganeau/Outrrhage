@@ -45,4 +45,8 @@ public class SkillData : ScriptableObject
     public string AnimationKey = "Slash";
     [Tooltip("Use in cases of multiples moves")] public string[] AnimationsKeys;
     public SkillVFXData vfxData;
+
+    [Header("Audio")]
+    public AudioClip[] castClips;
+    public AudioClip[] hitClips;
 }
