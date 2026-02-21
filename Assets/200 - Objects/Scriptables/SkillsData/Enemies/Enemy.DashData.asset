@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 3e97a4efd2626e94089a8a514115ce2c, type: 3}
   SkillProjectilePrefab:
-  - {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
+  - {fileID: 8024854797782737839, guid: 33420088e58e7f143812d84b057b57d5, type: 3}
   Name: Charge
   Description: Une attaque de melee, l'ennemi dash sur Riel pour la blesser en la
     touchant

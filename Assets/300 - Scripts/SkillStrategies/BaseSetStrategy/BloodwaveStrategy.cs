@@ -30,12 +30,13 @@ public class BloodwaveStrategy: SkillStrategy
 
 			// -- Animation
 			movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
+			Camera.main.transform.DOShakePosition(0.2f, 0.3f, 20, 90f, false, true);
 
 			// -- Blood Wave Logic -- 
 			var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
 			p.SetTravelMode(_storedSkillData.TravelMode);
 			p.onProjectileHit.AddListener(StackBlood);
-        	DOVirtual.DelayedCall(projectileData.Lifetime * 0.5f, () => p.SetTravelMode(SkillshotProjectile.TravelMode.TowardCaster));
+        	//DOVirtual.DelayedCall(projectileData.Lifetime * 0.5f, () => p.SetTravelMode(SkillshotProjectile.TravelMode.TowardCaster));
         }
 
 		PutInCooldown();

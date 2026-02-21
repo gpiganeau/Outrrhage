@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8576b5616d5a5b43bc5ebe672411004, type: 3}
-  m_Name: Drone.ProjectileSkillData 1
+  m_Name: Enemy.ExplosiveShotData
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 09a67b95eb179514a8944ed695d9352c, type: 3}
+  SkillStrategyPrefab: {fileID: 7434445806588342944, guid: d41d319b493dd0f4898264346632d450, type: 3}
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: c8e92f2eeb681794c8b18bfd46190812, type: 3}
+  - {fileID: 8024854797782737839, guid: 5e685567f7f1f8041ba58c62111c858b, type: 3}
   Name: 'Drone Bullet '
   Description: 
   Cooldown: 1
@@ -23,7 +24,7 @@ MonoBehaviour:
   Radius: 0
   ProjectileRange: 30
   ProjectileSpeed: 5
-  ProjectileDamage: 01000000
+  ProjectileDamage: 010000000100000001000000
   ProjectileLifetime: 3
   numberOfProjectiles: 1
   TravelMode: 0
