@@ -35,7 +35,7 @@ public class RoomSequencer : ScriptableObject
     {
         for (int i = 0; i < count; i++)
         {
-            EntityManager.Instance.SpawnEntities(type, 1, GameManager.Instance.Riel.transform.position, 5);
+            EntityManager.Instance.SpawnEntities(type, 1, GameManager.Instance.Riel.transform.position, 8);
         }
     }
 
