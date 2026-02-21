@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9d660f8177d2d49887e88157cde837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RunSystemController
-  runSettings: {fileID: 0}
+  runSettings: {fileID: 11400000, guid: 92c626d2aedc68248a5d588a3335837b, type: 2}
   _roomCount: 0
   _hubRoom: {fileID: 0}
   _pathRooms: []

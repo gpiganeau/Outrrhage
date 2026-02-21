@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Readonly References for Debug")]
     public Level _currentLevel;
-    public GameRoom _currentRoom;
+    [SerializeField] private RunSystemController runController;
 
     public UnityEvent OnGameStart;
     public CameraController CameraController => _cameraController;
@@ -54,11 +54,10 @@ public class GameManager : MonoBehaviour
     private void RoomStart(){
         Sequence spawnSeq = DOTween.Sequence();
 
-        spawnSeq.AppendCallback( () => _currentRoom = Instantiate(_roomsList[0], Vector3.zero, Quaternion.identity));
         spawnSeq.AppendInterval(0.5F);
         spawnSeq.AppendCallback( () =>
         {
-            RespawnPoint spawnPoint = _currentRoom.GetSpawnPoint();
+            RespawnPoint spawnPoint = RunSystemController.Instance.CurrentRoom.GetSpawnPoint();
             var riel = Instantiate(_rielPrefab, spawnPoint.transform.position, Quaternion.identity) as CharacterComponent;
             Riel = riel;
             _cameraController.SetTarget(Riel.transform);
@@ -92,7 +91,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckForRoomEnd()
     {
-       if (_currentRoom.QueryRoomEnd())
+       if (RunSystemController.Instance.CurrentRoom.QueryRoomEnd())
         {
             // -- Todo : Next Room Logic.
         }

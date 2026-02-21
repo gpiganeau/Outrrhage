@@ -9,10 +9,18 @@ public class RunSettings : ScriptableObject
     [TextArea] public string Description = "Describe this run expectation here";
     [Tooltip("There is always HUB Room and Boss + RoomCount")] public int RoomCount = 3;  
 
+    public int[] EnnemiesPerRoom;
+
     [Header("Rooms Prefabs")]
     public List <GameRoom> HUBRooms;
     public List <GameRoom> NormalRooms;
     public List <GameRoom> BossRooms;
     public List<GameObject> Corridors;
+
+    [Header("Ennemis")]
+    public List<AIActorComponent> ais;
+
+    [Header("Narration")]
+    public List<Bark> barks;
 }
 

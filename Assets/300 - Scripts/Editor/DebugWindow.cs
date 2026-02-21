@@ -56,7 +56,7 @@ public class DebugWindow : EditorWindow
         AddAction("Regenerate Level", () =>
         {
             if (Application.isPlaying == false) return;
-            GameManager.Instance._currentRoom.RegenerateRoom();
+            RunSystemController.Instance.CurrentRoom.RegenerateRoom();
         });
 
         AddAction($"Toggle Invincibility", () => {
