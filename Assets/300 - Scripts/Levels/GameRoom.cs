@@ -51,7 +51,11 @@ public class GameRoom : MonoBehaviour
 
         OnRoomStart.AddListener(GenerateRoomElements);
 
-        StartCoroutine(RoomSeq());
+    }
+
+    public void StartRoom()
+    {
+        StartCoroutine(RoomSeq());        
     }
 
     public void RegenerateRoom()

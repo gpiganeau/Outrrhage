@@ -11,16 +11,12 @@ public class RunSettings : ScriptableObject
 
     public int[] EnnemiesPerRoom;
 
+    public RoomSequencer[] Sequencers;
+
     [Header("Rooms Prefabs")]
     public List <GameRoom> HUBRooms;
     public List <GameRoom> NormalRooms;
     public List <GameRoom> BossRooms;
     public List<GameObject> Corridors;
-
-    [Header("Ennemis")]
-    public List<AIActorComponent> ais;
-
-    [Header("Narration")]
-    public List<Bark> barks;
 }
 

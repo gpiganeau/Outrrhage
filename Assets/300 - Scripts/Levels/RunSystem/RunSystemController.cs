@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class RunSystemController : MonoBehaviour
 {
@@ -53,9 +54,35 @@ public class RunSystemController : MonoBehaviour
 
     }
 
+    bool _currentRoomSequenceOver = false;
+    IEnumerator StartRoomSequence (RoomSequencer seq)
+    {
+        seq.OnRoomStart?.Invoke();
+        _currentRoomSequenceOver = false;
+
+        foreach (var step in seq.RoomSequence)
+        {
+            if (step.delay > 0)
+            {
+                yield return new WaitForSeconds(step.delay);
+            }
+
+            if (step.logEvent)
+            {
+                Logger.Log(Logger.LogCategory.Core, $"[DesignerChaos] Step Triggered: {step.stepName}");
+            }
+            
+            step.stepEvent?.Invoke();
+
+        }
+
+        _currentRoomSequenceOver = true;
+    }
+
     private void StartRun()
     {
         _currentRoom = Instantiate(_hubRoom);
+        StartCoroutine(StartRoomSequence(runSettings.Sequencers[0]));
 
         float roomSize = runSettings.HUBRooms[0].Dimensions.x;
 
@@ -68,7 +95,6 @@ public class RunSystemController : MonoBehaviour
 
         var bossRoomPos = transform.position + (runSettings.RoomCount) * transform.forward * roomSize;
         GameRoom bossRoom = Instantiate(_bossRoom, bossRoomPos, Quaternion.identity);
-
 
     }
 
