@@ -45,12 +45,7 @@ public class GameRoom : MonoBehaviour
 
     void Start()
     {
-        
-        HalfX = (int)Dimensions.x / 2;
-        HalfY = (int)Dimensions.y / 2;
-
         OnRoomStart.AddListener(GenerateRoomElements);
-
     }
 
     public void StartRoom()
@@ -88,20 +83,31 @@ public class GameRoom : MonoBehaviour
 // -- Todo : Delay routine for srtylisation 
     private void GenerateRoomElements()
     {
+
+        HalfX = (int)Dimensions.x / 2;
+        HalfY = (int)Dimensions.y / 2;
+
+
+        Logger.Core($"Generate Room with {HalfX} and {HalfY} and {Dimensions} ");
+
         for (int x = -HalfX; x < HalfX; x++)
         {
             for (int y = -HalfY; y < HalfY; y++)
             {
-    
+
+                Logger.Core("Generate Cell");
+        
                 RoomCell roomCell = new RoomCell(x, y, null);
                 _cells.Add(roomCell);
 
                 // -- 10% chance to spawn an element in the cell
                 if (Random.value < _spawnChancePercentage / 100f)
                 {
+
+                    Logger.Core("Generate Stuff");
+
                     Vector3 spawnPosition = new Vector3(x + 0.5f, _floorLevelOffset, y + 0.5f);;
-                    GameObject element = Instantiate(_spawnableElements.Random(), spawnPosition, Quaternion.identity);
-                    element.transform.position = spawnPosition;
+                    GameObject element = Instantiate(_spawnableElements.Random(), transform.position + spawnPosition, Quaternion.identity);
                     element.transform.SetParent(_cellsElementHolder);
                     roomCell.OwnedElement = element;
                 }

@@ -427,7 +427,7 @@ MonoBehaviour:
         m_Calls: []
     logEvent: 1
   _spawnPointHolder: {fileID: 5736451491955649945}
-  _cellsElementHolder: {fileID: 0}
+  _cellsElementHolder: {fileID: 4534283859958084862}
   OnRoomStart:
     m_PersistentCalls:
       m_Calls: []
@@ -446,7 +446,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _spawnChancePercentage: 1
+  _spawnChancePercentage: 4
 --- !u!1 &4683484610182855325
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,12 +42,19 @@ public class RunSystemController : MonoBehaviour
 
         List<GameRoom> availablesRooms = new();
         foreach (var r in s.NormalRooms) availablesRooms.Add(r);
+        
 
         for (int i = 0; i < _roomCount; i++)
         {
             var nextRoom = availablesRooms.Random();
-            _pathRooms.Add(nextRoom);
-            availablesRooms.Remove(nextRoom);
+            if (nextRoom == null)
+            {
+                _pathRooms.Add(_pathRooms[i - 1]);
+            } else
+            {
+                _pathRooms.Add(nextRoom);
+                availablesRooms.Remove(nextRoom);
+            }
         }
 
         Logger.Core($"Generated a path with {_pathRooms.Count} rooms");
@@ -82,6 +89,7 @@ public class RunSystemController : MonoBehaviour
     private void StartRun()
     {
         _currentRoom = Instantiate(_hubRoom);
+        _currentRoom.RegenerateRoom();
         StartCoroutine(StartRoomSequence(runSettings.Sequencers[0]));
 
         float roomSize = runSettings.HUBRooms[0].Dimensions.x;
@@ -91,10 +99,12 @@ public class RunSystemController : MonoBehaviour
         {
             Vector3 roomPos = transform.position +  (i * transform.forward * roomSize);
             GameRoom newRoom = Instantiate(_pathRooms[i - 1], roomPos, Quaternion.identity);
+            newRoom.RegenerateRoom();
         }
 
         var bossRoomPos = transform.position + (runSettings.RoomCount) * transform.forward * roomSize;
         GameRoom bossRoom = Instantiate(_bossRoom, bossRoomPos, Quaternion.identity);
+        bossRoom.RegenerateRoom();
 
     }
 
