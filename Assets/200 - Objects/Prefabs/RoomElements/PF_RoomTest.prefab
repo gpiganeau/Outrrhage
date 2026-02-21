@@ -236,6 +236,7 @@ Transform:
   - {fileID: 5736451491955649945}
   - {fileID: 1842855357099311297}
   - {fileID: 4534283859958084862}
+  - {fileID: 1998232379495460502}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &2423938045356911430
@@ -352,6 +353,17 @@ MonoBehaviour:
   - {fileID: 116758, guid: 10b4213a276bd0f4d93c345fd1420858, type: 3}
   - {fileID: 121986, guid: 8b5797a18349fb546be8acddc71151ff, type: 3}
   _floorLevelOffset: 0.5
+  CorridorsPrefabs:
+  - {fileID: 126730, guid: f18932879bb23b84ca5370b65419ee41, type: 3}
+  - {fileID: 104216, guid: a6b9d7f63692cfd44b503ed7e09f6e5d, type: 3}
+  - {fileID: 116330, guid: abfbd13ce6faa9e48ae2b9da1b4dd476, type: 3}
+  - {fileID: 115042, guid: 64b3f36e835346747865afbf6cf62acf, type: 3}
+  - {fileID: 148804, guid: 3fb07e96bb0cae643a28994c86ddc64e, type: 3}
+  - {fileID: 165962, guid: d2eb17f175564e84c8ad78ac03232e29, type: 3}
+  - {fileID: 152896, guid: d17bc9c1cdef1c5448255edad31c1c61, type: 3}
+  CorridorSpawnPoints:
+  - {fileID: 2142665052250511900}
+  NextRoom: {fileID: 9194013458221197619}
   _spawnPoint: {fileID: 0}
   RoomSequence:
   - stepName: Spawn Drones
@@ -361,7 +373,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 9194013458221197619}
           m_TargetAssemblyTypeName: GameRoom, Assembly-CSharp
-          m_MethodName: ZZ_SpawnHybrid
+          m_MethodName: ZZ_SpawnBull
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -397,19 +409,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 9194013458221197619}
           m_TargetAssemblyTypeName: GameRoom, Assembly-CSharp
-          m_MethodName: ZZ_SpawnDrones
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 6
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 9194013458221197619}
-          m_TargetAssemblyTypeName: GameRoom, Assembly-CSharp
-          m_MethodName: ZZ_SpawnHumans
+          m_MethodName: ZZ_SpawnTourelle
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -424,19 +424,7 @@ MonoBehaviour:
     delay: 2
     stepEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 9194013458221197619}
-          m_TargetAssemblyTypeName: GameRoom, Assembly-CSharp
-          m_MethodName: ZZ_SpawnHumans
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     logEvent: 1
   _spawnPointHolder: {fileID: 5736451491955649945}
   _cellsElementHolder: {fileID: 0}
@@ -448,7 +436,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9194013458221197619}
         m_TargetAssemblyTypeName: GameRoom, Assembly-CSharp
-        m_MethodName: ZZ_HideHUD
+        m_MethodName: SpawnNextRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -458,7 +446,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _spawnChancePercentage: 2
+  _spawnChancePercentage: 1
 --- !u!1 &4683484610182855325
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +480,38 @@ Transform:
   - {fileID: 959824617809305292}
   - {fileID: 2114825833146467160}
   - {fileID: 7154737810583540769}
+  m_Father: {fileID: 5799528397384455023}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4824635752990540231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1998232379495460502}
+  m_Layer: 0
+  m_Name: CorridorsPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1998232379495460502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824635752990540231}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2142665052250511900}
   m_Father: {fileID: 5799528397384455023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5172198975343858153
@@ -563,6 +583,37 @@ MonoBehaviour:
   respawnType: 0
   _safeRadius: 2
   _safeZone: 0
+--- !u!1 &5227125897719464327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142665052250511900}
+  m_Layer: 0
+  m_Name: Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2142665052250511900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227125897719464327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1998232379495460502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5341478342818266605
 GameObject:
   m_ObjectHideFlags: 0

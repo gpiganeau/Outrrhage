@@ -13,6 +13,10 @@ public class GameRoom : MonoBehaviour
 
     public string GetRoomName() => _roomName;
 
+    public List<GameObject> CorridorsPrefabs;
+    public List<Transform> CorridorSpawnPoints;
+    public GameRoom NextRoom;
+
     [SerializeField] RespawnPoint _spawnPoint;
     public RespawnPoint GetSpawnPoint() => _spawnPoint;
 
@@ -45,27 +49,40 @@ public class GameRoom : MonoBehaviour
         HalfX = (int)Dimensions.x / 2;
         HalfY = (int)Dimensions.y / 2;
 
-        OnRoomStart.AddListener(GenerateLevel);
+        OnRoomStart.AddListener(GenerateRoomElements);
 
         StartCoroutine(RoomSeq());
     }
 
-    public void RegenerateLevel()
+    public void RegenerateRoom()
     {
-        // -- Cleanup
         foreach (RoomCell c in _cells)
         {
             if (c.IsEmpty) continue;
             Destroy(c.OwnedElement);
         }
 
-        GenerateLevel();
+        GenerateRoomElements();
+    }
+
+    public Transform GetConnectionPoint()
+    {
+        return this.transform;
+    }
+
+    public void SpawnNextRoom()
+    {
+        var t = CorridorSpawnPoints.Random();
+        var  nextPos = transform.position + t.position;
+        Instantiate(CorridorsPrefabs.Random(), nextPos, Quaternion.identity);
+        var dt =  nextPos + t.forward * 16;
+        Instantiate(NextRoom, dt, Quaternion.identity);
     }
 
 
 // -- Todo : MultiLayering (Obstacles, GPE, Props, Collectibles, Decorations, etc...)
 // -- Todo : Delay routine for srtylisation 
-    private void GenerateLevel()
+    private void GenerateRoomElements()
     {
         for (int x = -HalfX; x < HalfX; x++)
         {
@@ -84,8 +101,6 @@ public class GameRoom : MonoBehaviour
                     element.transform.SetParent(_cellsElementHolder);
                     roomCell.OwnedElement = element;
                 }
-
-            
             }
         }
     }
@@ -123,7 +138,7 @@ public class GameRoom : MonoBehaviour
 
     }
 
-    #region Room Controls
+    #region Run Controls
 
     public void ZZ_SpawnDrones(int count)
     {

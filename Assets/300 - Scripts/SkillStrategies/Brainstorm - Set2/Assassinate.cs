@@ -46,7 +46,7 @@ class Assassinate : SkillStrategy
 
         if (target.GetComponent<BloodStack>() == null)
         {
-            Logger.LogError(Logger.LogCategory.Combat, "Target does not have a BloodStack component for CustomDamageCalculation.");
+           // Logger.LogError(Logger.LogCategory.Combat, "Target does not have a BloodStack component for CustomDamageCalculation.");
             return baseDamage;
         }
 
