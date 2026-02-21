@@ -4850,7 +4850,7 @@ GameObject:
   - component: {fileID: 4063306155761817961}
   - component: {fileID: 6374828384884390076}
   m_Layer: 0
-  m_Name: PF_DroneBullet
+  m_Name: PF_TourelleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
