@@ -25,6 +25,8 @@ public static class Logger
     private static readonly string CoreColor = "#bd1bd3";
     private static readonly string AudioColor = "#ddd34b";
 
+
+[HideInCallstack]
     public static void Log(LogCategory category, string message)
     {
         if (!ShouldLog(category, false)) return;
@@ -33,6 +35,7 @@ public static class Logger
         Debug.Log(coloredMessage);
     }
 
+[HideInCallstack]
     public static void LogWarning(LogCategory category, string message)
     {
         if (!ShouldLog(category, false)) return;
@@ -41,6 +44,7 @@ public static class Logger
         Debug.LogWarning(coloredMessage);
     }
 
+[HideInCallstack]
     public static void LogError(LogCategory category, string message)
     {
         if (!ShouldLog(category, true)) return;
@@ -76,10 +80,19 @@ public static class Logger
         };
     }
 
+[HideInCallstack]
     public static void Combat(string message) => Log(LogCategory.Combat, message);
+[HideInCallstack]
+
     public static void Narration(string message) => Log(LogCategory.Narration, message);
+[HideInCallstack]
+
     public static void Enviro(string message) => Log(LogCategory.Enviro, message);
+[HideInCallstack]
+
     public static void Core(string message) => Log(LogCategory.Core, message);
+[HideInCallstack]
+
     public static void Audio(string message) => Log(LogCategory.Audio, message);
 
     public static void DisableCategory(LogCategory category)
