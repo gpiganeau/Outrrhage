@@ -48,9 +48,7 @@ public class DebugWindow : EditorWindow
         AddAction("Kill Enemy & Stop Spawn", () =>
         {
             if (Application.isPlaying == false) return;
-            EntityManager.Instance.StopInfiniteSpawning();
             EntityManager.Instance.FullClearRoom();
-
         });
         
         AddAction("Regenerate Level", () =>

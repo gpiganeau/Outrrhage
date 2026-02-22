@@ -1,15 +1,31 @@
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.Events;
 
 [CreateAssetMenu(fileName = "New Room Sequencer", menuName = "Scriptable Objects/Game/Room Sequencer")]
 public class RoomSequencer : ScriptableObject
 {
+
+    [Header("Settings")]
+    [Tooltip("Use this for testing custom enemy spawn")] public AIActorComponent customType;
+
+    [Header("Core Events")]
     public UnityEvent OnRoomStart;
     public List<ChaosStep> RoomSequence = new List<ChaosStep>();
     public UnityEvent OnRoomComplete;
     
+   
+
     #region Run Controls
+
+    public void ZZ_SpawnCustomEnnemies(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            EntityManager.Instance.SpawnCustomActor(customType, 8);
+        }
+    }
 
     public void ZZ_SpawnDrones(int count)
     {

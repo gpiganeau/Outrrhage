@@ -8,9 +8,6 @@ public class RunSettings : ScriptableObject
     public string Name = "New Run Settings";
     [TextArea] public string Description = "Describe this run expectation here";
     [Tooltip("There is always HUB Room and Boss + RoomCount")] public int RoomCount = 3;  
-
-    public int[] EnnemiesPerRoom;
-
     public RoomSequencer[] Sequencers;
 
     [Header("Rooms Prefabs")]

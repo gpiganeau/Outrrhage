@@ -38,11 +38,6 @@ public class EntityManager : MonoBehaviour
         else Destroy(this.gameObject);
     }
 
-    void Start()
-    {
-        StartInfiniteSpawning();
-    }
-
     public void NotifyDeath(AIActorComponent bot)
     {
         Bots.Remove(bot);
@@ -57,28 +52,10 @@ public class EntityManager : MonoBehaviour
         }   
     }
 
-    private void StartInfiniteSpawning()
+    public void SpawnCustomActor(AIActorComponent actor, float radius)
     {
-        spawnSequence = DOTween.Sequence();
-        spawnSequence.AppendInterval(spawnInterval);
-        spawnSequence.AppendCallback(SpawnEnemyAtRandomPosAutoSpawn);
-        spawnSequence.SetLoops(-1); 
+        SpawnEnemy(actor, GetRandomPosAroundRiel(radius));
     }
-
-    public void StopInfiniteSpawning()
-    {
-        spawnSequence?.Kill();
-    }
-
-    private void SpawnEnemyAtRandomPosAutoSpawn()
-    {
-        if (!AutoSpawn) return;
-        var actor  = enemyPrefabs[Random.Range(0, enemyPrefabs.Count)];
-        var pos = GetRandomPosAroundRiel();
-
-        SpawnEnemy(actor, pos);
-    }
-
     private void SpawnEnemy(AIActorComponent actor, Vector3 position)
     {
         if (GameManager.GameOver) return;
@@ -96,6 +73,11 @@ public class EntityManager : MonoBehaviour
         });
     }
 
+
+    Vector3 GetRandomPosAroundRiel(float radius)
+    {
+        return GetRandomPosAroundPoint(Riel.transform.position, radius * 0.5f, radius);
+    }
     Vector3 GetRandomPosAroundRiel()
     {
         return GetRandomPosAroundPoint(Riel.transform.position, spawnRangeMin, spawnRangeMax);
