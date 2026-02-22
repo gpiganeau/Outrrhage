@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
   Name: Eclot Corrompu
   maxHealth: 8
-  movementSpeed: 5
+  movementSpeed: 3
   maxBloodStack: 8
   team: 2
   startingSkillSet:

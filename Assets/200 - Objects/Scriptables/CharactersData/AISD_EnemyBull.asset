@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90b4f106e0d7ce4b87b7cc28ea5675c, type: 3}
   m_Name: AISD_EnemyBull
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
-  Name: Eclot Corrompu
+  Name: Taureau Corrompu
   maxHealth: 15
   movementSpeed: 0.5
   maxBloodStack: 10
