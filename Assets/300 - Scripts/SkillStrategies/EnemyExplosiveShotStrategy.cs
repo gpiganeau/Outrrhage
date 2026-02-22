@@ -12,12 +12,12 @@ class EnemyExplosiveShotStrategy : SkillStrategy
         UseAimAssist(ref firingDirection, _storedSkillData.AimAssistRatio, team);
 
         movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
-        
+
         ProjectileData projectileData = new ProjectileData()
         {
             startingPosition = movementController.transform.position + 1f * firingDirection,
             origin = movementController.transform.position,
-            Damage = 0, // dégâts appliqués uniquement par l'explosion
+            Damage = 1, // dégâts appliqués uniquement par l'explosion
             Lifetime = _storedSkillData.ProjectileLifetime,
             Speed = _storedSkillData.ProjectileSpeed,
             BloodStackingAmount = 0,
