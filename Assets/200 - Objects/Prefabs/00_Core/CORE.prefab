@@ -201,6 +201,7 @@ MonoBehaviour:
   - {fileID: 3064940305099015597, guid: 15fb97f868544b54e9d28aa4fd908309, type: 3}
   - {fileID: 3064940305099015597, guid: 72e53e084c5e6764a9429e75684437cc, type: 3}
   - {fileID: 2474350776460943824, guid: e42fd21a588dfbd42b0394df0f260993, type: 3}
+  - {fileID: 2474350776460943824, guid: e40892d4c7929204b823ba38213218fb, type: 3}
   spawnInterval: 5
   spawnRangeMin: 3
   spawnRangeMax: 8
@@ -644,6 +645,7 @@ Transform:
   - {fileID: 7605205599646358681}
   - {fileID: 4204356821329593324}
   - {fileID: 8294590740810850450}
+  - {fileID: 8649022113172949058}
   m_Father: {fileID: 3574302140441405706}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7447430995764534174
@@ -788,6 +790,56 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &7900755103448887122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8649022113172949058}
+  - component: {fileID: 5997411731207120251}
+  m_Layer: 0
+  m_Name: RunSystemController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8649022113172949058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900755103448887122}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2386842270770891958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5997411731207120251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900755103448887122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9d660f8177d2d49887e88157cde837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RunSystemController
+  runSettings: {fileID: 11400000, guid: 92c626d2aedc68248a5d588a3335837b, type: 2}
+  _roomCount: 0
+  _hubRoom: {fileID: 0}
+  _pathRooms: []
+  _bossRoom: {fileID: 0}
+  _currentRoom: {fileID: 0}
 --- !u!1 &8023371236307701498
 GameObject:
   m_ObjectHideFlags: 0
