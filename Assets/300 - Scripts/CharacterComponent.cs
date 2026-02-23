@@ -15,7 +15,9 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     private AnimController animController;
 
     [SerializeField] private Blood blood;
+    [SerializeField] private Rage rage;
     public static Blood Blood;
+    public static Rage Rage;
     public CameraController PlayerCameraController { get; set; }
     private List<Renderer> Renderers;
 
@@ -29,6 +31,9 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
         // -- Initialize Blood Singleton for CharacterComponent.Blood() -- YES I ASSUME THIS WILL BE A SOLO GAME FOREVER 
         blood = new Blood(setupData.maxBlood);
         Blood = blood;
+
+        rage = new Rage(setupData.maxRage);
+        Rage = rage;
 
         // -- Setup Components
         animController = GetComponent<AnimController>();

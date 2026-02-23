@@ -37,6 +37,7 @@ public class SkillData : ScriptableObject
     public bool IsRielSpecificSkill = false;
     public int BloodCost = 0;
     public bool DropBloodOnFailedSkill = false;
+    public int RageGain = 1;
 
     [Header("Blood Stacking")]
     public int BloodStackingAmount = 1;
