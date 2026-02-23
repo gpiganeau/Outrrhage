@@ -23,7 +23,7 @@ MonoBehaviour:
   Radius: 3
   ProjectileRange: 0
   ProjectileSpeed: 1
-  ProjectileDamage: 01000000
+  ProjectileDamage: 0100000001000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
@@ -48,3 +48,5 @@ MonoBehaviour:
     castSound: {fileID: 0}
     projectileSound: {fileID: 0}
     impactSound: {fileID: 0}
+  castClips: []
+  hitClips: []
