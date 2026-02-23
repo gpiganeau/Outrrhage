@@ -68,6 +68,16 @@ public class SkillsController: MonoBehaviour
         if (strategyIndex >= 0 && strategyIndex < activeSkillStrategies.Count)
         {
             SkillStrategy skill = activeSkillStrategies[strategyIndex];
+
+                
+            foreach (ISkillConstrainer constrainer in constraints) { 
+
+                if (!constrainer.CanUseSkill(activeSkillStrategies[strategyIndex].SkillData, movementController))
+                {
+                    return;
+                }
+            }
+
             
             if (skill.Call(movementController, _team))
             {

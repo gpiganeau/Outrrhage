@@ -33,6 +33,7 @@ MonoBehaviour:
   movementDuration: 0.15
   IsRielSpecificSkill: 1
   BloodCost: 1
+  RageGain: 2
   BloodStackingAmount: 1
   Icon: {fileID: -1266197463, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
@@ -48,3 +49,5 @@ MonoBehaviour:
     castSound: {fileID: 0}
     projectileSound: {fileID: 0}
     impactSound: {fileID: 0}
+  castClips: []
+  hitClips: []

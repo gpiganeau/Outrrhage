@@ -26,6 +26,7 @@ public class HUD : MonoBehaviour
     [Header("Debug")]
     public TMP_Text _rielHealth;
     public TMP_Text _rielBlood;
+    public TMP_Text _rielRage;
     #endregion
 
     #region Unity Callbacks
@@ -55,6 +56,7 @@ public class HUD : MonoBehaviour
         // -- Force Refresh Due to Actual Initialization Races
         Refresh();
         CharacterComponent.Blood.OnBloodChanged.AddListener((currentBlood, maxBlood) => OnBloodChanged(currentBlood, maxBlood));
+        CharacterComponent.Rage.OnRageChanged.AddListener((c, m) => OnRageChanged(c, m));
     }
     void OnEnable()
     {
@@ -137,6 +139,12 @@ public class HUD : MonoBehaviour
     {
         _bloodGauge.UpdateGauge(currentBlood, maxBlood);
         _rielBlood.text = $"Riel Blood : {currentBlood}/{maxBlood}";
+    }
+
+    private void OnRageChanged(float currentRage, float maxRage)
+    {
+        _rageGauge.UpdateGauge(currentRage, maxRage);
+        _rielRage.text = $"Riel Rage : {currentRage}/{maxRage}";
     }
 
     private void OnSkillExecuted(SkillStrategy skill, int slot)

@@ -8,4 +8,5 @@ public class CharacterSetupData: ActorSetupData
     [Header("Riel Specifics")]
     public int maxBlood;
     public int maxRage = 100;
+    public float RageDuration = 10f;
 }

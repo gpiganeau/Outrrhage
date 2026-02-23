@@ -268,7 +268,32 @@ public class Juicer : MonoBehaviour
     #region Public API
     
     #region Damage & Death
-    
+
+    public void StartRage(float duration)
+    {
+        if (!IsJuiceEnabled()) return;
+        
+        DOTween.Kill("RageControl");
+        
+        DOTween.Sequence().SetId("RageControl")
+            .AppendCallback(() => SetTimeScale(1.2f)) // légère accélération
+            .Append(DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, 0.4f, duration * 0.1f))
+            .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, new Color(1f, 0.15f, 0.15f), duration * 0.1f))
+            .SetUpdate(false);
+    }
+
+    public void StopRage(float duration)
+    {
+        if (!IsJuiceEnabled()) return;
+        
+        DOTween.Kill("RageControl");
+        
+        DOTween.Sequence().SetId("RageControl")
+            .AppendCallback(() => ResetTimeScale())
+            .Append(DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, 0f, duration))
+            .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, Color.white, duration))
+            .AppendCallback(() => PulseChromaticAberration(1f, 0.4f)); // petit pop de sortie
+    }
     /// <summary>Effet générique de hit sur les AI Actor Components</summary>
     public void EnemyDamagedImpact(float intensity = 0.3f, List<Renderer> renderers = null)
     {

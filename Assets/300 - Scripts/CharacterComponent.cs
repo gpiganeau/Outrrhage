@@ -26,14 +26,20 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     private UnityEngine.Events.UnityAction onSlot1ReleasedAction, onSlot2ReleasedAction, onSlot3ReleasedAction, onSlot4ReleasedAction, onSlot5ReleasedAction;
 
     
+    public bool InRage => Rage.IsFull;
+
     void Start()
 	{
         // -- Initialize Blood Singleton for CharacterComponent.Blood() -- YES I ASSUME THIS WILL BE A SOLO GAME FOREVER 
         blood = new Blood(setupData.maxBlood);
         Blood = blood;
 
-        rage = new Rage(setupData.maxRage);
+        rage = new Rage(setupData);
         Rage = rage;
+
+        Rage.OnRageEnter.AddListener(OnRageEnter);
+        Rage.OnRageExit.AddListener(OnRageExit);
+        Rage.OnRageChanged.AddListener(OnRageChanged);
 
         // -- Setup Components
         animController = GetComponent<AnimController>();
@@ -115,6 +121,23 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     }
 
     #region Listeners & Callback
+
+    private void OnRageChanged(int current, int max)
+    {
+        
+    }
+
+    private void OnRageExit(float duration)
+    {
+        Juicer.I.StopRage(duration);
+        
+    }
+
+    private void OnRageEnter(float duration)
+    {
+        Juicer.I.StartRage(duration);
+    }
+
     private void OnDamaged(int currentHealth, int maxHealth)
     {
         Juicer.I.PlayerDamagedImpact(GetRenderers());
@@ -168,7 +191,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
     public bool CanUseSkill(SkillData skillData, MovementController movementController)
     {
-        return skillData.BloodCost <= Blood.Amount;
+        return InRage || skillData.BloodCost <= Blood.Amount;
     }
 
     #endregion

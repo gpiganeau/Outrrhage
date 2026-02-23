@@ -1,11 +1,12 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
 [Serializable]
 public class Rage
-
 {
+    [SerializeField] private float _rageDuration;
     [SerializeField] private int _currentAmount;
     [SerializeField] private int _maxAmount;
     public int Amount => _currentAmount;
@@ -14,6 +15,8 @@ public class Rage
     public void SetMaxAmount(int newMaxAmount) => _maxAmount = newMaxAmount;
 
     public UnityEvent<int, int> OnRageChanged = new UnityEvent<int, int>();
+    public UnityEvent<float> OnRageEnter = new UnityEvent<float>();
+    public UnityEvent<float> OnRageExit = new UnityEvent<float>();
 
     public bool IsFull => Amount == Maximum;
 
@@ -33,9 +36,24 @@ public class Rage
         return _currentAmount;
     }
 
-    public Rage (int Max)
+    public Rage (CharacterSetupData data)
     {
-        Initialize(Max);
+        InitializeEmpty(data.maxRage);
+        _rageDuration = data.RageDuration;
+        OnRageChanged.AddListener(CheckForInRage);
+    }
+
+    private void CheckForInRage(int current, int max)
+    {
+        if (current == max)
+        {
+            OnRageEnter?.Invoke(_rageDuration);
+            DOVirtual.DelayedCall(_rageDuration, () =>
+            {
+                Consume(max);
+                OnRageExit?.Invoke(_rageDuration);
+            });
+        }
     }
 
     public void Initialize(int Max)

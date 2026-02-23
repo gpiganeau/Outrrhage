@@ -43,8 +43,10 @@ public class SkillStrategy : MonoBehaviour
             Logger.LogError(Logger.LogCategory.Combat, "MovementController is null.");
             return false;
         }
-
+        
+        // -- Succes -- 
         CharacterComponent.Blood.Consume(_storedSkillData.BloodCost);
+        CharacterComponent.Rage.Regain(_storedSkillData.RageGain);
       
         Logger.Combat($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}");
 
