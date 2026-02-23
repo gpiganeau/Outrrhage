@@ -7,4 +7,5 @@ public class CharacterSetupData: ActorSetupData
 {
     [Header("Riel Specifics")]
     public int maxBlood;
+    public int maxRage = 100;
 }
