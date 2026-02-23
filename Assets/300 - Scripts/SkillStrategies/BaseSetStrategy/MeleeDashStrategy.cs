@@ -24,7 +24,6 @@ public class MeleeDashStrategy: SkillStrategy
 
         movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
         movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
-        PutInCooldown();
 
         movementController.SetImmobilized(true, "MeleeDashAttack");
         parentController.SetSkillsDisabled(true, "MeleeDashAttack");
@@ -76,7 +75,7 @@ public class MeleeDashStrategy: SkillStrategy
 
     private void PostLifetimeEffects()
     {
-        if (!hasHitATarget)
+        if (!hasHitATarget && _storedSkillData.DropBloodOnFailedSkill)
         {
             //Spawn bloodlet
             var pos = cachedController.transform.position;

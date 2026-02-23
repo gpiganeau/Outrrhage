@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb93b1c8a29257c4f8d3b77525b8c0c6, type: 3}
   m_Name: TestRoomSequencer
   m_EditorClassIdentifier: Assembly-CSharp::RoomSequencer
-  customType: {fileID: 3064940305099015597, guid: 15fb97f868544b54e9d28aa4fd908309, type: 3}
+  customType: {fileID: 3064940305099015597, guid: 113f912f4791ee84bba7288091a2815f, type: 3}
   OnRoomStart:
     m_PersistentCalls:
       m_Calls: []
