@@ -7,6 +7,8 @@ public class VisualSettings : ScriptableObject
 
     [ColorUsage(true, true)] public Color PlayerHealColor; 
     [ColorUsage(true, true)] public Color PlayerDamagedColor; 
+    [ColorUsage(true, true)] public Color PlayerRageColor; 
+    [ColorUsage(true, true)] public Color PlayerDeathColor; 
 
 
     [SerializeField] ColorPalette _bloodPalette, _techPalette, _naturePalette, _cityPalette;

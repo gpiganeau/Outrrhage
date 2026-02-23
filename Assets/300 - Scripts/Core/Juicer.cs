@@ -104,11 +104,13 @@ public class Juicer : MonoBehaviour
     private void ColorFlashPostProcess(Color color, float duration = 0.2f)
     {
         if (colorAdjustments == null) return;
+
+        Color BeforeColor =  CharacterComponent.InRage ? settings.PlayerRageColor : Color.white;
         
         colorAdjustments.colorFilter.value = color;
         DOTween.To(() => colorAdjustments.colorFilter.value, 
             x => colorAdjustments.colorFilter.value = x, 
-            Color.white, 
+            BeforeColor, 
             duration);
     }
     
@@ -278,7 +280,7 @@ public class Juicer : MonoBehaviour
         DOTween.Sequence().SetId("RageControl")
             .AppendCallback(() => SetTimeScale(1.2f)) // légère accélération
             .Append(DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, 0.4f, duration * 0.1f))
-            .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, new Color(1f, 0.15f, 0.15f), duration * 0.1f))
+            .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, settings.PlayerRageColor, duration * 0.1f))
             .SetUpdate(false);
     }
 
@@ -347,9 +349,9 @@ public class Juicer : MonoBehaviour
         if (!IsJuiceEnabled()) return;
 
         ShakeCameraWithRotation(0.5f, 3f, 0.5f);
-        ColorFlashPostProcess(settings.PlayerDamagedColor, 1f);
+        ColorFlashPostProcess(settings.PlayerDeathColor, 2f);
         SlowMotion(0.2f, 0.8f);
-        PulseVignette(0.6f, 0.5f);
+        PulseVignette(0.6f, 2f);
     }
 
     public void EnemyDeathEffect()

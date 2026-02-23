@@ -21,7 +21,9 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         settings = SettingsManager.Instance.AudioSettings;
-        musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource = gameObject.GetComponent<AudioSource>();
+
+        PlayRandomMusic();
     }
 
     public void PlayRandomMusic()

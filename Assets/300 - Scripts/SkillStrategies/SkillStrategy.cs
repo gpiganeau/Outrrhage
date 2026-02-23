@@ -45,8 +45,11 @@ public class SkillStrategy : MonoBehaviour
         }
         
         // -- Succes -- 
-        CharacterComponent.Blood.Consume(_storedSkillData.BloodCost);
-        CharacterComponent.Rage.Regain(_storedSkillData.RageGain);
+        if (team == Team.Ally)
+        {
+            CharacterComponent.Blood.Consume(_storedSkillData.BloodCost);
+            CharacterComponent.Rage.Regain(_storedSkillData.RageGain);
+        }
       
         Logger.Combat($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}");
 

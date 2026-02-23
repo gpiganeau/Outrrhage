@@ -20,8 +20,20 @@ public class Rage
 
     public bool IsFull => Amount == Maximum;
 
+    bool Enraged = false;
+
+    public void ForceStop()
+    {
+        Enraged = false;
+        _currentAmount = 0;
+        OnRageExit?.Invoke(0);
+        
+    }
+
     public int Consume(int amount)
     {
+        if (Enraged) return _currentAmount;
+
         _currentAmount -= amount;
         _currentAmount = Mathf.Clamp(_currentAmount, 0, _maxAmount);
         OnRageChanged?.Invoke(_currentAmount, _maxAmount);
@@ -30,6 +42,8 @@ public class Rage
 
     public int Regain(int amount)
     {
+        if (Enraged) return _currentAmount;
+
         _currentAmount += amount;
         _currentAmount = Mathf.Clamp(_currentAmount, 0, _maxAmount);
         OnRageChanged?.Invoke(_currentAmount, _maxAmount);
@@ -41,15 +55,18 @@ public class Rage
         InitializeEmpty(data.maxRage);
         _rageDuration = data.RageDuration;
         OnRageChanged.AddListener(CheckForInRage);
+        Enraged = false;
     }
 
     private void CheckForInRage(int current, int max)
     {
         if (current == max)
         {
+            Enraged = true;
             OnRageEnter?.Invoke(_rageDuration);
             DOVirtual.DelayedCall(_rageDuration, () =>
             {
+                Enraged = false;
                 Consume(max);
                 OnRageExit?.Invoke(_rageDuration);
             });

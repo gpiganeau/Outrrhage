@@ -26,7 +26,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     private UnityEngine.Events.UnityAction onSlot1ReleasedAction, onSlot2ReleasedAction, onSlot3ReleasedAction, onSlot4ReleasedAction, onSlot5ReleasedAction;
 
     
-    public bool InRage => Rage.IsFull;
+    public static bool InRage => Rage.IsFull;
 
     void Start()
 	{
@@ -135,11 +135,15 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
     private void OnRageEnter(float duration)
     {
+
+        if (damageController.IsDead) return;
         Juicer.I.StartRage(duration);
     }
 
     private void OnDamaged(int currentHealth, int maxHealth)
     {
+        Blood.Regain(1);
+        Rage.Regain(1);
         Juicer.I.PlayerDamagedImpact(GetRenderers());
         var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponentInChildren<VisualEffect>(); 
         fx.Play();
@@ -157,6 +161,7 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
         damageController.IsDead = true;
         DisableControls();  
+        Rage.ForceStop();
         Juicer.I.PlayerDeathEffect();
         animController.Die();   
         if (settings.ClearRoomOnDeath) EntityManager.Instance.FullClearRoom();
