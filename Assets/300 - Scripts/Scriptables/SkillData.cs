@@ -36,6 +36,7 @@ public class SkillData : ScriptableObject
     [Header("Riel")]
     public bool IsRielSpecificSkill = false;
     public int BloodCost = 0;
+    public bool DropBloodOnFailedSkill = false;
 
     [Header("Blood Stacking")]
     public int BloodStackingAmount = 1;
