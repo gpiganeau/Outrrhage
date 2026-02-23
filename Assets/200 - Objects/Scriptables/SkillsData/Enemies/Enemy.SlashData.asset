@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8576b5616d5a5b43bc5ebe672411004, type: 3}
-  m_Name: Enemy.SlashData 1
+  m_Name: Enemy.SlashData
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: db52d200652817c4b818f62e30a9830a, type: 3}
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 33420088e58e7f143812d84b057b57d5, type: 3}
   Name: 
-  Description: Slash & Clash !
+  Description: Slash pour un ennemi
   Cooldown: 0.5
   IsHold: 0
   HoldDuration: 0
@@ -31,9 +31,9 @@ MonoBehaviour:
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
-  IsRielSpecificSkill: 1
-  BloodCost: 1
-  BloodStackingAmount: 1
+  IsRielSpecificSkill: 0
+  BloodCost: 0
+  BloodStackingAmount: 0
   Icon: {fileID: 599998471, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
   AnimationsKeys: []

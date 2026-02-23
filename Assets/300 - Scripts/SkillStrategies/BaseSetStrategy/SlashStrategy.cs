@@ -66,7 +66,7 @@ public class SlashStrategy: SkillStrategy
 
     private void PostLifetimeEffects()
     {
-        if (!hasHitATarget)
+        if (!hasHitATarget && _storedSkillData.DropBloodOnFailedSkill)
         {
             //Spawn bloodlet
             var pos = cachedController.transform.position;
