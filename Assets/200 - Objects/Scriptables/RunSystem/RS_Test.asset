@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RunSettings
   Name: Test Run Settings
   Description: Blabla
-  RoomCount: 32
-  EnnemiesPerRoom: 020000000400000006000000080000000a000000
+  RoomCount: 4
   Sequencers:
+  - {fileID: 11400000, guid: e697f80dad1f860439085fe6f2c4ca6d, type: 2}
   - {fileID: 11400000, guid: e697f80dad1f860439085fe6f2c4ca6d, type: 2}
   - {fileID: 11400000, guid: e697f80dad1f860439085fe6f2c4ca6d, type: 2}
   - {fileID: 11400000, guid: e697f80dad1f860439085fe6f2c4ca6d, type: 2}
