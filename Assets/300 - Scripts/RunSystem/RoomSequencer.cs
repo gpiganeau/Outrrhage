@@ -93,6 +93,11 @@ public class RoomSequencer : ScriptableObject
         GameManager.Instance.Riel.EnableControls();
     }
 
+    public void ZZ_PlayRandomMusic()
+    {
+        AudioManager.Instance.PlayRandomMusic();
+    }
+
     #endregion
 }
 
