@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
             var riel = Instantiate(_rielPrefab, spawnPoint.transform.position, Quaternion.identity) as CharacterComponent;
             Riel = riel;
             _cameraController.SetTarget(Riel.transform);
-            _cameraController.transform.position = spawnPoint.transform.position + new Vector3(0, 100, 0);
+            _cameraController.transform.position = riel.transform.position.WithY(100);
             riel.PlayerCameraController = _cameraController;
             EntityManager.Instance.Riel = riel;
             OnGameStart.Invoke();
@@ -91,10 +91,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckForRoomEnd()
     {
-       if (RunSystemController.Instance.CurrentRoom.QueryRoomEnd())
-        {
-            // -- Todo : Next Room Logic.
-        }
+       RunSystemController.Instance.QueryRoomEnd();
     }
 
 

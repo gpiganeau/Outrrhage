@@ -10,6 +10,7 @@ public class ChaosStep
     [Range(0f, 10f)] public float delay;
     public UnityEvent stepEvent;
     public bool logEvent = true;
+    public bool skipEvent = false;
 }
 
 

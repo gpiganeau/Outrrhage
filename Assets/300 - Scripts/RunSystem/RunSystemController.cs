@@ -2,13 +2,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
 using System.Linq;
-
+using UnityEngine.Events;
 
 public enum PathDirection { North, East, South, West }
 
 public class RunSystemController : MonoBehaviour
 {
     [SerializeField] private RunSettings runSettings;
+    private const int ROOM_SIZE = 32;
 
     public static RunSystemController Instance;
 
@@ -44,7 +45,13 @@ public class RunSystemController : MonoBehaviour
     [SerializeField] private GameRoom _currentRoom;
     [SerializeField] private List<PathDirection> _pathDirections;
 
+    [SerializeField] private List<Vector3> _spawnPositions;
+
+    public UnityEvent OnRoomComplete = new();
+
     public GameRoom CurrentRoom => _currentRoom;
+    private int roomIndex = 0;
+    bool _currentRoomSequenceOver = false;
 
     void Awake()
     {
@@ -91,84 +98,9 @@ public class RunSystemController : MonoBehaviour
 
         GenerateDirectionPath();
 
-        Logger.Core($"Generated a path with {_pathRooms.Count} rooms");
-
-    }
-
-    private void GenerateDirectionPath()
-    {
-        _pathDirections.Clear();
-
-        HashSet<Vector2Int> visited = new HashSet<Vector2Int>();
-        Vector2Int current = Vector2Int.zero;
-        visited.Add(current);
-    
-        List<PathDirection> allDirections = new List<PathDirection> 
-        { 
-            PathDirection.North, PathDirection.East, 
-            PathDirection.South, PathDirection.West 
-        };
-
-        for (int i = 0; i <= _roomCount; i++)
-        {
-            // Shuffle les directions disponibles
-            List<PathDirection> available = new List<PathDirection>();
-            foreach (var dir in allDirections)
-            {
-                Vector2Int next = current + ToGrid(dir);
-                if (!visited.Contains(next))
-                    available.Add(dir);
-            }
-            
-            if (available.Count == 0)
-            {
-                // Dead end : on backtrack ou on force une direction déjà visitée
-                Logger.Core($"[RunSystem] Dead end at step {i}, forcing random direction");
-                _pathDirections.Add(allDirections.Random());
-                break;
-            }
-            
-            PathDirection chosen = available.Random();
-            _pathDirections.Add(chosen);
-            current += ToGrid(chosen);
-            visited.Add(current);
-        }
-    }
-
-    bool _currentRoomSequenceOver = false;
-    IEnumerator StartRoomSequence (RoomSequencer seq)
-    {
-        seq.OnRoomStart?.Invoke();
-        _currentRoomSequenceOver = false;
-
-        foreach (var step in seq.RoomSequence)
-        {
-            if (step.delay > 0)
-            {
-                yield return new WaitForSeconds(step.delay);
-            }
-
-            if (step.logEvent)
-            {
-                Logger.Log(Logger.LogCategory.Core, $"[DesignerChaos] Step Triggered: {step.stepName}");
-            }
-            
-            step.stepEvent?.Invoke();
-
-        }
-
-        _currentRoomSequenceOver = true;
-    }
-
-    private void StartRun()
-    {
-        _currentRoom = Instantiate(_hubRoom);
-        _currentRoom.RegenerateRoom();
-        StartCoroutine(StartRoomSequence(runSettings.Sequencers[0]));
-
-        float roomSize = runSettings.HUBRooms[0].Dimensions.x;
-
-        Vector3 currentPos = transform.position;
+        // -- Get All Spawn Positions 
+        var currentPos = transform.position;
+        _spawnPositions.Add(currentPos);
 
         for (int i = 1; i <= runSettings.RoomCount; i++)
         {
@@ -176,18 +108,106 @@ public class RunSystemController : MonoBehaviour
             if (i == runSettings.RoomCount)
             {
                 PathDirection lastDir = _pathDirections.Last();
-                currentPos += GetDirection(lastDir) * roomSize;
-                GameRoom bossRoom = Instantiate(_bossRoom, currentPos, Quaternion.identity);
-                bossRoom.RegenerateRoom();
+                currentPos += GetDirection(lastDir) * ROOM_SIZE;
+                _spawnPositions.Add(currentPos);
                 break;
             }
 
             PathDirection dir = _pathDirections[i - 1];
-            currentPos += GetDirection(dir) * roomSize;
-
-            GameRoom newRoom = Instantiate(_pathRooms[i - 1], currentPos, Quaternion.identity);
-            newRoom.RegenerateRoom();
+            currentPos += GetDirection(dir) * ROOM_SIZE;
+            _spawnPositions.Add(currentPos);
         }
+
+        void GenerateDirectionPath()
+        {
+            _pathDirections.Clear();
+
+            HashSet<Vector2Int> visited = new HashSet<Vector2Int>();
+            Vector2Int current = Vector2Int.zero;
+            visited.Add(current);
+        
+            List<PathDirection> allDirections = new List<PathDirection> 
+            { 
+                PathDirection.North, PathDirection.East, 
+                PathDirection.South, PathDirection.West 
+            };
+
+            for (int i = 0; i <= _roomCount; i++)
+            {
+                List<PathDirection> available = new List<PathDirection>();
+                foreach (var dir in allDirections)
+                {
+                    Vector2Int next = current + ToGrid(dir);
+                    if (!visited.Contains(next))
+                        available.Add(dir);
+                }
+                
+                if (available.Count == 0)
+                {
+                    Logger.Core($"[RunSystem] Dead end at step {i}, forcing random direction");
+                    _pathDirections.Add(allDirections.Random());
+                    break;
+                }
+                
+                PathDirection chosen = available.Random();
+                _pathDirections.Add(chosen);
+                current += ToGrid(chosen);
+                visited.Add(current);
+            }
+        }
+    }
+    IEnumerator StartRoomSequence (RoomSequencer seq)
+    {
+        seq.OnRoomStart?.Invoke();
+        _currentRoomSequenceOver = false;
+
+        foreach (var step in seq.RoomSequence)
+        {
+
+            if (step.skipEvent)
+            {
+                continue;
+            } 
+            else
+            {
+
+                if (step.delay > 0)
+                {
+                    yield return new WaitForSeconds(step.delay);
+                }
+
+                if (step.logEvent)
+                {
+                    Logger.Log(Logger.LogCategory.Core, $"[DesignerChaos] Step Triggered: {step.stepName}");
+                }
+                
+                step.stepEvent?.Invoke();   
+            }
+        }
+
+        _currentRoomSequenceOver = true;
+    }
+
+    public bool QueryRoomEnd()
+    {
+        if (!_currentRoomSequenceOver) return false;
+        if (EntityManager.Instance.Bots.Count > 0) return false;
+        _currentRoom.customRoomSequencer.OnRoomComplete?.Invoke();
+        OnRoomComplete?.Invoke();
+        return true;
+    }
+
+    private void StartRun()
+    {
+        CreateRoom(_hubRoom, _spawnPositions[roomIndex], runSettings.Sequencers[roomIndex], PathDirection.South);
+    }
+
+    private void CreateRoom(GameRoom room, Vector3 pos, RoomSequencer sequencer, PathDirection entrance)
+    {
+        _currentRoom = Instantiate(room, pos, Quaternion.identity);
+        _currentRoom.Init(sequencer, entrance);
+        StartCoroutine(StartRoomSequence(_currentRoom.customRoomSequencer));
+        roomIndex++;
     }
 
     void OnValidate()
@@ -197,15 +217,13 @@ public class RunSystemController : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        float roomSize = runSettings.HUBRooms[0].Dimensions.x;
-        Vector3 roomSizeVec = new Vector3(roomSize, 1, roomSize);
+        Vector3 roomSizeVec = new Vector3(ROOM_SIZE, 1, ROOM_SIZE);
 
         // -- Hub Room
         Gizmos.color = Color.rebeccaPurple;
         Gizmos.DrawCube(transform.position, roomSizeVec);
 
         Vector3 currentPos = transform.position;
-
 
         // -- Path Room
         Gizmos.color = Color.cyan;
@@ -217,14 +235,14 @@ public class RunSystemController : MonoBehaviour
             {
                 Gizmos.color = Color.yellowNice;
                 PathDirection lastDir = _pathDirections.Last();
-                currentPos += GetDirection(lastDir) * roomSize;
+                currentPos += GetDirection(lastDir) * ROOM_SIZE;
                 Gizmos.DrawCube(currentPos, roomSizeVec);
                 break;
             }
             PathDirection dir = _pathDirections[i - 1];
-            currentPos += GetDirection(dir) * roomSize;
+            currentPos += GetDirection(dir) * ROOM_SIZE;
 
-            Vector3 roomPos = transform.position +  (i * transform.forward * roomSize);
+            Vector3 roomPos = transform.position +  (i * transform.forward * ROOM_SIZE);
             Gizmos.DrawCube(currentPos, roomSizeVec);
         }
     }

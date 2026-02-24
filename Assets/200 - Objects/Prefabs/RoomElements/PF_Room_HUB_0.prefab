@@ -157,10 +157,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb14e9f661d0dc6499725f9c9265cc04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameRoom
-  _roomName: Hub Room
   _roomDescription: Test spells on dummy, change build & start run
   _spawnableElements: []
   _floorLevelOffset: 0.5
+  RoomEnter: 0
+  RoomExit: 0
   IsProceduralRoom: 0
   OverrideRoomSequencer: 0
   customRoomSequencer: {fileID: 0}
@@ -172,26 +173,8 @@ MonoBehaviour:
   - {fileID: 148804, guid: 3fb07e96bb0cae643a28994c86ddc64e, type: 3}
   - {fileID: 165962, guid: d2eb17f175564e84c8ad78ac03232e29, type: 3}
   - {fileID: 152896, guid: d17bc9c1cdef1c5448255edad31c1c61, type: 3}
-  CorridorSpawnPoints:
-  - {fileID: 2142665052250511900}
-  NextRoom: {fileID: 9194013458221197619}
   _spawnPoint: {fileID: 0}
   _cellsElementHolder: {fileID: 4534283859958084862}
-  OnRoomComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 9194013458221197619}
-        m_TargetAssemblyTypeName: GameRoom, Assembly-CSharp
-        m_MethodName: SpawnNextRoom
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _cells: []
   _spawnChancePercentage: 1
 --- !u!1 &4824635752990540231

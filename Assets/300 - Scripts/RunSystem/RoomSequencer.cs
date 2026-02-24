@@ -15,7 +15,7 @@ public class RoomSequencer : ScriptableObject
     public List<ChaosStep> RoomSequence = new List<ChaosStep>();
     public UnityEvent OnRoomComplete;
     
-   
+
 
     #region Run Controls
 
