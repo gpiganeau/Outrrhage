@@ -31,6 +31,10 @@ public class SkillData : ScriptableObject
     [Header("Combo Settings")]
     public float ComboResetDelay;
 
+    [Header("Misc")]
+    public bool ProvideInvulnerability = false;
+    public float InvulnerabilityTime = 0f;
+
     [Header("Movement")]
     public bool ignoreCollisions;
     public float movementDistance;
