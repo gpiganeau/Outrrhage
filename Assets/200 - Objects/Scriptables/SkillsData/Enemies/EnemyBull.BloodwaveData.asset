@@ -28,14 +28,19 @@ MonoBehaviour:
   numberOfProjectiles: 6
   TravelMode: 0
   AimAssistRatio: 0
+  ComboResetDelay: 0
+  ProvideInvulnerability: 0
+  InvulnerabilityTime: 0
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 1
   BloodCost: 1
+  DropBloodOnFailedSkill: 0
+  RageGain: 1
   BloodStackingAmount: 1
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
-  AnimationKey: Cast
+  AnimationKey: Attack
   AnimationsKeys: []
   vfxData:
     castVFXPrefab: {fileID: 0}

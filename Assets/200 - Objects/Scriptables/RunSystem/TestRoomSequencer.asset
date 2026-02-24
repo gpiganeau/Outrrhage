@@ -24,7 +24,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 11400000}
           m_TargetAssemblyTypeName: RoomSequencer, Assembly-CSharp
-          m_MethodName: ZZ_SpawnDrones
+          m_MethodName: ZZ_SpawnBull
           m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
