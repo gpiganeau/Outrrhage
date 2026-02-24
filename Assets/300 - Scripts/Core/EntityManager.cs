@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DG.Tweening;
+using UnityEditor.SettingsManagement;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -87,7 +88,7 @@ public class EntityManager : MonoBehaviour
     {
         float randomDistance = Random.Range(minRange, maxRange);
         Vector2 randomDirection = Random.insideUnitCircle.normalized * randomDistance;
-        return point + new Vector3(randomDirection.x, .5f, randomDirection.y);
+        return point + new Vector3(randomDirection.x, 0f, randomDirection.y);
     }
 
     private void OnDestroy()
@@ -152,7 +153,7 @@ public class EntityManager : MonoBehaviour
                 
                 if (prefabToSpawn != null)
                 {
-                    SpawnEnemy(prefabToSpawn, spawnPos);
+                    SpawnEnemy(prefabToSpawn, spawnPos.WithY(SettingsManager.Instance.GameplaySettings.YSpawnOffset));
                 }
             });
             

@@ -11,4 +11,8 @@ public class GameplaySettings : ScriptableObject
     [Header("Game Over")]
     public float DeathTimeBeforeReload = 3f;
     public bool ClearRoomOnDeath = true;
+
+    public float YSpawnOffset = 1f;
 }
+
+

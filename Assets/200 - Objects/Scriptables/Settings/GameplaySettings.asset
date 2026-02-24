@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameplaySettings
   baseStaticTimeOnSkillUse: 0.2
   baseMinTimeBetweenSkills: 0.2
+  spawnerTimeBetweenSpawns: 0.5
+  DeathTimeBeforeReload: 3
+  ClearRoomOnDeath: 1
+  YSpawnOffset: 1
