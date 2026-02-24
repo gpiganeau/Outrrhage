@@ -21,7 +21,7 @@ public class VisualSettings : ScriptableObject
 [System.Serializable]
 public class ColorPalette
 {
-    [SerializeField] string Name;
-    [SerializeField] Texture2D Ramp;
-    [SerializeField][ColorUsage(true, true)] Color Main, Secondary, Ternary;
+    [SerializeField] public string Name;
+    [SerializeField] public Texture2D Ramp;
+    [SerializeField][ColorUsage(true, true)] public Color Main, Secondary, Ternary;
 };

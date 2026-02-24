@@ -10,5 +10,6 @@ public class Bark : ScriptableObject
 
     [Header("Subtitles")]
     public bool ShowSubtitles = false;
-    public string Text; 
+    public string Text = "Il faut <em>ABSOLUMENT</em> fuir, le <c=#FF4444>danger</c> approche.";
+    public ColorPalette SpeakerPalette;
 }

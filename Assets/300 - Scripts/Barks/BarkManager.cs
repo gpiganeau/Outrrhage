@@ -51,10 +51,14 @@ public class BarkManager : MonoBehaviour
         _source.Play();
         Logger.Narration(_currentBark.Text);
 
+        SubtitleManager.I?.Show(bark);
+
         // Auto-clear après la durée du clip
         _currentBarkTween = DOVirtual.DelayedCall(bark.Clip.length, () => {
             _currentBark = null;
             _currentBarkTween = null;
+        SubtitleManager.I?.Hide();
+
         });
     }
      
