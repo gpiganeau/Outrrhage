@@ -9,7 +9,7 @@ public class AimPreviewController: MonoBehaviour
 
     bool _isPreviewing;
     Vector3 _previewMovement;
-    
+    public Vector3 AimPosition => _cursor.transform.position;
 
     internal void StartPreview(PreviewData data)
     {

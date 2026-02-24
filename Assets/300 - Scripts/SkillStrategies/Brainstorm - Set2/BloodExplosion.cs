@@ -4,8 +4,10 @@ using UnityEngine;
 
 class BloodExplosion : SkillStrategy
 {
+    Vector3 storedAimPosition;
     Sequence channelSequence;
     Team storedTeam;
+    [SerializeField] float _capsuleHeight = 1f;
     public override bool Call(MovementController movementController, Team team)
     {
         if (!base.Call(movementController, team)) return false;
@@ -20,6 +22,8 @@ class BloodExplosion : SkillStrategy
         channelSequence.AppendInterval(_storedSkillData.HoldDuration);
         channelSequence.OnComplete(() =>
         {
+            storedAimPosition = movementController.GetAimPosition();
+            Debug.Log($"AimPosition: {storedAimPosition} | PlayerPosition: {transform.position}");
             ExecuteExplosion();
             parentController.SetSkillsDisabled(false, "SlashAttack");
             movementController.SetImmobilized(false, "SlashAttack");
@@ -41,7 +45,9 @@ class BloodExplosion : SkillStrategy
     private void ExecuteExplosion()
     {
         List<BloodDrop> nearbyBloodDrops = new List<BloodDrop>();
-        Collider[] bloodDropColliders = Physics.OverlapSphere(transform.position, _storedSkillData.Radius, LayerMask.GetMask("Blood"));
+        Vector3 bottom = new Vector3(storedAimPosition.x, storedAimPosition.y - _capsuleHeight, storedAimPosition.z);
+        Vector3 top = new Vector3(storedAimPosition.x, storedAimPosition.y + _capsuleHeight, storedAimPosition.z);
+        Collider[] bloodDropColliders = Physics.OverlapCapsule(bottom, top, _storedSkillData.Radius, LayerMask.GetMask("Blood"));
         foreach(Collider drop in bloodDropColliders)
         {
             nearbyBloodDrops.Add(drop.GetComponent<BloodDrop>());

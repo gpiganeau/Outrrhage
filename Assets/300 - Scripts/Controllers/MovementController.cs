@@ -219,6 +219,13 @@ public class MovementController: MonoBehaviour, IAnimatable
         return _facingVector;
     }
 
+    public Vector3 GetAimPosition()
+    {
+        return _cachedAimPreviewController != null 
+            ? _cachedAimPreviewController.AimPosition 
+            : transform.position;
+    }
+
     #endregion
 
     #region  Animatable Implementation

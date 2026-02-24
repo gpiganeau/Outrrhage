@@ -10,6 +10,7 @@ internal class PreviewCursor : MonoBehaviour
     public void Initialize(Vector3 startingPosition, PreviewData data)
     {
         transform.position = startingPosition;
+        _visualsContainer.transform.localScale = Vector3.one * data.radius * 2f;
         Show();
     }
 
