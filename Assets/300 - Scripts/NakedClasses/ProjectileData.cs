@@ -18,6 +18,8 @@ public class ProjectileData
     public Vector3 Target;
     //Et tout le reste ...
 
+    public Transform casterTransform;
+
     public ProjectileData()
     {
 

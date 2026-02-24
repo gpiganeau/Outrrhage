@@ -25,7 +25,7 @@ MonoBehaviour:
   ProjectileRange: 0
   ProjectileSpeed: 0
   ProjectileDamage: 01000000
-  ProjectileLifetime: 0
+  ProjectileLifetime: 0.5
   numberOfProjectiles: 0
   TravelMode: 3
   AimAssistRatio: 0
@@ -34,6 +34,8 @@ MonoBehaviour:
   movementDuration: 0.15
   IsRielSpecificSkill: 0
   BloodCost: 0
+  DropBloodOnFailedSkill: 0
+  RageGain: 1
   BloodStackingAmount: 1
   Icon: {fileID: 21300000, guid: c4474a0bd3f754244b6cffea969c6a6c, type: 3}
   AnimationKey: Slash

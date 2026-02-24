@@ -7,9 +7,12 @@ using UnityEngine;
 class BloodSpikes : SkillStrategy
 {
     int currentSpike = 0;
+    Tween comboResetTimer;
+
     public override bool Call(MovementController movementController, Team team)
     {
         if (!base.Call(movementController, team)) return false;
+        Logger.Combat($"BloodSpikes: currentSpike = {currentSpike}");
         Vector3 firingDirection = movementController.GetFacingDirection();
         Logger.Combat($"BloodSpikes: Pre aim assist direction {firingDirection.ToString()}");
         UseAimAssist(ref firingDirection, _storedSkillData.AimAssistRatio, team);
@@ -38,18 +41,10 @@ class BloodSpikes : SkillStrategy
             Speed = _storedSkillData.ProjectileSpeed,
             BloodStackingAmount = _storedSkillData.BloodStackingAmount,
             Team = team,
-
             Target = movementController.transform.position + firingDirection * _storedSkillData.ProjectileRange, 
         };
 
-        DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
-        {
-            parentController.SetSkillsDisabled(false, "BloodSpikesAttack");
-            movementController.SetImmobilized(false, "BloodSpikesAttack");
-        });
-
         projectileData.startingPosition += new Vector3(0, 0.5f, 0f); // Vertical Offset
-
 
         var Seq = DOTween.Sequence();
         Seq.AppendCallback(() => movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[currentSpike]));
@@ -57,8 +52,10 @@ class BloodSpikes : SkillStrategy
         Seq.AppendCallback(() => {
              var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
              p.SetTravelMode(_storedSkillData.TravelMode);
-            currentSpike = (currentSpike + 1) % 3; 
-
+            currentSpike = (currentSpike + 1) % 3;
+            parentController.SetSkillsDisabled(false, "BloodSpikesAttack");
+            movementController.SetImmobilized(false, "BloodSpikesAttack");
+            ResetComboAfterDelay();
         });
 
     }
@@ -81,12 +78,6 @@ class BloodSpikes : SkillStrategy
             Target = movementController.transform.position + firingDirection * _storedSkillData.ProjectileRange,
         };
 
-        DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
-        {
-            parentController.SetSkillsDisabled(false, "BloodSpikesAttack");
-            movementController.SetImmobilized(false, "BloodSpikesAttack");
-        });
-
         projectileData.startingPosition += new Vector3(0, 0.5f, 0f); // Vertical Offset
 
         var Seq = DOTween.Sequence();
@@ -96,10 +87,30 @@ class BloodSpikes : SkillStrategy
             var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
             p.onProjectileHit.AddListener(Explosion);
             p.SetTravelMode(_storedSkillData.TravelMode);
-            currentSpike = (currentSpike + 1) % 3; 
-            PutInCooldown();
+            currentSpike = (currentSpike + 1) % 3;
+            Logger.Combat($"BloodSpikes: Mise en cooldown"); 
+            PutInCooldown();   
+            parentController.SetSkillsDisabled(false, "BloodSpikesAttack");
+            movementController.SetImmobilized(false, "BloodSpikesAttack");
         });
 
+    }
+
+    protected override void PutInCooldown()
+    {
+        currentSpike = 0;
+        Logger.Combat($"BloodSpikes: Combo terminé, mise en cooldown");
+        base.PutInCooldown();
+    }      
+
+    private void ResetComboAfterDelay()
+    {
+        comboResetTimer?.Kill();
+        comboResetTimer = DOVirtual.DelayedCall(_storedSkillData.ComboResetDelay, () =>
+        {
+            Logger.Combat($"BloodSpikes: Combo expiré, reset à 0");
+            currentSpike = 0;
+        });
     }
 
     private void Explosion(Projectile projectile, DamageController damageController)
