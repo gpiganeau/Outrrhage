@@ -5,11 +5,14 @@ public class VisualSettings : ScriptableObject
 {
     public bool EnableJuicer = true;
 
+    [Header("Feedback")]
     [ColorUsage(true, true)] public Color PlayerHealColor; 
     [ColorUsage(true, true)] public Color PlayerDamagedColor; 
     [ColorUsage(true, true)] public Color PlayerRageColor; 
     [ColorUsage(true, true)] public Color PlayerDeathColor; 
 
+    [Header("Subtitles")]
+    public ColorPalette RielSubtitleColorPalette;
 
     [SerializeField] ColorPalette _bloodPalette, _techPalette, _naturePalette, _cityPalette;
     public ColorPalette BloodPalette => _bloodPalette;

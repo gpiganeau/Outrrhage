@@ -12,5 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459d2b38365837c46b45f7f2f6bbe30d, type: 3}
   m_Name: Bark_Bird
   m_EditorClassIdentifier: Assembly-CSharp::Bark
-  Text: Cui cui cui cui cuiiiii cui !
   Clip: {fileID: 8300000, guid: 16a07621d1bc9a846bb265d15fb71f4c, type: 3}
+  Priority: 2
+  OneShot: 1
+  ShowSubtitles: 0
+  Text: Cui cui cui cui cuiiiii cui !
+  SpeakerPalette:
+    Name: 
+    Ramp: {fileID: 0}
+    Main: {r: 1, g: 1, b: 1, a: 1}
+    Secondary: {r: 0, g: 0, b: 0, a: 0}
+    Ternary: {r: 0, g: 0, b: 0, a: 0}

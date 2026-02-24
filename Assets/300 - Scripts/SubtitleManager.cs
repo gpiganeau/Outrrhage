@@ -58,7 +58,7 @@ public class SubtitleManager : MonoBehaviour
     // ─── Parsing ───────────────────────────────────────────────────
 
     // Transforme notre markup en tokens prêts à afficher
-    List<SubtitleToken> Parse(string raw, ColorPalette palette)
+    List<SubtitleToken> Parse(string raw, Color color)
     {
         var tokens = new List<SubtitleToken>();
         int i = 0;
@@ -69,7 +69,7 @@ public class SubtitleManager : MonoBehaviour
             if (raw[i] == '<')
             {
                 int close = raw.IndexOf('>', i);
-                if (close == -1) { tokens.Add(Char(raw[i], palette.Main)); i++; continue; }
+                if (close == -1) { tokens.Add(Char(raw[i], color)); i++; continue; }
 
                 string tag = raw.Substring(i + 1, close - i - 1); // contenu entre < >
 
@@ -106,7 +106,7 @@ public class SubtitleManager : MonoBehaviour
                 int next = raw.IndexOf('<', i);
                 string chunk = next == -1 ? raw.Substring(i) : raw.Substring(i, next - i);
                 if (chunk.Length > 0)
-                    tokens.Add(new SubtitleToken { Text = chunk, Type = TokenType.Normal, Color = palette.Main });
+                    tokens.Add(new SubtitleToken { Text = chunk, Type = TokenType.Normal, Color = color });
                 i = next == -1 ? raw.Length : next;
             }
         }
@@ -122,7 +122,7 @@ public class SubtitleManager : MonoBehaviour
     IEnumerator TypewriterRoutine(Bark bark)
     {
         _label.text = "";
-        var tokens = Parse(bark.Text, bark.SpeakerPalette);
+        var tokens = Parse(bark.Text, bark.MainColor);
 
         float delay = 1f / _charsPerSecond;
 

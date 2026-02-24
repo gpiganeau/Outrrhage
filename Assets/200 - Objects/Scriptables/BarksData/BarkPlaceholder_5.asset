@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bark
   Clip: {fileID: 8300000, guid: f0a05c5393ac3404a83ffafe4598b4fc, type: 3}
   Priority: 2
-  OneShot: 1
+  OneShot: 0
   ShowSubtitles: 1
   Text: "Les oeufs sont\u2026 tout seuls ?"
+  SpeakerPalette:
+    Name: 
+    Ramp: {fileID: 0}
+    Main: {r: 1, g: 1, b: 1, a: 1}
+    Secondary: {r: 0, g: 0, b: 0, a: 0}
+    Ternary: {r: 0, g: 0, b: 0, a: 0}

@@ -10,16 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 459d2b38365837c46b45f7f2f6bbe30d, type: 3}
-  m_Name: BarkPlaceholder_8
+  m_Name: TestBarkSubtile
   m_EditorClassIdentifier: Assembly-CSharp::Bark
-  Clip: {fileID: 8300000, guid: 829fe713ec2d0eb45ae4736aaa2351e6, type: 3}
+  Clip: {fileID: 0}
   Priority: 2
-  OneShot: 1
+  OneShot: 0
   ShowSubtitles: 1
-  Text: NON !
-  SpeakerPalette:
-    Name: 
-    Ramp: {fileID: 0}
-    Main: {r: 1, g: 1, b: 1, a: 1}
-    Secondary: {r: 0, g: 0, b: 0, a: 0}
-    Ternary: {r: 0, g: 0, b: 0, a: 0}
+  Text: Il faut <em>ABSOLUMENT</em> fuir, le <c=#FF4444>danger</c> approche.
+  MainColor: {r: 0.754717, g: 0.5609915, b: 0.21003917, a: 1}
