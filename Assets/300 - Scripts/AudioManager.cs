@@ -5,12 +5,10 @@ public enum SoundGroup { Ambient, SFX, Music, Bark, Global }
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-
     private AudioSettings settings;
 
-
     [SerializeField] public List<AudioClip> Songs;
-    AudioSource musicSource;
+    public AudioSource musicSource;
 
     public void Awake()
     {
@@ -21,13 +19,15 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         settings = SettingsManager.Instance.AudioSettings;
-        musicSource = gameObject.GetComponent<AudioSource>();
+        musicSource = GetComponent<AudioSource>();
 
         PlayRandomMusic();
     }
 
     public void PlayRandomMusic()
     {
+
+        if (musicSource == null) musicSource = GetComponent<AudioSource>();        
         musicSource.clip = Songs.Random();
         musicSource.volume = settings.musicVolume;
         musicSource.loop = true;

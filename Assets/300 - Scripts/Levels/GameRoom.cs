@@ -11,6 +11,10 @@ public class GameRoom : MonoBehaviour
     [SerializeField] List<GameObject> _spawnableElements = new List<GameObject>();
     [SerializeField, Range (-2f, 2f)] float _floorLevelOffset = 1f;
 
+    public bool IsProceduralRoom = false;
+    public bool OverrideRoomSequencer = false;
+    public RoomSequencer customRoomSequencer;
+
     public string GetRoomName() => _roomName;
 
     public List<GameObject> CorridorsPrefabs;
@@ -41,6 +45,8 @@ public class GameRoom : MonoBehaviour
 
     public void RegenerateRoom()
     {
+        if (!IsProceduralRoom) return;
+
         foreach (RoomCell c in _cells)
         {
             if (c.IsEmpty) continue;

@@ -21,7 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e697f80dad1f860439085fe6f2c4ca6d, type: 2}
   - {fileID: 11400000, guid: e697f80dad1f860439085fe6f2c4ca6d, type: 2}
   HUBRooms:
-  - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
+  - {fileID: 9194013458221197619, guid: bad34a76fd193e34c8d6d6dc074721a4, type: 3}
   NormalRooms:
   - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
