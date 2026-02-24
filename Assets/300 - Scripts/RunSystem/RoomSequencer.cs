@@ -14,9 +14,9 @@ public class RoomSequencer : ScriptableObject
     public UnityEvent OnRoomStart;
     public List<ChaosStep> RoomSequence = new List<ChaosStep>();
     public UnityEvent OnRoomComplete;
+
+    [Tooltip("Room Auto Complete and spawn next on Sequence end")] public bool AutoComplete = false;
     
-
-
     #region Run Controls
 
     public void ZZ_SpawnCustomEnnemies(int count)

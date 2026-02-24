@@ -139,7 +139,7 @@ public class EntityManager : MonoBehaviour
                 Vector3 spawnPos = GetRandomPosAroundPoint(position, spawnRadius * 0.5f, spawnRadius);
                 //Vector3 spawnPos = potentialSpawnPositions[i];
 
-                Logger.Combat($"Spawning {type} at {spawnPos}");
+              //  Logger.Combat($"Spawning {type} at {spawnPos}");
                 
                 AIActorComponent prefabToSpawn = type switch
                 {

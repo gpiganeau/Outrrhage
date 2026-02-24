@@ -20,14 +20,12 @@ public class AudioManager : MonoBehaviour
     {
         settings = SettingsManager.Instance.AudioSettings;
         musicSource = GetComponent<AudioSource>();
-
-        PlayRandomMusic();
     }
 
     public void PlayRandomMusic()
     {
-
-        if (musicSource == null) musicSource = GetComponent<AudioSource>();        
+        if (musicSource == null) musicSource = GetComponent<AudioSource>();     
+        musicSource.Stop();   
         musicSource.clip = Songs.Random();
         musicSource.volume = settings.musicVolume;
         musicSource.loop = true;

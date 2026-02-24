@@ -3,11 +3,37 @@ using UnityEngine;
 using System.Collections;
 using System.Linq;
 using UnityEngine.Events;
+using System;
+using DG.Tweening;
 
 public enum PathDirection { North, East, South, West }
 
+public enum RoomType { Hub, Normal, Boss, Safe }
+
 public class RunSystemController : MonoBehaviour
 {
+
+    [Serializable]
+    private class RoomWrapper
+    {
+        public GameRoom room;
+        public Vector3 position;
+        public RoomSequencer sequencer;
+        public PathDirection entry;
+        public RoomType type = RoomType.Normal;
+
+        public RoomWrapper(GameRoom room, Vector3 pos, RoomSequencer sequencer, PathDirection entrance, RoomType type)
+        {
+            this.room = room;
+            this.position = pos;
+            this.sequencer = sequencer;
+            this.entry = entrance;
+            this.type = type;
+        }
+    }
+
+    [SerializeField] List<RoomWrapper> Rooms = new();
+
     [SerializeField] private RunSettings runSettings;
     private const int ROOM_SIZE = 32;
 
@@ -37,9 +63,13 @@ public class RunSystemController : MonoBehaviour
         };
     }
 
+    [Header("Gizmos")]
+    public Color BossColor;
+    public Color NormalColor;
+    public Color HubColor;
+
     [Header("Debug")]
     [SerializeField] private int _roomCount;
-    [SerializeField] private GameRoom _hubRoom;
     [SerializeField] private List<GameRoom> _pathRooms;
     [SerializeField] private GameRoom _bossRoom;
     [SerializeField] private GameRoom _currentRoom;
@@ -49,8 +79,11 @@ public class RunSystemController : MonoBehaviour
 
     public UnityEvent OnRoomComplete = new();
 
+    public GameRoom HUB => Rooms[0].room;
+    public RespawnPoint MainRespawn => HUB.GetSpawnPoint();
+
     public GameRoom CurrentRoom => _currentRoom;
-    private int roomIndex = 0;
+    [SerializeField] private int _roomIndex = 0;
     bool _currentRoomSequenceOver = false;
 
     void Awake()
@@ -58,64 +91,97 @@ public class RunSystemController : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
+        OnRoomComplete.AddListener(SpawnNextRoom);
         GenerateCriticalPath();
         StartRun();
     }
 
     private void GenerateCriticalPath ()
     {
-
-        _pathRooms.Clear();
-        
+        // -- Resets everything
         RunSettings s = runSettings;
-
+        _pathRooms.Clear();
         _roomCount = s.RoomCount;
-        
-        // -- Select HUB Room
-        _hubRoom = s.HUBRooms.Random();
-        
-        // -- Select Boss Room
-        _bossRoom = s.BossRooms.Random();
+        _roomIndex = -1;
+        var currentPos = transform.position;
+        Rooms.Clear();
 
-        // -- Select Normals Rooms
+        // -- Compute Datas
+        GenerateDirectionPath();
+        GenerateSpawnPositions();
+        var selectedRooms = SelectRooms();
 
-        List<GameRoom> availablesRooms = new();
-        foreach (var r in s.NormalRooms) availablesRooms.Add(r);
-        
+        // -- Hub Room
+        RoomWrapper hub = new RoomWrapper(s.HUBRooms.Random(), transform.position, null, PathDirection.South, RoomType.Hub);
+        Rooms.Add(hub);
 
+        // Normal Rooms
         for (int i = 0; i < _roomCount; i++)
         {
-            var nextRoom = availablesRooms.Random();
-            if (nextRoom == null)
+            var r = selectedRooms[i];
+            var p = _spawnPositions[i];
+            var sq = GetSequencer(i);
+            var d = _pathDirections[i];
+            var t = RoomType.Normal;
+
+            RoomWrapper newRoom = new RoomWrapper(r, p, sq, d, t);
+            Rooms.Add(newRoom);
+        }
+
+        // -- Boss Room
+        RoomWrapper boss = new RoomWrapper(s.BossRooms.Random(), _spawnPositions.Last(), null, _pathDirections.Last(), RoomType.Boss);
+        Rooms.Add(boss);
+
+        RoomSequencer GetSequencer(int index)
+        {
+            if (index < s.Sequencers.Length)
             {
-                _pathRooms.Add(_pathRooms[i - 1]);
+                return s.Sequencers[index];
             } else
             {
-                _pathRooms.Add(nextRoom);
-                availablesRooms.Remove(nextRoom);
+                return null;
             }
         }
 
-        GenerateDirectionPath();
+        
+        List<GameRoom> SelectRooms() {
+            List<GameRoom> availablesRooms = new();
 
-        // -- Get All Spawn Positions 
-        var currentPos = transform.position;
-        _spawnPositions.Add(currentPos);
-
-        for (int i = 1; i <= runSettings.RoomCount; i++)
-        {
-            // -- Last Room for Boss
-            if (i == runSettings.RoomCount)
+            foreach (var r in s.NormalRooms) availablesRooms.Add(r);
+            for (int i = 0; i < _roomCount; i++)
             {
-                PathDirection lastDir = _pathDirections.Last();
-                currentPos += GetDirection(lastDir) * ROOM_SIZE;
-                _spawnPositions.Add(currentPos);
-                break;
+                var nextRoom = availablesRooms.Random();
+                if (nextRoom == null)
+                {
+                    _pathRooms.Add(_pathRooms[i - 1]);
+                } else
+                {
+                    _pathRooms.Add(nextRoom);
+                    availablesRooms.Remove(nextRoom);
+                }
             }
 
-            PathDirection dir = _pathDirections[i - 1];
-            currentPos += GetDirection(dir) * ROOM_SIZE;
-            _spawnPositions.Add(currentPos);
+            return _pathRooms;
+        }
+
+        void GenerateSpawnPositions()
+        {
+
+            for (int i = 1; i <= runSettings.RoomCount; i++)
+            {
+                // -- Last Room for Boss
+                if (i == runSettings.RoomCount)
+                {
+                    PathDirection lastDir = _pathDirections.Last();
+                    currentPos += GetDirection(lastDir) * ROOM_SIZE;
+                    _spawnPositions.Add(currentPos);
+                    break;
+                }
+
+                PathDirection dir = _pathDirections[i - 1];
+                currentPos += GetDirection(dir) * ROOM_SIZE;
+                _spawnPositions.Add(currentPos);
+            } 
         }
 
         void GenerateDirectionPath()
@@ -158,6 +224,12 @@ public class RunSystemController : MonoBehaviour
     }
     IEnumerator StartRoomSequence (RoomSequencer seq)
     {
+
+        if (seq == null)
+        {
+            yield break;
+        }
+
         seq.OnRoomStart?.Invoke();
         _currentRoomSequenceOver = false;
 
@@ -186,12 +258,22 @@ public class RunSystemController : MonoBehaviour
         }
 
         _currentRoomSequenceOver = true;
+
+        if (seq.AutoComplete)
+        {
+            RoomEnd();
+        }
     }
 
     public bool QueryRoomEnd()
     {
         if (!_currentRoomSequenceOver) return false;
         if (EntityManager.Instance.Bots.Count > 0) return false;
+        return RoomEnd();
+    }
+
+    private bool RoomEnd()
+    {
         _currentRoom.customRoomSequencer.OnRoomComplete?.Invoke();
         OnRoomComplete?.Invoke();
         return true;
@@ -199,15 +281,39 @@ public class RunSystemController : MonoBehaviour
 
     private void StartRun()
     {
-        CreateRoom(_hubRoom, _spawnPositions[roomIndex], runSettings.Sequencers[roomIndex], PathDirection.South);
+        Sequence startSeq = DOTween.Sequence();
+        startSeq.AppendInterval(1f);
+        startSeq.AppendCallback( () =>
+        {
+            SpawnNextRoom();
+            var w = Rooms[0];
+            var pos = w.position + w.room.GetSpawnPoint().transform.position;
+            GameManager.Instance.RoomStart(pos);
+            });
     }
 
-    private void CreateRoom(GameRoom room, Vector3 pos, RoomSequencer sequencer, PathDirection entrance)
+    private void SpawnNextRoom()
     {
-        _currentRoom = Instantiate(room, pos, Quaternion.identity);
-        _currentRoom.Init(sequencer, entrance);
+        if (_roomIndex <= runSettings.RoomCount)
+        {
+            _roomIndex++;
+            CreateRoom(Rooms[_roomIndex]);
+        } else
+        {
+            GameManager.Instance.TriggerGameEnd();
+        }
+    }
+
+    int MAX_ROOM_CALL = 10;
+    int CURRENT_CALL = 0;
+    private void CreateRoom(RoomWrapper wrapper)
+    {
+        if (CURRENT_CALL >= MAX_ROOM_CALL) return;
+        CURRENT_CALL++;
+
+        _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
+        _currentRoom.Init(wrapper.sequencer, wrapper.entry);
         StartCoroutine(StartRoomSequence(_currentRoom.customRoomSequencer));
-        roomIndex++;
     }
 
     void OnValidate()
@@ -220,20 +326,20 @@ public class RunSystemController : MonoBehaviour
         Vector3 roomSizeVec = new Vector3(ROOM_SIZE, 1, ROOM_SIZE);
 
         // -- Hub Room
-        Gizmos.color = Color.rebeccaPurple;
+        Gizmos.color = HubColor;
         Gizmos.DrawCube(transform.position, roomSizeVec);
 
         Vector3 currentPos = transform.position;
 
         // -- Path Room
-        Gizmos.color = Color.cyan;
+        Gizmos.color = NormalColor;
 
         for (int i = 1; i <= runSettings.RoomCount; i++)
         {
             // -- Last Room for Boss
             if (i == runSettings.RoomCount)
             {
-                Gizmos.color = Color.yellowNice;
+                Gizmos.color = BossColor;
                 PathDirection lastDir = _pathDirections.Last();
                 currentPos += GetDirection(lastDir) * ROOM_SIZE;
                 Gizmos.DrawCube(currentPos, roomSizeVec);
@@ -242,7 +348,6 @@ public class RunSystemController : MonoBehaviour
             PathDirection dir = _pathDirections[i - 1];
             currentPos += GetDirection(dir) * ROOM_SIZE;
 
-            Vector3 roomPos = transform.position +  (i * transform.forward * ROOM_SIZE);
             Gizmos.DrawCube(currentPos, roomSizeVec);
         }
     }

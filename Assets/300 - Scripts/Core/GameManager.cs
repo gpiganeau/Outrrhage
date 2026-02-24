@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -45,20 +46,15 @@ public class GameManager : MonoBehaviour
                 case GameMode.Forest:
                     ForestStart();
                     break;
-                case GameMode.Rooms:
-                    RoomStart();
-                    break;
             }
     }
 
-    private void RoomStart(){
+    public void RoomStart(Vector3 rielSpawnPos){
         Sequence spawnSeq = DOTween.Sequence();
 
-        spawnSeq.AppendInterval(0.5F);
         spawnSeq.AppendCallback( () =>
         {
-            RespawnPoint spawnPoint = RunSystemController.Instance.CurrentRoom.GetSpawnPoint();
-            var riel = Instantiate(_rielPrefab, spawnPoint.transform.position, Quaternion.identity) as CharacterComponent;
+            var riel = Instantiate(_rielPrefab, rielSpawnPos, Quaternion.identity);
             Riel = riel;
             _cameraController.SetTarget(Riel.transform);
             _cameraController.transform.position = riel.transform.position.WithY(100);
@@ -98,5 +94,10 @@ public class GameManager : MonoBehaviour
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    internal void TriggerGameEnd()
+    {
+        Logger.Core("GAME END");
     }
 }
