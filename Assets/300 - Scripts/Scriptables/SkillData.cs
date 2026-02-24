@@ -28,6 +28,9 @@ public class SkillData : ScriptableObject
     public SkillshotProjectile.TravelMode TravelMode = SkillshotProjectile.TravelMode.AwayFromCaster;
     [Range(0, 1)] public float AimAssistRatio = 0;
 
+    [Header("Combo Settings")]
+    public float ComboResetDelay;
+
     [Header("Movement")]
     public bool ignoreCollisions;
     public float movementDistance;

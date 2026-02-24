@@ -69,6 +69,7 @@ public class SkillsController: MonoBehaviour
         {
             SkillStrategy skill = activeSkillStrategies[strategyIndex];
 
+            if (skillsDisabledSources.Count > 0) return;
                 
             foreach (ISkillConstrainer constrainer in constraints) { 
 

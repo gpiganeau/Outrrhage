@@ -1,4 +1,4 @@
-﻿using DG.Tweening;
+using DG.Tweening;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
@@ -50,7 +50,7 @@ public class SkillStrategy : MonoBehaviour
             CharacterComponent.Blood.Consume(_storedSkillData.BloodCost);
             CharacterComponent.Rage.Regain(_storedSkillData.RageGain);
         }
-      
+
         Logger.Combat($"Skill {debugName} used and consumed {_storedSkillData.BloodCost}");
 
         return true;
@@ -64,6 +64,8 @@ public class SkillStrategy : MonoBehaviour
 
     protected Projectile SpawnProjectile(ProjectileData data, int projectileIndex)
     {
+        data.casterTransform = transform;
+        
         Projectile newProjectile = Instantiate(_storedSkillData.SkillProjectilePrefab[projectileIndex].gameObject).GetComponent<Projectile>();
         newProjectile.Initialize(data);
         newProjectile.onProjectileHit.AddListener(OnProjectileHit);
@@ -85,7 +87,7 @@ public class SkillStrategy : MonoBehaviour
         }
     }
 
-    public void PutInCooldown()
+    protected virtual void PutInCooldown()
     {
         isInCooldown = true;
         DOVirtual.DelayedCall(_storedSkillData.Cooldown, () => isInCooldown = false);
