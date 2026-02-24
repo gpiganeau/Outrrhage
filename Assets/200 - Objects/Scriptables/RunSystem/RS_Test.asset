@@ -14,12 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RunSettings
   Name: Test Run Settings
   Description: Blabla
-  RoomCount: 12
+  RoomCount: 6
   Sequencers:
-  - {fileID: 11400000, guid: e697f80dad1f860439085fe6f2c4ca6d, type: 2}
+  - {fileID: 11400000, guid: 11d04481548239441b7ed5d433ee5495, type: 2}
+  - {fileID: 11400000, guid: 69ce3a9d819655e4faa5af107e2091e1, type: 2}
+  - {fileID: 11400000, guid: 3a51faac0c50a9e42a47e65e6ceab425, type: 2}
+  - {fileID: 11400000, guid: e66e0488b58daf240ab0e175700034a5, type: 2}
+  - {fileID: 11400000, guid: 5f11168babafdc0489aef330828a8fb0, type: 2}
   HUBRooms:
   - {fileID: 9194013458221197619, guid: bad34a76fd193e34c8d6d6dc074721a4, type: 3}
   NormalRooms:
+  - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
