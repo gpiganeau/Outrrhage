@@ -282,7 +282,7 @@ public class RunSystemController : MonoBehaviour
     private void StartRun()
     {
         Sequence startSeq = DOTween.Sequence();
-        startSeq.AppendInterval(1f);
+        startSeq.AppendInterval(2f);
         startSeq.AppendCallback( () =>
         {
             SpawnNextRoom();

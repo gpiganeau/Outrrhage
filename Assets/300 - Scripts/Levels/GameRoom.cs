@@ -30,8 +30,6 @@ public class GameRoom : MonoBehaviour
      private readonly Vector2 Dimensions = new Vector2(32, 32);
     private const int ROOM_SIZE = 32;
 
-    bool _isCompleted = false;
-
     private int HalfX, HalfY;
 
     void Awake()

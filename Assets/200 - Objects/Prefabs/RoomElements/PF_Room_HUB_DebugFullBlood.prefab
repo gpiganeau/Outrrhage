@@ -132,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 4268296358960806974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -190,8 +190,8 @@ MonoBehaviour:
   RoomEnter: 0
   RoomExit: 0
   IsProceduralRoom: 0
-  OverrideRoomSequencer: 0
-  customRoomSequencer: {fileID: 0}
+  OverrideRoomSequencer: 1
+  customRoomSequencer: {fileID: 11400000, guid: e2f2f895272e78246971b3f4f4f609bb, type: 2}
   CorridorsPrefabs:
   - {fileID: 126730, guid: f18932879bb23b84ca5370b65419ee41, type: 3}
   - {fileID: 104216, guid: a6b9d7f63692cfd44b503ed7e09f6e5d, type: 3}
@@ -200,7 +200,7 @@ MonoBehaviour:
   - {fileID: 148804, guid: 3fb07e96bb0cae643a28994c86ddc64e, type: 3}
   - {fileID: 165962, guid: d2eb17f175564e84c8ad78ac03232e29, type: 3}
   - {fileID: 152896, guid: d17bc9c1cdef1c5448255edad31c1c61, type: 3}
-  _spawnPoint: {fileID: 0}
+  _spawnPoint: {fileID: 6201112104032362605}
   _cellsElementHolder: {fileID: 4534283859958084862}
   _cells: []
   _spawnChancePercentage: 1
@@ -1195,6 +1195,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1837595883153796199, guid: a5f3d0d9a40ba384aa38353e90242859, type: 3}
   m_PrefabInstance: {fileID: 3018282322250937887}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6201112104032362605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9218254211213612658, guid: a5f3d0d9a40ba384aa38353e90242859, type: 3}
+  m_PrefabInstance: {fileID: 3018282322250937887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0386fe987a689d44aaa1ea448d255927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RespawnPoint
 --- !u!1001 &3061200739138992035
 PrefabInstance:
   m_ObjectHideFlags: 0
