@@ -110,6 +110,19 @@ MonoBehaviour:
     OnBloodChanged:
       m_PersistentCalls:
         m_Calls: []
+  rage:
+    _rageDuration: 6
+    _currentAmount: 0
+    _maxAmount: 0
+    OnRageChanged:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRageEnter:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRageExit:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &3223743425678320181
 MonoBehaviour:
   m_ObjectHideFlags: 0

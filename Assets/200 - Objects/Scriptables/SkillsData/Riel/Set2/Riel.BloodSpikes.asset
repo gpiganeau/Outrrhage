@@ -18,9 +18,10 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Blood Spikes
   Description: Tuez vos ennemis en rythme !
-  Cooldown: 2
+  Cooldown: 1
   IsHold: 0
   HoldDuration: 0
+  CanMovePreview: 1
   Radius: 20
   ProjectileRange: 15
   ProjectileSpeed: 35
@@ -30,6 +31,8 @@ MonoBehaviour:
   TravelMode: 2
   AimAssistRatio: 0.6
   ComboResetDelay: 2
+  ProvideInvulnerability: 0
+  InvulnerabilityTime: 0
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
@@ -57,3 +60,5 @@ MonoBehaviour:
     impactSound: {fileID: 0}
   castClips: []
   hitClips: []
+  UseSubSkill: 0
+  SubSkill: {fileID: 0}

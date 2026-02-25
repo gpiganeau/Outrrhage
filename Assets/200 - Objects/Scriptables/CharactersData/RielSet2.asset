@@ -19,7 +19,7 @@ MonoBehaviour:
   team: 1
   startingSkillSet:
   - {fileID: 11400000, guid: ac09447e29b810948baccc3e7faa0f28, type: 2}
-  - {fileID: 11400000, guid: e64051fa1f58f2f4ab28e249d2dc0d84, type: 2}
+  - {fileID: 11400000, guid: f7b7f41eda4d4d041b7bcb02f92d29d9, type: 2}
   - {fileID: 11400000, guid: 9a788a73d55f83c488b4038e768e0030, type: 2}
   - {fileID: 11400000, guid: bc63b31181805ae48860d47e77aaa420, type: 2}
   - {fileID: 11400000, guid: 7a676bf9628dcc04583385819251ffdf, type: 2}
