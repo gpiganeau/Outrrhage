@@ -17,6 +17,7 @@ public class SkillData : ScriptableObject
     [Header("Hold and Release")]
     public bool IsHold;
     public float HoldDuration;
+    public bool CanMovePreview = true;
 
     [Header("Projectile Settings")]
     [Range (0, 32)] public float Radius = 0;

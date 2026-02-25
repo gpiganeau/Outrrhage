@@ -34,7 +34,7 @@ class BloodExplosion : SkillStrategy
         movementController.StartAimingMode(new PreviewData
         {
             shapeType = ShapeType.Area,
-            deployType = DeployType.Free,
+            deployType = _storedSkillData.CanMovePreview ? DeployType.Free : DeployType.Snapping,
             radius = _storedSkillData.Radius,
             range = _storedSkillData.ProjectileRange,
             timeToDeploy = _storedSkillData.HoldDuration,

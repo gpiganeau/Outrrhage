@@ -21,6 +21,7 @@ MonoBehaviour:
   Cooldown: 7
   IsHold: 1
   HoldDuration: 0.7
+  CanMovePreview: 0
   Radius: 5
   ProjectileRange: 0
   ProjectileSpeed: 0

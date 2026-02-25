@@ -10,10 +10,12 @@ public class AimPreviewController: MonoBehaviour
     bool _isPreviewing;
     Vector3 _previewMovement;
     public Vector3 AimPosition => _cursor.transform.position;
+    private DeployType _deployType;
 
     internal void StartPreview(PreviewData data)
     {
         _isPreviewing = true;
+        _deployType = data.deployType;
         _cursor.Initialize(transform.position, data);
         _cursor.transform.position = transform.position;
     }
@@ -31,7 +33,7 @@ public class AimPreviewController: MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(_isPreviewing && _previewMovement != Vector3.zero)
+        if(_isPreviewing && _previewMovement != Vector3.zero && _deployType == DeployType.Free)
         {
             _cursor.transform.position += _previewMovement.normalized * _cursorSpeed * Time.fixedDeltaTime;
         }
