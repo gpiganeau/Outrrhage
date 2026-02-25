@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using DG.Tweening;
 
@@ -16,8 +16,8 @@ public class SkillshotProjectile: Projectile
     {
         _data = data;
         transform.position = data.startingPosition;
-        Vector3 originToProj = transform.position - data.origin;
-        transform.forward = originToProj.normalized;
+        Vector3 dir = (data.Target - data.startingPosition).normalized;
+        transform.forward = dir;
         _damage = data.Damage;
         DOVirtual.DelayedCall(data.Lifetime, DestroyProjectile);
         target = data.Target;

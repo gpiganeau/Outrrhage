@@ -25,6 +25,7 @@ class BloodExplosion : SkillStrategy
             storedAimPosition = movementController.GetAimPosition();
             Debug.Log($"AimPosition: {storedAimPosition} | PlayerPosition: {transform.position}");
             ExecuteExplosion();
+            movementController.StopAimingMode();
             parentController.SetSkillsDisabled(false, "SlashAttack");
             movementController.SetImmobilized(false, "SlashAttack");
 		    movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[1]);
@@ -66,6 +67,7 @@ class BloodExplosion : SkillStrategy
             };
             SpawnProjectile(projectileData, 0);
             Destroy(drop.gameObject);
+            PutInCooldown();
         }
     }
 
