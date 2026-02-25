@@ -184,3 +184,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AimPreviewController
   _cursorSpeed: 20
   _cursor: {fileID: 7041727641098295213}
+  _startColor: {r: 1, g: 0, b: 0, a: 0.11764706}
+  _endColor: {r: 0.6462264, g: 0, b: 0, a: 1}
