@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine.AI;
+using System;
 
 public class MovementController: MonoBehaviour, IAnimatable
 {
@@ -111,6 +112,11 @@ public class MovementController: MonoBehaviour, IAnimatable
         {
             _cachedAimPreviewController.HidePreview();
         }
+    }
+
+    public void PlayExplosionEffect(Action onComplete = null)
+    {
+        _cachedAimPreviewController?.PlayExplosionEffect(onComplete);
     }
 
     #endregion

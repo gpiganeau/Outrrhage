@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using DG.Tweening;
 
 public class AimPreviewController: MonoBehaviour
 {
     [SerializeField] private float _cursorSpeed = 30f;
     [SerializeField] private PreviewCursor _cursor;
+    [SerializeField] private Color _startColor = Color.white;
+    [SerializeField] private Color _endColor = Color.red;
 
     bool _isPreviewing;
     Vector3 _previewMovement;
@@ -18,6 +21,13 @@ public class AimPreviewController: MonoBehaviour
         _deployType = data.deployType;
         _cursor.Initialize(transform.position, data);
         _cursor.transform.position = transform.position;
+        _cursor.SetColor(_startColor);
+        DOTween.To(
+            () => _startColor,
+            color => _cursor.SetColor(color),
+            _endColor,
+            data.timeToDeploy
+        );
     }
 
     internal void HidePreview()
@@ -37,5 +47,10 @@ public class AimPreviewController: MonoBehaviour
         {
             _cursor.transform.position += _previewMovement.normalized * _cursorSpeed * Time.fixedDeltaTime;
         }
+    }
+
+    public void PlayExplosionEffect(Action onComplete = null)
+    {
+        _cursor.PlayExplosionEffect(onComplete);
     }
 }
