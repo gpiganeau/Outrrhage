@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(MovementController))]
@@ -68,12 +69,13 @@ public class SkillsController: MonoBehaviour
         if (strategyIndex >= 0 && strategyIndex < activeSkillStrategies.Count)
         {
             SkillStrategy skill = activeSkillStrategies[strategyIndex];
+            SkillData data = skill.SkillData;
 
             if (skillsDisabledSources.Count > 0) return;
                 
             foreach (ISkillConstrainer constrainer in constraints) { 
 
-                if (!constrainer.CanUseSkill(activeSkillStrategies[strategyIndex].SkillData, movementController))
+                if (!constrainer.CanUseSkill(data, movementController))
                 {
                     return;
                 }

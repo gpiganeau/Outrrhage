@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-class BloodPhase : SkillStrategy
+﻿class BloodPhase : SkillStrategy
 {
-
+    // -- Et lui alors ?
 }
 

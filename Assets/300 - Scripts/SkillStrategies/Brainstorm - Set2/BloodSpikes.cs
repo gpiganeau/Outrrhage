@@ -1,7 +1,4 @@
 ﻿using DG.Tweening;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
 
 class BloodSpikes : SkillStrategy
@@ -88,21 +85,14 @@ class BloodSpikes : SkillStrategy
             p.onProjectileHit.AddListener(Explosion);
             p.SetTravelMode(_storedSkillData.TravelMode);
             currentSpike = (currentSpike + 1) % 3;
-            Logger.Combat($"BloodSpikes: Mise en cooldown"); 
-            PutInCooldown();   
+            base.PutInCooldown();   
             parentController.SetSkillsDisabled(false, "BloodSpikesAttack");
             movementController.SetImmobilized(false, "BloodSpikesAttack");
         });
 
     }
 
-    protected override void PutInCooldown()
-    {
-        currentSpike = 0;
-        Logger.Combat($"BloodSpikes: Combo terminé, mise en cooldown");
-        base.PutInCooldown();
-    }      
-
+    
     private void ResetComboAfterDelay()
     {
         comboResetTimer?.Kill();

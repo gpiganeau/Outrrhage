@@ -58,6 +58,8 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
         damageController.OnHealed.AddListener((currentHealth, maxHealth) => OnHealed(currentHealth, maxHealth));
         damageController.OnDied.AddListener(() => OnDeath());
 
+        skillsController.OnSkillExecuted += OnSkillExecuted;
+
         // -- Inputs Settings, only once
         onMovementAction = OnInputVector;
         onSlot1Action = () => skillsController.CallSkillStrategy(0);
@@ -121,6 +123,14 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
     }
 
     #region Listeners & Callback
+
+    private void OnSkillExecuted(SkillStrategy strategy, int index)
+    {
+        if (InRage) return;
+        
+        Blood.Consume(strategy.SkillData.BloodCost);
+        Rage.Regain(strategy.SkillData.RageGain);
+    }
 
     private void OnRageChanged(int current, int max)
     {

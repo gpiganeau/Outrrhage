@@ -41,12 +41,15 @@ public class GameManager : MonoBehaviour
     }
 
     public void Start(){
-            switch (CurrentGameMode)
-            {
-                case GameMode.Forest:
-                    ForestStart();
-                    break;
-            }
+
+        DOTween.SetTweensCapacity(500, 50);
+
+        switch (CurrentGameMode)
+        {
+            case GameMode.Forest:
+                ForestStart();
+                break;
+        }
     }
 
     public void RoomStart(Vector3 rielSpawnPos){
