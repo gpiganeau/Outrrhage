@@ -5900,6 +5900,42 @@ PrefabInstance:
       propertyPath: musicSource
       value: 
       objectReference: {fileID: 1662072600}
+    - target: {fileID: 7136854929060756307, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: Songs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7136854929060756307, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'Songs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 606a9e5b098e6d94b9cb3e525fccee3b, type: 3}
+    - target: {fileID: 7136854929060756307, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'Songs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 10463228963579243838b1d062f48856, type: 3}
+    - target: {fileID: 7136854929060756307, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'Songs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 354db22770deaf042832d6ef8c414b33, type: 3}
+    - target: {fileID: 7136854929060756307, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'Songs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: aea9298749328af4fad3b642df45faac, type: 3}
+    - target: {fileID: 7136854929060756307, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'Songs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e9fd131cfedfebd4298a2345d45e75ee, type: 3}
+    - target: {fileID: 7136854929060756307, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'Songs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 42d69cab5f19c2d4781b35551c62879a, type: 3}
+    - target: {fileID: 7136854929060756307, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'Songs.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e24fac239f5d4c44e9df780c112a41d4, type: 3}
+    - target: {fileID: 7136854929060756307, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'Songs.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8300000, guid: f97993a0ee548e34da6bf1026b1ff42e, type: 3}
     - target: {fileID: 7269675629953135990, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
