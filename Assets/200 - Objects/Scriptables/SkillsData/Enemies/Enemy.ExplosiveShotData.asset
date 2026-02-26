@@ -18,9 +18,10 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 5e685567f7f1f8041ba58c62111c858b, type: 3}
   Name: 'Drone Bullet '
   Description: 
-  Cooldown: 1
+  Cooldown: 6
   IsHold: 0
   HoldDuration: 0
+  CanMovePreview: 1
   Radius: 0
   ProjectileRange: 30
   ProjectileSpeed: 5
@@ -29,11 +30,16 @@ MonoBehaviour:
   numberOfProjectiles: 1
   TravelMode: 0
   AimAssistRatio: 0
+  ComboResetDelay: 0
+  ProvideInvulnerability: 0
+  InvulnerabilityTime: 0
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 0
   BloodCost: 0
+  DropBloodOnFailedSkill: 0
+  RageGain: 0
   BloodStackingAmount: 1
   Icon: {fileID: 21300000, guid: f8178563b844b8c40adba96714c17b3b, type: 3}
   AnimationKey: Slash
@@ -51,3 +57,5 @@ MonoBehaviour:
     impactSound: {fileID: 8300000, guid: 029da9c84c5afd840b0e105e5cabacea, type: 3}
   castClips: []
   hitClips: []
+  UseSubSkill: 0
+  SubSkill: {fileID: 0}

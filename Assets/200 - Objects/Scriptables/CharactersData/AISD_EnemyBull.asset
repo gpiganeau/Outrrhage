@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AISD_EnemyBull
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
   Name: Taureau Corrompu
-  maxHealth: 15
+  maxHealth: 12
   movementSpeed: 0.5
   maxBloodStack: 10
   team: 2

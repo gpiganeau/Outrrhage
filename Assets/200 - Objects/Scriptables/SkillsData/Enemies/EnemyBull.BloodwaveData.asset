@@ -17,13 +17,14 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 438c04b47c64e64469608d75e57e9930, type: 3}
   Name: Choc violent
   Description: Choc provoquant une vague
-  Cooldown: 5
+  Cooldown: 6
   IsHold: 0
   HoldDuration: 0
+  CanMovePreview: 1
   Radius: 0
   ProjectileRange: 6
   ProjectileSpeed: 5
-  ProjectileDamage: 01000000
+  ProjectileDamage: 010000000100000001000000
   ProjectileLifetime: 1
   numberOfProjectiles: 6
   TravelMode: 0
@@ -34,10 +35,10 @@ MonoBehaviour:
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
-  IsRielSpecificSkill: 1
-  BloodCost: 1
+  IsRielSpecificSkill: 0
+  BloodCost: 0
   DropBloodOnFailedSkill: 0
-  RageGain: 1
+  RageGain: 0
   BloodStackingAmount: 1
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Attack
@@ -55,3 +56,5 @@ MonoBehaviour:
     impactSound: {fileID: 8300000, guid: 029da9c84c5afd840b0e105e5cabacea, type: 3}
   castClips: []
   hitClips: []
+  UseSubSkill: 0
+  SubSkill: {fileID: 0}

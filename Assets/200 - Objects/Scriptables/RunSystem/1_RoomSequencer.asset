@@ -54,7 +54,7 @@ MonoBehaviour:
         m_CallState: 2
   RoomSequence:
   - stepName: Vague 2 - Drones
-    delay: 6
+    delay: 10
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -73,7 +73,7 @@ MonoBehaviour:
     logEvent: 1
     skipEvent: 1
   - stepName: Vague 3 - Drones+Tourelle
-    delay: 6
+    delay: 10
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -106,3 +106,4 @@ MonoBehaviour:
   OnRoomComplete:
     m_PersistentCalls:
       m_Calls: []
+  AutoComplete: 0

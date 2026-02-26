@@ -18,14 +18,14 @@ MonoBehaviour:
   Name: Charge
   Description: Une attaque de melee, Riel dash sur l'ennemi pour le blesser en le
     touchant
-  Cooldown: 2
+  Cooldown: 1.5
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 1
   Radius: 0
   ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 01000000
+  ProjectileDamage: 0100000001000000
   ProjectileLifetime: 0.5
   numberOfProjectiles: 0
   TravelMode: 3
@@ -36,8 +36,8 @@ MonoBehaviour:
   ignoreCollisions: 1
   movementDistance: 10
   movementDuration: 0.15
-  IsRielSpecificSkill: 0
-  BloodCost: 0
+  IsRielSpecificSkill: 1
+  BloodCost: 1
   DropBloodOnFailedSkill: 0
   RageGain: 1
   BloodStackingAmount: 1
