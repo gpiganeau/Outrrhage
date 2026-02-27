@@ -70,24 +70,6 @@ public class GameRoom : MonoBehaviour
         return null;
     }
 
-    private void OpenEntrance(PathDirection direction)
-    {
-        // ── Centre du bon bord ────────────────────────────────────────────
-        Vector3 origin = direction switch
-        {
-            PathDirection.North => transform.position + new Vector3(0f, 0f,  HalfY),
-            PathDirection.South => transform.position + new Vector3(0f, 0f, -HalfY),
-            PathDirection.East  => transform.position + new Vector3( HalfX, 0f, 0f),
-            PathDirection.West  => transform.position + new Vector3(-HalfX, 0f, 0f),
-            _ => transform.position
-        };
-
-        // ── SphereCast et destroy tout ce qui est sur le layer Wall ───────
-        Collider[] hits = Physics.OverlapSphere(origin, WALL_SIZE, LayerMask.GetMask("Walls"));
-        foreach (var hit in hits)
-            Destroy(hit.gameObject);
-
-    }
 
     // -- Todo : MultiLayering (Obstacles, GPE, Props, Collectibles, Decorations, etc...)
     // -- Todo : Delay routine for srtylisation 
@@ -106,32 +88,6 @@ public class GameRoom : MonoBehaviour
             Vector3 spawnPosition = new Vector3(x + 0.5f, _floorLevelOffset, y + 0.5f);
             bool isWall = x == -HalfX || x == HalfX - 1 || y == -HalfY || y == HalfY - 1;
 
-            if (isWall && false)
-            {
-                if (x == 0 || y == 0) continue;
-
-                // ── Skip si pas un multiple de WALL_SIZE (évite le Z-fight) ──
-                bool isXWall = x == -HalfX || x == HalfX - 1;
-                bool isYWall = y == -HalfY || y == HalfY - 1;
-
-                if (isXWall && (y + HalfY) % WALL_SIZE != 0) continue;
-                if (isYWall && (x + HalfX) % WALL_SIZE != 0) continue;
-
-                // ── Centre du segment (décalage de WALL_SIZE/2) ───────────────
-                Vector3 segmentOffset = isXWall
-                    ? new Vector3(0f, 0f, (WALL_SIZE / 2f) - 0.5f)
-                    : new Vector3((WALL_SIZE / 2f) - 0.5f, 0f, 0f);
-
-                float wallRotation = isXWall ? 90f : 0f;
-
-                GameObject wall = Instantiate(WallsPrefabs.Random(),
-                                              (transform.position + spawnPosition + segmentOffset).WithY(-0.5f),
-                                              Quaternion.Euler(0f, wallRotation, 0f));
-                wall.transform.SetParent(_cellsElementHolder);
-                roomCell.OwnedElement = wall;
-                roomCell.Type = RoomCell.CellType.Wall;
-            }
-            else
             {
                 bool nearWall = x == -HalfX + 1 || x == HalfX - 2
                              || y == -HalfY + 1 || y == HalfY - 2;
@@ -147,7 +103,6 @@ public class GameRoom : MonoBehaviour
                 }
             }
 
-            OpenEntrance(RoomEnter);
         }
     }
 }

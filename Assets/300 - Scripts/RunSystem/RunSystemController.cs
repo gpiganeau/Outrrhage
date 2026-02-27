@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine.Events;
 using System;
 using DG.Tweening;
+using UnityEngine.UIElements;
 
 public enum PathDirection { North, East, South, West }
 
@@ -167,7 +168,7 @@ public class RunSystemController : MonoBehaviour
         void GenerateSpawnPositions()
         {
 
-            for (int i = 1; i <= runSettings.RoomCount; i++)
+            for (int i = 0; i <= runSettings.RoomCount; i++)
             {
                 // -- Last Room for Boss
                 if (i == runSettings.RoomCount)
@@ -178,7 +179,7 @@ public class RunSystemController : MonoBehaviour
                     break;
                 }
 
-                PathDirection dir = _pathDirections[i - 1];
+                PathDirection dir = _pathDirections[i];
                 currentPos += GetDirection(dir) * ROOM_SIZE;
                 _spawnPositions.Add(currentPos);
             } 
@@ -313,7 +314,17 @@ public class RunSystemController : MonoBehaviour
 
         _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
         _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
+        OpenEntrance(_currentRoom.transform.position, wrapper.entry);
         StartCoroutine(StartRoomSequence(_currentRoom.customRoomSequencer));
+    }
+
+    private void OpenEntrance(Vector3 roomPos, PathDirection direction)
+    {
+        var origin = roomPos - (GetDirection(direction) * ROOM_SIZE * 0.5f);
+        Collider[] hits = Physics.OverlapSphere(origin, 3.8F, LayerMask.GetMask("Walls"));
+        foreach (var hit in hits)
+            Destroy(hit.gameObject);
+
     }
 
     void OnValidate()
@@ -334,7 +345,7 @@ public class RunSystemController : MonoBehaviour
         // -- Path Room
         Gizmos.color = NormalColor;
 
-        for (int i = 1; i <= runSettings.RoomCount; i++)
+        for (int i = 0; i <= runSettings.RoomCount; i++)
         {
             // -- Last Room for Boss
             if (i == runSettings.RoomCount)
@@ -343,12 +354,26 @@ public class RunSystemController : MonoBehaviour
                 PathDirection lastDir = _pathDirections.Last();
                 currentPos += GetDirection(lastDir) * ROOM_SIZE;
                 Gizmos.DrawCube(currentPos, roomSizeVec);
+                Gizmos.DrawSphere(currentPos - (GetDirection(lastDir) * ROOM_SIZE * 0.5f)+ new Vector3(0, 1, 0), 2);
+
                 break;
             }
-            PathDirection dir = _pathDirections[i - 1];
+            PathDirection dir = _pathDirections[i];
             currentPos += GetDirection(dir) * ROOM_SIZE;
 
-            Gizmos.DrawCube(currentPos, roomSizeVec);
+
+            Gizmos.DrawSphere(currentPos - (GetDirection(dir) * ROOM_SIZE * 0.5f)+ new Vector3(0, 1, 0), 2);
+
+
+            Gizmos.DrawWireCube(currentPos, roomSizeVec);
+        }
+
+        Gizmos.color = Color.rebeccaPurple;
+        for (int k = 0; k < _pathDirections.Count; k++)
+        {
+            var p = GetDirection(_pathDirections[k]);
+            Gizmos.DrawSphere(p, 2);
+
         }
     }
 }
