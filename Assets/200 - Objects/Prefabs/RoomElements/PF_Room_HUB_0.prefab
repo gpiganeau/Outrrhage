@@ -162,7 +162,7 @@ MonoBehaviour:
   _floorLevelOffset: 0.5
   RoomEnter: 0
   RoomExit: 0
-  IsProceduralRoom: 0
+  IsProceduralRoom: 1
   OverrideRoomSequencer: 1
   customRoomSequencer: {fileID: 11400000, guid: e2f2f895272e78246971b3f4f4f609bb, type: 2}
   CorridorsPrefabs:
@@ -175,8 +175,9 @@ MonoBehaviour:
   - {fileID: 152896, guid: d17bc9c1cdef1c5448255edad31c1c61, type: 3}
   _spawnPoint: {fileID: 6201112104032362605}
   _cellsElementHolder: {fileID: 4534283859958084862}
+  WallsPrefabs: []
   _cells: []
-  _spawnChancePercentage: 1
+  _spawnChancePercentage: 0
 --- !u!1 &4824635752990540231
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,10 @@ public class RoomCell
 {
     public GameObject OwnedElement;
 
+    public enum CellType { Wall, Door, Normal }
+
+    public CellType Type = CellType.Normal;
+
     public RoomCell(int x, int y, GameObject element = null)
     {
         Coords = new Vector2Int(x, y);
@@ -19,4 +23,7 @@ public class RoomCell
         get => _coords;
         private set => _coords = value;
     }
+
+    public int Y => Coords.y;
+    public int X => Coords.x;
 }

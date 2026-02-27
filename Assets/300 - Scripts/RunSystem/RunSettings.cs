@@ -15,5 +15,6 @@ public class RunSettings : ScriptableObject
     public List <GameRoom> NormalRooms;
     public List <GameRoom> BossRooms;
     public List<GameObject> Corridors;
+    public List<GameObject> Walls;
 }
 

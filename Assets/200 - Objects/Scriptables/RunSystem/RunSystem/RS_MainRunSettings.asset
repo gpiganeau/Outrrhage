@@ -31,3 +31,5 @@ MonoBehaviour:
   - {fileID: 126730, guid: f18932879bb23b84ca5370b65419ee41, type: 3}
   - {fileID: 104216, guid: a6b9d7f63692cfd44b503ed7e09f6e5d, type: 3}
   - {fileID: 116330, guid: abfbd13ce6faa9e48ae2b9da1b4dd476, type: 3}
+  Walls:
+  - {fileID: 150100, guid: 339299a7e2fdedf47b7788ab1a25c9df, type: 3}

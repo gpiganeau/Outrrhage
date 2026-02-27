@@ -312,7 +312,7 @@ public class RunSystemController : MonoBehaviour
         CURRENT_CALL++;
 
         _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
-        _currentRoom.Init(wrapper.sequencer, wrapper.entry);
+        _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
         StartCoroutine(StartRoomSequence(_currentRoom.customRoomSequencer));
     }
 
