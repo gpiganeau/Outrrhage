@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: AISD_Tourelle
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
   Name: Tourelle
-  maxHealth: 10
+  maxHealth: 8
   movementSpeed: 0
   maxBloodStack: 5
   team: 2
   startingSkillSet:
   - {fileID: 11400000, guid: 2846bf02646939b428980f4989db1f13, type: 2}
+  - {fileID: 11400000, guid: f22b687e086ac244ca686a7a0b03aa1f, type: 2}
   LootOnDeath: 0
   _itemsLootsOnDeath: []
   LootBloodOnDeath: 1

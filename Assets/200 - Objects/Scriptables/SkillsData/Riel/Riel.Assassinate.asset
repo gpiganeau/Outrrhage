@@ -17,14 +17,14 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 44f8975e6a62c0541b8e56653c2ee3f9, type: 3}
   Name: Execution
   Description: "+ de stack = + de d\xE9gats ! Heal en cas de kill !"
-  Cooldown: 4.5
+  Cooldown: 4
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 0
   Radius: 3
   ProjectileRange: 0
   ProjectileSpeed: 1
-  ProjectileDamage: 010000000100000001000000010000000100000001000000
+  ProjectileDamage: 01000000010000000100000001000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
@@ -36,7 +36,7 @@ MonoBehaviour:
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 1
-  BloodCost: 3
+  BloodCost: 2
   DropBloodOnFailedSkill: 0
   RageGain: 20
   BloodStackingAmount: 0

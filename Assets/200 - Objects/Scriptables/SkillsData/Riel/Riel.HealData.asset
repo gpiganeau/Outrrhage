@@ -30,7 +30,7 @@ MonoBehaviour:
   TravelMode: 3
   AimAssistRatio: 0
   ComboResetDelay: 0
-  ProvideInvulnerability: 0
+  ProvideInvulnerability: 1
   InvulnerabilityTime: 0
   ignoreCollisions: 0
   movementDistance: 0

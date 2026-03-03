@@ -25,7 +25,7 @@ MonoBehaviour:
   Radius: 20
   ProjectileRange: 15
   ProjectileSpeed: 35
-  ProjectileDamage: 010000000000000000000000
+  ProjectileDamage: 0100000000000000
   ProjectileLifetime: 3
   numberOfProjectiles: 1
   TravelMode: 2
@@ -39,7 +39,7 @@ MonoBehaviour:
   IsRielSpecificSkill: 1
   BloodCost: 1
   DropBloodOnFailedSkill: 0
-  RageGain: 10
+  RageGain: 5
   BloodStackingAmount: 1
   Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash

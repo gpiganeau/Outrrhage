@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RielSet2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSettings
   Name: Riel
-  maxHealth: 20
+  maxHealth: 10
   movementSpeed: 10
   maxBloodStack: 10
   team: 1
@@ -22,13 +22,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a8d35899a84baee449d5caeb2cc605b6, type: 2}
   - {fileID: 11400000, guid: 9a788a73d55f83c488b4038e768e0030, type: 2}
   - {fileID: 11400000, guid: 7a676bf9628dcc04583385819251ffdf, type: 2}
-  - {fileID: 11400000, guid: 942c9df7ef2ba8341bff539bf511d9eb, type: 2}
+  - {fileID: 11400000, guid: bc63b31181805ae48860d47e77aaa420, type: 2}
   LootOnDeath: 0
   _itemsLootsOnDeath: []
   LootBloodOnDeath: 1
   BaseBloodDrop: 0
   BloodPrefab: {fileID: 0}
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
-  maxBlood: 20
+  maxBlood: 10
   maxRage: 100
-  RageDuration: 10
+  RageDuration: 6

@@ -18,14 +18,14 @@ MonoBehaviour:
   Name: Explosion sanguine
   Description: "Maintenez la touche associ\xE9e pour faire exploser les orbes de
     sang au sol!"
-  Cooldown: 3
+  Cooldown: 6
   IsHold: 1
   HoldDuration: 0.7
   CanMovePreview: 1
-  Radius: 5
+  Radius: 4.5
   ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 01000000010000000100000001000000
+  ProjectileDamage: 010000000100000001000000010000000100000001000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
@@ -37,7 +37,7 @@ MonoBehaviour:
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 1
-  BloodCost: 2
+  BloodCost: 3
   DropBloodOnFailedSkill: 0
   RageGain: 30
   BloodStackingAmount: 0

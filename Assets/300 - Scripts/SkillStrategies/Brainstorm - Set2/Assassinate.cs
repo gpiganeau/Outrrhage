@@ -54,7 +54,7 @@ class Assassinate : SkillStrategy
         int bloodAmount = stack.GetStackedValue();
         if (bloodAmount > 0) 
         {
-            int damage = baseDamage + 2 + bloodAmount;
+            int damage = baseDamage + 1 + bloodAmount;
             if (target.CurrentHealth < damage)
             {
                 amountHealed = Mathf.CeilToInt(bloodAmount * bloodToHealRatio);
