@@ -278,7 +278,7 @@ MonoBehaviour:
   _floorLevelOffset: 0.5
   RoomEnter: 0
   RoomExit: 0
-  IsProceduralRoom: 1
+  IsProceduralRoom: 0
   OverrideRoomSequencer: 0
   customRoomSequencer: {fileID: 11400000, guid: e697f80dad1f860439085fe6f2c4ca6d, type: 2}
   CorridorsPrefabs:

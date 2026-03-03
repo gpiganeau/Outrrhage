@@ -137,7 +137,7 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
 
         if (setupData.LootBloodOnDeath)
         {
-            int dropAmount = bloodStack.GetStackedValue();
+            int dropAmount =  setupData.BaseBloodDrop + bloodStack.GetStackedValue();
             for (int i = 0; i < dropAmount; i++)
             {
                 var vec = Random.insideUnitCircle * SettingsManager.Instance.GameplaySettings.BloodDispersionRadius;
