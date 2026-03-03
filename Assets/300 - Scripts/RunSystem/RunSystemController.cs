@@ -289,7 +289,7 @@ public class RunSystemController : MonoBehaviour
             SpawnNextRoom();
             var w = Rooms[0];
             var pos = w.position + w.room.GetSpawnPoint().transform.position;
-            GameManager.Instance.RoomStart(pos);
+            GameManager.Instance.RoomStart(pos.WithY(SettingsManager.Instance.GameplaySettings.YSpawnOffset));
             });
     }
 
