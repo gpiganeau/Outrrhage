@@ -39,7 +39,7 @@ MonoBehaviour:
   IsRielSpecificSkill: 1
   BloodCost: 1
   DropBloodOnFailedSkill: 0
-  RageGain: 1
+  RageGain: 10
   BloodStackingAmount: 1
   Icon: {fileID: 21300000, guid: c4474a0bd3f754244b6cffea969c6a6c, type: 3}
   AnimationKey: Slash

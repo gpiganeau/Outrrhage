@@ -16,6 +16,8 @@ MonoBehaviour:
   baseMinTimeBetweenSkills: 0.2
   spawnerTimeBetweenSpawns: 0.5
   BloodDispersionRadius: 1.5
+  LossRageAmount: 1
+  LossRageTick: 0.1
   DeathTimeBeforeReload: 3
   ClearRoomOnDeath: 1
   YSpawnOffset: 1

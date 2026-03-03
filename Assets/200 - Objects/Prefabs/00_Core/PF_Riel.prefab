@@ -111,7 +111,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   rage:
-    _rageDuration: 6
+    _rageDuration: 0
     _currentAmount: 0
     _maxAmount: 0
     OnRageChanged:
