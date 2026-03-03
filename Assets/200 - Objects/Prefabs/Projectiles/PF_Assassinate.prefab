@@ -1348,7 +1348,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.39, y: 1, z: 0.82}
+  m_Size: {x: 5.42, y: 1.41, z: 1.45}
   m_Center: {x: 0, y: 0.1, z: 0.12}
 --- !u!114 &6039323525665302458
 MonoBehaviour:
@@ -1368,6 +1368,7 @@ MonoBehaviour:
   onProjectileHit:
     m_PersistentCalls:
       m_Calls: []
+  casterTransform: {fileID: 0}
 --- !u!1 &8179301243322194647
 GameObject:
   m_ObjectHideFlags: 0
