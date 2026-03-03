@@ -279,8 +279,8 @@ public class Juicer : MonoBehaviour
         
         DOTween.Sequence().SetId("RageControl")
             .AppendCallback(() => SetTimeScale(1.2f)) // légère accélération
-            .Append(DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, 0.4f, duration * 0.1f))
-            .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, settings.PlayerRageColor, duration * 0.1f))
+            .Append(DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, settings.RageVignetteIntensity, duration * 0.1f))
+            .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, settings.RageUseColorAdjustement ? settings.PlayerRageColor : Color.white, duration * 0.1f))
             .SetUpdate(false);
     }
 

@@ -11,6 +11,10 @@ public class VisualSettings : ScriptableObject
     [ColorUsage(true, true)] public Color PlayerRageColor; 
     [ColorUsage(true, true)] public Color PlayerDeathColor; 
 
+    [Header("Rage")]
+    [Range(0.1f, 1f)] public float RageVignetteIntensity = 0.6f;
+    public bool RageUseColorAdjustement = false;
+
     [Header("Subtitles")]
     public ColorPalette RielSubtitleColorPalette;
 
