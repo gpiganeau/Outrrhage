@@ -18,9 +18,9 @@ MonoBehaviour:
   Name: Execution
   Description: "+ de stack = + de d\xE9gats ! Heal en cas de kill !"
   Cooldown: 4.5
-  IsHold: 1
+  IsHold: 0
   HoldDuration: 0
-  CanMovePreview: 1
+  CanMovePreview: 0
   Radius: 3
   ProjectileRange: 0
   ProjectileSpeed: 1
