@@ -654,9 +654,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5900794222294412709, guid: a5f3d0d9a40ba384aa38353e90242859, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 67dcf634b387f7d41bf427df4f35d91a, type: 2}
     - target: {fileID: 6630803899821922423, guid: a5f3d0d9a40ba384aa38353e90242859, type: 3}
       propertyPath: m_Name
       value: PF_SafeZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910336830413454425, guid: a5f3d0d9a40ba384aa38353e90242859, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9218254211213612658, guid: a5f3d0d9a40ba384aa38353e90242859, type: 3}
       propertyPath: _safeRadius
