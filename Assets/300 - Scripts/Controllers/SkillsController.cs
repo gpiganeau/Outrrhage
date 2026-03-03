@@ -16,6 +16,7 @@ public class SkillsController: MonoBehaviour
     // -- Events --
     public event Action<List<SkillStrategy>> OnSkillsInitialized; 
     public event Action<SkillStrategy, int> OnSkillExecuted; // -- Skill, Slot
+    public event Action<SkillStrategy, int> OnSkillCooldownStarted;
     public event Action<List<SkillStrategy>> OnSkillsChanged;
 
 	private AnimController animController;
@@ -56,6 +57,9 @@ public class SkillsController: MonoBehaviour
             SkillStrategy skillStrategy = Instantiate(data.SkillStrategyPrefab, transform).GetComponent<SkillStrategy>();
             skillStrategy.Initialize(this, data, pilot);
             activeSkillStrategies.Add(skillStrategy);
+
+            int index = activeSkillStrategies.Count - 1;
+            skillStrategy.OnCooldownStarted += () => OnSkillCooldownStarted?.Invoke(skillStrategy, index);
         }
 
         OnSkillsInitialized?.Invoke(activeSkillStrategies);

@@ -46,6 +46,7 @@ public class HUD : MonoBehaviour
         if (_skillsController != null){
             _skillsController.OnSkillsInitialized += OnSkillsChanged;
             _skillsController.OnSkillExecuted += OnSkillExecuted;
+            _skillsController.OnSkillCooldownStarted += OnSkillCooldownStarted;
 
         }
         if (_damageController != null) {
@@ -58,6 +59,12 @@ public class HUD : MonoBehaviour
         CharacterComponent.Blood.OnBloodChanged.AddListener((currentBlood, maxBlood) => OnBloodChanged(currentBlood, maxBlood));
         CharacterComponent.Rage.OnRageChanged.AddListener((c, m) => OnRageChanged(c, m));
     }
+    
+    private void OnSkillCooldownStarted(SkillStrategy skill, int slot)
+    {
+        _skillBar.SetInCooldown(slot);
+    }
+
     void OnEnable()
     {
         if (_skillsController != null){
@@ -149,8 +156,7 @@ public class HUD : MonoBehaviour
 
     private void OnSkillExecuted(SkillStrategy skill, int slot)
     {
-        if(skill.IsInCooldown)
-            _skillBar.SetInCooldown(slot);
+        
     } 
     #endregion
 }

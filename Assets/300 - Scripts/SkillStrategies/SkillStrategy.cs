@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using NUnit.Framework;
 using System.Collections;
@@ -17,6 +18,7 @@ public class SkillStrategy : MonoBehaviour
     protected SkillVFXController _vfxController;
     public SkillData SkillData => _storedSkillData;
     public bool IsInCooldown => isInCooldown;
+    public Action OnCooldownStarted;
 
     public virtual void Initialize(SkillsController parent, SkillData skillData, PilotComponent pilot)
     {
@@ -83,7 +85,11 @@ public class SkillStrategy : MonoBehaviour
     protected virtual void PutInCooldown()
     {
         isInCooldown = true;
-        DOVirtual.DelayedCall(_storedSkillData.Cooldown, () => isInCooldown = false);
+        OnCooldownStarted?.Invoke();
+        DOVirtual.DelayedCall(_storedSkillData.Cooldown, () => 
+        {
+            isInCooldown = false;
+        });
     }
 
     protected virtual void OnProjectileHit(Projectile projectile, DamageController damageController)
