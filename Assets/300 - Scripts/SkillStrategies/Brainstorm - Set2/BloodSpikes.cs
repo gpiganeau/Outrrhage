@@ -43,6 +43,7 @@ class BloodSpikes : SkillStrategy
 
         projectileData.startingPosition += new Vector3(0, 0.5f, 0f); // Vertical Offset
 
+
         var Seq = DOTween.Sequence();
         Seq.AppendCallback(() => movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[currentSpike]));
         Seq.AppendInterval(0.125f);
@@ -53,8 +54,15 @@ class BloodSpikes : SkillStrategy
             parentController.SetSkillsDisabled(false, "BloodSpikesAttack");
             movementController.SetImmobilized(false, "BloodSpikesAttack");
             ResetComboAfterDelay();
+            CustomCooldown();
         });
 
+    }
+
+    private void CustomCooldown()
+    {
+        isInCooldown = true;
+        DOVirtual.DelayedCall(0.2f, () => isInCooldown = false);
     }
 
     private void ExplodingSkillShot(Vector3 firingDirection, MovementController movementController, Team team)
