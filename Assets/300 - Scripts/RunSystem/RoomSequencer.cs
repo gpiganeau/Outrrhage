@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -18,6 +17,9 @@ public class RoomSequencer : ScriptableObject
     [Tooltip("Room Auto Complete and spawn next on Sequence end")] public bool AutoComplete = false;
     
     #region Run Controls
+
+    [HideInInspector] public GameRoom affectedRoom; 
+
 
     public void ZZ_SpawnCustomEnnemies(int count)
     {
@@ -51,7 +53,8 @@ public class RoomSequencer : ScriptableObject
     {
         for (int i = 0; i < count; i++)
         {
-            EntityManager.Instance.SpawnEntities(type, 1, GameManager.Instance.Riel.transform.position, 8);
+            //EntityManager.Instance.SpawnEntities(type, 1, GameManager.Instance.Riel.transform.position, 8);
+            EntityManager.Instance.SpawnEntities(type, 1, affectedRoom.GetRandomGeneratorPosition(), 8);
         }
     }
 

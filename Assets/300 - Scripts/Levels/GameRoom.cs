@@ -26,6 +26,9 @@ public class GameRoom : MonoBehaviour
 
     const int WALL_SIZE = 4;
 
+    [Header("Spawn Points (GENERATORS)")]
+    List<GameObject> generators = new();
+
 
     [Header("Populated by Run Settings")]
     public List<GameObject> WallsPrefabs;
@@ -47,6 +50,7 @@ public class GameRoom : MonoBehaviour
     public void Init(RoomSequencer sequencer, PathDirection entrance, List<GameObject> walls = null)
     {
         if (!OverrideRoomSequencer) customRoomSequencer = sequencer;
+        customRoomSequencer.affectedRoom = this;
         WallsPrefabs = walls;
         RoomEnter = entrance;
         RegenerateRoom();
@@ -68,6 +72,12 @@ public class GameRoom : MonoBehaviour
     public Transform GetConnectionPoint()
     {
         return null;
+    }
+
+    public Vector3 GetRandomGeneratorPosition()
+    {
+        if (generators.Count == 0) return GameManager.Instance.Riel.transform.position;
+        return generators.Random().transform.position;
     }
 
 
