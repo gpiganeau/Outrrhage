@@ -97,6 +97,11 @@ public class RunSystemController : MonoBehaviour
         StartRun();
     }
 
+    void Start()
+    {
+        EntityManager.Instance.OnEnemyDied.AddListener(OnEnemyDeath);
+    }
+
     private void GenerateCriticalPath ()
     {
         // -- Resets everything
@@ -223,6 +228,61 @@ public class RunSystemController : MonoBehaviour
             }
         }
     }
+
+
+    int _roomSequenceIndex = 0;
+    RoomSequencer _currentSequencer;
+    public void StartRoomSequenceManual(RoomSequencer seq)
+    {
+        if (seq == null)
+        {
+            Logger.LogWarning(Logger.LogCategory.Core, "NULL SEQUENCER");
+            return;
+        }
+        
+        // -- Cache
+        _currentRoomSequenceOver = false;
+        _roomSequenceIndex = 0;
+        _currentSequencer = seq;
+
+        seq.OnRoomStart?.Invoke();
+
+        var step = seq.RoomSequence[_roomSequenceIndex];
+        DOVirtual.DelayedCall(step.delay, () => {
+            step.stepEvent?.Invoke();
+        });
+
+
+
+        if (seq.AutoComplete)
+        {
+            _currentRoomSequenceOver = true;
+            RoomEnd();
+        }
+        
+    }
+
+    public void OnEnemyDeath(EntityType type)
+    {
+        if (EntityManager.Instance.Bots.Count > 1) return;
+        CurrentSeqStepIn();
+    }
+
+    private void CurrentSeqStepIn()
+    {
+        _roomSequenceIndex++;
+
+        if (_roomSequenceIndex < _currentSequencer.RoomSequence.Count)
+        {
+            var step = _currentSequencer.RoomSequence[_roomSequenceIndex];
+            step.stepEvent?.Invoke();
+        } else
+        {
+            _currentRoomSequenceOver = true;
+        }
+    }
+
+    
     IEnumerator StartRoomSequence (RoomSequencer seq)
     {
 
@@ -315,7 +375,9 @@ public class RunSystemController : MonoBehaviour
         _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
         _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
         OpenEntrance(_currentRoom.transform.position, wrapper.entry);
-        StartCoroutine(StartRoomSequence(_currentRoom.customRoomSequencer));
+        //StartCoroutine(StartRoomSequence(_currentRoom.customRoomSequencer));
+
+        StartRoomSequenceManual(_currentRoom.customRoomSequencer);
     }
 
     private void OpenEntrance(Vector3 roomPos, PathDirection direction)
