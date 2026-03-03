@@ -20,4 +20,4 @@ MonoBehaviour:
   LossRageTick: 0.1
   DeathTimeBeforeReload: 3
   ClearRoomOnDeath: 1
-  YSpawnOffset: 1
+  YSpawnOffset: 0.8
