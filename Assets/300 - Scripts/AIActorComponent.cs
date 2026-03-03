@@ -140,7 +140,7 @@ public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
             int dropAmount = bloodStack.GetStackedValue();
             for (int i = 0; i < dropAmount; i++)
             {
-                var vec = Random.insideUnitCircle;
+                var vec = Random.insideUnitCircle * SettingsManager.Instance.GameplaySettings.BloodDispersionRadius;
                 Vector3 offset = new Vector3(vec.x, 0.5f, vec.y);
                 var pos = transform.position + offset;
                 Instantiate(setupData.BloodPrefab, pos, Quaternion.identity);

@@ -7,6 +7,7 @@ public class GameplaySettings : ScriptableObject
     public float baseMinTimeBetweenSkills;
 
     public float spawnerTimeBetweenSpawns = 0.5f;
+    public float BloodDispersionRadius  = 3f;
 
     [Header("Game Over")]
     public float DeathTimeBeforeReload = 3f;
