@@ -9,6 +9,10 @@ public class GameplaySettings : ScriptableObject
     public float spawnerTimeBetweenSpawns = 0.5f;
     public float BloodDispersionRadius  = 3f;
 
+    [Header("Rage")]
+    public int LossRageAmount = 1;
+    public float LossRageTick = 0.5f;
+
     [Header("Game Over")]
     public float DeathTimeBeforeReload = 3f;
     public bool ClearRoomOnDeath = true;

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -27,6 +28,18 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
 
     
     public static bool InRage => Rage.IsFull;
+    Coroutine _rageTick;
+
+    IEnumerator RageTickRoutine()
+    {
+        var gps = SettingsManager.Instance.GameplaySettings;
+        
+        while (true)
+        {
+            yield return new WaitForSeconds(gps.LossRageTick);
+            if (!InRage) Rage.Consume(gps.LossRageAmount);
+        }
+    }
 
     void Start()
 	{
@@ -73,6 +86,9 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
         onSlot3ReleasedAction = () => skillsController.CallSkillStrategyReleased(2);
         onSlot4ReleasedAction = () => skillsController.CallSkillStrategyReleased(3);
         onSlot5ReleasedAction = () => skillsController.CallSkillStrategyReleased(4);
+
+        // -- Rage Tick
+        _rageTick = StartCoroutine(RageTickRoutine());
     
         // Subscribe
         EnableControls();
