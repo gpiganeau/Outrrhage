@@ -18,6 +18,10 @@ class BloodExplosion : SkillStrategy
 		movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[0]);
 
 
+        // --TODO  Hack : Regain the value 
+        CharacterComponent.Blood.Regain(_storedSkillData.BloodCost);
+
+
         channelSequence = DOTween.Sequence();
         channelSequence.AppendInterval(_storedSkillData.HoldDuration);
         channelSequence.OnComplete(() =>
@@ -44,6 +48,9 @@ class BloodExplosion : SkillStrategy
 
     private void ExecuteExplosion()
     {
+        // -- TODO HACK, reconsume the blood
+        CharacterComponent.Blood.Consume(_storedSkillData.BloodCost);
+
         List<BloodDrop> nearbyBloodDrops = new List<BloodDrop>();
         Vector3 bottom = new Vector3(storedAimPosition.x, storedAimPosition.y - _capsuleHeight, storedAimPosition.z);
         Vector3 top = new Vector3(storedAimPosition.x, storedAimPosition.y + _capsuleHeight, storedAimPosition.z);
