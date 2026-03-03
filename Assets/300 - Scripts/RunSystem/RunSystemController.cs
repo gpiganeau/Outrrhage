@@ -248,11 +248,9 @@ public class RunSystemController : MonoBehaviour
         seq.OnRoomStart?.Invoke();
 
         var step = seq.RoomSequence[_roomSequenceIndex];
-        DOVirtual.DelayedCall(step.delay, () => {
+        DOVirtual.DelayedCall(4f, () => {
             step.stepEvent?.Invoke();
         });
-
-
 
         if (seq.AutoComplete)
         {
@@ -275,7 +273,11 @@ public class RunSystemController : MonoBehaviour
         if (_roomSequenceIndex < _currentSequencer.RoomSequence.Count)
         {
             var step = _currentSequencer.RoomSequence[_roomSequenceIndex];
-            step.stepEvent?.Invoke();
+
+                DOVirtual.DelayedCall(4f, () => {
+                step.stepEvent?.Invoke();
+            });
+
         } else
         {
             _currentRoomSequenceOver = true;
