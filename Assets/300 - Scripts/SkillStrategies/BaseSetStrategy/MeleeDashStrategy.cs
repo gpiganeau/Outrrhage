@@ -1,14 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 using DG.Tweening;
 
 public class MeleeDashStrategy: SkillStrategy
 {
-    public override void Initialize(SkillsController parent, SkillData skillData)
-    {
-        base.Initialize(parent, skillData);
-    }
-
     private bool hasHitATarget = false;
     public BloodDrop bloopDropPrefab;
 

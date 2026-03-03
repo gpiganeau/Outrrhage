@@ -1,12 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
-using DG.Tweening;
+﻿using DG.Tweening;
 
 public class DashStrategy: SkillStrategy
 {
-    public override void Initialize(SkillsController parent, SkillData skillData)
+    public override void Initialize(SkillsController parent, SkillData skillData, PilotComponent pilot)
     {
-        base.Initialize(parent, skillData);
+        base.Initialize(parent, skillData, null);
     }
 
 	public override bool Call(MovementController movementController, Team team)

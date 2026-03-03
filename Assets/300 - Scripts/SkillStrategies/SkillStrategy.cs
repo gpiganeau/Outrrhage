@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class SkillStrategy : MonoBehaviour
 {
+    protected PilotComponent pilotComponent;
     protected SkillsController parentController;
     private string debugName;
     protected bool isInCooldown = false;
@@ -17,8 +18,9 @@ public class SkillStrategy : MonoBehaviour
     public SkillData SkillData => _storedSkillData;
     public bool IsInCooldown => isInCooldown;
 
-    public virtual void Initialize(SkillsController parent, SkillData skillData)
+    public virtual void Initialize(SkillsController parent, SkillData skillData, PilotComponent pilot)
     {
+        pilotComponent = pilot;
         parentController = parent;
         debugName = skillData.name;
         activeProjectiles = new List<Projectile>();
@@ -87,6 +89,8 @@ public class SkillStrategy : MonoBehaviour
     protected virtual void OnProjectileHit(Projectile projectile, DamageController damageController)
     {
         _vfxController.PlayHitVFX(projectile.transform.position, _storedSkillData.ProjectileDamage[0]);
+        pilotComponent.OnProjectileHit(projectile, damageController, _storedSkillData);
+
     }
 
     public virtual int CustomDamageCalculation(DamageController target, int baseDamage, Projectile projectile)

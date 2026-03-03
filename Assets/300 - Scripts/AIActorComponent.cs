@@ -3,7 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class AIActorComponent: MonoBehaviour, ISkillConstrainer, IJuicable
+public class AIActorComponent: PilotComponent, ISkillConstrainer, IJuicable
 {
     [SerializeField] private AIActorSetupData setupData;
     [SerializeField] private HealthBarDisplay healthBarDisplay;

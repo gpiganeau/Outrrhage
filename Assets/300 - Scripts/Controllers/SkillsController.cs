@@ -49,10 +49,12 @@ public class SkillsController: MonoBehaviour
 
     public void SetActiveSkillStrategies(List<SkillData> skillDatas)
     {
+        var pilot = GetComponent<PilotComponent>();
+
         foreach (SkillData data in skillDatas)
         {
             SkillStrategy skillStrategy = Instantiate(data.SkillStrategyPrefab, transform).GetComponent<SkillStrategy>();
-            skillStrategy.Initialize(this, data);
+            skillStrategy.Initialize(this, data, pilot);
             activeSkillStrategies.Add(skillStrategy);
         }
 
@@ -212,7 +214,7 @@ public class SkillsController: MonoBehaviour
     private SkillStrategy InstantiateSkillStrategy(SkillData data)
     {
         SkillStrategy skillStrategy = Instantiate(data.SkillStrategyPrefab, transform).GetComponent<SkillStrategy>();
-        skillStrategy.Initialize(this, data);
+        skillStrategy.Initialize(this, data, GetComponent<PilotComponent>());
         activeSkillStrategies.Add(skillStrategy);
         return skillStrategy;
     }

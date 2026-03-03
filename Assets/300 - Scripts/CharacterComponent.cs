@@ -6,7 +6,7 @@ using UnityEngine.VFX;
 /// <summary>
 /// Pilots other components, specifically translates inputs into I/O for attached controllers
 /// </summary>
-public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
+public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
 {
 	[SerializeField] private CharacterSetupData setupData;
 	private SkillsController skillsController;
@@ -124,12 +124,17 @@ public class CharacterComponent : MonoBehaviour, ISkillConstrainer, IJuicable
 
     #region Listeners & Callback
 
+    public override void OnProjectileHit(Projectile projectile, DamageController damageController, SkillData data)
+    {
+        Rage.Regain(data.RageGain);
+    }
+
+
     private void OnSkillExecuted(SkillStrategy strategy, int index)
     {
         if (InRage) return;
         
         Blood.Consume(strategy.SkillData.BloodCost);
-        Rage.Regain(strategy.SkillData.RageGain);
     }
 
     private void OnRageChanged(int current, int max)
