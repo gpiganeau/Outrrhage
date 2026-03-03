@@ -12,6 +12,8 @@ public class TourelleProjectileStrategy: SkillStrategy
 
 		int numberOfShots = 3;
         float delayBetweenShots = 0.2f;
+		Vector3 firingDirection = movementController.GetFacingDirection();
+        UseAimAssist(ref firingDirection, _storedSkillData.AimAssistRatio, team);
 
         for (int i = 0; i < numberOfShots; i++)
         {
@@ -27,7 +29,8 @@ public class TourelleProjectileStrategy: SkillStrategy
 					Speed = _storedSkillData.ProjectileSpeed,
 					Team = team,
 
-					Target = new Vector3(Random.Range(-20, 20) , 0, Random.Range(-20, 20))
+					//Target = new Vector3(Random.Range(-20, 20) , 0, Random.Range(-20, 20))
+					Target = movementController.transform.position + firingDirection * _storedSkillData.ProjectileRange,
 				};
 
 		projectileData.startingPosition += new Vector3(0, 1f, 0f); // Vertical Offset

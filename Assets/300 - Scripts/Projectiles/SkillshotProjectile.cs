@@ -16,8 +16,10 @@ public class SkillshotProjectile: Projectile
     {
         _data = data;
         transform.position = data.startingPosition;
-        Vector3 dir = (data.Target - data.startingPosition).normalized;
-        transform.forward = dir;
+        //Vector3 dir = (data.Target - data.startingPosition).normalized;
+        //transform.forward = dir;
+        Vector3 originToProj = transform.position - data.origin;
+        transform.forward = originToProj.normalized;
         _damage = data.Damage;
         DOVirtual.DelayedCall(data.Lifetime, DestroyProjectile);
         target = data.Target;
