@@ -9,12 +9,8 @@ class BloodSpikes : SkillStrategy
     public override bool Call(MovementController movementController, Team team)
     {
         if (!base.Call(movementController, team)) return false;
-        Logger.Combat($"BloodSpikes: currentSpike = {currentSpike}");
         Vector3 firingDirection = movementController.GetFacingDirection();
-        Logger.Combat($"BloodSpikes: Pre aim assist direction {firingDirection.ToString()}");
         UseAimAssist(ref firingDirection, _storedSkillData.AimAssistRatio, team);
-
-        Logger.Combat($"BloodSpikes: Firing in direction {firingDirection.ToString()}");
 
         switch (currentSpike) { 
             case 0: SpikeSkillShot(firingDirection, movementController, team); break; 
@@ -106,7 +102,6 @@ class BloodSpikes : SkillStrategy
         comboResetTimer?.Kill();
         comboResetTimer = DOVirtual.DelayedCall(_storedSkillData.ComboResetDelay, () =>
         {
-            Logger.Combat($"BloodSpikes: Combo expiré, reset à 0");
             currentSpike = 0;
         });
     }
