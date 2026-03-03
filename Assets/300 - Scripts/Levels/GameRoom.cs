@@ -27,7 +27,7 @@ public class GameRoom : MonoBehaviour
     const int WALL_SIZE = 4;
 
     [Header("Spawn Points (GENERATORS)")]
-    List<GameObject> generators = new();
+    public List<GameObject> generators = new();
 
 
     [Header("Populated by Run Settings")]
