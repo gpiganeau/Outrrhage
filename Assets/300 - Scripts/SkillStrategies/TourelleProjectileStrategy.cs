@@ -29,7 +29,6 @@ public class TourelleProjectileStrategy: SkillStrategy
 					Speed = _storedSkillData.ProjectileSpeed,
 					Team = team,
 
-					//Target = new Vector3(Random.Range(-20, 20) , 0, Random.Range(-20, 20))
 					Target = movementController.transform.position + firingDirection * _storedSkillData.ProjectileRange,
 				};
 

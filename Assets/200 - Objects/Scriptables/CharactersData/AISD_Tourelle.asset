@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AISD_Tourelle
   m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
   Name: Tourelle
-  maxHealth: 8
+  maxHealth: 4
   movementSpeed: 0
   maxBloodStack: 5
   team: 2

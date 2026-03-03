@@ -24,7 +24,7 @@ MonoBehaviour:
   Radius: 10
   ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 01000000
+  ProjectileDamage: 0100000001000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3

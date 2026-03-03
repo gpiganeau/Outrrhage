@@ -31,4 +31,4 @@ MonoBehaviour:
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   maxBlood: 10
   maxRage: 100
-  RageDuration: 6
+  RageDuration: 10
