@@ -24,5 +24,9 @@ public class ActorSetupData: ScriptableObject
 
     [Header("Common Visuals")]
     public GameObject BloodSplasherPrefab;
+
+    [Header("Common Audio")]
+    public AudioClip[] HitClip;
+    public AudioClip[] AttackClip, CastClip, DeathClip, HealClip;
 }
 

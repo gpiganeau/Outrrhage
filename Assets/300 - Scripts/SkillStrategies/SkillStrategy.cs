@@ -47,6 +47,9 @@ public class SkillStrategy : MonoBehaviour
             Logger.LogError(Logger.LogCategory.Combat, "MovementController is null.");
             return false;
         }
+
+        AudioManager.Instance.PlayClipAtPoint(_storedSkillData.skillCastClips.Random(), transform.position);
+
         
         return true;
     }
@@ -96,7 +99,7 @@ public class SkillStrategy : MonoBehaviour
     {
         _vfxController.PlayHitVFX(projectile.transform.position, _storedSkillData.ProjectileDamage[0]);
         pilotComponent.OnProjectileHit(projectile, damageController, _storedSkillData);
-
+        AudioManager.Instance.PlayClipAtPoint(_storedSkillData.skillHitClips.Random(), projectile.transform.position);
     }
 
     public virtual int CustomDamageCalculation(DamageController target, int baseDamage, Projectile projectile)

@@ -110,6 +110,8 @@ public class AIActorComponent: PilotComponent, ISkillConstrainer, IJuicable
     private void OnHealed(int a, int b)
     {
         Juicer.I.EnnemyHealedEffect(GetRenderers());
+        AudioManager.Instance.PlayClipAtPoint(setupData.HealClip.Random(), transform.position);
+
     }
 
     private void OnDamaged(int a, int b)
@@ -117,6 +119,7 @@ public class AIActorComponent: PilotComponent, ISkillConstrainer, IJuicable
         Juicer.I.EnemyDamagedImpact(0.3f, GetRenderers());
         var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponentInChildren<VisualEffect>(); 
         fx.Play();
+        AudioManager.Instance.PlayClipAtPoint(setupData.HitClip.Random(), transform.position);
     }
 
     public void ForceKill()
@@ -149,6 +152,8 @@ public class AIActorComponent: PilotComponent, ISkillConstrainer, IJuicable
 
         // -- Check if last enemy Alive ? Or From  Enemy Data (Boss, Elite...) or % Chance of procing this ?
         Juicer.I.EnemyDeathEffect();
+        AudioManager.Instance.PlayClipAtPoint(setupData.DeathClip.Random(), transform.position);
+        
 
         // -- Hides HUD
         healthBarDisplay.gameObject.SetActive(false);

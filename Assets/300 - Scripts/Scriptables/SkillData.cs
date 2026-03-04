@@ -57,8 +57,8 @@ public class SkillData : ScriptableObject
     public SkillVFXData vfxData;
 
     [Header("Audio")]
-    public AudioClip[] castClips;
-    public AudioClip[] hitClips;
+    public AudioClip[] skillCastClips;
+    public AudioClip[] skillHitClips;
 
     [Header("Chaotic Feature")]
     public bool UseSubSkill = false;

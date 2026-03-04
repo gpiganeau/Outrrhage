@@ -23,6 +23,7 @@ public class EntityManager : MonoBehaviour
 
     [Header("Spawn Settings")]
     public GameObject SpawnFXPrefab;
+    public AudioClip[] SpawnsClip;
     public List<AIActorComponent> enemyPrefabs;              
     public float spawnInterval = 2f;                
     public float spawnRangeMin = 5f;           
@@ -61,6 +62,7 @@ public class EntityManager : MonoBehaviour
         seq.AppendCallback(() =>
         {
             var fx = Instantiate(SpawnFXPrefab, position, Quaternion.identity);
+            AudioManager.Instance.PlayClipAtPoint(SpawnsClip.Random(), position);
         });
         seq.AppendInterval(1f); 
         seq.AppendCallback(() =>{

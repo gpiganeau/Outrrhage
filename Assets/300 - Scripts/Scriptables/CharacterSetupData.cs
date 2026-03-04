@@ -9,4 +9,6 @@ public class CharacterSetupData: ActorSetupData
     public int maxBlood;
     public int maxRage = 100;
     public float RageDuration = 10f;
+    public AudioClip[] RagerEnterClip, RageExitClip;
+
 }
