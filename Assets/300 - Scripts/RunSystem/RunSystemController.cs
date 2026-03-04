@@ -96,6 +96,19 @@ public class RunSystemController : MonoBehaviour
         GenerateCriticalPath();
         StartRun();
     }
+        private void StartRun()
+    {
+        Sequence startSeq = DOTween.Sequence();
+        startSeq.AppendInterval(2f);
+        startSeq.AppendCallback( () =>
+        {
+            SpawnNextRoom();
+            var w = Rooms[0];
+            var pos = w.position + w.room.GetSpawnPoint().transform.position;
+            GameManager.Instance.SpawnRiel(pos.WithY(SettingsManager.Instance.GameplaySettings.YSpawnOffset));
+            });
+    }
+
 
     void Start()
     {
@@ -284,49 +297,6 @@ public class RunSystemController : MonoBehaviour
         }
     }
 
-    
-    IEnumerator StartRoomSequence (RoomSequencer seq)
-    {
-
-        if (seq == null)
-        {
-            yield break;
-        }
-
-        seq.OnRoomStart?.Invoke();
-        _currentRoomSequenceOver = false;
-
-        foreach (var step in seq.RoomSequence)
-        {
-
-            if (step.skipEvent)
-            {
-                continue;
-            } 
-            else
-            {
-
-                if (step.delay > 0)
-                {
-                    yield return new WaitForSeconds(step.delay);
-                }
-
-                if (step.logEvent)
-                {
-                    Logger.Log(Logger.LogCategory.Core, $"[DesignerChaos] Step Triggered: {step.stepName}");
-                }
-                
-                step.stepEvent?.Invoke();   
-            }
-        }
-
-        _currentRoomSequenceOver = true;
-
-        if (seq.AutoComplete)
-        {
-            RoomEnd();
-        }
-    }
 
     public bool QueryRoomEnd()
     {
@@ -342,18 +312,6 @@ public class RunSystemController : MonoBehaviour
         return true;
     }
 
-    private void StartRun()
-    {
-        Sequence startSeq = DOTween.Sequence();
-        startSeq.AppendInterval(2f);
-        startSeq.AppendCallback( () =>
-        {
-            SpawnNextRoom();
-            var w = Rooms[0];
-            var pos = w.position + w.room.GetSpawnPoint().transform.position;
-            GameManager.Instance.RoomStart(pos.WithY(SettingsManager.Instance.GameplaySettings.YSpawnOffset));
-            });
-    }
 
     private void SpawnNextRoom()
     {

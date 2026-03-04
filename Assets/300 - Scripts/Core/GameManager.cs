@@ -43,49 +43,16 @@ public class GameManager : MonoBehaviour
     public void Start(){
 
         DOTween.SetTweensCapacity(500, 50);
-
-        switch (CurrentGameMode)
-        {
-            case GameMode.Forest:
-                ForestStart();
-                break;
-        }
     }
 
-    public void RoomStart(Vector3 rielSpawnPos){
-        Sequence spawnSeq = DOTween.Sequence();
-
-        spawnSeq.AppendCallback( () =>
-        {
-            var riel = Instantiate(_rielPrefab, rielSpawnPos, Quaternion.identity);
-            Riel = riel;
-            _cameraController.SetTarget(Riel.transform);
-            _cameraController.transform.position = riel.transform.position.WithY(100);
-            riel.PlayerCameraController = _cameraController;
-            EntityManager.Instance.Riel = riel;
-            OnGameStart.Invoke();
-        });
-    }
-
-    private void ForestStart()
-    {
-        Sequence spawnSeq = DOTween.Sequence();
-        
-        spawnSeq.AppendCallback( () => _currentLevel = Instantiate(_startLevelPrefab, Vector3.zero, Quaternion.identity));
-        spawnSeq.AppendInterval(0.5F);
-        spawnSeq.AppendCallback( () =>
-        {
-            RespawnPoint spawnPoint = _currentLevel.GetSpawnPoint();
-            var riel = Instantiate(_rielPrefab, spawnPoint.transform.position, Quaternion.identity) as CharacterComponent;
-            Riel = riel;
-            _cameraController.SetTarget(Riel.transform);
-            _cameraController.transform.position = spawnPoint.transform.position + new Vector3(0, 100, 0);
-            riel.PlayerCameraController = _cameraController;
-            EntityManager.Instance.Riel = riel;
-            OnGameStart.Invoke();
-
-        });
-        spawnSeq.Play();
+    public void SpawnRiel(Vector3 rielSpawnPos){
+        var riel = Instantiate(_rielPrefab, rielSpawnPos, Quaternion.identity);
+        Riel = riel;
+        _cameraController.SetTarget(Riel.transform);
+        _cameraController.transform.position = riel.transform.position.WithY(100);
+        riel.PlayerCameraController = _cameraController;
+        EntityManager.Instance.Riel = riel;
+        OnGameStart.Invoke();
     }
 
     public void CheckForRoomEnd()
