@@ -699,7 +699,7 @@ PrefabInstance:
     - target: {fileID: 1595138116582882787, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a916a3ca629652f45b7ce7c2733b33cb, type: 3}
+      objectReference: {fileID: 21300000, guid: c9f1ed0a91bc56b419d6b91021dd86cd, type: 3}
     - target: {fileID: 1595138116582882787, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_FillAmount
       value: 1
@@ -715,7 +715,7 @@ PrefabInstance:
     - target: {fileID: 6826753990347287988, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a916a3ca629652f45b7ce7c2733b33cb, type: 3}
+      objectReference: {fileID: 21300000, guid: b1e5cacf91491af42bf3b6d1db3b1b67, type: 3}
     - target: {fileID: 8694343479837741551, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1010,7 +1010,7 @@ PrefabInstance:
     - target: {fileID: 1595138116582882787, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c1781717702cb3f4a89edbec55ea4c56, type: 3}
+      objectReference: {fileID: 21300000, guid: 3adf3bc72adeba7408ad17d592c9564d, type: 3}
     - target: {fileID: 1595138116582882787, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_FillAmount
       value: 1
@@ -1026,7 +1026,7 @@ PrefabInstance:
     - target: {fileID: 6826753990347287988, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c1781717702cb3f4a89edbec55ea4c56, type: 3}
+      objectReference: {fileID: 21300000, guid: b1e5cacf91491af42bf3b6d1db3b1b67, type: 3}
     - target: {fileID: 8694343479837741551, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1650,10 +1650,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2569175513317776562}
     m_Modifications:
+    - target: {fileID: 1595138116582882787, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c9c351b5b39357f47ab82d2cdd2de932, type: 3}
     - target: {fileID: 5164063616132616955, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_Name
       value: PF_HealthGauje
       objectReference: {fileID: 0}
+    - target: {fileID: 6826753990347287988, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b1e5cacf91491af42bf3b6d1db3b1b67, type: 3}
     - target: {fileID: 8694343479837741551, guid: 5e7edc541651a83418f5de64cdfe991c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

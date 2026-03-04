@@ -11,7 +11,7 @@ public class SkillSlot : MonoBehaviour
     [SerializeField] private Image _inputPrompt;
     [SerializeField] private Image _cdRotor;
     [SerializeField] private TMP_Text _skillName;
-    [SerializeField] private TMP_Text _skillCD;
+    [SerializeField] private TMP_Text _skillCost;
 
     private int slotIndex;
 
@@ -20,7 +20,7 @@ public class SkillSlot : MonoBehaviour
         _skillData = strategy.SkillData;
         _icon.sprite = _skillData.Icon;
         _skillName.text = _skillData.Name;
-        _skillCD.text = _skillData.Cooldown.ToString();
+        _skillCost.text = "Cost :" + _skillData.BloodCost.ToString();
         slotIndex = index;
         InputManager.Instance.OnDeviceChanged.AddListener(OnDeviceChanged);
 
@@ -53,13 +53,13 @@ public class SkillSlot : MonoBehaviour
         {
             _icon.color = Color.white;
             _skillName.color = Color.white;
-            _skillCD.color = Color.white;
+            _skillCost.color = Color.white;
         }
         else
         {
             _icon.color = Color.gray;
             _skillName.color = Color.gray;
-            _skillCD.color = Color.gray;
+            _skillCost.color = Color.gray;
         }
     }
 }
