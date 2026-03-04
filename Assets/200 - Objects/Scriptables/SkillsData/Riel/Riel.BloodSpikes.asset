@@ -16,8 +16,9 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 2fe5385023a7f064297bec3f1dd53c06, type: 3}
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
-  Name: Epines sanglantes
-  Description: Tuez vos ennemis en rythme !
+  Name: Epines de sang
+  Description: "Lance des \xE9pines de sang vers les ennemis. La troisi\xE8me \xE9pine
+    est explosive."
   Cooldown: 2
   IsHold: 0
   HoldDuration: 0

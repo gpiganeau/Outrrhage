@@ -16,12 +16,12 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Explosion sanguine
-  Description: "Maintenez la touche associ\xE9e pour faire exploser les orbes de
-    sang au sol!"
+  Description: "Apr\xE8s une courte concentration, toute les gouttes de sang r\xE9pandues
+    autour de vous explose en blessant les ennemis."
   Cooldown: 9
   IsHold: 1
   HoldDuration: 0.7
-  CanMovePreview: 1
+  CanMovePreview: 0
   Radius: 4.5
   ProjectileRange: 0
   ProjectileSpeed: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
   Name: Griffe de sang
-  Description: Slash & Clash !
+  Description: "D\xE9ploie une griffe de sang devant vous."
   Cooldown: 2
   IsHold: 0
   HoldDuration: 0

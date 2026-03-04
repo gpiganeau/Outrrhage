@@ -15,8 +15,9 @@ MonoBehaviour:
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: d16200095b148d74c90084f808df11e8, type: 3}
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 83b0d9a89238ffd49a66bcbaf8f25964, type: 3}
-  Name: Vague de sang
-  Description: Petite vague de sang
+  Name: Cercle sanglant
+  Description: 'Projette autour de vous un cercle de gouttes de sang qui blessent
+    les ennemis sur leur passage. '
   Cooldown: 7
   IsHold: 0
   HoldDuration: 0

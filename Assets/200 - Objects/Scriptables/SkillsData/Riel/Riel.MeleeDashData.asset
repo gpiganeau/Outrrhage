@@ -16,8 +16,8 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 5c1b5f5e358d420449bd9f36bcc0015e, type: 3}
   Name: Charge
-  Description: Une attaque de melee, Riel dash sur l'ennemi pour le blesser en le
-    touchant
+  Description: "Permet une brusque acc\xE9l\xE9ration vers l'avant, blessant vos
+    ennemis sur votre passage."
   Cooldown: 3
   IsHold: 0
   HoldDuration: 0
