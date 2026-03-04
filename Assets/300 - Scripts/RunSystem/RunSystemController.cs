@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
 using System.Linq;
 using UnityEngine.Events;
 using System;
 using DG.Tweening;
-using UnityEngine.UIElements;
 
 public enum PathDirection { North, East, South, West }
 
@@ -14,6 +12,7 @@ public enum RoomType { Hub, Normal, Boss, Safe }
 public class RunSystemController : MonoBehaviour
 {
 
+    #region Fields
     [Serializable]
     private class RoomWrapper
     {
@@ -86,6 +85,13 @@ public class RunSystemController : MonoBehaviour
     public GameRoom CurrentRoom => _currentRoom;
     [SerializeField] private int _roomIndex = 0;
 
+    int _roomSequenceIndex = 0;
+    RoomSequencer _currentSequencer;
+
+    int MAX_ROOM_CALL = 10;
+    int CURRENT_CALL = 0;
+    #endregion
+
     void Awake()
     {
         if (Instance == null) Instance = this;
@@ -95,7 +101,10 @@ public class RunSystemController : MonoBehaviour
         GenerateCriticalPath();
         StartRun();
     }
-        private void StartRun()
+
+    void Start() => EntityManager.Instance.OnEnemyDied.AddListener(OnEnemyDeath);
+
+    private void StartRun()
     {
         Sequence startSeq = DOTween.Sequence();
         startSeq.AppendInterval(2f);
@@ -108,12 +117,6 @@ public class RunSystemController : MonoBehaviour
             });
     }
 
-
-    void Start()
-    {
-        EntityManager.Instance.OnEnemyDied.AddListener(OnEnemyDeath);
-    }
-
     private void GenerateCriticalPath ()
     {
         // -- Resets everything
@@ -123,6 +126,7 @@ public class RunSystemController : MonoBehaviour
         _roomIndex = -1;
         var currentPos = transform.position;
         Rooms.Clear();
+        _spawnPositions.Clear();
 
         // -- Compute Datas
         GenerateDirectionPath();
@@ -241,9 +245,6 @@ public class RunSystemController : MonoBehaviour
         }
     }
 
-
-    int _roomSequenceIndex = 0;
-    RoomSequencer _currentSequencer;
     public void StartRoomSequenceManual(RoomSequencer seq)
     {
         if (seq == null)
@@ -294,7 +295,6 @@ public class RunSystemController : MonoBehaviour
         }
     }
 
-
     public bool QueryRoomEnd(bool ByPassEnemyCount = false)
     {
         if (EntityManager.Instance.Bots.Count > 0 && !ByPassEnemyCount) return false;
@@ -308,7 +308,6 @@ public class RunSystemController : MonoBehaviour
         return true;
     }
 
-
     private void SpawnNextRoom()
     {
         if (_roomIndex <= runSettings.RoomCount)
@@ -321,8 +320,7 @@ public class RunSystemController : MonoBehaviour
         }
     }
 
-    int MAX_ROOM_CALL = 10;
-    int CURRENT_CALL = 0;
+
     private void CreateRoom(RoomWrapper wrapper)
     {
         if (CURRENT_CALL >= MAX_ROOM_CALL) return;
@@ -331,8 +329,6 @@ public class RunSystemController : MonoBehaviour
         _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
         _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
         OpenEntrance(_currentRoom.transform.position, wrapper.entry);
-        //StartCoroutine(StartRoomSequence(_currentRoom.customRoomSequencer));
-
         StartRoomSequenceManual(_currentRoom.customRoomSequencer);
     }
 
