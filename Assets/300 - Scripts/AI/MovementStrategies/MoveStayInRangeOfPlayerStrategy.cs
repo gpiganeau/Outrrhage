@@ -1,10 +1,21 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 	
 public class MoveStayInRangeOfPlayerStrategy: MovementStrategy
 {
     float minDistanceToPlayer;
     float maxDistanceToPlayer;
+
+    [Serializable]
+    public class Pallier
+    {
+        public int SwitchAtHp = 1;
+        public Vector2 MinMaxDistanceToPlayer;
+    }
+
+    List<Pallier> palliers = new();
+
 
     public override void Initialize(MovementStrategySetupData setupData)
     {
@@ -13,6 +24,25 @@ public class MoveStayInRangeOfPlayerStrategy: MovementStrategy
         {
             minDistanceToPlayer = data.minDistanceFromPlayer;
             maxDistanceToPlayer = data.maxDistanceFromPlayer;
+
+            palliers.Clear();
+            foreach (var p in data.palliers)
+            {
+                palliers.Add(p);
+            }
+        }
+    }
+
+    private void RecomputeDistances(MovementContext c)
+    {
+        foreach (var p in palliers)
+        {
+            if (p.SwitchAtHp == c.currentHealth)
+            {
+                minDistanceToPlayer = p.MinMaxDistanceToPlayer.x;
+                maxDistanceToPlayer = p.MinMaxDistanceToPlayer.y;
+                break;
+            }
         }
     }
 
@@ -20,6 +50,11 @@ public class MoveStayInRangeOfPlayerStrategy: MovementStrategy
     {
         float distanceToPlayer = (context.playerPosition - context.currentLocation).magnitude;
         Vector3 directionToPlayer = (context.playerPosition - context.currentLocation).normalized;
+
+
+        RecomputeDistances(context);
+
+
         if (distanceToPlayer < minDistanceToPlayer)
         {
             // Move away from the player

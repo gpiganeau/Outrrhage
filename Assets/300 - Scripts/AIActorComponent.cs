@@ -94,7 +94,7 @@ public class AIActorComponent: PilotComponent, ISkillConstrainer, IJuicable
         
         if(_movementStrategy != null)
         {
-            MovementContext context = new MovementContext(this.transform.position, debugCharacterComponent.transform.position);
+            MovementContext context = new MovementContext(this.transform.position, debugCharacterComponent.transform.position, damageController.CurrentHealth);
             Vector3 movementDirection = _movementStrategy.GetMovementDirection(context);
             Vector3 facingDirection = _movementStrategy.GetFacingDirection(context);
             movementController.SetMovementDirection(movementDirection);
