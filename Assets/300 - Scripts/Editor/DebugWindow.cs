@@ -110,7 +110,6 @@ public class DebugWindow : EditorWindow
 
         AddAction("Toggle Skill Selector Menu", () => {
             if (Application.isPlaying != true) return;
-            SkillSelector.Instance.ToggleMenu();
          });
     }
 

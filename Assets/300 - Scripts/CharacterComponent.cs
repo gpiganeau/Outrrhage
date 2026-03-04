@@ -54,6 +54,8 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
         Rage.OnRageExit.AddListener(OnRageExit);
         Rage.OnRageChanged.AddListener(OnRageChanged);
 
+
+
         // -- Setup Components
         animController = GetComponent<AnimController>();
         animController?.Initialize(setupData);
@@ -97,7 +99,8 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
 
         Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
 
-        //   SkillSelector.Instance.OpenMenuForPlayer(skillsController);
+        // -- When everything is fine
+        if (SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart) return;
     }
 
     public void EnableControls()

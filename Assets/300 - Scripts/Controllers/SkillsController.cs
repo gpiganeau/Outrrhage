@@ -52,6 +52,13 @@ public class SkillsController: MonoBehaviour
     {
         var pilot = GetComponent<PilotComponent>();
 
+        // -- Clear les anciennes
+        if (activeSkillStrategies != null)
+            foreach (var s in activeSkillStrategies)
+                if (s != null) Destroy(s.gameObject);
+
+        activeSkillStrategies = new List<SkillStrategy>();
+
         foreach (SkillData data in skillDatas)
         {
             SkillStrategy skillStrategy = Instantiate(data.SkillStrategyPrefab, transform).GetComponent<SkillStrategy>();
@@ -135,7 +142,8 @@ public class SkillsController: MonoBehaviour
             return false;
         }
 
-// -- Error spam here on "Toggle Skill Selector Menu"...
+        if (index < 0 || index >= activeSkillStrategies.Count) return false;
+
         foreach (ISkillConstrainer constrainer in constraints) { 
 
             if (activeSkillStrategies[index] == null) return false;

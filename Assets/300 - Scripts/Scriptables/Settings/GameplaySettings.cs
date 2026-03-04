@@ -18,6 +18,7 @@ public class GameplaySettings : ScriptableObject
     public bool ClearRoomOnDeath = true;
 
     public float YSpawnOffset = 1f;
+    public bool OpenSkillSelectorOnRunStart = true;
 }
 
 
