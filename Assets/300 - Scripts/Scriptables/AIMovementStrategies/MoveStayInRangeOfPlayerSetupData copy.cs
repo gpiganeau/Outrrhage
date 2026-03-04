@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "NewMoveStayInRangeOfPlayerSetupData", menuName = "Scriptable Objects/Game/AI/MoveStayInRangeOfPlayerSetupData")]
