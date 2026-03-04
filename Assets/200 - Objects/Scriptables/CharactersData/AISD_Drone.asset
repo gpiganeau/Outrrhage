@@ -31,7 +31,7 @@ MonoBehaviour:
   DeathClip:
   - {fileID: 8300000, guid: 67f8d2dbf3acf4743b061e12797136c8, type: 3}
   HealClip: []
-  movementSetupData: {fileID: 11400000, guid: 80d616b8c09f2af48b5d6724c96d54fe, type: 2}
+  movementSetupData: {fileID: 11400000, guid: 62ff94daab3e70347acfb42580f20792, type: 2}
   attackSetupData: {fileID: 11400000, guid: a03256482c7ecce41af198d531478044, type: 2}
   entityType: 1
   TimeBeforeBrainActivation: 0.5
