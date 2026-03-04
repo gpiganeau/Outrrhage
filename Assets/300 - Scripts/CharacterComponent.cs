@@ -99,8 +99,12 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
 
         Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
 
-        // -- When everything is fine
-        if (SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart) return;
+        GameManager.Instance.OnRielReady();
+    }
+
+    public void SetSkills(List<SkillData> skills)
+    {
+        skillsController.SetActiveSkillStrategies(skills);
     }
 
     public void EnableControls()

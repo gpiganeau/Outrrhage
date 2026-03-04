@@ -81,9 +81,6 @@ public class RunDraftUI : MonoBehaviour
 
     private void OnSlotClicked(int slotIndex)
     {
-
-        Debug.Log("On Slot Clicked Top! ");
-
         _activeSlot = slotIndex;
         for (int i = 0; i < _slots.Count; i++)
             _slots[i].SetHighlight(i == _activeSlot);
@@ -91,8 +88,6 @@ public class RunDraftUI : MonoBehaviour
 
     private void OnSkillPicked(SkillData skill)
     {
-        Debug.Log("Click");
-
         // Évite les doublons
         int existing = _selectedSkills.IndexOf(skill);
         if (existing != -1)
@@ -131,13 +126,12 @@ public class RunDraftUI : MonoBehaviour
 
     private void Confirm()
     {
-        _panel.transform.DOScale(0f, 0.2f).SetEase(Ease.InBack)
-            .OnComplete(() =>
-            {
-                _panel.SetActive(false);
-                Time.timeScale = 1f;
-                if (_pauseMenu != null) _pauseMenu.SetActive(true);
-                OnDraftConfirmed?.Invoke(_selectedSkills);
-            });
+
+        //_panel.transform.DOScale(0f, 0.2f).SetEase(Ease.InBack)
+          //  .OnComplete(() =>
+        _panel.SetActive(false);
+        Time.timeScale = 1f;
+        if (_pauseMenu != null) _pauseMenu.SetActive(true);
+        OnDraftConfirmed?.Invoke(_selectedSkills);
     }
 }

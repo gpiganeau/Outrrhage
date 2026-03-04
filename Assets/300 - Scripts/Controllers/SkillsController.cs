@@ -45,7 +45,10 @@ public class SkillsController: MonoBehaviour
         }
         activeSkillStrategies = new List<SkillStrategy>();
 
-        SetActiveSkillStrategies(actorData.startingSkillSet);
+
+        var startSkills = SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart ? GameManager.SkillsFromDraft : actorData.startingSkillSet;
+
+        SetActiveSkillStrategies(startSkills);
     }
 
     public void SetActiveSkillStrategies(List<SkillData> skillDatas)

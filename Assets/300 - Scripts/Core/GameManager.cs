@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour
     private static bool _gameOver = false;
     public static bool GameOver { get => _gameOver; set => _gameOver = value;}
 
+    [Header("Run UI Draft")]
+    [SerializeField] private RunDraftUI _draftUI;
+
     #endregion
 
     public void Awake()
@@ -43,12 +46,40 @@ public class GameManager : MonoBehaviour
         else Destroy(this.gameObject);
     }
 
-    public void Start(){
+    public void Start()
+    {
 
         DOTween.SetTweensCapacity(500, 50);
+
+        if (SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart)
+        {
+            Logger.Core("Game Manager Start : Register Draft & Show UI");
+            _draftUI.OnDraftConfirmed += OnDraftConfirmed;
+            _draftUI.Show();
+
+        } else
+        {
+            _draftUI.Hide();
+            RunSystemController.Instance.StartRun(null);
+        }
     }
 
-    public void SpawnRiel(Vector3 rielSpawnPos){
+    public void OnRielReady()
+    {
+        // -- Event ?
+        // -- Apply skills ?
+    }
+
+    private void OnDraftConfirmed(List<SkillData> skills)
+    {
+        SkillsFromDraft = skills;
+        RunSystemController.Instance.StartRun(SkillsFromDraft);
+    }
+
+    public static List<SkillData> SkillsFromDraft;
+
+    public void SpawnRiel(Vector3 rielSpawnPos, List<SkillData> skills)
+    {
         var riel = Instantiate(_rielPrefab, rielSpawnPos, Quaternion.identity);
         Riel = riel;
         _cameraController.SetTarget(Riel.transform);

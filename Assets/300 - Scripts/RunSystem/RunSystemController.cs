@@ -91,8 +91,7 @@ public class RunSystemController : MonoBehaviour
     int MAX_ROOM_CALL = 10;
     int CURRENT_CALL = 0;
 
-    [Header("Run UI Draft")]
-    [SerializeField] private RunDraftUI _draftUI;
+
     #endregion
 
     void Awake()
@@ -101,32 +100,17 @@ public class RunSystemController : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void OnDraftConfirmed(List<SkillData> skills)
-    {
-        var skillsController = GameManager.Instance.Riel.GetComponent<SkillsController>();
-        skillsController.SetActiveSkillStrategies(skills);
-        StartRun();
-    }
 
     void Start()
     {
         OnRoomComplete.AddListener(SpawnNextRoom);
-        GenerateCriticalPath();
         EntityManager.Instance.OnEnemyDied.AddListener(OnEnemyDeath);
-
-        if (SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart)
-        {
-            
-            _draftUI.OnDraftConfirmed += OnDraftConfirmed;
-            _draftUI.Show();
-        } else
-        {
-            _draftUI.Hide();
-            StartRun();
-        }
+        GenerateCriticalPath();
     }
 
-    private void StartRun()
+
+
+    public void StartRun(List<SkillData> skills)
     {
         Sequence startSeq = DOTween.Sequence();
         startSeq.AppendInterval(2f);
@@ -135,7 +119,7 @@ public class RunSystemController : MonoBehaviour
             SpawnNextRoom();
             var w = Rooms[0];
             var pos = w.position + w.room.GetSpawnPoint().transform.position;
-            GameManager.Instance.SpawnRiel(pos.WithY(SettingsManager.Instance.GameplaySettings.YSpawnOffset));
+            GameManager.Instance.SpawnRiel(pos.WithY(SettingsManager.Instance.GameplaySettings.YSpawnOffset), skills);
             });
     }
 

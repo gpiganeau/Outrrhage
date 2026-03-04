@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7223640544631835552
 Transform:
   m_ObjectHideFlags: 0
@@ -284,7 +284,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1158,40 +1158,40 @@ MonoBehaviour:
     sequencer: {fileID: 0}
     entry: 2
     type: 0
-  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: -32, y: 0, z: 0}
+  - room: {fileID: 9194013458221197619, guid: e97ec187eefec214ba55ae2763de6449, type: 3}
+    position: {x: 0, y: 0, z: -32}
     sequencer: {fileID: 11400000, guid: 11d04481548239441b7ed5d433ee5495, type: 2}
-    entry: 3
+    entry: 2
     type: 1
-  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: -32, y: 0, z: 32}
+  - room: {fileID: 9194013458221197619, guid: 0eb1db02e6f30f14aa8c3b7dc16611f3, type: 3}
+    position: {x: 0, y: 0, z: -64}
     sequencer: {fileID: 11400000, guid: 69ce3a9d819655e4faa5af107e2091e1, type: 2}
-    entry: 0
+    entry: 2
     type: 1
-  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 0, y: 0, z: 32}
+  - room: {fileID: 9194013458221197619, guid: fa3f444269bf6434083b9e4fde02c4d3, type: 3}
+    position: {x: 0, y: 0, z: -96}
     sequencer: {fileID: 11400000, guid: 3a51faac0c50a9e42a47e65e6ceab425, type: 2}
-    entry: 1
+    entry: 2
     type: 1
-  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 0, y: 0, z: 64}
+  - room: {fileID: 9194013458221197619, guid: 492143fefee901440a01b1db93fe97ba, type: 3}
+    position: {x: -32, y: 0, z: -96}
     sequencer: {fileID: 11400000, guid: e66e0488b58daf240ab0e175700034a5, type: 2}
-    entry: 0
-    type: 1
-  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: -32, y: 0, z: 64}
-    sequencer: {fileID: 11400000, guid: 5f11168babafdc0489aef330828a8fb0, type: 2}
     entry: 3
     type: 1
-  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: -32, y: 0, z: 96}
+  - room: {fileID: 9194013458221197619, guid: 46a95003f498e174d8d183541876b096, type: 3}
+    position: {x: -32, y: 0, z: -64}
+    sequencer: {fileID: 11400000, guid: 5f11168babafdc0489aef330828a8fb0, type: 2}
+    entry: 0
+    type: 1
+  - room: {fileID: 9194013458221197619, guid: 05c1b22ae3909bf48a22be0e849b0cbf, type: 3}
+    position: {x: -32, y: 0, z: -32}
     sequencer: {fileID: 0}
     entry: 0
     type: 1
   - room: {fileID: 9194013458221197619, guid: f98a71678d52eef43b8291f7d9c976ff, type: 3}
-    position: {x: -32, y: 0, z: 128}
+    position: {x: -64, y: 0, z: -32}
     sequencer: {fileID: 0}
-    entry: 0
+    entry: 3
     type: 2
   runSettings: {fileID: 11400000, guid: e5704da4f01a3c542809fd3bdda74a31, type: 2}
   BossColor: {r: 0.8584906, g: 0.72282165, b: 0.14173192, a: 1}
@@ -1199,28 +1199,27 @@ MonoBehaviour:
   HubColor: {r: 1, g: 0, b: 0.010103226, a: 1}
   _roomCount: 6
   _pathRooms:
-  - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-  - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-  - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-  - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-  - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-  - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
+  - {fileID: 9194013458221197619, guid: e97ec187eefec214ba55ae2763de6449, type: 3}
+  - {fileID: 9194013458221197619, guid: 0eb1db02e6f30f14aa8c3b7dc16611f3, type: 3}
+  - {fileID: 9194013458221197619, guid: fa3f444269bf6434083b9e4fde02c4d3, type: 3}
+  - {fileID: 9194013458221197619, guid: 492143fefee901440a01b1db93fe97ba, type: 3}
+  - {fileID: 9194013458221197619, guid: 46a95003f498e174d8d183541876b096, type: 3}
+  - {fileID: 9194013458221197619, guid: 05c1b22ae3909bf48a22be0e849b0cbf, type: 3}
   _bossRoom: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   _currentRoom: {fileID: 0}
-  _pathDirections: 03000000000000000100000000000000030000000000000000000000
+  _pathDirections: 02000000020000000200000003000000000000000000000003000000
   _spawnPositions:
-  - {x: -32, y: 0, z: 0}
-  - {x: -32, y: 0, z: 32}
-  - {x: 0, y: 0, z: 32}
-  - {x: 0, y: 0, z: 64}
-  - {x: -32, y: 0, z: 64}
-  - {x: -32, y: 0, z: 96}
-  - {x: -32, y: 0, z: 128}
+  - {x: 0, y: 0, z: -32}
+  - {x: 0, y: 0, z: -64}
+  - {x: 0, y: 0, z: -96}
+  - {x: -32, y: 0, z: -96}
+  - {x: -32, y: 0, z: -64}
+  - {x: -32, y: 0, z: -32}
+  - {x: -64, y: 0, z: -32}
   OnRoomComplete:
     m_PersistentCalls:
       m_Calls: []
   _roomIndex: -1
-  _draftUI: {fileID: 890172605332085237}
 --- !u!1 &8023371236307701498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,8 +1255,8 @@ Transform:
   - {fileID: 1153804625445358559}
   - {fileID: 583821053384380442}
   - {fileID: 5020205923005821400}
-  - {fileID: 27518372910892365}
   - {fileID: 5453710491856542334}
+  - {fileID: 27518372910892365}
   - {fileID: 1675180955639725790}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1330,6 +1329,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2386842270770891958}
     m_Modifications:
+    - target: {fileID: 2013209625601621908, guid: 3560dd5ad9c64b841bbd5a64fd08fb52, type: 3}
+      propertyPath: _draftUI
+      value: 
+      objectReference: {fileID: 890172605332085237}
     - target: {fileID: 2013209625601621908, guid: 3560dd5ad9c64b841bbd5a64fd08fb52, type: 3}
       propertyPath: _rielPrefab
       value: 
@@ -1466,11 +1469,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5802968213718458444, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0
+      value: 0.05660379
       objectReference: {fileID: 0}
     - target: {fileID: 5802968213718458444, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0
+      value: 0.043427937
       objectReference: {fileID: 0}
     - target: {fileID: 5802968213718458444, guid: d4c26218eea26d748a91fb7ed4b7c81e, type: 3}
       propertyPath: m_BackGroundColor.r
