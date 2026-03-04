@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using DG.Tweening;
+using System.Collections;
 
 public class MeleeDashStrategy: SkillStrategy
 {
     private bool hasHitATarget = false;
     public BloodDrop bloopDropPrefab;
-
     MovementController cachedController;
 
     public override bool Call(MovementController movementController, Team team)
@@ -14,55 +14,71 @@ public class MeleeDashStrategy: SkillStrategy
 
         hasHitATarget = false;
         cachedController = movementController;
-        Vector3 firingDirection = movementController.GetFacingDirection();
 
+        Vector3 firingDirection = movementController.GetFacingDirection();
         movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
-        //movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
         movementController.SetImmobilized(true, "MeleeDashAttack");
         parentController.SetSkillsDisabled(true, "MeleeDashAttack");
         UseAimAssist(ref firingDirection, _storedSkillData.AimAssistRatio, team);
 
-        //Vector3 dashTarget = movementController.transform.position + firingDirection * 1.5f;
-        //movementController.transform.DOMove(dashTarget, 0.15f).SetEase(Ease.OutQuad);
-        //movementController.transform.DOMove(dashTarget, 0.1f).SetEase(Ease.OutCubic).OnComplete(() =>
-        movementController.Dash(
-        movementController.GetFacingDirection(),
-        _storedSkillData.movementDistance,
-        _storedSkillData.movementDuration,
-        _storedSkillData.ignoreCollisions,
-        onComplete: () => 
+        ProjectileData projectileData = new ProjectileData()
         {
-            ProjectileData projectileData = new ProjectileData()
+            startingPosition = movementController.transform.position + 2f * firingDirection,
+            origin = movementController.transform.position,
+            Damage = _storedSkillData.ProjectileDamage[0],
+            Lifetime = _storedSkillData.movementDuration, // Dure exactement le temps du dash
+            BloodStackingAmount = _storedSkillData.BloodStackingAmount,
+            Team = team,
+        };
+
+        Projectile spawnedProjectile = SpawnProjectile(projectileData, 0);
+        if (spawnedProjectile != null)
+            StartCoroutine(TrackCasterDuringDash(spawnedProjectile, movementController, firingDirection, _storedSkillData.movementDuration));
+
+        movementController.Dash(
+            movementController.GetFacingDirection(),
+            _storedSkillData.movementDistance,
+            _storedSkillData.movementDuration,
+            _storedSkillData.ignoreCollisions,
+            onComplete: () => 
             {
-                startingPosition = movementController.transform.position + 2f * firingDirection,
-                origin = movementController.transform.position,
-                Damage = _storedSkillData.ProjectileDamage[0],
-                Lifetime = _storedSkillData.ProjectileLifetime,
-                BloodStackingAmount = _storedSkillData.BloodStackingAmount,
-                Team = team,
-            };
+                movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
+                    DOVirtual.DelayedCall(_storedSkillData.ProjectileLifetime, PostLifetimeEffects);
+                    DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
+                    {
+                        parentController.SetSkillsDisabled(false, "MeleeDashAttack");
+                    });
+                    DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseStaticTimeOnSkillUse, () =>
+                    {
+                        movementController.SetImmobilized(false, "MeleeDashAttack");
+                    });
+                    PutInCooldown();
+                });
 
-            SpawnProjectile(projectileData, 0);
-			movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
-            DOVirtual.DelayedCall(_storedSkillData.ProjectileLifetime, PostLifetimeEffects);
-            DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
-            {
-                parentController.SetSkillsDisabled(false, "MeleeDashAttack");
-            });
-            DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseStaticTimeOnSkillUse, () =>
-            {
-                movementController.SetImmobilized(false, "MeleeDashAttack");
-            });
-            PutInCooldown();
-        });
-
-
-
-        return true;
-
+            return true;
     }
 
-    protected override void OnProjectileHit(Projectile projectile, DamageController damageController)
+    /// <summary>
+    /// Pendant toute la durée du dash, repositionne le projectile devant le caster chaque frame.
+    /// </summary>
+    private IEnumerator TrackCasterDuringDash(Projectile projectile, MovementController movementController, Vector3 initialDirection, float dashDuration)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < dashDuration && projectile != null && projectile.gameObject.activeInHierarchy)
+        {
+            // On utilise la direction initiale du dash pour garder la hitbox cohérente,
+            // mais tu peux remplacer par movementController.GetFacingDirection() si tu veux
+            // qu'elle tourne avec le personnage.
+            Vector3 offset = initialDirection * 2f;
+            projectile.transform.position = movementController.transform.position + offset;
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+        protected override void OnProjectileHit(Projectile projectile, DamageController damageController)
     {
         base.OnProjectileHit(projectile, damageController);
         StackBlood(projectile, damageController);
