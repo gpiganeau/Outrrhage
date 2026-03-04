@@ -91,10 +91,12 @@ public class AIActorComponent: PilotComponent, ISkillConstrainer, IJuicable
 
             if (debugCharacterComponent == null) return;
         } 
+
+        MovementContext context = new MovementContext(this.transform.position, debugCharacterComponent.transform.position, damageController.CurrentHealth);
+
         
         if(_movementStrategy != null)
         {
-            MovementContext context = new MovementContext(this.transform.position, debugCharacterComponent.transform.position, damageController.CurrentHealth);
             Vector3 movementDirection = _movementStrategy.GetMovementDirection(context);
             Vector3 facingDirection = _movementStrategy.GetFacingDirection(context);
             movementController.SetMovementDirection(movementDirection);
@@ -103,7 +105,7 @@ public class AIActorComponent: PilotComponent, ISkillConstrainer, IJuicable
 
         if (_attackStrategy != null)
         {
-            _attackStrategy.Tick();
+            _attackStrategy.Tick(context);
         }
     }
 

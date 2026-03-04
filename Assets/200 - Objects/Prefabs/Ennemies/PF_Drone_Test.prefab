@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SkillsController
   _team: 0
+  _maxSkillSlots: 5
 --- !u!136 &4702767116431961023
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -265,6 +266,9 @@ MonoBehaviour:
   blood:
     _currentAmount: 0
     _maxAmount: 0
+    OnBloodChanged:
+      m_PersistentCalls:
+        m_Calls: []
   display: {fileID: 8076903931507702970}
 --- !u!1 &4406070917620365164
 GameObject:
