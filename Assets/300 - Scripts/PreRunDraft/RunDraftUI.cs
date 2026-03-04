@@ -41,12 +41,14 @@ public class RunDraftUI : MonoBehaviour
         {
             var go = Instantiate(_skillButtonPrefab, _skillsContainer);
             go.GetComponentInChildren<TMP_Text>().text = skill.Name;
-            go.GetComponentInChildren<Image>().sprite = skill.Icon;
+            go.transform.Find("Label").GetComponent<TMP_Text>().text = skill.Name;
+            go.transform.Find("Icon").GetComponent<Image>().sprite = skill.Icon;
+            go.transform.Find("Icon").GetComponent<Image>().raycastTarget = false; // ← ici
 
             var btn = go.GetComponent<Button>();
             btn.onClick.AddListener(() => OnSkillPicked(skill));
         }
-        
+
         _confirmButton.onClick.AddListener(Confirm);
         _confirmButton.interactable = false;
 
@@ -58,8 +60,8 @@ public class RunDraftUI : MonoBehaviour
     public void Show()
     {
         _panel.SetActive(true);
-        _panel.transform.localScale = Vector3.zero;
-        _panel.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack);
+        //_panel.transform.localScale = Vector3.zero;
+        //_panel.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack);
         Time.timeScale = 0f;
     }
 
@@ -76,6 +78,8 @@ public class RunDraftUI : MonoBehaviour
 
     private void OnSkillPicked(SkillData skill)
     {
+        Debug.Log("Click");
+
         // Évite les doublons
         int existing = _selectedSkills.IndexOf(skill);
         if (existing != -1)

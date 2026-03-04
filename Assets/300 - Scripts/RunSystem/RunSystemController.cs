@@ -99,13 +99,6 @@ public class RunSystemController : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-
-        OnRoomComplete.AddListener(SpawnNextRoom);
-        GenerateCriticalPath();
-
-        _draftUI.OnDraftConfirmed += OnDraftConfirmed;
-        _draftUI.Show();
-        //StartRun();
     }
 
     private void OnDraftConfirmed(List<SkillData> skills)
@@ -115,7 +108,15 @@ public class RunSystemController : MonoBehaviour
         StartRun();
     }
 
-    void Start() => EntityManager.Instance.OnEnemyDied.AddListener(OnEnemyDeath);
+    void Start()
+    {
+        OnRoomComplete.AddListener(SpawnNextRoom);
+        GenerateCriticalPath();
+        _draftUI.OnDraftConfirmed += OnDraftConfirmed;
+        _draftUI.Show();
+        //StartRun();
+        EntityManager.Instance.OnEnemyDied.AddListener(OnEnemyDeath);
+    }
 
     private void StartRun()
     {

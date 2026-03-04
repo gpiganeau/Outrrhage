@@ -176,6 +176,8 @@ MonoBehaviour:
   - {fileID: 152896, guid: d17bc9c1cdef1c5448255edad31c1c61, type: 3}
   _spawnPoint: {fileID: 6201112104032362605}
   _cellsElementHolder: {fileID: 4534283859958084862}
+  generators: []
+  WallsPrefabs: []
   _cells: []
   _spawnChancePercentage: 1
 --- !u!1 &4824635752990540231
