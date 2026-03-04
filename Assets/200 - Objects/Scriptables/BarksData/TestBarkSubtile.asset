@@ -18,3 +18,4 @@ MonoBehaviour:
   ShowSubtitles: 1
   Text: Il faut <em>ABSOLUMENT</em> fuir, le <c=#FF4444>danger</c> approche.
   MainColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+  SubtitleBackgroundColor: {r: 0, g: 0, b: 0, a: 0.8980392}

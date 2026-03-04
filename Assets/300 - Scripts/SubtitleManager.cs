@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class SubtitleManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SubtitleManager : MonoBehaviour
     [Header("Refs")]
     [SerializeField] CanvasGroup _canvasGroup;
     [SerializeField] TextMeshProUGUI _label;
+    [SerializeField] Image _background;
 
     [Header("Typewriter")]
     [SerializeField] float _charsPerSecond = 40f;
@@ -24,6 +26,10 @@ public class SubtitleManager : MonoBehaviour
     [SerializeField] float _fadeInDuration = 0.15f;
     [SerializeField] float _fadeOutDuration = 0.3f;
 
+    [Header("Background")]
+    [SerializeField] Color _backgroundColor = new Color(0f, 0f, 0f, 0.6f);
+    [SerializeField] Vector2 _backgroundPadding = new Vector2(24f, 12f);
+
     Coroutine _typewriterCoroutine;
     Tween _fadeTween;
 
@@ -32,8 +38,17 @@ public class SubtitleManager : MonoBehaviour
         if (I == null) I = this;
         else Destroy(gameObject);
 
+        _background.color = _backgroundColor;
         _canvasGroup.alpha = 0f;
         _label.text = "";
+    }
+
+    void UpdateBackgroundSize()
+    {
+        if (_background == null) return;
+        _label.ForceMeshUpdate();
+        Vector2 textSize = _label.GetRenderedValues(onlyVisibleCharacters: false);
+        _background.rectTransform.sizeDelta = textSize + _backgroundPadding * 2f;
     }
 
     // ─── API publique ──────────────────────────────────────────────
@@ -44,6 +59,8 @@ public class SubtitleManager : MonoBehaviour
 
         StopAll();
 
+        _background.color = bark.SubtitleBackgroundColor;
+
         _fadeTween = _canvasGroup.DOFade(1f, _fadeInDuration);
         _typewriterCoroutine = StartCoroutine(TypewriterRoutine(bark));
     }
@@ -52,7 +69,11 @@ public class SubtitleManager : MonoBehaviour
     {
         StopAll();
         _fadeTween = _canvasGroup.DOFade(0f, _fadeOutDuration)
-            .OnComplete(() => _label.text = "");
+            .OnComplete(() => 
+            {
+                _label.text = "";
+                UpdateBackgroundSize();
+            });
     }
 
     // ─── Parsing ───────────────────────────────────────────────────
@@ -161,6 +182,8 @@ public class SubtitleManager : MonoBehaviour
             ? $"<color=#{hex}><b>{text}</b></color>"
             : $"<color=#{hex}>{text}</color>";
         _label.text += wrapped;
+
+        UpdateBackgroundSize();
     }
 
     IEnumerator EmphasisPop()
