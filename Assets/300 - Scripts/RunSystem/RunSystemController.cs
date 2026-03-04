@@ -85,7 +85,6 @@ public class RunSystemController : MonoBehaviour
 
     public GameRoom CurrentRoom => _currentRoom;
     [SerializeField] private int _roomIndex = 0;
-    bool _currentRoomSequenceOver = false;
 
     void Awake()
     {
@@ -254,7 +253,6 @@ public class RunSystemController : MonoBehaviour
         }
         
         // -- Cache
-        _currentRoomSequenceOver = false;
         _roomSequenceIndex = 0;
         _currentSequencer = seq;
 
@@ -267,7 +265,6 @@ public class RunSystemController : MonoBehaviour
 
         if (seq.AutoComplete)
         {
-            _currentRoomSequenceOver = true;
             RoomEnd();
         }
         
@@ -276,7 +273,7 @@ public class RunSystemController : MonoBehaviour
     public void OnEnemyDeath(EntityType type)
     {
         if (EntityManager.Instance.Bots.Count > 1) return;
-        CurrentSeqStepIn();
+        CurrentSeqStepIn(); 
     }
 
     private void CurrentSeqStepIn()
@@ -293,15 +290,14 @@ public class RunSystemController : MonoBehaviour
 
         } else
         {
-            _currentRoomSequenceOver = true;
+            QueryRoomEnd(true);
         }
     }
 
 
-    public bool QueryRoomEnd()
+    public bool QueryRoomEnd(bool ByPassEnemyCount = false)
     {
-        if (!_currentRoomSequenceOver) return false;
-        if (EntityManager.Instance.Bots.Count > 0) return false;
+        if (EntityManager.Instance.Bots.Count > 0 && !ByPassEnemyCount) return false;
         return RoomEnd();
     }
 
@@ -321,7 +317,7 @@ public class RunSystemController : MonoBehaviour
             CreateRoom(Rooms[_roomIndex]);
         } else
         {
-            GameManager.Instance.TriggerGameEnd();
+            GameManager.Instance.TriggerDemoEnd();
         }
     }
 

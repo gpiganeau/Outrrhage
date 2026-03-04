@@ -46,11 +46,6 @@ public class EntityManager : MonoBehaviour
         {
             OnEnemyDied?.Invoke(bot.EntityType);
         }
-
-        if (GameManager.Instance.CurrentGameMode == GameManager.GameMode.Rooms)
-        {
-            GameManager.Instance.CheckForRoomEnd();
-        }   
     }
 
     public void SpawnCustomActor(AIActorComponent actor, float radius)

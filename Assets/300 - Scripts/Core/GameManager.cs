@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -7,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
+    #region Fields
     public static GameManager Instance;
 
     public enum GameMode { Forest, Rooms }
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
     private static bool _gameOver = false;
     public static bool GameOver { get => _gameOver; set => _gameOver = value;}
 
+    #endregion
+
     public void Awake()
     {
         if (Instance == null) Instance = this;
@@ -55,19 +58,13 @@ public class GameManager : MonoBehaviour
         OnGameStart.Invoke();
     }
 
-    public void CheckForRoomEnd()
-    {
-       RunSystemController.Instance.QueryRoomEnd();
-    }
-
-
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    internal void TriggerGameEnd()
+    public void TriggerDemoEnd()
     {
-        Logger.Core("GAME END");
+        Logger.Core("Demo End");
     }
 }
