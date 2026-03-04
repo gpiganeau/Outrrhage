@@ -303,7 +303,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5959713299655096661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 11d04481548239441b7ed5d433ee5495, type: 2}
+        m_TargetAssemblyTypeName: RoomSequencer, Assembly-CSharp
+        m_MethodName: ZZ_LogDebug
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5959713299655096661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1072807865, guid: d7d68dcb3e97b94488cf3a15109ed085, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

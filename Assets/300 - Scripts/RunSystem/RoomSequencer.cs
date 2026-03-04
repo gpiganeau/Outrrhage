@@ -101,6 +101,11 @@ public class RoomSequencer : ScriptableObject
         AudioManager.Instance.PlayRandomMusic();
     }
 
+    public void ZZ_LogDebug()
+    {
+        Logger.Core("DEBUG");
+    }
+
     #endregion
 }
 
