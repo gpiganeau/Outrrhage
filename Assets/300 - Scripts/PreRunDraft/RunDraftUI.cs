@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.InputSystem;
 
 public class RunDraftUI : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class RunDraftUI : MonoBehaviour
     [Header("Skills Grid")]
     [SerializeField] private Transform _skillsContainer;
     [SerializeField] private GameObject _skillButtonPrefab; // simple prefab : Button + Image + TMP_Text
+
+    [SerializeField] private GameObject _pauseMenu;
 
 
     void Awake()
@@ -57,18 +60,32 @@ public class RunDraftUI : MonoBehaviour
             _selectedSkills.Add(null);
     }
 
+    void Update()
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            var pointerData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current);
+            pointerData.position = Mouse.current.position.ReadValue();
+            var results = new List<UnityEngine.EventSystems.RaycastResult>();
+            UnityEngine.EventSystems.EventSystem.current.RaycastAll(pointerData, results);
+            foreach (var r in results)
+                Debug.Log("Hit: " + r.gameObject.name);
+        }
+    }
+
     public void Show()
     {
         _panel.SetActive(true);
         //_panel.transform.localScale = Vector3.zero;
         //_panel.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack);
         Time.timeScale = 0f;
+
+        if (_pauseMenu != null) _pauseMenu.SetActive(false);
     }
 
     public void Hide()
     {
-        _panel.SetActive(false);
-        Time.timeScale = 1.0f;
+        Confirm();
     }
 
     // ── Logique ────────────────────────────────────────────────────
@@ -132,6 +149,7 @@ public class RunDraftUI : MonoBehaviour
             {
                 _panel.SetActive(false);
                 Time.timeScale = 1f;
+                if (_pauseMenu != null) _pauseMenu.SetActive(true);
                 OnDraftConfirmed?.Invoke(_selectedSkills);
             });
     }

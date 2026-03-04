@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameplaySettings
   baseStaticTimeOnSkillUse: 0.2
   baseMinTimeBetweenSkills: 0.2
-  spawnerTimeBetweenSpawns: 0.5
   BloodDispersionRadius: 1.5
   LossRageAmount: 1
   LossRageTick: 1
   DeathTimeBeforeReload: 3
   ClearRoomOnDeath: 1
+  spawnerTimeBetweenSpawns: 0.5
   YSpawnOffset: 0.8
   OpenSkillSelectorOnRunStart: 0
