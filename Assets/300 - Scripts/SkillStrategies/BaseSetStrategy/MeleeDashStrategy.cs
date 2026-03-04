@@ -17,16 +17,20 @@ public class MeleeDashStrategy: SkillStrategy
         Vector3 firingDirection = movementController.GetFacingDirection();
 
         movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
-        movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
-
+        //movementController.Dash(movementController.GetFacingDirection(), _storedSkillData.movementDistance, _storedSkillData.movementDuration, _storedSkillData.ignoreCollisions);
         movementController.SetImmobilized(true, "MeleeDashAttack");
         parentController.SetSkillsDisabled(true, "MeleeDashAttack");
-
         UseAimAssist(ref firingDirection, _storedSkillData.AimAssistRatio, team);
 
-        Vector3 dashTarget = movementController.transform.position + firingDirection * 1.5f;
+        //Vector3 dashTarget = movementController.transform.position + firingDirection * 1.5f;
         //movementController.transform.DOMove(dashTarget, 0.15f).SetEase(Ease.OutQuad);
-        movementController.transform.DOMove(dashTarget, 0.1f).SetEase(Ease.OutCubic).OnComplete(() =>
+        //movementController.transform.DOMove(dashTarget, 0.1f).SetEase(Ease.OutCubic).OnComplete(() =>
+        movementController.Dash(
+        movementController.GetFacingDirection(),
+        _storedSkillData.movementDistance,
+        _storedSkillData.movementDuration,
+        _storedSkillData.ignoreCollisions,
+        onComplete: () => 
         {
             ProjectileData projectileData = new ProjectileData()
             {
@@ -40,8 +44,6 @@ public class MeleeDashStrategy: SkillStrategy
 
             SpawnProjectile(projectileData, 0);
 			movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
-
-
             DOVirtual.DelayedCall(_storedSkillData.ProjectileLifetime, PostLifetimeEffects);
             DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseMinTimeBetweenSkills, () =>
             {

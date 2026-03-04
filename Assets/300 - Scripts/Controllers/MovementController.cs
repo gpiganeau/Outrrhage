@@ -123,11 +123,13 @@ public class MovementController: MonoBehaviour, IAnimatable
 
     #region Movement Effects
 
-    public void Dash(Vector3 direction, float dashDistance, float dashDuration, bool ignoreCollisions)
+    public void Dash(Vector3 direction, float dashDistance, float dashDuration, bool ignoreCollisions, System.Action onComplete = null)
     {
         SetImmobilized(true, "Dash");
         Vector3 dashVector = direction.normalized * dashDistance;
         float timeScale = 1f;
+        
+
         if(!ignoreCollisions){
             RaycastHit hit;
             if (Physics.Raycast(_rigidbody.position, dashVector, out hit, dashDistance))
@@ -138,6 +140,7 @@ public class MovementController: MonoBehaviour, IAnimatable
             _rigidbody.DOMove(_rigidbody.position + dashVector, dashDuration * timeScale).SetEase(Ease.OutQuad).OnComplete(() =>
             {
                 SetImmobilized(false, "Dash");
+                onComplete?.Invoke();
             });
         }
         else
@@ -154,6 +157,7 @@ public class MovementController: MonoBehaviour, IAnimatable
             {
                 _rigidbody.detectCollisions = true;
                 SetImmobilized(false, "Dash");
+                onComplete?.Invoke();
             });
         }
     }
