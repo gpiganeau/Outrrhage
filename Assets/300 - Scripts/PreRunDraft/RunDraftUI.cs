@@ -71,6 +71,9 @@ public class RunDraftUI : MonoBehaviour
 
     private void OnSlotClicked(int slotIndex)
     {
+
+        Debug.Log("On Slot Clicked Top! ");
+
         _activeSlot = slotIndex;
         for (int i = 0; i < _slots.Count; i++)
             _slots[i].SetHighlight(i == _activeSlot);

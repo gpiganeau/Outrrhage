@@ -112,10 +112,19 @@ public class RunSystemController : MonoBehaviour
     {
         OnRoomComplete.AddListener(SpawnNextRoom);
         GenerateCriticalPath();
-        _draftUI.OnDraftConfirmed += OnDraftConfirmed;
-        _draftUI.Show();
-        //StartRun();
         EntityManager.Instance.OnEnemyDied.AddListener(OnEnemyDeath);
+
+        if (SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart)
+        {
+            
+            _draftUI.OnDraftConfirmed += OnDraftConfirmed;
+            _draftUI.Show();
+        } else
+        {
+            StartRun();
+        }
+
+
     }
 
     private void StartRun()

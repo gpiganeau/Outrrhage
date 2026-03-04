@@ -21,4 +21,4 @@ MonoBehaviour:
   DeathTimeBeforeReload: 3
   ClearRoomOnDeath: 1
   YSpawnOffset: 0.8
-  OpenSkillSelectorOnRunStart: 1
+  OpenSkillSelectorOnRunStart: 0
