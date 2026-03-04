@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90b4f106e0d7ce4b87b7cc28ea5675c, type: 3}
+  m_Name: AISD_BossPhase1
+  m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
+  Name: Atham
+  maxHealth: 50
+  movementSpeed: 3
+  maxBloodStack: 10
+  team: 2
+  startingSkillSet:
+  - {fileID: 11400000, guid: efdc6b511802c5444a493a94a3b03aca, type: 2}
+  - {fileID: 11400000, guid: 66bc4fb58cd160b48b34bf2248bf7a8b, type: 2}
+  LootOnDeath: 0
+  _itemsLootsOnDeath: []
+  LootBloodOnDeath: 1
+  BaseBloodDrop: 0
+  BloodPrefab: {fileID: 5115976658195506498, guid: 4c627e869fdc5114a9fa3b680d12b4e5, type: 3}
+  BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
+  HitClip:
+  - {fileID: 8300000, guid: 759d73331a3d2cd4fa225db8995a40cd, type: 3}
+  DeathClip:
+  - {fileID: 8300000, guid: 67f8d2dbf3acf4743b061e12797136c8, type: 3}
+  HealClip: []
+  movementSetupData: {fileID: 11400000, guid: fa8d22d8f1765b74ebf07668146d9d6f, type: 2}
+  attackSetupData: {fileID: 11400000, guid: 78662d13ef711dc4f8ac96631f55d6f5, type: 2}
+  entityType: 0
+  TimeBeforeBrainActivation: 0.5
