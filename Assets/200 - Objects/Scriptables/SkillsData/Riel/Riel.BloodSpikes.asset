@@ -18,14 +18,14 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
   Name: Epines sanglantes
   Description: Tuez vos ennemis en rythme !
-  Cooldown: 1.5
+  Cooldown: 2
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 1
   Radius: 20
   ProjectileRange: 15
   ProjectileSpeed: 35
-  ProjectileDamage: 010000000000000001000000
+  ProjectileDamage: 010000000100000001000000
   ProjectileLifetime: 3
   numberOfProjectiles: 1
   TravelMode: 2

@@ -18,14 +18,14 @@ MonoBehaviour:
   Name: Charge
   Description: Une attaque de melee, Riel dash sur l'ennemi pour le blesser en le
     touchant
-  Cooldown: 1.5
+  Cooldown: 3
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 1
   Radius: 0
   ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 0100000001000000
+  ProjectileDamage: 02000000
   ProjectileLifetime: 0.5
   numberOfProjectiles: 0
   TravelMode: 3
@@ -52,10 +52,7 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 0}
-    castSound: {fileID: 8300000, guid: 7281a89dbec87f24b81477c75435d299, type: 3}
-    projectileSound: {fileID: 8300000, guid: f4ea492d23ca38d4d902b0a1ab3752e3, type: 3}
-    impactSound: {fileID: 8300000, guid: 029da9c84c5afd840b0e105e5cabacea, type: 3}
-  castClips: []
-  hitClips: []
+  skillCastClips: []
+  skillHitClips: []
   UseSubSkill: 0
   SubSkill: {fileID: 0}

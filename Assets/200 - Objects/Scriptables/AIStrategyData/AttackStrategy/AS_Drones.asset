@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33e9fbbc30a9de44697b0612170e2685, type: 3}
-  m_Name: AS_Humanoid
+  m_Name: AS_Drones
   m_EditorClassIdentifier: Assembly-CSharp::AttackStrategyDistantProjectile
   attackStrategyScript: {fileID: 792553262800970159, guid: 569600c172b62f346a7deb4c13b4c05e, type: 3}
   AttackSettings:
   - AttackNameToHelpDesigner: Dash
-    TimeToAttack: 1
+    MinimumDistanceToRiel: 3
+    StopWhenAttacking: 0
+    StopDuration: 0
+  - AttackNameToHelpDesigner: Explosive Shot
     MinimumDistanceToRiel: 5
     StopWhenAttacking: 1
     StopDuration: 1
+  TimeToNextSkill: 1

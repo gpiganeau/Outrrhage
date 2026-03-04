@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 006bce24beec7824d9edeb2547c5af6b, type: 3}
-  m_Name: NewMoveStayInRangeOfPlayerSetupData
+  m_Script: {fileID: 11500000, guid: 9d8a20c59a55cef4b9d16a57e1dd7c17, type: 3}
+  m_Name: AIMS_Humanoid
   m_EditorClassIdentifier: Assembly-CSharp::MoveStayInRangeOfPlayerSetupData
-  movementStrategyScript: {fileID: 3969683080146463090, guid: 234de1d9ec52d1b4580aa37494312610, type: 3}
-  minDistanceFromPlayer: 5
-  maxDistanceFromPlayer: 10
+  movementStrategyScript: {fileID: 178470214349617499, guid: 234de1d9ec52d1b4580aa37494312610, type: 3}
+  minDistanceFromPlayer: 0
+  maxDistanceFromPlayer: 4
   palliers:
+  - SwitchAtHp: 3
+    MinMaxDistanceToPlayer: {x: 4, y: 6}
   - SwitchAtHp: 1
-    MinMaxDistanceToPlayer: {x: 8, y: 10}
+    MinMaxDistanceToPlayer: {x: 6, y: 10}

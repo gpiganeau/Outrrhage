@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: AIMS_Drones
   m_EditorClassIdentifier: Assembly-CSharp::MoveStayInRangeOfPlayerSetupData
   movementStrategyScript: {fileID: 178470214349617499, guid: 234de1d9ec52d1b4580aa37494312610, type: 3}
-  minDistanceFromPlayer: 1
-  maxDistanceFromPlayer: 6
+  minDistanceFromPlayer: 0
+  maxDistanceFromPlayer: 4
   palliers:
   - SwitchAtHp: 1
-    MinMaxDistanceToPlayer: {x: 8, y: 10}
+    MinMaxDistanceToPlayer: {x: 5, y: 8}

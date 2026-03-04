@@ -17,14 +17,14 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 83b0d9a89238ffd49a66bcbaf8f25964, type: 3}
   Name: Vague de sang
   Description: Petite vague de sang
-  Cooldown: 3
+  Cooldown: 7
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 1
   Radius: 0
   ProjectileRange: 6
   ProjectileSpeed: 12
-  ProjectileDamage: 01000000010000000100000001000000
+  ProjectileDamage: 04000000
   ProjectileLifetime: 1
   numberOfProjectiles: 8
   TravelMode: 0
@@ -51,10 +51,7 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 4993486111714875449, guid: 914b859b3d6d7124e8cdbb17523d291f, type: 3}
-    castSound: {fileID: 0}
-    projectileSound: {fileID: 0}
-    impactSound: {fileID: 0}
-  castClips: []
-  hitClips: []
+  skillCastClips: []
+  skillHitClips: []
   UseSubSkill: 0
   SubSkill: {fileID: 0}

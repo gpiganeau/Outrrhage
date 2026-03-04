@@ -17,14 +17,14 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
   Name: Griffe de sang
   Description: Slash & Clash !
-  Cooldown: 3.5
+  Cooldown: 2
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 1
   Radius: 10
   ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 010000000100000001000000
+  ProjectileDamage: 03000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
@@ -38,7 +38,7 @@ MonoBehaviour:
   IsRielSpecificSkill: 1
   BloodCost: 1
   DropBloodOnFailedSkill: 1
-  RageGain: 15
+  RageGain: 5
   BloodStackingAmount: 1
   Icon: {fileID: 599998471, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
@@ -51,10 +51,7 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 4993486111714875449, guid: 914b859b3d6d7124e8cdbb17523d291f, type: 3}
-    castSound: {fileID: 0}
-    projectileSound: {fileID: 0}
-    impactSound: {fileID: 0}
-  castClips: []
-  hitClips: []
+  skillCastClips: []
+  skillHitClips: []
   UseSubSkill: 0
   SubSkill: {fileID: 0}
