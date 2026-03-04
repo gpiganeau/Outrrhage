@@ -60,19 +60,6 @@ public class RunDraftUI : MonoBehaviour
             _selectedSkills.Add(null);
     }
 
-    void Update()
-    {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            var pointerData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current);
-            pointerData.position = Mouse.current.position.ReadValue();
-            var results = new List<UnityEngine.EventSystems.RaycastResult>();
-            UnityEngine.EventSystems.EventSystem.current.RaycastAll(pointerData, results);
-            foreach (var r in results)
-                Debug.Log("Hit: " + r.gameObject.name);
-        }
-    }
-
     public void Show()
     {
         _panel.SetActive(true);

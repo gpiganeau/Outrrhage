@@ -39,7 +39,7 @@ public class RespawnPoint : MonoBehaviour
         if (!HasStartRun)
         {
             HasStartRun = true;
-            RunSystemController.Instance.QueryRoomEnd();
+            RunSystemController.Instance.QueryRoomEnd(true);
         }
     }
 

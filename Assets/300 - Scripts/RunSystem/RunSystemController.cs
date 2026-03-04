@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine.Events;
 using System;
 using DG.Tweening;
+using System.Collections;
 
 public enum PathDirection { North, East, South, West }
 
@@ -16,12 +17,11 @@ public class RunSystemController : MonoBehaviour
     [Serializable]
     private class RoomWrapper
     {
-        public GameRoom room;
+        public GameRoom room; // -- prefab ref
         public Vector3 position;
         public RoomSequencer sequencer;
         public PathDirection entry;
         public RoomType type = RoomType.Normal;
-
         public RoomWrapper(GameRoom room, Vector3 pos, RoomSequencer sequencer, PathDirection entrance, RoomType type)
         {
             this.room = room;
@@ -336,12 +336,28 @@ public class RunSystemController : MonoBehaviour
         {
             _roomIndex++;
             CreateRoom(Rooms[_roomIndex]);
+            //StartCoroutine(CreateRoomAsync(Rooms[_roomIndex]));
         } else
         {
             GameManager.Instance.TriggerDemoEnd();
         }
     }
 
+    private IEnumerator CreateRoomAsync(RoomWrapper wrapper)
+    {
+        if (CURRENT_CALL >= MAX_ROOM_CALL) yield break;
+        CURRENT_CALL++;
+
+        yield return null;
+
+        _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
+        
+        yield return null;
+        
+        _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
+        OpenEntrance(_currentRoom.transform.position, wrapper.entry);
+        StartRoomSequenceManual(_currentRoom.customRoomSequencer);
+    }
 
     private void CreateRoom(RoomWrapper wrapper)
     {
@@ -350,7 +366,7 @@ public class RunSystemController : MonoBehaviour
 
         _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
         _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
-        OpenEntrance(_currentRoom.transform.position, wrapper.entry);
+        //OpenEntrance(_currentRoom.transform.position, wrapper.entry);
         StartRoomSequenceManual(_currentRoom.customRoomSequencer);
     }
 
