@@ -40,7 +40,7 @@ public class SkillDatabase : ScriptableObject
         
         EditorUtility.SetDirty(this);
         
-        Debug.Log($"SkillDatabase refreshed: {_allSkills.Count} skills found in {_skillsFolderPath}");
+        //Debug.Log($"SkillDatabase refreshed: {_allSkills.Count} skills found in {_skillsFolderPath}");
     }
     
     private void OnValidate()
