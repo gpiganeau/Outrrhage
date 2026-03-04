@@ -35,6 +35,9 @@ public class MoveStayInRangeOfPlayerStrategy: MovementStrategy
 
     private void RecomputeDistances(MovementContext c)
     {
+
+        if (palliers == null) return;
+        
         foreach (var p in palliers)
         {
             if (p.SwitchAtHp == c.currentHealth)
