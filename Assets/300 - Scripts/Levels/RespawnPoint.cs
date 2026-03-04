@@ -14,6 +14,9 @@ public class RespawnPoint : MonoBehaviour
 
     [SerializeField] private bool _safeZone = false;
 
+    [Header("Custom for HUB")]
+    public bool HasStartRun = false;
+
     private void Awake()
     {
         _collider = GetComponent<SphereCollider>();
@@ -30,6 +33,16 @@ public class RespawnPoint : MonoBehaviour
             CharacterComponent.Blood.Regain(100);
         }
     }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (!HasStartRun)
+        {
+            HasStartRun = true;
+            RunSystemController.Instance.QueryRoomEnd();
+        }
+    }
+
     void OnValidate()
     {
         if (_collider == null) _collider = GetComponent<SphereCollider>();

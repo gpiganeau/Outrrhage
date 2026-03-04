@@ -15,6 +15,7 @@ public class Juicer : MonoBehaviour
     private Vignette vignette;
     private ChromaticAberration chromaticAberration;
     private ColorAdjustments colorAdjustments;
+    private LensDistortion lensDistortion;
     
     [Header("Camera Shake")]
     public Camera mainCamera;
@@ -44,6 +45,7 @@ public class Juicer : MonoBehaviour
             globalVolume.profile.TryGet(out vignette);
             globalVolume.profile.TryGet(out chromaticAberration);
             globalVolume.profile.TryGet(out colorAdjustments);
+            globalVolume.profile.TryGet(out lensDistortion);
         }
     }
 
@@ -278,9 +280,10 @@ public class Juicer : MonoBehaviour
         DOTween.Kill("RageControl");
         
         DOTween.Sequence().SetId("RageControl")
-            .AppendCallback(() => SetTimeScale(1.2f)) // légère accélération
+            .AppendCallback(() => SetTimeScale(1.2f))
             .Append(DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, settings.RageVignetteIntensity, duration * 0.1f))
             .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, settings.RageUseColorAdjustement ? settings.PlayerRageColor : Color.white, duration * 0.1f))
+            .Join(DOTween.To(() => lensDistortion.intensity.value, x => lensDistortion.intensity.value = x, settings.RageLensDistortionIntensity, duration * 0.1f))
             .SetUpdate(false);
     }
 
@@ -294,7 +297,8 @@ public class Juicer : MonoBehaviour
             .AppendCallback(() => ResetTimeScale())
             .Append(DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, 0f, duration))
             .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, Color.white, duration))
-            .AppendCallback(() => PulseChromaticAberration(1f, 0.4f)); // petit pop de sortie
+            .Join(DOTween.To(() => lensDistortion.intensity.value, x => lensDistortion.intensity.value = x, 0f, duration))
+            .AppendCallback(() => PulseChromaticAberration(1f, 0.4f));
     }
     /// <summary>Effet générique de hit sur les AI Actor Components</summary>
     public void EnemyDamagedImpact(float intensity = 0.3f, List<Renderer> renderers = null)

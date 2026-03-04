@@ -51,4 +51,5 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  AutoComplete: 1
+  AutoComplete: 0
+  affectedRoom: {fileID: 0}

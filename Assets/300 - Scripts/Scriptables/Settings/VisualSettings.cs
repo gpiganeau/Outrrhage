@@ -13,6 +13,7 @@ public class VisualSettings : ScriptableObject
 
     [Header("Rage")]
     [Range(0.1f, 1f)] public float RageVignetteIntensity = 0.6f;
+    [Range(-1, 1)] public float RageLensDistortionIntensity = - 0.3f;
     public bool RageUseColorAdjustement = false;
 
     [Header("Subtitles")]

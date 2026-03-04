@@ -1784,6 +1784,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9218254211213612658, guid: a5f3d0d9a40ba384aa38353e90242859, type: 3}
+      propertyPath: _safeZone
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218254211213612658, guid: a5f3d0d9a40ba384aa38353e90242859, type: 3}
       propertyPath: _safeRadius
       value: 8
       objectReference: {fileID: 0}
