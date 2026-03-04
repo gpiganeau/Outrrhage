@@ -17,11 +17,7 @@ public class SkillVFXController : MonoBehaviour
 
         Vector3 spawnPos = caster.position + skillData.vfxData.castVFXOffset;
         
-        // Sound
-        if (skillData.vfxData.castSound != null)
-        {
-            AudioManager.Instance.PlayClipAtPoint(skillData.vfxData.castSound, spawnPos, SoundGroup.SFX);
-        }
+
 
         if (skillData.vfxData.castVFXPrefab == null) return null;
         
@@ -62,15 +58,7 @@ public class SkillVFXController : MonoBehaviour
         GameObject trailVFX = Instantiate(skillData.vfxData.projectileTrailVFXPrefab, 
                                           projectile.transform);
                 
-        // Sound
-        if (skillData.vfxData.projectileSound != null)
-        {
-            AudioSource source = projectile.GetComponent<AudioSource>();
-            if (source == null) source = projectile.AddComponent<AudioSource>();
-            source.clip = skillData.vfxData.projectileSound;
-            source.loop = true;
-            source.Play();
-        }
+
     }
     
     // === IMPACT VFX ===
@@ -82,11 +70,6 @@ public class SkillVFXController : MonoBehaviour
         GameObject impactVFX = Instantiate(skillData.vfxData.projectileImpactVFXPrefab, 
                                            position, rotation);
                 
-        // Sound
-        if (skillData.vfxData.impactSound != null)
-        {
-            AudioManager.Instance.PlayClipAtPoint(skillData.vfxData.impactSound, position, SoundGroup.SFX);
-        }
 
         return impactVFX;
     }

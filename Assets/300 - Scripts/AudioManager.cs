@@ -34,7 +34,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayClipAtPoint(AudioClip clip, Vector3 pos, SoundGroup group = SoundGroup.Global)
     {
-        AudioSource.PlayClipAtPoint(clip, pos, GetVolume(group));
+        if (clip != null) AudioSource.PlayClipAtPoint(clip, pos, GetVolume(group));
     }
 
     private float GetVolume(SoundGroup group)

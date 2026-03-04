@@ -18,9 +18,4 @@ public class SkillVFXData
     
     [Header("Hit VFX")]
     public GameObject hitVFXPrefab;
-    
-    [Header("Sound")]
-    public AudioClip castSound;
-    public AudioClip projectileSound;
-    public AudioClip impactSound;
 }

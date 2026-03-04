@@ -29,6 +29,25 @@ MonoBehaviour:
   BaseBloodDrop: 0
   BloodPrefab: {fileID: 0}
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
+  HitClip:
+  - {fileID: 8300000, guid: 2ef15fcb79feee641a7692d18bdae9d4, type: 3}
+  - {fileID: 8300000, guid: 941aa089d2e1bf3419ff96ec8afef313, type: 3}
+  - {fileID: 8300000, guid: 759d73331a3d2cd4fa225db8995a40cd, type: 3}
+  - {fileID: 8300000, guid: 0dd6d9b4d6031dc4b912df348c2f5bad, type: 3}
+  - {fileID: 8300000, guid: c034bf16551e69047bea9547989cb114, type: 3}
+  - {fileID: 8300000, guid: 1951ad64e1d57ea4aab7479954fc1c35, type: 3}
+  - {fileID: 8300000, guid: b0e611e778bec244286847b30f95e697, type: 3}
+  - {fileID: 8300000, guid: 9ea84b93461bc8e49825698cdf914f58, type: 3}
+  AttackClip:
+  - {fileID: 0}
+  CastClip:
+  - {fileID: 8300000, guid: 83838d25f1acabc47a99dc4006f6fa11, type: 3}
+  DeathClip:
+  - {fileID: 8300000, guid: 2652ed889dd258844879c85e9e2b940e, type: 3}
+  HealClip:
+  - {fileID: 8300000, guid: 68ec6031bd80d15408de5ec04361cb98, type: 3}
   maxBlood: 10
   maxRage: 100
   RageDuration: 10
+  RagerEnterClip: []
+  RageExitClip: []

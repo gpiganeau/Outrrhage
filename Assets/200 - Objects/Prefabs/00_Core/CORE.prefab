@@ -196,6 +196,10 @@ MonoBehaviour:
   Riel: {fileID: 0}
   Bots: []
   SpawnFXPrefab: {fileID: 6862081939587630824, guid: a5c692c20671ec043bc558abf0886ebd, type: 3}
+  SpawnsClip:
+  - {fileID: 8300000, guid: a081e98f5414fc546a7701553a8a4ddc, type: 3}
+  - {fileID: 8300000, guid: 5e88feb794bdf1e4aa3dbc29cd9ee740, type: 3}
+  - {fileID: 8300000, guid: ced08d56a75f3844e9c33902a977bf39, type: 3}
   enemyPrefabs:
   - {fileID: 3064940305099015597, guid: 113f912f4791ee84bba7288091a2815f, type: 3}
   - {fileID: 3064940305099015597, guid: 15fb97f868544b54e9d28aa4fd908309, type: 3}
@@ -223,7 +227,6 @@ GameObject:
   - component: {fileID: 8294590740810850450}
   - component: {fileID: 7136854929060756307}
   - component: {fileID: 1072633465445915614}
-  - component: {fileID: 2567617661348529725}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -280,103 +283,6 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!82 &2567617661348529725
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2663890441807851989}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: f97993a0ee548e34da6bf1026b1ff42e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1253,42 +1159,42 @@ MonoBehaviour:
     entry: 2
     type: 0
   - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 32, y: 0, z: 0}
+    position: {x: -32, y: 0, z: 0}
     sequencer: {fileID: 11400000, guid: 11d04481548239441b7ed5d433ee5495, type: 2}
-    entry: 1
+    entry: 3
     type: 1
   - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 64, y: 0, z: 0}
+    position: {x: -32, y: 0, z: 32}
     sequencer: {fileID: 11400000, guid: 69ce3a9d819655e4faa5af107e2091e1, type: 2}
-    entry: 1
+    entry: 0
     type: 1
   - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 96, y: 0, z: 0}
+    position: {x: 0, y: 0, z: 32}
     sequencer: {fileID: 11400000, guid: 3a51faac0c50a9e42a47e65e6ceab425, type: 2}
     entry: 1
     type: 1
   - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 96, y: 0, z: 32}
+    position: {x: 0, y: 0, z: 64}
     sequencer: {fileID: 11400000, guid: e66e0488b58daf240ab0e175700034a5, type: 2}
     entry: 0
     type: 1
   - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 64, y: 0, z: 32}
+    position: {x: -32, y: 0, z: 64}
     sequencer: {fileID: 11400000, guid: 5f11168babafdc0489aef330828a8fb0, type: 2}
     entry: 3
     type: 1
   - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 64, y: 0, z: 64}
+    position: {x: -32, y: 0, z: 96}
     sequencer: {fileID: 0}
     entry: 0
     type: 1
   - room: {fileID: 9194013458221197619, guid: f98a71678d52eef43b8291f7d9c976ff, type: 3}
-    position: {x: 96, y: 0, z: 64}
+    position: {x: -32, y: 0, z: 128}
     sequencer: {fileID: 0}
-    entry: 1
+    entry: 0
     type: 2
   runSettings: {fileID: 11400000, guid: e5704da4f01a3c542809fd3bdda74a31, type: 2}
-  BossColor: {r: 0, g: 0.91761637, b: 1, a: 1}
+  BossColor: {r: 0.8584906, g: 0.72282165, b: 0.14173192, a: 1}
   NormalColor: {r: 0.34718758, g: 0.6363477, b: 0.8867924, a: 1}
   HubColor: {r: 1, g: 0, b: 0.010103226, a: 1}
   _roomCount: 6
@@ -1301,15 +1207,15 @@ MonoBehaviour:
   - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   _bossRoom: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   _currentRoom: {fileID: 0}
-  _pathDirections: 01000000010000000100000000000000030000000000000001000000
+  _pathDirections: 03000000000000000100000000000000030000000000000000000000
   _spawnPositions:
-  - {x: 32, y: 0, z: 0}
-  - {x: 64, y: 0, z: 0}
-  - {x: 96, y: 0, z: 0}
-  - {x: 96, y: 0, z: 32}
-  - {x: 64, y: 0, z: 32}
-  - {x: 64, y: 0, z: 64}
-  - {x: 96, y: 0, z: 64}
+  - {x: -32, y: 0, z: 0}
+  - {x: -32, y: 0, z: 32}
+  - {x: 0, y: 0, z: 32}
+  - {x: 0, y: 0, z: 64}
+  - {x: -32, y: 0, z: 64}
+  - {x: -32, y: 0, z: 96}
+  - {x: -32, y: 0, z: 128}
   OnRoomComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -2518,6 +2424,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7485722284810506966, guid: e79ad92de195dcd44b836a05614261de, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7554782652907204004, guid: e79ad92de195dcd44b836a05614261de, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2950,7 +2860,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 100
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!114 &8026011232706491461
 MonoBehaviour:

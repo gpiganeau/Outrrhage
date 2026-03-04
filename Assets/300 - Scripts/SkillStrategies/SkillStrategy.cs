@@ -48,9 +48,10 @@ public class SkillStrategy : MonoBehaviour
             return false;
         }
 
-        AudioManager.Instance.PlayClipAtPoint(_storedSkillData.skillCastClips.Random(), transform.position);
 
-        
+        if (_storedSkillData.skillCastClips.Length < 0)
+            AudioManager.Instance.PlayClipAtPoint(_storedSkillData.skillCastClips.Random(), transform.position);
+
         return true;
     }
 
