@@ -1253,37 +1253,37 @@ MonoBehaviour:
     entry: 2
     type: 0
   - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: -32, y: 0, z: 0}
+    position: {x: 0, y: 0, z: -32}
     sequencer: {fileID: 11400000, guid: 11d04481548239441b7ed5d433ee5495, type: 2}
-    entry: 3
+    entry: 2
     type: 1
   - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: -32, y: 0, z: -32}
+    position: {x: 32, y: 0, z: -32}
     sequencer: {fileID: 11400000, guid: 69ce3a9d819655e4faa5af107e2091e1, type: 2}
-    entry: 2
-    type: 1
-  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: -32, y: 0, z: -64}
-    sequencer: {fileID: 11400000, guid: 3a51faac0c50a9e42a47e65e6ceab425, type: 2}
-    entry: 2
-    type: 1
-  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: -32, y: 0, z: -96}
-    sequencer: {fileID: 11400000, guid: e66e0488b58daf240ab0e175700034a5, type: 2}
-    entry: 2
-    type: 1
-  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 0, y: 0, z: -96}
-    sequencer: {fileID: 11400000, guid: 5f11168babafdc0489aef330828a8fb0, type: 2}
     entry: 1
     type: 1
   - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
-    position: {x: 0, y: 0, z: -128}
-    sequencer: {fileID: 0}
+    position: {x: 64, y: 0, z: -32}
+    sequencer: {fileID: 11400000, guid: 3a51faac0c50a9e42a47e65e6ceab425, type: 2}
+    entry: 1
+    type: 1
+  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
+    position: {x: 96, y: 0, z: -32}
+    sequencer: {fileID: 11400000, guid: e66e0488b58daf240ab0e175700034a5, type: 2}
+    entry: 1
+    type: 1
+  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
+    position: {x: 96, y: 0, z: -64}
+    sequencer: {fileID: 11400000, guid: 5f11168babafdc0489aef330828a8fb0, type: 2}
     entry: 2
     type: 1
+  - room: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
+    position: {x: 64, y: 0, z: -64}
+    sequencer: {fileID: 0}
+    entry: 3
+    type: 1
   - room: {fileID: 9194013458221197619, guid: f98a71678d52eef43b8291f7d9c976ff, type: 3}
-    position: {x: -32, y: 0, z: -128}
+    position: {x: 32, y: 0, z: -64}
     sequencer: {fileID: 0}
     entry: 3
     type: 2
@@ -1301,15 +1301,15 @@ MonoBehaviour:
   - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   _bossRoom: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   _currentRoom: {fileID: 0}
-  _pathDirections: 03000000020000000200000002000000010000000200000003000000
+  _pathDirections: 02000000010000000100000001000000020000000300000003000000
   _spawnPositions:
-  - {x: -32, y: 0, z: 0}
-  - {x: -32, y: 0, z: -32}
-  - {x: -32, y: 0, z: -64}
-  - {x: -32, y: 0, z: -96}
-  - {x: 0, y: 0, z: -96}
-  - {x: 0, y: 0, z: -128}
-  - {x: -32, y: 0, z: -128}
+  - {x: 0, y: 0, z: -32}
+  - {x: 32, y: 0, z: -32}
+  - {x: 64, y: 0, z: -32}
+  - {x: 96, y: 0, z: -32}
+  - {x: 96, y: 0, z: -64}
+  - {x: 64, y: 0, z: -64}
+  - {x: 32, y: 0, z: -64}
   OnRoomComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -1324,6 +1324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3574302140441405706}
+  - component: {fileID: 3152664126561750499}
   m_Layer: 0
   m_Name: CORE
   m_TagString: Untagged
@@ -1353,6 +1354,18 @@ Transform:
   - {fileID: 1675180955639725790}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3152664126561750499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8023371236307701498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc5fca43bcabd247b1d4d0ca317adcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Core
 --- !u!1 &8334727627650806522
 GameObject:
   m_ObjectHideFlags: 0
