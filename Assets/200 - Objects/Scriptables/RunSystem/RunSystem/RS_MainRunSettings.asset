@@ -24,7 +24,12 @@ MonoBehaviour:
   HUBRooms:
   - {fileID: 9194013458221197619, guid: 7a097397e100d41469acdcb89c5f641f, type: 3}
   NormalRooms:
-  - {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
+  - {fileID: 9194013458221197619, guid: 492143fefee901440a01b1db93fe97ba, type: 3}
+  - {fileID: 9194013458221197619, guid: e97ec187eefec214ba55ae2763de6449, type: 3}
+  - {fileID: 9194013458221197619, guid: 05c1b22ae3909bf48a22be0e849b0cbf, type: 3}
+  - {fileID: 9194013458221197619, guid: fa3f444269bf6434083b9e4fde02c4d3, type: 3}
+  - {fileID: 9194013458221197619, guid: 0eb1db02e6f30f14aa8c3b7dc16611f3, type: 3}
+  - {fileID: 9194013458221197619, guid: 46a95003f498e174d8d183541876b096, type: 3}
   BossRooms:
   - {fileID: 9194013458221197619, guid: f98a71678d52eef43b8291f7d9c976ff, type: 3}
   Corridors:
