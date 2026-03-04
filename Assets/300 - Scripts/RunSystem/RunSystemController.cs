@@ -121,10 +121,9 @@ public class RunSystemController : MonoBehaviour
             _draftUI.Show();
         } else
         {
+            _draftUI.Hide();
             StartRun();
         }
-
-
     }
 
     private void StartRun()

@@ -65,6 +65,12 @@ public class RunDraftUI : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void Hide()
+    {
+        _panel.SetActive(false);
+        Time.timeScale = 1.0f;
+    }
+
     // ── Logique ────────────────────────────────────────────────────
 
     int _activeSlot = 0; // slot actuellement ciblé
