@@ -24,7 +24,7 @@ MonoBehaviour:
   Radius: 10
   ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 0100000001000000
+  ProjectileDamage: 01000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3
@@ -51,10 +51,7 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 4993486111714875449, guid: 914b859b3d6d7124e8cdbb17523d291f, type: 3}
-    castSound: {fileID: 0}
-    projectileSound: {fileID: 0}
-    impactSound: {fileID: 0}
-  castClips: []
-  hitClips: []
+  skillCastClips: []
+  skillHitClips: []
   UseSubSkill: 0
   SubSkill: {fileID: 0}

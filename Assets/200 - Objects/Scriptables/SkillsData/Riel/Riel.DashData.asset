@@ -16,7 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 0}
   Name: Pas rapide
-  Description: Dash a l'arrache !
+  Description: "Permet une brusque acc\xE9l\xE9ration vers l'avant."
   Cooldown: 2
   IsHold: 0
   HoldDuration: 0
@@ -51,10 +51,7 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 0}
-    castSound: {fileID: 0}
-    projectileSound: {fileID: 0}
-    impactSound: {fileID: 0}
-  castClips: []
-  hitClips: []
+  skillCastClips: []
+  skillHitClips: []
   UseSubSkill: 0
   SubSkill: {fileID: 0}

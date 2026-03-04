@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AttackStrategyDistantProjectile
   attackStrategyScript: {fileID: 792553262800970159, guid: 569600c172b62f346a7deb4c13b4c05e, type: 3}
   AttackSettings:
-  - AttackNameToHelpDesigner: Dash
-    TimeToAttack: 1
-    MinimumDistanceToRiel: 5
-    StopWhenAttacking: 1
-    StopDuration: 1
+  - AttackNameToHelpDesigner: Wave
+    MinimumDistanceToRiel: 8
+    StopWhenAttacking: 0
+    StopDuration: 0
+  TimeToNextSkill: 1

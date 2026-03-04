@@ -22,8 +22,7 @@ class EnemyExplosiveShotStrategy : SkillStrategy
             Speed = _storedSkillData.ProjectileSpeed,
             BloodStackingAmount = 0,
             Team = team,
-            Target = movementController.transform.position 
-                     + firingDirection * _storedSkillData.ProjectileRange,
+            Target = movementController.transform.position + firingDirection * _storedSkillData.ProjectileRange,
         };
 
         projectileData.startingPosition += new Vector3(0, 0.5f, 0f);
@@ -42,7 +41,7 @@ class EnemyExplosiveShotStrategy : SkillStrategy
         {
             startingPosition = damageController.transform.position,
             origin = damageController.transform.position,
-            Damage = _storedSkillData.ProjectileDamage[2],
+            Damage = _storedSkillData.ProjectileDamage[0],
             Lifetime = 0.3f,
             BloodStackingAmount = _storedSkillData.BloodStackingAmount,
             Team = projectile.Data.Team,

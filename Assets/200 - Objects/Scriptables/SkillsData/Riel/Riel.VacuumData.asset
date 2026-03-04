@@ -16,7 +16,7 @@ MonoBehaviour:
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 9e48941107c92e84ca96b669bc06c3d8, type: 3}
   Name: Aspiration
-  Description: 'Aspirez du sang '
+  Description: 'Attire les gouttes de sang proches de vous pour restaurer votre sang. '
   Cooldown: 2
   IsHold: 0
   HoldDuration: 0
@@ -51,10 +51,7 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 1242025809196778001, guid: 466a0d19051550b48932d6bf4ac82316, type: 3}
     hitVFXPrefab: {fileID: 0}
-    castSound: {fileID: 0}
-    projectileSound: {fileID: 0}
-    impactSound: {fileID: 0}
-  castClips: []
-  hitClips: []
+  skillCastClips: []
+  skillHitClips: []
   UseSubSkill: 0
   SubSkill: {fileID: 0}

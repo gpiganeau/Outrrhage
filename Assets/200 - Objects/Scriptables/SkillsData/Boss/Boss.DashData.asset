@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8576b5616d5a5b43bc5ebe672411004, type: 3}
+  m_Name: Boss.DashData
+  m_EditorClassIdentifier: Assembly-CSharp::SkillData
+  SkillStrategyPrefab: {fileID: 7434445806588342944, guid: 3e97a4efd2626e94089a8a514115ce2c, type: 3}
+  SkillProjectilePrefab:
+  - {fileID: 8024854797782737839, guid: 33420088e58e7f143812d84b057b57d5, type: 3}
+  Name: Charge
+  Description: Une attaque de melee, l'ennemi dash sur Riel pour la blesser en la
+    touchant
+  Cooldown: 2
+  IsHold: 0
+  HoldDuration: 0
+  CanMovePreview: 1
+  Radius: 0
+  ProjectileRange: 0
+  ProjectileSpeed: 0
+  ProjectileDamage: 02000000
+  ProjectileLifetime: 0.2
+  numberOfProjectiles: 0
+  TravelMode: 3
+  AimAssistRatio: 0
+  ComboResetDelay: 0
+  ProvideInvulnerability: 0
+  InvulnerabilityTime: 0
+  ignoreCollisions: 1
+  movementDistance: 5
+  movementDuration: 0.15
+  IsRielSpecificSkill: 0
+  BloodCost: 0
+  DropBloodOnFailedSkill: 0
+  RageGain: 0
+  BloodStackingAmount: 1
+  Icon: {fileID: 21300000, guid: c4474a0bd3f754244b6cffea969c6a6c, type: 3}
+  AnimationKey: Slash
+  AnimationsKeys: []
+  vfxData:
+    castVFXPrefab: {fileID: 0}
+    castVFXOffset: {x: 0, y: 0, z: 0}
+    attachCastVFXToCharacter: 1
+    projectileTrailVFXPrefab: {fileID: 0}
+    projectileImpactVFXPrefab: {fileID: 0}
+    areaIndicatorVFXPrefab: {fileID: 0}
+    hitVFXPrefab: {fileID: 0}
+  skillCastClips: []
+  skillHitClips: []
+  UseSubSkill: 0
+  SubSkill: {fileID: 0}
