@@ -6,7 +6,7 @@ public class MainAttackStrategy : AttackStrategy
     float TimeToNextSkill;
     float timer = 0f;
 
-    private List<AttackWrapper> AttackSettings;
+    private List<AttackWrapper> AttackSettings = new();
 
     MovementContext currentContext;
 
@@ -22,7 +22,7 @@ public class MainAttackStrategy : AttackStrategy
 
             TimeToNextSkill = s.TimeToNextSkill;
 
-            if (AttackSettings == null) return;
+            if (s.AttackSettings == null) return;
 
             foreach (var wrapper in s.AttackSettings)
             {
@@ -49,6 +49,7 @@ public class MainAttackStrategy : AttackStrategy
         
         int index = 0;
         float bestDistance = -1f;
+        bool match = false;
 
         for (int i = 0; i < AttackSettings.Count; i++)
         {
@@ -57,10 +58,11 @@ public class MainAttackStrategy : AttackStrategy
             {
                 bestDistance = minDist;
                 index = i;
+                match = true;
             }
         }
         
-        _controller.CallSkillStrategy(index);
+        if( match ) _controller.CallSkillStrategy(index);
     }
 
     private void LegacyRandomBehavior()
@@ -77,8 +79,7 @@ public class MainAttackStrategy : AttackStrategy
 
     public override void Tick(MovementContext context)
     {
-        LegacyRandomBehavior();
-        return;
+        //LegacyRandomBehavior();
         // ------------------------------------------------ //
 
         // -- One Timer
