@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class MainAttackStrategy : AttackStrategy
@@ -10,7 +11,8 @@ public class MainAttackStrategy : AttackStrategy
 
     MovementContext currentContext;
 
-	public override void Initialize(AttackStrategySetupData setupData, SkillsController controller)
+
+	public override void Initialize(AttackStrategySetupData setupData, SkillsController controller, MovementController movement)
     {
         var s = setupData as MainAttackStrategySetupData;
 
@@ -19,6 +21,7 @@ public class MainAttackStrategy : AttackStrategy
             
             timer = 0f;
             _controller = controller;
+            _movement = movement;
 
             TimeToNextSkill = s.TimeToNextSkill;
 
@@ -50,6 +53,8 @@ public class MainAttackStrategy : AttackStrategy
         int index = 0;
         float bestDistance = -1f;
         bool match = false;
+        bool wait = false;
+        float waitTime = 0;
 
         for (int i = 0; i < AttackSettings.Count; i++)
         {
@@ -59,10 +64,34 @@ public class MainAttackStrategy : AttackStrategy
                 bestDistance = minDist;
                 index = i;
                 match = true;
+                waitTime = AttackSettings[i].StopDuration;
+                wait = AttackSettings[i].StopWhenAttacking;
             }
         }
+
+
+        if (!match) return;
+
+        // -- Stop Time
+        if (wait)
+        {
+
+            // -- Grab & Stop Movement controller ?
+            _movement.SetImmobilized(true, "AttackStrategy");
+
+            timer -= waitTime;
+            DOVirtual.DelayedCall(waitTime, () =>
+            {
+                // Release Movement Controller
+                _movement.SetImmobilized(false, "AttackStrategy");
+                _controller.CallSkillStrategy(index);
+            });
+                
+        } else
+        {
+                _controller.CallSkillStrategy(index);
+        }
         
-        if( match ) _controller.CallSkillStrategy(index);
     }
 
     private void LegacyRandomBehavior()

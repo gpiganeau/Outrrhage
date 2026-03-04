@@ -70,7 +70,7 @@ public class AIActorComponent: PilotComponent, ISkillConstrainer, IJuicable
         {
             System.Type type = setupData.attackSetupData.attackStrategyScript.GetType();
             _attackStrategy = gameObject.AddComponent(type) as AttackStrategy;
-            _attackStrategy.Initialize(setupData.attackSetupData, skillsController);
+            _attackStrategy.Initialize(setupData.attackSetupData, skillsController, movementController);
         }
 
         Renderers = new List<Renderer>(GetComponentsInChildren<Renderer>());
