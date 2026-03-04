@@ -90,6 +90,9 @@ public class RunSystemController : MonoBehaviour
 
     int MAX_ROOM_CALL = 10;
     int CURRENT_CALL = 0;
+
+    [Header("Run UI Draft")]
+    [SerializeField] private RunDraftUI _draftUI;
     #endregion
 
     void Awake()
@@ -99,6 +102,16 @@ public class RunSystemController : MonoBehaviour
 
         OnRoomComplete.AddListener(SpawnNextRoom);
         GenerateCriticalPath();
+
+        _draftUI.OnDraftConfirmed += OnDraftConfirmed;
+        _draftUI.Show();
+        //StartRun();
+    }
+
+    private void OnDraftConfirmed(List<SkillData> skills)
+    {
+        var skillsController = GameManager.Instance.Riel.GetComponent<SkillsController>();
+        skillsController.SetActiveSkillStrategies(skills);
         StartRun();
     }
 
