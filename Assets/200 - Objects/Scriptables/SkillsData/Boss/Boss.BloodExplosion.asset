@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: be96c4564e8a0804baba6a9d70cbbe1d, type: 3}
   SkillProjectilePrefab:
-  - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
+  - {fileID: 8024854797782737839, guid: 5e685567f7f1f8041ba58c62111c858b, type: 3}
   Name: Explosion sanguine
   Description: "Maintenez la touche associ\xE9e pour faire exploser les orbes de
     sang au sol!"
@@ -36,8 +36,8 @@ MonoBehaviour:
   ignoreCollisions: 0
   movementDistance: 0
   movementDuration: 0
-  IsRielSpecificSkill: 1
-  BloodCost: 3
+  IsRielSpecificSkill: 0
+  BloodCost: 0
   DropBloodOnFailedSkill: 0
   RageGain: 30
   BloodStackingAmount: 0
