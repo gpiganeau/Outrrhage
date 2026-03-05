@@ -6,28 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
     #region Fields
     public static GameManager Instance;
-
-    public enum GameMode { Forest, Rooms }
-
-    public GameMode CurrentGameMode = GameMode.Rooms;
 
     [HideInInspector] public CharacterComponent Riel;
 
     [Header("Core Prefabs References")]
     public CharacterComponent _rielPrefab;
-    public Level _startLevelPrefab;
-
-    public List<GameRoom> _roomsList;
 
     [Header("Managers References")]
     [SerializeField] CameraController _cameraController;
-
-    [Header("Readonly References for Debug")]
-    public Level _currentLevel;
-    [SerializeField] private RunSystemController runController;
 
     public UnityEvent OnGameStart;
     public CameraController CameraController => _cameraController;

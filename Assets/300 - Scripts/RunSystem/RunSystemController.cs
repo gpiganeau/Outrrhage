@@ -90,8 +90,6 @@ public class RunSystemController : MonoBehaviour
 
     int MAX_ROOM_CALL = 10;
     int CURRENT_CALL = 0;
-
-
     #endregion
 
     void Awake()
@@ -107,8 +105,6 @@ public class RunSystemController : MonoBehaviour
         EntityManager.Instance.OnEnemyDied.AddListener(OnEnemyDeath);
         GenerateCriticalPath();
     }
-
-
 
     public void StartRun(List<SkillData> skills)
     {
