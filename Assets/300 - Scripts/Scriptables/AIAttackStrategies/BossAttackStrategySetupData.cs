@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,12 +11,14 @@ public class BossAttackStrategySetupData : AttackStrategySetupData
 
     public int BattleEndAtHealth = 3;
 
+
+    [Serializable]
     public class BossStrategy {
-        
-    float HealthThreshold;
-    public List<AttackWrapper> AttackSettings = new();
-    public List<int> AttackOrders = new List<int> { 0, 0, 1 };
-    public float TimeToNextSkills;
+            
+        public float HealthThreshold = 0;
+        public List<AttackWrapper> AttackSettings = new();
+        public List<int> AttackOrders = new List<int> { 0, 0, 1 };
+        public float TimeToNextSkills;
     }
 
 }
