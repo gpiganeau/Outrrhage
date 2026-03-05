@@ -75,8 +75,8 @@ public class MeleeDashStrategy: SkillStrategy
         }
 
         // ← Kill le projectile proprement à la fin du dash
-        //if (projectile != null && projectile.gameObject.activeInHierarchy)
-            //projectile.ForceExpire(); // -- DO NOT ABUSE THIS, IT S A BUG FIX
+        if (projectile != null && projectile.gameObject.activeInHierarchy)
+            projectile.ForceExpire(); // -- DO NOT ABUSE THIS, IT S A BUG FIX
     }
 
         protected override void OnProjectileHit(Projectile projectile, DamageController damageController)
