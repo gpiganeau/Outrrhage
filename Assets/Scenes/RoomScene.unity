@@ -192,9 +192,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1538628881019090955, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: SpawnsClip.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538628881019090955, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
       propertyPath: enemyPrefabs.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1538628881019090955, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'SpawnsClip.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b987635d1e124b64c8af2e535341331d, type: 3}
+    - target: {fileID: 1538628881019090955, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
+      propertyPath: 'SpawnsClip.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ca614674950a7904090fac7234e88b11, type: 3}
     - target: {fileID: 2001893644058897996, guid: 3bf5f4cbc778c60408feec88e1d889d6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
