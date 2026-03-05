@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: AIMS_Bull
   m_EditorClassIdentifier: Assembly-CSharp::MoveTowardWhenInRangeSetupData
   movementStrategyScript: {fileID: -5340351748215401033, guid: 51e7f0d78242b2041a1f4c2ebdd961cb, type: 3}
-  DistanceToRiel: 10
+  DistanceToRiel: 15
