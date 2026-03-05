@@ -30,22 +30,17 @@ MonoBehaviour:
   BloodPrefab: {fileID: 0}
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   HitClip:
-  - {fileID: 8300000, guid: 2ef15fcb79feee641a7692d18bdae9d4, type: 3}
-  - {fileID: 8300000, guid: 941aa089d2e1bf3419ff96ec8afef313, type: 3}
-  - {fileID: 8300000, guid: 759d73331a3d2cd4fa225db8995a40cd, type: 3}
-  - {fileID: 8300000, guid: 0dd6d9b4d6031dc4b912df348c2f5bad, type: 3}
-  - {fileID: 8300000, guid: c034bf16551e69047bea9547989cb114, type: 3}
-  - {fileID: 8300000, guid: 1951ad64e1d57ea4aab7479954fc1c35, type: 3}
-  - {fileID: 8300000, guid: b0e611e778bec244286847b30f95e697, type: 3}
-  - {fileID: 8300000, guid: 9ea84b93461bc8e49825698cdf914f58, type: 3}
-  AttackClip:
-  - {fileID: 0}
-  CastClip:
-  - {fileID: 8300000, guid: 83838d25f1acabc47a99dc4006f6fa11, type: 3}
+  - {fileID: 8300000, guid: 8cc54834aa3fa0146bd8ec78301899f8, type: 3}
+  - {fileID: 8300000, guid: e496035efbbc4854c9e0d03eed53f518, type: 3}
+  - {fileID: 8300000, guid: f7dfc78023246c248bed7b5a80adc6bb, type: 3}
+  - {fileID: 8300000, guid: 0dc9daedbd78a4546a49da401c66da82, type: 3}
+  - {fileID: 8300000, guid: 4064dd638b692aa4481e753ce24e31aa, type: 3}
+  - {fileID: 8300000, guid: bc26d1ca5ded98f4680dfc8dd0c67051, type: 3}
   DeathClip:
-  - {fileID: 8300000, guid: 2652ed889dd258844879c85e9e2b940e, type: 3}
+  - {fileID: 8300000, guid: a7802714936a91e41a4890d81ada3a7f, type: 3}
   HealClip:
-  - {fileID: 8300000, guid: 68ec6031bd80d15408de5ec04361cb98, type: 3}
+  - {fileID: 8300000, guid: cf722521a23780b4d9d3d7db8686a8ff, type: 3}
+  - {fileID: 8300000, guid: 4d51cd8e7e7c6d04bb5b5a83debd4cb2, type: 3}
   maxBlood: 10
   maxRage: 100
   RageDuration: 10

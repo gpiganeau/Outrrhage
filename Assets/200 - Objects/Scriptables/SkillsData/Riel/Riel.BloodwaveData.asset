@@ -52,7 +52,11 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 4993486111714875449, guid: 914b859b3d6d7124e8cdbb17523d291f, type: 3}
-  skillCastClips: []
-  skillHitClips: []
+  skillCastClips:
+  - {fileID: 8300000, guid: 4748c058d08b7cd4cb0a77123acebf3c, type: 3}
+  - {fileID: 8300000, guid: 0783cbe5d18c2e042850578ae14f9994, type: 3}
+  skillHitClips:
+  - {fileID: 8300000, guid: 0dc9daedbd78a4546a49da401c66da82, type: 3}
+  - {fileID: 8300000, guid: 4064dd638b692aa4481e753ce24e31aa, type: 3}
   UseSubSkill: 0
   SubSkill: {fileID: 0}

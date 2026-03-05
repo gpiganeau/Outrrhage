@@ -24,7 +24,7 @@ MonoBehaviour:
   CanMovePreview: 1
   Radius: 0
   ProjectileRange: 30
-  ProjectileSpeed: 5
+  ProjectileSpeed: 8
   ProjectileDamage: 02000000
   ProjectileLifetime: 3
   numberOfProjectiles: 1
@@ -52,7 +52,9 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 0}
-  skillCastClips: []
-  skillHitClips: []
+  skillCastClips:
+  - {fileID: 8300000, guid: 5bfa1dbfe210ab04bb7b80e09c2920cb, type: 3}
+  skillHitClips:
+  - {fileID: 8300000, guid: d4772a73d5ea21b409e01d1db6ac51b4, type: 3}
   UseSubSkill: 0
   SubSkill: {fileID: 0}
