@@ -19,7 +19,7 @@ MonoBehaviour:
     StopWhenAttacking: 0
     StopDuration: 1
   - AttackNameToHelpDesigner: Blood Explosion
-    MinimumDistanceToRiel: 4
+    MinimumDistanceToRiel: 10
     StopWhenAttacking: 0
     StopDuration: 10
   TimeToNextSkill: 2

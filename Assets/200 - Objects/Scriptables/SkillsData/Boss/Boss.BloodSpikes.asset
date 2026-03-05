@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: cda8450286776894db0fb5a7e0ba1e94, type: 3}
   SkillProjectilePrefab:
-  - {fileID: 8024854797782737839, guid: 2fe5385023a7f064297bec3f1dd53c06, type: 3}
-  - {fileID: 8024854797782737839, guid: 232af6a47dcd0474e865dc3499b2240a, type: 3}
+  - {fileID: 8024854797782737839, guid: 6352758f2485e204aa9939d6b58c1c6d, type: 3}
+  - {fileID: 8024854797782737839, guid: 5e685567f7f1f8041ba58c62111c858b, type: 3}
   Name: Epines sanglantes
   Description: Tuez vos ennemis en rythme !
   Cooldown: 2
