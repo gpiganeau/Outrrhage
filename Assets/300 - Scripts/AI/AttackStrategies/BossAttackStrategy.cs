@@ -14,8 +14,11 @@ public class BossAttackStrategy : AttackStrategy
     private BossStrategy currentStrategy;
     private int _currentAttackIndex;
     private int AttackPoolCycle => currentStrategy.AttackOrders.Count;
-    private int AttackCount => currentStrategy.AttackSettings.Count;
+    private int AttackCount => AttackWrappers.Count;
     float TimeToNextSkill => currentStrategy.TimeToNextSkills;
+
+
+    List<AttackWrapper> AttackWrappers;
 
 
 	public override void Initialize(AttackStrategySetupData setupData, SkillsController controller, MovementController movement)
@@ -48,13 +51,8 @@ public class BossAttackStrategy : AttackStrategy
         
         if (Strategies == null) return;
 
-        //var choice = FindClosestAvailableAttack(currentStrategy.AttackSettings, currentContext);
-
-        //-- Our current index
-        // -- 
         int nextAttackIndex = currentStrategy.AttackOrders[_currentAttackIndex];
-        AttackWrapper nextAttack = currentStrategy.AttackSettings[nextAttackIndex];
-
+        AttackWrapper nextAttack = AttackWrappers[nextAttackIndex];
         _currentAttackIndex ++;
 
         bool wait = nextAttack.StopWhenAttacking;

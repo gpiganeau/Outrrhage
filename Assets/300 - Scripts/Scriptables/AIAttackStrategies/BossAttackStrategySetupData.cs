@@ -10,15 +10,14 @@ public class BossAttackStrategySetupData : AttackStrategySetupData
     public List<BossStrategy> Strategies;
 
     public int BattleEndAtHealth = 3;
-
+    public List<AttackWrapper> AttackWrappers;
 
     [Serializable]
     public class BossStrategy {
             
         public float HealthThreshold = 0;
-        public List<AttackWrapper> AttackSettings = new();
-        public List<int> AttackOrders = new List<int> { 0, 0, 1 };
         public float TimeToNextSkills;
+        public List<int> AttackOrders = new List<int> { 0, 0, 1 };
     }
 
 }
