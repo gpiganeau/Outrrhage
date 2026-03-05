@@ -30,7 +30,7 @@ MonoBehaviour:
   ProjectileLifetime: 3
   numberOfProjectiles: 1
   TravelMode: 2
-  AimAssistRatio: 1
+  AimAssistRatio: 0.8
   ComboResetDelay: 2
   ProvideInvulnerability: 0
   InvulnerabilityTime: 0

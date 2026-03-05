@@ -112,6 +112,9 @@ public class SkillStrategy : MonoBehaviour
     {
         Vector3 originalAimDir = aimDirection;
         aimAssistRatio = Mathf.Clamp01(aimAssistRatio);
+
+        float maxAngle = aimAssistRatio * 180f;
+
         Collider[] results = Physics.OverlapSphere(transform.position, Mathf.Max(_storedSkillData.Radius, _storedSkillData.ProjectileRange));
         List<DamageController> potentialTargets = new List<DamageController>();
 
@@ -120,7 +123,9 @@ public class SkillStrategy : MonoBehaviour
             if (collider.TryGetComponent(out DamageController targetDamageController))
             {
                 Vector3 targetDirection = targetDamageController.transform.position - transform.position;
-                if (Mathf.Abs(Quaternion.FromToRotation(aimDirection, targetDirection).eulerAngles.y) / 180 <= aimAssistRatio)
+                float angle = Vector3.Angle(aimDirection, targetDirection);
+                //if (Mathf.Abs(Quaternion.FromToRotation(aimDirection, targetDirection).eulerAngles.y) / 180 <= aimAssistRatio)
+                if (angle <= maxAngle)
                 {
                     potentialTargets.Add(targetDamageController);
                 }
@@ -134,10 +139,12 @@ public class SkillStrategy : MonoBehaviour
 
         potentialTargets.Sort((a, b) => 
         {
-            Vector3 aDirection = a.transform.position - transform.position;
-            Vector3 bDirection = b.transform.position - transform.position;
-            float aAngle = Mathf.Abs(Quaternion.FromToRotation(originalAimDir, aDirection).eulerAngles.y);
-            float bAngle = Mathf.Abs(Quaternion.FromToRotation(originalAimDir, bDirection).eulerAngles.y);
+            //Vector3 aDirection = a.transform.position - transform.position;
+            //Vector3 bDirection = b.transform.position - transform.position;
+            //float aAngle = Mathf.Abs(Quaternion.FromToRotation(originalAimDir, aDirection).eulerAngles.y);
+            //float bAngle = Mathf.Abs(Quaternion.FromToRotation(originalAimDir, bDirection).eulerAngles.y);
+            float aAngle = Vector3.Angle(originalAimDir, a.transform.position - transform.position);
+            float bAngle = Vector3.Angle(originalAimDir, b.transform.position - transform.position);
             return aAngle.CompareTo(bAngle);
         });
 
