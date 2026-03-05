@@ -2,12 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 
 public class DraftSlotUI : MonoBehaviour
 {
     [SerializeField] private Button _button;
     [SerializeField] private Image _icon;
+    [SerializeField] private Image _inputPrompt;
     [SerializeField] private TMP_Text _label;
     [SerializeField] private GameObject _highlight;
     [SerializeField] private GameObject _emptyIndicator;
@@ -36,6 +38,24 @@ public class DraftSlotUI : MonoBehaviour
             SetHighlight(false);
              _onHovered?.Invoke(-1);
         };
+
+    }
+
+    void Start()
+    {
+        InputManager.Instance.OnDeviceChanged.AddListener(OnDeviceChanged);
+        UpdateIcon();        
+    }
+
+    private void OnDeviceChanged(InputDevice device)
+    {
+        UpdateIcon();
+    }
+
+    private void UpdateIcon()
+    {
+        var sprite = InputManager.Instance.GetSlotInputSprite(_index);
+        _inputPrompt.sprite = sprite;
     }
 
     public void SetSkill(SkillData skill)
