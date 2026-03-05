@@ -9,4 +9,6 @@ public class SelectionListener : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnSelect(BaseEventData eventData) => OnSelected?.Invoke();
     public void OnDeselect(BaseEventData eventData) => OnDeselected?.Invoke();
+    public void OnPointerEnter(PointerEventData e) => OnSelected?.Invoke();
+    public void OnPointerExit(PointerEventData e) => OnDeselected?.Invoke();
 }

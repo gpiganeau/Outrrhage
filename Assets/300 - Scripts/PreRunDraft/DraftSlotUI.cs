@@ -15,12 +15,14 @@ public class DraftSlotUI : MonoBehaviour
     public Button GetButton() => _button;
 
     private Action<int> _onClicked;
+    private Action<int> _onHovered;
     private int _index;
 
-    public void Init(int index, Action<int> onClicked)
+    public void Init(int index, Action<int> onClicked, Action<int> onHovered = null)
     {
         _index = index;
         _onClicked = onClicked;
+        _onHovered = onHovered;
         _button.onClick.AddListener(() => _onClicked(_index));
         Clear();
 
@@ -28,8 +30,12 @@ public class DraftSlotUI : MonoBehaviour
         listener.OnSelected += () => {
             _onClicked(_index);
             SetHighlight(true);
+            _onHovered?.Invoke(_index);
         };
-        listener.OnDeselected += () => SetHighlight(false);
+        listener.OnDeselected += () => {
+            SetHighlight(false);
+             _onHovered?.Invoke(-1);
+        };
     }
 
     public void SetSkill(SkillData skill)

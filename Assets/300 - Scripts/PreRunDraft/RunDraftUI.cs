@@ -37,7 +37,12 @@ public class RunDraftUI : MonoBehaviour
         for (int i = 0; i < _slots.Count; i++)
         {
             int idx = i;
-            _slots[i].Init(idx, OnSlotClicked);
+
+            _slots[i].Init(idx, OnSlotClicked, (hoverIndex) => {
+                if (hoverIndex == -1) { _descriptionLabel.text = ""; return; }
+                var skill = _selectedSkills[hoverIndex];
+                _descriptionLabel.text = skill != null ? skill.Description : "";
+            });
         }
 
         foreach (var skill in _skillDatabase.AllSkills)
@@ -53,13 +58,23 @@ public class RunDraftUI : MonoBehaviour
 
             var highlight = go.transform.Find("Highlight");
             var listener = btn.gameObject.AddComponent<SelectionListener>();
-            listener.OnSelected += () => highlight?.gameObject.SetActive(true);
-            listener.OnDeselected += () => highlight?.gameObject.SetActive(false);
+            listener.OnSelected += () => {
+                highlight?.gameObject.SetActive(true);
+                _descriptionLabel.text = skill.Description;
+            };
+            
+            listener.OnDeselected += () => {
+                highlight?.gameObject.SetActive(false);
+                _descriptionLabel.text = "Selectionnez une compétence...";
+            };
 
         }
 
         _confirmButton.onClick.AddListener(Confirm);
         _confirmButton.interactable = false;
+        var l = _confirmButton.gameObject.GetComponent<SelectionListener>();
+        l.OnSelected += () => _confirmButton.GetComponent<Image>().color = Color.yellow;
+        l.OnDeselected += () => _confirmButton.GetComponent<Image>().color = Color.white;
 
         // Init liste vide
         for (int i = 0; i < _slots.Count; i++)
@@ -104,13 +119,10 @@ public class RunDraftUI : MonoBehaviour
         {
             _selectedSkills[existing] = null;
             _slots[existing].Clear();
-            _descriptionLabel.text ="Cleared.";
         }
 
         _selectedSkills[_activeSlot] = skill;
         _slots[_activeSlot].SetSkill(skill);
-
-        _descriptionLabel.text = skill.Description;
 
         // Avance au prochain slot vide auto
         int next = FindNextEmptySlot();
