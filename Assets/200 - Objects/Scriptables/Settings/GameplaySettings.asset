@@ -20,5 +20,5 @@ MonoBehaviour:
   DeathTimeBeforeReload: 3
   ClearRoomOnDeath: 1
   spawnerTimeBetweenSpawns: 0.5
-  YSpawnOffset: 0.8
+  YSpawnOffset: 0.3
   OpenSkillSelectorOnRunStart: 1
