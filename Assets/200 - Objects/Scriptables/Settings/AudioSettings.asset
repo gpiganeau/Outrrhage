@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioSettings
   DisableAudio: 0
   masterVolume: 1
-  musicVolume: 0.2
+  musicVolume: 0.1
   sfxVolume: 1
   ambientVolume: 1
   muteOnFocusLoss: 1

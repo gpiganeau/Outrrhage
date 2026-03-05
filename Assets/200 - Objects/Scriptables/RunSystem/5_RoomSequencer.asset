@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: 5_RoomSequencer
   m_EditorClassIdentifier: Assembly-CSharp::RoomSequencer
   customType: {fileID: 0}
+  DelayBeforeRoomStart: 5
   OnRoomStart:
     m_PersistentCalls:
       m_Calls: []
   RoomSequence:
   - stepName: Vague 1 - Tourelle + Drones + Bull + Humanoid
-    delay: 3
+    delay: 0
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -72,8 +73,9 @@ MonoBehaviour:
           m_CallState: 2
     logEvent: 1
     skipEvent: 0
+    TriggerAtEnemyCount: 0
   - stepName: Vague 2 - Tourelle + Humanoids + Drones + Bulls
-    delay: 10
+    delay: 5
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -127,8 +129,9 @@ MonoBehaviour:
           m_CallState: 2
     logEvent: 1
     skipEvent: 0
+    TriggerAtEnemyCount: 0
   - stepName: Vague 3 - Tourelle + Humanoids + Drones + Bulls
-    delay: 10
+    delay: 5
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -182,8 +185,9 @@ MonoBehaviour:
           m_CallState: 2
     logEvent: 1
     skipEvent: 0
+    TriggerAtEnemyCount: 0
   - stepName: Vague 4 - Tourelle + Drones
-    delay: 10
+    delay: 5
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -213,8 +217,9 @@ MonoBehaviour:
           m_CallState: 2
     logEvent: 1
     skipEvent: 0
+    TriggerAtEnemyCount: 0
   - stepName: Vague 5 - Tourelle + Bulls
-    delay: 10
+    delay: 5
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -244,8 +249,10 @@ MonoBehaviour:
           m_CallState: 2
     logEvent: 1
     skipEvent: 0
+    TriggerAtEnemyCount: 0
   OnRoomComplete:
     m_PersistentCalls:
       m_Calls: []
-  AutoComplete: 0
   affectedRoom: {fileID: 0}
+  BossPhase1: {fileID: 0}
+  BossPhase2: {fileID: 0}
