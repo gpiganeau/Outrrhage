@@ -27,9 +27,11 @@ MonoBehaviour:
   BloodPrefab: {fileID: 5115976658195506498, guid: 4c627e869fdc5114a9fa3b680d12b4e5, type: 3}
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   HitClip:
-  - {fileID: 8300000, guid: 759d73331a3d2cd4fa225db8995a40cd, type: 3}
+  - {fileID: 8300000, guid: c1b350c913d7783458da1f1ed0224554, type: 3}
+  - {fileID: 8300000, guid: e16f894ca7ac1704fbdcd9ce3b3e8c49, type: 3}
   DeathClip:
-  - {fileID: 8300000, guid: 67f8d2dbf3acf4743b061e12797136c8, type: 3}
+  - {fileID: 8300000, guid: 1ac6ea804dc007645a756b8ed684d026, type: 3}
+  - {fileID: 8300000, guid: b987635d1e124b64c8af2e535341331d, type: 3}
   HealClip: []
   movementSetupData: {fileID: 11400000, guid: fa8d22d8f1765b74ebf07668146d9d6f, type: 2}
   attackSetupData: {fileID: 11400000, guid: 9205598de505d544886be6aa9e7ff54e, type: 2}
