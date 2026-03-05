@@ -10,6 +10,7 @@ public class RoomSequencer : ScriptableObject
     [Tooltip("Use this for testing custom enemy spawn")] public AIActorComponent customType;
 
     [Header("Core Events")]
+    [Range(2f, 32f)] public float DelayBeforeRoomStart = 4f;
     public UnityEvent OnRoomStart;
     public List<ChaosStep> RoomSequence = new List<ChaosStep>();
     public UnityEvent OnRoomComplete;

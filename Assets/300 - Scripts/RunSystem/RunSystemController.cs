@@ -259,10 +259,10 @@ public class RunSystemController : MonoBehaviour
         _roomSequenceIndex = 0;
         _currentSequencer = seq;
 
-        seq.OnRoomStart?.Invoke();
-
         var step = seq.RoomSequence[_roomSequenceIndex];
-        DOVirtual.DelayedCall(4f, () => {
+        DOVirtual.DelayedCall(seq.DelayBeforeRoomStart, () =>  seq.OnRoomStart?.Invoke());
+
+        DOVirtual.DelayedCall(seq.DelayBeforeRoomStart + step.delay, () => {
             step.stepEvent?.Invoke();
         });
 
@@ -270,7 +270,6 @@ public class RunSystemController : MonoBehaviour
         {
             RoomEnd();
         }
-        
     }
 
     private int GetStepThreshold => _currentSequencer.RoomSequence[_roomSequenceIndex].TriggerAtEnemyCount;
@@ -289,7 +288,7 @@ public class RunSystemController : MonoBehaviour
         {
             var step = _currentSequencer.RoomSequence[_roomSequenceIndex];
 
-                DOVirtual.DelayedCall(4f, () => {
+                DOVirtual.DelayedCall(step.delay, () => {
                 step.stepEvent?.Invoke();
             });
 
