@@ -273,7 +273,7 @@ public class RunSystemController : MonoBehaviour
     }
 
             
-    private void LogRoomStart() => Logger.Core($"Room Start : {CurrentRoom} - {_currentSequencer} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
+    private void LogRoomStart() => Logger.Core($"Room Start : {CurrentRoom} - {_currentSequencer} - Seq Items : {_currentSequencer.RoomSequence.Count} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
     private void LogRoomEnd() => Logger.Core($"Room End : {CurrentRoom} - {_currentSequencer} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
     private void LogRoomStep() => Logger.Core($"STEP IN : {CurrentRoom} - {_currentSequencer} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
     private void LogRoomInitStep() => Logger.Core($"STEP IN ZERO: {CurrentRoom} - {_currentSequencer} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
@@ -289,6 +289,8 @@ public class RunSystemController : MonoBehaviour
     private void CurrentSeqStepIn()
     {
         _roomSequenceIndex++;
+        LogRoomStep();
+
 
         if (_roomSequenceIndex < _currentSequencer.RoomSequence.Count)
         {
@@ -296,7 +298,6 @@ public class RunSystemController : MonoBehaviour
 
                 DOVirtual.DelayedCall(step.delay, () => {
                 step.stepEvent?.Invoke();
-                LogRoomStep();
             });
 
         } else
@@ -307,6 +308,7 @@ public class RunSystemController : MonoBehaviour
 
     public bool QueryRoomEnd(bool ByPassEnemyCount = false)
     {
+        Logger.Core($"QUERY ROOM END ! Bypasss : {ByPassEnemyCount} - Enemy Count {EntityManager.Instance.Bots.Count}");
         if (EntityManager.Instance.Bots.Count > 0 && !ByPassEnemyCount) return false;
         return RoomEnd();
     }
