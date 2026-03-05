@@ -67,15 +67,16 @@ public class MeleeDashStrategy: SkillStrategy
 
         while (elapsed < dashDuration && projectile != null && projectile.gameObject.activeInHierarchy)
         {
-            // On utilise la direction initiale du dash pour garder la hitbox cohérente,
-            // mais tu peux remplacer par movementController.GetFacingDirection() si tu veux
-            // qu'elle tourne avec le personnage.
             Vector3 offset = initialDirection * 2f;
             projectile.transform.position = movementController.transform.position + offset;
 
             elapsed += Time.deltaTime;
             yield return null;
         }
+
+        // ← Kill le projectile proprement à la fin du dash
+        //if (projectile != null && projectile.gameObject.activeInHierarchy)
+            //projectile.ForceExpire(); // -- DO NOT ABUSE THIS, IT S A BUG FIX
     }
 
         protected override void OnProjectileHit(Projectile projectile, DamageController damageController)
@@ -89,11 +90,15 @@ public class MeleeDashStrategy: SkillStrategy
     {
         if (!hasHitATarget && _storedSkillData.DropBloodOnFailedSkill)
         {
-            //Spawn bloodlet
             var pos = cachedController.transform.position;
             pos -= cachedController.transform.forward * 2.5f;
             pos = pos.WithY(1);
             Instantiate(bloopDropPrefab, pos, Quaternion.identity);
         }
+    }
+
+    void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }

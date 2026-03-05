@@ -19,4 +19,9 @@ public abstract class Projectile: MonoBehaviour
         DOTween.Kill(this);
         onProjectileRemoval?.Invoke(this);
     }
+    
+    public void ForceExpire()
+    {
+        DestroyProjectile();
+    }
 }

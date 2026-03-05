@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class DraftSlotUI : MonoBehaviour
 {
     [SerializeField] private Button _button;
@@ -10,6 +11,8 @@ public class DraftSlotUI : MonoBehaviour
     [SerializeField] private TMP_Text _label;
     [SerializeField] private GameObject _highlight;
     [SerializeField] private GameObject _emptyIndicator;
+
+    public Button GetButton() => _button;
 
     private Action<int> _onClicked;
     private int _index;
@@ -20,6 +23,13 @@ public class DraftSlotUI : MonoBehaviour
         _onClicked = onClicked;
         _button.onClick.AddListener(() => _onClicked(_index));
         Clear();
+
+        var listener = _button.gameObject.AddComponent<SelectionListener>();
+        listener.OnSelected += () => {
+            _onClicked(_index);
+            SetHighlight(true);
+        };
+        listener.OnDeselected += () => SetHighlight(false);
     }
 
     public void SetSkill(SkillData skill)

@@ -96,6 +96,6 @@ public class GameManager : MonoBehaviour
 
     public void TriggerDemoEnd()
     {
-        Logger.Core("Demo End");
+        Logger.LogError(Logger.LogCategory.Core, "Demo End");
     }
 }

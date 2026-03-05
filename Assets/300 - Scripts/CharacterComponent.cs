@@ -152,7 +152,6 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
         Rage.Regain(data.RageGain);
     }
 
-
     private void OnSkillExecuted(SkillStrategy strategy, int index)
     {
         if (InRage) return;
