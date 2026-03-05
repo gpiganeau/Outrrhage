@@ -60,7 +60,7 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
         animController = GetComponent<AnimController>();
         animController?.Initialize(setupData);
         skillsController = GetComponent<SkillsController>();
-        skillsController.Initialize(setupData, animController);
+        skillsController.Initialize(setupData, animController, true);
         skillsController.AddConstrainer(this);
         movementController = GetComponent<MovementController>();
         movementController.Initialize(setupData, animController);

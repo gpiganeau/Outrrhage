@@ -26,7 +26,7 @@ public class SkillsController: MonoBehaviour
     public int MaxSkillSlots => _maxSkillSlots;
 
     //Still have to move the inputs into the CharacterComponent
-    public void Initialize(ActorSetupData actorData, AnimController animController = null)
+    public void Initialize(ActorSetupData actorData, AnimController animController = null, bool IsRiel = false)
     {
         constraints = new List<ISkillConstrainer>();
         // -- References Injection
@@ -46,7 +46,7 @@ public class SkillsController: MonoBehaviour
         activeSkillStrategies = new List<SkillStrategy>();
 
 
-        var startSkills = SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart ? GameManager.SkillsFromDraft : actorData.startingSkillSet;
+        var startSkills = (IsRiel && SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart) ? GameManager.SkillsFromDraft : actorData.startingSkillSet;
 
         SetActiveSkillStrategies(startSkills);
     }
