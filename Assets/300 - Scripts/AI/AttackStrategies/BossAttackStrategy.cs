@@ -16,10 +16,7 @@ public class BossAttackStrategy : AttackStrategy
     private int AttackPoolCycle => currentStrategy.AttackOrders.Count;
     private int AttackCount => AttackWrappers.Count;
     float TimeToNextSkill => currentStrategy.TimeToNextSkills;
-
-
     List<AttackWrapper> AttackWrappers;
-
 
 	public override void Initialize(AttackStrategySetupData setupData, SkillsController controller, MovementController movement)
     {
@@ -27,21 +24,25 @@ public class BossAttackStrategy : AttackStrategy
 
         if (s != null)
         {
+            if (s.Strategies == null) return;
         
             timer = 0f;
             _controller = controller;
             _movement = movement;
             _currentAttackIndex = 0; // -- Track Attack Pattern
-
-            if (s.Strategies == null) return;
+            Strategies = new List<BossStrategy>();
+            AttackWrappers = s.AttackWrappers;
 
             foreach (var strategie in s.Strategies)
             {
                 Strategies.Add(strategie);
             }
 
-            // -- todo : Helper to get appropriate Strategie HP Based
             currentStrategy = Strategies[0];
+
+            var damageController = movement.GetComponent<DamageController>();
+            if (damageController != null)
+                damageController.OnDamaged.AddListener(OnHealthChanged);
         }
     }
 
@@ -51,10 +52,13 @@ public class BossAttackStrategy : AttackStrategy
         
         if (Strategies == null) return;
 
-        int nextAttackIndex = currentStrategy.AttackOrders[_currentAttackIndex];
+        // -- Select Correct Wrapper & Loop
+        int orderIndex = _currentAttackIndex % AttackPoolCycle; 
+        int nextAttackIndex = currentStrategy.AttackOrders[orderIndex];
+        _currentAttackIndex++;
         AttackWrapper nextAttack = AttackWrappers[nextAttackIndex];
-        _currentAttackIndex ++;
 
+        // -- Apply Attack
         bool wait = nextAttack.StopWhenAttacking;
         float waitTime = nextAttack.StopDuration;
 
@@ -93,4 +97,31 @@ public class BossAttackStrategy : AttackStrategy
         }
         // ------------------------------------------------- //
     }
+
+    private void OnHealthChanged(int currentHp, int maxHp)
+    {
+
+        BossStrategy best = Strategies[0];
+        foreach (var strat in Strategies)
+        {
+            if (currentHp <= strat.HealthThreshold && strat.HealthThreshold > best.HealthThreshold)
+                best = strat;
+        }
+
+        if (best == currentStrategy) return;
+
+        // Switch
+        currentStrategy = best;
+        _currentAttackIndex = 0;
+        timer = 0f;
+        Logger.Combat($"[Boss] Switch strategy → {currentStrategy.strategyName}");
+    }
+
+
+        void OnDestroy()
+        {
+            var damageController = _movement?.GetComponent<DamageController>();
+            if (damageController != null)
+                damageController.OnDamaged.RemoveListener(OnHealthChanged);
+        }
 }

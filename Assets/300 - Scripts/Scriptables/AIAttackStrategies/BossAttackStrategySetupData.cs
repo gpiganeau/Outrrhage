@@ -15,9 +15,9 @@ public class BossAttackStrategySetupData : AttackStrategySetupData
     [Serializable]
     public class BossStrategy {
             
+        public string strategyName = "Nom de la phase";
         public float HealthThreshold = 0;
         public float TimeToNextSkills;
         public List<int> AttackOrders = new List<int> { 0, 0, 1 };
     }
-
 }
