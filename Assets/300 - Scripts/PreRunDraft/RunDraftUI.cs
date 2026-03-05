@@ -90,7 +90,7 @@ public class RunDraftUI : MonoBehaviour
 
         if (_pauseMenu != null) _pauseMenu.SetActive(false);
 
-        // -- Controller -- TODO : ONE OR BOTH ?
+        // -- Controller Focus -- 
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_slots[0].GetButton().gameObject);
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_skillsContainer.GetChild(0).gameObject);
     }

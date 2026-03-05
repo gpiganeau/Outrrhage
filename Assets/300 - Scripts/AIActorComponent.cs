@@ -84,7 +84,6 @@ public class AIActorComponent: PilotComponent, ISkillConstrainer, IJuicable
 	{
         if (damageController.IsDead) return;
 
-        // -- Pour esquiver la ref Serializer : @TODO : Enemy Maanger ?
         if (debugCharacterComponent == null)
         {
             debugCharacterComponent = GameManager.Instance.Riel;

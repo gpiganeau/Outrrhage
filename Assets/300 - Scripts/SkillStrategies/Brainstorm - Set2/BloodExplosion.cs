@@ -18,7 +18,7 @@ class BloodExplosion : SkillStrategy
 		movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[0]);
 
 
-        // --TODO  Hack : Regain the value 
+        // -- @HACK : Regain the value 
         CharacterComponent.Blood.Regain(_storedSkillData.BloodCost);
 
 
@@ -48,7 +48,7 @@ class BloodExplosion : SkillStrategy
 
     private void ExecuteExplosion()
     {
-        // -- TODO HACK, reconsume the blood
+        // -- HACK, reconsume the blood
         CharacterComponent.Blood.Consume(_storedSkillData.BloodCost);
 
         List<BloodDrop> nearbyBloodDrops = new List<BloodDrop>();

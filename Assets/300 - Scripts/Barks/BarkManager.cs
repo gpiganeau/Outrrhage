@@ -1,13 +1,10 @@
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public enum BarkPriority { VeryLow, Low, Normal, High, VeryHigh, Absolute }
 
 public class BarkManager : MonoBehaviour
 {
-    // Todo : Subtiltes System 
-    // Todo : Fade In/out ?
 
     public static BarkManager I;
 

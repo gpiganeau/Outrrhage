@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameRoom : MonoBehaviour
@@ -22,9 +20,6 @@ public class GameRoom : MonoBehaviour
     public RespawnPoint GetSpawnPoint() => _spawnPoint;
 
     [SerializeField] Transform _cellsElementHolder;
-
-
-    const int WALL_SIZE = 4;
 
     [Header("Spawn Points (GENERATORS)")]
     public List<GameObject> generators = new();
@@ -84,36 +79,36 @@ public class GameRoom : MonoBehaviour
     // -- Todo : MultiLayering (Obstacles, GPE, Props, Collectibles, Decorations, etc...)
     // -- Todo : Delay routine for srtylisation 
     private void GenerateRoomElements()
-{
-    _cells.Clear();
-    HalfX = (int)Dimensions.x / 2;
-    HalfY = (int)Dimensions.y / 2;
-
-    for (int x = -HalfX; x < HalfX; x++)
     {
-        for (int y = -HalfY; y < HalfY; y++)
+        _cells.Clear();
+        HalfX = (int)Dimensions.x / 2;
+        HalfY = (int)Dimensions.y / 2;
+
+        for (int x = -HalfX; x < HalfX; x++)
         {
-            RoomCell roomCell = new RoomCell(x, y, null);
-            _cells.Add(roomCell);
-            Vector3 spawnPosition = new Vector3(x + 0.5f, _floorLevelOffset, y + 0.5f);
-            bool isWall = x == -HalfX || x == HalfX - 1 || y == -HalfY || y == HalfY - 1;
-
+            for (int y = -HalfY; y < HalfY; y++)
             {
-                bool nearWall = x == -HalfX + 1 || x == HalfX - 2
-                             || y == -HalfY + 1 || y == HalfY - 2;
-                if (nearWall) continue;
+                RoomCell roomCell = new RoomCell(x, y, null);
+                _cells.Add(roomCell);
+                Vector3 spawnPosition = new Vector3(x + 0.5f, _floorLevelOffset, y + 0.5f);
+                bool isWall = x == -HalfX || x == HalfX - 1 || y == -HalfY || y == HalfY - 1;
 
-                if (Random.value < _spawnChancePercentage / 100f)
                 {
-                    GameObject element = Instantiate(_spawnableElements.Random(),
-                                                     transform.position + spawnPosition,
-                                                     Quaternion.identity);
-                    element.transform.SetParent(_cellsElementHolder);
-                    roomCell.OwnedElement = element;
-                }
-            }
+                    bool nearWall = x == -HalfX + 1 || x == HalfX - 2
+                                || y == -HalfY + 1 || y == HalfY - 2;
+                    if (nearWall) continue;
 
+                    if (Random.value < _spawnChancePercentage / 100f)
+                    {
+                        GameObject element = Instantiate(_spawnableElements.Random(),
+                                                        transform.position + spawnPosition,
+                                                        Quaternion.identity);
+                        element.transform.SetParent(_cellsElementHolder);
+                        roomCell.OwnedElement = element;
+                    }
+                }
+
+            }
         }
     }
-}
 }

@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BloodSlot : MonoBehaviour {
-    //@ Todo : Cool Tween on Spawn ? 
 
     private Image image;
 

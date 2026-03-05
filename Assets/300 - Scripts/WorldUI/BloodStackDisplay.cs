@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 public class BloodStackDisplay: BillboardWorldUI
 {
-	// -- Todo : Show Max Slot with grey value / Empty version  ?
 
 	[SerializeField] private BloodSlot _bloodSlotPrefab;
 	private BloodStack _stack;
