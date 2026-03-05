@@ -260,17 +260,23 @@ public class RunSystemController : MonoBehaviour
         _currentSequencer = seq;
 
         var step = seq.RoomSequence[_roomSequenceIndex];
-        DOVirtual.DelayedCall(seq.DelayBeforeRoomStart, () =>  seq.OnRoomStart?.Invoke());
+        DOVirtual.DelayedCall(seq.DelayBeforeRoomStart, () =>  {
+            LogRoomStart();
+            seq.OnRoomStart?.Invoke();
 
-        DOVirtual.DelayedCall(seq.DelayBeforeRoomStart + step.delay, () => {
-            step.stepEvent?.Invoke();
+            DOVirtual.DelayedCall(step.delay + 0.1f, () =>
+            {
+                LogRoomInitStep()       ;
+                step.stepEvent?.Invoke();
+            });
         });
-
-        if (seq.AutoComplete)
-        {
-            RoomEnd();
-        }
     }
+
+            
+    private void LogRoomStart() => Logger.Core($"Room Start : {CurrentRoom} - {_currentSequencer} - Seq Items : {_currentSequencer.RoomSequence.Count} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
+    private void LogRoomEnd() => Logger.Core($"Room End : {CurrentRoom} - {_currentSequencer} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
+    private void LogRoomStep() => Logger.Core($"STEP IN : {CurrentRoom} - {_currentSequencer} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
+    private void LogRoomInitStep() => Logger.Core($"STEP IN ZERO: {CurrentRoom} - {_currentSequencer} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
 
     private int GetStepThreshold => _currentSequencer.RoomSequence[_roomSequenceIndex].TriggerAtEnemyCount;
 
@@ -283,6 +289,8 @@ public class RunSystemController : MonoBehaviour
     private void CurrentSeqStepIn()
     {
         _roomSequenceIndex++;
+        LogRoomStep();
+
 
         if (_roomSequenceIndex < _currentSequencer.RoomSequence.Count)
         {
@@ -300,12 +308,14 @@ public class RunSystemController : MonoBehaviour
 
     public bool QueryRoomEnd(bool ByPassEnemyCount = false)
     {
+        Logger.Core($"QUERY ROOM END ! Bypasss : {ByPassEnemyCount} - Enemy Count {EntityManager.Instance.Bots.Count}");
         if (EntityManager.Instance.Bots.Count > 0 && !ByPassEnemyCount) return false;
         return RoomEnd();
     }
 
     private bool RoomEnd()
     {
+        LogRoomEnd();
         _currentRoom.customRoomSequencer.OnRoomComplete?.Invoke();
         OnRoomComplete?.Invoke();
         return true;
@@ -316,28 +326,12 @@ public class RunSystemController : MonoBehaviour
         if (_roomIndex <= runSettings.RoomCount)
         {
             _roomIndex++;
+            Logger.Core($"Spawn next room with index {_roomIndex}");
             CreateRoom(Rooms[_roomIndex]);
-            //StartCoroutine(CreateRoomAsync(Rooms[_roomIndex]));
         } else
         {
             GameManager.Instance.TriggerDemoEnd();
         }
-    }
-
-    private IEnumerator CreateRoomAsync(RoomWrapper wrapper)
-    {
-        if (CURRENT_CALL >= MAX_ROOM_CALL) yield break;
-        CURRENT_CALL++;
-
-        yield return null;
-
-        _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
-        
-        yield return null;
-        
-        _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
-        OpenEntrance(_currentRoom.transform.position, wrapper.entry);
-        StartRoomSequenceManual(_currentRoom.customRoomSequencer);
     }
 
     private void CreateRoom(RoomWrapper wrapper)

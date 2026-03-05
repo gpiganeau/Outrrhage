@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 
@@ -36,10 +37,11 @@ public class RespawnPoint : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (!HasStartRun)
+        if (!HasStartRun  && other.TryGetComponent<CharacterComponent>(out var riel))
         {
             HasStartRun = true;
             RunSystemController.Instance.QueryRoomEnd(true);
+            GetComponent<Collider>().enabled = false;
         }
     }
 

@@ -133,5 +133,5 @@ MonoBehaviour:
   OnRoomComplete:
     m_PersistentCalls:
       m_Calls: []
-  AutoComplete: 1
+  AutoComplete: 0
   affectedRoom: {fileID: 0}
