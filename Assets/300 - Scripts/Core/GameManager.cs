@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-
         DOTween.SetTweensCapacity(500, 50);
 
         if (SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart)
@@ -49,12 +48,6 @@ public class GameManager : MonoBehaviour
             _draftUI.Hide();
             RunSystemController.Instance.StartRun(null);
         }
-    }
-
-    public void OnRielReady()
-    {
-        // -- Event ?
-        // -- Apply skills ?
     }
 
     private void OnDraftConfirmed(List<SkillData> skills)

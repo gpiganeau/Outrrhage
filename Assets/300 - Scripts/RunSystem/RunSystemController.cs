@@ -109,7 +109,7 @@ public class RunSystemController : MonoBehaviour
     public void StartRun(List<SkillData> skills)
     {
         Sequence startSeq = DOTween.Sequence();
-        startSeq.AppendInterval(2f);
+        startSeq.AppendInterval(0.1f);
         startSeq.AppendCallback( () =>
         {
             SpawnNextRoom();

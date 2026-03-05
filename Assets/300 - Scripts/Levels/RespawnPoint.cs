@@ -30,7 +30,7 @@ public class RespawnPoint : MonoBehaviour
         
         if (other.TryGetComponent<CharacterComponent>(out var character))
         {
-            CharacterComponent.Blood.Regain(100);
+            CharacterComponent.Blood.Regain(100);   
         }
     }
 
