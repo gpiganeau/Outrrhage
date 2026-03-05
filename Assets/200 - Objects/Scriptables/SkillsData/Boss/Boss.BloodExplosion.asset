@@ -37,7 +37,7 @@ MonoBehaviour:
   movementDistance: 0
   movementDuration: 0
   IsRielSpecificSkill: 0
-  BloodCost: 3
+  BloodCost: 0
   DropBloodOnFailedSkill: 0
   RageGain: 30
   BloodStackingAmount: 0
