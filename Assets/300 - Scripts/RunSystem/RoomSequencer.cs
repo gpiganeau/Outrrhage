@@ -18,6 +18,21 @@ public class RoomSequencer : ScriptableObject
 
     [HideInInspector] public GameRoom affectedRoom; 
 
+    [Header("Boss")]
+    [Tooltip("Prefab Boss 1")] public AIActorComponent BossPhase1;
+    [Tooltip("Prefab Boss 2")] public AIActorComponent BossPhase2;
+
+
+    public void ZZ_BossSpawnPhase1()
+    {
+        EntityManager.Instance.SpawnCustomActor(BossPhase1, 2);
+        
+    }
+
+    public void ZZ_BossSpawnPhase2()
+    {
+        EntityManager.Instance.SpawnCustomActor(BossPhase2, 2);
+    }
 
     public void ZZ_SpawnCustomEnnemies(int count)
     {

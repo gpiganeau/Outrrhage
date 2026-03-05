@@ -18,6 +18,8 @@ public class BossAttackStrategy : AttackStrategy
     float TimeToNextSkill => currentStrategy.TimeToNextSkills;
     List<AttackWrapper> AttackWrappers;
 
+    int DeathAtHp;
+
 	public override void Initialize(AttackStrategySetupData setupData, SkillsController controller, MovementController movement)
     {
         var s = setupData as BossAttackStrategySetupData;
@@ -39,6 +41,8 @@ public class BossAttackStrategy : AttackStrategy
             }
 
             currentStrategy = Strategies[0];
+
+            DeathAtHp = s.BattleEndAtHealth;
 
             var damageController = movement.GetComponent<DamageController>();
             if (damageController != null)
@@ -100,6 +104,13 @@ public class BossAttackStrategy : AttackStrategy
 
     private void OnHealthChanged(int currentHp, int maxHp)
     {
+
+        if (currentHp <= DeathAtHp)
+        {
+            GetComponent<AIActorComponent>().ForceKill();
+            return;
+        }
+
 
         BossStrategy best = Strategies[0];
         foreach (var strat in Strategies)
