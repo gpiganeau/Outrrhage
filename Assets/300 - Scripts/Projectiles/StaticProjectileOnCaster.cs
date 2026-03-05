@@ -1,7 +1,5 @@
 ﻿using DG.Tweening;
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class StaticProjectileOnCaster: Projectile
 {
@@ -27,7 +25,6 @@ public class StaticProjectileOnCaster: Projectile
         if (_casterTransform != null)
         {
             transform.position = _casterTransform.position + _offset;
-
         }
     }
 

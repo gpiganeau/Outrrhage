@@ -273,9 +273,11 @@ public class RunSystemController : MonoBehaviour
         
     }
 
+    private int GetStepThreshold => _currentSequencer.RoomSequence[_roomSequenceIndex].TriggerAtEnemyCount;
+
     public void OnEnemyDeath(EntityType type)
     {
-        if (EntityManager.Instance.Bots.Count > 1) return;
+        if (EntityManager.Instance.Bots.Count > GetStepThreshold) return;
         CurrentSeqStepIn(); 
     }
 

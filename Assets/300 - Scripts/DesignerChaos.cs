@@ -11,6 +11,7 @@ public class ChaosStep
     public UnityEvent stepEvent;
     public bool logEvent = true;
     public bool skipEvent = false;
+    public int TriggerAtEnemyCount = 0;
 }
 
 
