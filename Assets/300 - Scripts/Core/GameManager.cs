@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
 
         if (SettingsManager.Instance.GameplaySettings.OpenSkillSelectorOnRunStart)
         {
-            Logger.Core("Game Manager Start : Register Draft & Show UI");
             _draftUI.OnDraftConfirmed += OnDraftConfirmed;
             _draftUI.Show();
 

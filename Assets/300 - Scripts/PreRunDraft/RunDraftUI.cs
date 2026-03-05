@@ -18,6 +18,7 @@ public class RunDraftUI : MonoBehaviour
     [Header("Confirm")]
     [SerializeField] private Button _confirmButton;
     [SerializeField] private TMP_Text _confirmLabel;
+    [SerializeField] private TMP_Text _descriptionLabel;
 
     private List<SkillData> _selectedSkills = new(); // index = slot
     private int _filledCount = 0;
@@ -29,7 +30,6 @@ public class RunDraftUI : MonoBehaviour
     [SerializeField] private GameObject _skillButtonPrefab; // simple prefab : Button + Image + TMP_Text
 
     [SerializeField] private GameObject _pauseMenu;
-
 
     void Awake()
     {
@@ -104,10 +104,13 @@ public class RunDraftUI : MonoBehaviour
         {
             _selectedSkills[existing] = null;
             _slots[existing].Clear();
+            _descriptionLabel.text ="Cleared.";
         }
 
         _selectedSkills[_activeSlot] = skill;
         _slots[_activeSlot].SetSkill(skill);
+
+        _descriptionLabel.text = skill.Description;
 
         // Avance au prochain slot vide auto
         int next = FindNextEmptySlot();
