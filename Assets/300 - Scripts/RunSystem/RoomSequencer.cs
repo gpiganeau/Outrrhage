@@ -13,10 +13,7 @@ public class RoomSequencer : ScriptableObject
     [Range(2f, 32f)] public float DelayBeforeRoomStart = 4f;
     public UnityEvent OnRoomStart;
     public List<ChaosStep> RoomSequence = new List<ChaosStep>();
-    public UnityEvent OnRoomComplete;
-
-    [Tooltip("Room Auto Complete and spawn next on Sequence end")] public bool AutoComplete = false;
-    
+    public UnityEvent OnRoomComplete;    
     #region Run Controls
 
     [HideInInspector] public GameRoom affectedRoom; 
