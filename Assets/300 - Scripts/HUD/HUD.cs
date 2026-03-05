@@ -58,6 +58,13 @@ public class HUD : MonoBehaviour
         Refresh();
         CharacterComponent.Blood.OnBloodChanged.AddListener((currentBlood, maxBlood) => OnBloodChanged(currentBlood, maxBlood));
         CharacterComponent.Rage.OnRageChanged.AddListener((c, m) => OnRageChanged(c, m));
+
+        if (SettingsManager.Instance.GameplaySettings.HideRielDebugElements)
+        {
+            _rielHealth.gameObject.SetActive(false);
+            _rielBlood.gameObject.SetActive(false);
+            _rielRage.gameObject.SetActive(false);
+        }
     }
     
     private void OnSkillCooldownStarted(SkillStrategy skill, int slot)

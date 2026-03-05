@@ -22,3 +22,4 @@ MonoBehaviour:
   spawnerTimeBetweenSpawns: 0.5
   YSpawnOffset: 0.3
   OpenSkillSelectorOnRunStart: 1
+  HideRielDebugElements: 1

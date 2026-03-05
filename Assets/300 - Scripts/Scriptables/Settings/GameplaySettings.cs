@@ -24,6 +24,9 @@ public class GameplaySettings : ScriptableObject
 
     [Header("Pre run UI For Skills")]
     public bool OpenSkillSelectorOnRunStart = true;
+
+    [Header("Debug")]
+    public bool HideRielDebugElements;
 }
 
 
