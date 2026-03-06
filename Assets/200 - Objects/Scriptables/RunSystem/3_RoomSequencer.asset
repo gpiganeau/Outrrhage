@@ -13,10 +13,23 @@ MonoBehaviour:
   m_Name: 3_RoomSequencer
   m_EditorClassIdentifier: Assembly-CSharp::RoomSequencer
   customType: {fileID: 0}
+  RadiusArountGenerator: 8
   DelayBeforeRoomStart: 5
   OnRoomStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000}
+        m_TargetAssemblyTypeName: RoomSequencer, Assembly-CSharp
+        m_MethodName: ZZ_ToggleAlert
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   RoomSequence:
   - stepName: Vague 1 -  Drones+tourelle+Bull
     delay: 0

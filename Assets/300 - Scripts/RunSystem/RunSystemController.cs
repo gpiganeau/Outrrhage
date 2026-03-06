@@ -95,6 +95,8 @@ public class RunSystemController : MonoBehaviour
 
     private List<Tween> _activeTweens = new();
 
+    private bool _roomEnding = false;
+
     #endregion
 
     void Awake()
@@ -348,6 +350,7 @@ public class RunSystemController : MonoBehaviour
     public void OnEnemyDeath(EntityType type)
     {
         if (_currentSequencer == null) return; // ← guard
+        if (_roomEnding) return;
         if (EntityManager.Instance.Bots.Count > GetStepThreshold) return;
         CurrentSeqStepIn(); 
     }
@@ -393,6 +396,7 @@ public class RunSystemController : MonoBehaviour
 
     private bool RoomEnd()
     {
+        _roomEnding = true;
         LogRoomEnd();
         Juicer.I.RoomEndEffect();
         AudioManager.Instance.PlayClipAtPoint(NewRoomClip, _currentRoom.transform.position);
@@ -424,6 +428,8 @@ public class RunSystemController : MonoBehaviour
     {
         if (CURRENT_CALL >= MAX_ROOM_CALL) return;
         CURRENT_CALL++;
+
+        _roomEnding = false;
 
         foreach (var t in _activeTweens) t?.Kill();
         _activeTweens.Clear();

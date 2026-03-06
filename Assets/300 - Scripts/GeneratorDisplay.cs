@@ -39,7 +39,7 @@ public class GeneratorDisplay : MonoBehaviour
             SetEmission(_pulseColor, val))
             .SetLoops(6, LoopType.Yoyo) // 3 aller-retour = 6 loops
             .SetEase(Ease.InOutSine)
-            .OnComplete(() => SetEmission(_pulseColor, _idleIntensity)); // ← reste en orange idle
+            .OnComplete(() => SetEmission(_pulseColor, _pulseIntensity)); // ← reste en orange idle
 
         // Rotation 3 tours
         pivot.DORotate(new Vector3(0, 360 * 2, 0), 1.2f, RotateMode.FastBeyond360)

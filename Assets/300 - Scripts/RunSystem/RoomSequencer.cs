@@ -125,6 +125,21 @@ public class RoomSequencer : ScriptableObject
         Logger.Core("DEBUG");
     }
 
+    public void ZZ_ToggleAlert()
+    {
+        MainLightController.I.Flicker(Color.red, 2f, count: 8, speed: 0.04f);
+    }
+
+    public void ZZ_SetAlert()
+    {
+        MainLightController.I.Flicker(Color.red, 2f, onComplete: () => MainLightController.I.SetAlert());
+    }
+
+    public void StopAlert()
+    {
+        MainLightController.I.SetDefault();
+    }
+
     #endregion
 }
 
