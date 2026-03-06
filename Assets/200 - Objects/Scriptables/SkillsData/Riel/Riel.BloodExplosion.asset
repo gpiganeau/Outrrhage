@@ -41,7 +41,7 @@ MonoBehaviour:
   DropBloodOnFailedSkill: 0
   RageGain: 30
   BloodStackingAmount: 0
-  Icon: {fileID: 1843259918, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
+  Icon: {fileID: 1133524041, guid: 61814338b45fe5b4f9464e116f9b9b84, type: 3}
   AnimationKey: Slash
   AnimationsKeys:
   - Cast
