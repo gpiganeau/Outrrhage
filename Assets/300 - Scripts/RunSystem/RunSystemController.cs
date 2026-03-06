@@ -92,6 +92,9 @@ public class RunSystemController : MonoBehaviour
 
     int MAX_ROOM_CALL = 10;
     int CURRENT_CALL = 0;
+
+    private List<Tween> _activeTweens = new();
+
     #endregion
 
     void Awake()
@@ -323,6 +326,7 @@ public class RunSystemController : MonoBehaviour
 
             DOVirtual.DelayedCall(step.delay + 0.1f, () => {
                 if (_currentSequencer != cachedSeq) return;
+                Pulse();
                 LogRoomInitStep();
                 step.stepEvent?.Invoke();
             });
@@ -348,10 +352,21 @@ public class RunSystemController : MonoBehaviour
         CurrentSeqStepIn(); 
     }
 
+    private void Pulse()
+    {
+        // ← Pulse les generators à chaque nouvelle step
+        if (_currentRoom != null)
+        Logger.Core($"Pulsing : {_currentRoom.generators.Count}");
+            foreach (var g in _currentRoom.generators)
+                g.GetComponentInChildren<GeneratorDisplay>()?.Pulse();
+
+    }
+
     private void CurrentSeqStepIn()
     {
         _roomSequenceIndex++;
         LogRoomStep();
+        Pulse();
 
 
         if (_roomSequenceIndex < _currentSequencer.RoomSequence.Count)
@@ -385,6 +400,12 @@ public class RunSystemController : MonoBehaviour
         LogRoomEnd();
         Juicer.I.RoomEndEffect();
         AudioManager.Instance.PlayClipAtPoint(NewRoomClip, _currentRoom.transform.position);
+
+
+        // ← Éteint les generators à la fin de la room
+            foreach (var g in _currentRoom.generators)
+                g.GetComponentInChildren<GeneratorDisplay>()?.TurnOff();
+
         _currentRoom.customRoomSequencer.OnRoomComplete?.Invoke(); // -- Current Complete
         DOVirtual.DelayedCall(2f, () => OnRoomComplete?.Invoke()); // -- Then Spawn next
         return true;
@@ -408,12 +429,15 @@ public class RunSystemController : MonoBehaviour
         if (CURRENT_CALL >= MAX_ROOM_CALL) return;
         CURRENT_CALL++;
 
+        foreach (var t in _activeTweens) t?.Kill();
+        _activeTweens.Clear();
+
         _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
         _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
 
         if (wrapper.type != RoomType.Hub)
             OpenEntrance(_currentRoom.transform.position, (wrapper.entry));
-            Logger.Core($"CreateRoom {wrapper.type} - entry:{wrapper.entry} - opening:{OppositeDir(wrapper.entry)}");
+            //Logger.Core($"CreateRoom {wrapper.type} - entry:{wrapper.entry} - opening:{OppositeDir(wrapper.entry)}");
         StartRoomSequenceManual(_currentRoom.customRoomSequencer);
     }
 
@@ -421,8 +445,8 @@ public class RunSystemController : MonoBehaviour
     {
         var origin = roomPos - (GetDirection(direction) * ROOM_SIZE * 0.5f);
         Collider[] hits = Physics.OverlapSphere(origin, 3.8F, LayerMask.GetMask("Walls"));
-        Logger.Core($"hits: {hits.Length}");
-        Logger.Core($"origin: {origin}, roomPos: {roomPos}, dir: {direction}");
+        //Logger.Core($"hits: {hits.Length}");
+        //Logger.Core($"origin: {origin}, roomPos: {roomPos}, dir: {direction}");
         foreach (var hit in hits)
             Destroy(hit.gameObject);
 

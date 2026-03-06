@@ -577,8 +577,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a184e83d45416846abaadbb1b178afc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5187062122144445938}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a184e83d45416846abaadbb1b178afc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 835496479960081839}
   m_SourcePrefab: {fileID: 100100000, guid: 3a184e83d45416846abaadbb1b178afc, type: 3}
+--- !u!1 &6194883217421143181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3a184e83d45416846abaadbb1b178afc, type: 3}
+  m_PrefabInstance: {fileID: 6429394961676349916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &835496479960081839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194883217421143181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398bfba4ee410934e8f110a0af18be16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GeneratorDisplay
+  _renderers:
+  - {fileID: 4338155985750009591}
+  - {fileID: 8926579235919565010}
+  - {fileID: 1358536941046423330}
+  - {fileID: 194081289222771814}
+  _pulseColor: {r: 1, g: 0.3, b: 0, a: 1}
+  _idleColor: {r: 0.2, g: 0.8, b: 1, a: 1}
+  _pulseIntensity: 3
+  _idleIntensity: 0.5
 --- !u!4 &6823927440731723319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a184e83d45416846abaadbb1b178afc, type: 3}
