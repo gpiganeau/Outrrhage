@@ -262,9 +262,9 @@ public class RunSystemController : MonoBehaviour
         };
 
         int attempts = 0;
-        int maxAttempts = 100;
+        int maxAttempts = 1000;
 
-        while (_pathDirections.Count <= _roomCount && attempts < maxAttempts)
+        while (attempts < maxAttempts)
         {
             attempts++;
             _pathDirections.Clear();
@@ -283,11 +283,7 @@ public class RunSystemController : MonoBehaviour
                         available.Add(dir);
                 }
 
-                if (available.Count == 0)
-                {
-                    success = false;
-                    break; // recommence depuis le début
-                }
+                if (available.Count == 0) { success = false; break; }
 
                 PathDirection chosen = available.Random();
                 _pathDirections.Add(chosen);
@@ -295,15 +291,14 @@ public class RunSystemController : MonoBehaviour
                 visited.Add(current);
             }
 
-            if (success) break;
+            if (success) return; // ← succès, on sort
         }
 
-        if (attempts >= maxAttempts)
-            Logger.Core("[RunSystem] Could not generate path without overlaps after 100 attempts");
-            if (Application.isPlaying)
-            {
-                GameManager.Instance.ReloadCurrentScene();
-            }
+        // ── Fallback garanti : tout droit vers le Nord ──
+        Logger.Core("[RunSystem] Fallback to linear path");
+        _pathDirections.Clear();
+        for (int i = 0; i <= _roomCount; i++)
+            _pathDirections.Add(PathDirection.North);
     }
 
     public void StartRoomSequenceManual(RoomSequencer seq)

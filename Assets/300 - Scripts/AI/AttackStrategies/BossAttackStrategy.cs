@@ -20,6 +20,8 @@ public class BossAttackStrategy : AttackStrategy
 
     int DeathAtHp;
 
+    private bool _isDying = false;
+
 	public override void Initialize(AttackStrategySetupData setupData, SkillsController controller, MovementController movement)
     {
         var s = setupData as BossAttackStrategySetupData;
@@ -105,8 +107,12 @@ public class BossAttackStrategy : AttackStrategy
     private void OnHealthChanged(int currentHp, int maxHp)
     {
 
+        if (_isDying) return;
+
         if (currentHp <= DeathAtHp)
         {
+
+            _isDying = true;
             GetComponent<AIActorComponent>().ForceKill();
             return;
         }
