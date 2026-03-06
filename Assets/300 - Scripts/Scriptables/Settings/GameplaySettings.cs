@@ -28,6 +28,9 @@ public class GameplaySettings : ScriptableObject
 
     [Header("Debug")]
     public bool HideRielDebugElements;
+
+    [Header("Boss")]
+    public int BloodDropAmountOnHit;
 }
 
 

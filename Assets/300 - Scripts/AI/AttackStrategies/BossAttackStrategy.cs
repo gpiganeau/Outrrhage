@@ -22,6 +22,8 @@ public class BossAttackStrategy : AttackStrategy
 
     private bool _isDying = false;
 
+    private GameObject BloodDrop;
+
 	public override void Initialize(AttackStrategySetupData setupData, SkillsController controller, MovementController movement)
     {
         var s = setupData as BossAttackStrategySetupData;
@@ -36,6 +38,8 @@ public class BossAttackStrategy : AttackStrategy
             _currentAttackIndex = 0; // -- Track Attack Pattern
             Strategies = new List<BossStrategy>();
             AttackWrappers = s.AttackWrappers;
+
+            BloodDrop = s.BloodDropPrefab;
 
             foreach (var strategie in s.Strategies)
             {
@@ -117,6 +121,16 @@ public class BossAttackStrategy : AttackStrategy
             return;
         }
 
+        // -- Drop Blood
+        int dropAmount = SettingsManager.Instance.GameplaySettings.BloodDropAmountOnHit;
+
+        for (int i = 0; i < dropAmount; i++)
+        {
+            var vec = Random.insideUnitCircle * SettingsManager.Instance.GameplaySettings.BloodDispersionRadius;
+            Vector3 offset = new Vector3(vec.x, 0.5f, vec.y);
+            var pos = transform.position + offset;
+            Instantiate(BloodDrop, pos, Quaternion.identity);
+        }
 
         BossStrategy best = Strategies[0];
         foreach (var strat in Strategies)

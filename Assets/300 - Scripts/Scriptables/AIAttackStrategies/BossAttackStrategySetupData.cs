@@ -12,6 +12,8 @@ public class BossAttackStrategySetupData : AttackStrategySetupData
     public int BattleEndAtHealth = 3;
     public List<AttackWrapper> AttackWrappers;
 
+    public GameObject BloodDropPrefab;
+
     [Serializable]
     public class BossStrategy {
             
