@@ -16,7 +16,7 @@ MonoBehaviour:
   Strategies:
   - strategyName: Phase 1.1
     HealthThreshold: 30
-    TimeToNextSkills: 1
+    TimeToNextSkills: 0.5
     AttackOrders: 00000000000000000000000001000000
   - strategyName: Phase 1.2
     HealthThreshold: 15

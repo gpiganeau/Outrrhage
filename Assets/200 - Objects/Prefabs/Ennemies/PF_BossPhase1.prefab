@@ -192,7 +192,7 @@ Animator:
   m_GameObject: {fileID: 3018517998506684508}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: a3ba88919ccdf904fb297a31d9acd699, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1f32dafb8780f1943a42a5c80586376e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 97e7a97dcb001bc4b86725b864e6d7c2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -245,7 +245,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 993818819156653267}
+  - {fileID: 6741012115486974339}
   m_Father: {fileID: 4094621119520510360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &784942595885161202
@@ -430,9 +430,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf9ea22f2c962e84181989c41e37cf63, type: 3}
---- !u!4 &993818819156653267 stripped
+--- !u!4 &6741012115486974339 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3267125674444664660, guid: bf9ea22f2c962e84181989c41e37cf63, type: 3}
+  m_CorrespondingSourceObject: {fileID: 9011996712827337220, guid: bf9ea22f2c962e84181989c41e37cf63, type: 3}
   m_PrefabInstance: {fileID: 2350291380866849671}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8357010371432740870
