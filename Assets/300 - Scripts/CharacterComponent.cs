@@ -163,7 +163,7 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
     private void OnRageExit(float duration)
     {
         Juicer.I.StopRage(duration);
-        AudioManager.Instance.PlayClipAtPoint(setupData.RageExitClip.Random(), transform.position);
+        AudioManager.Instance.PlayClipAtPoint(setupData.RageExitClip.Random(), transform.position, SoundGroup.SFX);
     }
 
     private void OnRageEnter(float duration)
@@ -171,7 +171,7 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
 
         if (damageController.IsDead) return;
         Juicer.I.StartRage(duration);
-        AudioManager.Instance.PlayClipAtPoint(setupData.RagerEnterClip.Random(), transform.position);
+        AudioManager.Instance.PlayClipAtPoint(setupData.RagerEnterClip.Random(), transform.position, SoundGroup.SFX);
     }
 
     private void OnDamaged(int currentHealth, int maxHealth)
@@ -184,14 +184,14 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
         Juicer.I.PlayerDamagedImpact(GetRenderers());
         var fx = Instantiate(setupData.BloodSplasherPrefab, transform.position.WithY(1f), Quaternion.identity).GetComponentInChildren<VisualEffect>(); 
         fx.Play();
-        AudioManager.Instance.PlayClipAtPoint(setupData.HitClip.Random(), transform.position);
+        AudioManager.Instance.PlayClipAtPoint(setupData.HitClip.Random(), transform.position, SoundGroup.SFX);
 
     }
 
     private void OnHealed(int currentHealth, int maxHealth)
     {
         Juicer.I.PlayerHealedEffect(GetRenderers());
-        AudioManager.Instance.PlayClipAtPoint(setupData.HealClip.Random(), transform.position);
+        AudioManager.Instance.PlayClipAtPoint(setupData.HealClip.Random(), transform.position, SoundGroup.SFX);
 
     }
 
@@ -204,7 +204,7 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
         DisableControls();  
         Rage.ForceStop();
         Juicer.I.PlayerDeathEffect();
-        AudioManager.Instance.PlayClipAtPoint(setupData.DeathClip.Random(), transform.position);
+        AudioManager.Instance.PlayClipAtPoint(setupData.DeathClip.Random(), transform.position, SoundGroup.SFX);
         animController.Die();   
         if (settings.ClearRoomOnDeath) EntityManager.Instance.FullClearRoom();
         DOVirtual.DelayedCall(settings.DeathTimeBeforeReload, () => GameManager.Instance.ReloadCurrentScene());

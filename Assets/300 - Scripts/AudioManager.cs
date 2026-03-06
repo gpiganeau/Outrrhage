@@ -56,16 +56,16 @@ public class AudioManager : MonoBehaviour
 
     internal void PlayUiSelect()
     {
-        PlayClipAtPoint(UISelectClip, Camera.main.transform.position, SoundGroup.SFX);
+        PlayClipAtPoint(UISelectClip, Camera.main.transform.position, SoundGroup.Ambient);
     }
 
     internal void PlayUIValidate()
     {
-        PlayClipAtPoint(UIValidateClip, Camera.main.transform.position, SoundGroup.SFX);
+        PlayClipAtPoint(UIValidateClip, Camera.main.transform.position, SoundGroup.Ambient);
     }
 
     internal void PlayUICOnfirm()
     {
-        PlayClipAtPoint(UIConfirmClip, Camera.main.transform.position, SoundGroup.SFX);
+        PlayClipAtPoint(UIConfirmClip, Camera.main.transform.position, SoundGroup.Ambient);
     }
 }

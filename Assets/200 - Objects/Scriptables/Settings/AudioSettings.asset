@@ -15,6 +15,6 @@ MonoBehaviour:
   DisableAudio: 0
   masterVolume: 1
   musicVolume: 0.05
-  sfxVolume: 1.2
-  ambientVolume: 1
+  sfxVolume: 1.5
+  ambientVolume: 0.01
   muteOnFocusLoss: 1

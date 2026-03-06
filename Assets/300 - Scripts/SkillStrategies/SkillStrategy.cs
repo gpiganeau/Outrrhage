@@ -50,7 +50,7 @@ public class SkillStrategy : MonoBehaviour
 
 
         if (_storedSkillData.skillCastClips.Length > 0 && !_storedSkillData.OverrideAudioCustom)
-            AudioManager.Instance.PlayClipAtPoint(_storedSkillData.skillCastClips.Random(), transform.position);
+            AudioManager.Instance.PlayClipAtPoint(_storedSkillData.skillCastClips.Random(), transform.position, SoundGroup.SFX);
 
         return true;
     }
@@ -100,7 +100,7 @@ public class SkillStrategy : MonoBehaviour
     {
         _vfxController.PlayHitVFX(projectile.transform.position, _storedSkillData.ProjectileDamage[0]);
         pilotComponent.OnProjectileHit(projectile, damageController, _storedSkillData);
-        AudioManager.Instance.PlayClipAtPoint(_storedSkillData.skillHitClips.Random(), projectile.transform.position);
+        AudioManager.Instance.PlayClipAtPoint(_storedSkillData.skillHitClips.Random(), projectile.transform.position, SoundGroup.SFX);
     }
 
     public virtual int CustomDamageCalculation(DamageController target, int baseDamage, Projectile projectile)

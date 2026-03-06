@@ -230,7 +230,7 @@ public class InputManager : MonoBehaviour
     {   
         if (obj.performed)
         {
-            OnPauseEvent?.Invoke();
+           // OnPauseEvent?.Invoke();
         }
     }
 
