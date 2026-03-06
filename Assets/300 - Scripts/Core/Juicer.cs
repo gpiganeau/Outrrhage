@@ -377,6 +377,8 @@ public class Juicer : MonoBehaviour
     {
         if (!IsJuiceEnabled()) return;
         PulseChromaticAberration(0.8f, 0.5f);
+        PulseChromaticAberration(1.2f, 0.2f);
+        PulseChromaticAberration(0.8f, 1f);
     }
     
     #endregion

@@ -44,8 +44,15 @@ public class GameRoom : MonoBehaviour
 
     public void Init(RoomSequencer sequencer, PathDirection entrance, List<GameObject> walls = null)
     {
+
         if (!OverrideRoomSequencer) customRoomSequencer = sequencer;
-        customRoomSequencer.affectedRoom = this;
+        
+        if (customRoomSequencer != null)
+        {
+            customRoomSequencer = Instantiate(customRoomSequencer); // ← clone le SO
+            customRoomSequencer.affectedRoom = this;
+        }
+        
         WallsPrefabs = walls;
         RoomEnter = entrance;
         RegenerateRoom();

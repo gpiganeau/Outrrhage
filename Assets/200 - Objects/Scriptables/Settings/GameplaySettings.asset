@@ -19,7 +19,7 @@ MonoBehaviour:
   LossRageTick: 1
   DeathTimeBeforeReload: 3
   ClearRoomOnDeath: 1
-  spawnerTimeBetweenSpawns: 0.5
+  spawnerTimeBetweenSpawns: 1
   YSpawnOffset: 0.3
   OpenSkillSelectorOnRunStart: 1
   HideRielDebugElements: 1

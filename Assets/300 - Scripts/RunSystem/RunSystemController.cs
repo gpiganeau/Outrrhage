@@ -311,7 +311,9 @@ public class RunSystemController : MonoBehaviour
 
         } else
         {
-            QueryRoomEnd(true);
+
+            Juicer.I.LastEnemyEffect();
+            DOVirtual.DelayedCall(2f, () => QueryRoomEnd(true));
         }
     }
 
