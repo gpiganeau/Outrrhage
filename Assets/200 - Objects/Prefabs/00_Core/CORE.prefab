@@ -197,15 +197,15 @@ MonoBehaviour:
   Bots: []
   SpawnFXPrefab: {fileID: 6862081939587630824, guid: a5c692c20671ec043bc558abf0886ebd, type: 3}
   SpawnsClip:
-  - {fileID: 8300000, guid: a081e98f5414fc546a7701553a8a4ddc, type: 3}
-  - {fileID: 8300000, guid: 5e88feb794bdf1e4aa3dbc29cd9ee740, type: 3}
-  - {fileID: 8300000, guid: ced08d56a75f3844e9c33902a977bf39, type: 3}
+  - {fileID: 8300000, guid: b987635d1e124b64c8af2e535341331d, type: 3}
+  - {fileID: 8300000, guid: ca614674950a7904090fac7234e88b11, type: 3}
   enemyPrefabs:
   - {fileID: 3064940305099015597, guid: 113f912f4791ee84bba7288091a2815f, type: 3}
   - {fileID: 3064940305099015597, guid: 15fb97f868544b54e9d28aa4fd908309, type: 3}
   - {fileID: 3064940305099015597, guid: 72e53e084c5e6764a9429e75684437cc, type: 3}
   - {fileID: 2474350776460943824, guid: e42fd21a588dfbd42b0394df0f260993, type: 3}
-  - {fileID: 2474350776460943824, guid: e40892d4c7929204b823ba38213218fb, type: 3}
+  - {fileID: 3064940305099015597, guid: e1bf2a29935c30148a5c6e65386ae08b, type: 3}
+  - {fileID: 3064940305099015597, guid: 25fa815269b3257419e130b578b1a3ff, type: 3}
   spawnInterval: 5
   spawnRangeMin: 3
   spawnRangeMax: 8
@@ -263,13 +263,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   Songs:
   - {fileID: 8300000, guid: 606a9e5b098e6d94b9cb3e525fccee3b, type: 3}
-  - {fileID: 8300000, guid: 10463228963579243838b1d062f48856, type: 3}
-  - {fileID: 8300000, guid: 354db22770deaf042832d6ef8c414b33, type: 3}
-  - {fileID: 8300000, guid: aea9298749328af4fad3b642df45faac, type: 3}
-  - {fileID: 8300000, guid: e9fd131cfedfebd4298a2345d45e75ee, type: 3}
   - {fileID: 8300000, guid: 42d69cab5f19c2d4781b35551c62879a, type: 3}
   - {fileID: 8300000, guid: e24fac239f5d4c44e9df780c112a41d4, type: 3}
   - {fileID: 8300000, guid: f97993a0ee548e34da6bf1026b1ff42e, type: 3}
+  UISelectClip: {fileID: 8300000, guid: 630a542d7e173c74fadc65d244b06597, type: 3}
+  UIValidateClip: {fileID: 8300000, guid: fa01926af5d1df345a6066e73f25fbc3, type: 3}
+  UIConfirmClip: {fileID: 8300000, guid: 3189d4781934aa8469a59cc1ea7afbca, type: 3}
   musicSource: {fileID: 1072633465445915614}
 --- !u!82 &1072633465445915614
 AudioSource:
@@ -593,6 +592,9 @@ MonoBehaviour:
   OnCharacterSlot5Released:
     m_PersistentCalls:
       m_Calls: []
+  OnReloadGameEvent:
+    m_PersistentCalls:
+      m_Calls: []
   OnPauseEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -853,11 +855,189 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ea947410-edf3-4077-9dea-29071e6ccf37
     m_ActionName: 'UI/Pause[/Keyboard/escape,/DualSenseGamepadHID/start]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7173036442046510344}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnReloadGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 776cfb7e-8ceb-4b4a-a6ef-6b485c75cda9
+    m_ActionName: 'Character/ReloadGame[/Keyboard/p,/DualSenseGamepadHID/select]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7173036442046510344}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnReloadGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1df502b0-0e4c-4332-a7c7-330ae5ddc757
+    m_ActionName: 'UI/ReloadGame[/Keyboard/p,/DualSenseGamepadHID/select]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Character
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!1 &5675552195553625477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4213494225881607544}
+  - component: {fileID: 8548311378654397716}
+  - component: {fileID: 152262339720098332}
+  - component: {fileID: 8388639241693875662}
+  m_Layer: 0
+  m_Name: MainLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4213494225881607544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675552195553625477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.29285645, y: -0.3172887, z: 0.103705905, w: 0.8959956}
+  m_LocalPosition: {x: -19.53097, y: 3.7, z: -0.9259}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3574302140441405706}
+  m_LocalEulerAnglesHint: {x: 36.2, y: -39, z: 0}
+--- !u!108 &8548311378654397716
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675552195553625477}
+  m_Enabled: 1
+  serializedVersion: 12
+  m_Type: 1
+  m_Color: {r: 0.08235294, g: 0.43529412, b: 0.81960785, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!114 &152262339720098332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675552195553625477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!114 &8388639241693875662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5675552195553625477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6302208196e962746ad7ab06540883d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainLightController
+  _light: {fileID: 8548311378654397716}
+  _defaultColor: {r: 0.081301175, g: 0.43623888, b: 0.8207547, a: 1}
+  _defaultIntensity: 1.2
+  _alertColor: {r: 1, g: 0.1, b: 0.05, a: 1}
+  _alertIntensity: 1.8
+  _transitionDuration: 0.5
 --- !u!1 &5941010983590899817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,29 +1342,58 @@ MonoBehaviour:
     sequencer: {fileID: 0}
     entry: 2
     type: 0
-  - room: {fileID: 9194013458221197619, guid: 492143fefee901440a01b1db93fe97ba, type: 3}
+  - room: {fileID: 9194013458221197619, guid: e97ec187eefec214ba55ae2763de6449, type: 3}
     position: {x: 32, y: 0, z: 0}
     sequencer: {fileID: 11400000, guid: 11d04481548239441b7ed5d433ee5495, type: 2}
     entry: 1
     type: 1
+  - room: {fileID: 9194013458221197619, guid: 492143fefee901440a01b1db93fe97ba, type: 3}
+    position: {x: 64, y: 0, z: 0}
+    sequencer: {fileID: 11400000, guid: 69ce3a9d819655e4faa5af107e2091e1, type: 2}
+    entry: 1
+    type: 1
+  - room: {fileID: 9194013458221197619, guid: 0eb1db02e6f30f14aa8c3b7dc16611f3, type: 3}
+    position: {x: 64, y: 0, z: 32}
+    sequencer: {fileID: 11400000, guid: 3a51faac0c50a9e42a47e65e6ceab425, type: 2}
+    entry: 0
+    type: 1
+  - room: {fileID: 9194013458221197619, guid: fa3f444269bf6434083b9e4fde02c4d3, type: 3}
+    position: {x: 32, y: 0, z: 32}
+    sequencer: {fileID: 11400000, guid: e66e0488b58daf240ab0e175700034a5, type: 2}
+    entry: 3
+    type: 1
+  - room: {fileID: 9194013458221197619, guid: 05c1b22ae3909bf48a22be0e849b0cbf, type: 3}
+    position: {x: 0, y: 0, z: 32}
+    sequencer: {fileID: 11400000, guid: 5f11168babafdc0489aef330828a8fb0, type: 2}
+    entry: 3
+    type: 1
   - room: {fileID: 9194013458221197619, guid: f98a71678d52eef43b8291f7d9c976ff, type: 3}
-    position: {x: 32, y: 0, z: -32}
+    position: {x: 0, y: 0, z: 64}
     sequencer: {fileID: 0}
-    entry: 2
+    entry: 0
     type: 2
   runSettings: {fileID: 11400000, guid: e5704da4f01a3c542809fd3bdda74a31, type: 2}
-  BossColor: {r: 1, g: 0.8475358, b: 0.2028302, a: 1}
+  NewRoomClip: {fileID: 8300000, guid: 35265348f2715044e9d637fae0d8f0fd, type: 3}
+  BossColor: {r: 0.8584906, g: 0.7347919, b: 0.21462265, a: 1}
   NormalColor: {r: 0.34718758, g: 0.6363477, b: 0.8867924, a: 1}
   HubColor: {r: 1, g: 0, b: 0.010103226, a: 1}
-  _roomCount: 1
+  _roomCount: 5
   _pathRooms:
+  - {fileID: 9194013458221197619, guid: e97ec187eefec214ba55ae2763de6449, type: 3}
   - {fileID: 9194013458221197619, guid: 492143fefee901440a01b1db93fe97ba, type: 3}
+  - {fileID: 9194013458221197619, guid: 0eb1db02e6f30f14aa8c3b7dc16611f3, type: 3}
+  - {fileID: 9194013458221197619, guid: fa3f444269bf6434083b9e4fde02c4d3, type: 3}
+  - {fileID: 9194013458221197619, guid: 05c1b22ae3909bf48a22be0e849b0cbf, type: 3}
   _bossRoom: {fileID: 9194013458221197619, guid: e7be60f22f697bb47a8dcd49ec4ccc59, type: 3}
   _currentRoom: {fileID: 0}
-  _pathDirections: 0100000002000000
+  _pathDirections: 010000000100000000000000030000000300000000000000
   _spawnPositions:
   - {x: 32, y: 0, z: 0}
-  - {x: 32, y: 0, z: -32}
+  - {x: 64, y: 0, z: 0}
+  - {x: 64, y: 0, z: 32}
+  - {x: 32, y: 0, z: 32}
+  - {x: 0, y: 0, z: 32}
+  - {x: 0, y: 0, z: 64}
   OnRoomComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -1227,6 +1436,7 @@ Transform:
   - {fileID: 5453710491856542334}
   - {fileID: 27518372910892365}
   - {fileID: 1675180955639725790}
+  - {fileID: 4213494225881607544}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3152664126561750499
