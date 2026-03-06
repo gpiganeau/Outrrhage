@@ -20,6 +20,7 @@ MonoBehaviour:
   startingSkillSet:
   - {fileID: 11400000, guid: efdc6b511802c5444a493a94a3b03aca, type: 2}
   - {fileID: 11400000, guid: 66bc4fb58cd160b48b34bf2248bf7a8b, type: 2}
+  - {fileID: 11400000, guid: 06edfddcdf5c66746b63d0491d7ced4d, type: 2}
   LootOnDeath: 0
   _itemsLootsOnDeath: []
   LootBloodOnDeath: 1
@@ -34,6 +35,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b987635d1e124b64c8af2e535341331d, type: 3}
   HealClip: []
   movementSetupData: {fileID: 11400000, guid: fa8d22d8f1765b74ebf07668146d9d6f, type: 2}
-  attackSetupData: {fileID: 11400000, guid: 78662d13ef711dc4f8ac96631f55d6f5, type: 2}
+  attackSetupData: {fileID: 11400000, guid: 331383bd65460c24d91e98ca16868a1c, type: 2}
   entityType: 0
-  TimeBeforeBrainActivation: 0.5
+  TimeBeforeBrainActivation: 2

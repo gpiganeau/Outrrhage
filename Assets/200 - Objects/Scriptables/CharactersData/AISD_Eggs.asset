@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90b4f106e0d7ce4b87b7cc28ea5675c, type: 3}
+  m_Name: AISD_Eggs
+  m_EditorClassIdentifier: Assembly-CSharp::AIActorSetupData
+  Name: Oeufs
+  maxHealth: 1
+  movementSpeed: 0
+  maxBloodStack: 5
+  team: 2
+  startingSkillSet: []
+  LootOnDeath: 0
+  _itemsLootsOnDeath: []
+  LootBloodOnDeath: 1
+  BaseBloodDrop: 3
+  BloodPrefab: {fileID: 5115976658195506498, guid: 4c627e869fdc5114a9fa3b680d12b4e5, type: 3}
+  BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
+  HitClip: []
+  DeathClip:
+  - {fileID: 8300000, guid: c1b350c913d7783458da1f1ed0224554, type: 3}
+  - {fileID: 8300000, guid: 1b719e3bc21388146ba3a538f70210fc, type: 3}
+  HealClip: []
+  movementSetupData: {fileID: 11400000, guid: 9c37c78bf3481ed4e854301f5d3f286e, type: 2}
+  attackSetupData: {fileID: 11400000, guid: 8225e7df4eecc544aab5a8fe3006036a, type: 2}
+  entityType: 3
+  TimeBeforeBrainActivation: 0.5

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RunSettings
   Name: Test Run Settings
   Description: Blabla
-  RoomCount: 5
+  RoomCount: 2
   Sequencers:
   - {fileID: 11400000, guid: 11d04481548239441b7ed5d433ee5495, type: 2}
   - {fileID: 11400000, guid: 69ce3a9d819655e4faa5af107e2091e1, type: 2}

@@ -26,7 +26,7 @@ MonoBehaviour:
   ProjectileSpeed: 5
   ProjectileDamage: 03000000
   ProjectileLifetime: 2
-  numberOfProjectiles: 6
+  numberOfProjectiles: 4
   TravelMode: 0
   AimAssistRatio: 0
   ComboResetDelay: 0

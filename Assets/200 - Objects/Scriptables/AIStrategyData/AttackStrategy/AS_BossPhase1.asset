@@ -9,17 +9,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e9fbbc30a9de44697b0612170e2685, type: 3}
+  m_Script: {fileID: 11500000, guid: 9baad4a3808e5eb4dbb43dfc0e1449fe, type: 3}
   m_Name: AS_BossPhase1
-  m_EditorClassIdentifier: Assembly-CSharp::MainAttackStrategySetupData
-  attackStrategyScript: {fileID: 792553262800970159, guid: 569600c172b62f346a7deb4c13b4c05e, type: 3}
-  AttackSettings:
-  - AttackNameToHelpDesigner: Slash
-    MinimumDistanceToRiel: 3
+  m_EditorClassIdentifier: Assembly-CSharp::BossAttackStrategySetupData
+  attackStrategyScript: {fileID: 7596380676722552976, guid: 1ee023726b6c4a64d9c6925b38a09ad2, type: 3}
+  Strategies:
+  - strategyName: Phase 1.1
+    HealthThreshold: 50
+    TimeToNextSkills: 0
+    AttackOrders: 00000000000000000000000001000000
+  - strategyName: Phase 1.2
+    HealthThreshold: 25
+    TimeToNextSkills: 0
+    AttackOrders: 020000000100000001000000
+  BattleEndAtHealth: 10
+  AttackWrappers:
+  - AttackNameToHelpDesigner: Blood Spikes
+    MinimumDistanceToRiel: 8
     StopWhenAttacking: 0
-    StopDuration: 1
-  - AttackNameToHelpDesigner: Blood Explosion
+    StopDuration: 0
+  - AttackNameToHelpDesigner: Melee dash
+    MinimumDistanceToRiel: 4
+    StopWhenAttacking: 0
+    StopDuration: 0
+  - AttackNameToHelpDesigner: WaveLow
     MinimumDistanceToRiel: 10
     StopWhenAttacking: 0
-    StopDuration: 10
-  TimeToNextSkill: 2
+    StopDuration: 0
