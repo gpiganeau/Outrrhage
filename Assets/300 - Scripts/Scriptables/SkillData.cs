@@ -65,6 +65,8 @@ public class SkillData : ScriptableObject
     [Header("Audio")]
     public AudioClip[] skillCastClips;
     public AudioClip[] skillHitClips;
+    public bool OverrideAudioCustom = false;
+    public AudioClip[] CustomClips;
 
     [Header("Chaotic Feature")]
     public bool UseSubSkill = false;

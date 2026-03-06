@@ -49,7 +49,7 @@ public class SkillStrategy : MonoBehaviour
         }
 
 
-        if (_storedSkillData.skillCastClips.Length > 0)
+        if (_storedSkillData.skillCastClips.Length > 0 && !_storedSkillData.OverrideAudioCustom)
             AudioManager.Instance.PlayClipAtPoint(_storedSkillData.skillCastClips.Random(), transform.position);
 
         return true;

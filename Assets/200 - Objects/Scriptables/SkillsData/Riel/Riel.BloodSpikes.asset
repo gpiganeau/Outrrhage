@@ -56,6 +56,10 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 4993486111714875449, guid: 914b859b3d6d7124e8cdbb17523d291f, type: 3}
+  ShakeDuration: 0.2
+  ShakeStrength: 0.3
+  ShakeVibrato: 20
+  ShakeRandomness: 90
   skillCastClips:
   - {fileID: 8300000, guid: bc3e2a29f736a1a41bf9c4491e7c04c3, type: 3}
   - {fileID: 8300000, guid: 7e36dcaba6ed0aa429d0c3587167c20a, type: 3}
@@ -63,5 +67,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 56649fea2014cd946a9a8709ae8e460b, type: 3}
   - {fileID: 8300000, guid: bba5fa773c7f88b4781cb7496e153556, type: 3}
   - {fileID: 8300000, guid: c4a61352b6ab8ce46b69c41e93be0603, type: 3}
+  OverrideAudioCustom: 1
+  CustomClips:
+  - {fileID: 8300000, guid: 8bda6be62a94fd648a640675c0e54b8f, type: 3}
+  - {fileID: 8300000, guid: 3bba8450451026a41bac167b40768415, type: 3}
+  - {fileID: 8300000, guid: f727d0d63730ba44ba6f2e05cfc2933a, type: 3}
   UseSubSkill: 0
   SubSkill: {fileID: 0}
