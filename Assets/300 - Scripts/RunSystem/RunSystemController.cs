@@ -296,7 +296,10 @@ public class RunSystemController : MonoBehaviour
         {
             var step = _currentSequencer.RoomSequence[_roomSequenceIndex];
 
+            Juicer.I.LastEnemyEffect();
+
                 DOVirtual.DelayedCall(step.delay, () => {
+
                 step.stepEvent?.Invoke();
             });
 
@@ -316,6 +319,7 @@ public class RunSystemController : MonoBehaviour
     private bool RoomEnd()
     {
         LogRoomEnd();
+        Juicer.I.RoomEndEffect();
         _currentRoom.customRoomSequencer.OnRoomComplete?.Invoke();
         OnRoomComplete?.Invoke();
         return true;

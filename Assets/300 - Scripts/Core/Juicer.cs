@@ -284,6 +284,7 @@ public class Juicer : MonoBehaviour
             .Append(DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, settings.RageVignetteIntensity, duration * 0.1f))
             .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, settings.RageUseColorAdjustement ? settings.PlayerRageColor : Color.white, duration * 0.1f))
             .Join(DOTween.To(() => lensDistortion.intensity.value, x => lensDistortion.intensity.value = x, settings.RageLensDistortionIntensity, duration * 0.1f))
+            .Join(DOTween.To(() => chromaticAberration.intensity.value, x =>  chromaticAberration.intensity.value = x, settings.RageChromaIntensity, duration * 0.3f))
             .SetUpdate(false);
     }
 
@@ -298,6 +299,7 @@ public class Juicer : MonoBehaviour
             .Append(DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, 0f, duration))
             .Join(DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, Color.white, duration))
             .Join(DOTween.To(() => lensDistortion.intensity.value, x => lensDistortion.intensity.value = x, 0f, duration))
+            .Join(DOTween.To(() => chromaticAberration.intensity.value, x =>  chromaticAberration.intensity.value = x, 0f, duration))
             .AppendCallback(() => PulseChromaticAberration(1f, 0.4f));
     }
     /// <summary>Effet générique de hit sur les AI Actor Components</summary>
@@ -363,6 +365,18 @@ public class Juicer : MonoBehaviour
         if (!IsJuiceEnabled()) return;
 
         SlowMotion(0.5f, 0.1f);
+    }
+
+    public void LastEnemyEffect()
+    {
+        if (!IsJuiceEnabled()) return;
+        SlowMotion(0.5f, .5f);
+    }
+
+    public void RoomEndEffect()
+    {
+        if (!IsJuiceEnabled()) return;
+        PulseChromaticAberration(0.8f, 0.5f);
     }
     
     #endregion
