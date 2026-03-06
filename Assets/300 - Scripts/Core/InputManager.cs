@@ -40,6 +40,7 @@ public class InputManager : MonoBehaviour
     [HideInInspector] public UnityEvent OnCharacterSlot4Released;
     [HideInInspector] public UnityEvent OnCharacterSlot5;
     [HideInInspector] public UnityEvent OnCharacterSlot5Released;
+    [HideInInspector] public UnityEvent OnReloadGameEvent;
 
     // -- UI
     [HideInInspector] public UnityEvent OnPauseEvent;
@@ -230,6 +231,14 @@ public class InputManager : MonoBehaviour
         if (obj.performed)
         {
             OnPauseEvent?.Invoke();
+        }
+    }
+
+    public void OnReloadGame(InputAction.CallbackContext obj)
+    {
+        if (obj.performed)
+        {
+            OnReloadGameEvent?.Invoke();       
         }
     }
 

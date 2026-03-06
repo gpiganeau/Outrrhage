@@ -50,6 +50,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        InputManager.Instance.OnReloadGameEvent.AddListener(ReloadCurrentScene);
+    }
+
+    void OnDisable()
+    {
+        InputManager.Instance.OnReloadGameEvent.RemoveListener(ReloadCurrentScene);
+    }
+
     private void OnDraftConfirmed(List<SkillData> skills)
     {
         SkillsFromDraft = skills;
