@@ -50,8 +50,10 @@ public class MovementController: MonoBehaviour, IAnimatable
 
     private void FixedUpdate()
     {
-        if(immobilizationSources.Count > 0)       
+        if(immobilizationSources.Count > 0){   
+            _rigidbody.linearVelocity = Vector3.zero; // ← stop le glissement
             return;
+        }
 
         if(_isAiming)
         {
@@ -72,6 +74,10 @@ public class MovementController: MonoBehaviour, IAnimatable
         }
         
         animController?.SetSpeed(_movementVector.magnitude > 0 ? 1 : 0);
+
+        if (_movementVector.sqrMagnitude == 0)
+            _rigidbody.linearVelocity = Vector3.zero; // ← stop le glissement
+
     }
 
     protected void UpdateMovementVector(Vector3 newMovementVector)

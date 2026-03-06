@@ -87,6 +87,7 @@ public class MainAttackStrategy : AttackStrategy
             DOVirtual.DelayedCall(waitTime, () =>
             {
                 // Release Movement Controller
+                if (_movement == null || !_movement.enabled) return;
                 _movement.SetImmobilized(false, "AttackStrategy");
                 _controller.CallSkillStrategy(index);
             });
