@@ -44,5 +44,7 @@ MonoBehaviour:
   maxBlood: 10
   maxRage: 100
   RageDuration: 10
-  RagerEnterClip: []
-  RageExitClip: []
+  RagerEnterClip:
+  - {fileID: 8300000, guid: 0357b597f7dc3be439a2edab65475b25, type: 3}
+  RageExitClip:
+  - {fileID: 8300000, guid: 00f59bc281b4b8449aebcdbf0252694b, type: 3}

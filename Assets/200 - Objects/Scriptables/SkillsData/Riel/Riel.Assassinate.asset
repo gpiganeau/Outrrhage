@@ -15,9 +15,9 @@ MonoBehaviour:
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: c053d527681b3ca4fa77e7f29bae4718, type: 3}
   SkillProjectilePrefab:
   - {fileID: 8024854797782737839, guid: 44f8975e6a62c0541b8e56653c2ee3f9, type: 3}
-  Name: "Ex\xE9cution sanguinaire"
-  Description: "Attaque sanguinaire au corps \xE0 corps, les ennemis pr\xE9c\xE8demment
-    touch\xE9 sont plus s\xE9v\xE8rement bless\xE9s."
+  Name: "Ex\xE9cution sanguine"
+  Description: "Attaque sanguinaire blessant plus les ennemis pr\xE9c\xE8demment
+    touch\xE9s en vous rendant de la vie. "
   Cooldown: 6
   IsHold: 0
   HoldDuration: 0

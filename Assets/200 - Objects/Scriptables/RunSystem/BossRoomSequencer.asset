@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BossRoomSequencer
   m_EditorClassIdentifier: Assembly-CSharp::RoomSequencer
   customType: {fileID: 3064940305099015597, guid: e1bf2a29935c30148a5c6e65386ae08b, type: 3}
-  DelayBeforeRoomStart: 4
+  DelayBeforeRoomStart: 5
   OnRoomStart:
     m_PersistentCalls:
       m_Calls:
@@ -31,7 +31,7 @@ MonoBehaviour:
         m_CallState: 2
   RoomSequence:
   - stepName: Phase 1
-    delay: 5
+    delay: 0
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -51,7 +51,7 @@ MonoBehaviour:
     skipEvent: 0
     TriggerAtEnemyCount: 0
   - stepName: Phase 2 - Drones
-    delay: 10
+    delay: 5
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -71,7 +71,7 @@ MonoBehaviour:
     skipEvent: 0
     TriggerAtEnemyCount: 0
   - stepName: Phase 2 - Bulls
-    delay: 0
+    delay: 5
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -91,7 +91,7 @@ MonoBehaviour:
     skipEvent: 0
     TriggerAtEnemyCount: 0
   - stepName: Phase 2 - Humanoids
-    delay: 0
+    delay: 5
     stepEvent:
       m_PersistentCalls:
         m_Calls:
@@ -133,5 +133,6 @@ MonoBehaviour:
   OnRoomComplete:
     m_PersistentCalls:
       m_Calls: []
-  AutoComplete: 0
   affectedRoom: {fileID: 0}
+  BossPhase1: {fileID: 0}
+  BossPhase2: {fileID: 0}
