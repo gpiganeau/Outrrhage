@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameplaySettings
   baseStaticTimeOnSkillUse: 0.2
   baseMinTimeBetweenSkills: 0.2
+  InvicibleTime: 0.1
   BloodDispersionRadius: 1.5
   LossRageAmount: 1
   LossRageTick: 1
@@ -23,3 +24,4 @@ MonoBehaviour:
   YSpawnOffset: 0.3
   OpenSkillSelectorOnRunStart: 1
   HideRielDebugElements: 1
+  BloodDropAmountOnHit: 2

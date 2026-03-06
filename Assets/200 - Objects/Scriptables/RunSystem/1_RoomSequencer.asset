@@ -32,7 +32,7 @@ MonoBehaviour:
         m_CallState: 2
   RoomSequence:
   - stepName: Vague 1 - Drones+Tourelle
-    delay: 0
+    delay: 5
     stepEvent:
       m_PersistentCalls:
         m_Calls:

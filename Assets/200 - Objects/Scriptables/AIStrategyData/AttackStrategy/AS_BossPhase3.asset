@@ -36,4 +36,4 @@ MonoBehaviour:
     MinimumDistanceToRiel: 8
     StopWhenAttacking: 0
     StopDuration: 0
-  BloodDropPrefab: {fileID: 0}
+  BloodDropPrefab: {fileID: 5115976658195506498, guid: 4c627e869fdc5114a9fa3b680d12b4e5, type: 3}
