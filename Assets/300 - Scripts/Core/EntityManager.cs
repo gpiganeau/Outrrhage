@@ -187,9 +187,6 @@ public class EntityManager : MonoBehaviour
 
     private IEnumerator SpawnRoutine(EntityType type, List<Vector3> positions, float delay)
     {
-
-        Debug.Log($"SpawnRoutine START - count:{positions.Count} delay:{delay}");
-
         AIActorComponent prefab = type switch
         {
             EntityType.Drones    => enemyPrefabs[0],
@@ -205,7 +202,6 @@ public class EntityManager : MonoBehaviour
 
         foreach (var pos in positions)
         {
-            Debug.Log($"Spawning at {Time.time}");
             SpawnEnemy(prefab, pos.WithY(yOffset));
             if (delay > 0f) yield return new WaitForSeconds(delay);
         }

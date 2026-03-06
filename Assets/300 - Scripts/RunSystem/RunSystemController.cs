@@ -353,7 +353,7 @@ public class RunSystemController : MonoBehaviour
 
         _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
         _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
-        //OpenEntrance(_currentRoom.transform.position, wrapper.entry);
+        OpenEntrance(_currentRoom.transform.position, OppositeDir(wrapper.entry));
         StartRoomSequenceManual(_currentRoom.customRoomSequencer);
     }
 
@@ -365,6 +365,15 @@ public class RunSystemController : MonoBehaviour
             Destroy(hit.gameObject);
 
     }
+
+    private PathDirection OppositeDir(PathDirection dir) => dir switch
+    {
+        PathDirection.North => PathDirection.South,
+        PathDirection.East  => PathDirection.West,
+        PathDirection.South => PathDirection.North,
+        PathDirection.West  => PathDirection.East,
+        _ => dir
+    };
 
     void OnValidate()
     {

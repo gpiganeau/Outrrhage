@@ -633,10 +633,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0386fe987a689d44aaa1ea448d255927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RespawnPoint
-  respawnType: 0
+  respawnType: 1
   _safeRadius: 2
   _safeZone: 0
-  HasStartRun: 0
+  HasStartRun: 1
 --- !u!1 &8337794489247212895
 GameObject:
   m_ObjectHideFlags: 0

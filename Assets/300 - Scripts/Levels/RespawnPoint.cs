@@ -37,12 +37,14 @@ public class RespawnPoint : MonoBehaviour
 
     public void OnTriggerExit(Collider other)
     {
-        if (!HasStartRun  && other.TryGetComponent<CharacterComponent>(out var riel))
-        {
-            HasStartRun = true;
-            RunSystemController.Instance.QueryRoomEnd(true);
-            GetComponent<Collider>().enabled = false;
-        }
+        if (HasStartRun) return;
+        if (respawnType != RespawnType.LevelStart) return;
+        if (!other.TryGetComponent<CharacterComponent>(out var riel)) return;
+        
+        HasStartRun = true;
+        GetComponent<Collider>().enabled = false; // ← en premier
+        RunSystemController.Instance.QueryRoomEnd(true);
+        Destroy(gameObject);
     }
 
     void OnValidate()
