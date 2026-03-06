@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   SkillStrategyPrefab: {fileID: 7434445806588342944, guid: db52d200652817c4b818f62e30a9830a, type: 3}
   SkillProjectilePrefab:
-  - {fileID: 8024854797782737839, guid: 33420088e58e7f143812d84b057b57d5, type: 3}
+  - {fileID: 8024854797782737839, guid: 438c04b47c64e64469608d75e57e9930, type: 3}
   Name: 
   Description: Slash pour un ennemi
   Cooldown: 2
@@ -51,6 +51,10 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 4993486111714875449, guid: 914b859b3d6d7124e8cdbb17523d291f, type: 3}
+  ShakeDuration: 0.2
+  ShakeStrength: 0.3
+  ShakeVibrato: 20
+  ShakeRandomness: 90
   skillCastClips:
   - {fileID: 8300000, guid: 6ac1716728407f741acda93319c5c5e2, type: 3}
   - {fileID: 8300000, guid: 5f88bf51463b7db4bad6dd578abc1619, type: 3}
