@@ -48,12 +48,11 @@ public class GameManager : MonoBehaviour
             _draftUI.Hide();
             RunSystemController.Instance.StartRun(null);
         }
+
+        InputManager.Instance.OnReloadGameEvent.AddListener(ReloadCurrentScene);
+
     }
 
-    void OnEnable()
-    {
-        InputManager.Instance.OnReloadGameEvent.AddListener(ReloadCurrentScene);
-    }
 
     void OnDisable()
     {
