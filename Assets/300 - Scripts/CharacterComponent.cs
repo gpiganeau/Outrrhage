@@ -176,6 +176,9 @@ public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
 
     private void OnDamaged(int currentHealth, int maxHealth)
     {
+        damageController.IsInvincible = true;
+        DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.InvicibleTime, () => damageController.IsInvincible = false);
+        
         Blood.Regain(1);
         Rage.Regain(1);
         Juicer.I.PlayerDamagedImpact(GetRenderers());

@@ -360,7 +360,10 @@ public class RunSystemController : MonoBehaviour
     private void OpenEntrance(Vector3 roomPos, PathDirection direction)
     {
         var origin = roomPos - (GetDirection(direction) * ROOM_SIZE * 0.5f);
-        Collider[] hits = Physics.OverlapSphere(origin, 3.8F, LayerMask.GetMask("Walls"));
+        Collider[] hits = Physics.OverlapSphere(origin, 6f, LayerMask.GetMask("Walls"));
+        //Collider[] hits = Physics.OverlapSphere(origin, 3.8F, LayerMask.GetMask("Walls"));
+        Logger.Core($"hits: {hits.Length}");
+        Logger.Core($"origin: {origin}, roomPos: {roomPos}, dir: {direction}");
         foreach (var hit in hits)
             Destroy(hit.gameObject);
 

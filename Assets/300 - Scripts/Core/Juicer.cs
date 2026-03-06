@@ -107,7 +107,7 @@ public class Juicer : MonoBehaviour
     {
         if (colorAdjustments == null) return;
 
-        Color BeforeColor =  CharacterComponent.InRage ? settings.PlayerRageColor : Color.white;
+        Color BeforeColor =  CharacterComponent.InRage  && settings.RageUseColorAdjustement ? settings.PlayerRageColor : Color.white;
         
         colorAdjustments.colorFilter.value = color;
         DOTween.To(() => colorAdjustments.colorFilter.value, 

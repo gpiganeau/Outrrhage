@@ -6,6 +6,7 @@ public class GameplaySettings : ScriptableObject
     [Header("Skills & Combat")]
     public float baseStaticTimeOnSkillUse;
     public float baseMinTimeBetweenSkills;
+    public float InvicibleTime = 0.1f;
 
     [Header("Blood")]
     public float BloodDispersionRadius  = 3f;
