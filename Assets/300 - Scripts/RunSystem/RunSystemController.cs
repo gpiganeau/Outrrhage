@@ -249,24 +249,25 @@ public class RunSystemController : MonoBehaviour
 
     public void StartRoomSequenceManual(RoomSequencer seq)
     {
-        if (seq == null)
-        {
-            Logger.LogWarning(Logger.LogCategory.Core, "NULL SEQUENCER");
-            return;
-        }
+        if (seq == null) { Logger.LogWarning(Logger.LogCategory.Core, "NULL SEQUENCER"); return; }
         
-        // -- Cache
         _roomSequenceIndex = 0;
         _currentSequencer = seq;
 
-        var step = seq.RoomSequence[_roomSequenceIndex];
-        DOVirtual.DelayedCall(seq.DelayBeforeRoomStart, () =>  {
-            LogRoomStart();
-            seq.OnRoomStart?.Invoke();
+        // ← capture locale, pas de référence à _currentSequencer
+        var cachedSeq = seq;
+        var step = cachedSeq.RoomSequence[0];
 
-            DOVirtual.DelayedCall(step.delay + 0.1f, () =>
-            {
-                LogRoomInitStep()       ;
+        DOVirtual.DelayedCall(cachedSeq.DelayBeforeRoomStart, () => {
+            // Vérifie que c'est toujours le bon sequencer
+            if (_currentSequencer != cachedSeq) return;
+            
+            LogRoomStart();
+            cachedSeq.OnRoomStart?.Invoke();
+
+            DOVirtual.DelayedCall(step.delay + 0.1f, () => {
+                if (_currentSequencer != cachedSeq) return;
+                LogRoomInitStep();
                 step.stepEvent?.Invoke();
             });
         });
@@ -278,10 +279,15 @@ public class RunSystemController : MonoBehaviour
     private void LogRoomStep() => Logger.Core($"STEP IN : {CurrentRoom} - {_currentSequencer} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
     private void LogRoomInitStep() => Logger.Core($"STEP IN ZERO: {CurrentRoom} - {_currentSequencer} - index : {_roomIndex} - Room seq index { _roomSequenceIndex}");
 
-    private int GetStepThreshold => _currentSequencer.RoomSequence[_roomSequenceIndex].TriggerAtEnemyCount;
+
+    private int GetStepThreshold => 
+    _currentSequencer != null && _roomSequenceIndex < _currentSequencer.RoomSequence.Count 
+    ? _currentSequencer.RoomSequence[_roomSequenceIndex].TriggerAtEnemyCount 
+    : 999;
 
     public void OnEnemyDeath(EntityType type)
     {
+        if (_currentSequencer == null) return; // ← guard
         if (EntityManager.Instance.Bots.Count > GetStepThreshold) return;
         CurrentSeqStepIn(); 
     }
@@ -320,8 +326,8 @@ public class RunSystemController : MonoBehaviour
     {
         LogRoomEnd();
         Juicer.I.RoomEndEffect();
-        _currentRoom.customRoomSequencer.OnRoomComplete?.Invoke();
-        OnRoomComplete?.Invoke();
+        _currentRoom.customRoomSequencer.OnRoomComplete?.Invoke(); // -- Current Complete
+        DOVirtual.DelayedCall(2f, () => OnRoomComplete?.Invoke()); // -- Then Spawn next
         return true;
     }
 
