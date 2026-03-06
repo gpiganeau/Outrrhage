@@ -317,7 +317,7 @@ public class RunSystemController : MonoBehaviour
         var cachedSeq = seq;
         var step = cachedSeq.RoomSequence[0];
 
-        DOVirtual.DelayedCall(cachedSeq.DelayBeforeRoomStart, () => {
+        _activeTweens.Add(DOVirtual.DelayedCall(cachedSeq.DelayBeforeRoomStart, () => {
             // Vérifie que c'est toujours le bon sequencer
             if (_currentSequencer != cachedSeq) return;
             
@@ -330,7 +330,7 @@ public class RunSystemController : MonoBehaviour
                 LogRoomInitStep();
                 step.stepEvent?.Invoke();
             });
-        });
+        }));
     }
 
             
@@ -374,12 +374,8 @@ public class RunSystemController : MonoBehaviour
             var step = _currentSequencer.RoomSequence[_roomSequenceIndex];
 
             Juicer.I.LastEnemyEffect();
-
-                DOVirtual.DelayedCall(step.delay, () => {
-
-                step.stepEvent?.Invoke();
-            });
-
+            _activeTweens.Add(DOVirtual.DelayedCall(step.delay, () => step.stepEvent?.Invoke()));
+    
         } else
         {
 
@@ -407,7 +403,7 @@ public class RunSystemController : MonoBehaviour
                 g.GetComponentInChildren<GeneratorDisplay>()?.TurnOff();
 
         _currentRoom.customRoomSequencer.OnRoomComplete?.Invoke(); // -- Current Complete
-        DOVirtual.DelayedCall(2f, () => OnRoomComplete?.Invoke()); // -- Then Spawn next
+        _activeTweens.Add(DOVirtual.DelayedCall(2f, () => OnRoomComplete?.Invoke()));
         return true;
     }
 

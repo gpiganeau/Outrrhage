@@ -608,6 +608,7 @@ MonoBehaviour:
   _idleColor: {r: 0.2, g: 0.8, b: 1, a: 1}
   _pulseIntensity: 3
   _idleIntensity: 0.5
+  pivot: {fileID: 6823927440731723319}
 --- !u!4 &6823927440731723319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a184e83d45416846abaadbb1b178afc, type: 3}
