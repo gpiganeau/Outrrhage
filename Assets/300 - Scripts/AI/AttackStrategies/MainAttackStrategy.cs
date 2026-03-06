@@ -11,7 +11,6 @@ public class MainAttackStrategy : AttackStrategy
 
     MovementContext currentContext;
 
-
 	public override void Initialize(AttackStrategySetupData setupData, SkillsController controller, MovementController movement)
     {
         var s = setupData as MainAttackStrategySetupData;
@@ -33,10 +32,6 @@ public class MainAttackStrategy : AttackStrategy
             }
         }
     }
-
-
-
-
 
     public override void Execute()
     {
@@ -79,7 +74,6 @@ public class MainAttackStrategy : AttackStrategy
         // -- Stop Time
         if (wait)
         {
-
             // -- Grab & Stop Movement controller ?
             _movement.SetImmobilized(true, "AttackStrategy");
 
@@ -95,8 +89,7 @@ public class MainAttackStrategy : AttackStrategy
         } else
         {
                 _controller.CallSkillStrategy(index);
-        }
-        
+        }    
     }
 
     private void LegacyRandomBehavior()
@@ -109,7 +102,6 @@ public class MainAttackStrategy : AttackStrategy
             _controller.CallRandomSkill();
         }
     }
-
 
     public override void Tick(MovementContext context)
     {
