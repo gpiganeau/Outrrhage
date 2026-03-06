@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BossRoomSequencer
   m_EditorClassIdentifier: Assembly-CSharp::RoomSequencer
   customType: {fileID: 3064940305099015597, guid: e1bf2a29935c30148a5c6e65386ae08b, type: 3}
+  RadiusArountGenerator: 8
   DelayBeforeRoomStart: 5
   OnRoomStart:
     m_PersistentCalls:
@@ -37,8 +38,8 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 11400000}
           m_TargetAssemblyTypeName: RoomSequencer, Assembly-CSharp
-          m_MethodName: ZZ_SpawnCustomEnnemies
-          m_Mode: 3
+          m_MethodName: ZZ_BossSpawnPhase1
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -117,8 +118,8 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 11400000}
           m_TargetAssemblyTypeName: RoomSequencer, Assembly-CSharp
-          m_MethodName: ZZ_SpawnCustomEnnemies
-          m_Mode: 3
+          m_MethodName: ZZ_BossSpawnPhase2
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -134,5 +135,5 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   affectedRoom: {fileID: 0}
-  BossPhase1: {fileID: 0}
-  BossPhase2: {fileID: 0}
+  BossPhase1: {fileID: 3064940305099015597, guid: e1bf2a29935c30148a5c6e65386ae08b, type: 3}
+  BossPhase2: {fileID: 3064940305099015597, guid: 25fa815269b3257419e130b578b1a3ff, type: 3}

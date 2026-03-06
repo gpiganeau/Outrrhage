@@ -30,7 +30,14 @@ public class BloodwaveStrategy: SkillStrategy
 
 			// -- Animation
 			movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
-			Camera.main.transform.DOShakePosition(0.2f, 0.3f, 20, 90f, false, true);
+			Camera.main.transform.DOShakePosition(
+				_storedSkillData.ShakeDuration,
+				_storedSkillData.ShakeStrength,
+				_storedSkillData.ShakeVibrato,
+				_storedSkillData.ShakeRandomness,
+				false,
+				true
+			);
 
 			// -- Blood Wave Logic -- 
 			var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;

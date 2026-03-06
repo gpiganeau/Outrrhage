@@ -18,9 +18,8 @@ MonoBehaviour:
   maxBloodStack: 10
   team: 2
   startingSkillSet:
-  - {fileID: 11400000, guid: 66bc4fb58cd160b48b34bf2248bf7a8b, type: 2}
-  - {fileID: 11400000, guid: f0cff946e17f5504994461bdb8e5b146, type: 2}
   - {fileID: 11400000, guid: 06edfddcdf5c66746b63d0491d7ced4d, type: 2}
+  - {fileID: 11400000, guid: 66bc4fb58cd160b48b34bf2248bf7a8b, type: 2}
   - {fileID: 11400000, guid: 4e5ea947120b38c47a021a27cc93703d, type: 2}
   LootOnDeath: 0
   _itemsLootsOnDeath: []

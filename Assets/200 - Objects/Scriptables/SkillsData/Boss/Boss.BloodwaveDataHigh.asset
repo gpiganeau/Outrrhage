@@ -51,6 +51,10 @@ MonoBehaviour:
     projectileImpactVFXPrefab: {fileID: 0}
     areaIndicatorVFXPrefab: {fileID: 0}
     hitVFXPrefab: {fileID: 4993486111714875449, guid: 914b859b3d6d7124e8cdbb17523d291f, type: 3}
+  ShakeDuration: 0.4
+  ShakeStrength: 0.6
+  ShakeVibrato: 25
+  ShakeRandomness: 90
   skillCastClips:
   - {fileID: 8300000, guid: 4748c058d08b7cd4cb0a77123acebf3c, type: 3}
   - {fileID: 8300000, guid: 0783cbe5d18c2e042850578ae14f9994, type: 3}

@@ -56,6 +56,12 @@ public class SkillData : ScriptableObject
     [Tooltip("Use in cases of multiples moves")] public string[] AnimationsKeys;
     public SkillVFXData vfxData;
 
+    [Header("Camera Shake")]
+    public float ShakeDuration = 0.2f;
+    public float ShakeStrength = 0.3f;
+    public int ShakeVibrato = 20;
+    public float ShakeRandomness = 90f;
+
     [Header("Audio")]
     public AudioClip[] skillCastClips;
     public AudioClip[] skillHitClips;
