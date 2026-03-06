@@ -8,6 +8,7 @@ public class RoomSequencer : ScriptableObject
 
     [Header("Settings")]
     [Tooltip("Use this for testing custom enemy spawn")] public AIActorComponent customType;
+    public float RadiusArountGenerator = 8f;
 
     [Header("Core Events")]
     [Range(2f, 32f)] public float DelayBeforeRoomStart = 4f;
@@ -38,7 +39,7 @@ public class RoomSequencer : ScriptableObject
     {
         for (int i = 0; i < count; i++)
         {
-            EntityManager.Instance.SpawnCustomActor(customType, 8);
+            EntityManager.Instance.SpawnCustomActor(customType,RadiusArountGenerator);
         }
     }
 
@@ -64,6 +65,11 @@ public class RoomSequencer : ScriptableObject
 
     private void SpawnEnemies(EntityType type, int count)
     {
+
+        EntityManager.Instance.SpawnEntities(type, count, affectedRoom.GetRandomGeneratorPosition(), RadiusArountGenerator);
+
+        return;
+
         for (int i = 0; i < count; i++)
         {
             //EntityManager.Instance.SpawnEntities(type, 1, GameManager.Instance.Riel.transform.position, 8);

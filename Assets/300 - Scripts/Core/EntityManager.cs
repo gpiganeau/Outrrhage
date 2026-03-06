@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -101,7 +102,7 @@ public class EntityManager : MonoBehaviour
         }
     }
 
-
+/*
     internal void SpawnEntities(EntityType type, int count, Vector3 position, float spawnRadius)
     {
         Sequence spawnSequence = DOTween.Sequence();
@@ -157,6 +158,56 @@ public class EntityManager : MonoBehaviour
             {
                 spawnSequence.AppendInterval(delayBetweenSpawns);
             }
+        }
+    }
+    */
+
+
+    internal void SpawnEntities(EntityType type, int count, Vector3 position, float spawnRadius)
+    {
+        var s = SettingsManager.Instance.GameplaySettings;
+        float delay = s.spawnerTimeBetweenSpawns;
+
+        // Précalcule toutes les positions UNE fois
+        List<Vector3> positions = new();
+        for (int i = 0; i < count; i++)
+            positions.Add(GetRandomPosAroundPoint(position, spawnRadius * 0.5f, spawnRadius));
+
+        // Tri par angle
+        Vector3 aimDir = (Riel.transform.position - position).normalized;
+        positions.Sort((a, b) => {
+            float aAngle = Mathf.Abs(Quaternion.FromToRotation(aimDir, a - position).eulerAngles.y);
+            float bAngle = Mathf.Abs(Quaternion.FromToRotation(aimDir, b - position).eulerAngles.y);
+            return aAngle.CompareTo(bAngle);
+        });
+
+        // Spawn via coroutine, plus léger que DOTween Sequence
+        StartCoroutine(SpawnRoutine(type, positions, delay));
+    }
+
+    private IEnumerator SpawnRoutine(EntityType type, List<Vector3> positions, float delay)
+    {
+
+        Debug.Log($"SpawnRoutine START - count:{positions.Count} delay:{delay}");
+
+        AIActorComponent prefab = type switch
+        {
+            EntityType.Drones    => enemyPrefabs[0],
+            EntityType.Humanoid  => enemyPrefabs[1],
+            EntityType.Bull      => enemyPrefabs[2],
+            EntityType.Tourelle  => enemyPrefabs[3],
+            _ => null
+        };
+
+        if (prefab == null) yield break;
+
+        float yOffset = SettingsManager.Instance.GameplaySettings.YSpawnOffset;
+
+        foreach (var pos in positions)
+        {
+            Debug.Log($"Spawning at {Time.time}");
+            SpawnEnemy(prefab, pos.WithY(yOffset));
+            if (delay > 0f) yield return new WaitForSeconds(delay);
         }
     }
 }
