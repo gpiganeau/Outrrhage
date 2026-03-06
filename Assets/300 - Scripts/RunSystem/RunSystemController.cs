@@ -131,7 +131,7 @@ public class RunSystemController : MonoBehaviour
         _spawnPositions.Clear();
 
         // -- Compute Datas
-        GenerateDirectionPath();
+        GenerateDirectionPathLimited();
         GenerateSpawnPositions();
         var selectedRooms = SelectRooms();
 
@@ -142,7 +142,7 @@ public class RunSystemController : MonoBehaviour
         // Normal Rooms
         for (int i = 0; i < _roomCount; i++)
         {
-            var r = selectedRooms[i];
+            var r = selectedRooms[i];   
             var p = _spawnPositions[i];
             var sq = GetSequencer(i);
             var d = _pathDirections[i];
@@ -245,6 +245,65 @@ public class RunSystemController : MonoBehaviour
                 visited.Add(current);
             }
         }
+    }
+
+    void GenerateDirectionPathLimited()
+    {
+        _pathDirections.Clear();
+
+        HashSet<Vector2Int> visited = new();
+        Vector2Int current = Vector2Int.zero;
+        visited.Add(current);
+
+        List<PathDirection> allDirections = new() 
+        { 
+            PathDirection.North, PathDirection.East, 
+            PathDirection.South, PathDirection.West 
+        };
+
+        int attempts = 0;
+        int maxAttempts = 100;
+
+        while (_pathDirections.Count <= _roomCount && attempts < maxAttempts)
+        {
+            attempts++;
+            _pathDirections.Clear();
+            visited.Clear();
+            current = Vector2Int.zero;
+            visited.Add(current);
+
+            bool success = true;
+            for (int i = 0; i <= _roomCount; i++)
+            {
+                List<PathDirection> available = new();
+                foreach (var dir in allDirections)
+                {
+                    Vector2Int next = current + ToGrid(dir);
+                    if (!visited.Contains(next))
+                        available.Add(dir);
+                }
+
+                if (available.Count == 0)
+                {
+                    success = false;
+                    break; // recommence depuis le début
+                }
+
+                PathDirection chosen = available.Random();
+                _pathDirections.Add(chosen);
+                current += ToGrid(chosen);
+                visited.Add(current);
+            }
+
+            if (success) break;
+        }
+
+        if (attempts >= maxAttempts)
+            Logger.Core("[RunSystem] Could not generate path without overlaps after 100 attempts");
+            if (Application.isPlaying)
+            {
+                GameManager.Instance.ReloadCurrentScene();
+            }
     }
 
     public void StartRoomSequenceManual(RoomSequencer seq)
@@ -385,6 +444,10 @@ public class RunSystemController : MonoBehaviour
 
     void OnDrawGizmos()
     {
+
+        if (_pathDirections == null || _pathDirections.Count == 0) return;
+        if (runSettings == null) return;
+
         Vector3 roomSizeVec = new Vector3(ROOM_SIZE, 1, ROOM_SIZE);
 
         // -- Hub Room
@@ -401,6 +464,8 @@ public class RunSystemController : MonoBehaviour
             // -- Last Room for Boss
             if (i == runSettings.RoomCount)
             {
+                if (_pathDirections.Count == 0) break;
+
                 Gizmos.color = BossColor;
                 PathDirection lastDir = _pathDirections.Last();
                 currentPos += GetDirection(lastDir) * ROOM_SIZE;
