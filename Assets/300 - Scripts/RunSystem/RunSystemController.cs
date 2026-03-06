@@ -35,6 +35,8 @@ public class RunSystemController : MonoBehaviour
     [SerializeField] List<RoomWrapper> Rooms = new();
 
     [SerializeField] private RunSettings runSettings;
+
+    public AudioClip NewRoomClip;
     private const int ROOM_SIZE = 32;
 
     public static RunSystemController Instance;
@@ -382,6 +384,7 @@ public class RunSystemController : MonoBehaviour
     {
         LogRoomEnd();
         Juicer.I.RoomEndEffect();
+        AudioManager.Instance.PlayClipAtPoint(NewRoomClip, _currentRoom.transform.position);
         _currentRoom.customRoomSequencer.OnRoomComplete?.Invoke(); // -- Current Complete
         DOVirtual.DelayedCall(2f, () => OnRoomComplete?.Invoke()); // -- Then Spawn next
         return true;
@@ -407,15 +410,17 @@ public class RunSystemController : MonoBehaviour
 
         _currentRoom = Instantiate(wrapper.room, wrapper.position, Quaternion.identity);
         _currentRoom.Init(wrapper.sequencer, wrapper.entry, runSettings.Walls);
-        OpenEntrance(_currentRoom.transform.position, OppositeDir(wrapper.entry));
+
+        if (wrapper.type != RoomType.Hub)
+            OpenEntrance(_currentRoom.transform.position, (wrapper.entry));
+            Logger.Core($"CreateRoom {wrapper.type} - entry:{wrapper.entry} - opening:{OppositeDir(wrapper.entry)}");
         StartRoomSequenceManual(_currentRoom.customRoomSequencer);
     }
 
     private void OpenEntrance(Vector3 roomPos, PathDirection direction)
     {
         var origin = roomPos - (GetDirection(direction) * ROOM_SIZE * 0.5f);
-        Collider[] hits = Physics.OverlapSphere(origin, 6f, LayerMask.GetMask("Walls"));
-        //Collider[] hits = Physics.OverlapSphere(origin, 3.8F, LayerMask.GetMask("Walls"));
+        Collider[] hits = Physics.OverlapSphere(origin, 3.8F, LayerMask.GetMask("Walls"));
         Logger.Core($"hits: {hits.Length}");
         Logger.Core($"origin: {origin}, roomPos: {roomPos}, dir: {direction}");
         foreach (var hit in hits)

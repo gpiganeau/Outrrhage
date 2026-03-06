@@ -376,9 +376,35 @@ public class Juicer : MonoBehaviour
     public void RoomEndEffect()
     {
         if (!IsJuiceEnabled()) return;
-        PulseChromaticAberration(0.8f, 0.5f);
-        PulseChromaticAberration(1.2f, 0.2f);
-        PulseChromaticAberration(0.8f, 1f);
+
+        DOTween.Sequence()
+            // Flash chromatique rapide x2
+            .AppendCallback(() => PulseChromaticAberration(1.5f, 0.1f))
+            .AppendInterval(0.15f)
+            .AppendCallback(() => PulseChromaticAberration(1f, 0.15f))
+            .AppendInterval(0.2f)
+
+            // Vignette flash
+            .AppendCallback(() => DOTween.To(
+                () => vignette.intensity.value,
+                x => vignette.intensity.value = x,
+                0.6f, 0.1f).SetLoops(2, LoopType.Yoyo))
+            .AppendInterval(0.3f)
+
+            // Leger timescale dip (bullet time bref)
+            .AppendCallback(() => SetTimeScale(0.4f))
+            .AppendInterval(0.18f)
+            .AppendCallback(() => ResetTimeScale())
+
+            // Lens distortion snap
+            .AppendCallback(() => DOTween.To(
+                () => lensDistortion.intensity.value,
+                x => lensDistortion.intensity.value = x,
+                -0.4f, 0.08f).SetLoops(2, LoopType.Yoyo))
+
+            // Dernier pulse chromatique long pour la transition
+            .AppendInterval(0.1f)
+            .AppendCallback(() => PulseChromaticAberration(0.8f, 0.6f));
     }
     
     #endregion

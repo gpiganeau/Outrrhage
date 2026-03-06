@@ -92,7 +92,7 @@ public class RunDraftUI : MonoBehaviour
 
         // -- Controller Focus -- 
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_slots[0].GetButton().gameObject);
-        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_skillsContainer.GetChild(0).gameObject);
+        //UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_skillsContainer.GetChild(0).gameObject);
     }
 
     public void Hide()
