@@ -30,14 +30,26 @@ MonoBehaviour:
   BloodPrefab: {fileID: 0}
   BloodSplasherPrefab: {fileID: 9124430146375426061, guid: c38ccbbe72335a0428f8304c8c4d3828, type: 3}
   HitClip:
-  - {fileID: 8300000, guid: 8cc54834aa3fa0146bd8ec78301899f8, type: 3}
-  - {fileID: 8300000, guid: e496035efbbc4854c9e0d03eed53f518, type: 3}
-  - {fileID: 8300000, guid: f7dfc78023246c248bed7b5a80adc6bb, type: 3}
-  - {fileID: 8300000, guid: 0dc9daedbd78a4546a49da401c66da82, type: 3}
-  - {fileID: 8300000, guid: 4064dd638b692aa4481e753ce24e31aa, type: 3}
-  - {fileID: 8300000, guid: bc26d1ca5ded98f4680dfc8dd0c67051, type: 3}
+  - {fileID: 8300000, guid: 952a6b67d299b0941baa61e6756c1f63, type: 3}
+  - {fileID: 8300000, guid: ff6da08e2f2cba542b035be5edd6f1f9, type: 3}
+  - {fileID: 8300000, guid: 32140355ab3072a4e814f6d9b75a248e, type: 3}
+  - {fileID: 8300000, guid: 72bc2fa9dd7e20d4c995c0f659ce136f, type: 3}
+  - {fileID: 8300000, guid: 8ff67f49fe6ee344a96da5d892255c99, type: 3}
+  - {fileID: 8300000, guid: bd7628520cd40ad43816e0508c780f5e, type: 3}
+  - {fileID: 8300000, guid: bd7628520cd40ad43816e0508c780f5e, type: 3}
+  - {fileID: 8300000, guid: bd7628520cd40ad43816e0508c780f5e, type: 3}
+  - {fileID: 8300000, guid: eea3c14abf188ef46ae527b71b749f49, type: 3}
+  - {fileID: 8300000, guid: 3ccb4f8e6475af14890ddd95a269cab8, type: 3}
+  - {fileID: 8300000, guid: d4f5837ea8d634d42824dea1d1e25814, type: 3}
+  - {fileID: 8300000, guid: e89c07176ac96aa468721199b1d0a2bc, type: 3}
   DeathClip:
-  - {fileID: 8300000, guid: a7802714936a91e41a4890d81ada3a7f, type: 3}
+  - {fileID: 8300000, guid: aaa208c407ab29e4781c192d28569f64, type: 3}
+  - {fileID: 8300000, guid: d8267da8c3b1fcc47a7e99b0f0db495a, type: 3}
+  - {fileID: 8300000, guid: f3529d8ccca5bf34580c2677b2ebacaf, type: 3}
+  - {fileID: 8300000, guid: 8c46f6f43370ce7459e00cac97e42b3f, type: 3}
+  - {fileID: 8300000, guid: 6f2018ccc92498840af8a847ba932051, type: 3}
+  - {fileID: 8300000, guid: 03909c3308b78a14fb82c141df6b2273, type: 3}
+  - {fileID: 8300000, guid: d6d32b14f3f84de4fb983be023d753ec, type: 3}
   HealClip:
   - {fileID: 8300000, guid: cf722521a23780b4d9d3d7db8686a8ff, type: 3}
   - {fileID: 8300000, guid: 4d51cd8e7e7c6d04bb5b5a83debd4cb2, type: 3}
@@ -45,6 +57,10 @@ MonoBehaviour:
   maxRage: 100
   RageDuration: 10
   RagerEnterClip:
-  - {fileID: 8300000, guid: 0357b597f7dc3be439a2edab65475b25, type: 3}
+  - {fileID: 8300000, guid: 482a251ca8a550e459a511d140dafcad, type: 3}
+  - {fileID: 8300000, guid: b12f048259560e241a7db4b578a42df9, type: 3}
+  - {fileID: 8300000, guid: 1d2239f154144634f8fd1fc136a6c9d5, type: 3}
+  - {fileID: 8300000, guid: 1b5d2eddcc095f44a81612f4daf84b8a, type: 3}
   RageExitClip:
-  - {fileID: 8300000, guid: 00f59bc281b4b8449aebcdbf0252694b, type: 3}
+  - {fileID: 8300000, guid: 0ea8847feeacb2d45995dea4b6ffc825, type: 3}
+  - {fileID: 8300000, guid: 526f1bdbd52c7d14889c1030c6a600ee, type: 3}

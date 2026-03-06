@@ -16,11 +16,11 @@ MonoBehaviour:
   Strategies:
   - strategyName: Phase 1.1
     HealthThreshold: 30
-    TimeToNextSkills: 0.5
+    TimeToNextSkills: 1
     AttackOrders: 00000000000000000000000001000000
   - strategyName: Phase 1.2
     HealthThreshold: 15
-    TimeToNextSkills: 0.5
+    TimeToNextSkills: 1
     AttackOrders: 020000000100000001000000
   BattleEndAtHealth: 5
   AttackWrappers:
@@ -36,3 +36,4 @@ MonoBehaviour:
     MinimumDistanceToRiel: 10
     StopWhenAttacking: 0
     StopDuration: 0
+  BloodDropPrefab: {fileID: 0}

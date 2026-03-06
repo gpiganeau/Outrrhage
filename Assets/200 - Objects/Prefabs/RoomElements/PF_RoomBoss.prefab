@@ -932,15 +932,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3353104980967446858, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: m_Radius
-      value: 15
+      value: 8.6
       objectReference: {fileID: 0}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _bark
       value: 
-      objectReference: {fileID: 11400000, guid: 148b22c576c4017439ca76442b605f34, type: 2}
+      objectReference: {fileID: 11400000, guid: e3854bdfdccd1684c87e0b2c3cb8c77f, type: 2}
     - target: {fileID: 4098467715975107320, guid: e07e234434a3f034fa0e92b2a8308e31, type: 3}
       propertyPath: _radius
-      value: 15
+      value: 8.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

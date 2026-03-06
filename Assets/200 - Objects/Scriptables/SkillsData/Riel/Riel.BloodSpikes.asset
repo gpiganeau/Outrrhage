@@ -69,8 +69,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c4a61352b6ab8ce46b69c41e93be0603, type: 3}
   OverrideAudioCustom: 1
   CustomClips:
-  - {fileID: 8300000, guid: 8bda6be62a94fd648a640675c0e54b8f, type: 3}
-  - {fileID: 8300000, guid: 3bba8450451026a41bac167b40768415, type: 3}
-  - {fileID: 8300000, guid: f727d0d63730ba44ba6f2e05cfc2933a, type: 3}
+  - {fileID: 8300000, guid: b1c1959d17d8047438d0ca72001d7257, type: 3}
+  - {fileID: 8300000, guid: 2e609deeee9b15f42bc95d2ac5ed2a1b, type: 3}
+  - {fileID: 8300000, guid: b1b5573ad5b2db048a51984e5d4b5352, type: 3}
+  - {fileID: 8300000, guid: 9b9e48ea414cd6a44beea452c9996bdc, type: 3}
   UseSubSkill: 0
   SubSkill: {fileID: 0}

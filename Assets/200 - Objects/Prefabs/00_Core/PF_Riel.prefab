@@ -224,7 +224,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928c5f44ad350964b8336d40b4a94091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FootstepHandler
-  _footstepClips: []
+  _footstepClips:
+  - {fileID: 8300000, guid: 3974b6ce6ebfcbf4b95daac17e26270f, type: 3}
+  - {fileID: 8300000, guid: 884d7834a4a53f24cad21c1c6bae3e91, type: 3}
+  - {fileID: 8300000, guid: b645b53712d54dd4197153874ca54aea, type: 3}
+  - {fileID: 8300000, guid: 401cd7bf02ad5b54f9283200f5fd5d98, type: 3}
+  - {fileID: 8300000, guid: d94bb7bf816725c439024624c356273b, type: 3}
   _volume: 0.4
 --- !u!1 &6854461387729133482
 GameObject:

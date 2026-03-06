@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 459d2b38365837c46b45f7f2f6bbe30d, type: 3}
-  m_Name: TestBarkSubtile
+  m_Name: BarkHub
   m_EditorClassIdentifier: Assembly-CSharp::Bark
   Clip: {fileID: 0}
   Priority: 2
   OneShot: 1
   ShowSubtitles: 1
-  Text: Il faut <em>ABSOLUMENT</em> fuir, le <c=#FF4444>danger</c> approche.
+  Text: Retrouver <c=#FF4444>Atham</c>, c'est tout ce qui compte.
   MainColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   SubtitleBackgroundColor: {r: 0, g: 0, b: 0, a: 0.8980392}
