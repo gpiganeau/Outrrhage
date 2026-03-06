@@ -30,6 +30,8 @@ public class GeneratorDisplay : MonoBehaviour
     public void Pulse()
     {
         _pulseTween?.Kill();
+
+        if (isDead) return;
         
         SetEmission(_pulseColor, _pulseIntensity);
         
@@ -45,8 +47,11 @@ public class GeneratorDisplay : MonoBehaviour
     }
 
 
+    bool isDead = false;
+
     public void TurnOff()
     {
+        isDead = true;
         _pulseTween?.Kill();
         
         float current = GetCurrentIntensity();
