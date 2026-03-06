@@ -15,8 +15,4 @@ MonoBehaviour:
   movementStrategyScript: {fileID: 178470214349617499, guid: 234de1d9ec52d1b4580aa37494312610, type: 3}
   minDistanceFromPlayer: 0
   maxDistanceFromPlayer: 4
-  palliers:
-  - SwitchAtHp: 3
-    MinMaxDistanceToPlayer: {x: 4, y: 6}
-  - SwitchAtHp: 1
-    MinMaxDistanceToPlayer: {x: 6, y: 10}
+  palliers: []
