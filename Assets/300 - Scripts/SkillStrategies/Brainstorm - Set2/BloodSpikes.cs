@@ -40,7 +40,7 @@ class BloodSpikes : SkillStrategy
         projectileData.startingPosition += new Vector3(0, 0.5f, 0f); // Vertical Offset
 
         var Seq = DOTween.Sequence();
-        AudioManager.Instance.PlayClipAtPoint(_storedSkillData.CustomClips[currentSpike], transform.position);
+        if (_storedSkillData.OverrideAudioCustom) AudioManager.Instance.PlayClipAtPoint(_storedSkillData.CustomClips[currentSpike], transform.position);
         Seq.AppendCallback(() => movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[currentSpike]));
         Seq.AppendInterval(0.125f);
         Seq.AppendCallback(() => {
@@ -83,7 +83,7 @@ class BloodSpikes : SkillStrategy
 
         var Seq = DOTween.Sequence();
         Seq.AppendCallback(() => movementController.AnimController?.Trigger(_storedSkillData.AnimationsKeys[currentSpike]));
-            AudioManager.Instance.PlayClipAtPoint(_storedSkillData.CustomClips[2], transform.position);
+        if (_storedSkillData.OverrideAudioCustom) AudioManager.Instance.PlayClipAtPoint(_storedSkillData.CustomClips[2], transform.position);
         Seq.AppendInterval(0.85f * 0.5f);
         Seq.AppendCallback(() => {
             var p = SpawnProjectile(projectileData, 0) as SkillshotProjectile;
