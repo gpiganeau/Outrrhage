@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ public class AudioManager : MonoBehaviour
     private AudioSettings settings;
 
     [SerializeField] public List<AudioClip> Songs;
+    [SerializeField] public AudioClip UISelectClip;
+    [SerializeField] public AudioClip UIValidateClip;
+    [SerializeField] public AudioClip UIConfirmClip;
     public AudioSource musicSource;
 
     public void Awake()
@@ -49,5 +53,19 @@ public class AudioManager : MonoBehaviour
             _ => settings.masterVolume 
         };
     }
-    
+
+    internal void PlayUiSelect()
+    {
+        PlayClipAtPoint(UISelectClip, Camera.main.transform.position, SoundGroup.SFX);
+    }
+
+    internal void PlayUIValidate()
+    {
+        PlayClipAtPoint(UIValidateClip, Camera.main.transform.position, SoundGroup.SFX);
+    }
+
+    internal void PlayUICOnfirm()
+    {
+        PlayClipAtPoint(UIConfirmClip, Camera.main.transform.position, SoundGroup.SFX);
+    }
 }

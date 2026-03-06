@@ -84,15 +84,14 @@ public class RunDraftUI : MonoBehaviour
     public void Show()
     {
         _panel.SetActive(true);
-        //_panel.transform.localScale = Vector3.zero;
-        //_panel.transform.DOScale(1f, 0.3f).SetEase(Ease.OutBack);
+        _panel.transform.localScale = Vector3.zero;
+        _panel.transform.DOScale(1f, 0.3f)
+            .SetEase(Ease.OutBack)
+            .SetUpdate(true); // ← timeScale = 0 compatible
+        
         Time.timeScale = 0f;
-
         if (_pauseMenu != null) _pauseMenu.SetActive(false);
-
-        // -- Controller Focus -- 
         UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_slots[0].GetButton().gameObject);
-        //UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(_skillsContainer.GetChild(0).gameObject);
     }
 
     public void Hide()
@@ -113,6 +112,8 @@ public class RunDraftUI : MonoBehaviour
 
     private void OnSkillPicked(SkillData skill)
     {
+        AudioManager.Instance.PlayUIValidate();
+
         // Évite les doublons
         int existing = _selectedSkills.IndexOf(skill);
         if (existing != -1)
@@ -151,12 +152,16 @@ public class RunDraftUI : MonoBehaviour
 
     private void Confirm()
     {
-
-        //_panel.transform.DOScale(0f, 0.2f).SetEase(Ease.InBack)
-          //  .OnComplete(() =>
-        _panel.SetActive(false);
-        Time.timeScale = 1f;
-        if (_pauseMenu != null) _pauseMenu.SetActive(true);
-        OnDraftConfirmed?.Invoke(_selectedSkills);
+        AudioManager.Instance.PlayUICOnfirm();
+         _panel.transform.DOScale(0f, 0.2f)
+        .SetEase(Ease.InBack)
+        .SetUpdate(true) // ← important si timeScale = 0
+        .OnComplete(() =>
+        {
+            _panel.SetActive(false);
+            Time.timeScale = 1f;
+            if (_pauseMenu != null) _pauseMenu.SetActive(true);
+            OnDraftConfirmed?.Invoke(_selectedSkills);
+        });
     }
 }
