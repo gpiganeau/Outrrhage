@@ -15,14 +15,14 @@ MonoBehaviour:
   attackStrategyScript: {fileID: 7596380676722552976, guid: 1ee023726b6c4a64d9c6925b38a09ad2, type: 3}
   Strategies:
   - strategyName: Phase 1.1
-    HealthThreshold: 50
+    HealthThreshold: 30
     TimeToNextSkills: 0
     AttackOrders: 00000000000000000000000001000000
   - strategyName: Phase 1.2
-    HealthThreshold: 25
+    HealthThreshold: 15
     TimeToNextSkills: 0
     AttackOrders: 020000000100000001000000
-  BattleEndAtHealth: 10
+  BattleEndAtHealth: 5
   AttackWrappers:
   - AttackNameToHelpDesigner: Blood Spikes
     MinimumDistanceToRiel: 8
