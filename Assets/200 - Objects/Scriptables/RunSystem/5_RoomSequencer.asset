@@ -231,38 +231,6 @@ MonoBehaviour:
     logEvent: 1
     skipEvent: 0
     TriggerAtEnemyCount: 0
-  - stepName: Vague 5 - Tourelle + Bulls
-    delay: 5
-    stepEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 11400000}
-          m_TargetAssemblyTypeName: RoomSequencer, Assembly-CSharp
-          m_MethodName: ZZ_SpawnTourelle
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 11400000}
-          m_TargetAssemblyTypeName: RoomSequencer, Assembly-CSharp
-          m_MethodName: ZZ_SpawnBull
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 4
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    logEvent: 1
-    skipEvent: 0
-    TriggerAtEnemyCount: 0
   OnRoomComplete:
     m_PersistentCalls:
       m_Calls: []
