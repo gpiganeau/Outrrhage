@@ -24,6 +24,11 @@ public class MainLightController : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    void Start()
+    {
+        QualitySettings.shadowDistance = 100f;
+    }
+
     // ── API ────────────────────────────────────────────────────────
 
     public void SetAlert()

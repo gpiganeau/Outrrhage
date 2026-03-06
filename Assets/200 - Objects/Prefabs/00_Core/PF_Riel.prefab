@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 191558973459109692}
   - component: {fileID: 969303408227634566}
   - component: {fileID: 6257971716130043390}
+  - component: {fileID: 6851614629340150030}
   m_Layer: 6
   m_Name: PF_Riel
   m_TagString: Untagged
@@ -211,6 +212,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62c1c5389751f924281cb0ca885e3608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimController
+--- !u!114 &6851614629340150030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5586269002823455135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928c5f44ad350964b8336d40b4a94091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FootstepHandler
+  _footstepClips: []
+  _volume: 0.4
 --- !u!1 &6854461387729133482
 GameObject:
   m_ObjectHideFlags: 0
