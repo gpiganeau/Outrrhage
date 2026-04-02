@@ -1,12 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
+using DG.Tweening;
 using UnityEngine.VFX;
-
-/// <summary>
-/// Pilots other components, specifically translates inputs into I/O for attached controllers
-/// </summary>
 public class CharacterComponent : PilotComponent, ISkillConstrainer, IJuicable
 {
 	[SerializeField] private CharacterSetupData setupData;
