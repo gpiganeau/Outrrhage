@@ -1,8 +1,6 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.Events;
 using DG.Tweening;
-using Unity.Properties;
 
 public abstract class Projectile: MonoBehaviour
 {

@@ -147,7 +147,7 @@ public class RunDraftUI : MonoBehaviour
 
         bool ready = _filledCount == _slots.Count;
         _confirmButton.interactable = ready;
-        _confirmLabel.text = ready ? "Start Run !" : $"{_filledCount}/{_slots.Count} skills";
+        _confirmLabel.text = ready ? "Commencer !" : $"{_filledCount}/{_slots.Count} skills";
     }
 
     private void Confirm()

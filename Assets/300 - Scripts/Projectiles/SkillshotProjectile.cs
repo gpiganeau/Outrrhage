@@ -12,6 +12,8 @@ public class SkillshotProjectile: Projectile
     protected int _damage = 1;
     protected Vector3 target;
 
+    public bool ShrinkOnDeath = false;
+
     public override void Initialize(ProjectileData data)
     {
         _data = data;
@@ -20,6 +22,11 @@ public class SkillshotProjectile: Projectile
         transform.forward = originToProj.normalized;
         _damage = data.Damage;
         DOVirtual.DelayedCall(data.Lifetime, DestroyProjectile);
+        if (ShrinkOnDeath)
+        {
+            DOVirtual.DelayedCall(data.Lifetime - 0.2f, () => transform.DOScale(0, 0.2f));
+        }
+        
         target = data.Target;
     }
 

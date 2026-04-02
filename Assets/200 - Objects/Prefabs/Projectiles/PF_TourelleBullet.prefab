@@ -4887,6 +4887,11 @@ MonoBehaviour:
   onProjectileRemoval:
     m_PersistentCalls:
       m_Calls: []
+  onProjectileHit:
+    m_PersistentCalls:
+      m_Calls: []
+  casterTransform: {fileID: 0}
+  ShrinkOnDeath: 1
 --- !u!33 &8874095568993291873
 MeshFilter:
   m_ObjectHideFlags: 0
