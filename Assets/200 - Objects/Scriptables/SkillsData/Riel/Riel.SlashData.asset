@@ -24,8 +24,9 @@ MonoBehaviour:
   Radius: 10
   ProjectileRange: 0
   ProjectileSpeed: 0
+  DelayBetweenTwoSlash: 0.25
   ProjectileDamage: 01000000
-  ProjectileLifetime: 0.2
+  ProjectileLifetime: 0.15
   numberOfProjectiles: 1
   TravelMode: 3
   AimAssistRatio: 0.5

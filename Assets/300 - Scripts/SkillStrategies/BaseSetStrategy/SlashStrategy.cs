@@ -36,6 +36,13 @@ public class SlashStrategy: SkillStrategy
             };
 
             SpawnProjectile(projectileData, 0);
+
+            DOVirtual.DelayedCall(_storedSkillData.DelayBetweenTwoSlash, () =>
+            {
+                SpawnProjectile(projectileData, 0);
+
+            });
+
 			movementController.AnimController?.Trigger(_storedSkillData.AnimationKey);
 
 
@@ -44,14 +51,12 @@ public class SlashStrategy: SkillStrategy
             {
                 parentController.SetSkillsDisabled(false, "SlashAttack");
             });
-            DOVirtual.DelayedCall(SettingsManager.Instance.GameplaySettings.baseStaticTimeOnSkillUse, () =>
+            DOVirtual.DelayedCall(_storedSkillData.DelayBetweenTwoSlash, () =>
             {
                 movementController.SetImmobilized(false, "SlashAttack");
             });
             PutInCooldown();
         });
-
-
 
         return true;
 
