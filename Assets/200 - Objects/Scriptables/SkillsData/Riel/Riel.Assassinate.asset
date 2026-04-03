@@ -18,14 +18,14 @@ MonoBehaviour:
   Name: "Ex\xE9cution sanguine"
   Description: "Attaque sanguinaire blessant plus les ennemis pr\xE9c\xE8demment
     touch\xE9s en vous rendant de la vie. "
-  Cooldown: 6
+  Cooldown: 0.5
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 0
   Radius: 3
   ProjectileRange: 0
   ProjectileSpeed: 1
-  ProjectileDamage: 02000000
+  ProjectileDamage: 01000000
   ProjectileLifetime: 0.2
   numberOfProjectiles: 1
   TravelMode: 3

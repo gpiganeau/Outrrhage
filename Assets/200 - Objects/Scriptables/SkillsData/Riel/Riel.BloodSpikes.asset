@@ -19,7 +19,7 @@ MonoBehaviour:
   Name: Epines de sang
   Description: "Lance des \xE9pines de sang vers les ennemis. La troisi\xE8me \xE9pine
     est explosive."
-  Cooldown: 2
+  Cooldown: 0.5
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 1

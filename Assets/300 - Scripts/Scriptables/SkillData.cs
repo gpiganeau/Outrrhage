@@ -23,11 +23,13 @@ public class SkillData : ScriptableObject
     [Range (0, 32)] public float Radius = 0;
     [Range (0, 50)] public float ProjectileRange;
     public float ProjectileSpeed;
+    public float DelayBetweenTwoSlash;
     public int[] ProjectileDamage;
     public float ProjectileLifetime;
     public int numberOfProjectiles;
     public SkillshotProjectile.TravelMode TravelMode = SkillshotProjectile.TravelMode.AwayFromCaster;
     [Range(0, 1)] public float AimAssistRatio = 0;
+
 
     [Header("Combo Settings")]
     public float ComboResetDelay;

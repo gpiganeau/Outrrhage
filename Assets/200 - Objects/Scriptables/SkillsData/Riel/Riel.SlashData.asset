@@ -17,18 +17,19 @@ MonoBehaviour:
   - {fileID: 8024854797782737839, guid: 15bcca8ffe2b08548b5075af5e936bf0, type: 3}
   Name: Griffe de sang
   Description: "D\xE9ploie une griffe de sang devant vous."
-  Cooldown: 2
+  Cooldown: 0.5
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 1
   Radius: 10
   ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 03000000
-  ProjectileLifetime: 0.2
+  DelayBetweenTwoSlash: 0.25
+  ProjectileDamage: 01000000
+  ProjectileLifetime: 0.15
   numberOfProjectiles: 1
   TravelMode: 3
-  AimAssistRatio: 1
+  AimAssistRatio: 0.5
   ComboResetDelay: 0
   ProvideInvulnerability: 0
   InvulnerabilityTime: 0

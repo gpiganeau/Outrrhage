@@ -18,14 +18,14 @@ MonoBehaviour:
   Name: Charge
   Description: "Permet une brusque acc\xE9l\xE9ration vers l'avant, blessant vos
     ennemis sur votre passage."
-  Cooldown: 3
+  Cooldown: 1.5
   IsHold: 0
   HoldDuration: 0
   CanMovePreview: 1
   Radius: 0
   ProjectileRange: 0
   ProjectileSpeed: 0
-  ProjectileDamage: 02000000
+  ProjectileDamage: 03000000
   ProjectileLifetime: 0.5
   numberOfProjectiles: 0
   TravelMode: 3
