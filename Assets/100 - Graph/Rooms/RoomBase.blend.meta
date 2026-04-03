@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Cyber
-    second: {fileID: 2100000, guid: c257ca1c428148244a291392db1302e7, type: 2}
+    second: {fileID: 2100000, guid: 8578ab237d714424c89030b7874b3454, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

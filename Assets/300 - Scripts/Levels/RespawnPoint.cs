@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using DG.Tweening;
 using UnityEngine;
 
 
@@ -17,6 +18,8 @@ public class RespawnPoint : MonoBehaviour
 
     [Header("Custom for HUB")]
     public bool HasStartRun = false;
+
+    public Transform Dummy;
 
     private void Awake()
     {
@@ -44,6 +47,7 @@ public class RespawnPoint : MonoBehaviour
         HasStartRun = true;
         GetComponent<Collider>().enabled = false; // ← en premier
         RunSystemController.Instance.QueryRoomEnd(true);
+        if (Dummy != null) Dummy.transform.DOScale(0, 0.5f).SetEase(Ease.InBack).OnComplete(() => Destroy(Dummy.gameObject));
         Destroy(gameObject);
     }
 

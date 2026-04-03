@@ -54,6 +54,7 @@ MonoBehaviour:
   _safeRadius: 10
   _safeZone: 0
   HasStartRun: 0
+  Dummy: {fileID: 0}
 --- !u!198 &795098624226996996
 ParticleSystem:
   m_ObjectHideFlags: 0

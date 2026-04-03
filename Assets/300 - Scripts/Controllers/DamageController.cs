@@ -20,6 +20,8 @@ public class DamageController: MonoBehaviour
 		set => _isDead = value;
 	}
 
+	public bool IsAtFullHealth => _currentHealth >= _maxHealth;
+
 	[SerializeField] private int _currentHealth = 1;
 	[SerializeField] private Team _team = Team.Neutral;
 	public Team Team => _team;

@@ -64,9 +64,13 @@ public class BloodDrop : MonoBehaviour
         if (other.TryGetComponent<CharacterComponent>(out var riel))
         {
             var blood = CharacterComponent.Blood;
+            var dc = riel.GetComponent<DamageController>();
+
+            if (blood.IsFull && dc.IsAtFullHealth) return; 
+
             if (blood.IsFull)
             {
-                riel.GetComponent<DamageController>().Heal(HealAmount);
+                dc.Heal(HealAmount);
             } else
             {
                 CharacterComponent.Blood.Regain(_blood.Amount);
